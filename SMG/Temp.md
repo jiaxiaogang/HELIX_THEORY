@@ -1,2 +1,2 @@
-# SMG_NOTE
-smg's note;
+分析结果属性  
+隐式属性（如a爱孩子）
