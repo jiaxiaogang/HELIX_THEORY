@@ -159,7 +159,7 @@
 
 - ## (N3P14)Demand的解
 
-	- [链接(Understand的解)](../框架/Understand.md)
+	- [链接~>Understand/ThinkDemand的解](../框架/Understand.md)
 
 ***
 
