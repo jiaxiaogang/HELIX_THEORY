@@ -26,7 +26,7 @@
 
 - ## 手写笔记
 
-	* [Note3](手写笔记/Note3.md)
+	* [Note3](手写笔记/Note3.md)<font color="#888888">(17.08.02)</font>
 	* [Note2](手写笔记/Note2.md)
 	* [Note1](手写笔记/Note1.md)
 
