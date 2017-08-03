@@ -43,4 +43,27 @@ char g_path[MAXPATHLEN+1];
     }
     return nil;
 }
+
++ (NSString *)getAppRootPath {
+    NSString *appPath = [Utils getAppPath];
+    NSString *duoyv = @"MarkDownNote_ModifyTimeTool.app/Contents/MacOS/MarkDownNote_ModifyTimeTool";
+    if ([appPath rangeOfString:duoyv].location != NSNotFound && appPath.length > duoyv.length) {
+        appPath = [appPath substringToIndex:(appPath.length - duoyv.length)];
+        return appPath;
+    }
+    return appPath;
+}
+
++(NSRange) rangeOfString:(NSString*)findStr fromStr:(NSString*)fromStr location:(NSUInteger)location length:(NSUInteger)length {
+    if (location != NSNotFound && findStr && fromStr && fromStr.length > (location + length)) {
+        NSString *checkStr = [fromStr substringFromIndex:(location + length)];
+        NSRange range = [checkStr rangeOfString:findStr];
+        if (range.location != NSNotFound) {
+            range.location += (location + length);
+            return range;
+        }
+    }
+    return NSMakeRange(NSNotFound, 0);
+}
+
 @end
