@@ -256,7 +256,60 @@
 		- 由当前场景,当前情况产生的决策性需求;(如:提交开聚会时,向大家告知一声的需求)
 
 		
-		
+- ## LOP(Layer Oriented Programming)
+
+
+#### SMG的三个代码层
+
+	- 代码层(只运算数据,不产生数据)  
+		- 运行方式:
+			- 定义好的method及流程算法等;
+		- 运行种类:
+			1. method
+			2. control
+			3. 算法
+	- 数据层(数据操作,不产生逻辑)
+		- 运行方式:
+			- 通过runtime来调用method;
+		- 运行种类:
+			1. 类比
+			2. 网络强度
+			3. 增删改查
+	- 意识层
+		- 运行方式:
+			- 通过"意识心跳"和"意识流激活"的方式run & 产生Demand和数据分析并解决问题;
+		- 运行种类:
+			1. 意识心跳
+				- xx秒一次的自省
+			2. 意识流激活
+				- 自我感知
+				- Input
+
+#### LOP的特点:
+	- 以Data为核心的解释存储与逻辑;
+	- 更智能,更灵活,更通用
+
+#### LOP与OOP对比:
+
+	- LOP
+		- CodeLayer
+			- 以method为基件
+			- 封装
+			- 效率
+			- 泛型params和value
+			- 单一职责的method
+			- 可被反射runtime调用
+		- DataLayer
+			- 知识表示
+			- 神经网络
+			- 将OOP中的继承,接口,属性,值,多态,block等以Data的形式表示;
+		- AwarenessLayer
+			- 参考:[N3P19](../手写笔记/Note3.md)
+			- 使Data产生逻辑;
+			- 将OOP中的异步,多线程等以Awareness,Demand,Think等形式实现;
+			
+			
+			
 		
 		
 		
