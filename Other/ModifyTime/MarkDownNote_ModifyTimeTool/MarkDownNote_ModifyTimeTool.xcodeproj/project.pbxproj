@@ -7,21 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		082FE4351F32EC9D0031D05F /* NSDate+Escort.m in Sources */ = {isa = PBXBuildFile; fileRef = 082FE4341F32EC9D0031D05F /* NSDate+Escort.m */; };
 		083E9B701F31F4BC00ABC0FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 083E9B6F1F31F4BC00ABC0FB /* AppDelegate.m */; };
 		083E9B731F31F4BC00ABC0FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 083E9B721F31F4BC00ABC0FB /* main.m */; };
-		083E9B761F31F4BC00ABC0FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 083E9B751F31F4BC00ABC0FB /* ViewController.m */; };
 		083E9B781F31F4BC00ABC0FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 083E9B771F31F4BC00ABC0FB /* Assets.xcassets */; };
 		083E9B7B1F31F4BC00ABC0FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 083E9B791F31F4BC00ABC0FB /* Main.storyboard */; };
 		083E9B841F31F5D000ABC0FB /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 083E9B831F31F5D000ABC0FB /* Utils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		082FE4331F32EC9D0031D05F /* NSDate+Escort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Escort.h"; sourceTree = "<group>"; };
+		082FE4341F32EC9D0031D05F /* NSDate+Escort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Escort.m"; sourceTree = "<group>"; };
 		083E9B6B1F31F4BC00ABC0FB /* MarkDownNote_ModifyTimeTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarkDownNote_ModifyTimeTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		083E9B6E1F31F4BC00ABC0FB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		083E9B6F1F31F4BC00ABC0FB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		083E9B721F31F4BC00ABC0FB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		083E9B741F31F4BC00ABC0FB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		083E9B751F31F4BC00ABC0FB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		083E9B771F31F4BC00ABC0FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		083E9B7A1F31F4BC00ABC0FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		083E9B7C1F31F4BC00ABC0FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,14 +61,14 @@
 			children = (
 				083E9B6E1F31F4BC00ABC0FB /* AppDelegate.h */,
 				083E9B6F1F31F4BC00ABC0FB /* AppDelegate.m */,
-				083E9B741F31F4BC00ABC0FB /* ViewController.h */,
-				083E9B751F31F4BC00ABC0FB /* ViewController.m */,
 				083E9B771F31F4BC00ABC0FB /* Assets.xcassets */,
 				083E9B791F31F4BC00ABC0FB /* Main.storyboard */,
 				083E9B7C1F31F4BC00ABC0FB /* Info.plist */,
 				083E9B711F31F4BC00ABC0FB /* Supporting Files */,
 				083E9B821F31F5D000ABC0FB /* Utils.h */,
 				083E9B831F31F5D000ABC0FB /* Utils.m */,
+				082FE4331F32EC9D0031D05F /* NSDate+Escort.h */,
+				082FE4341F32EC9D0031D05F /* NSDate+Escort.m */,
 			);
 			path = MarkDownNote_ModifyTimeTool;
 			sourceTree = "<group>";
@@ -151,7 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				083E9B761F31F4BC00ABC0FB /* ViewController.m in Sources */,
+				082FE4351F32EC9D0031D05F /* NSDate+Escort.m in Sources */,
 				083E9B731F31F4BC00ABC0FB /* main.m in Sources */,
 				083E9B701F31F4BC00ABC0FB /* AppDelegate.m in Sources */,
 				083E9B841F31F5D000ABC0FB /* Utils.m in Sources */,
@@ -304,6 +304,7 @@
 				083E9B811F31F4BC00ABC0FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,6 +8,7 @@
 
 #import "Utils.h"
 #include <mach-o/dyld.h>
+#import "NSDate+Escort.h"
 
 @implementation Utils
 
@@ -65,5 +66,34 @@ char g_path[MAXPATHLEN+1];
     }
     return NSMakeRange(NSNotFound, 0);
 }
+
++(NSString*) getModifyTimeDesc:(NSDate*)date{
+    if (date == nil) return nil;
+    //取今天时间
+    NSDate *endDate = [[NSDate date] dateAtEndOfDay];
+    
+    //取time
+    long tartetTime = [date timeIntervalSince1970];
+    long todayZeroTime = [endDate timeIntervalSince1970]; //今天24点时间
+    long distanceTime = todayZeroTime - tartetTime;
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    
+    if (distanceTime < 86400) {
+        [dateFormatter setDateFormat:@"今天 HH:mm:ss"];
+        return [dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:(tartetTime)]];
+    }else if (distanceTime < 86400 * 2) {
+        [dateFormatter setDateFormat:@"昨天 HH:mm:ss"];
+        return [dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:(tartetTime)]];
+    }else if (date.year == [NSDate date].year) {
+        [dateFormatter setDateFormat:@"MM月dd日 HH:mm:ss"];
+        return [dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:(tartetTime)]];
+    }else{
+        [dateFormatter setDateFormat:@"yyyy年MM月dd日 HH:mm:ss"];
+        return [dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:(tartetTime)]];
+    }
+}
+
+
 
 @end

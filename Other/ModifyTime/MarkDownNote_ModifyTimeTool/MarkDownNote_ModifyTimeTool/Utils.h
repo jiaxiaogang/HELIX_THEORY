@@ -13,5 +13,6 @@
 + (NSString *)getAppPath;
 + (NSString *)getAppRootPath ;
 +(NSRange) rangeOfString:(NSString*)findStr fromStr:(NSString*)fromStr location:(NSUInteger)location length:(NSUInteger)length;
++(NSString*) getModifyTimeDesc:(NSDate*)date;
 
 @end
