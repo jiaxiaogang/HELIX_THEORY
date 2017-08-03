@@ -54,20 +54,52 @@
  */
 //1,.m选取文件夹
 -(void) startScanDotM:(NSArray*)files{
+    //1,读取README.md
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *error = nil;
     NSArray *fileList2 = [fileManager contentsOfDirectoryAtPath:@"README.md" error:&error];
-    
-    
     NSArray *fileList3 = [self subPathWithPath:@"README.md"];
     NSString *docPath = NSHomeDirectory();
-    NSString *str = [Utils getAppPath];
-    NSString *duoyv = @"MarkDownNote_ModifyTimeTool.app/Contents/MacOS/MarkDownNote_ModifyTimeTool";
-    if ([str rangeOfString:duoyv].location != NSNotFound && str.length > duoyv.length) {
-        str = [str substringToIndex:(str.length - duoyv.length)];
-        str = [NSString stringWithFormat:@"%@README.md",str];
+    
+    
+    
+    
+    NSString *appRootPath = [Utils getAppRootPath];
+    if (appRootPath == nil) return;
+    
+    NSString *readmePath = [NSString stringWithFormat:@"%@README.md",appRootPath];
+    NSString *readmeMD = [self openDotMD:readmePath];
+    if (readmeMD == nil) return;
+    
+    //2,生成新字符串
+    NSMutableString *mStr = [[NSMutableString alloc] init];
+    
+    //3,分行遍历执行
+    NSMutableArray *lines = [NSMutableArray arrayWithArray:[readmeMD componentsSeparatedByString:@"\n"]];
+    for (int i = 0; i < lines.count; i++) {
+        //4,找出README.md中的链接地址
+        NSString *line = lines[i];
+        NSRange leftRange = [Utils rangeOfString:@"[" fromStr:line location:0 length:0];
+        NSRange centerRange = [Utils rangeOfString:@"](" fromStr:line location:leftRange.location length:leftRange.length];
+        NSRange rightRange = [Utils rangeOfString:@")" fromStr:line location:centerRange.location length:centerRange.length];
+        NSRange lHtmlRange = [Utils rangeOfString:@"<font color=\"#888888\">" fromStr:line location:rightRange.location length:rightRange.length];
+        NSRange rHtmlRange = [Utils rangeOfString:@"</font>" fromStr:line location:lHtmlRange.location length:lHtmlRange.length];
+        
+        if (leftRange.location != NSNotFound && centerRange.location != NSNotFound && rightRange.location != NSNotFound) {
+            NSMutableString *mLine = [[NSMutableString alloc] initWithString:line];
+            //5,去掉旧的时间
+            if (lHtmlRange.location != NSNotFound && rHtmlRange.location != NSNotFound) {
+                [mLine replaceCharactersInRange:NSMakeRange(lHtmlRange.location, rHtmlRange.location + rHtmlRange.length) withString:@""];
+            }
+            //6,取文件路径
+            
+            //6,添加新的时间
+        }else{
+            [mStr appendString:[NSString stringWithFormat:@"%@\n",line]];
+        }
     }
-    NSString *readmeMD = [self openDotMD:str];
+    
+    
     
     NSLog(@"");
     if (files) {
