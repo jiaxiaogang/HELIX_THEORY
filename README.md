@@ -6,9 +6,9 @@
 	
 - ## 框架
 
-	* [Mind](框架/Mind.md)<font size="1" color="#888888"> 修改时间:今天 13:55:32</font>
-	* [自我](框架/自我.md)<font size="1" color="#888888"> 修改时间:08月02日 07:33:41</font>
-	* [Understand](框架/Understand.md)<font size="1" color="#888888"> 修改时间:今天 08:42:28</font>
+	* [Mind](框架/Mind.md)<font size="1" color="#888888"> 修改时间:08月03日 13:55:32</font>
+	* [自我](框架/自我.md)<font size="1" color="#888888"> 修改时间:今天 14:17:11</font>
+	* [Understand](框架/Understand.md)<font size="1" color="#888888"> 修改时间:08月03日 08:42:28</font>
 	* [Decision](框架/Decision.md)<font size="1" color="#888888"> 修改时间:07月26日 14:19:01</font>
 	* [知识表示](框架/知识表示.md)<font size="1" color="#888888"> 修改时间:07月26日 14:31:50</font>
 	* [3维抽象概述](框架/3维抽象概述.md)<font size="1" color="#888888"> 修改时间:07月26日 17:53:46</font>
@@ -29,7 +29,7 @@
 
 - ## 手写笔记
 
-	* [Note3](手写笔记/Note3.md)<font size="1" color="#888888"> 修改时间:今天 08:58:29</font>
+	* [Note3](手写笔记/Note3.md)<font size="1" color="#888888"> 修改时间:08月03日 08:58:29</font>
 	* [Note2](手写笔记/Note2.md)<font size="1" color="#888888"> 修改时间:07月26日 18:10:08</font>
 	* [Note1](手写笔记/Note1.md)<font size="1" color="#888888"> 修改时间:07月26日 18:04:33</font>
 
@@ -115,6 +115,7 @@
 	* [INPUT_注意力](iphone备忘录/INPUT_注意力.md)<font size="1" color="#888888"> 修改时间:07月26日 13:17:10</font>
 	* [行为与能力](iphone备忘录/行为与能力.md)<font size="1" color="#888888"> 修改时间:07月26日 13:19:43</font>
 	* [为推动人工智能的发展所作的思考](iphone备忘录/为推动人工智能的发展所作的思考.md)<font size="1" color="#888888"> 修改时间:07月26日 13:27:34</font>
+
 
 
 
