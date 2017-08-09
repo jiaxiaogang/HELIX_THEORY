@@ -4,8 +4,28 @@
 - [第1维思维导图(17.06.22)(N3P1)](#第1维思维导图170622n3p1)  
 - [3维架构图(17.06.23)(N3P2)](#3维架构图170623n3p2)  
 - [(17.06.28)(N3P3)](#170628n3p3)
-   
+- [(N3P4)](#n3p4)   
+- [(N3P5)](#n3p5)   
+- [(N3P6)](#n3p6)   
+- [(N3P7)数据树理论](#n3p7数据树理论)   
+- [(N3P8)](#n3p8)   
+- [(N3P9)神经网络-AILine](#n3p9神经网络ailine)
+- [(N3P10)思维演化(AI思维的本质)(17.07.14)](n3p10思维演化ai思维的本质170714)
+- [(N3P11)](n3p11)
+- [N3P12](n3p12)
+- [(N3P13)第六感与感觉](n3p13第六感与感觉)
+- [(N3P14)Demand的解](n3p14Demand的解)
+- [(N3P15)抽象(归纳)常识的设计](n3p15抽象归纳常识的设计)
+- [(N3P16)意识(17.08.01)](n3p16意识170801)
+- [(N3P17)常识知识表示的拆分(17.08.02)](n3p17常识知识表示的拆分170802)
+- [(N3P18)神经细胞的算法:(17.08.02)](n3p18神经细胞的算法:170802)
+- [(N3P19)AIMindValue(17.08.02)](n3p19AIMindValue170802)
+- [(N3P20)Demand(17.08.03)](n3p20Demand170803)
+- [(N3P21)LOP(Layer Oriented Programming)(17.08.03)](n3p21loplayer-oriented-programming170803)
+- [(N3P22)意识流冥想(17.08.09)](n3p22意识流冥想170809)
 
+
+<br><br><br><br><br><br>
 
 ## 第1维思维导图(17.06.22)(N3P1)
 
@@ -23,13 +43,17 @@
 ![](img/N3P3.png)
 
 ***
-- ## (17.06.29)(N3P4)
+
+## (N3P4)
 ![](img/N3P4.png)
+
 ***
-- ## (N3P5)
+
+## (N3P5)
 ![](img/N3P5.png)
 ***
-- ## (N3P6)
+
+## (N3P6)
 ![](img/N3P6.png)
 ***
 
@@ -37,7 +61,7 @@
 
 
 
-- ## (N3P7)数据树理论
+## (N3P7)数据树理论
 
    <center><font size="20" color="white" style="background:green">AIDataTree</font></center>
 
@@ -81,7 +105,7 @@
 
 ***
 
-- ## **(N3P8)**
+## **(N3P8)**
 
 |![](img/1.png)|![](img/2.png)|
 |---|---|
@@ -108,7 +132,8 @@
 
 
 ***
-- ## (N3P9)神经网络-AILine  
+
+## (N3P9)神经网络-AILine  
 
 
 * Type
@@ -120,66 +145,73 @@
 ***
 
 
-- ## (N3P10)思维演化(AI思维的本质)(17.07.14)
- 
+## (N3P10)思维演化(AI思维的本质)(17.07.14) 
 
-	> - SMG思维演化;(OOP2DataThink2AI)
-	> 	- 概念:  
-	> 		1. 把现有编程语言的所有类,抽象,属性等等存到db数据表;  
-	> 		2. 把现有方法全改成泛型方法;  
-	> 		3. 把现有方法的入参return 全记录到数据表;
-	> 		4. 使用数据分析出曾经调用的abcdefg方法过程;
-	> 		5. 抽象类比出当前新问题的解决方式;
-	> 		6. 执行曾经的abcdefg;
-	>	- 参考:[LOP](../框架/Understand.md)
+> - SMG思维演化;(OOP2DataThink2AI)
+> 	- 概念:  
+> 		1. 把现有编程语言的所有类,抽象,属性等等存到db数据表;  
+> 		2. 把现有方法全改成泛型方法;  
+> 		3. 把现有方法的入参return 全记录到数据表;
+> 		4. 使用数据分析出曾经调用的abcdefg方法过程;
+> 		5. 抽象类比出当前新问题的解决方式;
+> 		6. 执行曾经的abcdefg;
+>	- 参考:[LOP](../框架/Understand.md)
 
 
 ***
 
 
-- ## (N3P11)[Awareness->Demand->ThinkTask](../框架/Understand.md)  & [或旧资料Demand](../框架/Understand.md)
 
-	> ![](img/N3P11.png)
+## (N3P11)
+
+> [Awareness->Demand->ThinkTask](../框架/Understand.md)  & [或旧资料Demand](../框架/Understand.md)
+> > ![](img/N3P11.png)
 
 ***
 
-- ## (N3P12)[MainThread](../框架/Understand.md)
 
-	- 代码
-		- [链接](https://github.com/jiaxiaogang/SMG/blob/master/SMG_NothingIsAll/Class/AIFoundation/AIThread/AIMainThread.h)
-	- 笔记
-		- [Understand/MainThread链接](../框架/Understand.md)
+## N3P12
+
+- 代码
+	- [链接](https://github.com/jiaxiaogang/SMG/blob/master/SMG_NothingIsAll/Class/AIFoundation/AIThread/AIMainThread.h)
+- 笔记
+	- [Understand/MainThread链接](../框架/Understand.md)
+	- [MainThread](../框架/Understand.md)
  
 ***
 
-- ## (N3P13)第六感与感觉
+
+## (N3P13)第六感与感觉
  
-      - 成因:
-         - 意识->需求间:(mind第六感)
-              - 感性Awareness生成Demand时;会读取到很多mindValue.value;两者之间就会形成强化的关联;
-              - 而这种强化是很难在今后说清楚原因的;
-              - 所以感性者第六感更准确;
-          - 认知->意识流:(感觉)
-              - A与B经常有出现规律;
-      - 本质:
-          - AILine
-      - 使用:
-          - AILine的Strong值,影响到"权重";从而影响结果;但其是无因的;因为AILine不是AIObj存储;
+  - 成因:
+     - 意识->需求间:(mind第六感)
+          - 感性Awareness生成Demand时;会读取到很多mindValue.value;两者之间就会形成强化的关联;
+          - 而这种强化是很难在今后说清楚原因的;
+          - 所以感性者第六感更准确;
+      - 认知->意识流:(感觉)
+          - A与B经常有出现规律;
+  - 本质:
+      - AILine
+  - 使用:
+      - AILine的Strong值,影响到"权重";从而影响结果;但其是无因的;因为AILine不是AIObj存储;
 
           
           
+------
+
+
+
+## (N3P14)Demand的解
+
+- [链接~>Understand/ThinkDemand的解](../框架/Understand.md)
+- //ThinkDemand的解;
+    1. 依赖于经验等数据;
+    2. 依赖与常识的简单解决方案;(类比)
+    3. 复杂的问题分析(随后再写)
+
 ***
 
 
-- ## (N3P14)Demand的解
-
-	- [链接~>Understand/ThinkDemand的解](../框架/Understand.md)
-	- //ThinkDemand的解;
-        1. 依赖于经验等数据;
-        2. 依赖与常识的简单解决方案;(类比)
-        3. 复杂的问题分析(随后再写)
-
-***
 
 ## (N3P15)抽象(归纳)常识的设计
 
@@ -202,6 +234,8 @@
 		- 如:将can eat存下来;
 
 ***
+
+
 
 ## (N3P16)意识(17.08.01)
 > 参考:[自我->意识](../框架/自我.md## 意识)
@@ -226,6 +260,9 @@
 
 ***
 
+
+
+
 ## (N3P17)常识知识表示的拆分(17.08.02)
 1. 逻辑关联AILine;
 	- 形成方式:
@@ -243,6 +280,10 @@
 		
 ***
 		
+
+
+
+
 ## (N3P18)神经细胞的算法:(17.08.02)
 - 算法的值定义:
 	- x算法得出的值是精确的,不可解释的;
@@ -279,6 +320,10 @@
 
 
 ***		
+
+
+
+
 
 ## (N3P21)LOP(Layer Oriented Programming)(17.08.03)
 
@@ -331,7 +376,7 @@
 		- 参考:[N3P20](../手写笔记/Note3.md#n3p20demand170803)
 		- 使Data产生逻辑;
 		- 将OOP中的异步,多线程等以Awareness,Demand,Think等形式实现;
-			
+
 			
 ## (N3P22)意识流冥想(17.08.09)	
 - 充电后,自动添加电量
