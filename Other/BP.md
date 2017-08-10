@@ -62,13 +62,17 @@
     1. 设计强人工智能的核心架构;(已完善)
     2. 项目开发;(5万行+的项目代码)
     3. 制定突破性的AI系统的理念;
-    		- logThink与noLogThink
-    		- 基于理解的NLP
-    		- 类比,归纳与统计共行
-    		- 抽象与结构
-    		- 不过度依赖算法与大数据
-    		- 先天noData
-    		- 等等
+		- [LOP编程思想](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/%E6%89%8B%E5%86%99%E7%AC%94%E8%AE%B0/Note3.md#n3p21loplayer-oriented-programming170803)
+		- [logThink与noLogThink](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/%E6%A1%86%E6%9E%B6/%E8%87%AA%E6%88%91.md#两个运算方式)
+		- [基于理解的NLP](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/Light%E5%8F%8A%E5%BA%94%E7%94%A8/Light.md#nlp语言一定要以描述意思为核心才能达到100正确率)
+		- [深理解与浅理解](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/%E6%A1%86%E6%9E%B6/%E6%B3%A8%E6%84%8F%E5%8A%9B.md)
+		- [三维抽象架构](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/%E6%A1%86%E6%9E%B6/3%E7%BB%B4%E6%8A%BD%E8%B1%A1%E6%A6%82%E8%BF%B0.md)
+		- [树形知识表示](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/%E6%A1%86%E6%9E%B6/3%E7%BB%B4%E6%8A%BD%E8%B1%A1%E6%A6%82%E8%BF%B0.md)
+		- 类比,归纳与统计
+		- 抽象与结构
+		- 不过度依赖算法与大数据
+		- 先天noData
+		- 等等
 
 4. #### 创始团队成员之间相互是什么关系，认识多久了？之前大家有一起合作过项目吗？
 	- 目前我独自开发,并且1年内依然会是如此;因为创造的前期必须是这样;不然很难有突破性;
@@ -94,14 +98,17 @@
 
 8. #### 本轮融资，你们准备融多少，最多出让多少股份？这笔钱预计将达到什么目标？（注意：融资是件很严肃的事，请务必填一个诚实合理的融资方案）。在本次融资前你们有否融过资？如有，请提供上轮融资时间，融资金额，出让比例。
     
-    - 融100w;出让3%股份。
-    - 这笔钱用来成立公司、购置设备和运行公司。
+    - 融1000w;出让10%股份。
+    - 这笔钱用来成立公司、招聘开发人员、购置设备和运行公司。
     - 此前并未融过资。
     
 	
 9. #### 说明:
 	
-	- 可以重点查看一下我的项目笔记"[Mind](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/%E6%A1%86%E6%9E%B6/Mind.md)"、"[知识表示](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/%E6%A1%86%E6%9E%B6/%E7%9F%A5%E8%AF%86%E8%A1%A8%E7%A4%BA.md)"、"[Understand](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/%E6%A1%86%E6%9E%B6/Understand.md)"、"[手写笔记](https://github.com/jiaxiaogang/SMG_NOTE/tree/master/%E6%89%8B%E5%86%99%E7%AC%94%E8%AE%B0)"和“[Decision](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/%E6%A1%86%E6%9E%B6/Decision.md)”的内容。
+	- 个人主页:[http://www.j2717.top](http://www.j2717.top)
+	- 项目代码:[https://www.github.com/jiaxiaogang/SMG](https://www.github.com/jiaxiaogang/SMG)
+	- 项目笔记:[http://j2717.top/html/SMG_NOTE.html](http://j2717.top/html/SMG_NOTE.html)
+	- 手写笔记:[https://github.com/jiaxiaogang/SMG_NOTE/tree/master/手写笔记](https://github.com/jiaxiaogang/SMG_NOTE/tree/master/手写笔记)
 	- 我认为AI最重要也是最难的是Mind，Mind决定了意识，是AI的引擎，而我的框架对Mind层也是思考最多最的。
 
 

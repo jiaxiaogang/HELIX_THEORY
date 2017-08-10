@@ -24,12 +24,8 @@
 - [(N3P21)LOP(Layer Oriented Programming)(17.08.03)](#n3p21loplayer-oriented-programming170803)
 - [(N3P22)意识流冥想(17.08.09)](#n3p22意识流冥想170809)
 
-
-<br><br><br><br><br><br>
-
-- [TOC]
-
 [TOC]
+<br><br><br>
 
 
 ## 第1维思维导图(17.06.22)(N3P1)
