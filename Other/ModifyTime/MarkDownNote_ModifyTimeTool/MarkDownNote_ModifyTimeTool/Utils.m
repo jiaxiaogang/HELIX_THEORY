@@ -79,13 +79,13 @@ char g_path[MAXPATHLEN+1];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     
-    if (distanceTime < 86400) {
+    /*if (distanceTime < 86400) {
         [dateFormatter setDateFormat:@"今天 HH:mm:ss"];
         return [dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:(tartetTime)]];
     }else if (distanceTime < 86400 * 2) {
         [dateFormatter setDateFormat:@"昨天 HH:mm:ss"];
         return [dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:(tartetTime)]];
-    }else if (date.year == [NSDate date].year) {
+    }else */if (date.year == [NSDate date].year) {
         [dateFormatter setDateFormat:@"MM月dd日 HH:mm:ss"];
         return [dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:(tartetTime)]];
     }else{
