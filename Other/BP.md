@@ -62,7 +62,7 @@
     1. 设计强人工智能的核心架构;(已完善)
     2. 项目开发;(5万行+的项目代码)
     3. 制定突破性的AI系统的理念;
-		- [LOP编程思想](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/%E6%89%8B%E5%86%99%E7%AC%94%E8%AE%B0/Note3.md#n3p21loplayer-oriented-programming170803)
+		- [LOP编程思想](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/%E6%89%8B%E5%86%99%E7%AC%94%E8%AE%B0/Note3.md#n4p13loplayer-oriented-programming170803)
 		- [logThink与noLogThink](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/%E6%A1%86%E6%9E%B6/%E8%87%AA%E6%88%91.md#两个运算方式)
 		- [基于理解的NLP](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/Light%E5%8F%8A%E5%BA%94%E7%94%A8/Light.md#nlp语言一定要以描述意思为核心才能达到100正确率)
 		- [深理解与浅理解](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/%E6%A1%86%E6%9E%B6/%E6%B3%A8%E6%84%8F%E5%8A%9B.md)
