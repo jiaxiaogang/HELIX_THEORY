@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>README</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+<style type="text/css">
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+<style type="text/css">
+pre.line-numbers {
+	position: relative;
+	padding-left: 3.8em;
+	counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+	position: relative;
+}
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	border-right: 1px solid #999;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+	.line-numbers-rows > span {
+		pointer-events: none;
+		display: block;
+		counter-increment: linenumber;
+	}
+
+		.line-numbers-rows > span:before {
+			content: counter(linenumber);
+			color: #999;
+			display: block;
+			padding-right: 0.8em;
+			text-align: right;
+		}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0"><center>SMG_NOTE</center></h1>
+
+<hr>
+
+<p><a href="MarkDownNote_ModifyTimeTool.app"><img src="Other/ModifyTime/refreshIcon.jpeg" alt=""></a></p>
+
+<ul>
+<li><h2 id="toc_1">框架</h2>
+
+<ul>
+<li><a href="%E6%A1%86%E6%9E%B6/Mind.md">Mind</a><font size="1" color="#888888"> 修改时间:08月03日 13:55:32</font></li>
+<li><a href="%E6%A1%86%E6%9E%B6/%E8%87%AA%E6%88%91.md">自我</a><font size="1" color="#888888"> 修改时间:08月07日 14:17:11</font></li>
+<li><a href="%E6%A1%86%E6%9E%B6/Understand.md">Understand</a><font size="1" color="#888888"> 修改时间:08月03日 08:42:28</font></li>
+<li><a href="%E6%A1%86%E6%9E%B6/Decision.md">Decision</a><font size="1" color="#888888"> 修改时间:07月26日 14:19:01</font></li>
+<li><a href="%E6%A1%86%E6%9E%B6/%E7%9F%A5%E8%AF%86%E8%A1%A8%E7%A4%BA.md">知识表示</a><font size="1" color="#888888"> 修改时间:07月26日 14:31:50</font></li>
+<li><a href="%E6%A1%86%E6%9E%B6/3%E7%BB%B4%E6%8A%BD%E8%B1%A1%E6%A6%82%E8%BF%B0.md">3维抽象概述</a><font size="1" color="#888888"> 修改时间:07月26日 17:53:46</font></li>
+<li><a href="%E6%A1%86%E6%9E%B6/SMG%E6%A1%86%E6%9E%B6%E5%90%84%E9%98%B6%E6%AE%B5.md">SMG框架各阶段</a><font size="1" color="#888888"> 修改时间:07月26日 17:58:55</font></li>
+<li><a href="%E6%A1%86%E6%9E%B6/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.md">神经网络</a><font size="1" color="#888888"> 修改时间:08月10日 16:28:33</font></li>
+<li><a href="%E6%A1%86%E6%9E%B6/Input.md">Input</a><font size="1" color="#888888"> 修改时间:07月26日 13:47:23</font></li>
+<li><a href="%E6%A1%86%E6%9E%B6/%E6%A1%86%E6%9E%B617.5.7%E8%A1%A8%E8%BF%B0.md">框架17.5.7表述</a><font size="1" color="#888888"> 修改时间:07月26日 13:52:48</font></li>
+<li><a href="%E6%A1%86%E6%9E%B6/%E5%BC%80%E5%8F%91%E4%BB%BB%E5%8A%A1.md">开发任务</a><font size="1" color="#888888"> 修改时间:07月26日 14:12:58</font></li>
+<li><a href="%E6%A1%86%E6%9E%B6/%E6%95%B0%E6%8D%AE.md">数据</a><font size="1" color="#888888"> 修改时间:07月26日 14:19:58</font></li>
+<li><a href="%E6%A1%86%E6%9E%B6/%E7%B1%BB%E6%AF%94%E6%8E%A8%E7%90%86.md">类比推理</a><font size="1" color="#888888"> 修改时间:07月26日 15:28:22</font></li>
+<li><a href="%E6%A1%86%E6%9E%B6/%E5%BD%92%E7%BA%B3%E6%8E%A8%E7%90%86.md">归纳推理</a><font size="1" color="#888888"> 修改时间:07月26日 17:30:44</font></li>
+<li><a href="%E6%A1%86%E6%9E%B6/%E9%94%99%E8%A7%89%E7%A0%94%E7%A9%B6.md">错觉研究</a><font size="1" color="#888888"> 修改时间:07月26日 17:31:21</font></li>
+<li><a href="%E6%A1%86%E6%9E%B6/%E6%97%B6%E9%97%B4&amp;%E7%A9%BA%E9%97%B4.md">时间&amp;空间</a><font size="1" color="#888888"> 修改时间:07月26日 17:36:17</font></li>
+<li><a href="%E6%A1%86%E6%9E%B6/%E6%B3%A8%E6%84%8F%E5%8A%9B.md">注意力</a><font size="1" color="#888888"> 修改时间:07月26日 17:37:27</font></li>
+<li><a href="%E6%A1%86%E6%9E%B6/%E9%97%AE%E9%A2%98.md">问题</a><font size="1" color="#888888"> 修改时间:07月26日 17:37:59</font></li>
+<li><a href="%E6%A1%86%E6%9E%B6/OUTPUT.md">OUTPUT</a><font size="1" color="#888888"> 修改时间:07月26日 18:00:36</font></li>
+<li><a href="%E6%A1%86%E6%9E%B6/%E5%88%9B%E9%80%A0%E5%8A%9B.md">创造力</a><font size="1" color="#888888"> 修改时间:07月26日 18:01:20</font></li>
+<li><a href="%E6%A1%86%E6%9E%B6/%E6%80%9D%E8%80%83%E7%9A%84%E5%BC%95%E5%AD%90.md">思考的引子</a><font size="1" color="#888888"> 修改时间:08月13日 09:32:19</font></li>
+</ul></li>
+<li><h2 id="toc_2">手写笔记</h2>
+
+<ul>
+<li><a href="%E6%89%8B%E5%86%99%E7%AC%94%E8%AE%B0/Note1.md">Note1</a><font size="1" color="#888888"> 修改时间:07月26日 18:04:33</font></li>
+<li><a href="%E6%89%8B%E5%86%99%E7%AC%94%E8%AE%B0/Note2.md">Note2</a><font size="1" color="#888888"> 修改时间:07月26日 18:10:08</font></li>
+<li><a href="%E6%89%8B%E5%86%99%E7%AC%94%E8%AE%B0/Note3.md">Note3</a><font size="1" color="#888888"> 修改时间:08月13日 15:07:30</font></li>
+<li><a href="%E6%89%8B%E5%86%99%E7%AC%94%E8%AE%B0/Note4.md">Note4</a><font size="1" color="#888888"> 修改时间:08月13日 15:24:40</font></li>
+</ul></li>
+<li><h2 id="toc_3">学习</h2>
+
+<ul>
+<li><a href="%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80.md">机器学习基础</a><font size="1" color="#888888"> 修改时间:07月27日 07:38:26</font></li>
+<li><a href="%E5%AD%A6%E4%B9%A0/%E7%9F%A5%E8%AF%86%E8%A1%A8%E7%A4%BA%E8%A1%A8%E8%BE%BE%E6%96%B9%E6%B3%95%E5%9F%BA%E7%A1%80.md">知识表示表达方法基础</a><font size="1" color="#888888"> 修改时间:07月27日 07:42:49</font></li>
+<li><a href="%E5%AD%A6%E4%B9%A0/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%80%E7%A7%8D%E7%8E%B0%E4%BB%A3%E7%9A%84%E6%96%B9%E6%B3%95(StuartRussell).md">人工智能一种现代的方法(StuartRussell)</a></li>
+<li><a href="%E5%AD%A6%E4%B9%A0/TheUseOfKnowledgeInAnalogyAndInduction%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.md">TheUseOfKnowledgeInAnalogyAndInduction读书笔记</a><font size="1" color="#888888"> 修改时间:07月27日 07:45:10</font></li>
+<li><a href="%E5%AD%A6%E4%B9%A0/%E8%AE%A4%E7%9F%A5%E7%A5%9E%E7%BB%8F%E7%A7%91%E5%AD%A6-%E5%85%B3%E4%BA%8E%E5%BF%83%E6%99%BA%E7%9A%84%E7%94%9F%E7%89%A9%E5%AD%A6.md">认知神经科学-关于心智的生物学</a><font size="1" color="#888888"> 修改时间:07月27日 07:45:38</font></li>
+<li><a href="%E5%AD%A6%E4%B9%A0/%E6%83%85%E6%84%9F%E6%9C%BA%E5%99%A8.md">情感机器</a><font size="1" color="#888888"> 修改时间:07月27日 08:15:31</font></li>
+<li><a href="%E5%AD%A6%E4%B9%A0/%E9%98%BF%E5%85%B0%E5%9B%BE%E7%81%B5.md">阿兰图灵</a><font size="1" color="#888888"> 修改时间:07月27日 08:16:20</font></li>
+<li><a href="%E5%AD%A6%E4%B9%A0/%E7%94%9F%E7%89%A9%E8%84%91%E5%AD%A6.md">生物脑学</a><font size="1" color="#888888"> 修改时间:07月27日 14:28:10</font></li>
+<li><a href="%E5%AD%A6%E4%B9%A0/%E5%8F%8C%E8%84%91%E8%AE%B0.md">双脑记</a><font size="1" color="#888888"> 修改时间:07月27日 08:21:35</font></li>
+<li><a href="%E5%AD%A6%E4%B9%A0/List%E8%AF%AD%E8%A8%80.md">List语言</a><font size="1" color="#888888"> 修改时间:07月27日 08:52:56</font></li>
+<li><a href="%E5%AD%A6%E4%B9%A0/python%E8%AF%AD%E8%A8%80.md">python语言</a><font size="1" color="#888888"> 修改时间:07月27日 09:18:33</font></li>
+</ul></li>
+<li><h2 id="toc_4">Light及应用</h2>
+
+<ul>
+<li><a href="Light%E5%8F%8A%E5%BA%94%E7%94%A8/Light.md">Light</a><font size="1" color="#888888"> 修改时间:07月27日 09:27:44</font></li>
+<li><a href="Light%E5%8F%8A%E5%BA%94%E7%94%A8/%E5%BA%94%E7%94%A8.md">应用</a><font size="1" color="#888888"> 修改时间:07月27日 09:28:14</font></li>
+<li><a href="Light%E5%8F%8A%E5%BA%94%E7%94%A8/DeepLearning%E4%B8%8B%E6%AD%A5%E9%A2%84%E8%A8%80.md">DeepLearning下步预言</a><font size="1" color="#888888"> 修改时间:07月27日 09:28:32</font></li>
+</ul></li>
+<li><h2 id="toc_5">DataLanguage</h2>
+
+<ul>
+<li><a href="DataLanguage/%E5%89%8D%E8%A8%80.md">前言</a><font size="1" color="#888888"> 修改时间:07月27日 09:19:41</font></li>
+<li><a href="DataLanguage/17%E9%97%A8%E6%B4%BE.md">17门派</a><font size="1" color="#888888"> 修改时间:07月27日 09:22:09</font></li>
+<li><a href="DataLanguage/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92.md">学习计划</a><font size="1" color="#888888"> 修改时间:07月27日 09:23:23</font></li>
+<li><a href="DataLanguage/AIFoundation.md">AIFoundation</a><font size="1" color="#888888"> 修改时间:07月27日 09:24:08</font></li>
+</ul></li>
+<li><h2 id="toc_6">资料</h2>
+
+<ul>
+<li><a href="%E8%B5%84%E6%96%99/%E5%8F%91%E5%B1%95%E7%8E%B0%E7%8A%B6%E5%88%86%E6%9E%90.md">发展现状分析</a><font size="1" color="#888888"> 修改时间:07月28日 09:12:25</font></li>
+<li><a href="%E8%B5%84%E6%96%99/%E4%B8%89%E6%96%B9%E5%BA%93%E6%88%96%E5%B7%A5%E5%85%B7.md">三方库或工具</a><font size="1" color="#888888"> 修改时间:07月26日 13:31:43</font></li>
+<li><a href="%E8%B5%84%E6%96%99/%E6%97%A7%E8%B5%84%E6%96%99.md">旧资料</a><font size="1" color="#888888"> 修改时间:07月26日 13:39:25</font></li>
+<li><a href="%E8%B5%84%E6%96%99/%E5%85%B6%E5%AE%83.md">其它</a><font size="1" color="#888888"> 修改时间:07月26日 13:40:32</font></li>
+</ul></li>
+<li><h2 id="toc_7">视觉</h2>
+
+<ul>
+<li><a href="%E8%A7%86%E8%A7%89/%E8%A7%86%E8%A7%89.md">视觉</a><font size="1" color="#888888"> 修改时间:07月27日 09:29:34</font></li>
+</ul></li>
+<li><h2 id="toc_8">当下不开发的</h2>
+
+<ul>
+<li><a href="%E5%BD%93%E4%B8%8B%E4%B8%8D%E5%BC%80%E5%8F%91%E7%9A%84/GC.md">GC</a><font size="1" color="#888888"> 修改时间:07月27日 09:29:57</font></li>
+<li><a href="%E5%BD%93%E4%B8%8B%E4%B8%8D%E5%BC%80%E5%8F%91%E7%9A%84/%E8%81%94%E6%83%B3%E5%8A%9F%E8%83%BD.md">联想功能</a><font size="1" color="#888888"> 修改时间:07月27日 09:30:17</font></li>
+<li><a href="%E5%BD%93%E4%B8%8B%E4%B8%8D%E5%BC%80%E5%8F%91%E7%9A%84/%E6%83%B3%E5%83%8F%E5%8A%9B.md">想像力</a><font size="1" color="#888888"> 修改时间:07月27日 09:30:40</font></li>
+<li><a href="%E5%BD%93%E4%B8%8B%E4%B8%8D%E5%BC%80%E5%8F%91%E7%9A%84/%E6%97%A0%E6%84%8F%E8%AF%86%E7%9A%84%E6%80%9D%E8%80%83.md">无意识的思考</a><font size="1" color="#888888"> 修改时间:07月27日 09:31:39</font></li>
+</ul></li>
+<li><h2 id="toc_9">开发</h2>
+
+<ul>
+<li><a href="%E5%BC%80%E5%8F%91/17.07.19.md">17.07.19</a><font size="1" color="#888888"> 修改时间:07月27日 09:32:36</font></li>
+</ul></li>
+<li><h2 id="toc_10">SMG</h2>
+
+<ul>
+<li><a href="SMG/%E5%BC%80%E5%8F%91%E4%BB%BB%E5%8A%A1.md">开发任务</a> <font size="1" color="#888888"> 修改时间:07月28日 09:06:53</font></li>
+<li><a href="SMG/%E7%B1%BB%E4%BA%BA%E7%9A%84%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE.md">类人的学习项目</a><font size="1" color="#888888"> 修改时间:07月26日 10:23:27</font></li>
+<li><a href="SMG/Temp.md">Temp</a><font size="1" color="#888888"> 修改时间:07月26日 10:09:30</font></li>
+<li><a href="SMG/%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90.md">记忆系统结构分析</a><font size="1" color="#888888"> 修改时间:07月26日 10:20:45</font></li>
+</ul></li>
+<li><h2 id="toc_11">iphone备忘录</h2>
+
+<ul>
+<li><a href="iphone%E5%A4%87%E5%BF%98%E5%BD%95/%E4%B8%B4%E6%97%B6.md">临时</a><font size="1" color="#888888"> 修改时间:07月26日 10:22:54</font></li>
+<li><a href="iphone%E5%A4%87%E5%BF%98%E5%BD%95/%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99.md">参考资料</a><font size="1" color="#888888"> 修改时间:07月26日 10:35:59</font></li>
+<li><a href="iphone%E5%A4%87%E5%BF%98%E5%BD%95/onenote%E7%AC%94%E8%AE%B0.md">onenote笔记</a><font size="1" color="#888888"> 修改时间:07月26日 10:43:07</font></li>
+<li><a href="iphone%E5%A4%87%E5%BF%98%E5%BD%95/%E7%AC%AC%E4%B8%80%E4%BB%A3%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%AE%BE%E8%AE%A1.md">第一代人工智能设计</a><font size="1" color="#888888"> 修改时间:07月26日 10:44:53</font></li>
+<li><a href="iphone%E5%A4%87%E5%BF%98%E5%BD%95/output.md">output</a><font size="1" color="#888888"> 修改时间:07月26日 10:46:31</font></li>
+<li><a href="iphone%E5%A4%87%E5%BF%98%E5%BD%95/%E6%9E%B6%E6%9E%84.md">架构</a><font size="1" color="#888888"> 修改时间:07月26日 10:52:02</font></li>
+<li><a href="iphone%E5%A4%87%E5%BF%98%E5%BD%95/%E7%90%86%E8%A7%A3%E7%B3%BB%E7%BB%9F.md">理解系统</a><font size="1" color="#888888"> 修改时间:07月26日 10:53:11</font></li>
+<li><a href="iphone%E5%A4%87%E5%BF%98%E5%BD%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89.md">计算机视觉</a><font size="1" color="#888888"> 修改时间:07月26日 10:56:00</font></li>
+<li><a href="iphone%E5%A4%87%E5%BF%98%E5%BD%95/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1.md">知识图谱</a><font size="1" color="#888888"> 修改时间:07月26日 11:19:21</font></li>
+<li><a href="iphone%E5%A4%87%E5%BF%98%E5%BD%95/%E5%BA%94%E7%94%A8%E5%B1%82%E8%AE%A1%E5%88%92.md">应用层计划</a><font size="1" color="#888888"> 修改时间:07月26日 11:20:43</font></li>
+<li><a href="iphone%E5%A4%87%E5%BF%98%E5%BD%95/%E5%A4%A7%E8%84%91%E6%A8%A1%E5%9D%97.md">大脑模块</a><font size="1" color="#888888"> 修改时间:07月26日 11:26:06</font></li>
+<li><a href="iphone%E5%A4%87%E5%BF%98%E5%BD%95/%E7%AC%AC%E4%BA%8C%E4%BB%A3%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%AE%BE%E8%AE%A1.md">第二代人工智能设计</a><font size="1" color="#888888"> 修改时间:07月26日 11:30:20</font></li>
+<li><a href="iphone%E5%A4%87%E5%BF%98%E5%BD%95/%E8%AE%B0%E5%BF%86%E6%A8%A1%E5%9D%97.md">记忆模块</a><font size="1" color="#888888"> 修改时间:07月26日 11:34:13</font></li>
+<li><a href="iphone%E5%A4%87%E5%BF%98%E5%BD%95/%E5%A5%BD%E5%A5%87%E5%BF%83.md">好奇心</a><font size="1" color="#888888"> 修改时间:07月26日 12:55:53</font></li>
+<li><a href="iphone%E5%A4%87%E5%BF%98%E5%BD%95/%E6%84%9F%E8%A7%89%E7%B3%BB%E7%BB%9F.md">感觉系统</a><font size="1" color="#888888"> 修改时间:07月26日 13:05:08</font></li>
+<li><a href="iphone%E5%A4%87%E5%BF%98%E5%BD%95/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86-%E8%87%AA%E7%84%B6%E8%AF%AD%E4%B9%89%E7%B3%BB%E7%BB%9F.md">自然语言处理-自然语义系统</a><font size="1" color="#888888"> 修改时间:07月26日 13:06:24</font></li>
+<li><a href="iphone%E5%A4%87%E5%BF%98%E5%BD%95/%E5%BC%80%E5%8F%91%E8%AE%A1%E5%88%92.md">开发计划</a><font size="1" color="#888888"> 修改时间:07月26日 13:06:59</font></li>
+<li><a href="iphone%E5%A4%87%E5%BF%98%E5%BD%95/%E8%AE%B0%E5%BF%86%E6%A8%A1%E5%9D%97%3C=%3E%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1.md">记忆模块&lt;=&gt;知识图谱</a><font size="1" color="#888888"> 修改时间:07月26日 13:08:34</font></li>
+<li><a href="iphone%E5%A4%87%E5%BF%98%E5%BD%95/INPUT-%E7%9F%A2%E9%87%8F%E9%9F%B3%E9%A2%91.md">INPUT-矢量音频</a><font size="1" color="#888888"> 修改时间:07月26日 13:28:43</font></li>
+<li><a href="iphone%E5%A4%87%E5%BF%98%E5%BD%95/%E5%A4%87%E5%AD%A6%E8%B5%84%E6%96%99.md">备学资料</a><font size="1" color="#888888"> 修改时间:07月26日 13:15:12</font></li>
+<li><a href="iphone%E5%A4%87%E5%BF%98%E5%BD%95/OUPUT-%E5%AD%97%E7%AC%A6%E4%B8%B2.md">OUPUT-字符串</a><font size="1" color="#888888"> 修改时间:07月26日 13:16:18</font></li>
+<li><a href="iphone%E5%A4%87%E5%BF%98%E5%BD%95/INPUT_%E6%B3%A8%E6%84%8F%E5%8A%9B.md">INPUT_注意力</a><font size="1" color="#888888"> 修改时间:07月26日 13:17:10</font></li>
+<li><a href="iphone%E5%A4%87%E5%BF%98%E5%BD%95/%E8%A1%8C%E4%B8%BA%E4%B8%8E%E8%83%BD%E5%8A%9B.md">行为与能力</a><font size="1" color="#888888"> 修改时间:07月26日 13:19:43</font></li>
+<li><a href="iphone%E5%A4%87%E5%BF%98%E5%BD%95/%E4%B8%BA%E6%8E%A8%E5%8A%A8%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%8F%91%E5%B1%95%E6%89%80%E4%BD%9C%E7%9A%84%E6%80%9D%E8%80%83.md">为推动人工智能的发展所作的思考</a><font size="1" color="#888888"> 修改时间:07月26日 13:27:34</font></li>
+</ul></li>
+</ul>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/javascript">
+!function(){"undefined"!=typeof self&&self.Prism&&self.document&&Prism.hooks.add("complete",function(e){if(e.code){var t=e.element.parentNode,s=/\s*\bline-numbers\b\s*/;if(t&&/pre/i.test(t.nodeName)&&(s.test(t.className)||s.test(e.element.className))&&!e.element.querySelector(".line-numbers-rows")){s.test(e.element.className)&&(e.element.className=e.element.className.replace(s,"")),s.test(t.className)||(t.className+=" line-numbers");var n,a=e.code.match(/\n(?!$)/g),l=a?a.length+1:1,m=new Array(l+1);m=m.join("<span></span>"),n=document.createElement("span"),n.className="line-numbers-rows",n.innerHTML=m,t.hasAttribute("data-start")&&(t.style.counterReset="linenumber "+(parseInt(t.getAttribute("data-start"),10)-1)),e.element.appendChild(n)}}})}();
+</script>
+
+
+</body>
+
+</html>
