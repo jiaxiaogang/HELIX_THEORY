@@ -31,7 +31,7 @@
 	* [Note1](手写笔记/Note1.md)<font size="1" color="#888888"> 修改时间:07月26日 18:04:33</font>
 	* [Note2](手写笔记/Note2.md)<font size="1" color="#888888"> 修改时间:07月26日 18:10:08</font>
 	* [Note3](手写笔记/Note3.md)<font size="1" color="#888888"> 修改时间:08月13日 15:07:30</font>
-	* [Note4](手写笔记/Note4.md)<font size="1" color="#888888"> 修改时间:08月14日 08:48:29</font>
+	* [Note4](手写笔记/Note4.md)<font size="1" color="#888888"> 修改时间:08月15日 07:08:35</font>
 
 - ## 学习
 
@@ -115,6 +115,7 @@
 	* [INPUT_注意力](iphone备忘录/INPUT_注意力.md)<font size="1" color="#888888"> 修改时间:07月26日 13:17:10</font>
 	* [行为与能力](iphone备忘录/行为与能力.md)<font size="1" color="#888888"> 修改时间:07月26日 13:19:43</font>
 	* [为推动人工智能的发展所作的思考](iphone备忘录/为推动人工智能的发展所作的思考.md)<font size="1" color="#888888"> 修改时间:07月26日 13:27:34</font>
+
 
 
 
