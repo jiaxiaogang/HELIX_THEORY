@@ -29,10 +29,22 @@
     * 持续发送
     * 普通连接
     * 强度连接
+    * 静态连接(直接关联关系)
 * AILine是双向或多向的;而AIPointer是单指向的;
- 
-***
+* AILine替代了AILaw和AILogic
+* ???思考:用AILine替代所有的逻辑;
+	* 如果成立:那么
+		1. 所有"树形知识表示"要推翻;
+		2. 例如:为什么我见到不认识的水果,就会想到可能能吃;
+			1. A与B共同Interface;可以抽象为:由两条网络分别连接A can Interface;和B can Interface;
+			2. A与B再有共同的Base;可以抽象为:由两条网络分别连接A isa Base;B isa Base;
+			3. 如果此时出现C;并且C isa Base;我们会判断AB等与can Interface连接的概率很大;从而判断C can? Interface;
 
+![](img/N4P1.png)
+ 
+<br>
+***
+<br><br>
 
 ## (N4P2)思维演化(AI思维的本质)(17.07.14) 
 
