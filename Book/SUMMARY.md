@@ -1,7 +1,3 @@
----
-typora-copy-images-to: ../Book/Img
----
-
 # 目录
 
 ​	[封面](COVER.md)
