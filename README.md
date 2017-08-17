@@ -32,13 +32,13 @@
 	* [Note2](手写笔记/Note2.md)<font size="1" color="#888888"> 修改时间:07月26日 18:10:08</font>
 	* [Note3](手写笔记/Note3.md)<font size="1" color="#888888"> 修改时间:08月13日 15:07:30</font>
 	* [Note4](手写笔记/Note4.md)<font size="1" color="#888888"> 修改时间:08月17日 08:53:39</font>
-	* [Note5](手写笔记/Note5.md)<font size="1" color="#888888"> 修改时间:08月17日 13:45:43</font>
+	* [Note5](手写笔记/Note5.md)<font size="1" color="#888888"> 修改时间:08月17日 13:54:10</font>
 
 - ## Book(SMG系统指南）
 
-	* [封面](Book/COVER.md)
-	* [前言](Book/INTRODUCTION.md)
-	* [目录](Book/SUMMARY.md)
+	* [封面](Book/COVER.md)<font size="1" color="#888888"> 修改时间:08月17日 17:16:48</font>
+	* [前言](Book/INTRODUCTION.md)<font size="1" color="#888888"> 修改时间:08月17日 19:49:57</font>
+	* [目录](Book/SUMMARY.md)<font size="1" color="#888888"> 修改时间:08月17日 19:48:16</font>
 
 - ## 学习
 
@@ -122,6 +122,7 @@
 	* [INPUT_注意力](iphone备忘录/INPUT_注意力.md)<font size="1" color="#888888"> 修改时间:07月26日 13:17:10</font>
 	* [行为与能力](iphone备忘录/行为与能力.md)<font size="1" color="#888888"> 修改时间:07月26日 13:19:43</font>
 	* [为推动人工智能的发展所作的思考](iphone备忘录/为推动人工智能的发展所作的思考.md)<font size="1" color="#888888"> 修改时间:07月26日 13:27:34</font>
+
 
 
 
