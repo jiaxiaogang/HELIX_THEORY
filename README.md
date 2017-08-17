@@ -34,10 +34,11 @@
 	* [Note4](手写笔记/Note4.md)<font size="1" color="#888888"> 修改时间:08月17日 08:53:39</font>
 	* [Note5](手写笔记/Note5.md)<font size="1" color="#888888"> 修改时间:08月17日 13:45:43</font>
 
-- ## Book
+- ## Book(SMG系统指南）
 
-	* [目录](Book/SUMMARY.md)
+	* [封面](Book/COVER.md)
 	* [前言](Book/INTRODUCTION.md)
+	* [目录](Book/SUMMARY.md)
 
 - ## 学习
 
