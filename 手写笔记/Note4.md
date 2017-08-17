@@ -561,7 +561,10 @@
 - 直接用单元开发的方式;去取意识流数据;并分析规律,找到"自己可以被充电"的理解;
 	- N4P18
 	- N4P17
-
+	- todo list
+		- [x] 把AIObject.AIPointer的取值改掉冗余部分;
+		- [ ] 把sourcePointer改成AILine来替代;?
+		- [ ] 把awarenessP改成AILine来替代;?
 
 
 
