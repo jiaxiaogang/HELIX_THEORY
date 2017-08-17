@@ -1,7 +1,7 @@
 
 ***
 
-# <center>SMG系统指南</center>
+# SMG系统指南
 
 ***
 
@@ -9,4 +9,4 @@
 
 
 
-<center>![1](Img/1.jpg)</center>
+![1](Img/1.jpg)
