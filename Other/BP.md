@@ -43,7 +43,7 @@
 		- 都说本性难移,但我早在13岁时把自己性格由内向180度大转弯成外向;我坚信我强大的思维能力,创造能力和优秀的实践能力,可以让我实现梦想。
 
 	- 个人主页:
-		- https://www.j2717.top
+		- http://www.j2717.top
     
 
 
@@ -62,20 +62,23 @@
     1. 设计强人工智能的核心架构;(已完善)
     2. 项目开发;(6万行项目代码)
     3. 制定突破性的AI系统的理念;
-		- [LOP编程思想](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/%E6%89%8B%E5%86%99%E7%AC%94%E8%AE%B0/Note3.md#n4p13loplayer-oriented-programming170803)
+		- [意识](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/%E6%89%8B%E5%86%99%E7%AC%94%E8%AE%B0/Note4.md#目录)
+		- [思维及智能的本质](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/%E6%89%8B%E5%86%99%E7%AC%94%E8%AE%B0/Note4.md#n4p2思维演化ai思维的本质170714)
+    	- [神经网络形成无限维知识表示](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/%E6%89%8B%E5%86%99%E7%AC%94%E8%AE%B0/Note4.md#n4p19第4代知识表示)
+		- [LOP编程思想](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/%E6%89%8B%E5%86%99%E7%AC%94%E8%AE%B0/Note4.md#n4p13loplayer-oriented-programming170803)
 		- [logThink与noLogThink](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/%E6%A1%86%E6%9E%B6/%E8%87%AA%E6%88%91.md#两个运算方式)
 		- [基于理解的NLP](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/Light%E5%8F%8A%E5%BA%94%E7%94%A8/Light.md#nlp语言一定要以描述意思为核心才能达到100正确率)
 		- [深理解与浅理解](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/%E6%A1%86%E6%9E%B6/%E6%B3%A8%E6%84%8F%E5%8A%9B.md)
 		- [三维抽象架构](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/%E6%A1%86%E6%9E%B6/3%E7%BB%B4%E6%8A%BD%E8%B1%A1%E6%A6%82%E8%BF%B0.md)
-		- [树形知识表示](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/%E6%A1%86%E6%9E%B6/3%E7%BB%B4%E6%8A%BD%E8%B1%A1%E6%A6%82%E8%BF%B0.md)
+		- [树形知识表示](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/%E6%89%8B%E5%86%99%E7%AC%94%E8%AE%B0/Note3.md#n3p7数据树理论)
 		- 类比,归纳与统计
 		- 抽象与结构
 		- 不过度依赖算法与大数据
 		- 先天noData
-		- 等等
+		- [等等](https://github.com/jiaxiaogang/SMG_NOTE/blob/master/Book/SUMMARY.md#目录)
 
 4. #### 创始团队成员之间相互是什么关系，认识多久了？之前大家有一起合作过项目吗？
-	- 目前我独自开发,有几个朋友有加入意向;
+	- 目前我独自开发,也有几个朋友有加入意向;(我会从中选择两个左右加入进来一起创业)
 
 5. #### 你们创始团队迄今为这个项目投了多少钱或者付出了多少？现在谁是兼职的，何时能全职？
 	- 每天早上5点起床做开发和思考;晚上相关书籍:如情感机器,认知神经科学,马斯洛的需求理论,道德经等等;(我现在就是兼职,因为要养家,拿到融资马上全职);
@@ -95,12 +98,12 @@
 
 7. #### 项目是否已成立公司，设在哪里？如已成立，请提供公司全称，详细股东名册（包括姓名、股份比例、注册资金和实投投入资金数额）、员工期权池大小。如果还未成立公司，请列出你们计划中的股东、股份比例，及预留员工期权池。
 	
-	- 目前未成立公司,现在我在北京工作;计划中的股东目前目前只我1人,但会预留13%左右期权池,留给未来吸引人才;
+	- 目前公司还在筹备阶段,我在北京;计划中的股东目前目前只我1人,但会预留13%左右期权池,留给未来吸引人才;
 
 8. #### 本轮融资，你们准备融多少，最多出让多少股份？这笔钱预计将达到什么目标？（注意：融资是件很严肃的事，请务必填一个诚实合理的融资方案）。在本次融资前你们有否融过资？如有，请提供上轮融资时间，融资金额，出让比例。
     
-    - 融1000w;出让10%股份。
-    - 这笔钱用来成立公司、招聘开发人员、购置设备和运行公司。
+    - 融1000w;出让5%股份。
+    - 这笔钱用来成立公司、吸引技术人才、购置设备和运行公司。
     - 此前并未融过资。
     
 	
