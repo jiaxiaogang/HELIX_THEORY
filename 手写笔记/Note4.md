@@ -563,8 +563,9 @@
 	- N4P17
 	- todo list
 		- [x] 把AIObject.AIPointer的取值改掉冗余部分;
-		- [ ] 把sourcePointer改成AILine来替代;?
+		- [x] 把sourcePointer改成AILine来替代;?
 		- [ ] 把awarenessP改成AILine来替代;?
+		- [ ] 存新的意识流AIMindValueModel时,AILine还未形成,所以这时马上通知区域点亮是点不亮的;所以应该改下逻辑;让更及时的存储AILine;...
 
 
 
