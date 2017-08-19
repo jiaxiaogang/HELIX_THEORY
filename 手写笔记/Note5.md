@@ -23,9 +23,8 @@
 
 * <font style = "background:#F00;color:#FFF;font-size:19px;">参考:</font>
 
-	> 1. [(N4P1)神经网络-AILine](#n4p1神经网络-ailine)  
-	> 2. [(N4P19)第4代知识表示](#n4p19第4代知识表示与神经网络贴合)
-	> 2. [(N4P19)第4代知识表示](#n4p19第4代知识表示与神经网络贴合)
+	> 1. [(N4P1)神经网络-AILine](Note4.md/#n4p1神经网络ailine)  
+	> 2. [(N4P19)第4代知识表示(与神经网络贴合)](Note4.md/#n4p19第4代知识表示与神经网络贴合)
 
 * <font style = "background:#F00;color:#FFF;font-size:19px;">智能AILine的概念:</font>
 
