@@ -565,7 +565,9 @@
 		- [x] 把AIObject.AIPointer的取值改掉冗余部分;
 		- [x] 把sourcePointer改成AILine来替代;?
 		- [ ] 把awarenessP改成AILine来替代;?
-		- [ ] 存新的意识流AIMindValueModel时,AILine还未形成,所以这时马上通知区域点亮是点不亮的;所以应该改下逻辑;让更及时的存储AILine;...
+		- [x] 存新的意识流AIMindValueModel时,AILine还未形成,所以这时马上通知区域点亮是点不亮的;所以应该改下逻辑;让更及时的存储AILine;...
+		- [ ] SMGUtils.Line66当横向点亮时,去查找类比;
+		- [ ] AILineStore.Line54当纵向点亮时,只有纵向的AILine.Strong才容易点亮;但这个纵向AILine目前还未生成;所以先完成上一条任务;再开发这一条;
 
 
 
