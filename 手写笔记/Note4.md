@@ -279,9 +279,14 @@
 - MindValue.Type
   - mindValue感觉更细腻到附加值，而不是mindValue.Type。
 
-  > 例如:难以下咽的感觉(去索引搜索AILine点亮区域)
+  > 例如1:难以下咽的感觉(去索引搜索AILine点亮区域)
+  >
+  > 例如2:强迫症的人(就是想转笔)
+
+- MindValue的从意识流移出,改用神经网络连接到Law(如Hunger)
 
 <br>
+
 ***
 <br><br>
 ​	
