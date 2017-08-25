@@ -45,7 +45,7 @@
     NSString *appRootPath = [Utils getAppRootPath];
     if (appRootPath == nil) return;
     
-    NSString *readmePath = [NSString stringWithFormat:@"%@README.md",appRootPath];
+    NSString *readmePath = [NSString stringWithFormat:@"%@目录.md",appRootPath];
     NSString *readmeMD = [self openDotMD:readmePath];
     if (readmeMD == nil) return;
     
