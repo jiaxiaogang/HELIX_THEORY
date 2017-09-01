@@ -4,9 +4,9 @@
 
 # 目录
 
-​	[封面](COVER.md)
+​	[封面](Book/COVER.md)
 
-​	[前言](INTRODUCTION.md)
+​	[前言](Book/INTRODUCTION.md)
 
 <br><br><br>
 
@@ -23,11 +23,10 @@
 - 第二节 [浅思考和深思考](Book/Part1/Chapter1.md#第二节-浅思考和深思考)
 - 第三节 [LOP分层编程思想](Book/Part1/Chapter1.md#第三节-lop分层编程思想)
 - 第四节 [三维思维抽象架构](Book/Part1/Chapter1.md#第四节-三维思维抽象架构)
-
-
 - 第五节 [树形知识表示](Book/Part1/Chapter1.md#第五节-树形知识表示)
 - 第六节 [类比、归纳与统计](Book/Part1/Chapter1.md#第六节-类比-归纳与统计)
 - 第七节 [抽象与结构](Book/Part1/Chapter1.md#第七节-抽象与结构)
+- 第八节 [智能多维神经网络](Book/Part1/Chapter1.md#第八节-智能多维神经网络)
 
 ### 第二章  基础架构
 
