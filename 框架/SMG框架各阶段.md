@@ -7,8 +7,10 @@
 	- 以大脑DataFlow为结构;
 3. 阶段:...???型（深简）三维架构;
 	- 以思维为结构;
-4. 阶段
+4. 阶段(知识表示抽象阶段)
 	- 以DataTree,BrainTree为结构;
+5. 阶段LOP(DataLayer)
+6. 阶段Mind(AwarenessLayer)
 
 > 注:新阶段兼容旧阶段;
 
