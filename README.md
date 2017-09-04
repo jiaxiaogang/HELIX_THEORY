@@ -1,5 +1,7 @@
 #  <center>SMG系统指南</center>
 
+[![Join the chat at https://gitter.im/SMG_NOTE/Lobby](https://badges.gitter.im/SMG_NOTE/Lobby.svg)](https://gitter.im/SMG_NOTE/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 
 > ### 大家有交流需求或问题请直接Issues我,在Issues,我知无不言,言无不尽,回复及时,用词流利!`(QQ/微信七天回复一次)`
 
