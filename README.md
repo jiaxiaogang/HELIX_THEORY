@@ -19,31 +19,31 @@
 > 1. 通过SMG的设计原则和理念来介绍本系统的实现原理方式。
 > 2. 通过对SMG架构的多种角度解析来加深讲解为什么这样实现。
 
-### 第一章  [设计理念](Book/Part1/Chapter1.md#第一章设计理念)
+### 第一章  [设计理念](Book/Chapters/Chapter1.md#第一章设计理念)
 
-- 第一节 [NoData](Book/Part1/Chapter1.md#第一节-nodata)
-- 第二节 [浅思考和深思考](Book/Part1/Chapter1.md#第二节-浅思考和深思考)
-- 第三节 [LOP分层编程思想](Book/Part1/Chapter1.md#第三节-lop分层编程思想)
-- 第四节 [三维思维抽象架构](Book/Part1/Chapter1.md#第四节-三维思维抽象架构)
-- 第五节 [树形知识表示](Book/Part1/Chapter1.md#第五节-树形知识表示)
-- 第六节 [类比、归纳与统计](Book/Part1/Chapter1.md#第六节-类比-归纳与统计)
-- 第七节 [抽象与结构](Book/Part1/Chapter1.md#第七节-抽象与结构)
-- 第八节 [智能多维神经网络](Book/Part1/Chapter1.md#第八节-智能多维神经网络)
+- 第一节 [NoData](Book/Chapters/Chapter1.md#第一节-nodata)
+- 第二节 [浅思考和深思考](Book/Chapters/Chapter1.md#第二节-浅思考和深思考)
+- 第三节 [LOP分层编程思想](Book/Chapters/Chapter1.md#第三节-lop分层编程思想)
+- 第四节 [三维思维抽象架构](Book/Chapters/Chapter1.md#第四节-三维思维抽象架构)
+- 第五节 [树形知识表示](Book/Chapters/Chapter1.md#第五节-树形知识表示)
+- 第六节 [类比、归纳与统计](Book/Chapters/Chapter1.md#第六节-类比-归纳与统计)
+- 第七节 [抽象与结构](Book/Chapters/Chapter1.md#第七节-抽象与结构)
+- 第八节 [智能多维神经网络](Book/Chapters/Chapter1.md#第八节-智能多维神经网络)
 
-### 第二章  基础架构
+### 第二章  [基础架构](Book/Chapters/Chapter2.md#第一节-Input)
 
-- 第一节  [Input](Book/Part1/Chapter2.md#第一节-Input)
-- 第二节  [Output](目录.md)
-- 第三节  [Think](目录.md)
-- 第四节  [Mind](目录.md)
+- 第一节  Input
+- 第二节  Output
+- 第三节  Think
+- 第四节  Mind
 
-### 第三章 知识表示
+### 第三章 [知识表示](Book/Chapters/Chapter3.md)
 
-- 第一节  [Memory记忆](目录.md)
-- 第二节  [意识流](目录.md)
-- 第三节  [MindValue](目录.md)
-- 第四节  [权重](目录.md)
-- 第五节  [无限维数据抽象（借助神经网络）](目录.md)
+- 第一节  Memory记忆
+- 第二节  意识流
+- 第三节  MindValue
+- 第四节  权重
+- 第五节  无限维数据抽象（借助神经网络）
 
 ### 第四章 [数据树](目录.md)
 
@@ -81,7 +81,7 @@
   - 3.2 [需求的博弈](目录.md)
   - 3.3 [意识的线程](目录.md)
 
-### 第八章  精神引擎](目录.md)
+### 第八章  [精神引擎](目录.md)
 
 - 第一节  [Mind引擎](目录.md)
   - 1.1 [Mine](目录.md)
@@ -100,7 +100,7 @@
 > 1. 通过LOP分层编程思想来讲解SMG系统实现的基础方式。
 > 2. 通过代码的方式来讲解SMG系统的具体实现。
 
-### 第九章  [LOP分层编程思想](目录.md)
+### 第九章  [LOP分层编程思想](Book/Chapters/Chapter9.md)
 
 - 第一节  [CodeLayer](目录.md)
   - 1.1 [函数](目录.md)
@@ -207,7 +207,7 @@
 
 ### 第十七章 [AI的安全](目录.md)
 
-- 第一节  [温和友善的朋友](Book/Part4/Chapter17.md)
+- 第一节  [温和友善的朋友](Book/Chapters/Chapter17.md)
 
 ### 第十八章 [AI的生存空间](目录.md)
 
