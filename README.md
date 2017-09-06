@@ -49,49 +49,49 @@
 ### 第四章 [神经网络](Book/Chapters/Chapter4.md)
 
 
-### 第五章  [思维](目录.md)
+### 第五章  [思维](Book/Chapters/Chapter5.md)
 
-- 第一节  [只读思维](目录.md)
-- 第二节  [可写思维](目录.md)
-- 第三节  [数据思维（思考分析）](目录.md)
-- 第四节  [后台思维](目录.md)
-- 第五节  [权重](目录.md)
+- 第一节  只读思维
+- 第二节  可写思维
+- 第三节  数据思维（思考分析）
+- 第四节  后台思维
+- 第五节  权重
 
-### 第六章  [思维方式](目录.md)
+### 第六章  [思维方式](Book/Chapters/Chapter6.md)
 
-- 第一节  [类比](目录.md)
-  - 1.1 [小样本分析](目录.md)
-  - 1.3 [基于类比的识别](目录.md)
-  - 1.4 [基于类比的思考（解决问题）](目录.md)
-- 第二节  [归纳](目录.md)
-  - 2.1 [归纳常识](目录.md)
-  - 2.2 [归纳出神经网络的新节点](目录.md)
-- 第三节  [统计](目录.md)
-- 第四节 [思维的本质](目录.md)
-- 第五节 [Demand的解](目录.md)
+- 第一节  [类比](Book/Chapters/Chapter6.md)
+  - 1.1 [小样本分析](Book/Chapters/Chapter6.md)
+  - 1.3 [基于类比的识别](Book/Chapters/Chapter6.md)
+  - 1.4 [基于类比的思考（解决问题）](Book/Chapters/Chapter6.md)
+- 第二节  [归纳](Book/Chapters/Chapter6.md)
+  - 2.1 [归纳常识](Book/Chapters/Chapter6.md)
+  - 2.2 [归纳出神经网络的新节点](Book/Chapters/Chapter6.md)
+- 第三节  [统计](Book/Chapters/Chapter6.md)
+- 第四节 [思维的本质](Book/Chapters/Chapter6.md)
+- 第五节 [Demand的解](Book/Chapters/Chapter6.md)
 
-### 第七章  [意识架构](目录.md)
+### 第七章  [意识架构](Book/Chapters/Chapter7.md)
 
-- 第一节  [无意识](目录.md)
-  - 1.1 [唯一性判断](目录.md)
-- 第二节  [潜意识](目录.md)
-  - 2.1 [注意力](目录.md)
-  - 2.2 [预测](目录.md)
-  - 2.3 [无聊感](目录.md)
-- 第三节  [有意识](目录.md)
-  - 3.1 [需求](目录.md)
-  - 3.2 [需求的博弈](目录.md)
-  - 3.3 [意识的线程](目录.md)
+- 第一节  [无意识](Book/Chapters/Chapter7.md)
+  - 1.1 [唯一性判断](Book/Chapters/Chapter7.md)
+- 第二节  [潜意识](Book/Chapters/Chapter7.md)
+  - 2.1 [注意力](Book/Chapters/Chapter7.md)
+  - 2.2 [预测](Book/Chapters/Chapter7.md)
+  - 2.3 [无聊感](Book/Chapters/Chapter7.md)
+- 第三节  [有意识](Book/Chapters/Chapter7.md)
+  - 3.1 [需求](Book/Chapters/Chapter7.md)
+  - 3.2 [需求的博弈](Book/Chapters/Chapter7.md)
+  - 3.3 [意识的线程](Book/Chapters/Chapter7.md)
 
-### 第八章  [精神引擎](目录.md)
+### 第八章  [精神引擎](Book/Chapters/Chapter8.md)
 
-- 第一节  [Mind引擎](目录.md)
-  - 1.1 [Mine](目录.md)
-    - 1.1.1 [Hunger](目录.md)
-- 第二节  [Mood](目录.md)
-  - 2.1 [MindValue](目录.md)
-  - 2.2 [MoodDurationManager](目录.md)
-- 第三节  [MindControl](目录.md)
+- 第一节  [Mind引擎](Book/Chapters/Chapter8.md)
+  - 1.1 [Mine](Book/Chapters/Chapter8.md)
+    - 1.1.1 [Hunger](Book/Chapters/Chapter8.md)
+- 第二节  [Mood](Book/Chapters/Chapter8.md)
+  - 2.1 [MindValue](Book/Chapters/Chapter8.md)
+  - 2.2 [MoodDurationManager](Book/Chapters/Chapter8.md)
+- 第三节  [MindControl](Book/Chapters/Chapter8.md)
 
 <br><br><br><br><br>
 
@@ -104,19 +104,19 @@
 
 ### 第九章  [LOP分层编程思想](Book/Chapters/Chapter9.md)
 
-- 第一节  [CodeLayer](目录.md)
-  - 1.1 [函数](目录.md)
-  - 1.2 [采集到意识流的数据](目录.md)
-- 第二节  [DataLayer](目录.md)
-  - 2.1 [反射调用](目录.md)
-  - 2.2 [知识表示](目录.md)
-  - 2.3 [数据逻辑](目录.md)
-- 第三节  [AwarenessLayer](目录.md)
-  - 3.1 [冥想](目录.md)
-  - 3.2 [意识心跳](目录.md)
-  - 3.3 [意识流激活](目录.md)
-- 第四节 [LOP的特点](目录.md)
-- 第五节 [LOP与OOP对比](目录.md)
+- 第一节  [CodeLayer](Book/Chapters/Chapter9.md)
+  - 1.1 [函数](Book/Chapters/Chapter9.md)
+  - 1.2 [采集到意识流的数据](Book/Chapters/Chapter9.md)
+- 第二节  [DataLayer](Book/Chapters/Chapter9.md)
+  - 2.1 [反射调用](Book/Chapters/Chapter9.md)
+  - 2.2 [知识表示](Book/Chapters/Chapter9.md)
+  - 2.3 [数据逻辑](Book/Chapters/Chapter9.md)
+- 第三节  [AwarenessLayer](Book/Chapters/Chapter9.md)
+  - 3.1 [冥想](Book/Chapters/Chapter9.md)
+  - 3.2 [意识心跳](Book/Chapters/Chapter9.md)
+  - 3.3 [意识流激活](Book/Chapters/Chapter9.md)
+- 第四节 [LOP的特点](Book/Chapters/Chapter9.md)
+- 第五节 [LOP与OOP对比](Book/Chapters/Chapter9.md)
 
 ### 第十章  [第六感 & 通用感觉算法](目录.md)
 
