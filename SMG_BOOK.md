@@ -29,6 +29,7 @@
 - 第六节 [类比、归纳与统计](Book/Chapters/Chapter1.md#第六节-类比-归纳与统计)
 - 第七节 [抽象与结构](Book/Chapters/Chapter1.md#第七节-抽象与结构)
 - 第八节 [智能多维神经网络](Book/Chapters/Chapter1.md#第八节-智能多维神经网络)
+- 第九节 [内外感觉](Book/Chapters/Chapter1.md#第九节-内外感觉)
 
 ### 第二章  [基础架构](Book/Chapters/Chapter2.md#第一节-Input)
 
@@ -140,7 +141,7 @@
 - 第一节  [AIPointer](目录.md)
 - 第二节  [AILine](目录.md)
 
-### 第十四章  [神经网络](目录.md)
+### 第十四章  [神经网络的代码设计](目录.md)
 
 - 第一节 [网络强度strong](目录.md)
   - 1.1 [strong的形成](目录.md)
