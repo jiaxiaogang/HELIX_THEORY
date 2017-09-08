@@ -118,7 +118,10 @@
 - 第四节 [LOP的特点](Book/Chapters/Chapter9.md)
 - 第五节 [LOP与OOP对比](Book/Chapters/Chapter9.md)
 
-### 第十章  [第六感 & 通用感觉算法](目录.md)
+### 第十章  [感觉](Book/Chapters/Chapter10.md)
+
+* 第一节  外感觉
+* 第二节  内感觉
 
 ### 第十一章  [抽象](目录.md)
 
