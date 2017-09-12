@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXContainerItemProxy section */
-		082C9A5E1F502CB600C414E2 /* PBXContainerItemProxy */ = {
+		08D193691F675D7200CBB18F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 082C9A521F502CB600C414E2 /* MarkDownNote_ModifyTimeTool.xcodeproj */;
+			containerPortal = 08D193551F675D7200CBB18F /* MarkDownNote_ModifyTimeTool.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 083E9B6B1F31F4BC00ABC0FB;
 			remoteInfo = MarkDownNote_ModifyTimeTool;
@@ -17,617 +17,646 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		082C997C1F502CB500C414E2 /* GC.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = GC.md; sourceTree = "<group>"; };
-		082C997D1F502CB500C414E2 /* 想像力.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "想像力.md"; sourceTree = "<group>"; };
-		082C997E1F502CB500C414E2 /* 无意识的思考.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "无意识的思考.md"; sourceTree = "<group>"; };
-		082C997F1F502CB500C414E2 /* 联想功能.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "联想功能.md"; sourceTree = "<group>"; };
-		082C99811F502CB500C414E2 /* 17.07.19.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = 17.07.19.md; sourceTree = "<group>"; };
-		082C99831F502CB500C414E2 /* 3维抽象概述.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "3维抽象概述.md"; sourceTree = "<group>"; };
-		082C99841F502CB500C414E2 /* Decision.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Decision.md; sourceTree = "<group>"; };
-		082C99851F502CB500C414E2 /* Input.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Input.md; sourceTree = "<group>"; };
-		082C99861F502CB500C414E2 /* Mind.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Mind.md; sourceTree = "<group>"; };
-		082C99871F502CB500C414E2 /* OUTPUT.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = OUTPUT.md; sourceTree = "<group>"; };
-		082C99881F502CB500C414E2 /* SMG框架各阶段.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "SMG框架各阶段.md"; sourceTree = "<group>"; };
-		082C99891F502CB500C414E2 /* Understand.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Understand.md; sourceTree = "<group>"; };
-		082C998A1F502CB500C414E2 /* 创造力.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "创造力.md"; sourceTree = "<group>"; };
-		082C998B1F502CB500C414E2 /* 开发任务.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "开发任务.md"; sourceTree = "<group>"; };
-		082C998C1F502CB500C414E2 /* 归纳推理.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "归纳推理.md"; sourceTree = "<group>"; };
-		082C998D1F502CB500C414E2 /* 思考的引子.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "思考的引子.md"; sourceTree = "<group>"; };
-		082C998E1F502CB500C414E2 /* 数据.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "数据.md"; sourceTree = "<group>"; };
-		082C998F1F502CB500C414E2 /* 时间&空间.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "时间&空间.md"; sourceTree = "<group>"; };
-		082C99901F502CB500C414E2 /* 框架17.5.7表述.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "框架17.5.7表述.md"; sourceTree = "<group>"; };
-		082C99911F502CB500C414E2 /* 注意力.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "注意力.md"; sourceTree = "<group>"; };
-		082C99921F502CB500C414E2 /* 知识表示.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "知识表示.md"; sourceTree = "<group>"; };
-		082C99931F502CB500C414E2 /* 神经网络.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "神经网络.md"; sourceTree = "<group>"; };
-		082C99941F502CB500C414E2 /* 类比推理.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "类比推理.md"; sourceTree = "<group>"; };
-		082C99951F502CB500C414E2 /* 自我.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "自我.md"; sourceTree = "<group>"; };
-		082C99961F502CB500C414E2 /* 错觉研究.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "错觉研究.md"; sourceTree = "<group>"; };
-		082C99971F502CB500C414E2 /* 问题.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "问题.md"; sourceTree = "<group>"; };
-		082C99981F502CB500C414E2 /* 目录.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "目录.md"; sourceTree = "<group>"; };
-		082C999A1F502CB500C414E2 /* 视觉.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "视觉.md"; sourceTree = "<group>"; };
-		082C999D1F502CB500C414E2 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
-		082C999E1F502CB500C414E2 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
-		082C999F1F502CB500C414E2 /* N1P1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P1.png; sourceTree = "<group>"; };
-		082C99A01F502CB500C414E2 /* N1P10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P10.png; sourceTree = "<group>"; };
-		082C99A11F502CB500C414E2 /* N1P11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P11.png; sourceTree = "<group>"; };
-		082C99A21F502CB500C414E2 /* N1P12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P12.png; sourceTree = "<group>"; };
-		082C99A31F502CB500C414E2 /* N1P13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P13.png; sourceTree = "<group>"; };
-		082C99A41F502CB500C414E2 /* N1P14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P14.png; sourceTree = "<group>"; };
-		082C99A51F502CB500C414E2 /* N1P15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P15.png; sourceTree = "<group>"; };
-		082C99A61F502CB500C414E2 /* N1P16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P16.png; sourceTree = "<group>"; };
-		082C99A71F502CB500C414E2 /* N1P17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P17.png; sourceTree = "<group>"; };
-		082C99A81F502CB500C414E2 /* N1P18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P18.png; sourceTree = "<group>"; };
-		082C99A91F502CB500C414E2 /* N1P2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P2.png; sourceTree = "<group>"; };
-		082C99AA1F502CB500C414E2 /* N1P3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P3.png; sourceTree = "<group>"; };
-		082C99AB1F502CB500C414E2 /* N1P4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P4.png; sourceTree = "<group>"; };
-		082C99AC1F502CB500C414E2 /* N1P5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P5.png; sourceTree = "<group>"; };
-		082C99AD1F502CB500C414E2 /* N1P6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P6.png; sourceTree = "<group>"; };
-		082C99AE1F502CB500C414E2 /* N1P7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P7.png; sourceTree = "<group>"; };
-		082C99AF1F502CB500C414E2 /* N1P8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P8.png; sourceTree = "<group>"; };
-		082C99B01F502CB500C414E2 /* N1P9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P9.png; sourceTree = "<group>"; };
-		082C99B11F502CB500C414E2 /* N2P1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P1.png; sourceTree = "<group>"; };
-		082C99B21F502CB500C414E2 /* N2P10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P10.png; sourceTree = "<group>"; };
-		082C99B31F502CB500C414E2 /* N2P11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P11.png; sourceTree = "<group>"; };
-		082C99B41F502CB500C414E2 /* N2P12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P12.png; sourceTree = "<group>"; };
-		082C99B51F502CB500C414E2 /* N2P13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P13.png; sourceTree = "<group>"; };
-		082C99B61F502CB500C414E2 /* N2P14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P14.png; sourceTree = "<group>"; };
-		082C99B71F502CB500C414E2 /* N2P15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P15.png; sourceTree = "<group>"; };
-		082C99B81F502CB500C414E2 /* N2P16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P16.png; sourceTree = "<group>"; };
-		082C99B91F502CB500C414E2 /* N2P17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P17.png; sourceTree = "<group>"; };
-		082C99BA1F502CB500C414E2 /* N2P18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P18.png; sourceTree = "<group>"; };
-		082C99BB1F502CB500C414E2 /* N2P2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P2.png; sourceTree = "<group>"; };
-		082C99BC1F502CB500C414E2 /* N2P3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P3.png; sourceTree = "<group>"; };
-		082C99BD1F502CB500C414E2 /* N2P4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P4.png; sourceTree = "<group>"; };
-		082C99BE1F502CB500C414E2 /* N2P5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P5.png; sourceTree = "<group>"; };
-		082C99BF1F502CB500C414E2 /* N2P6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P6.png; sourceTree = "<group>"; };
-		082C99C01F502CB500C414E2 /* N2P7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P7.png; sourceTree = "<group>"; };
-		082C99C11F502CB500C414E2 /* N2P8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P8.png; sourceTree = "<group>"; };
-		082C99C21F502CB500C414E2 /* N2P9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P9.png; sourceTree = "<group>"; };
-		082C99C31F502CB500C414E2 /* N2POther.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2POther.png; sourceTree = "<group>"; };
-		082C99C41F502CB500C414E2 /* N3P1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N3P1.png; sourceTree = "<group>"; };
-		082C99C51F502CB500C414E2 /* N3P11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N3P11.png; sourceTree = "<group>"; };
-		082C99C61F502CB500C414E2 /* N3P2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N3P2.png; sourceTree = "<group>"; };
-		082C99C71F502CB500C414E2 /* N3P3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N3P3.png; sourceTree = "<group>"; };
-		082C99C81F502CB500C414E2 /* N3P4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N3P4.png; sourceTree = "<group>"; };
-		082C99C91F502CB500C414E2 /* N3P5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N3P5.png; sourceTree = "<group>"; };
-		082C99CA1F502CB500C414E2 /* N3P6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N3P6.png; sourceTree = "<group>"; };
-		082C99CB1F502CB500C414E2 /* N4P1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N4P1.png; sourceTree = "<group>"; };
-		082C99CC1F502CB500C414E2 /* N4P19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N4P19.png; sourceTree = "<group>"; };
-		082C99CD1F502CB500C414E2 /* N5P3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N5P3.png; sourceTree = "<group>"; };
-		082C99CE1F502CB500C414E2 /* Note1.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Note1.md; sourceTree = "<group>"; };
-		082C99CF1F502CB500C414E2 /* Note2.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Note2.md; sourceTree = "<group>"; };
-		082C99D01F502CB500C414E2 /* Note3.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Note3.md; sourceTree = "<group>"; };
-		082C99D11F502CB500C414E2 /* Note4.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Note4.md; sourceTree = "<group>"; };
-		082C99D21F502CB500C414E2 /* Note5.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Note5.md; sourceTree = "<group>"; };
-		082C99D51F502CB500C414E2 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
-		082C99D61F502CB500C414E2 /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
-		082C99D71F502CB500C414E2 /* 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 11.png; sourceTree = "<group>"; };
-		082C99D81F502CB500C414E2 /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12.png; sourceTree = "<group>"; };
-		082C99D91F502CB500C414E2 /* 13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13.png; sourceTree = "<group>"; };
-		082C99DA1F502CB500C414E2 /* 14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 14.png; sourceTree = "<group>"; };
-		082C99DB1F502CB500C414E2 /* 15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 15.png; sourceTree = "<group>"; };
-		082C99DC1F502CB500C414E2 /* 16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 16.png; sourceTree = "<group>"; };
-		082C99DD1F502CB500C414E2 /* 17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 17.png; sourceTree = "<group>"; };
-		082C99DE1F502CB500C414E2 /* 18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 18.png; sourceTree = "<group>"; };
-		082C99DF1F502CB500C414E2 /* 19.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 19.jpg; sourceTree = "<group>"; };
-		082C99E01F502CB500C414E2 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
-		082C99E11F502CB500C414E2 /* 20.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 20.jpg; sourceTree = "<group>"; };
-		082C99E21F502CB500C414E2 /* 21.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 21.jpg; sourceTree = "<group>"; };
-		082C99E31F502CB500C414E2 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
-		082C99E41F502CB500C414E2 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
-		082C99E51F502CB500C414E2 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
-		082C99E61F502CB500C414E2 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
-		082C99E71F502CB500C414E2 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
-		082C99E81F502CB500C414E2 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
-		082C99E91F502CB500C414E2 /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
-		082C99EA1F502CB500C414E2 /* List语言.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "List语言.md"; sourceTree = "<group>"; };
-		082C99EB1F502CB500C414E2 /* python语言.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "python语言.md"; sourceTree = "<group>"; };
-		082C99EC1F502CB500C414E2 /* TheUseOfKnowledgeInAnalogyAndInduction读书笔记.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "TheUseOfKnowledgeInAnalogyAndInduction读书笔记.md"; sourceTree = "<group>"; };
-		082C99ED1F502CB500C414E2 /* 人工智能一种现代的方法(StuartRussell).md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "人工智能一种现代的方法(StuartRussell).md"; sourceTree = "<group>"; };
-		082C99EE1F502CB500C414E2 /* 双脑记.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "双脑记.md"; sourceTree = "<group>"; };
-		082C99EF1F502CB500C414E2 /* 情感机器.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "情感机器.md"; sourceTree = "<group>"; };
-		082C99F01F502CB500C414E2 /* 机器学习基础.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "机器学习基础.md"; sourceTree = "<group>"; };
-		082C99F11F502CB500C414E2 /* 生物脑学.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "生物脑学.md"; sourceTree = "<group>"; };
-		082C99F21F502CB500C414E2 /* 知识表示表达方法基础.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "知识表示表达方法基础.md"; sourceTree = "<group>"; };
-		082C99F31F502CB500C414E2 /* 认知神经科学-关于心智的生物学.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "认知神经科学-关于心智的生物学.md"; sourceTree = "<group>"; };
-		082C99F41F502CB500C414E2 /* 阿兰图灵.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "阿兰图灵.md"; sourceTree = "<group>"; };
-		082C99F71F502CB500C414E2 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
-		082C99F81F502CB500C414E2 /* 三方库或工具.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "三方库或工具.md"; sourceTree = "<group>"; };
-		082C99F91F502CB500C414E2 /* 其它.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "其它.md"; sourceTree = "<group>"; };
-		082C99FA1F502CB500C414E2 /* 发展现状分析.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "发展现状分析.md"; sourceTree = "<group>"; };
-		082C99FB1F502CB500C414E2 /* 旧资料.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "旧资料.md"; sourceTree = "<group>"; };
-		082C99FD1F502CB500C414E2 /* COVER.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = COVER.md; sourceTree = "<group>"; };
-		082C99FF1F502CB500C414E2 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
-		082C9A001F502CB500C414E2 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
-		082C9A011F502CB500C414E2 /* tmp1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tmp1.jpg; sourceTree = "<group>"; };
-		082C9A021F502CB500C414E2 /* tmp2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tmp2.jpg; sourceTree = "<group>"; };
-		082C9A031F502CB500C414E2 /* tmp3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmp3.png; sourceTree = "<group>"; };
-		082C9A041F502CB500C414E2 /* tmp4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmp4.png; sourceTree = "<group>"; };
-		082C9A051F502CB500C414E2 /* tmp5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmp5.png; sourceTree = "<group>"; };
-		082C9A061F502CB500C414E2 /* INTRODUCTION.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = INTRODUCTION.md; sourceTree = "<group>"; };
-		082C9A081F502CB500C414E2 /* Chapter1.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Chapter1.md; sourceTree = "<group>"; };
-		082C9A0B1F502CB500C414E2 /* 虚拟应用.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "虚拟应用.md"; sourceTree = "<group>"; };
-		082C9A0D1F502CB500C414E2 /* SUMMARY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SUMMARY.md; sourceTree = "<group>"; };
-		082C9A0E1F502CB500C414E2 /* 归纳何时执行.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "归纳何时执行.md"; sourceTree = "<group>"; };
-		082C9A0F1F502CB500C414E2 /* 聊意识主线程和非主线程的IO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "聊意识主线程和非主线程的IO.md"; sourceTree = "<group>"; };
-		082C9A101F502CB500C414E2 /* 聊机器学习的1_2部分.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "聊机器学习的1_2部分.md"; sourceTree = "<group>"; };
-		082C9A121F502CB500C414E2 /* 17门派.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "17门派.md"; sourceTree = "<group>"; };
-		082C9A131F502CB500C414E2 /* AIFoundation.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = AIFoundation.md; sourceTree = "<group>"; };
-		082C9A151F502CB500C414E2 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
-		082C9A161F502CB500C414E2 /* 前言.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "前言.md"; sourceTree = "<group>"; };
-		082C9A171F502CB500C414E2 /* 学习计划.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "学习计划.md"; sourceTree = "<group>"; };
-		082C9A191F502CB500C414E2 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
-		082C9A1A1F502CB500C414E2 /* 10.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 10.tiff; sourceTree = "<group>"; };
-		082C9A1B1F502CB500C414E2 /* 2.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 2.tiff; sourceTree = "<group>"; };
-		082C9A1C1F502CB500C414E2 /* 3.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 3.tiff; sourceTree = "<group>"; };
-		082C9A1D1F502CB500C414E2 /* 4.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 4.tiff; sourceTree = "<group>"; };
-		082C9A1E1F502CB500C414E2 /* 5.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 5.tiff; sourceTree = "<group>"; };
-		082C9A1F1F502CB500C414E2 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
-		082C9A201F502CB500C414E2 /* 7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.jpeg; sourceTree = "<group>"; };
-		082C9A211F502CB500C414E2 /* 8.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.JPG; sourceTree = "<group>"; };
-		082C9A221F502CB500C414E2 /* 9.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.JPG; sourceTree = "<group>"; };
-		082C9A231F502CB500C414E2 /* INPUT-矢量音频.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "INPUT-矢量音频.md"; sourceTree = "<group>"; };
-		082C9A241F502CB500C414E2 /* INPUT_注意力.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "INPUT_注意力.md"; sourceTree = "<group>"; };
-		082C9A251F502CB500C414E2 /* onenote笔记.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "onenote笔记.md"; sourceTree = "<group>"; };
-		082C9A261F502CB500C414E2 /* OUPUT-字符串.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "OUPUT-字符串.md"; sourceTree = "<group>"; };
-		082C9A271F502CB500C414E2 /* output.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = output.md; sourceTree = "<group>"; };
-		082C9A281F502CB500C414E2 /* 临时.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "临时.md"; sourceTree = "<group>"; };
-		082C9A291F502CB500C414E2 /* 为推动人工智能的发展所作的思考.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "为推动人工智能的发展所作的思考.md"; sourceTree = "<group>"; };
-		082C9A2A1F502CB500C414E2 /* 参考资料.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "参考资料.md"; sourceTree = "<group>"; };
-		082C9A2B1F502CB500C414E2 /* 备学资料.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "备学资料.md"; sourceTree = "<group>"; };
-		082C9A2C1F502CB500C414E2 /* 大脑模块.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "大脑模块.md"; sourceTree = "<group>"; };
-		082C9A2D1F502CB500C414E2 /* 好奇心.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "好奇心.md"; sourceTree = "<group>"; };
-		082C9A2E1F502CB500C414E2 /* 应用层计划.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "应用层计划.md"; sourceTree = "<group>"; };
-		082C9A2F1F502CB500C414E2 /* 开发计划.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "开发计划.md"; sourceTree = "<group>"; };
-		082C9A301F502CB500C414E2 /* 感觉系统.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "感觉系统.md"; sourceTree = "<group>"; };
-		082C9A311F502CB500C414E2 /* 架构.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "架构.md"; sourceTree = "<group>"; };
-		082C9A321F502CB500C414E2 /* 理解系统.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "理解系统.md"; sourceTree = "<group>"; };
-		082C9A331F502CB500C414E2 /* 知识图谱.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "知识图谱.md"; sourceTree = "<group>"; };
-		082C9A341F502CB500C414E2 /* 第一代人工智能设计.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "第一代人工智能设计.md"; sourceTree = "<group>"; };
-		082C9A351F502CB500C414E2 /* 第二代人工智能设计.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "第二代人工智能设计.md"; sourceTree = "<group>"; };
-		082C9A361F502CB500C414E2 /* 自然语言处理-自然语义系统.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "自然语言处理-自然语义系统.md"; sourceTree = "<group>"; };
-		082C9A371F502CB500C414E2 /* 行为与能力.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "行为与能力.md"; sourceTree = "<group>"; };
-		082C9A381F502CB500C414E2 /* 计算机视觉.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "计算机视觉.md"; sourceTree = "<group>"; };
-		082C9A391F502CB500C414E2 /* 记忆模块.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "记忆模块.md"; sourceTree = "<group>"; };
-		082C9A3A1F502CB500C414E2 /* 记忆模块<=>知识图谱.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "记忆模块<=>知识图谱.md"; sourceTree = "<group>"; };
-		082C9A3B1F502CB500C414E2 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		082C9A3D1F502CB600C414E2 /* DeepLearning下步预言.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "DeepLearning下步预言.md"; sourceTree = "<group>"; };
-		082C9A3E1F502CB600C414E2 /* Light.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Light.md; sourceTree = "<group>"; };
-		082C9A3F1F502CB600C414E2 /* MarkDownNote_ModifyTimeTool.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = MarkDownNote_ModifyTimeTool.app; sourceTree = "<group>"; };
-		082C9A401F502CB600C414E2 /* 应用.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "应用.md"; sourceTree = "<group>"; };
-		082C9A411F502CB600C414E2 /* MarkDownNote_ModifyTimeTool.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = MarkDownNote_ModifyTimeTool.app; sourceTree = "<group>"; };
-		082C9A431F502CB600C414E2 /* BP.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = BP.md; sourceTree = "<group>"; };
-		082C9A471F502CB600C414E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		082C9A481F502CB600C414E2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		082C9A491F502CB600C414E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		082C9A4B1F502CB600C414E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		082C9A4C1F502CB600C414E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		082C9A4D1F502CB600C414E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		082C9A4E1F502CB600C414E2 /* NSDate+Escort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Escort.h"; sourceTree = "<group>"; };
-		082C9A4F1F502CB600C414E2 /* NSDate+Escort.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Escort.m"; sourceTree = "<group>"; };
-		082C9A501F502CB600C414E2 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
-		082C9A511F502CB600C414E2 /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
-		082C9A521F502CB600C414E2 /* MarkDownNote_ModifyTimeTool.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = MarkDownNote_ModifyTimeTool.xcodeproj; sourceTree = "<group>"; };
-		082C9A551F502CB600C414E2 /* refreshIcon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = refreshIcon.jpeg; sourceTree = "<group>"; };
-		082C9A561F502CB600C414E2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		082C9A581F502CB600C414E2 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
-		082C9A591F502CB600C414E2 /* Temp.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Temp.md; sourceTree = "<group>"; };
-		082C9A5A1F502CB600C414E2 /* 开发任务.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "开发任务.md"; sourceTree = "<group>"; };
-		082C9A5B1F502CB600C414E2 /* 类人的学习项目.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "类人的学习项目.md"; sourceTree = "<group>"; };
-		082C9A5C1F502CB600C414E2 /* 记忆系统结构分析.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "记忆系统结构分析.md"; sourceTree = "<group>"; };
+		08D192761F675D7200CBB18F /* GC.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = GC.md; sourceTree = "<group>"; };
+		08D192771F675D7200CBB18F /* 想像力.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "想像力.md"; sourceTree = "<group>"; };
+		08D192781F675D7200CBB18F /* 无意识的思考.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "无意识的思考.md"; sourceTree = "<group>"; };
+		08D192791F675D7200CBB18F /* 联想功能.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "联想功能.md"; sourceTree = "<group>"; };
+		08D1927B1F675D7200CBB18F /* 17.07.19.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = 17.07.19.md; sourceTree = "<group>"; };
+		08D1927D1F675D7200CBB18F /* 3维抽象概述.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "3维抽象概述.md"; sourceTree = "<group>"; };
+		08D1927E1F675D7200CBB18F /* Decision.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Decision.md; sourceTree = "<group>"; };
+		08D1927F1F675D7200CBB18F /* Input.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Input.md; sourceTree = "<group>"; };
+		08D192801F675D7200CBB18F /* Mind.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Mind.md; sourceTree = "<group>"; };
+		08D192811F675D7200CBB18F /* OUTPUT.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = OUTPUT.md; sourceTree = "<group>"; };
+		08D192821F675D7200CBB18F /* SMG框架各阶段.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "SMG框架各阶段.md"; sourceTree = "<group>"; };
+		08D192831F675D7200CBB18F /* Understand.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Understand.md; sourceTree = "<group>"; };
+		08D192841F675D7200CBB18F /* 创造力.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "创造力.md"; sourceTree = "<group>"; };
+		08D192851F675D7200CBB18F /* 开发任务.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "开发任务.md"; sourceTree = "<group>"; };
+		08D192861F675D7200CBB18F /* 归纳推理.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "归纳推理.md"; sourceTree = "<group>"; };
+		08D192871F675D7200CBB18F /* 思考的引子.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "思考的引子.md"; sourceTree = "<group>"; };
+		08D192881F675D7200CBB18F /* 数据.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "数据.md"; sourceTree = "<group>"; };
+		08D192891F675D7200CBB18F /* 时间&空间.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "时间&空间.md"; sourceTree = "<group>"; };
+		08D1928A1F675D7200CBB18F /* 框架17.5.7表述.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "框架17.5.7表述.md"; sourceTree = "<group>"; };
+		08D1928B1F675D7200CBB18F /* 框架图示.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "框架图示.md"; sourceTree = "<group>"; };
+		08D1928C1F675D7200CBB18F /* 注意力.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "注意力.md"; sourceTree = "<group>"; };
+		08D1928D1F675D7200CBB18F /* 知识表示.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "知识表示.md"; sourceTree = "<group>"; };
+		08D1928E1F675D7200CBB18F /* 神经网络.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "神经网络.md"; sourceTree = "<group>"; };
+		08D1928F1F675D7200CBB18F /* 类比推理.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "类比推理.md"; sourceTree = "<group>"; };
+		08D192901F675D7200CBB18F /* 自我.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "自我.md"; sourceTree = "<group>"; };
+		08D192911F675D7200CBB18F /* 错觉研究.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "错觉研究.md"; sourceTree = "<group>"; };
+		08D192921F675D7200CBB18F /* 问题.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "问题.md"; sourceTree = "<group>"; };
+		08D192931F675D7200CBB18F /* 目录.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "目录.md"; sourceTree = "<group>"; };
+		08D192951F675D7200CBB18F /* 视觉.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "视觉.md"; sourceTree = "<group>"; };
+		08D192981F675D7200CBB18F /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		08D192991F675D7200CBB18F /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		08D1929A1F675D7200CBB18F /* N1P1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P1.png; sourceTree = "<group>"; };
+		08D1929B1F675D7200CBB18F /* N1P10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P10.png; sourceTree = "<group>"; };
+		08D1929C1F675D7200CBB18F /* N1P11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P11.png; sourceTree = "<group>"; };
+		08D1929D1F675D7200CBB18F /* N1P12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P12.png; sourceTree = "<group>"; };
+		08D1929E1F675D7200CBB18F /* N1P13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P13.png; sourceTree = "<group>"; };
+		08D1929F1F675D7200CBB18F /* N1P14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P14.png; sourceTree = "<group>"; };
+		08D192A01F675D7200CBB18F /* N1P15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P15.png; sourceTree = "<group>"; };
+		08D192A11F675D7200CBB18F /* N1P16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P16.png; sourceTree = "<group>"; };
+		08D192A21F675D7200CBB18F /* N1P17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P17.png; sourceTree = "<group>"; };
+		08D192A31F675D7200CBB18F /* N1P18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P18.png; sourceTree = "<group>"; };
+		08D192A41F675D7200CBB18F /* N1P2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P2.png; sourceTree = "<group>"; };
+		08D192A51F675D7200CBB18F /* N1P3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P3.png; sourceTree = "<group>"; };
+		08D192A61F675D7200CBB18F /* N1P4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P4.png; sourceTree = "<group>"; };
+		08D192A71F675D7200CBB18F /* N1P5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P5.png; sourceTree = "<group>"; };
+		08D192A81F675D7200CBB18F /* N1P6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P6.png; sourceTree = "<group>"; };
+		08D192A91F675D7200CBB18F /* N1P7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P7.png; sourceTree = "<group>"; };
+		08D192AA1F675D7200CBB18F /* N1P8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P8.png; sourceTree = "<group>"; };
+		08D192AB1F675D7200CBB18F /* N1P9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N1P9.png; sourceTree = "<group>"; };
+		08D192AC1F675D7200CBB18F /* N2P1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P1.png; sourceTree = "<group>"; };
+		08D192AD1F675D7200CBB18F /* N2P10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P10.png; sourceTree = "<group>"; };
+		08D192AE1F675D7200CBB18F /* N2P11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P11.png; sourceTree = "<group>"; };
+		08D192AF1F675D7200CBB18F /* N2P12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P12.png; sourceTree = "<group>"; };
+		08D192B01F675D7200CBB18F /* N2P13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P13.png; sourceTree = "<group>"; };
+		08D192B11F675D7200CBB18F /* N2P14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P14.png; sourceTree = "<group>"; };
+		08D192B21F675D7200CBB18F /* N2P15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P15.png; sourceTree = "<group>"; };
+		08D192B31F675D7200CBB18F /* N2P16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P16.png; sourceTree = "<group>"; };
+		08D192B41F675D7200CBB18F /* N2P17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P17.png; sourceTree = "<group>"; };
+		08D192B51F675D7200CBB18F /* N2P18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P18.png; sourceTree = "<group>"; };
+		08D192B61F675D7200CBB18F /* N2P2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P2.png; sourceTree = "<group>"; };
+		08D192B71F675D7200CBB18F /* N2P3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P3.png; sourceTree = "<group>"; };
+		08D192B81F675D7200CBB18F /* N2P4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P4.png; sourceTree = "<group>"; };
+		08D192B91F675D7200CBB18F /* N2P5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P5.png; sourceTree = "<group>"; };
+		08D192BA1F675D7200CBB18F /* N2P6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P6.png; sourceTree = "<group>"; };
+		08D192BB1F675D7200CBB18F /* N2P7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P7.png; sourceTree = "<group>"; };
+		08D192BC1F675D7200CBB18F /* N2P8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P8.png; sourceTree = "<group>"; };
+		08D192BD1F675D7200CBB18F /* N2P9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2P9.png; sourceTree = "<group>"; };
+		08D192BE1F675D7200CBB18F /* N2POther.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N2POther.png; sourceTree = "<group>"; };
+		08D192BF1F675D7200CBB18F /* N3P1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N3P1.png; sourceTree = "<group>"; };
+		08D192C01F675D7200CBB18F /* N3P11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N3P11.png; sourceTree = "<group>"; };
+		08D192C11F675D7200CBB18F /* N3P2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N3P2.png; sourceTree = "<group>"; };
+		08D192C21F675D7200CBB18F /* N3P3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N3P3.png; sourceTree = "<group>"; };
+		08D192C31F675D7200CBB18F /* N3P4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N3P4.png; sourceTree = "<group>"; };
+		08D192C41F675D7200CBB18F /* N3P5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N3P5.png; sourceTree = "<group>"; };
+		08D192C51F675D7200CBB18F /* N3P6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N3P6.png; sourceTree = "<group>"; };
+		08D192C61F675D7200CBB18F /* N4P1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N4P1.png; sourceTree = "<group>"; };
+		08D192C71F675D7200CBB18F /* N4P19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N4P19.png; sourceTree = "<group>"; };
+		08D192C81F675D7200CBB18F /* N5P3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N5P3.png; sourceTree = "<group>"; };
+		08D192C91F675D7200CBB18F /* Note1.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Note1.md; sourceTree = "<group>"; };
+		08D192CA1F675D7200CBB18F /* Note2.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Note2.md; sourceTree = "<group>"; };
+		08D192CB1F675D7200CBB18F /* Note3.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Note3.md; sourceTree = "<group>"; };
+		08D192CC1F675D7200CBB18F /* Note4.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Note4.md; sourceTree = "<group>"; };
+		08D192CD1F675D7200CBB18F /* Note5.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Note5.md; sourceTree = "<group>"; };
+		08D192D01F675D7200CBB18F /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		08D192D11F675D7200CBB18F /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
+		08D192D21F675D7200CBB18F /* 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 11.png; sourceTree = "<group>"; };
+		08D192D31F675D7200CBB18F /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12.png; sourceTree = "<group>"; };
+		08D192D41F675D7200CBB18F /* 13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13.png; sourceTree = "<group>"; };
+		08D192D51F675D7200CBB18F /* 14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 14.png; sourceTree = "<group>"; };
+		08D192D61F675D7200CBB18F /* 15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 15.png; sourceTree = "<group>"; };
+		08D192D71F675D7200CBB18F /* 16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 16.png; sourceTree = "<group>"; };
+		08D192D81F675D7200CBB18F /* 17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 17.png; sourceTree = "<group>"; };
+		08D192D91F675D7200CBB18F /* 18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 18.png; sourceTree = "<group>"; };
+		08D192DA1F675D7200CBB18F /* 19.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 19.jpg; sourceTree = "<group>"; };
+		08D192DB1F675D7200CBB18F /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		08D192DC1F675D7200CBB18F /* 20.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 20.jpg; sourceTree = "<group>"; };
+		08D192DD1F675D7200CBB18F /* 21.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 21.jpg; sourceTree = "<group>"; };
+		08D192DE1F675D7200CBB18F /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		08D192DF1F675D7200CBB18F /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		08D192E01F675D7200CBB18F /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		08D192E11F675D7200CBB18F /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
+		08D192E21F675D7200CBB18F /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
+		08D192E31F675D7200CBB18F /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
+		08D192E41F675D7200CBB18F /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
+		08D192E51F675D7200CBB18F /* List语言.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "List语言.md"; sourceTree = "<group>"; };
+		08D192E61F675D7200CBB18F /* python语言.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "python语言.md"; sourceTree = "<group>"; };
+		08D192E71F675D7200CBB18F /* TheUseOfKnowledgeInAnalogyAndInduction读书笔记.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "TheUseOfKnowledgeInAnalogyAndInduction读书笔记.md"; sourceTree = "<group>"; };
+		08D192E81F675D7200CBB18F /* 人工智能一种现代的方法(StuartRussell).md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "人工智能一种现代的方法(StuartRussell).md"; sourceTree = "<group>"; };
+		08D192E91F675D7200CBB18F /* 双脑记.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "双脑记.md"; sourceTree = "<group>"; };
+		08D192EA1F675D7200CBB18F /* 情感机器.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "情感机器.md"; sourceTree = "<group>"; };
+		08D192EB1F675D7200CBB18F /* 机器学习基础.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "机器学习基础.md"; sourceTree = "<group>"; };
+		08D192EC1F675D7200CBB18F /* 生物脑学.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "生物脑学.md"; sourceTree = "<group>"; };
+		08D192ED1F675D7200CBB18F /* 知识表示表达方法基础.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "知识表示表达方法基础.md"; sourceTree = "<group>"; };
+		08D192EE1F675D7200CBB18F /* 认知神经科学-关于心智的生物学.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "认知神经科学-关于心智的生物学.md"; sourceTree = "<group>"; };
+		08D192EF1F675D7200CBB18F /* 阿兰图灵.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "阿兰图灵.md"; sourceTree = "<group>"; };
+		08D192F21F675D7200CBB18F /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		08D192F31F675D7200CBB18F /* 三方库或工具.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "三方库或工具.md"; sourceTree = "<group>"; };
+		08D192F41F675D7200CBB18F /* 其它.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "其它.md"; sourceTree = "<group>"; };
+		08D192F51F675D7200CBB18F /* 发展现状分析.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "发展现状分析.md"; sourceTree = "<group>"; };
+		08D192F61F675D7200CBB18F /* 旧资料.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "旧资料.md"; sourceTree = "<group>"; };
+		08D192F91F675D7200CBB18F /* Chapter1.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Chapter1.md; sourceTree = "<group>"; };
+		08D192FA1F675D7200CBB18F /* Chapter10.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Chapter10.md; sourceTree = "<group>"; };
+		08D192FB1F675D7200CBB18F /* Chapter17.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Chapter17.md; sourceTree = "<group>"; };
+		08D192FC1F675D7200CBB18F /* Chapter2.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Chapter2.md; sourceTree = "<group>"; };
+		08D192FD1F675D7200CBB18F /* Chapter3.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Chapter3.md; sourceTree = "<group>"; };
+		08D192FE1F675D7200CBB18F /* Chapter4.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Chapter4.md; sourceTree = "<group>"; };
+		08D192FF1F675D7200CBB18F /* Chapter5.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Chapter5.md; sourceTree = "<group>"; };
+		08D193001F675D7200CBB18F /* Chapter6.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Chapter6.md; sourceTree = "<group>"; };
+		08D193011F675D7200CBB18F /* Chapter7.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Chapter7.md; sourceTree = "<group>"; };
+		08D193021F675D7200CBB18F /* Chapter8.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Chapter8.md; sourceTree = "<group>"; };
+		08D193031F675D7200CBB18F /* Chapter9.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Chapter9.md; sourceTree = "<group>"; };
+		08D193041F675D7200CBB18F /* 虚拟应用.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "虚拟应用.md"; sourceTree = "<group>"; };
+		08D193051F675D7200CBB18F /* COVER.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = COVER.md; sourceTree = "<group>"; };
+		08D193071F675D7200CBB18F /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		08D193081F675D7200CBB18F /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		08D193091F675D7200CBB18F /* tmp1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tmp1.jpg; sourceTree = "<group>"; };
+		08D1930A1F675D7200CBB18F /* tmp2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tmp2.jpg; sourceTree = "<group>"; };
+		08D1930B1F675D7200CBB18F /* tmp3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmp3.png; sourceTree = "<group>"; };
+		08D1930C1F675D7200CBB18F /* tmp4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmp4.png; sourceTree = "<group>"; };
+		08D1930D1F675D7200CBB18F /* tmp5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmp5.png; sourceTree = "<group>"; };
+		08D1930E1F675D7200CBB18F /* INTRODUCTION.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = INTRODUCTION.md; sourceTree = "<group>"; };
+		08D1930F1F675D7200CBB18F /* SUMMARY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SUMMARY.md; sourceTree = "<group>"; };
+		08D193101F675D7200CBB18F /* 归纳何时执行.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "归纳何时执行.md"; sourceTree = "<group>"; };
+		08D193111F675D7200CBB18F /* 聊意识主线程和非主线程的IO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "聊意识主线程和非主线程的IO.md"; sourceTree = "<group>"; };
+		08D193121F675D7200CBB18F /* 聊机器学习的1_2部分.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "聊机器学习的1_2部分.md"; sourceTree = "<group>"; };
+		08D193131F675D7200CBB18F /* 聊机器学习的1_2部分simple.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "聊机器学习的1_2部分simple.md"; sourceTree = "<group>"; };
+		08D193151F675D7200CBB18F /* 17门派.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "17门派.md"; sourceTree = "<group>"; };
+		08D193161F675D7200CBB18F /* AIFoundation.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = AIFoundation.md; sourceTree = "<group>"; };
+		08D193181F675D7200CBB18F /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		08D193191F675D7200CBB18F /* 前言.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "前言.md"; sourceTree = "<group>"; };
+		08D1931A1F675D7200CBB18F /* 学习计划.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "学习计划.md"; sourceTree = "<group>"; };
+		08D1931C1F675D7200CBB18F /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		08D1931D1F675D7200CBB18F /* 10.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 10.tiff; sourceTree = "<group>"; };
+		08D1931E1F675D7200CBB18F /* 2.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 2.tiff; sourceTree = "<group>"; };
+		08D1931F1F675D7200CBB18F /* 3.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 3.tiff; sourceTree = "<group>"; };
+		08D193201F675D7200CBB18F /* 4.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 4.tiff; sourceTree = "<group>"; };
+		08D193211F675D7200CBB18F /* 5.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 5.tiff; sourceTree = "<group>"; };
+		08D193221F675D7200CBB18F /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
+		08D193231F675D7200CBB18F /* 7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.jpeg; sourceTree = "<group>"; };
+		08D193241F675D7200CBB18F /* 8.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.JPG; sourceTree = "<group>"; };
+		08D193251F675D7200CBB18F /* 9.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.JPG; sourceTree = "<group>"; };
+		08D193261F675D7200CBB18F /* INPUT-矢量音频.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "INPUT-矢量音频.md"; sourceTree = "<group>"; };
+		08D193271F675D7200CBB18F /* INPUT_注意力.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "INPUT_注意力.md"; sourceTree = "<group>"; };
+		08D193281F675D7200CBB18F /* onenote笔记.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "onenote笔记.md"; sourceTree = "<group>"; };
+		08D193291F675D7200CBB18F /* OUPUT-字符串.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "OUPUT-字符串.md"; sourceTree = "<group>"; };
+		08D1932A1F675D7200CBB18F /* output.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = output.md; sourceTree = "<group>"; };
+		08D1932B1F675D7200CBB18F /* 临时.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "临时.md"; sourceTree = "<group>"; };
+		08D1932C1F675D7200CBB18F /* 为推动人工智能的发展所作的思考.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "为推动人工智能的发展所作的思考.md"; sourceTree = "<group>"; };
+		08D1932D1F675D7200CBB18F /* 参考资料.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "参考资料.md"; sourceTree = "<group>"; };
+		08D1932E1F675D7200CBB18F /* 备学资料.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "备学资料.md"; sourceTree = "<group>"; };
+		08D1932F1F675D7200CBB18F /* 大脑模块.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "大脑模块.md"; sourceTree = "<group>"; };
+		08D193301F675D7200CBB18F /* 好奇心.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "好奇心.md"; sourceTree = "<group>"; };
+		08D193311F675D7200CBB18F /* 应用层计划.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "应用层计划.md"; sourceTree = "<group>"; };
+		08D193321F675D7200CBB18F /* 开发计划.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "开发计划.md"; sourceTree = "<group>"; };
+		08D193331F675D7200CBB18F /* 感觉系统.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "感觉系统.md"; sourceTree = "<group>"; };
+		08D193341F675D7200CBB18F /* 架构.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "架构.md"; sourceTree = "<group>"; };
+		08D193351F675D7200CBB18F /* 理解系统.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "理解系统.md"; sourceTree = "<group>"; };
+		08D193361F675D7200CBB18F /* 知识图谱.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "知识图谱.md"; sourceTree = "<group>"; };
+		08D193371F675D7200CBB18F /* 第一代人工智能设计.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "第一代人工智能设计.md"; sourceTree = "<group>"; };
+		08D193381F675D7200CBB18F /* 第二代人工智能设计.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "第二代人工智能设计.md"; sourceTree = "<group>"; };
+		08D193391F675D7200CBB18F /* 自然语言处理-自然语义系统.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "自然语言处理-自然语义系统.md"; sourceTree = "<group>"; };
+		08D1933A1F675D7200CBB18F /* 行为与能力.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "行为与能力.md"; sourceTree = "<group>"; };
+		08D1933B1F675D7200CBB18F /* 计算机视觉.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "计算机视觉.md"; sourceTree = "<group>"; };
+		08D1933C1F675D7200CBB18F /* 记忆模块.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "记忆模块.md"; sourceTree = "<group>"; };
+		08D1933D1F675D7200CBB18F /* 记忆模块<=>知识图谱.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "记忆模块<=>知识图谱.md"; sourceTree = "<group>"; };
+		08D1933E1F675D7200CBB18F /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		08D193401F675D7200CBB18F /* DeepLearning下步预言.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "DeepLearning下步预言.md"; sourceTree = "<group>"; };
+		08D193411F675D7200CBB18F /* Light.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Light.md; sourceTree = "<group>"; };
+		08D193421F675D7200CBB18F /* MarkDownNote_ModifyTimeTool.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = MarkDownNote_ModifyTimeTool.app; sourceTree = "<group>"; };
+		08D193431F675D7200CBB18F /* 应用.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "应用.md"; sourceTree = "<group>"; };
+		08D193441F675D7200CBB18F /* MarkDownNote_ModifyTimeTool.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = MarkDownNote_ModifyTimeTool.app; sourceTree = "<group>"; };
+		08D193461F675D7200CBB18F /* BP.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = BP.md; sourceTree = "<group>"; };
+		08D1934A1F675D7200CBB18F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		08D1934B1F675D7200CBB18F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		08D1934C1F675D7200CBB18F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		08D1934E1F675D7200CBB18F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		08D1934F1F675D7200CBB18F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08D193501F675D7200CBB18F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		08D193511F675D7200CBB18F /* NSDate+Escort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Escort.h"; sourceTree = "<group>"; };
+		08D193521F675D7200CBB18F /* NSDate+Escort.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Escort.m"; sourceTree = "<group>"; };
+		08D193531F675D7200CBB18F /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		08D193541F675D7200CBB18F /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		08D193551F675D7200CBB18F /* MarkDownNote_ModifyTimeTool.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = MarkDownNote_ModifyTimeTool.xcodeproj; sourceTree = "<group>"; };
+		08D193581F675D7200CBB18F /* refreshIcon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = refreshIcon.jpeg; sourceTree = "<group>"; };
+		08D193591F675D7200CBB18F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		08D1935C1F675D7200CBB18F /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		08D1935D1F675D7200CBB18F /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		08D1935F1F675D7200CBB18F /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		08D193601F675D7200CBB18F /* Temp.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Temp.md; sourceTree = "<group>"; };
+		08D193611F675D7200CBB18F /* 开发任务.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "开发任务.md"; sourceTree = "<group>"; };
+		08D193621F675D7200CBB18F /* 类人的学习项目.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "类人的学习项目.md"; sourceTree = "<group>"; };
+		08D193631F675D7200CBB18F /* 记忆系统结构分析.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "记忆系统结构分析.md"; sourceTree = "<group>"; };
+		08D193641F675D7200CBB18F /* SMG_BOOK.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SMG_BOOK.md; sourceTree = "<group>"; };
+		08D193651F675D7200CBB18F /* SMG_NOTE.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SMG_NOTE.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		082C997B1F502CB500C414E2 /* 当下不开发的 */ = {
+		083E9A8E1F313E4300ABC0FB = {
 			isa = PBXGroup;
 			children = (
-				082C997C1F502CB500C414E2 /* GC.md */,
-				082C997D1F502CB500C414E2 /* 想像力.md */,
-				082C997E1F502CB500C414E2 /* 无意识的思考.md */,
-				082C997F1F502CB500C414E2 /* 联想功能.md */,
+				08D192751F675D7200CBB18F /* 当下不开发的 */,
+				08D1927A1F675D7200CBB18F /* 开发 */,
+				08D1927C1F675D7200CBB18F /* 框架 */,
+				08D192931F675D7200CBB18F /* 目录.md */,
+				08D192941F675D7200CBB18F /* 视觉 */,
+				08D192961F675D7200CBB18F /* 手写笔记 */,
+				08D192CE1F675D7200CBB18F /* 学习 */,
+				08D192F01F675D7200CBB18F /* 资料 */,
+				08D192F71F675D7200CBB18F /* Book */,
+				08D193141F675D7200CBB18F /* DataLanguage */,
+				08D1931B1F675D7200CBB18F /* iphone备忘录 */,
+				08D1933E1F675D7200CBB18F /* LICENSE */,
+				08D1933F1F675D7200CBB18F /* Light及应用 */,
+				08D193441F675D7200CBB18F /* MarkDownNote_ModifyTimeTool.app */,
+				08D193451F675D7200CBB18F /* Other */,
+				08D193591F675D7200CBB18F /* README.md */,
+				08D1935A1F675D7200CBB18F /* Resource */,
+				08D1935E1F675D7200CBB18F /* SMG */,
+				08D193641F675D7200CBB18F /* SMG_BOOK.md */,
+				08D193651F675D7200CBB18F /* SMG_NOTE.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		08D192751F675D7200CBB18F /* 当下不开发的 */ = {
+			isa = PBXGroup;
+			children = (
+				08D192761F675D7200CBB18F /* GC.md */,
+				08D192771F675D7200CBB18F /* 想像力.md */,
+				08D192781F675D7200CBB18F /* 无意识的思考.md */,
+				08D192791F675D7200CBB18F /* 联想功能.md */,
 			);
 			path = "当下不开发的";
 			sourceTree = "<group>";
 		};
-		082C99801F502CB500C414E2 /* 开发 */ = {
+		08D1927A1F675D7200CBB18F /* 开发 */ = {
 			isa = PBXGroup;
 			children = (
-				082C99811F502CB500C414E2 /* 17.07.19.md */,
+				08D1927B1F675D7200CBB18F /* 17.07.19.md */,
 			);
 			path = "开发";
 			sourceTree = "<group>";
 		};
-		082C99821F502CB500C414E2 /* 框架 */ = {
+		08D1927C1F675D7200CBB18F /* 框架 */ = {
 			isa = PBXGroup;
 			children = (
-				082C99831F502CB500C414E2 /* 3维抽象概述.md */,
-				082C99841F502CB500C414E2 /* Decision.md */,
-				082C99851F502CB500C414E2 /* Input.md */,
-				082C99861F502CB500C414E2 /* Mind.md */,
-				082C99871F502CB500C414E2 /* OUTPUT.md */,
-				082C99881F502CB500C414E2 /* SMG框架各阶段.md */,
-				082C99891F502CB500C414E2 /* Understand.md */,
-				082C998A1F502CB500C414E2 /* 创造力.md */,
-				082C998B1F502CB500C414E2 /* 开发任务.md */,
-				082C998C1F502CB500C414E2 /* 归纳推理.md */,
-				082C998D1F502CB500C414E2 /* 思考的引子.md */,
-				082C998E1F502CB500C414E2 /* 数据.md */,
-				082C998F1F502CB500C414E2 /* 时间&空间.md */,
-				082C99901F502CB500C414E2 /* 框架17.5.7表述.md */,
-				082C99911F502CB500C414E2 /* 注意力.md */,
-				082C99921F502CB500C414E2 /* 知识表示.md */,
-				082C99931F502CB500C414E2 /* 神经网络.md */,
-				082C99941F502CB500C414E2 /* 类比推理.md */,
-				082C99951F502CB500C414E2 /* 自我.md */,
-				082C99961F502CB500C414E2 /* 错觉研究.md */,
-				082C99971F502CB500C414E2 /* 问题.md */,
+				08D1927D1F675D7200CBB18F /* 3维抽象概述.md */,
+				08D1927E1F675D7200CBB18F /* Decision.md */,
+				08D1927F1F675D7200CBB18F /* Input.md */,
+				08D192801F675D7200CBB18F /* Mind.md */,
+				08D192811F675D7200CBB18F /* OUTPUT.md */,
+				08D192821F675D7200CBB18F /* SMG框架各阶段.md */,
+				08D192831F675D7200CBB18F /* Understand.md */,
+				08D192841F675D7200CBB18F /* 创造力.md */,
+				08D192851F675D7200CBB18F /* 开发任务.md */,
+				08D192861F675D7200CBB18F /* 归纳推理.md */,
+				08D192871F675D7200CBB18F /* 思考的引子.md */,
+				08D192881F675D7200CBB18F /* 数据.md */,
+				08D192891F675D7200CBB18F /* 时间&空间.md */,
+				08D1928A1F675D7200CBB18F /* 框架17.5.7表述.md */,
+				08D1928B1F675D7200CBB18F /* 框架图示.md */,
+				08D1928C1F675D7200CBB18F /* 注意力.md */,
+				08D1928D1F675D7200CBB18F /* 知识表示.md */,
+				08D1928E1F675D7200CBB18F /* 神经网络.md */,
+				08D1928F1F675D7200CBB18F /* 类比推理.md */,
+				08D192901F675D7200CBB18F /* 自我.md */,
+				08D192911F675D7200CBB18F /* 错觉研究.md */,
+				08D192921F675D7200CBB18F /* 问题.md */,
 			);
 			path = "框架";
 			sourceTree = "<group>";
 		};
-		082C99991F502CB500C414E2 /* 视觉 */ = {
+		08D192941F675D7200CBB18F /* 视觉 */ = {
 			isa = PBXGroup;
 			children = (
-				082C999A1F502CB500C414E2 /* 视觉.md */,
+				08D192951F675D7200CBB18F /* 视觉.md */,
 			);
 			path = "视觉";
 			sourceTree = "<group>";
 		};
-		082C999B1F502CB500C414E2 /* 手写笔记 */ = {
+		08D192961F675D7200CBB18F /* 手写笔记 */ = {
 			isa = PBXGroup;
 			children = (
-				082C999C1F502CB500C414E2 /* img */,
-				082C99CE1F502CB500C414E2 /* Note1.md */,
-				082C99CF1F502CB500C414E2 /* Note2.md */,
-				082C99D01F502CB500C414E2 /* Note3.md */,
-				082C99D11F502CB500C414E2 /* Note4.md */,
-				082C99D21F502CB500C414E2 /* Note5.md */,
+				08D192971F675D7200CBB18F /* img */,
+				08D192C91F675D7200CBB18F /* Note1.md */,
+				08D192CA1F675D7200CBB18F /* Note2.md */,
+				08D192CB1F675D7200CBB18F /* Note3.md */,
+				08D192CC1F675D7200CBB18F /* Note4.md */,
+				08D192CD1F675D7200CBB18F /* Note5.md */,
 			);
 			path = "手写笔记";
 			sourceTree = "<group>";
 		};
-		082C999C1F502CB500C414E2 /* img */ = {
+		08D192971F675D7200CBB18F /* img */ = {
 			isa = PBXGroup;
 			children = (
-				082C999D1F502CB500C414E2 /* 1.png */,
-				082C999E1F502CB500C414E2 /* 2.png */,
-				082C999F1F502CB500C414E2 /* N1P1.png */,
-				082C99A01F502CB500C414E2 /* N1P10.png */,
-				082C99A11F502CB500C414E2 /* N1P11.png */,
-				082C99A21F502CB500C414E2 /* N1P12.png */,
-				082C99A31F502CB500C414E2 /* N1P13.png */,
-				082C99A41F502CB500C414E2 /* N1P14.png */,
-				082C99A51F502CB500C414E2 /* N1P15.png */,
-				082C99A61F502CB500C414E2 /* N1P16.png */,
-				082C99A71F502CB500C414E2 /* N1P17.png */,
-				082C99A81F502CB500C414E2 /* N1P18.png */,
-				082C99A91F502CB500C414E2 /* N1P2.png */,
-				082C99AA1F502CB500C414E2 /* N1P3.png */,
-				082C99AB1F502CB500C414E2 /* N1P4.png */,
-				082C99AC1F502CB500C414E2 /* N1P5.png */,
-				082C99AD1F502CB500C414E2 /* N1P6.png */,
-				082C99AE1F502CB500C414E2 /* N1P7.png */,
-				082C99AF1F502CB500C414E2 /* N1P8.png */,
-				082C99B01F502CB500C414E2 /* N1P9.png */,
-				082C99B11F502CB500C414E2 /* N2P1.png */,
-				082C99B21F502CB500C414E2 /* N2P10.png */,
-				082C99B31F502CB500C414E2 /* N2P11.png */,
-				082C99B41F502CB500C414E2 /* N2P12.png */,
-				082C99B51F502CB500C414E2 /* N2P13.png */,
-				082C99B61F502CB500C414E2 /* N2P14.png */,
-				082C99B71F502CB500C414E2 /* N2P15.png */,
-				082C99B81F502CB500C414E2 /* N2P16.png */,
-				082C99B91F502CB500C414E2 /* N2P17.png */,
-				082C99BA1F502CB500C414E2 /* N2P18.png */,
-				082C99BB1F502CB500C414E2 /* N2P2.png */,
-				082C99BC1F502CB500C414E2 /* N2P3.png */,
-				082C99BD1F502CB500C414E2 /* N2P4.png */,
-				082C99BE1F502CB500C414E2 /* N2P5.png */,
-				082C99BF1F502CB500C414E2 /* N2P6.png */,
-				082C99C01F502CB500C414E2 /* N2P7.png */,
-				082C99C11F502CB500C414E2 /* N2P8.png */,
-				082C99C21F502CB500C414E2 /* N2P9.png */,
-				082C99C31F502CB500C414E2 /* N2POther.png */,
-				082C99C41F502CB500C414E2 /* N3P1.png */,
-				082C99C51F502CB500C414E2 /* N3P11.png */,
-				082C99C61F502CB500C414E2 /* N3P2.png */,
-				082C99C71F502CB500C414E2 /* N3P3.png */,
-				082C99C81F502CB500C414E2 /* N3P4.png */,
-				082C99C91F502CB500C414E2 /* N3P5.png */,
-				082C99CA1F502CB500C414E2 /* N3P6.png */,
-				082C99CB1F502CB500C414E2 /* N4P1.png */,
-				082C99CC1F502CB500C414E2 /* N4P19.png */,
-				082C99CD1F502CB500C414E2 /* N5P3.png */,
+				08D192981F675D7200CBB18F /* 1.png */,
+				08D192991F675D7200CBB18F /* 2.png */,
+				08D1929A1F675D7200CBB18F /* N1P1.png */,
+				08D1929B1F675D7200CBB18F /* N1P10.png */,
+				08D1929C1F675D7200CBB18F /* N1P11.png */,
+				08D1929D1F675D7200CBB18F /* N1P12.png */,
+				08D1929E1F675D7200CBB18F /* N1P13.png */,
+				08D1929F1F675D7200CBB18F /* N1P14.png */,
+				08D192A01F675D7200CBB18F /* N1P15.png */,
+				08D192A11F675D7200CBB18F /* N1P16.png */,
+				08D192A21F675D7200CBB18F /* N1P17.png */,
+				08D192A31F675D7200CBB18F /* N1P18.png */,
+				08D192A41F675D7200CBB18F /* N1P2.png */,
+				08D192A51F675D7200CBB18F /* N1P3.png */,
+				08D192A61F675D7200CBB18F /* N1P4.png */,
+				08D192A71F675D7200CBB18F /* N1P5.png */,
+				08D192A81F675D7200CBB18F /* N1P6.png */,
+				08D192A91F675D7200CBB18F /* N1P7.png */,
+				08D192AA1F675D7200CBB18F /* N1P8.png */,
+				08D192AB1F675D7200CBB18F /* N1P9.png */,
+				08D192AC1F675D7200CBB18F /* N2P1.png */,
+				08D192AD1F675D7200CBB18F /* N2P10.png */,
+				08D192AE1F675D7200CBB18F /* N2P11.png */,
+				08D192AF1F675D7200CBB18F /* N2P12.png */,
+				08D192B01F675D7200CBB18F /* N2P13.png */,
+				08D192B11F675D7200CBB18F /* N2P14.png */,
+				08D192B21F675D7200CBB18F /* N2P15.png */,
+				08D192B31F675D7200CBB18F /* N2P16.png */,
+				08D192B41F675D7200CBB18F /* N2P17.png */,
+				08D192B51F675D7200CBB18F /* N2P18.png */,
+				08D192B61F675D7200CBB18F /* N2P2.png */,
+				08D192B71F675D7200CBB18F /* N2P3.png */,
+				08D192B81F675D7200CBB18F /* N2P4.png */,
+				08D192B91F675D7200CBB18F /* N2P5.png */,
+				08D192BA1F675D7200CBB18F /* N2P6.png */,
+				08D192BB1F675D7200CBB18F /* N2P7.png */,
+				08D192BC1F675D7200CBB18F /* N2P8.png */,
+				08D192BD1F675D7200CBB18F /* N2P9.png */,
+				08D192BE1F675D7200CBB18F /* N2POther.png */,
+				08D192BF1F675D7200CBB18F /* N3P1.png */,
+				08D192C01F675D7200CBB18F /* N3P11.png */,
+				08D192C11F675D7200CBB18F /* N3P2.png */,
+				08D192C21F675D7200CBB18F /* N3P3.png */,
+				08D192C31F675D7200CBB18F /* N3P4.png */,
+				08D192C41F675D7200CBB18F /* N3P5.png */,
+				08D192C51F675D7200CBB18F /* N3P6.png */,
+				08D192C61F675D7200CBB18F /* N4P1.png */,
+				08D192C71F675D7200CBB18F /* N4P19.png */,
+				08D192C81F675D7200CBB18F /* N5P3.png */,
 			);
 			path = img;
 			sourceTree = "<group>";
 		};
-		082C99D31F502CB500C414E2 /* 学习 */ = {
+		08D192CE1F675D7200CBB18F /* 学习 */ = {
 			isa = PBXGroup;
 			children = (
-				082C99D41F502CB500C414E2 /* img */,
-				082C99EA1F502CB500C414E2 /* List语言.md */,
-				082C99EB1F502CB500C414E2 /* python语言.md */,
-				082C99EC1F502CB500C414E2 /* TheUseOfKnowledgeInAnalogyAndInduction读书笔记.md */,
-				082C99ED1F502CB500C414E2 /* 人工智能一种现代的方法(StuartRussell).md */,
-				082C99EE1F502CB500C414E2 /* 双脑记.md */,
-				082C99EF1F502CB500C414E2 /* 情感机器.md */,
-				082C99F01F502CB500C414E2 /* 机器学习基础.md */,
-				082C99F11F502CB500C414E2 /* 生物脑学.md */,
-				082C99F21F502CB500C414E2 /* 知识表示表达方法基础.md */,
-				082C99F31F502CB500C414E2 /* 认知神经科学-关于心智的生物学.md */,
-				082C99F41F502CB500C414E2 /* 阿兰图灵.md */,
+				08D192CF1F675D7200CBB18F /* img */,
+				08D192E51F675D7200CBB18F /* List语言.md */,
+				08D192E61F675D7200CBB18F /* python语言.md */,
+				08D192E71F675D7200CBB18F /* TheUseOfKnowledgeInAnalogyAndInduction读书笔记.md */,
+				08D192E81F675D7200CBB18F /* 人工智能一种现代的方法(StuartRussell).md */,
+				08D192E91F675D7200CBB18F /* 双脑记.md */,
+				08D192EA1F675D7200CBB18F /* 情感机器.md */,
+				08D192EB1F675D7200CBB18F /* 机器学习基础.md */,
+				08D192EC1F675D7200CBB18F /* 生物脑学.md */,
+				08D192ED1F675D7200CBB18F /* 知识表示表达方法基础.md */,
+				08D192EE1F675D7200CBB18F /* 认知神经科学-关于心智的生物学.md */,
+				08D192EF1F675D7200CBB18F /* 阿兰图灵.md */,
 			);
 			path = "学习";
 			sourceTree = "<group>";
 		};
-		082C99D41F502CB500C414E2 /* img */ = {
+		08D192CF1F675D7200CBB18F /* img */ = {
 			isa = PBXGroup;
 			children = (
-				082C99D51F502CB500C414E2 /* 1.png */,
-				082C99D61F502CB500C414E2 /* 10.png */,
-				082C99D71F502CB500C414E2 /* 11.png */,
-				082C99D81F502CB500C414E2 /* 12.png */,
-				082C99D91F502CB500C414E2 /* 13.png */,
-				082C99DA1F502CB500C414E2 /* 14.png */,
-				082C99DB1F502CB500C414E2 /* 15.png */,
-				082C99DC1F502CB500C414E2 /* 16.png */,
-				082C99DD1F502CB500C414E2 /* 17.png */,
-				082C99DE1F502CB500C414E2 /* 18.png */,
-				082C99DF1F502CB500C414E2 /* 19.jpg */,
-				082C99E01F502CB500C414E2 /* 2.png */,
-				082C99E11F502CB500C414E2 /* 20.jpg */,
-				082C99E21F502CB500C414E2 /* 21.jpg */,
-				082C99E31F502CB500C414E2 /* 3.png */,
-				082C99E41F502CB500C414E2 /* 4.png */,
-				082C99E51F502CB500C414E2 /* 5.png */,
-				082C99E61F502CB500C414E2 /* 6.png */,
-				082C99E71F502CB500C414E2 /* 7.png */,
-				082C99E81F502CB500C414E2 /* 8.png */,
-				082C99E91F502CB500C414E2 /* 9.png */,
+				08D192D01F675D7200CBB18F /* 1.png */,
+				08D192D11F675D7200CBB18F /* 10.png */,
+				08D192D21F675D7200CBB18F /* 11.png */,
+				08D192D31F675D7200CBB18F /* 12.png */,
+				08D192D41F675D7200CBB18F /* 13.png */,
+				08D192D51F675D7200CBB18F /* 14.png */,
+				08D192D61F675D7200CBB18F /* 15.png */,
+				08D192D71F675D7200CBB18F /* 16.png */,
+				08D192D81F675D7200CBB18F /* 17.png */,
+				08D192D91F675D7200CBB18F /* 18.png */,
+				08D192DA1F675D7200CBB18F /* 19.jpg */,
+				08D192DB1F675D7200CBB18F /* 2.png */,
+				08D192DC1F675D7200CBB18F /* 20.jpg */,
+				08D192DD1F675D7200CBB18F /* 21.jpg */,
+				08D192DE1F675D7200CBB18F /* 3.png */,
+				08D192DF1F675D7200CBB18F /* 4.png */,
+				08D192E01F675D7200CBB18F /* 5.png */,
+				08D192E11F675D7200CBB18F /* 6.png */,
+				08D192E21F675D7200CBB18F /* 7.png */,
+				08D192E31F675D7200CBB18F /* 8.png */,
+				08D192E41F675D7200CBB18F /* 9.png */,
 			);
 			path = img;
 			sourceTree = "<group>";
 		};
-		082C99F51F502CB500C414E2 /* 资料 */ = {
+		08D192F01F675D7200CBB18F /* 资料 */ = {
 			isa = PBXGroup;
 			children = (
-				082C99F61F502CB500C414E2 /* img */,
-				082C99F81F502CB500C414E2 /* 三方库或工具.md */,
-				082C99F91F502CB500C414E2 /* 其它.md */,
-				082C99FA1F502CB500C414E2 /* 发展现状分析.md */,
-				082C99FB1F502CB500C414E2 /* 旧资料.md */,
+				08D192F11F675D7200CBB18F /* img */,
+				08D192F31F675D7200CBB18F /* 三方库或工具.md */,
+				08D192F41F675D7200CBB18F /* 其它.md */,
+				08D192F51F675D7200CBB18F /* 发展现状分析.md */,
+				08D192F61F675D7200CBB18F /* 旧资料.md */,
 			);
 			path = "资料";
 			sourceTree = "<group>";
 		};
-		082C99F61F502CB500C414E2 /* img */ = {
+		08D192F11F675D7200CBB18F /* img */ = {
 			isa = PBXGroup;
 			children = (
-				082C99F71F502CB500C414E2 /* 1.png */,
+				08D192F21F675D7200CBB18F /* 1.png */,
 			);
 			path = img;
 			sourceTree = "<group>";
 		};
-		082C99FC1F502CB500C414E2 /* Book */ = {
+		08D192F71F675D7200CBB18F /* Book */ = {
 			isa = PBXGroup;
 			children = (
-				082C99FD1F502CB500C414E2 /* COVER.md */,
-				082C99FE1F502CB500C414E2 /* img */,
-				082C9A061F502CB500C414E2 /* INTRODUCTION.md */,
-				082C9A071F502CB500C414E2 /* Part1 */,
-				082C9A091F502CB500C414E2 /* Part2 */,
-				082C9A0A1F502CB500C414E2 /* Part3 */,
-				082C9A0C1F502CB500C414E2 /* Part4 */,
-				082C9A0D1F502CB500C414E2 /* SUMMARY.md */,
-				082C9A0E1F502CB500C414E2 /* 归纳何时执行.md */,
-				082C9A0F1F502CB500C414E2 /* 聊意识主线程和非主线程的IO.md */,
-				082C9A101F502CB500C414E2 /* 聊机器学习的1_2部分.md */,
+				08D192F81F675D7200CBB18F /* Chapters */,
+				08D193051F675D7200CBB18F /* COVER.md */,
+				08D193061F675D7200CBB18F /* img */,
+				08D1930E1F675D7200CBB18F /* INTRODUCTION.md */,
+				08D1930F1F675D7200CBB18F /* SUMMARY.md */,
+				08D193101F675D7200CBB18F /* 归纳何时执行.md */,
+				08D193111F675D7200CBB18F /* 聊意识主线程和非主线程的IO.md */,
+				08D193121F675D7200CBB18F /* 聊机器学习的1_2部分.md */,
+				08D193131F675D7200CBB18F /* 聊机器学习的1_2部分simple.md */,
 			);
 			path = Book;
 			sourceTree = "<group>";
 		};
-		082C99FE1F502CB500C414E2 /* img */ = {
+		08D192F81F675D7200CBB18F /* Chapters */ = {
 			isa = PBXGroup;
 			children = (
-				082C99FF1F502CB500C414E2 /* 1.jpg */,
-				082C9A001F502CB500C414E2 /* 2.png */,
-				082C9A011F502CB500C414E2 /* tmp1.jpg */,
-				082C9A021F502CB500C414E2 /* tmp2.jpg */,
-				082C9A031F502CB500C414E2 /* tmp3.png */,
-				082C9A041F502CB500C414E2 /* tmp4.png */,
-				082C9A051F502CB500C414E2 /* tmp5.png */,
+				08D192F91F675D7200CBB18F /* Chapter1.md */,
+				08D192FA1F675D7200CBB18F /* Chapter10.md */,
+				08D192FB1F675D7200CBB18F /* Chapter17.md */,
+				08D192FC1F675D7200CBB18F /* Chapter2.md */,
+				08D192FD1F675D7200CBB18F /* Chapter3.md */,
+				08D192FE1F675D7200CBB18F /* Chapter4.md */,
+				08D192FF1F675D7200CBB18F /* Chapter5.md */,
+				08D193001F675D7200CBB18F /* Chapter6.md */,
+				08D193011F675D7200CBB18F /* Chapter7.md */,
+				08D193021F675D7200CBB18F /* Chapter8.md */,
+				08D193031F675D7200CBB18F /* Chapter9.md */,
+				08D193041F675D7200CBB18F /* 虚拟应用.md */,
+			);
+			path = Chapters;
+			sourceTree = "<group>";
+		};
+		08D193061F675D7200CBB18F /* img */ = {
+			isa = PBXGroup;
+			children = (
+				08D193071F675D7200CBB18F /* 1.jpg */,
+				08D193081F675D7200CBB18F /* 2.png */,
+				08D193091F675D7200CBB18F /* tmp1.jpg */,
+				08D1930A1F675D7200CBB18F /* tmp2.jpg */,
+				08D1930B1F675D7200CBB18F /* tmp3.png */,
+				08D1930C1F675D7200CBB18F /* tmp4.png */,
+				08D1930D1F675D7200CBB18F /* tmp5.png */,
 			);
 			path = img;
 			sourceTree = "<group>";
 		};
-		082C9A071F502CB500C414E2 /* Part1 */ = {
+		08D193141F675D7200CBB18F /* DataLanguage */ = {
 			isa = PBXGroup;
 			children = (
-				082C9A081F502CB500C414E2 /* Chapter1.md */,
-			);
-			path = Part1;
-			sourceTree = "<group>";
-		};
-		082C9A091F502CB500C414E2 /* Part2 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Part2;
-			sourceTree = "<group>";
-		};
-		082C9A0A1F502CB500C414E2 /* Part3 */ = {
-			isa = PBXGroup;
-			children = (
-				082C9A0B1F502CB500C414E2 /* 虚拟应用.md */,
-			);
-			path = Part3;
-			sourceTree = "<group>";
-		};
-		082C9A0C1F502CB500C414E2 /* Part4 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Part4;
-			sourceTree = "<group>";
-		};
-		082C9A111F502CB500C414E2 /* DataLanguage */ = {
-			isa = PBXGroup;
-			children = (
-				082C9A121F502CB500C414E2 /* 17门派.md */,
-				082C9A131F502CB500C414E2 /* AIFoundation.md */,
-				082C9A141F502CB500C414E2 /* img */,
-				082C9A161F502CB500C414E2 /* 前言.md */,
-				082C9A171F502CB500C414E2 /* 学习计划.md */,
+				08D193151F675D7200CBB18F /* 17门派.md */,
+				08D193161F675D7200CBB18F /* AIFoundation.md */,
+				08D193171F675D7200CBB18F /* img */,
+				08D193191F675D7200CBB18F /* 前言.md */,
+				08D1931A1F675D7200CBB18F /* 学习计划.md */,
 			);
 			path = DataLanguage;
 			sourceTree = "<group>";
 		};
-		082C9A141F502CB500C414E2 /* img */ = {
+		08D193171F675D7200CBB18F /* img */ = {
 			isa = PBXGroup;
 			children = (
-				082C9A151F502CB500C414E2 /* 1.jpg */,
+				08D193181F675D7200CBB18F /* 1.jpg */,
 			);
 			path = img;
 			sourceTree = "<group>";
 		};
-		082C9A181F502CB500C414E2 /* iphone备忘录 */ = {
+		08D1931B1F675D7200CBB18F /* iphone备忘录 */ = {
 			isa = PBXGroup;
 			children = (
-				082C9A191F502CB500C414E2 /* 1.png */,
-				082C9A1A1F502CB500C414E2 /* 10.tiff */,
-				082C9A1B1F502CB500C414E2 /* 2.tiff */,
-				082C9A1C1F502CB500C414E2 /* 3.tiff */,
-				082C9A1D1F502CB500C414E2 /* 4.tiff */,
-				082C9A1E1F502CB500C414E2 /* 5.tiff */,
-				082C9A1F1F502CB500C414E2 /* 6.png */,
-				082C9A201F502CB500C414E2 /* 7.jpeg */,
-				082C9A211F502CB500C414E2 /* 8.JPG */,
-				082C9A221F502CB500C414E2 /* 9.JPG */,
-				082C9A231F502CB500C414E2 /* INPUT-矢量音频.md */,
-				082C9A241F502CB500C414E2 /* INPUT_注意力.md */,
-				082C9A251F502CB500C414E2 /* onenote笔记.md */,
-				082C9A261F502CB500C414E2 /* OUPUT-字符串.md */,
-				082C9A271F502CB500C414E2 /* output.md */,
-				082C9A281F502CB500C414E2 /* 临时.md */,
-				082C9A291F502CB500C414E2 /* 为推动人工智能的发展所作的思考.md */,
-				082C9A2A1F502CB500C414E2 /* 参考资料.md */,
-				082C9A2B1F502CB500C414E2 /* 备学资料.md */,
-				082C9A2C1F502CB500C414E2 /* 大脑模块.md */,
-				082C9A2D1F502CB500C414E2 /* 好奇心.md */,
-				082C9A2E1F502CB500C414E2 /* 应用层计划.md */,
-				082C9A2F1F502CB500C414E2 /* 开发计划.md */,
-				082C9A301F502CB500C414E2 /* 感觉系统.md */,
-				082C9A311F502CB500C414E2 /* 架构.md */,
-				082C9A321F502CB500C414E2 /* 理解系统.md */,
-				082C9A331F502CB500C414E2 /* 知识图谱.md */,
-				082C9A341F502CB500C414E2 /* 第一代人工智能设计.md */,
-				082C9A351F502CB500C414E2 /* 第二代人工智能设计.md */,
-				082C9A361F502CB500C414E2 /* 自然语言处理-自然语义系统.md */,
-				082C9A371F502CB500C414E2 /* 行为与能力.md */,
-				082C9A381F502CB500C414E2 /* 计算机视觉.md */,
-				082C9A391F502CB500C414E2 /* 记忆模块.md */,
-				082C9A3A1F502CB500C414E2 /* 记忆模块<=>知识图谱.md */,
+				08D1931C1F675D7200CBB18F /* 1.png */,
+				08D1931D1F675D7200CBB18F /* 10.tiff */,
+				08D1931E1F675D7200CBB18F /* 2.tiff */,
+				08D1931F1F675D7200CBB18F /* 3.tiff */,
+				08D193201F675D7200CBB18F /* 4.tiff */,
+				08D193211F675D7200CBB18F /* 5.tiff */,
+				08D193221F675D7200CBB18F /* 6.png */,
+				08D193231F675D7200CBB18F /* 7.jpeg */,
+				08D193241F675D7200CBB18F /* 8.JPG */,
+				08D193251F675D7200CBB18F /* 9.JPG */,
+				08D193261F675D7200CBB18F /* INPUT-矢量音频.md */,
+				08D193271F675D7200CBB18F /* INPUT_注意力.md */,
+				08D193281F675D7200CBB18F /* onenote笔记.md */,
+				08D193291F675D7200CBB18F /* OUPUT-字符串.md */,
+				08D1932A1F675D7200CBB18F /* output.md */,
+				08D1932B1F675D7200CBB18F /* 临时.md */,
+				08D1932C1F675D7200CBB18F /* 为推动人工智能的发展所作的思考.md */,
+				08D1932D1F675D7200CBB18F /* 参考资料.md */,
+				08D1932E1F675D7200CBB18F /* 备学资料.md */,
+				08D1932F1F675D7200CBB18F /* 大脑模块.md */,
+				08D193301F675D7200CBB18F /* 好奇心.md */,
+				08D193311F675D7200CBB18F /* 应用层计划.md */,
+				08D193321F675D7200CBB18F /* 开发计划.md */,
+				08D193331F675D7200CBB18F /* 感觉系统.md */,
+				08D193341F675D7200CBB18F /* 架构.md */,
+				08D193351F675D7200CBB18F /* 理解系统.md */,
+				08D193361F675D7200CBB18F /* 知识图谱.md */,
+				08D193371F675D7200CBB18F /* 第一代人工智能设计.md */,
+				08D193381F675D7200CBB18F /* 第二代人工智能设计.md */,
+				08D193391F675D7200CBB18F /* 自然语言处理-自然语义系统.md */,
+				08D1933A1F675D7200CBB18F /* 行为与能力.md */,
+				08D1933B1F675D7200CBB18F /* 计算机视觉.md */,
+				08D1933C1F675D7200CBB18F /* 记忆模块.md */,
+				08D1933D1F675D7200CBB18F /* 记忆模块<=>知识图谱.md */,
 			);
 			path = "iphone备忘录";
 			sourceTree = "<group>";
 		};
-		082C9A3C1F502CB500C414E2 /* Light及应用 */ = {
+		08D1933F1F675D7200CBB18F /* Light及应用 */ = {
 			isa = PBXGroup;
 			children = (
-				082C9A3D1F502CB600C414E2 /* DeepLearning下步预言.md */,
-				082C9A3E1F502CB600C414E2 /* Light.md */,
-				082C9A3F1F502CB600C414E2 /* MarkDownNote_ModifyTimeTool.app */,
-				082C9A401F502CB600C414E2 /* 应用.md */,
+				08D193401F675D7200CBB18F /* DeepLearning下步预言.md */,
+				08D193411F675D7200CBB18F /* Light.md */,
+				08D193421F675D7200CBB18F /* MarkDownNote_ModifyTimeTool.app */,
+				08D193431F675D7200CBB18F /* 应用.md */,
 			);
 			path = "Light及应用";
 			sourceTree = "<group>";
 		};
-		082C9A421F502CB600C414E2 /* Other */ = {
+		08D193451F675D7200CBB18F /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				082C9A431F502CB600C414E2 /* BP.md */,
-				082C9A441F502CB600C414E2 /* ModifyTime */,
+				08D193461F675D7200CBB18F /* BP.md */,
+				08D193471F675D7200CBB18F /* ModifyTime */,
 			);
 			path = Other;
 			sourceTree = "<group>";
 		};
-		082C9A441F502CB600C414E2 /* ModifyTime */ = {
+		08D193471F675D7200CBB18F /* ModifyTime */ = {
 			isa = PBXGroup;
 			children = (
-				082C9A451F502CB600C414E2 /* MarkDownNote_ModifyTimeTool */,
-				082C9A551F502CB600C414E2 /* refreshIcon.jpeg */,
+				08D193481F675D7200CBB18F /* MarkDownNote_ModifyTimeTool */,
+				08D193581F675D7200CBB18F /* refreshIcon.jpeg */,
 			);
 			path = ModifyTime;
 			sourceTree = "<group>";
 		};
-		082C9A451F502CB600C414E2 /* MarkDownNote_ModifyTimeTool */ = {
+		08D193481F675D7200CBB18F /* MarkDownNote_ModifyTimeTool */ = {
 			isa = PBXGroup;
 			children = (
-				082C9A461F502CB600C414E2 /* MarkDownNote_ModifyTimeTool */,
-				082C9A521F502CB600C414E2 /* MarkDownNote_ModifyTimeTool.xcodeproj */,
+				08D193491F675D7200CBB18F /* MarkDownNote_ModifyTimeTool */,
+				08D193551F675D7200CBB18F /* MarkDownNote_ModifyTimeTool.xcodeproj */,
 			);
 			path = MarkDownNote_ModifyTimeTool;
 			sourceTree = "<group>";
 		};
-		082C9A461F502CB600C414E2 /* MarkDownNote_ModifyTimeTool */ = {
+		08D193491F675D7200CBB18F /* MarkDownNote_ModifyTimeTool */ = {
 			isa = PBXGroup;
 			children = (
-				082C9A471F502CB600C414E2 /* AppDelegate.h */,
-				082C9A481F502CB600C414E2 /* AppDelegate.m */,
-				082C9A491F502CB600C414E2 /* Assets.xcassets */,
-				082C9A4A1F502CB600C414E2 /* Main.storyboard */,
-				082C9A4C1F502CB600C414E2 /* Info.plist */,
-				082C9A4D1F502CB600C414E2 /* main.m */,
-				082C9A4E1F502CB600C414E2 /* NSDate+Escort.h */,
-				082C9A4F1F502CB600C414E2 /* NSDate+Escort.m */,
-				082C9A501F502CB600C414E2 /* Utils.h */,
-				082C9A511F502CB600C414E2 /* Utils.m */,
+				08D1934A1F675D7200CBB18F /* AppDelegate.h */,
+				08D1934B1F675D7200CBB18F /* AppDelegate.m */,
+				08D1934C1F675D7200CBB18F /* Assets.xcassets */,
+				08D1934D1F675D7200CBB18F /* Main.storyboard */,
+				08D1934F1F675D7200CBB18F /* Info.plist */,
+				08D193501F675D7200CBB18F /* main.m */,
+				08D193511F675D7200CBB18F /* NSDate+Escort.h */,
+				08D193521F675D7200CBB18F /* NSDate+Escort.m */,
+				08D193531F675D7200CBB18F /* Utils.h */,
+				08D193541F675D7200CBB18F /* Utils.m */,
 			);
 			path = MarkDownNote_ModifyTimeTool;
 			sourceTree = "<group>";
 		};
-		082C9A531F502CB600C414E2 /* Products */ = {
+		08D193561F675D7200CBB18F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				082C9A5F1F502CB600C414E2 /* MarkDownNote_ModifyTimeTool.app */,
+				08D1936A1F675D7200CBB18F /* MarkDownNote_ModifyTimeTool.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		082C9A571F502CB600C414E2 /* SMG */ = {
+		08D1935A1F675D7200CBB18F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				082C9A581F502CB600C414E2 /* 1.png */,
-				082C9A591F502CB600C414E2 /* Temp.md */,
-				082C9A5A1F502CB600C414E2 /* 开发任务.md */,
-				082C9A5B1F502CB600C414E2 /* 类人的学习项目.md */,
-				082C9A5C1F502CB600C414E2 /* 记忆系统结构分析.md */,
+				08D1935B1F675D7200CBB18F /* img */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		08D1935B1F675D7200CBB18F /* img */ = {
+			isa = PBXGroup;
+			children = (
+				08D1935C1F675D7200CBB18F /* 1.png */,
+				08D1935D1F675D7200CBB18F /* 2.png */,
+			);
+			path = img;
+			sourceTree = "<group>";
+		};
+		08D1935E1F675D7200CBB18F /* SMG */ = {
+			isa = PBXGroup;
+			children = (
+				08D1935F1F675D7200CBB18F /* 1.png */,
+				08D193601F675D7200CBB18F /* Temp.md */,
+				08D193611F675D7200CBB18F /* 开发任务.md */,
+				08D193621F675D7200CBB18F /* 类人的学习项目.md */,
+				08D193631F675D7200CBB18F /* 记忆系统结构分析.md */,
 			);
 			path = SMG;
 			sourceTree = "<group>";
 		};
-		083E9A8E1F313E4300ABC0FB = {
+		08D193661F675D7200CBB18F /* Products */ = {
 			isa = PBXGroup;
-			children = (
-				082C997B1F502CB500C414E2 /* 当下不开发的 */,
-				082C99801F502CB500C414E2 /* 开发 */,
-				082C99821F502CB500C414E2 /* 框架 */,
-				082C99981F502CB500C414E2 /* 目录.md */,
-				082C99991F502CB500C414E2 /* 视觉 */,
-				082C999B1F502CB500C414E2 /* 手写笔记 */,
-				082C99D31F502CB500C414E2 /* 学习 */,
-				082C99F51F502CB500C414E2 /* 资料 */,
-				082C99FC1F502CB500C414E2 /* Book */,
-				082C9A111F502CB500C414E2 /* DataLanguage */,
-				082C9A181F502CB500C414E2 /* iphone备忘录 */,
-				082C9A3B1F502CB500C414E2 /* LICENSE */,
-				082C9A3C1F502CB500C414E2 /* Light及应用 */,
-				082C9A411F502CB600C414E2 /* MarkDownNote_ModifyTimeTool.app */,
-				082C9A421F502CB600C414E2 /* Other */,
-				082C9A561F502CB600C414E2 /* README.md */,
-				082C9A571F502CB600C414E2 /* SMG */,
-			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -650,8 +679,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 082C9A531F502CB600C414E2 /* Products */;
-					ProjectRef = 082C9A521F502CB600C414E2 /* MarkDownNote_ModifyTimeTool.xcodeproj */;
+					ProductGroup = 08D193561F675D7200CBB18F /* Products */;
+					ProjectRef = 08D193551F675D7200CBB18F /* MarkDownNote_ModifyTimeTool.xcodeproj */;
+				},
+				{
+					ProductGroup = 08D193661F675D7200CBB18F /* Products */;
+					ProjectRef = 08D193651F675D7200CBB18F /* SMG_NOTE.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -661,20 +694,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		082C9A5F1F502CB600C414E2 /* MarkDownNote_ModifyTimeTool.app */ = {
+		08D1936A1F675D7200CBB18F /* MarkDownNote_ModifyTimeTool.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = MarkDownNote_ModifyTimeTool.app;
-			remoteRef = 082C9A5E1F502CB600C414E2 /* PBXContainerItemProxy */;
+			remoteRef = 08D193691F675D7200CBB18F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXVariantGroup section */
-		082C9A4A1F502CB600C414E2 /* Main.storyboard */ = {
+		08D1934D1F675D7200CBB18F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				082C9A4B1F502CB600C414E2 /* Base */,
+				08D1934E1F675D7200CBB18F /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
