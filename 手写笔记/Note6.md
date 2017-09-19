@@ -6,6 +6,7 @@
 * [n6p4 多次点亮2](#n6p4-多次点亮2)
 * [n6p5 意识流2](#n6p5-意识流2)
 * [n6p6 Awareness](#n6p6-Awareness)
+* [n6p7 根形AwarenessLayer](#n6p7-根形AwarenessLayer)
 
 
 <br><br><br>
@@ -224,3 +225,18 @@
 ### 意识是源源不断的输出mindValue一套输出策略的控制器;但又不记录到神经网络;却不断改变行为与感受;
 
 
+
+<br><br><br><br>
+
+
+## n6p7 根形AwarenessLayer
+`CreateTime 17.09.19`
+
+1. 我们大脑经常对比自己的需求吗?
+2. 我们会把伤心的值与痛苦的值进行比较吗?否;
+3. 喜,怒,哀,乐,惊,恐,悲;
+4. 得之乐,失之悲;
+5. MindValue,权重值;
+6. 权重值的成长;
+
+![](img/1.png)
