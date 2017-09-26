@@ -71,3 +71,9 @@
 @end
 
 ```
+
+
+## n7p2 AINode模型
+`CreateTime 17.09.26`
+
+![](img/7.png)
