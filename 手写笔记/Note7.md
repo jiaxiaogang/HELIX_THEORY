@@ -165,3 +165,19 @@
 
 
 
+
+#### 代码规范
+
+1. 每个Editor的Element都继承自NEElement
+2. NE开头命名 (如:NENode,NEFuncModel,
+
+#### 步骤(以下以NENode为例,描述其工作及代码步骤)
+
+1. 在AINetEditor.init中...写new NENode();传入各Element所需的属性值及唯一ID;
+2. 在AINetEditor.refreshNet中...自动存储建立id和aiPointer的映射;
+
+#### ChildElement
+
+1. AINetEditor.refreshNet时...如果有子组件未保存,应先保存子组件,
+2. 如果有互子死循环,应打ERRORLOG;
+3. 在NEElement中有addChild等Arr的方法;
