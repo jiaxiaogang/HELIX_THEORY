@@ -212,3 +212,43 @@
 `CreateTime 17.10.09`
 
 ![](img/9.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br>
+
+
+## TaskList
+
+#### `2017.10.09`
+- [x] 添加NEFuncNode;
+
+#### `2017.10.10`
+- [ ] 测试funcNode的调用;
+- [ ] 添加NEMutilNode;
+- [ ] 调用mutilNode
+- [ ] 根据数据结果生成DataNode;
