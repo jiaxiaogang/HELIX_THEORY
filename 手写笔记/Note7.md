@@ -3,7 +3,8 @@
 * [n7p1 神经元与先天神经网络](#n7p1-神经元与先天神经网络)
 * [n7p2 AINode模型](#n7p2-AINode模型)
 * [n7p3 先天神经网络编辑器](#n7p3-先天神经网络编辑器)
-
+* [n7p4 LOP代码规范](#n7p4-lop代码规范)
+* [n7p5 双路神经元](#n7p5-双路神经元)
 
 
 <br><br><br><br>
@@ -36,7 +37,7 @@
 
 -(void) setContent:(id)content{
     if (self.type == AINodeType_Data) {
-        
+
     }else if (self.type == AINodeType_Func) {
         //2. 反射子神经元
         //a. 取神经元算法数据
@@ -181,3 +182,33 @@
 1. AINetEditor.refreshNet时...如果有子组件未保存,应先保存子组件,
 2. 如果有互子死循环,应打ERRORLOG;
 3. 在NEElement中有addChild等Arr的方法;
+
+
+
+
+<br><br><br><br><br>
+
+
+## n7p4 LOP代码规范
+`CreateTime 17.10.09`
+
+#### LOP对象表
+
+||new|pointer|
+|---|---|---|
+|内存|先alloc后init|一直有|
+|硬盘|先new到内存中,后再io|io后才有|
+
+
+#### LOP对象操作
+
+1. 所有操作在io前赋值操作等使用data;
+2. io后操作pointer
+3. 在实际使用数据类比的时候,再用pointer取data操作;
+
+
+
+## n7p5 双路神经元
+`CreateTime 17.10.09`
+
+![](img/9.png)
