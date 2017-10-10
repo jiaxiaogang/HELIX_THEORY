@@ -248,7 +248,7 @@
 - [x] 添加NEFuncNode;
 
 #### `2017.10.10`
-- [ ] 测试funcNode的调用;
+- [x] 测试funcNode的调用;
 - [ ] 添加NEMutilNode;
 - [ ] 调用mutilNode
 - [ ] 根据数据结果生成DataNode;
