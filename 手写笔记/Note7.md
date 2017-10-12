@@ -183,6 +183,20 @@
 2. 如果有互子死循环,应打ERRORLOG;
 3. 在NEElement中有addChild等Arr的方法;
 
+#### 生命周期-AIElement
+
+1. 在Editor中initNet中创建;
+2. 在refreshNet中构建;(如是有子element或子data会先存子,再存自身)其中:
+  * 子element有自己的eId;
+  * 子data继承使用父node的eId;
+
+#### 生命周期-AINode
+
+1. 在element的refreshNet中构建;
+2. 构建后,内存中则销毁
+3. 调用时,通过神经网络调用;有两种:
+  * 通过搜索后,直接由区域点亮来调用;
+  * 通过input直接由multiNode展开调用;
 
 
 
@@ -194,10 +208,10 @@
 
 #### LOP对象表
 
-||new|pointer|
-|---|---|---|
-|内存|先alloc后init|一直有|
-|硬盘|先new到内存中,后再io|io后才有|
+|  | new | pointer |
+| --- | --- | --- |
+| 内存 | 先alloc后init | 一直有 |
+| 硬盘 | 先new到内存中,后再io | io后才有 |
 
 
 #### LOP对象操作
@@ -241,6 +255,13 @@
 
 
 
+<br><br><br><br><br>
+
+
+## n7p6 Input至神经网络功能区
+`CreateTime 17.10.12`
+
+![](assets/Note7-a77d265c.png)
 
 
 
