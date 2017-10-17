@@ -283,6 +283,8 @@
 
 #### `2017.10.10`
 - [x] 测试funcNode的调用;
-- [ ] 添加NEMutilNode;
-- [ ] 调用mutilNode
-- [ ] 根据数据结果生成DataNode;
+- [x] 添加NEMutilNode;
+- [x] 调用mutilNode
+- [x] 将funcNode输出为singleNode;
+- [x] 根据数据结果生成DataNode;
+- [ ] 测试;
