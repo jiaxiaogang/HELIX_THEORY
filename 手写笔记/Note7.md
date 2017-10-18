@@ -279,12 +279,20 @@
 ## TaskList
 
 #### `2017.10.09`
+
 - [x] 添加NEFuncNode;
 
 #### `2017.10.10`
+
 - [x] 测试funcNode的调用;
 - [x] 添加NEMutilNode;
 - [x] 调用mutilNode
 - [x] 将funcNode输出为singleNode;
 - [x] 根据数据结果生成DataNode;
-- [ ] 测试;
+- [x] 测试;
+
+#### `2017.10.18`
+
+- [ ] 除str.length外再加一个基础算法;
+- [ ] 创建AINet关联;
+- [ ] 接入思维,尝试理解抽象概念;
