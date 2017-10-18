@@ -88,8 +88,7 @@
 ## n7p2 AINode模型
 `CreateTime 17.09.26`
 
-![](img/7.png)
-
+![](assets/Note7-dd09dec3.png)
 
 
 
@@ -231,6 +230,12 @@
 2. 所以在传参上,多使用内存对象传递,而AIPointer只在io等情况下使用;
 3. 导致大量多余io的问题;(1,缓存`建立二级缓存` 2,懒io`使用策略,数据size大的时候,自动使用影子data替代`)
 
+
+
+
+<br><br><br><br><br>
+
+
 ## n7p5 双路神经元
 `CreateTime 17.10.09`
 
@@ -265,9 +270,14 @@
 
 > 之所以说是无意识处理;是因为其算法处理后,会传递给awareness作判断(感觉值的预测对比);
 
-![](assets/Note7-a77d265c.png)
+![](assets/Note7-25289641.png)
 
-
+#### 示图注:
+1. 视觉输入,字符串输入表示功能区
+2. `m` 表示multiNode
+3. `f` 表示funcNode
+4. `s` 表示singleNode
+5. `d` 表示dataNode
 
 
 
