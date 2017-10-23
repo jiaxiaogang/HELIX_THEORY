@@ -1,14 +1,33 @@
 # AwarenessLayer-软件架构设计
 ***
 
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
+- [AwarenessLayer-软件架构设计](#awarenesslayer-软件架构设计)
+	- [n8p1 AwarenessLayer软件架构初想法](#n8p1-awarenesslayer软件架构初想法)
+				- [<font color=red>前言:</font>](#font-colorred前言font)
+				- [<font color=red>定义:</font>](#font-colorred定义font)
+			- [<font color=red>两个原则:</font>](#font-colorred两个原则font)
+			- [<font color=red>Controller</font>](#font-colorredcontrollerfont)
+	- [n8p2 意识真实的感受2-逆向演绎](#n8p2-意识真实的感受2-逆向演绎)
+				- [<font color=red>参考:</font>](#font-colorred参考font)
+				- [<font style="color:red">前言:</font>](#font-stylecolorred前言font)
+				- [<font style="color:red">工作流程<font>](#font-stylecolorred工作流程font)
+				- [<font color=red>思考:</font>](#font-colorred思考font)
+				- [<font color=red>复合逆向演绎包括:</font>](#font-colorred复合逆向演绎包括font)
+				- [<font color=red>示图:</font>](#font-colorred示图font)
+	- [n8p3 精简意识控制器](#n8p3-精简意识控制器)
+				- [<font color=red>参考:</font>](#font-colorred参考font)
+				- [<font color=red>原始意识控制器:</font>](#font-colorred原始意识控制器font)
+				- [<font color=red>精简意识控制器:</font>](#font-colorred精简意识控制器font)
+				- [<font color=red>精简意识控制器_有意识的特征:</font>](#font-colorred精简意识控制器有意识的特征font)
+	- [n8p4 SMG软件架构](#n8p4-smg软件架构)
+				- [<font color=red>示图:</font>](#font-colorred示图font)
+	- [n8p5 事务控制器](#n8p5-事务控制器)
+				- [<font color=red>前言:</font>](#font-colorred前言font)
 
-# 目录
+<!-- /TOC -->
 
-* [n8p1 AwarenessLayer软件架构初想法](#n8p1-AwarenessLayer软件架构初想法)
-* [n8p2 意识真实的感受2-逆向演绎](#n8p2-意识真实的感受2-逆向演绎)
-* [n8p3 精简意识控制器](#n8p3-精简意识控制器)
-* [n8p4 SMG软件架构](#n8p4-smg软件架构)
 
 <br><br><br><br>
 
@@ -190,10 +209,16 @@ n4p7 & n4px
 ##### <font color=red>精简意识控制器:</font>
 
 ```
-1. 只存在潜过度到有意识的合作任务;
+1. 只存在潜过度到有意识的合作任务;(后台耗时任务 & input持续任务 都归到潜意识)
 2. 最大的问题来自意识的灵活性;(随心所欲)
 ```
+##### <font color=red>精简意识控制器_有意识的特征:</font>
 
+```
+1. 主线程同时执行一件思考任务
+2. 注意力
+3. 后天写权限
+```
 
 
 
@@ -239,6 +264,35 @@ n4p7 & n4px
 
 
 
+
+
+
+
+
+
+
+<br><br><br><br><br>
+
+
+## n8p5 事务控制器
+`CreateTime 17.10.23`
+
+##### <font color=red>前言:</font>
+
+```
+1. 事务控制器,灵活的控制了AwarenessLayer对DataLayer的操作;
+2. 需与意识合作,因为事务本身只负责区域点亮及其它事务执行,而不知道其结果是否中意;
+3. 事务接口:(执行 & 添加 & 打断 & 驳回 & Success & Error & Failure 等)
+4. 调用:(区域点亮调用,带方向的区域点亮调用,电量参数,是否可转为后台长时参数);
+```
+
+
+
+
+
+
+
+<br><br><br><br><br>
 
 
 - [ ] TaskList
