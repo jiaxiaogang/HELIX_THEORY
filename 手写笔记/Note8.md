@@ -25,6 +25,11 @@
 				- [<font color=red>示图:</font>](#font-colorred示图font)
 	- [n8p5 事务控制器](#n8p5-事务控制器)
 				- [<font color=red>前言:</font>](#font-colorred前言font)
+	- [n8p5 AwarenessLayer软件架构初想法2](#n8p5-awarenesslayer软件架构初想法2)
+				- [<font color=red>前言:</font>](#font-colorred前言font)
+				- [<font color=red>结构:</font>](#font-colorred结构font)
+	- [n8p6 LOP2](#n8p6-lop2)
+	- [TaskList](#tasklist)
 
 <!-- /TOC -->
 
@@ -284,7 +289,83 @@ n4p7 & n4px
 2. 需与意识合作,因为事务本身只负责区域点亮及其它事务执行,而不知道其结果是否中意;
 3. 事务接口:(执行 & 添加 & 打断 & 驳回 & Success & Error & Failure 等)
 4. 调用:(区域点亮调用,带方向的区域点亮调用,电量参数,是否可转为后台长时参数);
+5. 思维抽象事务;
 ```
+
+
+
+
+<br><br><br><br><br>
+
+
+## n8p5 AwarenessLayer软件架构初想法2
+`CreateTime 17.10.24`
+
+##### <font color=red>前言:</font>
+
+```
+1. AwarenessLayer是引擎,SMG的CPU;
+2. AwarenessLayer是事务控制器,
+3. AwarenessLayer是重转站,大脑循环站;
+4. ControllerLayer引擎,大脑的cpu;
+```
+
+##### <font color=red>结构:</font>
+
+```
+链式结构;每一节点都是控制器;分类器;决定下一站到哪;作什么事务;
+```
+
+```
+1. input
+2. 数据传递到:AwarenessLayer意识判断(此时,虽然不知道数据是什么,但可以判断`来源` 和 `数据量`)
+3. 数据传递到神经元FuncLayer
+4. 处理后输出给AINet
+5. 由 `丘区` 指引数据成长方向
+```
+
+```
+1. `桥区` 产生Demand 与 输入信息
+2. 由输入信息到AINet检索经验作区域点亮等操作;
+3. 事务控制器控制思维;在AINet中作类比等操作;
+4. 思维控制器决策
+5. 思维控制器将结果(一组输出值)返回给 `桥区` 的OutputController
+n. output
+```
+
+
+
+
+
+<br><br><br><br><br>
+
+
+## n8p6 LOP2
+`CreateTime 17.10.24`
+
+![](assets/5.png)
+
+```
+1. 算法层负责生产数据 和 其它控制器取值打辅助;
+2. 数据层负责一切智能活动,等等参考前文神经网络;
+3. ControllerLayer负责控制整个过程有序进行;
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -295,10 +376,18 @@ n4p7 & n4px
 <br><br><br><br><br>
 
 
-- [ ] TaskList
-  - [ ] 考虑去掉DataNode反射调用FuncNode;原因有二:
-    1. 因为原input数据已经不见了;只能逆向演绎,不能传回重新神经元组处理;
-    2. 因为multiNode的复杂性,也不建议这么写;(90%确定)
+## TaskList
+
+- [ ] 考虑去掉DataNode反射调用FuncNode;原因有二:
+
+	```
+  1. 因为原input数据已经不见了;只能逆向演绎,不能传回重新神经元组处理;
+  2. 因为multiNode的复杂性,也不建议这么写;(90%确定)
+	```
+
+- [ ] 改变神经网络结构;(依Note8内容改变)
+
+
 
 
 
