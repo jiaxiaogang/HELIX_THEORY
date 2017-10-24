@@ -29,6 +29,9 @@
 				- [<font color=red>前言:</font>](#font-colorred前言font)
 				- [<font color=red>结构:</font>](#font-colorred结构font)
 	- [n8p6 LOP2](#n8p6-lop2)
+				- [<font color=red>LOP2的概述</font>](#font-colorredlop2的概述font)
+				- [<font color=red>LOP2的主要目的</font>](#font-colorredlop2的主要目的font)
+	- [n8p7 意识思维与神经网络融合](#n8p7-意识思维与神经网络融合)
 	- [TaskList](#tasklist)
 
 <!-- /TOC -->
@@ -345,6 +348,25 @@ n. output
 
 ![](assets/5.png)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```
 1. 算法层负责生产数据 和 其它控制器取值打辅助;
 2. 数据层负责一切智能活动,等等参考前文神经网络;
@@ -372,7 +394,17 @@ n. output
 
 
 
+<br><br><br><br><br>
 
+
+## n8p7 意识思维与神经网络融合
+`CreateTime 17.10.24`
+
+```
+1. 融合，不止是事务与controller，其意义是意识思维与神经网络一起成长。
+
+2. 即数据即思维升级,数据即意识升级;
+```
 
 
 
