@@ -32,6 +32,8 @@
 				- [<font color=red>LOP2的概述</font>](#font-colorredlop2的概述font)
 				- [<font color=red>LOP2的主要目的</font>](#font-colorredlop2的主要目的font)
 	- [n8p7 意识思维与神经网络融合](#n8p7-意识思维与神经网络融合)
+	- [n8p8 区域点亮2](#n8p8-区域点亮2)
+				- [<font color=red>区域点亮与思维的融合:</font>](#font-colorred区域点亮与思维的融合font)
 	- [TaskList](#tasklist)
 
 <!-- /TOC -->
@@ -285,6 +287,9 @@ n4p7 & n4px
 ## n8p5 事务控制器
 `CreateTime 17.10.23`
 
+`参考:` [N6P4](Note6.md#n6p4-多次点亮2)
+[N5P6](Note5.md#n5p6lightarea的意识控制器多次点亮)
+
 ##### <font color=red>前言:</font>
 
 ```
@@ -386,6 +391,7 @@ n. output
 
 1. 让人们将OOP忘掉;将OOP中的那些理念回归到数据中..
 2. 让人们更加重视DataLayer层;因为数据带来的泛化能力和灵活性是前所未有的;
+3. 让Controller的和思维类比等配合下,代码逻辑源于数据;
 ```
 
 
@@ -410,8 +416,23 @@ n. output
 
 
 
+<br><br><br><br><br>
 
 
+## n8p8 区域点亮2
+`CreateTime 17.10.25`
+
+`参考:` [N4P17](Note4.md#n4p17lightarea)
+
+##### <font color=red>区域点亮与思维的融合:</font>
+
+```
+1. 去掉电能量的设计;换成 `抑制` 和 `兴奋`;
+2. 所以思维,是在每个DataNode神经元点亮时已经在跟着工作了,而非全部取完,作统一类比;这样的好处是:
+	1. 大大提高区域点亮的效果;
+	2. 可以更智能灵活的控制整个区域点亮的过程;
+	3. 可以尽可能少的减少不必要的点亮与思维,性能更优化;
+```
 
 
 
