@@ -34,6 +34,11 @@
 	- [n8p7 意识思维与神经网络融合](#n8p7-意识思维与神经网络融合)
 	- [n8p8 区域点亮2](#n8p8-区域点亮2)
 				- [<font color=red>区域点亮与思维的融合:</font>](#font-colorred区域点亮与思维的融合font)
+	- [n8p9 MindValue](#n8p9-mindvalue)
+				- [<font color=red>概念:</font>](#font-colorred概念font)
+				- [<font color=red>作用:</font>](#font-colorred作用font)
+				- [<font color=red>MoodDurationManager概念:</font>](#font-colorredmooddurationmanager概念font)
+				- [<font color=red>MoodDurationManager工作流程:</font>](#font-colorredmooddurationmanager工作流程font)
 	- [TaskList](#tasklist)
 
 <!-- /TOC -->
@@ -329,7 +334,7 @@ n4p7 & n4px
 2. 数据传递到:AwarenessLayer意识判断(此时,虽然不知道数据是什么,但可以判断`来源` 和 `数据量`)
 3. 数据传递到神经元FuncLayer
 4. 处理后输出给AINet
-5. 由 `丘区` 指引数据成长方向
+5. 由 `丘区` (mindValue)指引数据成长方向;
 ```
 
 ```
@@ -434,6 +439,48 @@ n. output
 	3. 可以尽可能少的减少不必要的点亮与思维,性能更优化;
 ```
 
+
+
+
+
+<br><br><br><br><br>
+
+
+## n8p9 MindValue
+`CreateTime 17.10.26`
+
+`参考:`
+
+[框架/Mind#MoodDuration心情持续](../框架/Mind.md#moodduration心情持续)
+
+[Book心情持续](../Book/Chapters/Chapter8.md)
+
+##### <font color=red>概念:</font>
+
+```
+意识思维通过MindValue的方式与AINet紧密合作,是数据的活跃剂,构建期监工,也是意识与数据的桥;让意识由神经反射升级成持续意识;
+```
+
+##### <font color=red>作用:</font>
+
+```
+1. mindValue在AINet中作用是指引成长方向;
+2. mindValue在意识中作用是将神经反射作为持续的欲望或需求;
+```
+
+##### <font color=red>MoodDurationManager概念:</font>
+
+```
+1. MoodDurationManager属于丘区;mindValue功能体现之一;
+```
+
+##### <font color=red>MoodDurationManager工作流程:</font>
+
+```
+1. 持续内感受到 mindValue-;
+2. AINet无记录时的手足无措,
+3. 有记录时则促使smg去解决mindValue-的问题;
+```
 
 
 

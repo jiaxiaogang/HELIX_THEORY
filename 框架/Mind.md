@@ -1,15 +1,32 @@
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [Mind](#mind)
+		- [引擎:](#引擎)
+		- [MIND工作方式](#mind工作方式)
+		- [Mind-Demand](#mind-demand)
+		- [Question](#question)
+		- [火花塞:(使mind着火的装置;)](#火花塞使mind着火的装置)
+		- [MindValue;](#mindvalue)
+		- [Mind元二维图;](#mind元二维图)
+		- [==================Demand==================](#demand)
+		- [Demand_Old](#demandold)
+		- [MoodDuration"心情持续"](#moodduration心情持续)
+		- [求生欲](#求生欲)
+
+<!-- /TOC -->
+
 # Mind
 ***
 ### 引擎:
 - 概念:
 	1. Mind驱动了input和output
 
-细腻 丰富  
+细腻 丰富
 
-好奇心  
-快乐  
-欲望  
-需求  
+好奇心
+快乐
+欲望
+需求
 
 ***
 
@@ -57,10 +74,10 @@
 		1. Decision的结果
 		2. Understand的结果;
 		3. 注意力的投放;
-	
-	
-	
-	
+
+
+
+
 ### 火花塞:(使mind着火的装置;)
 - 无聊感
 	- 作用:
@@ -71,14 +88,14 @@
 	- 无聊感;Mind元之一;
 	- 无聊感来自副引擎长期无(超爽的)输入;
 	- 无聊感打断长期的无注意力状态;
-		//2,将mind的意见记到logic和law里;   
-		    //1,判断是否无聊;   
-		    //2,判断是否需要注意力;   
-		    //3,作为火花塞点燃mind;   
-		    //xxx   
-		
+		//2,将mind的意见记到logic和law里;
+		    //1,判断是否无聊;
+		    //2,判断是否需要注意力;
+		    //3,作为火花塞点燃mind;
+		    //xxx
+
 	• 好奇心
-		○ 
+		○
 
 
 
@@ -182,7 +199,4 @@
 
 
 ### 求生欲
-- 死亡恐惧  
-
-
-
+- 死亡恐惧
