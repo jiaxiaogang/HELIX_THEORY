@@ -44,6 +44,7 @@
 			- [思维对知识读取流程](#思维对知识读取流程)
 			- [神经网络数据的单一性](#神经网络数据的单一性)
 			- [神经网络数据的破单一性](#神经网络数据的破单一性)
+	- [n8p11 ControllerLayer](#n8p11-controllerlayer)
 	- [TaskList](#tasklist)
 
 <!-- /TOC -->
@@ -568,6 +569,26 @@ n. output
 
 </font>
 
+
+
+
+
+
+
+
+<br><br><br><br><br>
+
+<font color=green>
+
+## n8p11 ControllerLayer
+`CreateTime 17.11.01`
+
+|  | 控制器 | 生命周期 | 主任务demand | IO |
+| --- | --- | --- | --- | --- |
+| 1 | 思维控制器 | 构造 析构 |  |  |
+| 2 | AINet事务控制器 |  |  |  |
+
+</font>
 
 
 <br><br><br><br><br>
