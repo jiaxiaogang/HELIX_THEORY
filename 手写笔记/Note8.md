@@ -1,4 +1,4 @@
-# AwarenessLayer-软件架构设计
+ # AwarenessLayer-软件架构设计
 ***
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
@@ -165,6 +165,14 @@ n5p5
 
 注: 任意一种会联想到其它;
 ```
+
+|  | AINet事务控制器融合阶段 |
+| --- | --- |
+| 1 | 到节点是第一次数据融合 |
+| 2 | 到obj是第二次数据融合 |
+| 3 | 到区域是第三次融合 |
+| 4 | 到多区多维是第四次融合 | 
+
 
 ```
 1. 将各种数据进行联想检索的能力;
