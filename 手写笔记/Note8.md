@@ -1,53 +1,51 @@
  # AwarenessLayer-软件架构设计
+
 ***
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
-- [AwarenessLayer-软件架构设计](#awarenesslayer-软件架构设计)
-	- [n8p1 AwarenessLayer软件架构初想法](#n8p1-awarenesslayer软件架构初想法)
-				- [<font color=red>前言:</font>](#font-colorred前言font)
-				- [<font color=red>定义:</font>](#font-colorred定义font)
-			- [<font color=red>两个原则:</font>](#font-colorred两个原则font)
-			- [<font color=red>Controller</font>](#font-colorredcontrollerfont)
-	- [n8p2 意识真实的感受2-逆向演绎](#n8p2-意识真实的感受2-逆向演绎)
-				- [<font color=red>参考:</font>](#font-colorred参考font)
-				- [<font style="color:red">前言:</font>](#font-stylecolorred前言font)
-				- [<font style="color:red">工作流程<font>](#font-stylecolorred工作流程font)
-				- [<font color=red>思考:</font>](#font-colorred思考font)
-				- [<font color=red>复合逆向演绎包括:</font>](#font-colorred复合逆向演绎包括font)
-				- [<font color=red>示图:</font>](#font-colorred示图font)
-	- [n8p3 精简意识控制器](#n8p3-精简意识控制器)
-				- [<font color=red>参考:</font>](#font-colorred参考font)
-				- [<font color=red>原始意识控制器:</font>](#font-colorred原始意识控制器font)
-				- [<font color=red>精简意识控制器:</font>](#font-colorred精简意识控制器font)
-				- [<font color=red>精简意识控制器_有意识的特征:</font>](#font-colorred精简意识控制器有意识的特征font)
-	- [n8p4 SMG软件架构](#n8p4-smg软件架构)
-				- [<font color=red>示图:</font>](#font-colorred示图font)
-	- [n8p5 事务控制器](#n8p5-事务控制器)
-				- [<font color=red>前言:</font>](#font-colorred前言font)
-	- [n8p5 AwarenessLayer软件架构初想法2](#n8p5-awarenesslayer软件架构初想法2)
-				- [<font color=red>前言:</font>](#font-colorred前言font)
-				- [<font color=red>结构:</font>](#font-colorred结构font)
-	- [n8p6 LOP2](#n8p6-lop2)
-				- [<font color=red>LOP2的概述</font>](#font-colorredlop2的概述font)
-				- [<font color=red>LOP2的主要目的</font>](#font-colorredlop2的主要目的font)
-	- [n8p7 意识思维与神经网络融合](#n8p7-意识思维与神经网络融合)
-	- [n8p8 区域点亮2](#n8p8-区域点亮2)
-				- [<font color=red>区域点亮与思维的融合:</font>](#font-colorred区域点亮与思维的融合font)
-	- [n8p9 MindValue](#n8p9-mindvalue)
-				- [<font color=red>概念:</font>](#font-colorred概念font)
-				- [<font color=red>作用:</font>](#font-colorred作用font)
-				- [<font color=red>MoodDurationManager概念:</font>](#font-colorredmooddurationmanager概念font)
-				- [<font color=red>MoodDurationManager工作流程:</font>](#font-colorredmooddurationmanager工作流程font)
-	- [n8p10 知识表示X](#n8p10-知识表示x)
-			- [神经元逆向算法(错误)](#神经元逆向算法错误)
-			- [思维对知识读取流程](#思维对知识读取流程)
-			- [神经网络数据的单一性](#神经网络数据的单一性)
-			- [神经网络数据的破单一性](#神经网络数据的破单一性)
-	- [n8p11 ControllerLayer](#n8p11-controllerlayer)
-	- [TaskList](#tasklist)
-
-<!-- /TOC -->
+- [n8p1 AwarenessLayer软件架构初想法](#n8p1-awarenesslayer软件架构初想法)
+			- [<font color=red>前言:</font>](#font-colorred前言font)
+			- [<font color=red>定义:</font>](#font-colorred定义font)
+		- [<font color=red>两个原则:</font>](#font-colorred两个原则font)
+		- [<font color=red>Controller</font>](#font-colorredcontrollerfont)
+- [n8p2 意识真实的感受2-(想像力/逆向演绎)](#n8p2-意识真实的感受2-想像力逆向演绎)
+			- [<font color=red>参考:</font>](#font-colorred参考font)
+			- [<font style="color:red">前言:</font>](#font-stylecolorred前言font)
+			- [<font style="color:red">工作流程<font>](#font-stylecolorred工作流程font)
+			- [<font color=red>思考:</font>](#font-colorred思考font)
+			- [<font color=red>复合逆向演绎包括:</font>](#font-colorred复合逆向演绎包括font)
+			- [<font color=red>示图:</font>](#font-colorred示图font)
+- [n8p3 精简意识控制器](#n8p3-精简意识控制器)
+			- [<font color=red>参考:</font>](#font-colorred参考font)
+			- [<font color=red>原始意识控制器:</font>](#font-colorred原始意识控制器font)
+			- [<font color=red>精简意识控制器:</font>](#font-colorred精简意识控制器font)
+			- [<font color=red>精简意识控制器_有意识的特征:</font>](#font-colorred精简意识控制器有意识的特征font)
+- [n8p4 SMG软件架构](#n8p4-smg软件架构)
+			- [<font color=red>示图:</font>](#font-colorred示图font)
+- [n8p5 事务控制器](#n8p5-事务控制器)
+			- [<font color=red>前言:</font>](#font-colorred前言font)
+- [n8p5 AwarenessLayer软件架构初想法2](#n8p5-awarenesslayer软件架构初想法2)
+			- [<font color=red>前言:</font>](#font-colorred前言font)
+			- [<font color=red>结构:</font>](#font-colorred结构font)
+- [n8p6 LOP2](#n8p6-lop2)
+			- [<font color=red>LOP2的概述</font>](#font-colorredlop2的概述font)
+			- [<font color=red>LOP2的主要目的</font>](#font-colorredlop2的主要目的font)
+- [n8p7 意识思维与神经网络融合](#n8p7-意识思维与神经网络融合)
+- [n8p8 区域点亮2](#n8p8-区域点亮2)
+			- [<font color=red>区域点亮与思维的融合:</font>](#font-colorred区域点亮与思维的融合font)
+- [n8p9 MindValue](#n8p9-mindvalue)
+			- [<font color=red>概念:</font>](#font-colorred概念font)
+			- [<font color=red>作用:</font>](#font-colorred作用font)
+			- [<font color=red>MoodDurationManager概念:</font>](#font-colorredmooddurationmanager概念font)
+			- [<font color=red>MoodDurationManager工作流程:</font>](#font-colorredmooddurationmanager工作流程font)
+- [n8p10 知识表示X](#n8p10-知识表示x)
+		- [神经元逆向算法(错误)](#神经元逆向算法错误)
+		- [思维对知识读取流程](#思维对知识读取流程)
+		- [神经网络数据的单一性](#神经网络数据的单一性)
+		- [神经网络数据的破单一性](#神经网络数据的破单一性)
+- [n8p11 ControllerLayer](#n8p11-controllerlayer)
+- [n8p12 拆分与融合](#n8p12-拆分与融合)
+- [n8p13 思维控制器](#n8p13-思维控制器)
+- [TaskList](#tasklist)
 
 
 <br><br><br><br>
@@ -107,7 +105,7 @@
 <br><br><br><br><br>
 
 
-## n8p2 意识真实的感受2-逆向演绎
+## n8p2 意识真实的感受2-(想像力/逆向演绎)
 `CreateTime 17.10.22`
 
 ##### <font color=red>参考:</font>
@@ -171,7 +169,8 @@ n5p5
 | 1 | 到节点是第一次数据融合 |
 | 2 | 到obj是第二次数据融合 |
 | 3 | 到区域是第三次融合 |
-| 4 | 到多区多维是第四次融合 | 
+| 4 | 到多区多维是第四次融合 |
+| 参考 | n8p12 |
 
 
 ```
@@ -591,15 +590,77 @@ n. output
 ## n8p11 ControllerLayer
 `CreateTime 17.11.01`
 
-|  | 控制器 | 生命周期 | 主任务demand | IO |
-| --- | --- | --- | --- | --- |
-| 1 | 思维控制器 | 构造 析构 |  |  |
-| 2 | AINet事务控制器 |  |  |  |
+|  | 控制器 | 生命周期 | 主任务demand | IO | 参考 |
+| --- | --- | --- | --- | --- | --- |
+| 1 | main() |  |  |  | main() |
+| 2 | SMG类 |  |  |  | update() |
+| 1 | 意识控制器 |  |  |  | rootController & pageController |
+| 2 | 思维控制器 | 构造 析构 |  |  | n8p13 & controller |
+| 3 | AINet事务控制器 |  |  |  | 数据交互 |
+
 
 </font>
 
 
+
+
+
 <br><br><br><br><br>
+
+<font color=green>
+
+## n8p12 拆分与融合
+`CreateTime 17.11.02`
+
+|  | 拆融任务 | 实现方式 |
+| --- | --- | --- |
+| **数据IO事务拆分组** |  |  |
+| 1 | 数据拆分 | 思维 |
+| 2 | 数据融合 | 区域点亮->联想->想像力 |
+| **思维组** |  |  |
+| 1 | 思维拆分 | 意识控制器 |
+| 2 | 思维融合 | 用AINet数据融合代替 |
+
+
+</font>
+
+
+
+
+<br><br><br><br><br>
+
+<font color=green>
+
+## n8p13 思维控制器
+`CreateTime 17.11.02`
+
+|  | 功能 |
+| --- | --- |
+| 1 | 数据拆分 |
+| 2 | 构建后天网络 |
+| 3 | 数据IO事务 |
+
+</font>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br>
+
 
 
 ## TaskList
