@@ -45,6 +45,7 @@
 - [n8p11 ControllerLayer](#n8p11-controllerlayer)
 - [n8p12 拆分与融合](#n8p12-拆分与融合)
 - [n8p13 思维控制器](#n8p13-思维控制器)
+- [n8p14 意识控制器](#n8p14-意识控制器)
 - [TaskList](#tasklist)
 
 
@@ -647,6 +648,22 @@ n. output
 
 
 
+<br><br><br><br><br>
+
+<font color=green>
+
+## n8p14 意识控制器
+`CreateTime 17.11.03`
+
+|  | 功能 | code |
+| --- | --- | --- |
+| 1 | 维护一个意识主线程; | mainThread_Awareness |
+| 2 | 主线程分配100百分比占用; | CGFloat busyStatus |
+| **method** |  |  |
+| 1 | 判断潜意识准入 | -(BOOL) checkShallow{} |
+| 2 | 判断注意力获取 | -(BOOL) checkDeep{} |
+
+</font>
 
 
 
