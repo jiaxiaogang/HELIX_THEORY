@@ -1,53 +1,58 @@
- # AwarenessLayer-软件架构设计
+# AwarenessLayer-软件架构设计
 
 ***
 
-- [n8p1 AwarenessLayer软件架构初想法](#n8p1-awarenesslayer软件架构初想法)
-			- [<font color=red>前言:</font>](#font-colorred前言font)
-			- [<font color=red>定义:</font>](#font-colorred定义font)
-		- [<font color=red>两个原则:</font>](#font-colorred两个原则font)
-		- [<font color=red>Controller</font>](#font-colorredcontrollerfont)
-- [n8p2 意识真实的感受2-(想像力/逆向演绎)](#n8p2-意识真实的感受2-想像力逆向演绎)
-			- [<font color=red>参考:</font>](#font-colorred参考font)
-			- [<font style="color:red">前言:</font>](#font-stylecolorred前言font)
-			- [<font style="color:red">工作流程<font>](#font-stylecolorred工作流程font)
-			- [<font color=red>思考:</font>](#font-colorred思考font)
-			- [<font color=red>复合逆向演绎包括:</font>](#font-colorred复合逆向演绎包括font)
-			- [<font color=red>示图:</font>](#font-colorred示图font)
-- [n8p3 精简意识控制器](#n8p3-精简意识控制器)
-			- [<font color=red>参考:</font>](#font-colorred参考font)
-			- [<font color=red>原始意识控制器:</font>](#font-colorred原始意识控制器font)
-			- [<font color=red>精简意识控制器:</font>](#font-colorred精简意识控制器font)
-			- [<font color=red>精简意识控制器_有意识的特征:</font>](#font-colorred精简意识控制器有意识的特征font)
-- [n8p4 SMG软件架构](#n8p4-smg软件架构)
-			- [<font color=red>示图:</font>](#font-colorred示图font)
-- [n8p5 事务控制器](#n8p5-事务控制器)
-			- [<font color=red>前言:</font>](#font-colorred前言font)
-- [n8p5 AwarenessLayer软件架构初想法2](#n8p5-awarenesslayer软件架构初想法2)
-			- [<font color=red>前言:</font>](#font-colorred前言font)
-			- [<font color=red>结构:</font>](#font-colorred结构font)
-- [n8p6 LOP2](#n8p6-lop2)
-			- [<font color=red>LOP2的概述</font>](#font-colorredlop2的概述font)
-			- [<font color=red>LOP2的主要目的</font>](#font-colorredlop2的主要目的font)
-- [n8p7 意识思维与神经网络融合](#n8p7-意识思维与神经网络融合)
-- [n8p8 区域点亮2](#n8p8-区域点亮2)
-			- [<font color=red>区域点亮与思维的融合:</font>](#font-colorred区域点亮与思维的融合font)
-- [n8p9 MindValue](#n8p9-mindvalue)
-			- [<font color=red>概念:</font>](#font-colorred概念font)
-			- [<font color=red>作用:</font>](#font-colorred作用font)
-			- [<font color=red>MoodDurationManager概念:</font>](#font-colorredmooddurationmanager概念font)
-			- [<font color=red>MoodDurationManager工作流程:</font>](#font-colorredmooddurationmanager工作流程font)
-- [n8p10 知识表示X](#n8p10-知识表示x)
-		- [神经元逆向算法(错误)](#神经元逆向算法错误)
-		- [思维对知识读取流程](#思维对知识读取流程)
-		- [神经网络数据的单一性](#神经网络数据的单一性)
-		- [神经网络数据的破单一性](#神经网络数据的破单一性)
-- [n8p11 ControllerLayer](#n8p11-controllerlayer)
-- [n8p12 拆分与融合](#n8p12-拆分与融合)
-- [n8p13 思维控制器](#n8p13-思维控制器)
-- [n8p14 意识控制器](#n8p14-意识控制器)
-- [TaskList](#tasklist)
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
+- [AwarenessLayer-软件架构设计](#awarenesslayer-软件架构设计)
+	- [n8p1 AwarenessLayer软件架构初想法](#n8p1-awarenesslayer软件架构初想法)
+				- [<font color=red>前言:</font>](#font-colorred前言font)
+				- [<font color=red>定义:</font>](#font-colorred定义font)
+			- [<font color=red>两个原则:</font>](#font-colorred两个原则font)
+			- [<font color=red>Controller</font>](#font-colorredcontrollerfont)
+	- [n8p2 意识真实的感受2-(想像力/逆向演绎)](#n8p2-意识真实的感受2-想像力逆向演绎)
+				- [<font color=red>参考:</font>](#font-colorred参考font)
+				- [<font style="color:red">前言:</font>](#font-stylecolorred前言font)
+				- [<font style="color:red">工作流程<font>](#font-stylecolorred工作流程font)
+				- [<font color=red>思考:</font>](#font-colorred思考font)
+				- [<font color=red>复合逆向演绎包括:</font>](#font-colorred复合逆向演绎包括font)
+				- [<font color=red>示图:</font>](#font-colorred示图font)
+	- [n8p3 精简意识控制器](#n8p3-精简意识控制器)
+				- [<font color=red>参考:</font>](#font-colorred参考font)
+				- [<font color=red>原始意识控制器:</font>](#font-colorred原始意识控制器font)
+				- [<font color=red>精简意识控制器:</font>](#font-colorred精简意识控制器font)
+				- [<font color=red>精简意识控制器_有意识的特征:</font>](#font-colorred精简意识控制器有意识的特征font)
+	- [n8p4 SMG软件架构](#n8p4-smg软件架构)
+				- [<font color=red>示图:</font>](#font-colorred示图font)
+	- [n8p5 事务控制器](#n8p5-事务控制器)
+				- [<font color=red>前言:</font>](#font-colorred前言font)
+	- [n8p5 AwarenessLayer软件架构初想法2](#n8p5-awarenesslayer软件架构初想法2)
+				- [<font color=red>前言:</font>](#font-colorred前言font)
+				- [<font color=red>结构:</font>](#font-colorred结构font)
+	- [n8p6 LOP2](#n8p6-lop2)
+				- [<font color=red>LOP2的概述</font>](#font-colorredlop2的概述font)
+				- [<font color=red>LOP2的主要目的</font>](#font-colorredlop2的主要目的font)
+	- [n8p7 意识思维与神经网络融合](#n8p7-意识思维与神经网络融合)
+	- [n8p8 区域点亮2](#n8p8-区域点亮2)
+				- [<font color=red>区域点亮与思维的融合:</font>](#font-colorred区域点亮与思维的融合font)
+	- [n8p9 MindValue](#n8p9-mindvalue)
+				- [<font color=red>概念:</font>](#font-colorred概念font)
+				- [<font color=red>作用:</font>](#font-colorred作用font)
+				- [<font color=red>MoodDurationManager概念:</font>](#font-colorredmooddurationmanager概念font)
+				- [<font color=red>MoodDurationManager工作流程:</font>](#font-colorredmooddurationmanager工作流程font)
+	- [n8p10 知识表示X](#n8p10-知识表示x)
+			- [神经元逆向算法(错误)](#神经元逆向算法错误)
+			- [思维对知识读取流程](#思维对知识读取流程)
+			- [神经网络数据的单一性](#神经网络数据的单一性)
+			- [神经网络数据的破单一性](#神经网络数据的破单一性)
+	- [n8p11 ControllerLayer](#n8p11-controllerlayer)
+	- [n8p12 拆分与融合](#n8p12-拆分与融合)
+	- [n8p13 思维控制器](#n8p13-思维控制器)
+	- [n8p14 意识控制器](#n8p14-意识控制器)
+	- [n8p15 想像力](#n8p15-想像力)
+	- [TaskList](#tasklist)
+
+<!-- /TOC -->
 
 <br><br><br><br>
 
@@ -639,7 +644,8 @@ n. output
 | --- | --- |
 | 1 | 数据拆分 |
 | 2 | 构建后天网络 |
-| 3 | 数据IO事务 |
+| 3 | 数据IO事务(联想事务) |
+| 4 | 想像力事务 |
 
 </font>
 
@@ -669,10 +675,30 @@ n. output
 
 
 
+<br><br><br><br><br>
+
+## n8p15 想像力
+`CreateTime 17.11.03`
+
+`参考:`
+
+[当下不开发的/想像力](../当下不开发的/想像力.md)
+
+[n5p5意识真实的感受_二阶-想像力](Note5.md#n5p5意识真实的感受)
+
+[n6p2 感受](Note5.md#n6p2-感受)
+
+[n8p2 意识真实的感受2-(想像力/逆向演绎)](#n8p2-意识真实的感受2-想像力逆向演绎)
+
+[SMG/类人的学习项目](,,.SMG/类人的学习项目.md) `想像力，把图像属性，甚至文本描述GAN成图像演绎;`
 
 
-
-
+| title | desc |
+|:---:| --- |
+| 简介 | 想像力在SMG中是`代码能力`,其融合一个或多个`联想`事务;并通过思维将其逆向演绎 |
+| 作用 | 想像力是帮助读取数据的,没有想像力,数据将难以被主观意识读懂; |
+| 工作状态 | 想像力,将当前思维的相关缺失数据以常识等方式补全,并构建新的关联 |
+| maybe | 将非全面数据的补全机制(将数据构建关联至抽象节点之下最强关联的具象节点) |
 
 
 
