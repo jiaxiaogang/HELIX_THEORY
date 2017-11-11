@@ -52,6 +52,7 @@
 	- [n8p15 想像力](#n8p15-想像力)
 	- [n8p16 config_接口_后台](#n8p16-config接口后台)
 	- [n8p17 AwarenessLayer的规则](#n8p17-awarenesslayer的规则)
+	- [n8p18 DOP(DataOrientedProgramming)面向数据编程](#n8p18-dopdataorientedprogramming面向数据编程)
 	- [TaskList](#tasklist)
 
 <!-- /TOC -->
@@ -872,7 +873,7 @@ n. output
 
 ```
 
-| Awareness规则 >> | 
+| Awareness规则 >> |
 | --- |
 
 | ![](assets/9.png) |
@@ -880,6 +881,37 @@ n. output
 
 <br><br><br><br><br>
 
+
+
+
+## n8p18 DOP(DataOrientedProgramming)面向数据编程
+`CreateTime 17.11.11`
+
+| 时间线 >> |
+| --- |
+
+|  | time | desc |
+| --- | --- | --- |
+| 1 | 2017.02 | DataLanguage |
+| 2 | 2017.05 | AIFoundation |
+| 3 | 2017.08 | LOP |
+| 4 | 2017.11 | DOP |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br>
 
 
 ## TaskList
