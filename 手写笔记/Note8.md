@@ -543,6 +543,14 @@ n. output
 | 3 | mindValue在意识中作用是将神经反射作为持续的欲望或需求; |
 
 
+| MindValue象性 >> |
+| --- |
+
+|  | title | desc |
+| --- | --- | --- |
+| 1 | mindVaue能否被存储? | (应该会存储自我的mindValue快乐状态,mindValue具有影响构建和可数据表示二象性,mindValue原本不是一条数据,但因被自我状态感知了,才变成数据) |
+
+
 | MoodDurationManager >> |
 | --- |
 
