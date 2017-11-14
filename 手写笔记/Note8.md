@@ -551,6 +551,25 @@ n. output
 | 1 | mindVaue能否被存储? | (应该会存储自我的mindValue快乐状态,mindValue具有影响构建和可数据表示二象性,mindValue原本不是一条数据,但因被自我状态感知了,才变成数据) |
 
 
+| 先天MindValue释放 >> |
+| --- |
+
+| title | desc |
+| --- | --- |
+| 概念 | 五感有些会附加mindValue+-; |
+| 实现 | AINETEditor添加内感刺激mindValue释放功能。再外加配置一个算法曲线。 |
+
+
+| 后天MindValue释放 >> |
+| --- |
+
+| title | desc |
+| --- | --- |
+| 概念 | 后天是对已有的复习和增强， |
+| 实现 | 在AIThinkingRule中分析提纯数据,并向mindValue工厂申请释放新mindValue信号(构建因子); |
+
+新mindValue信号的功能;
+
 | MoodDurationManager >> |
 | --- |
 
@@ -999,6 +1018,8 @@ n. output
 	- [x] 将input接入到新的AIAwareness上;
 	- [x] 将手机电量变化的信号接入到新的AIAwareness上;
 	- [ ] 与smg实现一个最基础的交互;
+	- [ ] 在AINETEditor中添加先天MindValue功能;
+	- [ ] 在AIThinkingRule中添加后天mindValue提纯与工厂申请释放新mindValue信号的功能;
 
 
 
