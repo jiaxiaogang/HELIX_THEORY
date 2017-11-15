@@ -1,5 +1,14 @@
 # AwarenessLayer-软件架构设计
 
+| 前言 >> |
+| --- |
+
+|  | 熵控层 |
+| --- | --- |
+| 相对数据层栗子 | 如果说AINet是手机硬件,那么AwarenessLayer则是手机软件系统; |
+| 作用栗子 | 其在smg软件架构中的作用;就像以往软件编程里编译器的角色;但其不能够将所有数据进行编译,也不能够将逻辑编译为确定 |
+| 注: | 意识如此神秘,在本系统中似乎无处不在,但却又无迹可循,就像与我们捉迷藏一样,无论你如何深入的思考,意识总是那么神秘,本章只能够以软件架构技术的方式来设计与实施 |
+| 是否具有意识? | 不确定:如果说有,只是会表现出有意识的样子,如果说没有,那是因为我们从来就不曾真正了解意识; |
 ***
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
@@ -11,12 +20,7 @@
 			- [<font color=red>两个原则:</font>](#font-colorred两个原则font)
 			- [<font color=red>Controller</font>](#font-colorredcontrollerfont)
 	- [n8p2 意识真实的感受2-(想像力/逆向演绎)](#n8p2-意识真实的感受2-想像力逆向演绎)
-				- [<font color=red>参考:</font>](#font-colorred参考font)
 				- [<font style="color:red">前言:</font>](#font-stylecolorred前言font)
-				- [<font style="color:red">工作流程<font>](#font-stylecolorred工作流程font)
-				- [<font color=red>思考:</font>](#font-colorred思考font)
-				- [<font color=red>复合逆向演绎包括:</font>](#font-colorred复合逆向演绎包括font)
-				- [<font color=red>示图:</font>](#font-colorred示图font)
 	- [n8p3 精简意识控制器](#n8p3-精简意识控制器)
 				- [<font color=red>参考:</font>](#font-colorred参考font)
 				- [<font color=red>原始意识控制器:</font>](#font-colorred原始意识控制器font)
@@ -36,10 +40,6 @@
 	- [n8p8 区域点亮2](#n8p8-区域点亮2)
 				- [<font color=red>区域点亮与思维的融合:</font>](#font-colorred区域点亮与思维的融合font)
 	- [n8p9 MindValue](#n8p9-mindvalue)
-				- [<font color=red>概念:</font>](#font-colorred概念font)
-				- [<font color=red>作用:</font>](#font-colorred作用font)
-				- [<font color=red>MoodDurationManager概念:</font>](#font-colorredmooddurationmanager概念font)
-				- [<font color=red>MoodDurationManager工作流程:</font>](#font-colorredmooddurationmanager工作流程font)
 	- [n8p10 知识表示X](#n8p10-知识表示x)
 			- [神经元逆向算法(错误)](#神经元逆向算法错误)
 			- [思维对知识读取流程](#思维对知识读取流程)
@@ -53,7 +53,6 @@
 	- [n8p16 config_接口_后台](#n8p16-config接口后台)
 	- [n8p17 AwarenessLayer的规则](#n8p17-awarenesslayer的规则)
 	- [n8p18 DOP(DataOrientedProgramming)面向数据编程](#n8p18-dopdataorientedprogramming面向数据编程)
-			- [解答:逻辑产生于数据问题:](#解答逻辑产生于数据问题)
 	- [TaskList](#tasklist)
 
 <!-- /TOC -->
@@ -146,13 +145,7 @@
 
 
 ## n8p2 意识真实的感受2-(想像力/逆向演绎)
-`CreateTime 17.10.22`
-
-##### <font color=red>参考:</font>
-
-```
-n5p5
-```
+`CreateTime 17.10.22` `脑: 前额叶` `参考: n5p5`
 
 ##### <font style="color:red">前言:</font>
 
@@ -164,47 +157,71 @@ n5p5
 所以必须先行逆向演绎成红苹果和绿苹果,再来比较;
 ```
 
-##### <font style="color:red">工作流程<font>
+| 工作流程 >> |
+| --- |
 
-```
-逆向演绎是将抽象节点指向实体obj节点的其它属性收集过来并有机结合的过程;此过程就是为了方便思维的思考元类比操作;所以有以下步骤:
+| 逆向演绎是将抽象节点指向实体obj节点的其它属性收集过来并有机结合的过程;此过程就是为了方便思维的思考元类比操作;所以有以下步骤: |
+| --- |
 
-1. 根据某抽象高层节点找到obj
-2. 根据obj点亮其它属性节点
-3. 将所有obj相关节点进行有机结合(可能这种有机只是划分区域边界)
-4. 将所有边界内数据用于类比等;
+| 大脑步骤 >> |
+| --- |
 
-1. 只是想像力,区域点亮取出信息,类比;(简)
-2. 取出信息后要整合;(中)
-3. 整合后,要内识别理解具象的数据;(难)
-4. 而理解具象数据其实也就是理解它的属性等抽象节点;(循环)
+| 	| desc |
+| --- | --- |
+| 1 | 前额叶(向丘脑发起联想事务) |
+| 2 | 丘脑(Data事务控制器) |
+| 3 | 大脑(配合海马回和网络找到数据并返回) |
+| 4 | 前额叶(数据接收) |
 
-注: 有可能思考过程中,只是多连续事务的控制过程;直到思考任务结束,
-都算是联想和逆向演绎阶段;
+| 软件步骤 >> |
+| --- |
 
-问: 理解,只是区域点亮相关数据,作数据关联映射;使经验跑进来;还是真的存在具象理解;
-4中循环在时候中止;
-```
+|  | desc |
+| --- | --- |
+| 1 | 根据某抽象高层节点找到obj |
+| 2 | 根据obj点亮其它属性节点 |
+| 3 | 将所有obj相关节点进行有机结合(可能这种有机只是划分区域边界) |
+| 4 | 将所有边界内数据用于类比等; |
 
-##### <font color=red>思考:</font>
+| 软件步骤2 >> |
+| --- |
 
-```
-1. 逆向演绎究竟存在不存在?或者说是否只是找到低节点后,read其属性的操作;
-```
+|  | desc |
+| --- | --- |
+| 1 | 只是想像力,区域点亮取出信息,类比;(简) |
+| 2 | 取出信息后要整合;(中) |
+| 3 | 整合后,要内识别理解具象的数据;(难) |
+| 4 | 而理解具象数据其实也就是理解它的属性等抽象节点;(循环) |
+| 注: | 有可能思考过程中,只是多连续事务的控制过程;直到思考任务结束,都算是联想和逆向演绎阶段; |
+| 问: | 理解,只是区域点亮相关数据,作数据关联映射;使经验跑进来;还是真的存在具象理解;4中循环在时候中止; |
 
-##### <font color=red>复合逆向演绎包括:</font>
+| 思考 >> |
+| --- |
 
-```
-1. 字符串逆向演绎
-2. 音频逆向演绎
-3. 视频逆向演绎
-4. 空间逆向演绎
-5. 时间逆向演绎
+|  | desc |
+| --- | --- |
+| 问: | 逆向演绎究竟存在不存在?或者说是否只是找到低节点后,read其属性的操作; |
+| 答: | 存在,属性之类的关联易整合,但很多无关联的(如空间等复杂信息);想像力整合非常重要 |
 
-注: 任意一种会联想到其它;
-```
 
-|  | AINet事务控制器融合阶段 |
+| 复合逆向演绎(数据部分) >> |
+| --- |
+
+|  | desc |
+| --- | --- |
+| 1 | 字符串逆向演绎 |
+| 2 | 音频逆向演绎 |
+| 3 | 视频逆向演绎 |
+| 4 | 空间逆向演绎 |
+| 5 | 时间逆向演绎 |
+| 注: | 任意一种会联想到其它; |
+| 注: | 想像力的演绎规则全部都是常识数据决定的。 |
+
+
+| AINet事务控制器(融合阶段) >> |
+| --- |
+
+| 步骤 | desc |
 | --- | --- |
 | 1 | 到节点是第一次数据融合 |
 | 2 | 到obj是第二次数据融合 |
@@ -219,16 +236,14 @@ n5p5
 3. 将融合后的数据,演绎给大脑,或者是新的关联与节点数据存储;
 ```
 
-##### <font color=red>示图:</font>
-
-![](assets/3.png)
-
+| 示图 >> |
+| --- |
 
 
-
-
-
-
+| ![](assets/3.png) |
+| --- |
+| 1. 蓝色:思维走向; |
+| 2. 左侧:神经网络构建流程; |
 
 
 
@@ -239,29 +254,6 @@ n5p5
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-```
-1. 蓝色:思维走向;
-2. 左侧:神经网络构建流程;
-```
 
 
 
@@ -358,9 +350,7 @@ n4p7 & n4px
 
 
 ## n8p5 事务控制器
-`CreateTime 17.10.23`
-
-`参考:` [N6P4](Note6.md#n6p4-多次点亮2)
+`CreateTime 17.10.23` `脑: 丘脑` `参考:` [N6P4](Note6.md#n6p4-多次点亮2)
 [N5P6](Note5.md#n5p6lightarea的意识控制器多次点亮)
 
 ##### <font color=red>前言:</font>
@@ -373,6 +363,12 @@ n4p7 & n4px
 5. 思维抽象事务;
 ```
 
+| 概念 >> |
+| --- |
+
+|  | desc |
+| --- | --- |
+| 能量位 | 增加抑制信号集成到事务控制器中... |
 
 
 
@@ -515,15 +511,8 @@ n. output
 
 
 ## n8p9 MindValue
-`CreateTime 17.10.26`
+`CreateTime 17.10.26` `对脑: 杏仁核` `参考:` [框架/Mind#MoodDuration心情持续](../框架/Mind.md#moodduration心情持续) [Book心情持续](../Book/Chapters/Chapter8.md)
 
-`参考:`
-
-[框架/Mind#MoodDuration心情持续](../框架/Mind.md#moodduration心情持续)
-
-[Book心情持续](../Book/Chapters/Chapter8.md)
-
-##### <font color=red></font>
 
 | 概念 >> |
 | --- |
@@ -551,13 +540,14 @@ n. output
 | 1 | mindVaue能否被存储? | (应该会存储自我的mindValue快乐状态,mindValue具有影响构建和可数据表示二象性,mindValue原本不是一条数据,但因被自我状态感知了,才变成数据) |
 
 
-| 先天MindValue释放 >> |
+| 先天MindValue释放(废弃) >> |
 | --- |
 
 | title | desc |
 | --- | --- |
 | 概念 | 五感有些会附加mindValue+-; |
 | 实现 | AINETEditor添加内感刺激mindValue释放功能。再外加配置一个算法曲线。 |
+| 废弃 | 没有先天mindValue都是思维调用后释放的。 |
 
 
 | 后天MindValue释放 >> |
@@ -709,7 +699,7 @@ n. output
 <font color=green>
 
 ## n8p13 思维控制器
-`CreateTime 17.11.02`
+`CreateTime 17.11.02` `脑: 前额叶`
 
 | 功能 >> |
 | --- |
@@ -776,7 +766,7 @@ n. output
 <br><br><br><br><br>
 
 ## n8p15 想像力
-`CreateTime 17.11.07`
+`CreateTime 17.11.07` `脑: 海马回`
 
 `参考:`
 
@@ -789,6 +779,7 @@ n. output
 [n8p2 意识真实的感受2-(想像力/逆向演绎)](#n8p2-意识真实的感受2-想像力逆向演绎)
 
 [SMG/类人的学习项目](,,.SMG/类人的学习项目.md) `想像力，把图像属性，甚至文本描述GAN成图像演绎;`
+
 
 `引言`
 
@@ -1018,8 +1009,7 @@ n. output
 	- [x] 将input接入到新的AIAwareness上;
 	- [x] 将手机电量变化的信号接入到新的AIAwareness上;
 	- [ ] 与smg实现一个最基础的交互;
-	- [ ] 在AINETEditor中添加先天MindValue功能;
-	- [ ] 在AIThinkingRule中添加后天mindValue提纯与工厂申请释放新mindValue信号的功能;
+	- [ ] 在AIThinkingRule中添加后天mindValue提纯与工厂申请释放新mindValue信号的功能;(杏仁核工作原理)
 
 
 
