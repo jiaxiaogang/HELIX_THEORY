@@ -11,6 +11,7 @@
 | 是否具有意识? | 不确定:如果说有,只是会表现出有意识的样子,如果说没有,那是因为我们从来就不曾真正了解意识; |
 ***
 
+
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [AwarenessLayer-软件架构设计](#awarenesslayer-软件架构设计)
@@ -37,9 +38,8 @@
 				- [<font color=red>LOP2的概述</font>](#font-colorredlop2的概述font)
 				- [<font color=red>LOP2的主要目的</font>](#font-colorredlop2的主要目的font)
 	- [n8p7 意识思维与神经网络融合](#n8p7-意识思维与神经网络融合)
-	- [n8p8 区域点亮2](#n8p8-区域点亮2)
-				- [<font color=red>区域点亮与思维的融合:</font>](#font-colorred区域点亮与思维的融合font)
-	- [n8p9 MindValue](#n8p9-mindvalue)
+	- [n8p8 先天MindValue](#n8p8-先天mindvalue)
+	- [n8p9 后天MindValue](#n8p9-后天mindvalue)
 	- [n8p10 知识表示X](#n8p10-知识表示x)
 			- [神经元逆向算法(错误)](#神经元逆向算法错误)
 			- [思维对知识读取流程](#思维对知识读取流程)
@@ -53,10 +53,10 @@
 	- [n8p16 config_接口_后台](#n8p16-config接口后台)
 	- [n8p17 AwarenessLayer的规则](#n8p17-awarenesslayer的规则)
 	- [n8p18 DOP(DataOrientedProgramming)面向数据编程](#n8p18-dopdataorientedprogramming面向数据编程)
-	- [n8p19 无意识思维](#n8p19-无意识思维)
 	- [TaskList](#tasklist)
 
 <!-- /TOC -->
+
 
 <br><br><br><br>
 
@@ -372,6 +372,27 @@ n4p7 & n4px
 | 能量位 | 增加抑制信号集成到事务控制器中... |
 
 
+| 区域点亮2 >> |
+| --- |
+
+|  | 参考 |
+| --- | --- |
+|  | [N4P17](Note4.md#n4p17lightarea) |
+
+
+| 区域点亮与思维的融合 >> |
+| --- |
+
+|  |  | desc |
+| --- | --- | --- |
+| 1 |  | 去掉电能量的设计;换成 `抑制` 和 `兴奋`; |
+| 2 |  | 所以思维,是在每个DataNode神经元点亮时已经在跟着工作了,而非全部取完,作统一类比;这样的好处是: |
+|  | 2.1 | 大大提高区域点亮的效果; |
+|  | 2.2 | 可以更智能灵活的控制整个区域点亮的过程; |
+|  | 2.3 | 可以尽可能少的减少不必要的点亮与思维,性能更优化; |
+
+
+
 
 <br><br><br><br><br>
 
@@ -489,48 +510,19 @@ n. output
 <br><br><br><br><br>
 
 
-## n8p8 区域点亮2
-`CreateTime 17.10.25`
-
-`参考:` [N4P17](Note4.md#n4p17lightarea)
-
-##### <font color=red>区域点亮与思维的融合:</font>
-
-```
-1. 去掉电能量的设计;换成 `抑制` 和 `兴奋`;
-2. 所以思维,是在每个DataNode神经元点亮时已经在跟着工作了,而非全部取完,作统一类比;这样的好处是:
-	1. 大大提高区域点亮的效果;
-	2. 可以更智能灵活的控制整个区域点亮的过程;
-	3. 可以尽可能少的减少不必要的点亮与思维,性能更优化;
-```
 
 
+## n8p8 先天MindValue
+`CreateTime 17.11.16` `脑: 中脑`
 
-
-
-<br><br><br><br><br>
-
-
-## n8p9 MindValue
-`CreateTime 17.10.26` `对脑: 杏仁核` `参考:` [框架/Mind#MoodDuration心情持续](../框架/Mind.md#moodduration心情持续) [Book心情持续](../Book/Chapters/Chapter8.md)
-
-
-| 概念 >> |
+| 无意识思维 >> |
 | --- |
 
-|  | desc |
-| --- | --- |
-| 1 | 意识思维通过MindValue的方式与AINet紧密合作,是数据的活跃剂,构建期监工,也是意识与数据的桥;让意识由神经反射升级成持续意识; |
-
-
-| 作用 >> |
-| --- |
-
-|  | desc |
-| --- | --- |
-| 1 | mindValue在AINet中作用是指引成长方向;(与2为或关系) |
-| 2 | 或 mindValue是生长因子，一切构建关联由其生长。例如：记错颜色为同时出现物混乱(与1为或关系) |
-| 3 | mindValue在意识中作用是将神经反射作为持续的欲望或需求; |
+|  | desc | 参考 |
+| --- | --- | --- |
+|  | 本能行为反射,如下: |  |
+| 1 | 远离恐惧源 |  |
+| 2 | 重复快乐行为 | n8p9 |
 
 
 | MindValue象性 >> |
@@ -556,6 +548,31 @@ n. output
 | 概念 | 五感有些会附加mindValue+-; |
 | 实现 | AINETEditor添加内感刺激mindValue释放功能。再外加配置一个算法曲线。 |
 | 废弃 | 没有先天mindValue都是思维调用后释放的。 |
+
+
+<br><br><br><br><br>
+
+
+## n8p9 后天MindValue
+`CreateTime 17.10.26` `对脑: 杏仁核` `参考:` [框架/Mind#MoodDuration心情持续](../框架/Mind.md#moodduration心情持续) [Book心情持续](../Book/Chapters/Chapter8.md)
+
+
+| 概念 >> |
+| --- |
+
+|  | desc |
+| --- | --- |
+| 1 | 意识思维通过MindValue的方式与AINet紧密合作,是数据的活跃剂,构建期监工,也是意识与数据的桥;让意识由神经反射升级成持续意识; |
+
+
+| 作用 >> |
+| --- |
+
+|  | desc |
+| --- | --- |
+| 1 | mindValue在AINet中作用是指引成长方向;(与2为或关系) |
+| 2 | 或 mindValue是生长因子，一切构建关联由其生长。例如：记错颜色为同时出现物混乱(与1为或关系) |
+| 3 | mindValue在意识中作用是将神经反射作为持续的欲望或需求; |
 
 
 | 后天MindValue释放 >> |
@@ -586,8 +603,11 @@ n. output
 | 2 | AINet无记录时的手足无措, |
 | 3 | 有记录时则促使smg去解决mindValue-的问题; |
 
+| mindValue二象性/自我 示图 >> |
+| --- |
 
-
+| ![](assets/12.png) |
+| --- |
 
 
 
@@ -1021,19 +1041,6 @@ n. output
 
 <br><br><br><br><br>
 
-
-
-## n8p19 无意识思维
-`CreateTime 17.11.16` `脑: 中脑`
-
-| 无意识思维 >> |
-| --- |
-
-|  | desc |
-| --- | --- |
-|  | 本能行为反射,如下: |
-| 1 | 远离恐惧源 |
-| 2 | 重复快乐行为 |
 
 
 
