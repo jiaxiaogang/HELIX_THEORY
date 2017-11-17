@@ -556,7 +556,7 @@ n. output
 
 
 ## n8p9 后天MindValue
-`CreateTime 17.10.26` `对脑: 杏仁核` `参考:` [框架/Mind#MoodDuration心情持续](../框架/Mind.md#moodduration心情持续) [Book心情持续](../Book/Chapters/Chapter8.md)
+`CreateTime 17.10.26` `对脑: 理性杏仁核/非理性垂体` `参考:` [框架/Mind#MoodDuration心情持续](../框架/Mind.md#moodduration心情持续) [Book心情持续](../Book/Chapters/Chapter8.md)
 
 
 | 概念 >> |
@@ -592,7 +592,7 @@ n. output
 
 |  | desc |
 | --- | --- |
-| 概念 | MoodDurationManager属于丘区;mindValue功能体现之一; |
+| 概念 | MoodDurationManager属于丘区垂体;mindValue功能体现之一; |
 | 作用 | MoodDurationManager解决了mindValue的持续性问题 |
 
 
@@ -605,12 +605,26 @@ n. output
 | 2 | AINet无记录时的手足无措, |
 | 3 | 有记录时则促使smg去解决mindValue-的问题; |
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 | mindValue二象性/自我 示图 >> |
 | --- |
 
 |  | ![](assets/12.png) |
 | --- | --- |
-| 脑对应: | `思维控制器-前额叶` `AINet-神经网络数据部分` `后天MindValue-杏仁核海马体` `后天MV-中脑` |
+| 脑对应: | `思维控制器-前额叶` `AINet-神经网络数据部分` `后天MindValue-杏仁核海马体` `先天MV-中脑` |
 | 黑线脑 | 五感->脑干->丘脑->皮层 |
 | 黑线软 | input->main()->潜意识->AINet |
 
