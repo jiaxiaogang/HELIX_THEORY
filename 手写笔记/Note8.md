@@ -12,6 +12,7 @@
 ***
 
 
+
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [AwarenessLayer-软件架构设计](#awarenesslayer-软件架构设计)
@@ -53,6 +54,7 @@
 	- [n8p16 config_接口_后台](#n8p16-config接口后台)
 	- [n8p17 AwarenessLayer的规则](#n8p17-awarenesslayer的规则)
 	- [n8p18 DOP(DataOrientedProgramming)面向数据编程](#n8p18-dopdataorientedprogramming面向数据编程)
+	- [n8p19 思维控制器-预测](#n8p19-思维控制器-预测)
 	- [TaskList](#tasklist)
 
 <!-- /TOC -->
@@ -827,7 +829,7 @@ n. output
 <br><br><br><br><br>
 
 ## n8p15 想像力
-`CreateTime 17.11.07` `脑: 海马回` `参考:` [当下不开发的/想像力](../当下不开发的/想像力.md) & [n5p5意识真实的感受_二阶-想像力](Note5.md#n5p5意识真实的感受) & [n6p2 感受](Note5.md#n6p2-感受) & [n8p2 意识真实的感受2-(想像力/逆向演绎)](#n8p2-意识真实的感受2-想像力逆向演绎) & [SMG/类人的学习项目](,,.SMG/类人的学习项目.md) `想像力，把图像属性，甚至文本描述GAN成图像演绎;`
+`CreateTime 17.11.07` `脑: 前额叶+海马回` `参考:` [当下不开发的/想像力](../当下不开发的/想像力.md) & [n5p5意识真实的感受_二阶-想像力](Note5.md#n5p5意识真实的感受) & [n6p2 感受](Note5.md#n6p2-感受) & [n8p2 意识真实的感受2-(想像力/逆向演绎)](#n8p2-意识真实的感受2-想像力逆向演绎) & [SMG/类人的学习项目](,,.SMG/类人的学习项目.md) `想像力，把图像属性，甚至文本描述GAN成图像演绎;`
 
 
 `引言`
@@ -1042,6 +1044,25 @@ n. output
 <br><br><br><br><br>
 
 
+
+## n8p19 思维控制器-预测
+`CreateTime 17.11.17` `脑: 前额叶`
+
+| 简介 >> |
+| --- |
+
+|  | desc |
+| --- | --- |
+|  | 预测是 `未来想像力`,是想像力的一种,预测描述的是其结果 |
+
+
+| 种类 >> |
+| --- |
+
+|  | desc |
+| --- | --- |
+| 1 | 基于大量常识的是分析+预测 |
+| 2 | 基于经验的才是预测 |
 
 
 <br><br><br><br><br>
