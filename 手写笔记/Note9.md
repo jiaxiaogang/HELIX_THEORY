@@ -1,11 +1,16 @@
 # 思维
 
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
 - [思维](#思维)
 	- [n9p1 思维控制器与神经网络合并部分](#n9p1-思维控制器与神经网络合并部分)
 	- [n9p2 思维控制器独立部分](#n9p2-思维控制器独立部分)
 	- [n9p3 Mood与MindValue](#n9p3-mood与mindvalue)
 	- [n9p3 自我](#n9p3-自我)
 	- [n9p4 事务控制器2](#n9p4-事务控制器2)
+	- [n9p5 SMG软件架构2](#n9p5-smg软件架构2)
+
+<!-- /TOC -->
 
 <br><br><br><br><br>
 
@@ -103,7 +108,17 @@
 
 
 
+<br><br><br><br><br>
 
+
+## n9p5 SMG软件架构2
+`CreateTime 17.11.22` `参考: n8p1 n8p4 n8p6 n8p9`
+
+| 示图 >> |
+| --- |
+
+| ![](assets/13.png) |
+| --- |
 
 
 
