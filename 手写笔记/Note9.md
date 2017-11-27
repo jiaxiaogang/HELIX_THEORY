@@ -1,5 +1,6 @@
 # 思维
 
+
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [思维](#思维)
@@ -13,6 +14,7 @@
 	- [n9p7 想像力2](#n9p7-想像力2)
 	- [n9p8 AINet(算法分区 & 多维分区)](#n9p8-ainet算法分区-多维分区)
 	- [n9p9 AINet(数据模型)](#n9p9-ainet数据模型)
+	- [n9p10 数据源于思维 & 思维源于数据](#n9p10-数据源于思维-思维源于数据)
 
 <!-- /TOC -->
 
@@ -234,6 +236,12 @@
 
 
 
+
+<br><br><br><br><br>
+
+
+## n9p10 数据源于思维 & 思维源于数据
+`CreateTime 17.11.27` `参考: n9p1`
 
 
 
