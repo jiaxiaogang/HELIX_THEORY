@@ -1,4 +1,4 @@
-# List语言
+# Lisp语言
 ***
 
 
@@ -76,7 +76,7 @@ cos 45和 COS 45是一致的
 			|mod,rem|模运算符和其余整数除法后|(mod B A ) = 0|
 			|incf|递增运算符，所指定的第二个参数增加整数值|(incf A 3)=13|
 			|decf|递减操作符，通过指定的第二个参数减小整数值|(decf A 4) = 9|
-			
+
 		-	实例如下:
 
 
@@ -92,7 +92,7 @@ A + B = 30A - B = -10A x B = 200B / A = 2Increment A by 3 = 13Decrement A b
 - ### 比较(关系运算符)
 	- 表
 		- 假设变量A=10和变量B=20，则：
-		
+
 		- |Operator|描述|Example|
 			|:---:|:---:|:---:|
 			|=|检查如果操作数的值都相等与否，如果是的话那么条件为真。|(= A B)= true.|
@@ -103,8 +103,8 @@ A + B = 30A - B = -10A x B = 200B / A = 2Increment A by 3 = 13Decrement A b
 		|<=|如有左操作数的值小于或等于其右操作数的值，如果是，则条件检查为真。|(<= A B) = true.|
 		|max|它比较两个或多个参数，并返回最大值。|(max A B) 返回20|
 		|min|它比较两个或多个参数，并返回最小值。|(min A B) 返回 20|
-		
-					
+
+
 
 
 
@@ -133,11 +133,11 @@ A = B is NILA /= B is TA > B is NILA < B is TA >= B is NILA <= B is TMax o
 	|and|这需要任意数量的参数。该参数是从左向右计算。如果所有参数的计算结果为非零，那么最后一个参数的值返回。否则就返回nil。|(and A B) = NIL.|
 	|or|这需要任意数量的参数。该参数是从左向右计算的，直到一个计算结果为非零，则此情况下返回参数值，否则返回nil。|(or A B) = 5.|
 	|not|它接受一个参数，并返回t，如果参数的计算结果为nil。|(not A) = T.|
-		
-		
-		
+
+
+
 ```
-		
+
 代码
 (setq a 10)(setq b 20)(format t "~% A and B is ~a" (and a b))(format t "~% A or B is ~a" (or a b))(format t "~% not A is ~a" (not a))(terpri)(setq a nil)(setq b 5)(format t "~% A and B is ~a" (and a b))(format t "~% A or B is ~a" (or a b))(format t "~% not A is ~a" (not a))(terpri)(setq a nil)(setq b 0)(format t "~% A and B is ~a" (and a b))(format t "~% A or B is ~a" (or a b))(format t "~% not A is ~a" (not a))(terpri)(setq a 10)(setq b 0)(setq c 30)(setq d 40)(format t "~% Result of and operation on 10, 0, 30, 40 is ~a" (and a b c d))(format t "~% Result of and operation on 10, 0, 30, 40 is ~a" (or a b c d))(terpri)(setq a 10)(setq b 20)(setq c nil)(setq d 40)(format t "~% Result of and operation on 10, 20, nil, 40 is ~a" (and a b c d))(format t "~% Result of and operation on 10, 20, nil, 40 is ~a" (or a b c d))
 
@@ -150,20 +150,20 @@ A and B is NILA or B is 0not A is T
 
 ```
 
-		
+
 - ### 对数(位运算)
 
 
 	- 表(位运算符位工作并进行逐位操作。对于按位与，或，和XOR运算的真值表如下：)
-		
-		
+
+
 - |p|q|p and q|p or q|p xor q|
 	|:---:|:---:|:---:|:---:|:---:|
 	|0|0|0|0|0|
 	|0|1|0|1|1|
 	|1|1|1|1|0|
 	|1|0|0|1|1|
-	
+
 - 通过LISP支持位运算符列于下表中。假设变量A=60和变量B=13，则：
 
 - |操作符|描述|Example|
@@ -173,15 +173,15 @@ A and B is NILA or B is 0not A is T
 	|logxor|这将返回其参数的按位逻辑异或。如果没有给出参数，那么结果是零，这是该操作的标识。|(logxor a b) = 49|
 	|lognor|这不返回的逐位它的参数。如果没有给出参数，则结果为-1，这是该操作的标识。|(lognor a b) = -62,|
 	|logeqv|这将返回其参数的逐位逻辑相等（也称为异或非）。如果没有给出参数，则结果为-1，这是该操作的标识。|(logeqv a b) = -50|
-	
-```	
+
+```
 代码
 (setq a 60)(setq b 13)(format t "~% BITWISE AND of a and b is ~a" (logand a b))(format t "~% BITWISE INCLUSIVE OR of a and b is ~a" (logior a b))(format t "~% BITWISE EXCLUSIVE OR of a and b is ~a" (logxor a b))(format t "~% A NOT B is ~a" (lognor a b))(format t "~% A EQUIVALANCE B is ~a" (logeqv a b))(terpri)(terpri)(setq a 10)(setq b 0)(setq c 30)(setq d 40) (format t "~% Result of bitwise and operation on 10, 0, 30, 40 is ~a" (logand a b c d))(format t "~% Result of bitwise or operation on 10, 0, 30, 40 is ~a" (logior a b c d))(format t "~% Result of bitwise xor operation on 10, 0, 30, 40 is ~a" (logxor a b c d))(format t "~% Result of bitwise eqivalance operation on 10, 0, 30, 40 is ~a" (logeqv a b c d))
 
 打印结果
 BITWISE AND of a and b is 12BITWISE INCLUSIVE OR of a and b is 61BITWISE EXCLUSIVE OR of a and b is 49A NOT B is -62A EQUIVALANCE B is -50
 		Result of bitwise and operation on 10, 0, 30, 40 is 0Result of bitwise or operation on 10, 0, 30, 40 is 62Result of bitwise xor operation on 10, 0, 30, 40 is 60Result of bitwise eqivalance operation on 10, 0, 30, 40 is -61
-```		
+```
 
 - ### 转义符
 	- ()
@@ -191,12 +191,12 @@ BITWISE AND of a and b is 12BITWISE INCLUSIVE OR of a and b is 61BITWISE EXCLU
 ```
 	1. 如:
 	(write '(* 2 3))(write (* 2 3))
-	
+
 	2. log:
 	(* 2 3)
 	6
 ```
-	
+
 - ### 数据类型
 
 	- 标量类型
@@ -217,8 +217,8 @@ BITWISE AND of a and b is 12BITWISE INCLUSIVE OR of a and b is 61BITWISE EXCLU
 
 ```
 (setq x 10)(setq y 34.567)(setq ch nil)(setq n 123.78)(setq bg 11.0e+4)(setq r 124/2)(print (type-of x))(print (type-of y))(print (type-of n))(print (type-of ch))(print (type-of bg))(print (type-of r))
-	
-	
+
+
 打印结果:
 (INTEGER 0 281474976710655) SINGLE-FLOAT SINGLE-FLOAT NULL SINGLE-FLOAT (INTEGER 0 281474976710655)
 ```
@@ -309,7 +309,7 @@ x = 100 y = 200
 ```
 如:
 (defconstant PI 3.141592)(defun area-circle(rad)  (terpri)  (format t "Radius: ~5f" rad)  (format t "~%Area: ~10f" (* PI rad rad)))  (area-circle 10)
-  
+
 打印如下:
 Radius: 10.0
 Area:     314.1592
