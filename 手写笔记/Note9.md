@@ -231,8 +231,13 @@
 | 一个通用model;带一些基本信息; |
 
 
+| 分类 >> |
+| --- |
 
-
+|  | title | desc |
+| --- | --- | --- |
+| 1 | dataNode类型 | `logic` `raw` `obj` `abs` `...` |
+| 2 | line类型 | `应该不需要` `?` | 
 
 
 <br><br><br><br><br>
