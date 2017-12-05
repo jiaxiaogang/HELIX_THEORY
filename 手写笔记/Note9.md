@@ -134,6 +134,11 @@
 
 | ![](assets/13.png) |
 | --- |
+| Thalamus是 `事务控制器`;(另外提供区域点亮的能量值等控制) |
+| 杏仁核是神经网络的 `mindValueModel` 也是dataNode的根; |
+| 海马是神经网络的 `AIDataModel` 存储部分 |
+| Think里包含了 `ThinkControl` 和 `想像力引擎`; `参考:n9p11` |
+| midBrain作 `反射` 和 `createMindValue()` 的;midBrain也作为 `AwarenessController`; |
 
 
 <br><br><br><br><br>
