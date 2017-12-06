@@ -419,7 +419,7 @@
 
 
 ## n7p9 多维神经网络实践
-`CreateTime 17.10.23`
+`CreateTime 17.10.23` `参考:n9p12`
 
 ##### <font color=red>SMG神经网络描述:</font>
 
