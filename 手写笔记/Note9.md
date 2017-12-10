@@ -1,6 +1,5 @@
 # 思维
 
-
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [思维](#思维)
@@ -20,6 +19,7 @@
 	- [n9p13 SMG软件架构3](#n9p13-smg软件架构3)
 	- [n9p14 OUTPUT](#n9p14-output)
 	- [n9p15 思维的规则](#n9p15-思维的规则)
+	- [TaskList](#tasklist)
 
 <!-- /TOC -->
 
@@ -537,6 +537,13 @@ output结合小脑生成思维不可直接访问的网络和算法。
 | 分析步骤 | 1. 分析痛觉的原理和作用。2. 分析同性恋的情感来源，什么是爱情等... |
 
 
+<br><br><br><br><br>
+
+## TaskList
+
+|  | TASK | STATUS |
+| --- | --- | --- |
+| 1 | 分模块假数据开发，最后对接 |  |
 
 
 <br><br><br><br><br>
