@@ -601,6 +601,15 @@ output结合小脑生成思维不可直接访问的网络和算法。
 | 2 | ruleMV模型 | `duration` `downType` `ruleType` |
 | 3 | storeMV模型 | `+-` |
 
+| MindValue各阶段代码实现 >> |
+| --- |
+
+|  |  |  |
+| --- | --- | --- |
+|  | 前言 | mindValue的三个阶段,定义了不同阶段的值变化，对思维产生的影响。 |
+| 1 | inputMV模型 | 传入input标识,标识当前input的类型 |
+| 2 | ruleMV模型 | 根据传入的input标识,到先天mv算法网络取值;... |
+| 3 | storeMV模型 | ... |
 
 | 示图 >> |
 | --- |
