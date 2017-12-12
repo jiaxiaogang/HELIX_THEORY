@@ -19,6 +19,7 @@
 	- [n9p14 OUTPUT](#n9p14-output)
 	- [n9p15 思维的规则](#n9p15-思维的规则)
 	- [n9p16 MindValue](#n9p16-mindvalue)
+	- [n9p16 MindValue模型](#n9p16-mindvalue模型)
 	- [TaskList](#tasklist)
 
 <!-- /TOC -->
@@ -555,13 +556,25 @@ output结合小脑生成思维不可直接访问的网络和算法。
 | 3 | 感受内持续性 |
 | 4 | 思维反应规则(持续追求,归零,增涨) |
 | 注: | mindValue与思维通过 `规则` 彻底实现了融合 |
-| 注: | mindValue不需要具体定义各个子类,所有的差异化只因为Net中与数据的关联才有用与体现; | 
+| 注: | mindValue不需要具体定义各个子类,所有的差异化只因为Net中与数据的关联才有用与体现; |
 
 | 示图 >> |
 | --- |
 
 | ![](assets/20.png) |
 | --- |
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 | 后天MindValue根 >> |
@@ -574,6 +587,53 @@ output结合小脑生成思维不可直接访问的网络和算法。
 
 
 <br><br><br><br><br>
+
+
+## n9p16 MindValue模型
+`CreateTime 17.12.12`
+
+| MV三种模型 >> |
+| --- |
+
+|  |  |  |
+| --- | --- | --- |
+| 1 | inputMV模型 | `inputValue` `upType` |
+| 2 | ruleMV模型 | `duration` `downType` `ruleType` |
+| 3 | storeMV模型 | `+-` |
+
+
+| 示图 >> |
+| --- |
+
+
+| ![](assets/21.png) |
+| --- |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br>
+
 
 ## TaskList
 
