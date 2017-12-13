@@ -622,13 +622,13 @@ output结合小脑生成思维不可直接访问的网络和算法。
 | createMindValue(); >> |
 | --- |
 
-| Input产生了mv;而情感描述了mv的变化; | 参考: `自我.md#3维思维链接` |
-| --- | --- |
-| 假设将createMindValue放回MVRoot处; |  |
-| 那么分为两种mv模型: `inputMV` 和 `changeMV`; |  |
-| 分析: `饥饿与满足` |  |
-| 思维0参数到ActionControl时,会优先点亮`思维Store`最强数据 |  |
-|  |  |
+| 简介 | Input产生了mv;而情感描述了mv的变化; | 参考: `自我.md#3维思维链接` |
+| --- | --- | --- |
+| 假设 | 假设将createMindValue放回MVRoot处; |  |
+| 新分类 | 那么分为两种mv模型: `inputMV` 和 `changeMV`; |  |
+| 分析 | `饥饿与满足` |  |
+| StoreMV主导 | 思维0参数到ActionControl时,会优先点亮`思维Store`最强数据 |  |
+| 结果 | 先用最简单的inputMV传入思维，并存储。changeMV下步再说。 |  |
 
 
 
