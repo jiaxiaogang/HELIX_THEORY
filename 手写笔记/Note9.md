@@ -597,9 +597,9 @@ output结合小脑生成思维不可直接访问的网络和算法。
 
 |  |  |  |
 | --- | --- | --- |
-| 1 | inputMV模型 | `inputValue` `upType` |
-| 2 | ruleMV模型 | `duration` `downType` `ruleType` |
-| 3 | storeMV模型 | `+-` |
+| 1 | inputMV模型 | `inputValue` `upType` `inputType` |
+| 2 | ruleMV模型 | `downType` `ruleType` |
+| 3 | storeMV模型 | `duration` `+-` |
 
 | MindValue各阶段代码实现 >> |
 | --- |
@@ -607,8 +607,8 @@ output结合小脑生成思维不可直接访问的网络和算法。
 |  |  |  |
 | --- | --- | --- |
 |  | 前言 | mindValue的三个阶段,定义了不同阶段的值变化，对思维产生的影响。 |
-| 1 | inputMV模型 | 传入input标识,标识当前input的类型 |
-| 2 | ruleMV模型 | 根据传入的input标识,到先天mv算法网络取值;... |
+| 1 | inputMV模型 | 传入input标识,标识当前input的类型,upType |
+| 2 | thinkingMV模型 | 根据传入的input标识,到先天mv算法网络取值;... |
 | 3 | storeMV模型 | ... |
 
 | 示图 >> |
@@ -619,8 +619,16 @@ output结合小脑生成思维不可直接访问的网络和算法。
 | --- |
 
 
+| createMindValue(); >> |
+| --- |
 
-
+| Input产生了mv;而情感描述了mv的变化; | 参考: `自我.md#3维思维链接` |
+| --- | --- |
+| 假设将createMindValue放回MVRoot处; |  |
+| 那么分为两种mv模型: `inputMV` 和 `changeMV`; |  |
+| 分析: `饥饿与满足` |  |
+| 思维0参数到ActionControl时,会优先点亮`思维Store`最强数据 |  |
+|  |  |
 
 
 
