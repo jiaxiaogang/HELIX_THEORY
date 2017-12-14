@@ -595,40 +595,57 @@ output结合小脑生成思维不可直接访问的网络和算法。
 | MV三种模型 >> |
 | --- |
 
-|  |  |  |
-| --- | --- | --- |
-| 1 | inputMV模型 | `inputValue` `upType` `inputType` |
-| 2 | ruleMV模型 | `downType` `ruleType` |
-| 3 | storeMV模型 | `duration` `+-` |
+|  |  |  |  |
+| --- | --- | --- | --- |
+| 1 | inputMV模型 | `inputValue` `upType` `inputType` | 错误 |
+| 2 | ruleMV模型 | `downType` `ruleType` | 错误 |
+| 3 | storeMV模型 | `duration` `+-` | 错误 |
 
 | MindValue各阶段代码实现 >> |
 | --- |
 
-|  |  |  |
+|  |  |  |  |
+| --- | --- | --- | --- |
+|  | 前言 | mindValue的三个阶段,定义了不同阶段的值变化，对思维产生的影响。 | 错误 |
+| 1 | inputMV模型 | 传入input标识,标识当前input的类型,upType | 错误 |
+| 2 | thinkingMV模型 | 根据传入的input标识,到先天mv算法网络取值;... | 错误 |
+| 3 | storeMV模型 | ... | 错误 |
+
+
+
+| `InputMV和ChangeMV` 的先后天 >> |
+| --- |
+
+| title | desc | 参考 |
 | --- | --- | --- |
-|  | 前言 | mindValue的三个阶段,定义了不同阶段的值变化，对思维产生的影响。 |
-| 1 | inputMV模型 | 传入input标识,标识当前input的类型,upType |
-| 2 | thinkingMV模型 | 根据传入的input标识,到先天mv算法网络取值;... |
-| 3 | storeMV模型 | ... |
+| 简介 | Input产生了mv;而changeMV描述了思维变化对mv的影响 `情感` | 参考: `自我.md#3维思维链接` |
+| 简介2 | MV作用于smg整个架构中,指导整个系统的运行; |  |
+| 新分类 | 按照最基本 `饥饿与满足` 模型,分为两种mv: `inputMV` 和 `changeMV`; |  |
+| StoreMV主导 | 思维0参数到ActionControl时,会优先点亮`思维Store`最强数据 |  |
+| 结果 | 先用最简单的inputMV传入思维，并存储。changeMV下步再说。 |  |
+
+| mindValue大循环步骤 >> |
+| --- |
+
+|  | 大循环是基于 `小循环(系统循环一次)` 建立的,控制所有循环的基石就是MindValue |
+| --- | --- |
+| 1 | inputMV传入示图`3-4-(5:7)-8` |
+| 2 | 引起Thinking |
+| 3 | `9-3-10-(11:13)` |
+| 4 | 存inputMV和当前任务等思维数据; |
+| 5 | `14` 事务到相关数据传给Thinking |
+| 6 | 思维活动 `(15:20)-(21:24)-(25:28)` |
+| 7 | 引发 changeMV 并传给 `9-3-10-(11:13)` |
+| 8 | 存changeMV和经验等思维数据; |
+
 
 | 示图 >> |
 | --- |
-
 
 | ![](assets/21.png) |
 | --- |
 
 
-| createMindValue(); >> |
-| --- |
-
-| 简介 | Input产生了mv;而情感描述了mv的变化; | 参考: `自我.md#3维思维链接` |
-| --- | --- | --- |
-| 假设 | 假设将createMindValue放回MVRoot处; |  |
-| 新分类 | 那么分为两种mv模型: `inputMV` 和 `changeMV`; |  |
-| 分析 | `饥饿与满足` |  |
-| StoreMV主导 | 思维0参数到ActionControl时,会优先点亮`思维Store`最强数据 |  |
-| 结果 | 先用最简单的inputMV传入思维，并存储。changeMV下步再说。 |  |
 
 
 
