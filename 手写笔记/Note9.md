@@ -20,6 +20,7 @@
 	- [n9p15 思维的规则](#n9p15-思维的规则)
 	- [n9p16 MindValue](#n9p16-mindvalue)
 	- [n9p16 MindValue模型](#n9p16-mindvalue模型)
+	- [n9p17 AINet针对SMG软件架构3的改版](#n9p17-ainet针对smg软件架构3的改版)
 	- [TaskList](#tasklist)
 
 <!-- /TOC -->
@@ -664,6 +665,38 @@ output结合小脑生成思维不可直接访问的网络和算法。
 
 
 
+
+
+<br><br><br><br><br>
+
+
+
+
+## n9p17 AINet针对SMG软件架构3的改版
+`CreateTime 17.12.15` `参考: n9p8 n9p9`
+
+
+| 算法分区与多维分区的 解耦 >> |
+| --- |
+
+|  |  |
+| --- | --- |
+|  | **存储与代码开发的解耦** |
+| 1 | 将算法分区完全与硬盘隔离开;放在内存中... |
+| 2 | 只将算法ID传到硬盘与节点共存储, |
+|  | **文件类型(`输入区与输出区` `参数与返回值` `算法区与存储区`)的类型** |
+| 1 | 输入如:string,img,audio |
+| 2 | 输出如:string,int,img,color,audio,path,time(thinging),space(3ds) |
+|  | **AIFuncMate** |
+| 1 | 算法伴侣,与每个"算法区算法"形成一一对应,使多维分区的"算法节点"能够随时调用算法; |
+
+
+
+| 示图 >> |
+| --- |
+
+| ![](assets/14.png) |
+| --- |
 
 
 <br><br><br><br><br>
