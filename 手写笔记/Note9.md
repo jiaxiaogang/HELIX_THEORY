@@ -718,6 +718,7 @@ output结合小脑生成思维不可直接访问的网络和算法。
 | 封装: | 封一个`宏定义`;一行代码搞定; |
 | 删: | 删掉`FuncNode`功能;删掉`反射`功能;删掉`funcId`; |
 | 临时缓存区: | 只关注`数据value`的类型与批次;所以应该对`数据value`分group标type; |
+|  | > 将每个算法区,如StringAlgs的结果定义为:StringAlgsModel直接传递给Thinking | 
 
 
 
@@ -730,8 +731,9 @@ output结合小脑生成思维不可直接访问的网络和算法。
 |  | TASK | STATUS |
 | --- | --- | --- |
 |  | 分模块假数据开发，最后对接 |  |
-| 1 | 重构神经网络 |  |
-| 2 | 算法valueTmpNet写在内存中(pinCache支持) |  |
+| 1 | 重构神经网络 | T |
+| 2 | 算法valueTmpNet写在内存中(pinCache支持) | T |
+|  | > 将tmpCache去掉,而转写Thinking的Cache; |  |
 | 3 | mindValue算法作用于思维(以充电为例) |  |
 | 4 | mindValue算法使用于Input:`如吃乐` |  |
 | 5 | mindValue作用于神经网络 `思维构建网络且生成mindValueRoot` |  |
@@ -740,7 +742,7 @@ output结合小脑生成思维不可直接访问的网络和算法。
 | 8 | 想像力引擎(字符串)部分 |  |
 | 9 | 想像力引擎作用于多事务 |  |
 | 10 | 决策,先天输出网络的构建(输出情绪,借助mindValue规则定义:如`急哭`) |  |
-| 11 | 决策,后天输出的网络构建 |  | 
+| 11 | 决策,后天输出的网络构建 |  |
 
 
 <br><br><br><br><br>
