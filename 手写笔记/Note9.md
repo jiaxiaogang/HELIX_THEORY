@@ -718,8 +718,13 @@ output结合小脑生成思维不可直接访问的网络和算法。
 | 封装: | 封一个`宏定义`;一行代码搞定; |
 | 删: | 删掉`FuncNode`功能;删掉`反射`功能;删掉`funcId`; |
 | 临时缓存区: | 只关注`数据value`的类型与批次;所以应该对`数据value`分group标type; |
-|  | > 将每个算法区,如StringAlgs的结果定义为:StringAlgsModel直接传递给Thinking | 
+|  | > 将每个算法区,如StringAlgs的结果定义为:StringAlgsModel直接传递给Thinking |
 
+| 流程图 >> |
+| --- |
+
+| ![](assets/22.png) |
+| --- |
 
 
 
