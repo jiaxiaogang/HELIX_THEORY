@@ -632,7 +632,7 @@ output结合小脑生成思维不可直接访问的网络和算法。
 |  | 大循环是基于 `小循环(系统循环一次)` 建立的,控制所有循环的基石就是MindValue |
 | --- | --- |
 | 1 | inputMV传入示图`3-4-(5:7)-8` |
-| 2 | 引起Thinking |
+| 2 | 引起Thinking `imv发生时,思维对思维缓存区(前2后2=4左右)分析与关联操作;` |
 | 3 | `9-3-10-(11:13)` |
 | 4 | 存inputMV和当前任务等思维数据; |
 | 5 | `14` 事务到相关数据传给Thinking |
@@ -740,7 +740,7 @@ output结合小脑生成思维不可直接访问的网络和算法。
 | 2 | 算法valueTmpNet写在内存中(pinCache支持) | T |
 |  | > 将tmpCache去掉,而转写Thinking的Cache; |  |
 | 3 | mindValue算法作用于思维(以充电为例) |  |
-| 4 | mindValue算法使用于Input:`如吃乐` |  |
+| 4 | mindValue算法使用于Input:`如吃乐` | T | 
 | 5 | mindValue作用于神经网络 `思维构建网络且生成mindValueRoot` |  |
 | 6 | 思维构建网络且生成多维 |  |
 | 7 | 事务控制器-检索 |  |
