@@ -164,18 +164,28 @@
 | DataType >> |
 | --- |
 
-|  |
+|  |  |
+| --- | --- |
+| 1 | Int |
+| 2 | Float |
+| 3 | String |
+| 4 | Char |
+| 5 | Obj |
+| 6 | Arr |
+| 7 | Logic(Method方法,被调用,记录Logic) |
+| 8 | Can(Method接口,有目标) |
+| 9 | SubObj,SubInt等(其中SubX类型,在定义时,并不会知晓X是什么类型;只是Sub而已) |
+
+| 注 >> |
 | --- |
-| Int |
-| Float |
-| String |
-| Char |
-| Obj |
-| Arr |
-| Logic(Method方法,被调用,记录Logic) |
-| Can(Method接口,有目标) |
-| SubObj,SubInt等(其中SubX类型,在定义时,并不会知晓X是什么类型;只是Sub而已) |
-| 所有定义了的自定义对象都用SubX类型,而无权使用Obj;(Obj只有一个,并不可实例化) |
+
+|  |  |
+| --- | --- |
+| 1 | 所有定义了的自定义对象都用SubX类型,而无权使用Obj;(Obj只有一个,并不可实例化) |
+| 2 | Law规律是类比的结果 |
+| 3 | Law用属性,继承,Can等表示 |
+| 4 | Logic逻辑用method_Logic表示(方法被调用时,某状态的变化) |
+
 
 
 
@@ -184,7 +194,7 @@
 
 
 ## n10p6 归纳结构
-`CreateTime 17.12.28`
+`CreateTime 17.12.28 参考n10p5`
 
 
 | 概述 >> |
@@ -211,7 +221,7 @@
 ## ToDoList
 |  |  |
 | --- | --- |
-| 1 | 实现，输入充时，thinking兴奋。 | 
+| 1 | 实现，输入充时，thinking兴奋。 |
 
 
 <br><br><br><br><br><br><br>
