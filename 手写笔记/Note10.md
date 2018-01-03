@@ -277,7 +277,7 @@
 | ![](assets/25.png) | ![](assets/26.png) |
 | 属性property | MLogic |
 | 值valueIs | MCan |
-| 继承isA |  |
+| 继承isA | Law(未确定`归纳结构`时,也需要存储) |
 
 ***
 
