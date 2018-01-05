@@ -1123,7 +1123,7 @@ n. output
 
 ## TaskList
 
-- [ ] 考虑去掉DataNode反射调用FuncNode;原因有二:
+- [x] 考虑去掉DataNode反射调用FuncNode;原因有二:
 
 	```
   1. 因为原input数据已经不见了;只能逆向演绎,不能传回重新神经元组处理;
