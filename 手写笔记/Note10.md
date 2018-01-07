@@ -422,29 +422,36 @@
 `CreateTime 18.1.6`
 
 
-| 归纳结构_dataType >> |  |
+| dataType >> |  | 
 | --- | --- |
 | char | 不会有字符串维,思维的拆分,总会把字符串拆分成charArr传递给Net |
 | arr | 组合 |
-| property | 包含 |
 | float,int | `值类型`没有单独分维 |
 | Obj | 基 |
-| SubX | 子类(可多继承)(类属性可以有默认值) |
-| Instance | 实例 |
 | change | 变化 |
-| **Method** |  |
-| MBy | 行为:被调用`changeArr`;MBy本身就是changeArr; | 
-| MCan | 触发Result`changeArr` `target` |
 | 注: | 没有static,const等概念 |
 | 注: | 所有都是public |
-| 注: | Method体只是多个change组成,将OOP的方法复杂逻辑最小拆分,避免各种bug与复杂运算; |
+
+***
+
+| lineType >> | 关系 | 注 |
+| --- | --- | --- |
+| 属性property | 包含关系 |  |
+| 值valueIs | 值关系 |  |
+| 继承isA / SubX | 继承关系 | 子类(可多继承)(类属性可以有默认值) |
+| 接口MBy | 被调用关系 `弱存在` | 被调用`changeArr`;MBy本身就是changeArr; |
+| 接口MCan | 实现关系 | 1. MResult(changeArr) 2. MTarget |
+| 方法目标MTarget | 逻辑(指向)关系 |  |
+| 方法结果MResult | 逻辑(触发)关系 |  |
+| 实例Instance | 实例化关系 |  |
+| 注: | UnLaw(未确定,也需存),未知关系时,至少有一个关系是已知的;不然Node就不会构建 |  |
+| 注: | Method体只是多个change组成,将OOP的方法复杂逻辑最小拆分,避免各种bug与复杂运算; |  |
 
 ***
 
 | 归纳结构_Property >> |  |
 | --- | --- |
 | 定义 | Property的定义是确切的,可继承,可实现,可赋值 |
-
 
 ***
 
