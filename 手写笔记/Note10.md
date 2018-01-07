@@ -15,6 +15,7 @@
 	- [n10p9 ActionControl的增删改查](#n10p9-actioncontrol的增删改查)
 	- [n10p10 归纳结构6-抽象节点的形成](#n10p10-归纳结构6-抽象节点的形成)
 	- [n10p11 归纳结构7-细节](#n10p11-归纳结构7-细节)
+	- [n10p12 归纳结构8-NodeType](#n10p12-归纳结构8-nodetype)
 
 <!-- /TOC -->
 
@@ -473,7 +474,7 @@
 | 2 | ANDT_Float | 1. value |
 | 3 | ANDT_Char | 1. value |
 | 4 | ANDT_Arr | 1. elementArr |
-| 5 | ANDT_Obj | 1. pointer | 
+| 5 | ANDT_Obj | 1. pointer |
 | 6 | ANDT_Change | 1. fromValud  2. toValue |
 
 
@@ -491,6 +492,22 @@
 
 
 
+<br><br><br><br><br>
 
+
+## n10p12 归纳结构8-NodeType
+`CreateTime 18.1.7`
+
+| 前言 >> |  |
+| --- | --- |
+| 旧 | 以往的multiNode,singleNode,FuncNodet等已经废弃不用 |
+| 新 | DataType对于Node的定义是基于DataNode的,但在改进OOP时,此种方式并不够用,所以有本节`NodeType` |
+
+
+| NodeType >> |
+| --- |
+| 1 |
+| 2 |
+| 3 |
 
 <br><br><br><br><br>
