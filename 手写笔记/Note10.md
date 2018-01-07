@@ -422,7 +422,7 @@
 `CreateTime 18.1.6`
 
 
-| dataType >> |  | 
+| dataType >> |  |
 | --- | --- |
 | char | 不会有字符串维,思维的拆分,总会把字符串拆分成charArr传递给Net |
 | arr | 组合 |
@@ -452,6 +452,7 @@
 | 归纳结构_Property >> |  |
 | --- | --- |
 | 定义 | Property的定义是确切的,可继承,可实现,可赋值 |
+| 无名 | Property无名,但有创建之初有一个隐性id(FuncName或其它让思维作唯一判断的) |
 
 ***
 
@@ -464,6 +465,28 @@
 | 思维Model示图 >> |
 | --- |
 | ![](assets/思维Model示图.png) |
+
+
+| DataType >> |  |  |
+| --- | --- | --- |
+| 1 | ANDT_Int | 1. value |
+| 2 | ANDT_Float | 1. value |
+| 3 | ANDT_Char | 1. value |
+| 4 | ANDT_Arr | 1. elementArr |
+| 5 | ANDT_Obj | 1. pointer | 
+| 6 | ANDT_Change | 1. fromValud  2. toValue |
+
+
+| LineType >> |  | dataNode |
+| --- | --- | --- |
+| 1 | ALT_Property | 1. dataType  |
+| 2 | ALT_ValueIs |  |
+| 3 | ALT_IsA |  |
+| 4 | ALT_MBy |  |
+| 5 | ALT_MCan |  |
+| 6 | ALT_MTarget |  |
+| 7 | ALT_MResult |  |
+| 8 | ALT_Instance |  |
 
 
 
