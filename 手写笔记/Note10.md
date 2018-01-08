@@ -468,28 +468,6 @@
 | ![](assets/思维Model示图.png) |
 
 
-| DataType >> |  |  |
-| --- | --- | --- |
-| 1 | ANDT_Int | 1. value |
-| 2 | ANDT_Float | 1. value |
-| 3 | ANDT_Char | 1. value |
-| 4 | ANDT_Arr | 1. elementArr |
-| 5 | ANDT_Obj | 1. pointer |
-| 6 | ANDT_Change | 1. fromValud  2. toValue |
-
-
-| LineType >> |  | dataNode |
-| --- | --- | --- |
-| 1 | ALT_Property | 1. dataType  |
-| 2 | ALT_ValueIs |  |
-| 3 | ALT_IsA |  |
-| 4 | ALT_MBy |  |
-| 5 | ALT_MCan |  |
-| 6 | ALT_MTarget |  |
-| 7 | ALT_MResult |  |
-| 8 | ALT_Instance |  |
-
-
 
 
 <br><br><br><br><br>
@@ -502,12 +480,32 @@
 | --- | --- |
 | 旧 | 以往的multiNode,singleNode,FuncNodet等已经废弃不用 |
 | 新 | DataType对于Node的定义是基于DataNode的,但在改进OOP时,此种方式并不够用,所以有本节`NodeType` |
+| 原因 | AINode继承自Obj而所有subNode都基于AINode;所以NodeType替代... |
 
+***
 
 | NodeType >> |
 | --- |
-| 1 |
-| 2 |
-| 3 |
+| ![](assets/归纳结构_NodeType.png) |
 
-<br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br>
