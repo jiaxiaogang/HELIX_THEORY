@@ -489,7 +489,11 @@
 | ![](assets/归纳结构_NodeType.png) |
 
 
-
+| lineType_obj |  |
+| --- | --- |
+| isA | 继承 |
+| isClass | 声明 |
+| instanceOf | 实例化 |
 
 
 
