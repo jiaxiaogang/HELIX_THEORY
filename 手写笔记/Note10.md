@@ -635,9 +635,10 @@
 | 5 | 再次发生cmv时,重复1,2 |
 | 6 | 找到前面构建的"非确切logic" |
 | 7 | 思维类比,将"确切化logic" |
-| 8 | update事务,更新net中logic; | 
+| 8 | update事务,更新net中logic; |
 
-
+| ![](assets/20归纳结构_logic.png) |
+| --- |
 
 
 
