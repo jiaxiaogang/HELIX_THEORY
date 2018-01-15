@@ -625,7 +625,17 @@
 | --- |
 
 
-
+| logic结构化过程 >> |  |
+| --- | --- |
+| 概述 | 以cmv为起点,反推起因,logic在cmv时已定义,logic的确切过程,即logic的结构化过程 |
+| 1 | cmv时,激活Thinking |
+| 2 | Thinking到actionControl查导致cmv的logic |
+| 3 | 如找不到,Thinking从cache分析并定义"非确切logic" |
+| 4 | 将非确切logic构建到net |
+| 5 | 再次发生cmv时,重复1,2 |
+| 6 | 找到前面构建的"非确切logic" |
+| 7 | 思维类比,将"确切化logic" |
+| 8 | update事务,更新net中logic; | 
 
 
 
