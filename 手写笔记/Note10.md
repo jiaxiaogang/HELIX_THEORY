@@ -751,6 +751,10 @@
 | 2 | 作一个`inducation的存取`和`logic的存取` |
 | 3 | 作全局检索的实践与优化 |
 
+| 分toDoList >> |  |
+| --- | --- |
+| 1 | insert时的继承链,到AINode止;`isClass`和`superClass` | 
+
 | idea >> |  |
 | --- | --- |
 | 1 | 使用富文本扩展字符串算法的属性量 |
