@@ -16,7 +16,7 @@
 	- [n10p10 归纳结构6-抽象节点的形成](#n10p10-归纳结构6-抽象节点的形成)
 	- [n10p11 归纳结构7-细节](#n10p11-归纳结构7-细节)
 	- [n10p12 归纳结构8-NodeType](#n10p12-归纳结构8-nodetype)
-	- [n10p13 归纳结构9-DOP](#n10p13-归纳结构9-dop)
+	- [n10p13 DOP](#n10p13-dop)
 	- [n10p14 节点](#n10p14-节点)
 	- [n10p15 Logic](#n10p15-logic)
 	- [n10p16 名到网](#n10p16-名到网)
@@ -558,7 +558,7 @@
 <br><br><br><br><br>
 
 
-## n10p13 归纳结构9-DOP
+## n10p13 DOP
 `CreateTime 18.1.10`
 
 | DOP结构化规则 >> |  |
@@ -566,6 +566,17 @@
 | Class | 类必须先声明Class再使用 |
 | Obj | 所有节点都继承自Obj(包括int,float) |
 | Ports | 按lineType分开多个ports |
+| 4 | 类定义也是(抽象)类实例 |
+| 5 | 类可继承自实例 |
+| 6 | 类可多继承 |
+| 7 | 类用instancePorts指向自身的所有实例 |
+| 8 | 类继承关系随时可变更 |
+| 9 | 所有类继承自AINode |
+| 10 | `Node类型`和`data类型`是不同的 |
+| 11 | Node类型是指:AINode的子定义;如PropertyNode ChangeNode LogicNode等 |
+| 12 | Data类型是指:数据输入的类型:如`int`、`String`、`IMV`、`CMV`等 |
+| 13 | 类定义的`属性值范围`; |
+| 14 | 不存在Instance;只有isAPorts和aPorts(疑) |
 
 | 类示图 >> |
 | --- |
@@ -676,6 +687,7 @@
 
 | ![](assets/22归纳结构_名到网.png) |
 | --- |
+| 注:cmv的Change产生Logic; |
 
 
 
@@ -753,7 +765,7 @@
 
 | 分toDoList >> |  |
 | --- | --- |
-| 1 | insert时的继承链,到AINode止;`isClass`和`superClass` | 
+| 1 | insert时的继承链,到AINode止;`isClass`和`superClass` |
 
 | idea >> |  |
 | --- | --- |
