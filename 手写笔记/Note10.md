@@ -23,6 +23,7 @@
 	- [n10p17 `OOP+构建`与`logic构建`融合](#n10p17-oop构建与logic构建融合)
 	- [n10p18 神经网络可视化](#n10p18-神经网络可视化)
 	- [n10p19 分维与不分维](#n10p19-分维与不分维)
+	- [n10p20 GNOP(Generative Net Oriented Programming)](#n10p20-gnopgenerative-net-oriented-programming)
 	- [Other](#other)
 
 <!-- /TOC -->
@@ -566,17 +567,6 @@
 | Class | 类必须先声明Class再使用 |
 | Obj | 所有节点都继承自Obj(包括int,float) |
 | Ports | 按lineType分开多个ports |
-| 4 | 类定义也是(抽象)类实例 |
-| 5 | 类可继承自实例 |
-| 6 | 类可多继承 |
-| 7 | 类用instancePorts指向自身的所有实例 |
-| 8 | 类继承关系随时可变更 |
-| 9 | 所有类继承自AINode |
-| 10 | `Node类型`和`data类型`是不同的 |
-| 11 | Node类型是指:AINode的子定义;如PropertyNode ChangeNode LogicNode等 |
-| 12 | Data类型是指:数据输入的类型:如`int`、`String`、`IMV`、`CMV`等 |
-| 13 | 类定义的`属性值范围`; |
-| 14 | 不存在Instance;只有isAPorts和aPorts(疑) |
 
 | 类示图 >> |
 | --- |
@@ -733,7 +723,7 @@
 
 
 ## n10p19 分维与不分维
-`CreateTime 18.1.24`
+`CreateTime 2018.01.24`
 
 | 前言 >> |  |
 | --- | --- |
@@ -754,6 +744,48 @@
 <br><br><br><br><br>
 
 
+## n10p20 GNOP(Generative Net Oriented Programming)
+`CreateTime 2018.01.28`
+
+| 前言 >> |
+| --- |
+| LOP DOP 命名无法阐述SMG系统的核心编程方式,故更名为GNOP;面向生成式网络编程 |
+
+***
+
+| GNOP结构化规则 >> |  |
+| --- | --- |
+| 1 | 所有节点都继承自AINode |
+| 2 | 类定义也是(抽象)类实例 |
+| 3 | 类可继承自实例 |
+| 4 | 类可多继承 |
+| 5 | 类用instancePorts指向自身的所有实例 |
+| 6 | 类继承关系随时可变更 |
+| 7 | 所有类继承自AINode |
+| 8 | `Node类型`和`data类型`是不同的 |
+| 9 | Node类型是指:AINode的子定义;如PropertyNode ChangeNode LogicNode等 |
+| 10 | Data类型是指:数据输入的类型:如`int`、`String`、`IMV`、`CMV`等 |
+| 11 | 类定义的`属性值范围`; |
+| 12 | 不存在Instance;只有absPorts和conPorts(疑) |
+| 13 | 每个值类型都是一个范围;(如int float) |
+
+***
+
+| 基本原则 >> |  |
+| --- | --- |
+| 1 | 只有信息有思维触发,才构建;(复杂的结构定义都不需要,如提前定义父类,同一思维定义两个Node等...) |
+| 2 | 定义产生具象,具象间产生关系,关系产生抽象,抽象产生结构化;(不作任何一点多余的设计) |
+
+***
+
+| 示图 >> |
+| --- |
+| ![](assets/25_GNOP的结构规则.png) |
+
+
+
+<br><br><br><br><br>
+
 
 ## Other
 
@@ -770,6 +802,12 @@
 | idea >> |  |
 | --- | --- |
 | 1 | 使用富文本扩展字符串算法的属性量 |
+
+
+
+
+
+
 
 
 
