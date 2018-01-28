@@ -24,6 +24,7 @@
 	- [n10p18 神经网络可视化](#n10p18-神经网络可视化)
 	- [n10p19 分维与不分维](#n10p19-分维与不分维)
 	- [n10p20 GNOP(Generative Net Oriented Programming)](#n10p20-gnopgenerative-net-oriented-programming)
+	- [n10p21 AIValueNode](#n10p21-aivaluenode)
 	- [Other](#other)
 
 <!-- /TOC -->
@@ -793,6 +794,28 @@
 | 属性收敛示图 >> |
 | --- |
 | ![](assets/26_GNOP收敛之属性.png) |
+
+
+
+
+
+
+
+<br><br><br><br><br>
+
+
+## n10p21 AIValueNode
+`CreateTime 2018.01.28`
+
+| 前言 >> |
+| --- |
+| `值化`数据(一般为`某算法`或`某思维方式`的结果); |
+| 如:颜色的值 |
+| 如:年龄的值 |
+| 如:身高的值(某`思维方式`(对某些值进行类比等复合操作)的结果值,的定义) |
+| 注:关键不是值,而是值的来源;这个来源才是对AIValueNode的理解; |
+| 注:AIValueNode的值各自存储(即int4和4的两次出现,互无关联,但类比到的时候,再抽象等) | 
+
 
 <br><br><br><br><br>
 
