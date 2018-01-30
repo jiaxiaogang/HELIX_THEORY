@@ -24,7 +24,8 @@
 	- [n10p18 神经网络可视化](#n10p18-神经网络可视化)
 	- [n10p19 分维与不分维](#n10p19-分维与不分维)
 	- [n10p20 GNOP(Generative Net Oriented Programming)](#n10p20-gnopgenerative-net-oriented-programming)
-	- [n10p21 AIValueNode](#n10p21-aivaluenode)
+	- [n10p21 AIValueNode模糊值](#n10p21-aivaluenode模糊值)
+	- [n10p22 模糊Abstract关系](#n10p22-模糊abstract关系)
 	- [Other](#other)
 
 <!-- /TOC -->
@@ -402,6 +403,7 @@
 | 6 | 后台任务的建立(无意识异步任务) |  |
 | 4注 | 每个属性等节点,都是抽象,每个关联都是索引 |  |
 | 4例 | 如找jia,输入ji;单独找j和i,再找关联数组(穷举),判断其ji开头相符; |  |
+| 7 | 增加结构化;如:汉字3000;搜索王的时候,要先搜其`抽象`(即发音)(接入拼音算法,达到字符串性能优化); |  |
 
 
 
@@ -804,7 +806,7 @@
 <br><br><br><br><br>
 
 
-## n10p21 AIValueNode
+## n10p21 AIValueNode模糊值
 `CreateTime 2018.01.28`
 
 | 前言 >> |
@@ -815,6 +817,27 @@
 | 如:身高的值(某`思维方式`(对某些值进行类比等复合操作)的结果值,的定义) |
 | 注:关键不是值,而是值的来源;这个来源才是对AIValueNode的理解; |
 | 注:AIValueNode的值各自存储(即int4和4的两次出现,互无关联,但类比到的时候,再抽象等) |
+
+
+
+
+<br><br><br><br><br>
+
+
+## n10p22 模糊Abstract关系
+`CreateTime 2018.01.30`
+
+| 前言 >> |  |
+| --- | --- |
+| abs同类的阶段 |  |
+|  | 1. 当A与B在被类比到相同属性X时,Thinking分析并构建ABBase_X(只针对X的absNode); |
+|  | 2. 发现A与B越来越多的相同;此时已有ABBase_Y,ABBase_Z等 |
+|  | 3. Thinking会将XYZ等直接合成ABBase; |
+|  | 4. 此时,如果A有新属性时,会直接以模糊方式将此属性加到Base上; |
+| 概念 | 模糊关系是未被确认的关系,或者说;所有的关系都是非确认的(类比过也未必);确认度是相对的; |
+| 注 | 模糊关系是Thinking在分析任务中激进的表现,数据没有绝对的正确,适当的试错,帮助智能体解决很多问题 |
+
+
 
 
 <br><br><br><br><br>
