@@ -271,6 +271,8 @@
 | ![](assets/归纳结构.png) |
 | --- |
 | 注:去掉mvRoot，mv只作为构建起因存在，影响关联强度。（避免试图直接分析情感） |
+| 注:三层数据结构:inputModel,AIModel,AINet |
+| 注:三层数据缓冲,瞬时,短时,长时 |
 
 
 
@@ -839,6 +841,7 @@
 
 | ![](assets/27_模糊Abstract关系.png) |
 | --- |
+
 
 
 <br><br><br><br><br>
