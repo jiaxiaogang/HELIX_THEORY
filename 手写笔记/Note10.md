@@ -26,6 +26,7 @@
 	- [n10p20 GNOP(Generative Net Oriented Programming)](#n10p20-gnopgenerative-net-oriented-programming)
 	- [n10p21 AIValueNode模糊值](#n10p21-aivaluenode模糊值)
 	- [n10p22 模糊Abstract关系](#n10p22-模糊abstract关系)
+	- [n10p23 数据模型从(input->think->aiModel->aiNode)](#n10p23-数据模型从input-think-aimodel-ainode)
 	- [Other](#other)
 
 <!-- /TOC -->
@@ -841,6 +842,19 @@
 
 | ![](assets/27_模糊Abstract关系.png) |
 | --- |
+
+
+
+
+<br><br><br><br><br>
+
+
+## n10p23 数据模型从(input->think->aiModel->aiNode)
+`CreateTime 2018.02.01`
+
+| ![](assets/28_数据模型从input到net.png) |
+| --- |
+
 
 
 
