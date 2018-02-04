@@ -6,6 +6,8 @@
 
 - [GNOP](#gnop)
 	- [n11p1 最简](#n11p1-最简)
+	- [n11p2 logic的结构化](#n11p2-logic的结构化)
+	- [n11p3 性能优化](#n11p3-性能优化)
 
 <!-- /TOC -->
 
@@ -46,5 +48,36 @@
 
 | ![](assets/29_change和logic结构模型.png) |
 | --- |
+
+
+
+<br><br><br><br><br>
+
+
+## n11p2 logic的结构化
+`CreateTime 2018.02.04`
+
+| logic >> |  |
+| --- | --- |
+| 介绍 | change因logic才有了意义,而logic依附于`归纳网络`中,所以有了各种复杂的问题解决能力 |
+| 生成原则 | 与其它node类似,只有think想到的才会产生关联,而shadowThink弱,deepThink强关联 |
+
+
+
+<br><br><br><br><br>
+
+
+## n11p3 性能优化
+`CreateTime 2018.02.04`
+
+| 性能优化 >> |
+| --- |
+| 1. 按dataType分维存储(以dataType和dataSource为索引,快速定位到指定维) | 
+
+
+
+
+
+
 
 <br><br><br><br><br>
