@@ -35,7 +35,7 @@
 | 入口: | 从cmv的变化入手,changeNode确有必要,即真实的结构为:`定义->属性->值->变化` |
 | 知识表示: | changeNode有时应体现在absNode上,作为changeNode存在,因为具象信息有明确值 |
 | 注: | 先后,from表示先,to表示后; |
-| 结果: | changeNode和logicNode删除失败,但需要改进 | 
+| 结果: | changeNode和logicNode删除失败,但需要改进 |
 
 
 ***
@@ -44,5 +44,7 @@
 | --- | --- |
 | 命题: | logic需要横跨node;所以logic要么单独设计表示方式,但又不能脱离原有"归纳网络" |
 
+| ![](assets/29_change和logic结构模型.png) |
+| --- |
 
 <br><br><br><br><br>
