@@ -72,7 +72,7 @@
 
 | 性能优化 >> |
 | --- |
-| 1. 按dataType分维存储(以dataType和dataSource为索引,快速定位到指定维) | 
+| 1. 按dataType分维存储(以`dataType`和`dataSource`和`值`为索引,快速定位到指定维) | 
 
 
 
