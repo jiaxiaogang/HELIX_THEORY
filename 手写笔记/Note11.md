@@ -8,6 +8,7 @@
 	- [n11p1 最简](#n11p1-最简)
 	- [n11p2 logic的结构化](#n11p2-logic的结构化)
 	- [n11p3 性能优化](#n11p3-性能优化)
+	- [Other](#other)
 
 <!-- /TOC -->
 
@@ -72,9 +73,22 @@
 
 | 性能优化 >> |
 | --- |
-| 1. 按dataType分维存储(以`dataType`和`dataSource`和`值`为索引,快速定位到指定维) | 
+| 1. 按dataType分维存储(以`dataType`和`dataSource`和`值`为索引,快速定位到指定维) |
 
 
+
+<br><br><br><br><br>
+
+
+## Other
+
+| toDoList >> |  |
+| --- | --- |
+| 1 | 对各种dataSource的记录;(将mvCharge和mvHunger信号处理后类型分开) | 
+| 2 | 对各种change,用潜意识流logic串起来; |
+| 3 | 对导致cmv变化的change,进行类比缩小范围; |
+| 4 | 对缩小范围的change用显意识流logic串起来; |
+| 5 | 对全局检索进行优化:`分dataType,分dataSource,然后将归纳网络挂到下面` |
 
 
 
