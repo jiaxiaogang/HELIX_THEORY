@@ -84,11 +84,13 @@
 
 | toDoList >> |  |
 | --- | --- |
-| 1 | 对各种dataSource的记录;(将mvCharge和mvHunger信号处理后类型分开) | 
+| 1 | 对各种dataSource的记录;(将mvCharge和mvHunger信号处理后类型分开) |
 | 2 | 对各种change,用潜意识流logic串起来; |
 | 3 | 对导致cmv变化的change,进行类比缩小范围; |
 | 4 | 对缩小范围的change用显意识流logic串起来; |
 | 5 | 对全局检索进行优化:`分dataType,分dataSource,然后将归纳网络挂到下面` |
+| 6 | 加上能量值,并且将`port强度`写完善,然后将`ports默认排序` |
+| 7 | 测试一次thinking循环的性能 | 
 
 
 
