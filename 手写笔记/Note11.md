@@ -41,14 +41,19 @@
 | 结果: | changeNode和logicNode删除失败,但需要改进 |
 
 
-***
-
 | logic的知识表示问题 >> |  |
 | --- | --- |
 | 命题: | logic需要横跨node;所以logic要么单独设计表示方式,但又不能脱离原有"归纳网络" |
 
 | ![](assets/29_change和logic结构模型.png) |
 | --- |
+
+***
+
+| 删除thinkDeep和shallow,合为1 >> |
+| --- |
+| mv激发的能量值已经说明了一切,没有mv无法形成思维循环,只有很弱的`能量值`,所以不需要deep和shallow |
+
 
 
 
@@ -61,7 +66,7 @@
 | logic >> |  |
 | --- | --- |
 | 介绍 | change因logic才有了意义,而logic依附于`归纳网络`中,所以有了各种复杂的问题解决能力 |
-| 生成原则 | 与其它node类似,只有think想到的才会产生关联,而shadowThink弱,deepThink强关联 |
+| 生成原则 | 与其它node类似,只有think想到的才会产生关联,而shallowThink弱,deepThink强关联 |
 
 
 
@@ -82,16 +87,21 @@
 
 ## Other
 
-| toDoList >> |  |
-| --- | --- |
-| 1 | 对各种dataSource的记录;(将mvCharge和mvHunger信号处理后类型分开) |
-| 2 | 对各种change,用潜意识流logic串起来; |
-| 3 | 对导致cmv变化的change,进行类比缩小范围; |
-| 4 | 对缩小范围的change用显意识流logic串起来; |
-| 5 | 对全局检索进行优化:`分dataType,分dataSource,然后将归纳网络挂到下面` |
-| 6 | 加上能量值,并且将`port强度`写完善,然后将`ports默认排序` |
-| 7 | 测试一次thinking循环的性能 | 
-
+| toDoList >> | task | status |
+| --- | --- | --- |
+| 1 | 对各种dataSource的记录;(将mvCharge和mvHunger信号处理后类型分开) | T |
+| 2 | 对各种change,用潜意识流logic串起来; |  |
+| 3 | 对导致cmv变化的change,进行类比缩小范围; |  |
+| 4 | 对缩小范围的change用显意识流logic串起来; |  |
+| 5 | 对全局检索进行优化:`分dataType,分dataSource,然后将归纳网络挂到下面` |  |
+| 6 | 加上能量值 |  |
+| 7 | 并且将`port强度`写完善 |  |
+| 8 | 然后将`ports默认排序` |  |
+| 9 | 测试一次thinking循环的性能 |  |
+| 10 | 合并deep和shallow |  |
+| 11 | 第二信号传入 | T |
+| 12 | 第二信号的input | T | 
+| 13 | 第二信号的change |  |
 
 
 
