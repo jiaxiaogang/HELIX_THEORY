@@ -93,12 +93,12 @@
 | 2 | 对各种change,用潜意识流logic串起来; |  |
 | 3 | 对导致cmv变化的change,进行类比缩小范围; |  |
 | 4 | 对缩小范围的change用显意识流logic串起来; |  |
-| 5 | 对全局检索进行优化:`分dataType,分dataSource,然后将归纳网络挂到下面` |  |
+| 5 | 对全局检索进行优化:`分dataType,分dataSource,然后将归纳网络挂到下面` | T | 
 | 6 | 加上能量值 |  |
 | 7 | 并且将`port强度`写完善 |  |
 | 8 | 然后将`ports默认排序` |  |
 | 9 | 测试一次thinking循环的性能 |  |
-| 10 | 合并deep和shallow | T | 
+| 10 | 合并deep和shallow | T |
 | 11 | 第二信号传入 | T |
 | 12 | 第二信号的input | T |
 | 13 | 第二信号的change |  |
