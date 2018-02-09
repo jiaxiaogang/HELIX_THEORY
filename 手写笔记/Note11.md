@@ -98,9 +98,9 @@
 | 7 | 并且将`port强度`写完善 |  |
 | 8 | 然后将`ports默认排序` |  |
 | 9 | 测试一次thinking循环的性能 |  |
-| 10 | 合并deep和shallow |  |
+| 10 | 合并deep和shallow | T | 
 | 11 | 第二信号传入 | T |
-| 12 | 第二信号的input | T | 
+| 12 | 第二信号的input | T |
 | 13 | 第二信号的change |  |
 
 
