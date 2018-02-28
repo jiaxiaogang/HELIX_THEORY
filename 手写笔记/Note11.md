@@ -195,6 +195,11 @@
 | RIN直接面向思维的数据 |
 | algsDic到RIN是第一次零散到整体; |
 
+***
+
+| algsDic是RIN养料 >> |
+| --- |
+| ![](assets/31_algsDic数据示图.png) |
 
 
 
