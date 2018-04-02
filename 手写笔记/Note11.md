@@ -708,7 +708,9 @@
 | 问题 >> |
 | --- |
 | 1. 如何用微观pointer来表示变化呢? |
-| 2. 如果说,微观kvPointer包含dataType和dataSource两个信息,那么还有几种kvPointer,各包含哪些信息 |
+| 答:变化至少不应单单表示在微观中,变化必然在宏观,而微观是集合形式的表示;在`存储结构`中,可以尽可能的优化其体积和性能; |
+|  | 
+| 2. 如果说,指向微观的kvPointer包含dataType和dataSource两个信息,那么还有几种kvPointer,各包含哪些信息 |
 
 
 | toDoList >> | task | status |
