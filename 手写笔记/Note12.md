@@ -1,6 +1,5 @@
 # 流程
 
-
 ***
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
@@ -12,10 +11,7 @@
 
 <!-- /TOC -->
 
-
-
-
-<br><br><br><br><br>
+<br><br><br>
 
 
 ## n12p1 怀疑与进取2
@@ -47,6 +43,10 @@
 
 
 
+
+<br><br><br><br><br>
+
+
 ## n12p2 流程
 `CreateTime 2018.04.10`
 
@@ -56,9 +56,17 @@
 | > 要作到thinkingControl与net的深度整合,那么思维只是一个流程化的操作者, |
 | > thinking只有一个使命,就是让net顺利有序的演进与作用于智能; |
 
-| dataIn_流程 >> |
-| --- |
-| 1.  |
+***
+
+| dataIn_流程 >> | 用途 | 功能说明 |
+| --- | --- | --- |
+| 1. dataIn_checkMV | 判断mv | `激活 或 单存cache 或 不存不处理` |
+| 2. dataIn_AssociativeData | 信号处理(也判断mv2) | 最普遍的dataIn操作 |
+| 3. dataIn_AssociativeExperience | 饿了找瓜 | 后天思维方式(也是抽象结构化网络) |
+| 4. dataIn_AnalogyData | 类比 | 类比在Net中 `集成到每一次检索等事务中` |
+| 5. dataIn_BuildNet | 想啥存啥 | thinking与net集成后,想与存本就是同一操作 |
+
+***
 
 | 后天流程_思维方式 >> |
 | --- |
