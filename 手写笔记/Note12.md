@@ -272,6 +272,16 @@
 | 3. 避免一切最简单的循环isEqual |
 | 4. 避免直接io取data后isEqual |
 
+| ![](assets/40_检索.png) |
+| --- |
+| 1. `AC为actionControl` `dT&dY 828是索引的具体值域` `ABCD...是各种网络节点` `其中ABCD是有效结果` |
+| 2. 宏索引,到下面的检索性能优化,是本图希望解决的问题; |
+| 3. 单靠AINetDataSort是不行的,因为就算只是`有效结果ABCD也有无限多`... |
+| 4. 所以ABCD的自动抽象,比如ABCD共同的结果是hungerCmv的增涨; |
+| 5. 那么此时,dataSort只需要存储hungerCmv的抽象节点即可... |
+
+***
+
 | node节点优化 >> |
 | --- |
 | 1. 拆分每个node为:`header` `data` `ports` 三个部分 |
