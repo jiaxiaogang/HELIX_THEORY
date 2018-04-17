@@ -14,6 +14,7 @@
 	- [n12p5 检索中的 设计依赖 和 类比链感觉](#n12p5-检索中的-设计依赖-和-类比链感觉)
 	- [n12p6 知识表示](#n12p6-知识表示)
 	- [n12p7 cmv生_数据的模型](#n12p7-cmv生数据的模型)
+	- [n12p8 net的性能](#n12p8-net的性能)
 	- [Other](#other)
 
 <!-- /TOC -->
@@ -258,6 +259,27 @@
 
 
 
+<br><br><br><br><br>
+
+
+## n12p8 net的性能
+`CreateTime 2018.04.17`
+
+| 检索优化 >> |
+| --- |
+| 1. 在 `内存中` 单独维护一个`data指针排序(DataSort)`序列,每插入一条:`找到自己的位置` |
+| 2. runtime,要避免一切排序, |
+| 3. 避免一切最简单的循环isEqual |
+| 4. 避免直接io取data后isEqual |
+
+| node节点优化 >> |
+| --- |
+| 1. 拆分每个node为:`header` `data` `ports` 三个部分 |
+| 2. 其中,header中存dT & dS & kvPointer |
+| 3. 其中,ports中存conPorts & absPorts & logicPorts等 |
+| 4. 其中,data中存AIModel |
+
+
 
 <br><br><br><br><br>
 
@@ -273,6 +295,8 @@
 | 3 | 第二信号的input,第二信号的change |  |
 | 4 | 最简单的双词实验:`进来` `出去` |  |
 | 5 | 将`三种结构`集成到AINet中 | `1. 存储结构 已完成` `2. 集合关联 已有关联功能` `3. 跨域关联 尝试改进并实现关联功能` |
+| 6 | 把dT&dS 从kvPointer中移出 |  |
+| 7 | 写AINetDataSort类 |  |
 
 
 | 肯定表 >> |
