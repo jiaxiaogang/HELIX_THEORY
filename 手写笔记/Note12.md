@@ -18,6 +18,7 @@
 	- [n12p9 流程](#n12p9-流程)
 	- [n12p10 data索引序列2](#n12p10-data索引序列2)
 	- [n12p11 流程2](#n12p11-流程2)
+	- [n12p12 第二个序列nodeList](#n12p12-第二个序列nodelist)
 	- [Other](#other)
 
 <!-- /TOC -->
@@ -390,6 +391,19 @@
 | 4. 各图形间的关系是最重要的信息; |
 | 5. 可以快速根据,itemData找到其被调用的nodeList; |
 
+
+
+<br><br><br><br><br>
+
+
+## n12p12 第二个序列nodeList
+`CreateTime 2018.04.23`
+
+| itemData的nodeList >> |
+| --- |
+| 1. 每个index对应的nodeList根据关联强度排序 |
+| 2. 每个index可能有上亿条关联到node |
+| 3. 每个宏定义的变化,最终体现在index上,即是另指向;(例如A的长度变化) |
 
 
 <br><br><br><br><br>
