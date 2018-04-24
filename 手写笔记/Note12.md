@@ -405,6 +405,13 @@
 | 2. 每个index可能有上亿条关联到node |
 | 3. 每个宏定义的变化,最终体现在index上,即是另指向;(例如A的长度变化) |
 
+***
+
+| 第一个序列_索引AINetIndex >> |
+| --- |
+| 1. 只存值类型,不转换为AIModel `1. 目前不必要` `2. 只有类比时,才会使用到值` |
+| 2. 将mt&dt&ds改为algsType&dataSource `1. 去掉了dataType` `2. mt用at替代` |
+| 3. 在dataIn后第一件事,就是先用NetIndex装箱;再去作其它数据处理 |
 
 <br><br><br><br><br>
 
