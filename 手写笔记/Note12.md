@@ -19,6 +19,7 @@
 	- [n12p10 data索引序列2](#n12p10-data索引序列2)
 	- [n12p11 流程2](#n12p11-流程2)
 	- [n12p12 第二个序列nodeList](#n12p12-第二个序列nodelist)
+	- [n12p13 两个序列的开发](#n12p13-两个序列的开发)
 	- [Other](#other)
 
 <!-- /TOC -->
@@ -405,13 +406,29 @@
 | 2. 每个index可能有上亿条关联到node |
 | 3. 每个宏定义的变化,最终体现在index上,即是另指向;(例如A的长度变化) |
 
-***
+
+
+
+
+<br><br><br><br><br>
+
+
+## n12p13 两个序列的开发
+`CreateTime 2018.04.24`
+
+| 简介 >> |
+| --- |
+| 信息的意义在于,它明确的指向了某事物; |
 
 | 第一个序列_索引AINetIndex >> |
 | --- |
 | 1. 只存值类型,不转换为AIModel `1. 目前不必要` `2. 只有类比时,才会使用到值` |
 | 2. 将mt&dt&ds改为algsType&dataSource `1. 去掉了dataType` `2. mt用at替代` |
 | 3. 在dataIn后第一件事,就是先用NetIndex装箱;再去作其它数据处理 |
+| 4. 给AIPointer超类,加params字段 `用于分区(在二分查巨量队列,params越细分,越有利性能)` |
+| 5. 第一序列,在netIndex只存储pointerId序列; |
+
+
 
 <br><br><br><br><br>
 
