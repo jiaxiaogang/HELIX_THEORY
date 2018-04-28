@@ -480,9 +480,7 @@
 
 | 明日提示 >> |
 | --- |
-| 1. AIStringAlgs等将所有信息打散为 `全部NSNumber类型` |
-| 2. 输入asdf运行,两次,则闪退; |
-
+| 1. 写cmv在net中的基本模型 |
 
 
 <br><br><br><br><br>
@@ -499,9 +497,10 @@
 | 3 | 第二信号的input,第二信号的change |  |
 | 4 | 最简单的双词实验:`进来` `出去` |  |
 | 5 | 将`三种结构`集成到AINet中 | `1. 存储结构 已完成` `2. 集合关联 已有关联功能` `3. 跨域关联 尝试改进并实现关联功能` |
-| 6 | 把dT&dS 从kvPointer中移出 |  |
-| 7 | 写AINetDataSort类 |  |
-
+| 6 | 把dT&dS 从kvPointer中移出 | 不移出,改版成params |
+| 7 | 写AINetDataSort类 | T |
+|  | AIStringAlgs等将所有信息打散为 `全部NSNumber类型` | T |
+|  | 输入asdf运行,两次,则闪退; | T |
 
 | 肯定表 >> |
 | --- |
