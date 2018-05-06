@@ -543,6 +543,7 @@
 | 1. 写cmv在net中的基本模型 |
 | 2. 写第二序列AINetData |
 | 3. 测试第二序列,(需要cmvBaseModel的参与,可以先用假数据来测试) |
+| 4. 将标识algsType&dataSource转换为简单的标识如`1` (在生成指针之前,完成转换) |
 
 <br>
 
