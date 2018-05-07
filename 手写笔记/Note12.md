@@ -26,6 +26,7 @@
 	- [n12p15 不应期](#n12p15-不应期)
 	- [n12p16 cmv模型和第三序列](#n12p16-cmv模型和第三序列)
 	- [n12p17 output & 思维方式 & 数据网络](#n12p17-output-思维方式-数据网络)
+	- [n12p18 node & port & pointer](#n12p18-node-port-pointer)
 	- [Other](#other)
 
 <!-- /TOC -->
@@ -569,6 +570,8 @@
 | 5. 产生orderAbs抽象时,也可以加入到oorder序列中; |
 
 
+
+
 <br><br><br><br><br>
 
 
@@ -584,6 +587,20 @@
 | 4. 抽象Node中,不仅存储 `相交信息域`, 也存储 `类比链` 数据; |
 | 5. `联想功能` 将不同数据,读取到了thinking中,才有thinking对这些数据类比,故联想是抽象之源 |
 
+
+
+<br><br><br><br><br>
+
+
+
+## n12p18 node & port & pointer
+`CreateTime 2018.05.07`
+
+
+| 关系 >> |
+| --- |
+| 1. 整理node,port,pointer的关系:`1. port包含pointer` `2. node包含port` `3. pointer可指向node` |
+| 2. node有一个port被指,多个ports指出;其中ports可分组为如:orderPorts,absPorts等 |
 
 
 
