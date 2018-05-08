@@ -578,6 +578,16 @@
 | 变动2. 宏123的抽象不应影响到cmv基本模型 `因为前因序列中的宏123由thinking识别阶段确定` `抽象成长后,直接作废此处即可` `如:蜻和蜓在形成词后,原先对蜻和蜓单独的喜好,则升级后,废退` |
 | 变动3. 序列从algs到thinking的shortCache已经决定,所以在示图模型外加入这俩流程 |
 
+<br>
+
+| 构建步骤变动 >> |
+| --- |
+| 1. algs传入信息 |
+| 2. thinking处理并分类 `noMv存shortCache` `mv则触发构建cmv模型` |
+| 3. 分别构建:frontOrderPorts和cmv的宏Node |
+| 4. 生成cmv模型,并指向刚刚构建的Node们 |
+
+
 
 
 <br><br><br><br><br>
