@@ -587,6 +587,10 @@
 | 2. thinking处理并分类 `noMv存shortCache` `mv则触发构建cmv模型` |
 | 3. 分别构建:frontOrderPorts和cmv的宏Node |
 | 4. 生成cmv模型,并指向刚刚构建的Node们 |
+| 注: 第三序列无强度属性,即关联强度也不会变化 |
+| 注: cmvModel的 `order指向节点` 与 `mv_kvp指向节点` 都可以独立抽象; |
+| 问: 是否可以用时序和强度序两个weight? |
+| 答: 不行,增加复杂度,抢了第四序列的事儿 |
 
 
 
@@ -607,6 +611,7 @@
 | 5. 抽象之源 | 联想是抽象之源,其将不同数据,读取到thinking中进行数据类比,才有了抽象 |
 | 6. 信息细化 | 信息不仅有模糊到确切,还有细化; |
 | 7. 排序方式 | 第一序列:`大小` 第二序列:`引用数` 第三序列:`时序` 第四序列:`强度` |
+| 8. 抽象积极 | thinking只要有类比的机会,就会把握一切抽象的可能 |
 
 
 
@@ -622,6 +627,7 @@
 | --- |
 | 1. 整理node,port,pointer的关系:`1. port包含pointer` `2. node包含port` `3. pointer可指向node` |
 | 2. node有一个port被指,多个ports指出;其中ports可分组为如:orderPorts,absPorts等 |
+| 3. ports目前只是带有strong的pointer;而`时序列`和`索引序列`,分别依赖`时序`和`值序`,所以无需ports |
 
 
 
