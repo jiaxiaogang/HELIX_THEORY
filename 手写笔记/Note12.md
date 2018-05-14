@@ -549,26 +549,22 @@
 
 <br>
 
-| 第三序列 >> |
-| --- |
-| 1. 由 `前因序列order` 改为 `前因序列的序列oorder` |
-| 2. oorder以order的强度排序; |
+| 第三序列 >> |  |
+| --- | --- |
+| 1. 由 `前因序列order` 改为 `前因序列的序列oorder` | (废弃) |
+| 2. oorder以order的强度排序; | (废弃) |
 
 <br>
 
-| 示图 >> |
-| --- |
-| ![](assets/45_cmv模型.png) |
-
-<br>
-
-| 构建步骤 >> |
-| --- |
-| 1. thinking传入信息组 |
-| 2. 非mv分别noMv.convertToNode (shortCache的4组) |
-| 3. 创建一个orderNode,并指向所有noMv.node; |
-| 4. 创建oorder,用来存所有orderNode的强度排序; |
-| 5. 产生orderAbs抽象时,也可以加入到oorder序列中; |
+| 示图 & 构建步骤 >> | (废弃) |
+| --- | --- |
+| ![](assets/45_cmv模型.png) |  |
+| 构建步骤 >> | (废弃) |
+| 1. thinking传入信息组 |  |
+| 2. 非mv分别noMv.convertToNode (shortCache的4组) |  |
+| 3. 创建一个orderNode,并指向所有noMv.node; |  |
+| 4. 创建oorder,用来存所有orderNode的强度排序; |  |
+| 5. 产生orderAbs抽象时,也可以加入到oorder序列中; |  |
 
 <br>
 
@@ -656,11 +652,12 @@
 | --- | --- |
 | 1. 写第二序列AINetReference | T |
 | 2. 测试第二序列,(需要cmvBaseModel的参与,可以先用假数据来测试) | T |
-| 3. 写cmv在net中的基本模型 |  |
-| 4. 写一个cmvNode来承载cmv模型。 |  |
-| 5. 写一个序列Node,来表示一个有序微信息集合 |  |
+| 3. 写cmv在net中的基本模型 | T |
+| 4. 写一个cmvNode来承载cmv模型。 | T |
+| 5. 写一个序列Node,来表示一个有序微信息集合 | (废弃) |
 | 6. 将标识algsType&dataSource转换为简单的标识如`1` (在生成指针之前,完成转换) |  |
 | 7. 写类比宏信息,并形成抽象节点 |  |
+| 8. 测试cmv基本模型的运行,看有没bug |  |
 
 <br>
 
