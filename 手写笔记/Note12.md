@@ -720,13 +720,23 @@
 | --- |
 | ![](assets/49_第四序列2.png) |
 | 1. ref序列有可能不需要,但先留着,真不需要时,不使用即可 |
-| 2.  |
+| 2. foNode与node是完全不同的 |
+| 3. foNode不必要是一个node,而只是个port;(第三索引rootIndex) |
+| 4. foNode关联包括 `ref` `absPort` |
+| 5. node的每个关联包括 `ref` `conPort` `absPort` |
 
 <br>
 
 | 代码步骤 >> |
 | --- |
 | 1.  |
+
+<br>
+
+| 明日提示 >> |  |
+| --- | --- |
+| 1 | 写foOdersA和foOrdersB的类比,并抽象出node |
+| 2 | 在reference中将foNode与node分开; |
 
 
 <br><br><br><br><br>
