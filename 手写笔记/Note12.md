@@ -722,8 +722,9 @@
 | 1. ref序列有可能不需要,但先留着,真不需要时,不使用即可 |
 | 2. foNode与node是完全不同的 |
 | 3. foNode不必要是一个node,而只是个port;(第三索引rootIndex) |
-| 4. foNode关联包括 `ref` `absPort` |
-| 5. node的每个关联包括 `ref` `conPort` `absPort` |
+| 4. foNode关联包括 `ref` |
+| 5. cmvModel的包括:absPort (其中每个指向absPort中,包含的是foNode的下标) |
+| 6. node的每个关联包括 `ref` `conPort` `absPort` |
 
 <br>
 
@@ -736,7 +737,8 @@
 | 明日提示 >> |  |
 | --- | --- |
 | 1 | 写foOdersA和foOrdersB的类比,并抽象出node |
-| 2 | 在reference中将foNode与node分开; |
+| 2 | 在reference中将foNode与node分开?或者不分开? |
+| 3 | 关于cmvModel的:orders,foNode,cmvNode四者分开,还是哪些到一起? |
 
 
 <br><br><br><br><br>
