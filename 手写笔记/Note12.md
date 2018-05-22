@@ -739,6 +739,7 @@
 | 1 | 写foOdersA和foOrdersB的类比,并抽象出node |
 | 2 | 在reference中将foNode与node分开?或者不分开? |
 | 3 | 关于cmvModel的:orders,foNode,cmvNode四者分开,还是哪些到一起? |
+| 4 | 写mindValueRule |
 
 
 <br><br><br><br><br>
