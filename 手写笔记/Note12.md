@@ -740,6 +740,8 @@
 | 2 | 在reference中将foNode与node分开?或者不分开? |
 | 3 | 关于cmvModel的:orders,foNode,cmvNode四者分开,还是哪些到一起? |
 | 4 | 写mindValueRule |
+| 5 | 写kv内存存储 |
+| 6 | 写kv内存存储,加上时间;(销毁时间) |
 
 
 <br><br><br><br><br>
