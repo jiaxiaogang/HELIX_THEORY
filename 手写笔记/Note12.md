@@ -29,6 +29,7 @@
 	- [n12p18 第四序列 和 数据网络 (理论)](#n12p18-第四序列-和-数据网络-理论)
 	- [n12p19 第三序列->第四序列的过渡](#n12p19-第三序列-第四序列的过渡)
 	- [n12p20 第四序列的代码实现](#n12p20-第四序列的代码实现)
+	- [n12p21 cmv模型的改版](#n12p21-cmv模型的改版)
 	- [Other](#other)
 
 <!-- /TOC -->
@@ -728,20 +729,26 @@
 
 <br>
 
-| 代码步骤 >> |
-| --- |
-| 1.  |
-
-<br>
-
 | 明日提示 >> |  |
 | --- | --- |
 | 1 | 写foOdersA和foOrdersB的类比,并抽象出node |
 | 2 | 在reference中将foNode与node分开?或者不分开? |
 | 3 | 关于cmvModel的:orders,foNode,cmvNode四者分开,还是哪些到一起? |
 | 4 | 写mindValueRule |
-| 5 | 将foNode删掉, |
+| 5 | 将foNode改成orders; |
 | 6 | 将absNode改版写完善 |
+
+
+<br><br><br><br><br>
+
+
+## n12p21 cmv模型的改版
+`CreateTime 2018.05.29`
+
+| 示图 >> |
+| --- |
+| ![](assets/50_cmv模型改版.png) |
+| `黑: foOrders` `棕: cmv` `灰: reference` `绿: absNode` |
 
 
 
@@ -765,6 +772,7 @@
 | 10. 写kv内存存储 | T |
 | 11. 写kv内存存储,加上时间;(销毁时间) | T |
 | 12. 类比foOrders | T |
+| 13. XGRedis在GC时,发送广播 | T |
 
 <br>
 
