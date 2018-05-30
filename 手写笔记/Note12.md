@@ -757,8 +757,8 @@
 | 2 | 在reference中将foNode与node分开?或者不分开? |
 | 3 | 关于cmvModel的:orders,foNode,cmvNode四者分开,还是哪些到一起? |
 | 4 | 写mindValueRule |
-| 5 | 将foNode改成orders; |
-| 6 | 将absNode改版写完善 |
+| 5 | 测试absNode |
+
 
 
 
@@ -776,13 +776,15 @@
 | 4. 写一个cmvNode来承载cmv模型。 | T |
 | 5. 写一个序列Node,来表示一个有序微信息集合 | (废弃) |
 | 6. 将标识algsType&dataSource转换为简单的标识如`1` (在生成指针之前,完成转换) |  |
-| 7. 写类比宏信息,并形成抽象节点 |  |
+| 7. 写类比宏信息,并形成抽象节点 | T |
 | 8. 测试cmv基本模型的运行,看有没bug | T |
-| 9. 写cmv基本模型的抽象 |  |
+| 9. 写cmv基本模型的抽象 | T |
 | 10. 写kv内存存储 | T |
 | 11. 写kv内存存储,加上时间;(销毁时间) | T |
 | 12. 类比foOrders | T |
 | 13. XGRedis在GC时,发送广播 | T |
+| 14. 将foNode改成orders; | T |
+| 15. 将absNode改版写完善 | T |
 
 <br>
 
