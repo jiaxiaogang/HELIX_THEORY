@@ -757,7 +757,9 @@
 | 2 | 在reference中将foNode与node分开?或者不分开? |
 | 3 | 关于cmvModel的:orders,foNode,cmvNode四者分开,还是哪些到一起? |
 | 4 | 写mindValueRule |
-| 5 | 测试absNode |
+| 5 | 测试absNode(日志打出有效信息) |
+| 6 | 写cmvNode的抽象 |
+| 7 | 解决:第一次抽象后,第二次再输入,重复抽象的问题 |
 
 
 
