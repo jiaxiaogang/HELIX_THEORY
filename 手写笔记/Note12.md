@@ -753,16 +753,15 @@
 
 | 明日提示 >> |  |
 | --- | --- |
-| 1 | 写foOdersA和foOrdersB的类比,并抽象出node |
-| 2 | 在reference中将foNode与node分开?或者不分开? |
-| 3 | 关于cmvModel的:orders,foNode,cmvNode四者分开,还是哪些到一起? |
-| 4 | 写mindValueRule |
-| 5 | 测试absNode(日志打出有效信息) |
-| 6 | 写cmvNode的抽象 |
-| 7 | 解决:第一次抽象后,第二次再输入,重复抽象的问题 `非每次类比到law,都newAbsNode;因有时已存在过` |
-| 8 | omv应激反应输出。 |
-| 9 | 思考absPort和conPort的n对n关系; `太过复杂的关系,是否影响其它,或者造成性能问题` `如果要简化为1对n关系,那应该如何优化网络` |
-| 10 | 测试absIndex宏信息索引 |
+| 1 | 关于cmvModel的:orders,foNode,cmvNode四者分开,还是哪些到一起? |
+| 2 | 写mindValueRule |
+| 3 | 写cmvNode的抽象 |
+| 4 | omv应激反应输出。 |
+| 5 | 解决:第一次抽象后,第二次再输入,重复抽象的问题 `非每次类比到law,都newAbsNode;因有时已存在过` |
+| 6 | 思考absPort和conPort的n对n关系; `太过复杂的关系,是否影响其它,或者造成性能问题` `如果要简化为1对n关系,那应该如何优化网络` |
+| 7 | 测试absNode(日志打出有效信息) |
+| 8 | 测试absIndex宏信息索引 |
+| 9 | 测试改版后的absNode(去重) |
 
 
 
@@ -791,6 +790,8 @@
 | 14. 将foNode改成orders; | T |
 | 15. 将absNode改版写完善 | T |
 | 16. 写absIndex宏信息索引 | T |
+| 17. 在reference中将foNode与node分开?或者不分开?(分开,因为不同) | T |
+| 18. 写foOdersA和foOrdersB的类比,并抽象出node | T |
 
 <br>
 
