@@ -749,16 +749,6 @@
 | 3 | 用absNode.delegate进行回调,在具象方向conNode插上absPort; |
 | 4 | absNode存储构建; |
 
-<br>
-
-| 明日提示 >> |  |
-| --- | --- |
-| 1 | 关于cmvModel的:orders,foNode,cmvNode四者分开,还是哪些到一起? |
-| 2 | 写mindValueRule |
-| 3 | 写cmvNode的抽象 |
-| 4 | omv应激反应输出。 |
-| 5 | 思考absPort和conPort的n对n关系; `太过复杂的关系,是否影响其它,或者造成性能问题` `如果要简化为1对n关系,那应该如何优化网络` |
-
 
 
 
