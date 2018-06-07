@@ -757,11 +757,7 @@
 | 2 | 写mindValueRule |
 | 3 | 写cmvNode的抽象 |
 | 4 | omv应激反应输出。 |
-| 5 | 解决:第一次抽象后,第二次再输入,重复抽象的问题 `非每次类比到law,都newAbsNode;因有时已存在过` |
-| 6 | 思考absPort和conPort的n对n关系; `太过复杂的关系,是否影响其它,或者造成性能问题` `如果要简化为1对n关系,那应该如何优化网络` |
-| 7 | 测试absNode(日志打出有效信息) |
-| 8 | 测试absIndex宏信息索引 |
-| 9 | 测试改版后的absNode(去重) |
+| 5 | 思考absPort和conPort的n对n关系; `太过复杂的关系,是否影响其它,或者造成性能问题` `如果要简化为1对n关系,那应该如何优化网络` |
 
 
 
@@ -792,6 +788,10 @@
 | 16. 写absIndex宏信息索引 | T |
 | 17. 在reference中将foNode与node分开?或者不分开?(分开,因为不同) | T |
 | 18. 写foOdersA和foOrdersB的类比,并抽象出node | T |
+| 19. 测试absNode(日志打出有效信息) | T |
+| 20. 测试absIndex宏信息索引 | T |
+| 21. 测试改版后的absNode(去重) | T |
+| 22. 解决:第一次抽象后,第二次再输入,重复抽象的问题 `非每次类比到law,都newAbsNode;因有时已存在过` | T |
 
 <br>
 
