@@ -60,7 +60,12 @@
 | 1. shortCache里加上absNode。 |
 | 2. shortCache里加上思维log。 |
 
+<br>
 
+| ![](assets/51_相对宏微.png) |
+| --- |
+| 红线:宏信息中的`微信息组`,也作为`微信息`;以指针形式存在absIndex中, |
+| 再由,absReference排序其引用强度; |
 
 
 <br><br><br><br><br>
@@ -85,6 +90,9 @@
 | 4 | omv应激反应输出。 |
 | 5 | 思考absPort和conPort的n对n关系; `太过复杂的关系,是否影响其它,或者造成性能问题` `如果要简化为1对n关系,那应该如何优化网络` |
 | 6 | 把前因序列类比出的sames也改成时序的。(避免逻辑混乱) |
+| 7 | 删除absNode下的refs_p, |
+| 8 | 创建absReference |
+| 9 | 完善thinking中无mv的assData流程; |
 
 
 
