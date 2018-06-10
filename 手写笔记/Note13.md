@@ -91,7 +91,7 @@
 | 5 | 思考absPort和conPort的n对n关系; `太过复杂的关系,是否影响其它,或者造成性能问题` `如果要简化为1对n关系,那应该如何优化网络` |
 | 6 | 把前因序列类比出的sames也改成时序的。(避免逻辑混乱) |
 | 7 | 完善thinking中无mv的assData流程; |
-| 8 | 测试absNode的index和reference; |
+| 8 | dataIn是流式输入;sames也是基于当前输入信号与shortCache已有信号,可进行组合检索的; |
 
 
 
@@ -104,6 +104,7 @@
 | --- | --- | --- |
 | 1 | 删除absNode下的refs_p, | T |
 | 2 | 创建absReference | 复用indexReference |
+| 3 | 测试absNode的index和reference; | T |
 
 
 
