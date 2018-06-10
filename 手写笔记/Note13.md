@@ -90,12 +90,20 @@
 | 4 | omv应激反应输出。 |
 | 5 | 思考absPort和conPort的n对n关系; `太过复杂的关系,是否影响其它,或者造成性能问题` `如果要简化为1对n关系,那应该如何优化网络` |
 | 6 | 把前因序列类比出的sames也改成时序的。(避免逻辑混乱) |
-| 7 | 删除absNode下的refs_p, |
-| 8 | 创建absReference |
-| 9 | 完善thinking中无mv的assData流程; |
+| 7 | 完善thinking中无mv的assData流程; |
+| 8 | 测试absNode的index和reference; |
 
 
 
+<br><br><br><br><br>
+
+
+## Other
+
+| toDo >> | task | status |
+| --- | --- | --- |
+| 1 | 删除absNode下的refs_p, | T |
+| 2 | 创建absReference | 复用indexReference |
 
 
 
