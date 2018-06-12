@@ -22,7 +22,9 @@
 - [宏微是相对的(思维方式)](#宏微是相对的思维方式)
 	- [n13p1 思考思维方式之相对宏微](#n13p1-思考思维方式之相对宏微)
 	- [n13p2 cmvRule](#n13p2-cmvrule)
-	- [n13p3 根枝干网络外观](#n13p3-根枝干网络外观)
+	- [n13p3 从节点复杂度,思考网络优化](#n13p3-从节点复杂度思考网络优化)
+	- [n13p4 output](#n13p4-output)
+	- [n13p5 后天思维之thinkFeed](#n13p5-后天思维之thinkfeed)
 	- [Other](#other)
 
 <!-- /TOC -->
@@ -60,7 +62,7 @@
 | 开发 >> |
 | --- |
 | 1. shortCache里加上absNode。 |
-| 2. shortCache里加上思维log。 |
+| 2. shortCache里加上思维log (thinkFeed)。 |
 
 <br>
 
@@ -83,11 +85,11 @@
 
 
 
-
 <br><br><br><br><br>
 
 
-## n13p3 根枝干网络外观
+
+## n13p3 从节点复杂度,思考网络优化
 `CreateTime 2018.06.11`
 
 | 前言 >> |
@@ -99,6 +101,37 @@
 | ![](assets/52_根枝干.png) |
 | --- |
 | 注: `i=index` `is=indexs` `abs=abstract` `fon=frontOrderNode` |
+| 1. foNode: 多对一 `多微信息 对 cmvModel` |
+| 2. cmvModel: 一对一 `foNode 对 cmvNode` |
+| 3. cmvNode: 一对二 `cmvModel 对 targetType_p和urgentValue_p` |
+
+
+
+<br><br><br><br><br>
+
+
+## n13p4 output
+`CreateTime 2018.06.12`
+
+| 行为学习 >> |
+| --- |
+| 1. 反射输出 |
+| 2. 尝试输出 |
+| 3. 输出log入网 |
+| 4. 运用output网 |
+
+
+
+<br><br><br><br><br>
+
+
+## n13p5 后天思维之thinkFeed
+`CreateTime 2018.06.12`
+
+| 问题 >> |
+| --- |
+| 1. thinkFeed什么时候被mv带给foNode? |
+
 
 <br>
 
@@ -108,11 +141,16 @@
 | 2 | 写mindValueRule |
 | 3 | 写cmvNode的抽象 |
 | 4 | omv应激反应输出。 |
-| 5 |  |
-| 6 | 把前因序列类比出的sames也改成时序的。(避免逻辑混乱) |
-| 7 | 完善thinking中无mv的assData流程; |
-| 8 | dataIn是流式输入;sames也是基于当前输入信号与shortCache已有信号,可进行组合检索的; |
-| 9 | noMV的dataIn流程,在联想后,依然noMV,但联想的结果要入到shortCache里; |
+| 5 | 把前因序列类比出的sames也改成时序的。(避免逻辑混乱) dataIn是流式输入;sames也是基于当前输入信号与shortCache已有信号,可进行组合检索的; |
+| 6 | 完善thinking中无mv的assData流程; |
+| 7 | noMV的dataIn流程,在联想后,依然noMV,但联想的结果要入到cacheThinkFeed里; |
+| 8 | 写thinkFeed |
+
+
+
+
+
+
 
 
 
@@ -126,7 +164,7 @@
 | 1 | 删除absNode下的refs_p, | T |
 | 2 | 创建absReference | 复用indexReference |
 | 3 | 测试absNode的index和reference; | T |
-| 4 | 思考absPort和conPort的n对n关系; `太过复杂的关系,是否影响其它,或者造成性能问题` `如果要简化为1对n关系,那应该如何优化网络` `思: n对n关系,说明一个问题,就是要么多了关联,要么少了节点;` | 问题不存在,因为有cmvModel; |
+| 4 | 思考absPort和conPort的n对n关系; `太过复杂的关系,是否影响其它,或者造成性能问题` `如果要简化为1对n关系,那应该如何优化网络` `思: n对n关系,说明一个问题,就是要么多了关联,要么少了节点;` | 问题升级,参:n13p3 |
 
 
 
