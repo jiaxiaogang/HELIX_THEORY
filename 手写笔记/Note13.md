@@ -142,21 +142,26 @@
 | 1 | thinkFeed只是后天思维的第一步; |
 | 2 | 思维解决问题也是构建网络,如 `练题成考神`,`自省使抽象加抽或入cmvModel` |
 | 3 |  |
+<br>
+
+| 步骤 >> |  |
+| --- | --- |
+| 1 | input |
+| 2 | noMV |
+| 3 | shortCache |
+| 4 | assData |
+| 5 | thinkFeed |
 
 <br>
 
-| 明日提示 >> |  |
-| --- | --- |
-| 1 | 关于cmvModel的:orders,foNode,cmvNode四者分开,还是哪些到一起? |
-| 2 | 写mindValueRule |
-| 3 | 写cmvNode的抽象 |
-| 4 | omv应激反应输出。 |
-| 5 | 把前因序列类比出的sames也改成时序的。(避免逻辑混乱) dataIn是流式输入;sames也是基于当前输入信号与shortCache已有信号,可进行组合检索的; |
-| 6 | 完善thinking中无mv的assData流程; |
-| 7 | noMV的dataIn流程,在联想后,依然noMV,但联想的结果要入到cacheThinkFeed里; |
-| 8 | 写thinkFeed |
-
-
+| 明日提示 >> | title | desc |
+| --- | --- | --- |
+| 1 | output | omv应激反应输出。 |
+| 2 | sames | 把前因序列类比出的sames也改成时序的。(避免逻辑混乱) dataIn是流式输入;sames也是基于当前输入信号与shortCache已有信号,可进行组合检索的; |
+| 3 | assData | 完善thinking中无mv的assData流程; |
+| 4 | thinkFeed | noMV的dataIn流程,在联想后,依然noMV,但联想的结果要入到cacheThinkFeed里; `写thinkFeed` |
+| 5 | foundation | 将pointer,缓存,port,等封装一下,使用时更简单些;代码也更易读些; |
+| 6 | absCmvNode | 写mindValueRule 或许不需要cmvRule,而是类比cmvModel;抽象cmvNode; `写cmvNode的抽象` |
 
 
 
@@ -175,6 +180,7 @@
 | 2 | 创建absReference | 复用indexReference |
 | 3 | 测试absNode的index和reference; | T |
 | 4 | 思考absPort和conPort的n对n关系; `太过复杂的关系,是否影响其它,或者造成性能问题` `如果要简化为1对n关系,那应该如何优化网络` `思: n对n关系,说明一个问题,就是要么多了关联,要么少了节点;` | 问题升级,参:n13p3 |
+| 5 | 关于cmvModel的:orders,foNode,cmvNode四者分开,还是哪些到一起? | T |
 
 
 
