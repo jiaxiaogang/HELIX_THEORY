@@ -121,6 +121,17 @@
 | 3. 输出log入网 |
 | 4. 运用output网 |
 
+<br>
+
+| 理论步骤 >> |  |  |
+| --- | --- | --- |
+| 1 | outputAlgs算法层 | 定义了输出算法 |
+| 2 | 反射输出 | imv与输出的反射回路 |
+| 3 | omv与反射输出入网 |  |
+| 4 | 尝试输出 | 决策,上升到后天输出阶段 |
+| 5 | 输出入网 | 上升到后天输出的学习阶段 |
+| 6 | 运用output网输出 |  |
+
 
 
 <br><br><br><br><br>
@@ -162,6 +173,7 @@
 | 4 | thinkFeed | noMV的dataIn流程,在联想后,依然noMV,但联想的结果要入到cacheThinkFeed里; `写thinkFeed` |
 | 5 | foundation | 将pointer,缓存,port,等封装一下,使用时更简单些;代码也更易读些; |
 | 6 | absCmvNode | 写mindValueRule 或许不需要cmvRule,而是类比cmvModel;抽象cmvNode; `写cmvNode的抽象` |
+| 7 | checkMV | 往checkMV中,加上change的部分,并改cmvNode; |
 
 
 
