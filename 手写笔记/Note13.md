@@ -175,6 +175,8 @@
 |  | 答:是,因为thinkFeed所指向的absIndex也是微信息,需要与分信息混合传入,以形成自由的组分结构; |
 | 4 | 第3如果是,怎么传?与shortCache的区别是什么? |
 |  | 答:考虑：1、 shortCache（4-7不区分input和ass） 2、thinkFeed（快速优先检索区） |
+| 5 | 感觉缺了些什么,例如:shortCache如果不区分input和ass,那么序列呢?如何排先后; |
+|  | 答: |
 
 <br>
 
