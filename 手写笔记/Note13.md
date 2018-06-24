@@ -27,6 +27,7 @@
 	- [n13p4 output](#n13p4-output)
 	- [n13p5 后天思维之thinkFeed](#n13p5-后天思维之thinkfeed)
 	- [n13p6 相对宏微之网络改版](#n13p6-相对宏微之网络改版)
+	- [n13p7 相对宏微之代码实践](#n13p7-相对宏微之代码实践)
 	- [Other](#other)
 
 <!-- /TOC -->
@@ -242,6 +243,21 @@
 | --- | --- |
 | 1 | 只需要把shortCache中微信息的装箱操作,再装一步,装到node中; |
 | 2 | 索引可还用目前这种,分界还算是特别分明的 |
+
+
+
+
+<br><br><br><br><br>
+
+
+## n13p7 相对宏微之代码实践
+`CreateTime 2018.06.25`
+
+| shortCache >> |  |
+| --- | --- |
+| 1 | shortCache的所有元素都是微指针 |
+| 2 | shortCache的长度是否决定智力 |
+| 3 | shortCache决定了cmvModel前因序列的长度,及整个网络的构建过程、结果和复杂度。 |
 
 <br>
 
