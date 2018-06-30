@@ -384,6 +384,15 @@
 
 <br>
 
+| 必然正确的几个点 >> |
+| --- |
+| 1. cmv模型中的时序 |
+| 2. imv,cmv,omv必然会入网 (imv未必) |
+| 3. imv,cmv,omv必然会抽象 (imv可能以抽象去重) |
+| 4. imv的target必然与cmv产生对应 |
+
+<br>
+
 | 明日提示 >> | title | desc |
 | --- | --- | --- |
 | 1 | output | omv应激反应输出。 |
