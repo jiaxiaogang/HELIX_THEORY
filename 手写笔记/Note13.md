@@ -365,7 +365,7 @@
 | --- | --- |
 | 1 | 写imvCache当前imv状态序列 |
 | 2 | 思考:是否可将imvCache与shortCache合为一起? |
-|  | 答:目前不需要 |
+|  | 答:目前不需要 `imvCache可以合并到shortCache` |
 | 3 | 思考:多个同类型imv,是否需要类比,absImv,然后再只存absImv_p到imvCache? |
 |  | 答: |
 | 4 | imv是否先入网,指针入imgCache序列? |
@@ -373,6 +373,14 @@
 | 5 | 是否将imv,cmv,omv进入整合,放到cmv基本模型中? |
 |  | 答: |
 | 注: | 所有cmv只与cacheImv中作匹配 |
+
+<br>
+
+| 仨mv合并 >> |  |
+| --- | --- |
+| 1 | cmv基本模型需要改进 |
+| 2 | 一般感觉(好奇心)作为netRoot时的工作方式 |
+| 3 | 假如,在数据网络中,mv与普通节点没有区别,会怎么样? |
 
 <br>
 
