@@ -393,6 +393,15 @@
 
 <br>
 
+| 思考结果 >> |
+| --- |
+| 1. 只有一个mv,没有imv和omv;(omv只是为了反射平复target), |
+| 2. mv模型为: `from a->b` `target b->c` |
+| 3. 将absMV_p存到mvCache |
+| 4. mvCache的模糊有序,如1.5和1.7同值 `注:随着联想等思维活动,实时更新排序` |
+
+<br>
+
 | 明日提示 >> | title | desc |
 | --- | --- | --- |
 | 1 | output | omv应激反应输出。 |
