@@ -34,6 +34,7 @@
 	- [n13p8 smg总结(单流程)](#n13p8-smg总结单流程)
 	- [n13p9 output代码实践](#n13p9-output代码实践)
 	- [n13p10 mv循环](#n13p10-mv循环)
+	- [n13p10 mv循环改版_代码实践](#n13p10-mv循环改版代码实践)
 	- [Other](#other)
 
 <!-- /TOC -->
@@ -355,6 +356,8 @@
 | 6 | Q:关于decision与output哪个入网? |
 |  | A:当时怎么想的不重要,重要的是怎么做的 |
 | 7 | Q:除了输入时,inputIndex,是否也有outputIndex呢?哪些能输入,哪些能输出?如何输出? |
+|  | A:只有一套Index,输出见收下：必然正确部分 |
+| 8 | Q:人类为什么1岁才学会说话呢? |
 |  | A: |
 
 <br>
@@ -445,6 +448,28 @@
 | 2. mv模型为: `from a->b` `target b->c` |
 | 3. 将absMV_p存到mvCache |
 | 4. mvCache的模糊有序,如1.5和1.7同值 `注:随着联想等思维活动,实时更新排序` |
+
+
+
+
+
+
+<br><br><br><br><br>
+
+
+## n13p10 mv循环改版_代码实践
+`CreateTime 2018.07.02`
+
+| 步骤 >> |
+| --- |
+| 1. imv的from和to直接传到thinkingController里去 |
+| 2. thinkingController将fromto转成tMv入网并放到mvCache |
+| 3. 再次输入imv的fromto时,与mvCache匹配(相顺或相逆); |
+| 4. 相顺时(from-to与target一致),转成changeMV,并存cmv基本模型到网络 |
+| 5. 相逆时(from-to与target相反),将tMV入网,并合并到mvCache(同需求合并,以最近为主) |
+| 注: tMv即urgent和target的mv状态; |
+| 注: imv即from和to的mv状态; |
+| 注: cmv即在urgent上产生change的mv状态; |
 
 <br>
 
