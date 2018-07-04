@@ -474,6 +474,20 @@
 | 注: imv即from和to的mv状态; |
 | 注: cmv即在urgent上产生change的mv状态; |
 
+<br>
+
+| 执行 >> | status |
+| --- | --- |
+| 1. 把fromto改成value和deltaFrom(不过当前不太需要) | T |
+| 2. 在thinking中,类比(同向替换,异向抵消)时,生成absCmvNode |  |
+
+<br>
+
+| absCmvIndex的抽象 >> |
+| --- |
+| 1. absCmvIndex是+-，以delta抽象，可尝试模糊下。用（区间包含）的规律，例如: |
+| > 具象方向：+10也是+9及以下。 |
+| > 抽象方向：+1包含+1以上所有。 |
 
 
 
