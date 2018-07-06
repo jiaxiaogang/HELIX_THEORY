@@ -36,6 +36,8 @@
 	- [n13p10 mv循环](#n13p10-mv循环)
 	- [n13p11 mv循环改版_代码实践](#n13p11-mv循环改版代码实践)
 	- [n13p12 下版本_前额叶处理能力](#n13p12-下版本前额叶处理能力)
+	- [n13p13 下版本_时序列和cmv基本模型的改版](#n13p13-下版本时序列和cmv基本模型的改版)
+	- [n13p14 cmv改版_deltaIndex(+-)](#n13p14-cmv改版deltaindex-)
 	- [Other](#other)
 
 <!-- /TOC -->
@@ -378,7 +380,11 @@
 | 2. inputAlgs时是索引微信息, |
 | 3. 而outputAlgs时,其索引微信息存的是,`反射算法标识` 和 `输出的信息` |
 
+<br>
 
+| 明日提示 >> | title | desc | status |
+| --- | --- | --- | --- |
+| 1 | output | omv应激反应输出。 |  |
 
 
 <br><br><br><br><br>
@@ -454,9 +460,6 @@
 
 
 
-
-
-
 <br><br><br><br><br>
 
 
@@ -476,20 +479,8 @@
 
 <br>
 
-| 执行 >> | status |
-| --- | --- |
-| 1. 把fromto改成value和deltaFrom(不过当前不太需要) | T |
-| 2. 在thinking中,类比(同向替换,异向抵消)时,生成absCmvNode |  |
-| 3. 实现快速根据delta+或-,从index找到相对应的pointer; |  |
-| 4. 根据delta+或-的经历,快速实现absDeltaIndex的最小单位`+-1`构建; |  |
-
-<br>
-
-| absCmvIndex的抽象 >> |
+| ![](assets/54_三层循环.png) |
 | --- |
-| 1. absCmvIndex是+-，以delta抽象，可尝试模糊下。用（区间包含）的规律，例如: |
-| > a. 具象方向：+10也是+9及以下。 |
-| > b. 抽象方向：+1包含+1以上所有。 |
 
 <br>
 
@@ -508,6 +499,13 @@
 | 6 | 最大的问题是,delta+和delta-到底是先天即知,还是后天关联; |
 |  | >> 应该是先天,那么快速的从某个delta变化,来快速从index找到对应信息,成了首要代码实现; |
 
+<br>
+
+| 明日计划 >> | status |
+| --- | --- |
+| 1. 把fromto改成value和deltaFrom(不过当前不太需要) | T |
+| 2. 往checkMV中,加上change的部分,并改cmvNode; | T(已加delta并改了cmvNode) |
+
 
 
 <br><br><br><br><br>
@@ -522,22 +520,78 @@
 | 示例:鸠摩智抓段誉，但乔峰同在时不抓。背后逻辑源于抽象迁移网络。(武力值,六脉神剑等常识和类比) |
 | 常识边界:先建立了鸠摩智抓段誉的时序，后才知道原因。但不影响逻辑思考 |
 
+
+
+<br><br><br><br><br>
+
+
+
+## n13p13 下版本_时序列和cmv基本模型的改版
+`CreateTime 2018.07.06`
+
+| 怀疑和猜想 >> |
+| --- |
+| 1. 猜想:情景记忆是独立的小网络的可能性。 |
+| 2. 怀疑:cmv基本模型是否只是时序列;所有cmvNode也应加入到时序列中; |
+| 3. 睡眠时:GC工作; |
+| 4. 抽象时,对mv和其它微信息,采取完全不同的抽象方式;前者采用`值交集`,后者采用`信息交集` |
+| 5. mv输入时,只是状态值;而不是delta和to; |
+
+
+
+<br><br><br><br><br>
+
+
+## n13p14 cmv改版_deltaIndex(+-)
+`CreateTime 2018.07.06`
+
+| 前言 >> |  |
+| --- | --- |
+| 标题 | mv的索引,与微信息的索引是存在不同的 |
+| 区别 | 微信息是为了快速找到相对应的信息与节点,而mv则是快速找到与其相关的+-等情况; |
+| 目标 | 本节尝试重写mv的索引,并完美与原先代码不冲突的融合; |
+
 <br>
 
-| 明日提示 >> | title | desc |
-| --- | --- | --- |
-| 1 | output | omv应激反应输出。 |
-| 2 | sames | 把前因序列类比出的sames也改成时序的。(避免逻辑混乱) dataIn是流式输入;sames也是基于当前输入信号与shortCache已有信号,可进行组合检索的; |
-| 3 | assData | 完善thinking中无mv的assData流程; |
-| 4 | thinkFeed | noMV的dataIn流程,在联想后,依然noMV,但联想的结果要入到cacheThinkFeed里; `写thinkFeed` |
-| 5 | foundation | 将pointer,缓存,port,等封装一下,使用时更简单些;代码也更易读些; |
-| 6 | absCmvNode | 写mindValueRule 或许不需要cmvRule,而是类比cmvModel;抽象cmvNode; `写cmvNode的抽象` |
-| 7 | checkMV | 往checkMV中,加上change的部分,并改cmvNode; |
+```java
+//名词说明:
+> 1. mvIndex: 与Index索引序列同级,是mv相关的索引序列 (也是`值范围`索引)
+> 2. deltaIndex: 目前不想有太大改动,所以先用deltaIndex来在原先index上,再索引一层delta变化;
 
+```
 
+<br>
 
+| 思考前 >> |
+| --- |
+| 1. absCmvIndex是+-，以delta抽象，可尝试模糊下。用（区间包含）的规律，例如: |
+| > a. 具象方向：+10也是+9及以下。 |
+| > b. 抽象方向：+1包含+1以上所有。 |
 
+<br>
 
+| 思考方案1 >> |  |
+| --- | --- |
+| 介绍 | 先实现+-的需求,与当前的index和reference配合使用,随后版本迭代,再简化设计 |
+| 1 | 写个deltaIndex来解决值索引问题; |
+| 2 | 每次存index时,判断下是mv的话,自动加到deltaIndex序列中 `(从+到-有序)` |
+
+<br>
+
+```java
+//特别注意:
+> 1. 只有思维控制器自动化找delta+-时，才使用它。其它的还是使用网络和联想。
+
+```
+
+<br>
+
+| 明日计划 >> | status |
+| --- | --- |
+| 1. 在thinking中,类比(同向替换,异向抵消)时,生成absCmvNode |  |
+| 2. 实现快速根据delta+或-,从index找到相对应的pointer; |  |
+| 3. 根据delta+或-的经历,快速实现absDeltaIndex的最小单位`+-1`构建; |  |
+| 4. 写mindValueRule,配合mvIndex工作; |  |
 
 
 <br><br><br><br><br>
@@ -552,9 +606,10 @@
 | 3 | 测试absNode的index和reference; | T |
 | 4 | 思考absPort和conPort的n对n关系; `太过复杂的关系,是否影响其它,或者造成性能问题` `如果要简化为1对n关系,那应该如何优化网络` `思: n对n关系,说明一个问题,就是要么多了关联,要么少了节点;` | 问题升级,参:n13p3 |
 | 5 | 关于cmvModel的:orders,foNode,cmvNode四者分开,还是哪些到一起? | T |
-
-
-
+| 6 | 把时序列类比的sames也改成时序的。(避免逻辑混乱) dataIn是流式输入;sames也是基于当前输入信号与shortCache已有信号,可进行组合检索的; |  |
+| 7 | 完善thinking中无mv的assData流程; |  |
+| 8 | noMV的dataIn流程,在联想后,依然noMV,但联想的结果要入到cacheThinkFeed里; |  |
+| 9 | 将pointer,缓存,port,等封装一下,使用时更简单些;代码也更易读些; |  |
 
 
 
