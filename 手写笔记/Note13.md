@@ -688,8 +688,10 @@
 
 | 明日计划 >> | status |
 | --- | --- |
-| 1. 写absMvNode(只有最基本的+-抽象)(首次输入cmv时,即可抽象) |  |
+| 1. 写directionReference(只有最基本的+-抽象) | T |
 | 2. 写CmvIndex | T |
+| 3. 写首次输入cmv时,即引用directionReference |  |
+| 4. 写两个cmvNode的类比,并产生absCMVNode |  |
 
 
 <br><br><br><br><br>
