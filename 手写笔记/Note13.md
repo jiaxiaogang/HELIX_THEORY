@@ -20,9 +20,10 @@
 
 
 ***
+
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [宏微是相对的(思维方式)](#宏微是相对的思维方式)
+- [相对宏微与循环](#相对宏微与循环)
 	- [n13p1 思考思维方式之相对宏微](#n13p1-思考思维方式之相对宏微)
 	- [n13p2 cmvRule](#n13p2-cmvrule)
 	- [n13p3 从节点复杂度,思考网络优化](#n13p3-从节点复杂度思考网络优化)
@@ -39,6 +40,7 @@
 	- [n13p14 cmv改版_deltaIndex(+-)](#n13p14-cmv改版deltaindex-)
 	- [n13p15 扩展规律](#n13p15-扩展规律)
 	- [n13p16 重构思维控制器](#n13p16-重构思维控制器)
+	- [n13p17 思维网络循环(中层循环)](#n13p17-思维网络循环中层循环)
 	- [Other](#other)
 
 <!-- /TOC -->
@@ -691,7 +693,27 @@
 | 1. 写directionReference(只有最基本的+-抽象) | T |
 | 2. 写CmvIndex | T |
 | 3. 写首次输入cmv时,即引用directionReference |  |
-| 4. 写两个cmvNode的类比,并产生absCMVNode |  |
+| 4. 联想以往解决时,都发生了什么,尝试复现;(决策与解决需求) |  |
+| 5. 联想到同样经历的mv时,尝试抽象出absCMVNode;(类比cmv与抽象) |  |
+
+
+<br><br><br><br><br>
+
+
+## n13p17 思维网络循环(中层循环)
+`CreateTime 2018.07.13`
+
+| 简介 >> |
+| --- |
+| 从mv循环到(mv顺逆向)的处理,单轮中层循环完成; |
+| 本节要解决的是多轮循环;而其源动力是cmv.urgentTo; |
+
+<br>
+
+| 明日计划 >> | status |
+| --- | --- |
+| 1. 将urgentTo转换成能量值; |  |
+| 2. 推进多轮循环thinking_Loop方法; |  |
 
 
 <br><br><br><br><br>
