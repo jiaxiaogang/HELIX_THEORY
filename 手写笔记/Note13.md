@@ -768,6 +768,7 @@
 | 前言 >> |
 | --- |
 | 本节重点思考在thinkingControl中决策与输出的实践与重构; |
+| 注:在smg的初版中,仅支持最简单的output,小脑网络型输出在今后版本中完善; |
 
 <br>
 
@@ -779,6 +780,36 @@
 | 2 | 如果以上不成立: |
 |  | a. 生成"心急mv",并通过反射输出; |
 |  | b. 将反射输出,记录log到foOrders; |
+
+
+```
+1，简单定义一个outputModel。
+2，输出算法outputAlgs
+3，函数指针，
+4，输出参数。（内容）
+//[NSObject invocationMethodName:@"outText:" className:@"Output" withObjects:@[@"😭"]];
+```
+
+| 步骤 >> |
+| --- |
+| 1. "心急"的哭反射输出; |
+| 2. "满足"的笑反射输出; |
+| 3. 类比到"字符串类型"输出; |
+
+<br>
+
+| 示图>> |
+| --- |
+| ![](assets/57_output在网络中.png) |
+| 注: 对于输出的参数类型,`如笑,哭`;默认可抽象出`类型`索引; |
+| 注: 如图中的`笑`抽象到`String` |
+
+<br>
+
+| 明日计划 >> | status |
+| --- | --- |
+| 1. 写outputIndex和outputReference |  |
+| 2. 重构OutKVPointer指针 `dataTo算法名` |  |
 
 
 
