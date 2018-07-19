@@ -810,6 +810,8 @@
 | --- | --- |
 | 1. 写outputIndex和outputReference |  |
 | 2. 重构OutKVPointer指针 `dataTo算法名` |  |
+| 3. bug(indexReference只按指针排序,未按引用强度;) |  |
+| 4. bug(directionReference按指针去重,却按引用强度插入,导致去重经常失效) |  |
 
 
 
