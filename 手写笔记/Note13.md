@@ -43,6 +43,7 @@
 	- [n13p17 思维网络循环(中层循环)](#n13p17-思维网络循环中层循环)
 	- [n13p18 相对宏微之`先后思`](#n13p18-相对宏微之先后思)
 	- [n13p19 思维网络循环(外层循环)](#n13p19-思维网络循环外层循环)
+	- [n13p20 下版本_外层循环](#n13p20-下版本外层循环)
 	- [Other](#other)
 
 <!-- /TOC -->
@@ -808,15 +809,31 @@
 
 | 明日计划 >> | status |
 | --- | --- |
-| 1. 写outputIndex和outputReference |  |
-| 2. 重构OutKVPointer指针 `dataTo算法名` |  |
+| 1. 写outputIndex和outputReference | T |
+| 2. 重构OutKVPointer指针 `dataTo算法名` | T |
 | 3. bug(indexReference只按指针排序,未按引用强度;) |  |
 | 4. bug(directionReference按指针去重,却按引用强度插入,导致去重经常失效) |  |
 | 5. 写可输出微信息的判断,和输出微信息; | T |
+| 6. 写absMvNode (基于cmv基本模型写...) |  |
+| 7. 写commitOutputLog:入网; |  |
+
 
 
 
 <br><br><br><br><br>
+
+
+## n13p20 下版本_外层循环
+`CreateTime 2018.07.23`
+
+| output >> |  |
+| --- | --- |
+| 可输出判断: | 不能只用dataTo和algsType判断,还应以网络后天抽象节点判断来判断; |
+
+
+<br><br><br><br><br>
+
+
 
 
 
