@@ -822,6 +822,8 @@
 | 5. 写可输出微信息的判断,和输出微信息; | T |
 | 6. 写absMvNode (基于cmv基本模型写...) |  |
 | 7. 写commitOutputLog:入网; |  |
+| 8. AINetAbsIndex中,不能只存pointerIds;因为abs的分区标识是会变化的 |  |
+| 9. //>>>此处改为抽象整个cmv基本模型,(优先开发) |  |
 
 
 
