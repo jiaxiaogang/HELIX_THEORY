@@ -821,9 +821,11 @@
 | 4. bug(directionReference按指针去重,却按引用强度插入,导致去重经常失效) |  |
 | 5. 写可输出微信息的判断,和输出微信息; | T |
 | 6. 写absMvNode (基于cmv基本模型写...) |  |
-| 7. 写commitOutputLog:入网; |  |
+| 7. 写commitOutputLog:入网; | T |
 | 8. AINetAbsIndex中,不能只存pointerIds;因为abs的分区标识是会变化的 |  |
-| 9. //>>>此处改为抽象整个cmv基本模型,(优先开发) |  |
+| 9. >>此处改为抽象整个cmv基本模型,`或简化成absNode对absMVNode` `优先开发` |  |
+| 10. 主动取当前饥饿状态;`或:在需求形成时,用状态主动判断有效性;` |  |
+| 11. 继续写energy,让思维网络多次循环跑起来; |  |
 
 
 
@@ -831,13 +833,18 @@
 <br><br><br><br><br>
 
 
-## n13p20 下版本_外层循环
+## n13p20 下版本
 `CreateTime 2018.07.23`
 
-| output >> |  |
+| 外层循环_output >> |  |
 | --- | --- |
 | 可输出判断: | 不能只用dataTo和algsType判断,还应以网络后天抽象节点判断来判断; |
 
+| 思维控制器 >> |  |
+| --- | --- |
+| 1. 意识流 | "思维流thinkFeedCache" 可以考虑在下一版再开发; |
+| 2. 扩展规律 | 按着n13p15的方式给smg扩展规律 |
+| 3. 思维活跃度 | cAssDataLimit值的动态变化 |
 
 <br><br><br><br><br>
 
