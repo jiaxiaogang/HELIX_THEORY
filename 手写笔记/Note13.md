@@ -720,7 +720,7 @@
 | 正文 >> |
 | --- |
 | 1. 在thinkingControl中定义energy字段,并动态更新; |
-| 2. 决策中,触发一些cmvCache在排序上的变化;(如饿了,去超市买菜还是去饭店的问题) |
+| 2. 决策中,触发一些cmvCache在排序上的变化;(如饿了,去超市买菜还是去饭店的问题)`见n14p2` |
 | 3. cmvCache中,未必存的绝对是cmv;很多demand都是复合的(如我6点早餐也许只是习惯,未必是真饿了) |
 | 4. cmvCache中,需要一个自定义的model,并且为该序列需要的功能定制; |
 
@@ -728,8 +728,8 @@
 
 | 明日计划 >> | status |
 | --- | --- |
-| 1. 将urgentTo转换成能量值; |  |
-| 2. 推进多轮循环thinking_Loop方法; |  |
+| 1. 将urgentTo转换成能量值; | T |
+| 2. 推进多轮循环thinking_Loop方法; | `见n14p2` |
 | 3. 写cmvCacheModel替代麻烦且功能支撑不全面的array[@urgentTo,@delta] | T |
 
 
