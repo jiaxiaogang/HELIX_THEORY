@@ -25,6 +25,7 @@
 | [Note11](手写笔记/Note11.md) | [GNOP之宏微与定义](手写笔记/Note11.md) |
 | [Note12](手写笔记/Note12.md) | [GNOP之流程与实践](手写笔记/Note12.md) |
 | [Note13](手写笔记/Note13.md) | [相对宏微与循环](手写笔记/Note13.md) |
+| [Note14](手写笔记/Note14.md) | [发布与演示](手写笔记/Note14.md) |
 
 ***
 
