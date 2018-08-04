@@ -54,7 +54,11 @@
 | 运行方式 |  | 被"无目的"激活后,loop,并实时更新cmvCache和energy |
 | 代码详情 |  | loop只是整个ass的递归,(包括assExp和assData) |
 
+<br>
 
+| 思维控制器内_循环示图 >> |
+| --- |
+| ![](assets/59_循环.png) |
 
 
 
