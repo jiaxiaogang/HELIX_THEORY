@@ -14,6 +14,7 @@
 	- [n14p7 决策与预测_循环 (抽象本质阶段)](#n14p7-决策与预测循环-抽象本质阶段)
 	- [n14p8 时间](#n14p8-时间)
 	- [n14p9 抽象构建,具象使用](#n14p9-抽象构建具象使用)
+	- [n14p10 TC架构整理](#n14p10-tc架构整理)
 
 <!-- /TOC -->
 
@@ -345,6 +346,33 @@
 | 3. 抽象构建,具象使用 |
 
 
+
+<br><br><br><br><br>
+
+
+## n14p10 TC架构整理
+`CreateTime 2018.08.14`
+
+
+| TC架构图 >> |
+| --- |
+| ![](assets/62_ThinkingControl架构图.png) |
+| 1. 在V1版,从tryOut到dataOut的一些设计都未作深入设计; |
+| 2. 本节重点是dataOut_AssConData部分,这部分表示着思维out部分的复杂度 |
+| 3. dataOut_AssConData是`中层输出循环`的核心执行部分; |
+| 4. dataIn_AssData部分,是`中层输入循环`的核心执行部分; |
+| 5. dataOut_AssConData是预测与创造力的实现部分; |
+
+<br>
+
+| 代码 >> |  |
+| --- | --- |
+| 1 | dataIn_AssData可以产生abs;`条件:必须是两个cmvModel间的类比` `v1暂不实现` |
+| 2 | dataOut_AssConData可以影响到LoopModel.order并实时刷新Demand序列; `v1暂不实现` |
+| 3 | dataIn_AssData可以递归自己;`条件:energy>0` |
+|  | dataIn_AssData在本版本中,仅作findDemand用; |
+| 4 | dataOut_AssConData可以递归自己;`条件energy>0` |
+|  | dataOut_AssConData在本版本中,仅作分析具象信息 `如匹配早午晚餐` |
 
 
 

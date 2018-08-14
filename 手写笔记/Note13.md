@@ -863,6 +863,8 @@
 | 9. 思维控制器 | 尝试真正使用网络的方式,来重写思维控制器;(一种更新的编程方式) |
 | 10. cmvCache | 扩展长期mv的支持,可以对长期任务作出规划和决策等等思维活动 |
 | 11. 决策预测 | 给决策加上预测功能,使loopManager的可变性,更加灵活 |
+| 12. 冥想 | dataIn_assData可以产生abs;`条件:必须是两个cmvModel间的类比` |
+| 13. 决定干啥 | dataOut_AssConData可以影响到LoopModel.order并实时刷新Demand序列; |
 
 
 <br><br><br><br><br>
