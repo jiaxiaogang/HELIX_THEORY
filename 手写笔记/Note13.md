@@ -866,6 +866,12 @@
 | 12. 冥想 | dataIn_assData可以产生abs;`条件:必须是两个cmvModel间的类比` |
 | 13. 决定干啥 | dataOut_AssConData可以影响到LoopModel.order并实时刷新Demand序列; |
 
+| 网络可视化项目 >> |
+| --- |
+| 1. 搜哪显示哪; |
+| 2. 显示哪搜哪; |
+| 3. 随热点显示; |
+| 4. 指定焦点的方向显示; |
 
 <br><br><br><br><br>
 
