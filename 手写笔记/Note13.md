@@ -866,6 +866,7 @@
 | 12. 冥想 | dataIn_assData可以产生abs;`条件:必须是两个cmvModel间的类比` |
 | 13. 决定干啥 | dataOut_AssConData可以影响到LoopModel.order并实时刷新Demand序列; |
 | 14. 同理心 | 可以从观察别人得到某物质,而同理心思考得到物质的方法; |
+| 15. 主观决策 | 主观意志,可以影响score,并影响到决策的结果;及expModel数量,决策的整个过程; |
 
 | 网络可视化项目 >> |
 | --- |
