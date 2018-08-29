@@ -1,4 +1,13 @@
-#### >>>本笔记是SMG开发过程中，所有的想法理念理论及编程思想代码等的总文档。
+
+
+| HELIX理论简介 >> |  |
+| --- | --- |
+| 1. HELIX理论与SMG项目: | 本笔记是SMG系统内核的理论基础，本理论与SMG互相印证,共同形成; |
+| 2. HELIX理论与DNA: | HELIX理论呈复合双螺旋型,但与DNA不同,HELIX理论中的双是一种复合双; |
+| 3. HELIX理论三大要素: | 定义,相对和循环; |
+| 4. HELIX理论之定义: | 定义是从无到有,从模糊到相对确切的过程; |
+| 5. HELIX理论之相对: | 横向相对即双螺旋的双,纵向相对是指信息的宏微相对; |
+| 6. HELIX理论之循环: | 三层循环,内层MindValud循环,中层思维网络循环,外层即HELIX与现实世界的循环; |
 
 [![](https://img.shields.io/badge/%20QQGroup-528053635%20-orange.svg)](tencent://message/?uin=283636001&Site=&Menu=yes)
 [![](https://img.shields.io/badge/%20QQ-在线交谈%20-orange.svg)](http://wpa.qq.com/msgrd?v=3&uin=283636001&site=qq&menu=yes)
