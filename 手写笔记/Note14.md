@@ -19,6 +19,7 @@
 	- [n14p12 中层循环 - MIL & MOL](#n14p12-中层循环-mil-mol)
 	- [n14p13 双贱合并之`mv与信息`](#n14p13-双贱合并之mv与信息)
 	- [n14p14 执行方案](#n14p14-执行方案)
+	- [n14p15 MOL实践](#n14p15-mol实践)
 
 <!-- /TOC -->
 
@@ -547,7 +548,12 @@
 | 2. cmv基本模型 | mvModel可以改进,例如无法表示`A做才有饭的因果`和`eat导致+也有-但大多是+` |
 |  | 即,mvModel没那么灵活,模型太固化了; |
 
-<br>
+
+<br><br><br><br><br>
+
+
+## n14p15 MOL实践
+`CreateTime 2018.08.30`
 
 | ![](assets/63_MOL.png) |
 | --- |
@@ -563,6 +569,33 @@
 | 7. tc对执行方案进行评价,并决定out或再想想 |
 | 8. out后,将outLog附带mvX信息存到shortCache; |
 | 9. loop时,再次递归到步骤1; |
+
+<br>
+
+| QA >> |  |
+| --- | --- |
+| 1 | 如何从数百种执行方案(assConNode)中,找到最合适的进行评价score; |
+|  | > 第四序列为辅,tc结合当前情景状态干扰Net检索为主; |
+| 2 | 三种输出方式(反射,激活,经验)的演化过程;(强化学习过程) |
+|  | > `1. forder.findOutLog()`  `2. 从上至下absNode.激活输出();`   `3. outLog加上mvX标记;` `4. 现实反馈强化执行方案;` |
+
+<br>
+
+| 三种输出方式 >> |
+| --- |
+| 1. 反射输出 : reflexOut |
+| 2. 激活输出 : absNode信息无conPorts方向的outPointer信息时,将absNode的宏信息尝试输出; |
+| 3. 经验输出 : expOut指在absNode或conPort方向有outPointer信息; |
+
+
+
+
+
+
+
+
+
+
 
 
 
