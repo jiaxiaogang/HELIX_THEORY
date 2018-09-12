@@ -648,6 +648,21 @@
 
 
 
+<br><br><br><br><br>
+
+
+
+| BUG | DESC | STATUS |
+| --- | --- | --- |
+| 1 | mv的direction索引,索引不到absNode上...老是索引到foNode上 |  |
+| 2 | mv的direction中,filter取反了;应该是从小到大排序; | T |
+
+
+
+
+
+
+
 
 
 
