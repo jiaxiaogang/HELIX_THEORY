@@ -654,8 +654,10 @@
 
 | BUG | DESC | STATUS |
 | --- | --- | --- |
-| 1 | mv的direction索引,索引不到absNode上...老是索引到foNode上 |  |
+| 1 | mv的direction索引,索引不到absNode上...老是索引到foNode上 | T |
 | 2 | mv的direction中,filter取反了;应该是从小到大排序; | T |
+| 3 | 测试outLog的入cmvModel流程,并测试assExpOut找到相关经验,用以决策输出; |  |
+| 4 | 当dataIn一个cmv时,将mvCache中失效的,去掉; |  |
 
 
 
