@@ -22,6 +22,7 @@
 	- [n14p15 MOL实践](#n14p15-mol实践)
 	- [n14p16 MOL自疑](#n14p16-mol自疑)
 	- [n14p17 mvCache的失效](#n14p17-mvcache的失效)
+	- [n14p18 二次开发(接口扩展)](#n14p18-二次开发接口扩展)
 
 <!-- /TOC -->
 
@@ -647,6 +648,7 @@
 | 3. 对数据层的思考 |
 | 4. 输出 |
 
+
 <br><br><br><br><br>
 
 
@@ -671,13 +673,26 @@
 <br><br><br><br><br>
 
 
+## n14p18 二次开发(接口扩展)
+`CreateTime 2018.09.21`
+
+|  |  |  |
+| --- | --- | --- |
+| 1 | getTargetTypeWithAlgsType | 增加mv方向判断 |
+| 2 |  |  |
+
+
+<br><br><br><br><br>
+
+
 
 | BUG | DESC | STATUS |
 | --- | --- | --- |
 | 1 | mv的direction索引,索引不到absNode上...老是索引到foNode上 | T |
 | 2 | mv的direction中,filter取反了;应该是从小到大排序; | T |
 | 3 | 测试outLog的入cmvModel流程,并测试assExpOut找到相关经验,用以决策输出; | T |
-| 4 | 当dataIn一个cmv时,将mvCache中失效的,去掉; |  |
+| 4 | 当dataIn一个cmv时,将mvCache中失效的,去掉; | T |
+| 5 | 警告!!! bug:在第二序列的ports中发现了两次port目标___pointerId为:x |  |
 
 
 
