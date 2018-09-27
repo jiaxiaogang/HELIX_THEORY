@@ -695,6 +695,9 @@
 | 5 | 警告!!! bug:在第二序列的ports中发现了两次port目标___pointerId为:x |  |
 
 
+| TODO | TASK | STATUS |
+| --- | --- | --- |
+| 1 | 考虑删掉,cmvModel;直接类似abs这种,互相指向...(更简单) |  |
 
 
 
