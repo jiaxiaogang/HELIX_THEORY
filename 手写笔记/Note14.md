@@ -705,12 +705,13 @@
 | 2 | mv的direction中,filter取反了;应该是从小到大排序; | T |
 | 3 | 测试outLog的入cmvModel流程,并测试assExpOut找到相关经验,用以决策输出; | T |
 | 4 | 当dataIn一个cmv时,将mvCache中失效的,去掉; | T |
-| 5 | 警告!!! bug:在第二序列的ports中发现了两次port目标___pointerId为:x |  |
+| 5 | 警告!!! bug:在第二序列的ports中发现了两次port目标___pointerId为:x,,序列重复bug |  |
 
 
 | TODO | TASK | STATUS |
 | --- | --- | --- |
 | 1 | 考虑删掉,cmvModel;直接类似abs这种,互相指向...(更简单) |  |
+| 2 | 测试 : 逻辑思维; |  |
 
 
 
