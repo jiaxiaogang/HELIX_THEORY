@@ -59,7 +59,7 @@
 
 ## (N4P2)思维演化(AI思维的本质)(17.07.14)
 
-> - SMG思维演化;(OOP2DataThink2AI)
+> - he4o思维演化;(OOP2DataThink2AI)
 >   - 概念:
 >     1. 把现有编程语言的所有类,抽象,属性等等存到db数据表;
 >     2. 把现有方法全改成泛型方法;
@@ -145,7 +145,7 @@
 ## N4P4意识的主线程
 
 - 代码
-  - [链接](https://github.com/jiaxiaogang/SMG/blob/master/SMG_NothingIsAll/Class/AIFoundation/AIThread/AIMainThread.h)
+  - [链接](https://github.com/jiaxiaogang/he4o/blob/master/SMG_NothingIsAll/Class/AIFoundation/AIThread/AIMainThread.h)
 - 笔记
   - [Understand/MainThread链接](../框架/Understand.md)
   - [MainThread](../框架/Understand.md)
@@ -354,7 +354,7 @@
 2. 人类意识不断感知其任务及数据的，而计算机只有简单的main方法并且不知道自身在运行什么。
 ```
 
-### <font color=#ff0000>SMG的三个代码层</font>
+### <font color=#ff0000>he4o的三个代码层</font>
 
 1. #### 函数层(只运算数据,不产生数据)
 
@@ -565,7 +565,7 @@
 	```
 	[参考 神经网络的全局搜索：](Note5.md#n5p11-神经网络的全局搜索)
 
-* SMG描述:
+* he4o描述:
 
 	```
 	对DataLayer神经网络节点的感觉

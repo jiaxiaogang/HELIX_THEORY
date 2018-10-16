@@ -3,7 +3,7 @@
 | HELIX理论简介 >> |  |
 | --- | --- |
 | 1. HELIX理论的意义 | HELIX是 "熵减机" 理论,为AGI系统构建提供理论依据; |
-| 2. HELIX理论与SMG项目: | 本笔记是SMG系统内核的理论基础，本理论与SMG互相印证,共同形成; |
+| 2. HELIX理论与he4o项目: | 本笔记是he4o系统内核的理论基础，本理论与he4o互相印证,共同形成; |
 | 3. HELIX理论与DNA: | HELIX理论呈双螺旋型,但与DNA不同,HELIX理论中的双是一一相对的意思;因为HELIX中很多理念都是一一相对的; |
 | 4. HELIX理论三大要素: | 定义,相对和循环; |
 | 5. HELIX理论之定义: | 定义是从无到有,从模糊到相对确切的过程; |
@@ -16,7 +16,7 @@
 ![](https://img.shields.io/badge/%20Wechat-jia2764894%20-orange.svg)
 ![](https://img.shields.io/badge/%20in-iphone%20-orange.svg)
 [![License](https://img.shields.io/badge/license-GPL-blue.svg)](LICENSE)
-[![Join the chat at https://gitter.im/jiaxiaogang/SMG](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jiaxiaogang/SMG)
+[![Join the chat at https://gitter.im/jiaxiaogang/he4o](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jiaxiaogang/he4o)
 
 ***
 
@@ -45,5 +45,5 @@
 > 2. 大家有交流需求或问题请Issues我
 
 > ##### 附:
-> 1. 本笔记的形成过程,即smg系统的逐渐成熟过程;
+> 1. 本笔记的形成过程,即he4o系统的逐渐成熟过程;
 > 2. 所以笔记越前期,越是有许多错误之处,如遇到错误之处,请结合前后所有描述进行理解;

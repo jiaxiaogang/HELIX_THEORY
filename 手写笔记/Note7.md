@@ -40,7 +40,7 @@
 			- [3. 排序权重](#3-排序权重)
 	- [n7p8 神经网络控制器](#n7p8-神经网络控制器)
 	- [n7p9 多维神经网络实践](#n7p9-多维神经网络实践)
-				- [<font color=red>SMG神经网络描述:</font>](#font-colorredsmg神经网络描述font)
+				- [<font color=red>he4o神经网络描述:</font>](#font-colorredhe4o神经网络描述font)
 				- [<font color=red>前言:</font>](#font-colorred前言font)
 	- [TaskList](#tasklist)
 			- [`2017.10.09`](#20171009)
@@ -60,7 +60,7 @@
 ```objective-c
 //
 //  AINode.m
-//  SMG_NothingIsAll
+//  he4o
 //
 //  Created by 贾  on 2017/9/7.
 //  Copyright © 2017年 XiaoGang. All rights reserved.
@@ -279,7 +279,7 @@
 
   > **不过度使用AIPointer的原因:**
   >
-  > 目前的硬件架构非常成熟,并且短期不可能为SMG系统作大的硬件配合变动,所以以旧有体系为主,新的体系达到功能为辅;今后版本轶代中,再将AIPointer强化,并且弱化*指针;
+  > 目前的硬件架构非常成熟,并且短期不可能为he4o系统作大的硬件配合变动,所以以旧有体系为主,新的体系达到功能为辅;今后版本轶代中,再将AIPointer强化,并且弱化*指针;
 
 2. 所以在传参上,多使用内存对象传递,而AIPointer只在io等情况下使用;
 3. 导致大量多余io的问题;(1,缓存`建立二级缓存` 2,懒io`使用策略,数据size大的时候,自动使用影子data替代`)
@@ -361,7 +361,7 @@
 #### 2. MindValue
 
 > ###### 概念:
-> 在Awareness层中,mindValue的定义对SMG系统的整体运行规则影响巨大,其像树根一样影响着树的生长;而人类对于"快乐"的理解,也仅是mindValue+抽象节点的定义而已;
+> 在Awareness层中,mindValue的定义对he4o系统的整体运行规则影响巨大,其像树根一样影响着树的生长;而人类对于"快乐"的理解,也仅是mindValue+抽象节点的定义而已;
 > ###### 前言:
 > 其是"快乐,恐惧"等基本情感要素的值化体现;
 > ###### 作用:
@@ -422,7 +422,7 @@
 ## n7p9 多维神经网络实践
 `CreateTime 17.10.23` `参考:n9p12`
 
-##### <font color=red>SMG神经网络描述:</font>
+##### <font color=red>he4o神经网络描述:</font>
 
 ```
 1. 整体呈树形;

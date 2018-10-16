@@ -7,7 +7,7 @@
 	- [n9p2 思维控制器独立部分](#n9p2-思维控制器独立部分)
 	- [n9p3 自我](#n9p3-自我)
 	- [n9p4 事务控制器2](#n9p4-事务控制器2)
-	- [n9p5 SMG软件架构2](#n9p5-smg软件架构2)
+	- [n9p5 he4o软件架构2](#n9p5-he4o软件架构2)
 	- [n9p6 思维方式的先后天](#n9p6-思维方式的先后天)
 	- [n9p7 想像力2](#n9p7-想像力2)
 	- [n9p8 AINet(算法分区 & 多维分区)](#n9p8-ainet算法分区-多维分区)
@@ -15,12 +15,12 @@
 	- [n9p10 数据源于思维 & 思维源于数据](#n9p10-数据源于思维-思维源于数据)
 	- [n9p11 想像力引擎](#n9p11-想像力引擎)
 	- [n9p12 思维数据模型](#n9p12-思维数据模型)
-	- [n9p13 SMG软件架构3](#n9p13-smg软件架构3)
+	- [n9p13 he4o软件架构3](#n9p13-he4o软件架构3)
 	- [n9p14 OUTPUT](#n9p14-output)
 	- [n9p15 思维的规则](#n9p15-思维的规则)
 	- [n9p16 MindValue](#n9p16-mindvalue)
 	- [n9p16 MindValue模型](#n9p16-mindvalue模型)
-	- [n9p17 AINet针对SMG软件架构3的改版](#n9p17-ainet针对smg软件架构3的改版)
+	- [n9p17 AINet针对he4o软件架构3的改版](#n9p17-ainet针对he4o软件架构3的改版)
 	- [n9p18 架构3-流程](#n9p18-架构3-流程)
 	- [n9p19 MindValue的使用](#n9p19-mindvalue的使用)
 	- [n9p20 思维的动](#n9p20-思维的动)
@@ -124,7 +124,7 @@
 <br><br><br><br><br>
 
 
-## n9p5 SMG软件架构2
+## n9p5 he4o软件架构2
 `CreateTime 17.11.22` `参考: n8p1 n8p4 n8p6 n8p9`
 
 | 示图 >> |
@@ -458,7 +458,7 @@
 <br><br><br><br><br>
 
 
-## n9p13 SMG软件架构3
+## n9p13 he4o软件架构3
 `CreateTime 17.12.07` `参考: n8p1 n8p4 n8p6 n8p9 n9p5`
 
 | 示图 >> |
@@ -639,9 +639,9 @@ output结合小脑生成思维不可直接访问的网络和算法。
 
 |  | 模型 | desc |
 | --- | --- | --- |
-| 1 | imv | inputMV是现实与smg交互的关键 |
+| 1 | imv | inputMV是现实与he4o交互的关键 |
 | 2 | cmv | changeMV是思维内循环及网络优化的关键,对后天自我,情感等形成有重大作用 |
-| 3 | omv | outputMV是smg与现实交互的关键 |
+| 3 | omv | outputMV是he4o与现实交互的关键 |
 
 
 
@@ -650,7 +650,7 @@ output结合小脑生成思维不可直接访问的网络和算法。
 <br><br><br><br><br>
 
 
-## n9p17 AINet针对SMG软件架构3的改版
+## n9p17 AINet针对he4o软件架构3的改版
 `CreateTime 17.12.15` `参考: n9p8 n9p9`
 
 
@@ -706,7 +706,7 @@ output结合小脑生成思维不可直接访问的网络和算法。
 | title | desc | 参考 |
 | --- | --- | --- |
 | 简介 | Input产生了mv;而changeMV描述了思维变化对mv的影响 `情感` | 参考: `自我.md#3维思维链接` |
-| 简介2 | MV作用于smg整个架构中,指导整个系统的运行; |  |
+| 简介2 | MV作用于he4o整个架构中,指导整个系统的运行; |  |
 | 新分类 | 按照最基本 `饥饿与满足` 模型,分为两种mv: `inputMV` 和 `changeMV`; |  |
 | StoreMV主导 | 思维0参数到ActionControl时,会优先点亮`思维Store`最强数据 |  |
 | 结果 | 先用最简单的inputMV传入思维，并存储。changeMV下步再说。 |  |
