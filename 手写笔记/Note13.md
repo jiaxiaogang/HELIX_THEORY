@@ -698,10 +698,10 @@
 | --- | --- |
 | 1. 写directionReference(只有最基本的+-抽象) | T |
 | 2. 写CmvIndex | T |
-| 3. 写首次输入cmv时,即引用directionReference |  |
-| 4. 联想以往解决时,都发生了什么,尝试复现;(决策与解决需求) |  |
-| 5. 联想到同样经历的mv时,尝试抽象出absCMVNode;(类比cmv与抽象) |  |
-| 6. 去掉所有的absNode和absCmvNode;而只抽象`cmv基本模型`来替代; |  |
+| 3. 写首次输入cmv时,即引用directionReference | T |
+| 4. 联想以往解决时,都发生了什么,尝试复现;(决策与解决需求) | T |
+| 5. 联想到同样经历的mv时,尝试抽象出absCMVNode;(类比cmv与抽象) | T |
+| 6. 去掉所有的absNode和absCmvNode;而只抽象`cmv基本模型`来替代; | T (同时抽象前后节点) |
 
 
 <br><br><br><br><br>
@@ -824,17 +824,17 @@
 | --- | --- |
 | 1. 写outputIndex和outputReference | T |
 | 2. 重构OutKVPointer指针 `dataTo算法名` | T |
-| 3. bug(indexReference只按指针排序,未按引用强度;) |  |
-| 4. bug(directionReference按指针去重,却按引用强度插入,导致去重经常失效) |  |
+| 3. bug(indexReference只按指针排序,未按引用强度;) | T |
+| 4. bug(directionReference按指针去重,却按引用强度插入,导致去重经常失效) | T |
 | 5. 写可输出微信息的判断,和输出微信息; | T |
 | 6. 写absMvNode (基于cmv基本模型写...) | T |
 | 7. 写commitOutputLog:入网; | T |
 | 8. AINetAbsIndex中,不能只存pointerIds;因为abs的分区标识是会变化的 |  |
 | 9. >>此处改为抽象整个cmv基本模型,`或简化成absNode对absMVNode` `优先开发` | T |
 | 10. 主动取当前饥饿状态;`或:在需求形成时,用状态主动判断有效性;` |  |
-| 11. 继续写energy,让思维网络多次循环跑起来; |  |
+| 11. 继续写energy,让思维网络多次循环跑起来; | T |
 | 12. >>> HavDemand优先联想到应该是前因序列的强度排序;而非cmvNode |  |
-| 13. havDemand中,扩展对out_p的支持; |  |
+| 13. havDemand中,扩展对out_p的支持; | T |
 
 
 
