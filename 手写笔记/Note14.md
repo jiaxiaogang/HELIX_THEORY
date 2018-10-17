@@ -753,7 +753,7 @@
 | 5 | 警告!!! bug:在第二序列的ports中发现了两次port目标___pointerId为:x,,序列重复bug | T (再观察) |
 | 6 | 多次outLog在foOrderNode中,无法完成抽象; | T |
 |  | 导致的后果:不抽象强度序列无法排到前面 | T |
-|  | 原因及解决:sames只根据mv联想,而未根据value联想 |  |
+|  | 原因及解决:sames只根据mv联想,而未根据value联想 | T |
 
 
 | TODO | TASK | STATUS |
@@ -761,8 +761,8 @@
 | 1 | 考虑删掉,cmvModel;直接类似abs这种,互相指向...(更简单) | T |
 | 2 | 测试 : 逻辑思维; |  |
 | 3 | 考虑将输入索引和输出索引合并 | T |
-| 4 | inputLoop或在dataOut时,也应有构建网络的操作; |  |
-| 5 | 测试 : 多次outLog在foOrderNode中,无法完成抽象; |  |
+| 4 | inputLoop或在dataOut时,也应有构建网络的操作; | T |
+| 5 | 测试 : 多次outLog在foOrderNode中,无法完成抽象; | T |
 
 
 
