@@ -693,7 +693,8 @@
 |  |  |  |
 | --- | --- | --- |
 | 1 | getTargetTypeWithAlgsType | 增加mv方向判断 |
-| 2 |  |  |
+| 2 | 算法扩展 |  |
+| 3 |  |  |
 
 
 <br><br><br><br><br>
