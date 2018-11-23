@@ -10,6 +10,8 @@
 	- [n15p4 成长期之进食](#n15p4-成长期之进食)
 	- [n15p5 视觉算法](#n15p5-视觉算法)
 	- [n15p6 二次开发2](#n15p6-二次开发2)
+- [define EAT_REACTORID @"eatReactorId" //吸吮反射标识](#define-eatreactorid-eatreactorid-吸吮反射标识)
+	- [ToDoList](#todolist)
 
 <!-- /TOC -->
 
@@ -19,6 +21,20 @@
 
 ## n15p1 小鸟生存
 `CreateTime 2018.10.22`
+
+
+| “小鸟生存演示”的简要说明：>> |
+| --- |
+| 1. 有一位纽约大学的教授，他每天下班路过一条路。 |
+| 2. 然后路边有一些坚果树，树长大了，开始结果子。 |
+| 3. 有一天来了几只乌鸦。 |
+| 4. 乌鸦把路边有破壳的坚果肉吃了。 |
+| 5. 再有一次下班，他看到乌鸦停在十字路口的电线上，把坚果扔在路上。 |
+| 6. 等红灯的时候，乌鸦就下来吃被汽车压破的坚果肉。 |
+|  |
+| > 这是一个真实的故事，小鸟表现出了认知、学习、思考、分析、联想、需求、决策与行动等等智能体现。同时这位教授说：目前AI七十年来，全球范围内所有的科学家学者等，无人能解此题。所以他写了一篇文章：呼吁大家，来搞一个乌鸦启示的演示程序，用真正的AGI角度来解决这个问题。 |
+
+<br>
 
 | 简介 >> |
 | --- |
@@ -179,9 +195,36 @@
 |  | 1. 在eat()中以某种刺激来引发he的反射; |
 |  | 2. 反射后开吃 (he主动调用eat()); |
 |  | 3. eat()中, 销毁food,并将产生的mv传回给he; |
+| 代码步骤: |  |
+|  | 1. 定义一个reactorIdentifier反射标识 (作dS后辍,构建到网络中) |
+|  | 2. 调用ReactorControl.commitReactor(),选择性传入runBlock |
+|  | 3. 或使用output.delegate = self; (参考代码段A) |
+|  | 4. 在回调中,判断reactorId,并做出相应肢体反应; |
+
+
+```objective-c
+//代码段A
+#define EAT_REACTORID @"eatReactorId" //吸吮反射标识
+[Output sharedInstance].delegate = self;
+
+/**
+ *  MARK:--------------------OutputDelegate--------------------
+ */
+-(void)output_Reactor:(NSString *)reactorId paramNum:(NSNumber *)paramNum{
+    if ([EAT_REACTORID isEqualToString:reactorId]) {
+			NSLog(@"反射执行");
+    }
+}
+```
 
 
 
+
+## ToDoList
+
+|  | todo | status |
+| --- | --- | --- |
+| 1 | output的输出函数统一重构 (改为2个(主动输出 & 反射输出)) |  |
 
 
 
