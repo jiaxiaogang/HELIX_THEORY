@@ -200,7 +200,10 @@
 |  | 2. 调用ReactorControl.commitReactor(),选择性传入runBlock |
 |  | 3. 或使用output.delegate = self; (参考代码段A) |
 |  | 4. 在回调中,判断reactorId,并做出相应肢体反应; |
-
+| 代码步骤(重构后): |  |
+|  | 1. 定义一个rds作为dataSource标识入网 (如下:EAT_RDS) |
+|  | 2. 调用ReactorControl.commitReactor() |
+|  | 3. 接收广播,并做出相应肢体反应; (参考代码段B) | |
 
 ```objective-c
 //代码段A
@@ -213,6 +216,28 @@
 -(void)output_Reactor:(NSString *)reactorId paramNum:(NSNumber *)paramNum{
     if ([EAT_REACTORID isEqualToString:reactorId]) {
 			NSLog(@"反射执行");
+		}
+}
+```
+
+```objective-c
+//代码段B
+#define EAT_RDS @"EAT_RDS" //吸吮反射标识
+
+//MARK:===============================================================
+//MARK:                     < outputObserver >
+//MARK:===============================================================
+-(void) outputObserver:(NSNotification*)notification{
+    if (notification) {
+        //1. 取数据
+        NSDictionary *obj = DICTOOK(notification.object);
+        NSString *rds = STRTOOK([obj objectForKey:@"rds"]);
+        NSNumber *paramNum = NUMTOOK([obj objectForKey:@"paramNum"]);
+
+        //2. 吸吮反射
+        if ([EAT_RDS isEqualToString:rds]) {
+            [self eat:[paramNum floatValue]];
+        }
     }
 }
 ```
@@ -224,7 +249,10 @@
 
 |  | todo | status |
 | --- | --- | --- |
-| 1 | output的输出函数统一重构 (改为2个(主动输出 & 反射输出)) |  |
+| 1 | output的输出函数统一重构 (改为2个(主动输出 & 反射输出)) | T |
+| 2 | Output使用多参数或后辍时,函数定义非常不灵活;(methodName+后辍) | T |
+| 3 | 去掉output的block和delegate,改用广播方式; | T |
+| 4 | reactorIdentifier作为rds(reactorDataSource)传递 | T |
 
 
 
