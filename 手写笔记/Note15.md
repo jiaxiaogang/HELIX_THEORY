@@ -3,16 +3,15 @@
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [小鸟生存演示 & 势](#小鸟生存演示-势)
-	- [n15p1 小鸟生存](#n15p1-小鸟生存)
-	- [n15p2 小鸟生存演示的实践细节点](#n15p2-小鸟生存演示的实践细节点)
-	- [n15p3 生存期场景搭建](#n15p3-生存期场景搭建)
-	- [n15p4 成长期之进食](#n15p4-成长期之进食)
-	- [n15p5 视觉算法](#n15p5-视觉算法)
-	- [n15p6 二次开发2 (吃)](#n15p6-二次开发2-吃)
-- [define EAT_REACTORID @"eatReactorId" //吸吮反射标识](#define-eatreactorid-eatreactorid-吸吮反射标识)
-- [define EAT_RDS @"EAT_RDS" //吸吮反射标识](#define-eatrds-eatrds-吸吮反射标识)
-	- [n15p7 二次开发3 (飞)](#n15p7-二次开发3-飞)
+- [小鸟生存演示 & 势](#%E5%B0%8F%E9%B8%9F%E7%94%9F%E5%AD%98%E6%BC%94%E7%A4%BA--%E5%8A%BF)
+	- [n15p1 小鸟生存](#n15p1-%E5%B0%8F%E9%B8%9F%E7%94%9F%E5%AD%98)
+	- [n15p2 小鸟生存演示的实践细节点](#n15p2-%E5%B0%8F%E9%B8%9F%E7%94%9F%E5%AD%98%E6%BC%94%E7%A4%BA%E7%9A%84%E5%AE%9E%E8%B7%B5%E7%BB%86%E8%8A%82%E7%82%B9)
+	- [n15p3 生存期场景搭建](#n15p3-%E7%94%9F%E5%AD%98%E6%9C%9F%E5%9C%BA%E6%99%AF%E6%90%AD%E5%BB%BA)
+	- [n15p4 成长期之进食](#n15p4-%E6%88%90%E9%95%BF%E6%9C%9F%E4%B9%8B%E8%BF%9B%E9%A3%9F)
+	- [n15p5 视觉算法](#n15p5-%E8%A7%86%E8%A7%89%E7%AE%97%E6%B3%95)
+	- [n15p6 二次开发2 (吃)](#n15p6-%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%912-%E5%90%83)
+	- [n15p7 二次开发3 (飞)](#n15p7-%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%913-%E9%A3%9E)
+	- [n15p8 重构认知循环 (MIL)](#n15p8-%E9%87%8D%E6%9E%84%E8%AE%A4%E7%9F%A5%E5%BE%AA%E7%8E%AF-mil)
 	- [ToDoList](#todolist)
 
 <!-- /TOC -->
@@ -209,39 +208,39 @@
 
 ```objective-c
 //代码段A
-#define EAT_REACTORID @"eatReactorId" //吸吮反射标识
-[Output sharedInstance].delegate = self;
-
-/**
- *  MARK:--------------------OutputDelegate--------------------
- */
--(void)output_Reactor:(NSString *)reactorId paramNum:(NSNumber *)paramNum{
-    if ([EAT_REACTORID isEqualToString:reactorId]) {
-			NSLog(@"反射执行");
-		}
-}
+// #define EAT_REACTORID @"eatReactorId" //吸吮反射标识
+// [Output sharedInstance].delegate = self;
+//
+// /**
+//  *  MARK:--------------------OutputDelegate--------------------
+//  */
+// -(void)output_Reactor:(NSString *)reactorId paramNum:(NSNumber *)paramNum{
+//     if ([EAT_REACTORID isEqualToString:reactorId]) {
+// 			NSLog(@"反射执行");
+// 		}
+// }
 ```
 
 ```objective-c
 //代码段B
-#define EAT_RDS @"EAT_RDS" //吸吮反射标识
-
-//MARK:===============================================================
-//MARK:                     < outputObserver >
-//MARK:===============================================================
--(void) outputObserver:(NSNotification*)notification{
-    if (notification) {
-        //1. 取数据
-        NSDictionary *obj = DICTOOK(notification.object);
-        NSString *rds = STRTOOK([obj objectForKey:@"rds"]);
-        NSNumber *paramNum = NUMTOOK([obj objectForKey:@"paramNum"]);
-
-        //2. 吸吮反射
-        if ([EAT_RDS isEqualToString:rds]) {
-            [self eat:[paramNum floatValue]];
-        }
-    }
-}
+// #define EAT_RDS @"EAT_RDS" //吸吮反射标识
+//
+// //MARK:===============================================================
+// //MARK:                     < outputObserver >
+// //MARK:===============================================================
+// -(void) outputObserver:(NSNotification*)notification{
+//     if (notification) {
+//         //1. 取数据
+//         NSDictionary *obj = DICTOOK(notification.object);
+//         NSString *rds = STRTOOK([obj objectForKey:@"rds"]);
+//         NSNumber *paramNum = NUMTOOK([obj objectForKey:@"paramNum"]);
+//
+//         //2. 吸吮反射
+//         if ([EAT_RDS isEqualToString:rds]) {
+//             [self eat:[paramNum floatValue]];
+//         }
+//     }
+// }
 ```
 
 
@@ -289,6 +288,26 @@
 //4. assMv; (对dataIn_AssociativeData()方法进行拆分重构;先不搞)
 //5. ThinkingUtils.analogyOrdersA()方法,扩展对"微信息"信息本身的类比,而非只是pointer;
 ```
+
+
+
+
+
+
+<br><br><br><br><br>
+
+
+## n15p8 重构认知循环 (MIL)
+`CreateTime 2018.12.03`
+
+
+| 思考MIL重构 >> |
+| --- |
+| 1. 第一层 (数据量大,到网络识别后,转化为节点,并存为瞬时记忆的item) |
+| 2. 第二层 (第一层与第二层,是否分开?) |
+| 3. 如果分开? 那么第二层其实就是瞬时记忆层; |
+| 4. 如果不分开? 那么美女是否导致像素点变灰? |
+
 
 
 <br><br><br><br><br>
