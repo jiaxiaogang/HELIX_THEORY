@@ -353,6 +353,8 @@
 |  | ![](assets/68_algsArr单独组.png) |
 
 
+
+
 <br><br><br><br><br>
 
 
@@ -389,7 +391,26 @@
 | 开发步骤 >> |  |
 | --- | --- |
 | 1 | 复用原来的AbsNode和Node类 (或在基础上改一个无cmv_p的node出来 ) |
+|  | ![](assets/69_现有node类图.png) |
+|  | ![](assets/70_新algNode模型.png) |
+| Q1 | absAlgNode去重问题? (absAlgsNode的复用问题) |
+| A1 |  |
 
+
+```c
+//algNode & absAlgNode伪代码;
+absAlgNode {
+	pointer;
+	conPorts;
+	value_p;//算法结果的微信息
+}
+
+algNode {
+	pointer;
+	absPorts;
+	values_p;
+}
+```
 
 
 <br><br><br><br><br>
