@@ -14,6 +14,7 @@
 	- [n15p8 重构认知循环 (MIL)](#n15p8-%E9%87%8D%E6%9E%84%E8%AE%A4%E7%9F%A5%E5%BE%AA%E7%8E%AF-mil)
 	- [n15p9 演示](#n15p9-%E6%BC%94%E7%A4%BA)
 	- [n15p10 算法结果(algsArr)的迭代](#n15p10-%E7%AE%97%E6%B3%95%E7%BB%93%E6%9E%9Calgsarr%E7%9A%84%E8%BF%AD%E4%BB%A3)
+	- [n15p11 神经网络(新)](#n15p11-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%96%B0)
 	- [ToDoList](#todolist)
 
 <!-- /TOC -->
@@ -411,6 +412,32 @@ algNode {
 	values_p;
 }
 ```
+
+
+<br><br><br><br><br>
+
+
+## n15p11 神经网络(新)
+`CreateTime 2018.12.10`
+
+> 注: algTypeNode表示:(algNode&absAlgNode)
+>
+> 注: foTypeNode表示:(foNode&absFoNode)
+
+| 大脑网络 >> |
+| --- |
+| ![](assets/71_he大脑_神经网络.png) |
+| 问题1: algTypeNode是否可以和foTypeNode构建到一个索引序列? |
+| 1. algTypeNode不需要像foTypeNode那样灵活的类比抽象 |
+| 2. algTypeNode相对先天些,foTypeNode相对后天些; `如颜色的后天概念和先天视觉色` |
+
+<br>
+
+| 小脑网络 >> |  |
+| --- | --- |
+| 结构 | 非时序的组合输出网络 |
+| 使用 | 大脑时序调用小脑 |
+
 
 
 <br><br><br><br><br>
