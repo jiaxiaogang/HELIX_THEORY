@@ -430,6 +430,7 @@ algNode {
 | 问题1: algTypeNode是否可以和foTypeNode构建到一个索引序列? |
 | 1. algTypeNode不需要像foTypeNode那样灵活的类比抽象 |
 | 2. algTypeNode相对先天些,foTypeNode相对后天些; `如颜色的后天概念和先天视觉色` |
+| 注: 整个过程,更加完善的认知循环 |
 
 | 相似物体的判定 >> |  |
 | --- | --- |
@@ -444,6 +445,18 @@ algNode {
 | --- | --- |
 | 结构 | 非时序的组合输出网络 |
 | 使用 | 大脑时序调用小脑 |
+
+<br>
+
+| toDoList >> | status |
+| --- | --- |
+| 1. 写convertAlgTypeNode() |  |
+| 2. 使dataIn_AssociativeData()中的assData&assMv支持algTypeNode; |  |
+| 3. ThinkingUtils.analogyOrdersA(),扩展"微信息"类比,而非只pointer; |  |
+| 4. 单组临时存在,并在处理后,丢失一些细节; (将指向明确的,进行存瞬时记忆为一组); | 以algTypeNode的方式不会丢失细节,瞬时记忆存conAlgNode |
+| 5. `-(void) dataIn:(NSObject*)algsModel`装箱后,对algNode改动支持 |  |
+| 6. 写dataIn_ConvertAlgNode(); |  |
+| 7. conAlgNode不直接指向"索引中微信息",而是依赖absPorts中的absAlgNode来取信息; | T(删除conAlgNode.values_p) |
 
 
 
