@@ -15,6 +15,7 @@
 	- [n15p9 演示](#n15p9-%E6%BC%94%E7%A4%BA)
 	- [n15p10 算法结果(algsArr)的迭代](#n15p10-%E7%AE%97%E6%B3%95%E7%BB%93%E6%9E%9Calgsarr%E7%9A%84%E8%BF%AD%E4%BB%A3)
 	- [n15p11 神经网络(新)](#n15p11-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%96%B0)
+	- [n15p12 索引迭代](#n15p12-%E7%B4%A2%E5%BC%95%E8%BF%AD%E4%BB%A3)
 	- [ToDoList](#todolist)
 
 <!-- /TOC -->
@@ -446,6 +447,21 @@ algNode {
 | 结构 | 非时序的组合输出网络 |
 | 使用 | 大脑时序调用小脑 |
 
+
+
+
+<br><br><br><br><br>
+
+
+## n15p12 索引迭代
+`CreateTime 2018.12.18`
+
+| ![](assets/73_索引迭代.png) |
+| --- |
+| 1. 不再需要reference |
+| 2. 需要将pointer序列和强度序列,写到node中 |
+| 3.  |
+
 <br>
 
 | toDoList >> | status |
@@ -457,7 +473,6 @@ algNode {
 | 5. `-(void) dataIn:(NSObject*)algsModel`装箱后,对algNode改动支持 |  |
 | 6. 写dataIn_ConvertAlgNode(); |  |
 | 7. conAlgNode不直接指向"索引中微信息",而是依赖absPorts中的absAlgNode来取信息; | T(删除conAlgNode.values_p) |
-
 
 
 <br><br><br><br><br>
@@ -473,6 +488,15 @@ algNode {
 | 3 | 去掉output的block和delegate,改用广播方式; | T |
 | 4 | reactorIdentifier作为rds(reactorDataSource)传递 | T |
 | 5 | 异步持久化 `写个类似xgRedis的库来单独做这件事` |  |
+| 6 | BUG:AINetDirectionReference.set()改为poiner&port双序列 |  |
+| 7 | 重构:AIIndex中inModels&outModels改按at&ds分区,懒加载到redis的序列;`以防止inModels太长而性能问题` |  |
+
+<br>
+
+| 问题备忘 >> |  |  |
+| --- | --- | --- |
+| 待思考 | 关于红和更红值比大小,在哪层 | `algNode(20%)`或`foNode(80%)` |
+| 模型1 | ![](assets/72_absAlgNode的索引带序列模型.png) | `错误,应在后天` |
 
 
 
