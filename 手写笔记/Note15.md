@@ -460,13 +460,32 @@ algNode {
 | --- |
 | 1. 不再需要reference |
 | 2. 需要将pointer序列和强度序列,写到node中 |
-| 3.  |
+
+| assData迭代 >> |  |
+| --- | --- |
+| 旧模型 | ![](assets/74_assData迭代旧模型.png) |
+|  | 1. 旧模型的引用序列,对assData联想起到重要作用;(取前两个) |
+| 新模型 | ![](assets/75_assData迭代新模型.png) |
+|  | 问题:参数问题A |
+
+| 问题A >> |  |
+| --- | --- |
+| 发现问题: | 新模型下的assData如何完成识别联想过程? |
+| 收集信息: | 看到的algNode具象节点后,联想到后天祖母节点; |
+|  | 1. 以algNode为索引进行联想; |
+|  | 2. 联想中以absAlgNode为依据;在网络中点亮与此符合的目标祖母节点; |
+| 思考本质: | 对问题收集到的信息进行深入思考 |
+| 解决方案: | 与当下系统,进行融合想出解决方案 |
+| 解决步骤: | 把方案工程可实现化的思考 |
+| 代码步骤: | 把工程步骤与系统架构进行整合思考 |
+| 代码实践: | 把代码写出来 |
+
 
 <br>
 
 | toDoList >> | status |
 | --- | --- |
-| 1. 写convertAlgTypeNode() |  |
+| 1. 写convertAlgTypeNode() | T |
 | 2. 使dataIn_AssociativeData()中的assData&assMv支持algTypeNode; |  |
 | 3. ThinkingUtils.analogyOrdersA(),扩展"微信息"类比,而非只pointer; |  |
 | 4. 单组临时存在,并在处理后,丢失一些细节; (将指向明确的,进行存瞬时记忆为一组); | 以algTypeNode的方式不会丢失细节,瞬时记忆存conAlgNode |
