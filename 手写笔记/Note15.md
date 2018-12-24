@@ -13,9 +13,9 @@
 	- [n15p7 二次开发3 (飞)](#n15p7-%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%913-%E9%A3%9E)
 	- [n15p8 重构认知循环 (MIL)](#n15p8-%E9%87%8D%E6%9E%84%E8%AE%A4%E7%9F%A5%E5%BE%AA%E7%8E%AF-mil)
 	- [n15p9 演示](#n15p9-%E6%BC%94%E7%A4%BA)
-	- [n15p10 算法结果(algsArr)的迭代](#n15p10-%E7%AE%97%E6%B3%95%E7%BB%93%E6%9E%9Calgsarr%E7%9A%84%E8%BF%AD%E4%BB%A3)
-	- [n15p11 神经网络(新)](#n15p11-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%96%B0)
-	- [n15p12 索引迭代 `索引入网/algNode替代reference`](#n15p12-%E7%B4%A2%E5%BC%95%E8%BF%AD%E4%BB%A3-%E7%B4%A2%E5%BC%95%E5%85%A5%E7%BD%91algnode%E6%9B%BF%E4%BB%A3reference)
+	- [n15p10 AlgNode前_算法结果(algsArr)的迭代](#n15p10-algnode%E5%89%8D_%E7%AE%97%E6%B3%95%E7%BB%93%E6%9E%9Calgsarr%E7%9A%84%E8%BF%AD%E4%BB%A3)
+	- [n15p11 AlgNode中_神经网络(新)](#n15p11-algnode%E4%B8%AD_%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%96%B0)
+	- [n15p12 AlgNode后_索引迭代 `索引入网/algNode替代reference`](#n15p12-algnode%E5%90%8E_%E7%B4%A2%E5%BC%95%E8%BF%AD%E4%BB%A3-%E7%B4%A2%E5%BC%95%E5%85%A5%E7%BD%91algnode%E6%9B%BF%E4%BB%A3reference)
 	- [ToDoList](#todolist)
 
 <!-- /TOC -->
@@ -376,7 +376,7 @@
 <br><br><br><br><br>
 
 
-## n15p10 算法结果(algsArr)的迭代
+## n15p10 AlgNode前_算法结果(algsArr)的迭代
 `CreateTime 2018.12.06`
 
 | 简介 >> |
@@ -418,7 +418,7 @@ algNode {
 <br><br><br><br><br>
 
 
-## n15p11 神经网络(新)
+## n15p11 AlgNode中_神经网络(新)
 `CreateTime 2018.12.10`
 
 > 注: algTypeNode表示:(algNode&absAlgNode)
@@ -447,13 +447,17 @@ algNode {
 | 结构 | 非时序的组合输出网络 |
 | 使用 | 大脑时序调用小脑 |
 
+<br>
 
+| conAlgNode模型 >> |
+| --- |
+| ![](assets/77_conAlgNode模型.png) |
 
 
 <br><br><br><br><br>
 
 
-## n15p12 索引迭代 `索引入网/algNode替代reference`
+## n15p12 AlgNode后_索引迭代 `索引入网/algNode替代reference`
 `CreateTime 2018.12.18`
 
 | ![](assets/73_索引迭代.png) |
@@ -461,6 +465,9 @@ algNode {
 | 1. 不再需要reference |
 | 2. 需要将pointer序列和强度序列,写到node中 |
 | 3. 索引入网的意义:`结构化相对序列的优势` `防止大量的组微信息以网络中匹配适可而止来优化io性能` `对多个皮层算法协同时结果的保真` |
+| 注: 更加完善的`组分循环`; (algNode组,fo分) |
+| 例: 吃发红的水果会饱; `什么是吃?(时序)发红?(absAlgNode类比再具象)的水果?(..)会饱?(mv基本模型)` |
+| ![](assets/78_alg&Fo组分.png) |
 
 <br>
 
@@ -496,7 +503,8 @@ algNode {
 | 2. 右侧为fo区模型 |
 | 3. 把alg区适当中止,并交付给fo区进行处理;例如`发现mv后联想,类比,抽象` |
 | 4. 决定: 祖母抽象还在fo区完成; |
-| 注: 为什么说吃`抽象水果`,而不是吃`抽象颜色`? |
+| 注Q: 为什么说吃`抽象水果`,而不是吃`抽象颜色`? |
+| 注A: fo中抽象出水果,是在时序中的,而颜色仅在alg区作为抽象指向存在;只能表示`是`; |
 
 | 明日计划 >> |
 | --- |
@@ -510,10 +518,10 @@ algNode {
 | --- | --- |
 | 1. 写convertAlgTypeNode() | T |
 | 2. 使dataIn_AssociativeData()中的assData&assMv支持algTypeNode; |  |
-| 3. ThinkingUtils.analogyOrdersA(),扩展"微信息"类比,而非只pointer; |  |
+| 3. ThinkingUtils.analogyOrdersA(),扩展"微信息"类比,而非只pointer;`支持类比构建新conAlgNode` `而非只absFoNode` |  |
 | 4. 单组临时存在,并在处理后,丢失一些细节; (将指向明确的,进行存瞬时记忆为一组); | 以algTypeNode的方式不会丢失细节,瞬时记忆存conAlgNode |
-| 5. `-(void) dataIn:(NSObject*)algsModel`装箱后,对algNode改动支持 |  |
-| 6. 写dataIn_ConvertAlgNode(); |  |
+| 5. `-(void) dataIn:(NSObject*)algsModel`装箱后,对algNode改动支持 | T |
+| 6. 写dataIn_ConvertAlgNode(); | T |
 | 7. conAlgNode不直接指向"索引中微信息",而是依赖absPorts中的absAlgNode来取信息; | T(删除conAlgNode.values_p) |
 
 
@@ -532,6 +540,7 @@ algNode {
 | 5 | 异步持久化 `写个类似xgRedis的库来单独做这件事` |  |
 | 6 | BUG:AINetDirectionReference.set()改为poiner&port双序列 |  |
 | 7 | 重构:AIIndex中inModels&outModels改按at&ds分区,懒加载到redis的序列;`以防止inModels太长而性能问题` |  |
+| 8 | 将absFoNode的absValue_p改成orders;`元素为祖母节点` |  |
 
 <br>
 
