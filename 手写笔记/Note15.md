@@ -15,7 +15,7 @@
 	- [n15p9 演示](#n15p9-%E6%BC%94%E7%A4%BA)
 	- [n15p10 AlgNode前_算法结果(algsArr)的迭代](#n15p10-algnode%E5%89%8D_%E7%AE%97%E6%B3%95%E7%BB%93%E6%9E%9Calgsarr%E7%9A%84%E8%BF%AD%E4%BB%A3)
 	- [n15p11 AlgNode中_神经网络(新)](#n15p11-algnode%E4%B8%AD_%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%96%B0)
-	- [n15p12 AlgNode后_索引迭代 `索引入网/algNode替代reference`](#n15p12-algnode%E5%90%8E_%E7%B4%A2%E5%BC%95%E8%BF%AD%E4%BB%A3-%E7%B4%A2%E5%BC%95%E5%85%A5%E7%BD%91algnode%E6%9B%BF%E4%BB%A3reference)
+	- [n15p12 AlgNode后_索引迭代 `reference入网/algNode替代reference`](#n15p12-algnode%E5%90%8E_%E7%B4%A2%E5%BC%95%E8%BF%AD%E4%BB%A3-reference%E5%85%A5%E7%BD%91algnode%E6%9B%BF%E4%BB%A3reference)
 	- [ToDoList](#todolist)
 
 <!-- /TOC -->
@@ -457,14 +457,14 @@ algNode {
 <br><br><br><br><br>
 
 
-## n15p12 AlgNode后_索引迭代 `索引入网/algNode替代reference`
+## n15p12 AlgNode后_索引迭代 `reference入网/algNode替代reference`
 `CreateTime 2018.12.18`
 
 | ![](assets/73_索引迭代.png) |
 | --- |
 | 1. 不再需要reference |
 | 2. 需要将pointer序列和强度序列,写到node中 |
-| 3. 索引入网的意义:`结构化相对序列的优势` `防止大量的组微信息以网络中匹配适可而止来优化io性能` `对多个皮层算法协同时结果的保真` |
+| 3. 引用序列入网的意义:`结构化相对序列的优势` `防止大量的组微信息以网络中匹配适可而止来优化io性能` `对多个皮层算法协同时结果的保真` |
 | 注: 更加完善的`组分循环`; (algNode组,fo分) |
 | 例: 吃发红的水果会饱; `什么是吃?(时序)发红?(absAlgNode类比再具象)的水果?(..)会饱?(mv基本模型)` |
 | ![](assets/78_alg&Fo组分.png) |
@@ -542,6 +542,7 @@ algNode {
 | 6 | BUG:AINetDirectionReference.set()改为poiner&port双序列 |  |
 | 7 | 重构:AIIndex中inModels&outModels改按at&ds分区,懒加载到redis的序列;`以防止inModels太长而性能问题` |  |
 | 8 | 将absFoNode的absValue_p改成orders;`元素为祖母节点` |  |
+| 9 | 将absAlgNode.value_p改成直接使用value;`索引不再存值` `保留ds&at的索引序列` | 存疑,记忆印记在index |
 
 <br>
 
