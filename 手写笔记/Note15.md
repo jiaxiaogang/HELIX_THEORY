@@ -507,11 +507,11 @@ algNode {
 | 注Q: 为什么说吃`抽象水果`,而不是吃`抽象颜色`? |
 | 注A: fo中抽象出水果,是在时序中的,而颜色仅在alg区作为抽象指向存在;只能表示`是`; |
 
-| 明日计划 >> |
-| --- |
-| 1. 联想algNode_p的引用而不是取algsArr的reference序列; |
-| 2. 将conFo的微信息get&set Reference重构为order中使用algNode_p |
-| 3. 将absFo的组微信息也改用order中algNode_p; |
+| 明日计划 >> |  |
+| --- | --- |
+| 1. 联想algNode_p的引用而不是取algsArr的reference序列; |  |
+| 2. 将conFo的微信息get&set Reference重构为order中使用algNode_p | T |
+| 3. 将absFo的组微信息也改用order中algNode_p; |  |
 
 <br>
 
@@ -519,12 +519,18 @@ algNode {
 | --- | --- |
 | 1. 写convertAlgTypeNode() | T |
 | 2. 使dataIn_AssociativeData()中的assData&assMv支持algTypeNode; |  |
-| 3. ThinkingUtils.analogyOrdersA(),扩展"微信息"类比,而非只pointer;`支持类比构建新conAlgNode` `而非只absFoNode` |  |
+| 3. ThinkingUtils.analogyOrdersA(),扩展"微信息"类比,而非只pointer;`支持类比构建新conAlgNode` `而非只absFoNode` `参考algNode演化图` |  |
 | 4. 单组临时存在,并在处理后,丢失一些细节; (将指向明确的,进行存瞬时记忆为一组); | 以algTypeNode的方式不会丢失细节,瞬时记忆存conAlgNode |
 | 5. `-(void) dataIn:(NSObject*)algsModel`装箱后,对algNode改动支持 | T |
 | 6. 写dataIn_ConvertAlgNode(); | T |
 | 7. conAlgNode不直接指向"索引中微信息",而是依赖absPorts中的absAlgNode来取信息; | T(删除conAlgNode.values_p) |
 
+| AlgNode演化图 >> |
+| --- |
+| ![](assets/80_algNode演化示图.png) |
+| 1. 树叶为absAlgNode |
+| 2. 树干为conAlgNode |
+| 3. 树叶为后天类比后动态形成的algNode |
 
 <br><br><br><br><br>
 
