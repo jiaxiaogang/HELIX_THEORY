@@ -532,7 +532,7 @@ algNode {
 
 ## ToDoList
 
-|  | todo | status |
+| TODOLIST | todo | status |
 | --- | --- | --- |
 | 1 | output的输出函数统一重构 (改为2个(主动输出 & 反射输出)) | T |
 | 2 | Output使用多参数或后辍时,函数定义非常不灵活;(methodName+后辍) | T |
@@ -543,6 +543,10 @@ algNode {
 | 7 | 重构:AIIndex中inModels&outModels改按at&ds分区,懒加载到redis的序列;`以防止inModels太长而性能问题` |  |
 | 8 | 将absFoNode的absValue_p改成orders;`元素为祖母节点` |  |
 | 9 | 将absAlgNode.value_p改成直接使用value;`索引不再存值` `保留ds&at的索引序列` | 存疑,记忆印记在index |
+
+| BUG | DESC | STATUS |
+| --- | --- | --- |
+| 1 | AINetDirectionReference.setNodePointerToDirectionReference中使用指针二分查找,却直接二分插入强度序列 |  |
 
 <br>
 
