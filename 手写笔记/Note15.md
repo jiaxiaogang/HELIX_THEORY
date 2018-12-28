@@ -16,6 +16,7 @@
 	- [n15p10 AlgNode前_算法结果(algsArr)的迭代](#n15p10-algnode%E5%89%8D_%E7%AE%97%E6%B3%95%E7%BB%93%E6%9E%9Calgsarr%E7%9A%84%E8%BF%AD%E4%BB%A3)
 	- [n15p11 AlgNode中_神经网络(新)](#n15p11-algnode%E4%B8%AD_%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%96%B0)
 	- [n15p12 AlgNode后_索引迭代 `reference入网/algNode替代reference`](#n15p12-algnode%E5%90%8E_%E7%B4%A2%E5%BC%95%E8%BF%AD%E4%BB%A3-reference%E5%85%A5%E7%BD%91algnode%E6%9B%BF%E4%BB%A3reference)
+	- [n15p13 使用AlgNode构建归纳抽具象网络](#n15p13-%E4%BD%BF%E7%94%A8algnode%E6%9E%84%E5%BB%BA%E5%BD%92%E7%BA%B3%E6%8A%BD%E5%85%B7%E8%B1%A1%E7%BD%91%E7%BB%9C)
 	- [ToDoList](#todolist)
 
 <!-- /TOC -->
@@ -531,6 +532,21 @@ algNode {
 | 1. 树叶为absAlgNode |
 | 2. 树干为conAlgNode |
 | 3. 树叶为后天类比后动态形成的algNode |
+
+
+
+
+<br><br><br><br><br>
+
+
+## n15p13 使用AlgNode构建归纳抽具象网络
+`CreateTime 2018.12.28`
+
+| TODOLIST >> |  |
+| --- | --- |
+| 1 | 把单信息的absAlgNode删除,conAlgNode中改用value_ps |
+| 2 | 在AIPort中加header字段,以{value_pId1+value_pId2...}来组成 |
+
 
 <br><br><br><br><br>
 
