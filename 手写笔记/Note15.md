@@ -547,6 +547,10 @@ algNode {
 | 1 | 把单信息的absAlgNode删除,conAlgNode中改用value_ps |
 | 2 | 在AIPort中加header字段,以{value_pId1+value_pId2...}来组成 |
 
+| algNode网络的必要性 >> |
+| --- |
+| 1. reference迭代为algNode静态信息网络的方式是有必要的,因为序列越来越大,会远超1G |
+| 2. algNode间的关系并非单模型`注:node是单模型`,所以带强度关联的网络化是必要的; |
 
 <br><br><br><br><br>
 
@@ -560,7 +564,7 @@ algNode {
 | 2 | Output使用多参数或后辍时,函数定义非常不灵活;(methodName+后辍) | T |
 | 3 | 去掉output的block和delegate,改用广播方式; | T |
 | 4 | reactorIdentifier作为rds(reactorDataSource)传递 | T |
-| 5 | 异步持久化 `写个类似xgRedis的库来单独做这件事` |  |
+| 5 | 异步持久化 `写个类似xgRedis的库来单独做这件事` `conNode只有反复使用到,才有资格被存储` |  |
 | 6 | BUG:AINetDirectionReference.set()改为poiner&port双序列 |  |
 | 7 | 重构:AIIndex中inModels&outModels改按at&ds分区,懒加载到redis的序列;`以防止inModels太长而性能问题` |  |
 | 8 | 将absFoNode的absValue_p改成orders;`元素为祖母节点` |  |
