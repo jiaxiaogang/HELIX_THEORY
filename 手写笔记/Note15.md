@@ -542,10 +542,13 @@ algNode {
 ## n15p13 使用AlgNode构建归纳抽具象网络
 `CreateTime 2018.12.28`
 
-| TODOLIST >> |  |
-| --- | --- |
-| 1 | 把单信息的absAlgNode删除,conAlgNode中改用value_ps |
-| 2 | 在AIPort中加header字段,以{value_pId1+value_pId2...}来组成 |
+| TODOLIST >> |  |  |
+| --- | --- | --- |
+| 1 | 把单信息的absAlgNode删除,conAlgNode中改用value_ps |  |
+| 2 | 在AIPort中加header字段,以{value_pId1+value_pId2...}来组成 |  |
+| 3 | 如何知道algA或algB是否已经有了匹配algSames的抽象节点; | T(用header) |
+| 4 | 存单header序列,还是将header存在每一个absPort里; | T(存每个port) |
+| 5 | 在netUtils中写convertValue_psToHeader(){value_ps2str2md5;} | T |
 
 | algNode网络的必要性 >> |
 | --- |
