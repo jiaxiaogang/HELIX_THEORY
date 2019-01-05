@@ -508,23 +508,21 @@ algNode {
 | 注Q: 为什么说吃`抽象水果`,而不是吃`抽象颜色`? |
 | 注A: fo中抽象出水果,是在时序中的,而颜色仅在alg区作为抽象指向存在;只能表示`是`; |
 
-| 明日计划 >> |  |
-| --- | --- |
-| 1. 联想algNode_p的引用而不是取algsArr的reference序列; |  |
-| 2. 将conFo的微信息get&set Reference重构为order中使用algNode_p | T |
-| 3. 将absFo的组微信息也改用order中algNode_p; |  |
-
 <br>
 
 | toDoList >> | status |
 | --- | --- |
 | 1. 写convertAlgTypeNode() | T |
 | 2. 使dataIn_AssociativeData()中的assData&assMv支持algTypeNode; |  |
-| 3. ThinkingUtils.analogyOrdersA(),扩展"微信息"类比,而非只pointer;`支持类比构建新conAlgNode` `而非只absFoNode` `参考algNode演化图` |  |
+| 3. ThinkingUtils.analogyOrdersA(),扩展"微信息"类比,而非只pointer;`支持类比构建新conAlgNode` `而非只absFoNode` `参考algNode演化图` | T |
 | 4. 单组临时存在,并在处理后,丢失一些细节; (将指向明确的,进行存瞬时记忆为一组); | 以algTypeNode的方式不会丢失细节,瞬时记忆存conAlgNode |
 | 5. `-(void) dataIn:(NSObject*)algsModel`装箱后,对algNode改动支持 | T |
 | 6. 写dataIn_ConvertAlgNode(); | T |
 | 7. conAlgNode不直接指向"索引中微信息",而是依赖absPorts中的absAlgNode来取信息; | T(删除conAlgNode.values_p) |
+| 8. 联想algNode_p的引用而不是取algsArr的reference序列; | T |
+| 9. 将conFo的微信息get&set Reference重构为order中使用algNode_p | T |
+| 10. 将absFo的组微信息也改用order中algNode_p; | T |
+| 11. ThinkingUtils.analogyOrdersA的两个block;`判断能量值&构建祖母` | T |
 
 | AlgNode演化图 >> |
 | --- |
@@ -544,11 +542,12 @@ algNode {
 
 | TODOLIST >> |  |  |
 | --- | --- | --- |
-| 1 | 把单信息的absAlgNode删除,conAlgNode中改用value_ps |  |
-| 2 | 在AIPort中加header字段,以{value_pId1+value_pId2...}来组成 |  |
+| 1 | 把单信息的absAlgNode删除,conAlgNode中改用value_ps | T |
+| 2 | 在AIPort中加header字段,以{value_pId1+value_pId2...}来组成 | T`md5` |
 | 3 | 如何知道algA或algB是否已经有了匹配algSames的抽象节点; | T(用header) |
 | 4 | 存单header序列,还是将header存在每一个absPort里; | T(存每个port) |
 | 5 | 在netUtils中写convertValue_psToHeader(){value_ps2str2md5;} | T |
+| 6 | createAbsAlgNode & AIAbsManager.create 重构相同逻辑部分 |  |
 
 | algNode网络的必要性 >> |
 | --- |
@@ -574,14 +573,14 @@ algNode {
 | 3 | 去掉output的block和delegate,改用广播方式; | T |
 | 4 | reactorIdentifier作为rds(reactorDataSource)传递 | T |
 | 5 | 异步持久化 `写个类似xgRedis的库来单独做这件事` `conNode只有反复使用到,才有资格被存储` |  |
-| 6 | BUG:AINetDirectionReference.set()改为poiner&port双序列 |  |
-| 7 | 重构:AIIndex中inModels&outModels改按at&ds分区,懒加载到redis的序列;`以防止inModels太长而性能问题` |  |
-| 8 | 将absFoNode的absValue_p改成orders;`元素为祖母节点` |  |
+| 7 | 重构:AIIndex中inModels&outModels改按at&ds分区,懒加载到redis的序列;`以防止inModels太长而性能问题` | T`algNode解决` |
+| 8 | 将absFoNode的absValue_p改成orders;`元素为祖母节点` | T |
 | 9 | 将absAlgNode.value_p改成直接使用value;`索引不再存值` `保留ds&at的索引序列` | 存疑,记忆印记在index |
 
 | BUG | DESC | STATUS |
 | --- | --- | --- |
 | 1 | AINetDirectionReference.setNodePointerToDirectionReference中使用指针二分查找,却直接二分插入强度序列 |  |
+| 2 | BUG:AINetDirectionReference.set()改为poiner&port双序列 |  |
 
 <br>
 
