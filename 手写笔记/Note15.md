@@ -549,16 +549,27 @@ algNode {
 | 5 | 在netUtils中写convertValue_psToHeader(){value_ps2str2md5;} | T |
 | 6 | createAbsAlgNode & AIAbsManager.create 重构相同逻辑部分 |  |
 
+<br>
+
 | algNode网络的必要性 >> |
 | --- |
 | 1. reference迭代为algNode静态信息网络的方式是有必要的,因为序列越来越大,会远超1G |
 | 2. algNode间的关系并非单模型`注:node是单模型`,所以带强度关联的网络化是必要的; |
+
+<br>
 
 | 新网络与TC的交互 >> |
 | --- |
 | ![](assets/81_新网络与TC的交互.png) |
 | 1. 合适使用循环与更加活跃的思维,可以在内心构建更加丰富的祖母细胞与解决问题的方案思考; |
 
+<br>
+
+| 识别祖母 >> |  |
+| --- | --- |
+| 1. 绝对匹配 | `认出苹果` 依header作绝对匹配; |
+| 2. 局部匹配 | `蛇咬怕绳` 依引用强度前3,做最大计数匹配; |
+| 另: 适当模糊范围 | 使其可匹配 `如:男认1种红色,与女认n种红色` `如:陌生人是人类` `在value层模糊%10 或 在algNode层模糊%90` `a=9,b=2,c=10->a更接近模糊=c` |
 
 <br><br><br><br><br>
 
