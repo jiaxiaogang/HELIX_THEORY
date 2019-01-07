@@ -1,5 +1,9 @@
 # 小鸟生存演示 & 势
 
+> 演示步骤 >>
+> 1. 讲一只乌鸦带给我们的启示原文
+> 2. 讲小鼠,小鸟与人类大脑的结构相似
+> 3. 讲he4o在"小鸟生存演示"的实现
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
@@ -12,11 +16,11 @@
 	- [n15p6 二次开发2 (吃)](#n15p6-%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%912-%E5%90%83)
 	- [n15p7 二次开发3 (飞)](#n15p7-%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%913-%E9%A3%9E)
 	- [n15p8 重构认知循环 (MIL)](#n15p8-%E9%87%8D%E6%9E%84%E8%AE%A4%E7%9F%A5%E5%BE%AA%E7%8E%AF-mil)
-	- [n15p9 演示](#n15p9-%E6%BC%94%E7%A4%BA)
-	- [n15p10 AlgNode前_算法结果(algsArr)的迭代](#n15p10-algnode%E5%89%8D_%E7%AE%97%E6%B3%95%E7%BB%93%E6%9E%9Calgsarr%E7%9A%84%E8%BF%AD%E4%BB%A3)
-	- [n15p11 AlgNode中_神经网络(新)](#n15p11-algnode%E4%B8%AD_%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%96%B0)
-	- [n15p12 AlgNode后_索引迭代 `reference入网/algNode替代reference`](#n15p12-algnode%E5%90%8E_%E7%B4%A2%E5%BC%95%E8%BF%AD%E4%BB%A3-reference%E5%85%A5%E7%BD%91algnode%E6%9B%BF%E4%BB%A3reference)
-	- [n15p13 使用AlgNode构建归纳抽具象网络](#n15p13-%E4%BD%BF%E7%94%A8algnode%E6%9E%84%E5%BB%BA%E5%BD%92%E7%BA%B3%E6%8A%BD%E5%85%B7%E8%B1%A1%E7%BD%91%E7%BB%9C)
+	- [n15p9 AlgNode前_算法结果(algsArr)的迭代](#n15p9-algnode%E5%89%8D_%E7%AE%97%E6%B3%95%E7%BB%93%E6%9E%9Calgsarr%E7%9A%84%E8%BF%AD%E4%BB%A3)
+	- [n15p10 AlgNode中_神经网络(新)](#n15p10-algnode%E4%B8%AD_%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%96%B0)
+	- [n15p11 AlgNode后_索引迭代 `reference入网/algNode替代reference`](#n15p11-algnode%E5%90%8E_%E7%B4%A2%E5%BC%95%E8%BF%AD%E4%BB%A3-reference%E5%85%A5%E7%BD%91algnode%E6%9B%BF%E4%BB%A3reference)
+	- [n15p12 使用AlgNode构建归纳抽具象网络](#n15p12-%E4%BD%BF%E7%94%A8algnode%E6%9E%84%E5%BB%BA%E5%BD%92%E7%BA%B3%E6%8A%BD%E5%85%B7%E8%B1%A1%E7%BD%91%E7%BB%9C)
+	- [n15p13](#n15p13)
 	- [ToDoList](#todolist)
 
 <!-- /TOC -->
@@ -269,16 +273,16 @@
 
 <br>
 
-| 瞬时记忆优化 >> |  |
-| --- | --- |
-| Q1 | TC对algsModel的应对量 `小鸟视觉算法出量大的问题` |
-|  | 1. 增加瞬时记忆序列长度,则性能下降; |
-|  | 2. 减少瞬时记忆序列长度,则认知基础下降; |
-| A1 | 在保证序列长度8的同时,增加信息处理的组; |
-|  | 由mv为始,向前8个,发现有组,则组为1个长度 |
-|  | 即7个+1组=8 `长度不变` |
-|  | 以此类推,来推进认知的更广与更深 |
-| 参考 | 代码段:以组替分; |
+| 瞬时记忆优化 >> |  |  |
+| --- | --- | --- |
+| Q1 | TC对algsModel的应对量 `小鸟视觉算法出量大的问题` |  |
+|  | 1. 增加瞬时记忆序列长度,则性能下降; | 与长度无关 |
+|  | 2. 减少瞬时记忆序列长度,则认知基础下降; | 与长度无关 |
+| A1 | 在保证序列长度8的同时,增加信息处理的组; |  |
+|  | 由mv为始,向前8个,发现有组,则组为1个长度 | 是祖母组,而不是时序组 |
+|  | 即7个+1组=8 `长度不变` |  |
+|  | 以此类推,来推进认知的更广与更深 |  |
+| 参考 | 代码段:以组替分; |  |
 
 <br>
 
@@ -292,10 +296,8 @@
 //3. assData; (对dataIn_AssociativeData()方法进行拆分重构;先不搞)
 //4. assMv; (对dataIn_AssociativeData()方法进行拆分重构;先不搞)
 //5. ThinkingUtils.analogyOrdersA()方法,扩展对"微信息"信息本身的类比,而非只是pointer;
+
 ```
-
-
-
 
 
 
@@ -346,7 +348,7 @@
 | toDo | 将`算法值`位宽扩到16 |
 | toDo | 在认知函数`dataIn_AssociativeData()`中,写多次联想协作支持 |
 
-| 算法结果的多次协作 >> | 转n15p10 |
+| 算法结果的多次协作 >> | 转n15p9 |
 | --- | --- |
 | 1 | algsArr的多个元素,同在一组; `先天一` |
 | 2 | algsArr组会构建到网络中; `后天一` |
@@ -354,30 +356,13 @@
 | 说明 | 只有有了组的概念后,才能有多次联想的协作; |
 | 思考 | algsArr组,能否作为瞬时记忆的一个元素存在? |
 |  | ![](assets/68_algsArr单独组.png) |
-
 
 
 
 <br><br><br><br><br>
 
 
-## n15p9 演示
-`CreateTime 2018.12.05`
-
-| 步骤 >> |  |
-| --- | --- |
-| 1 | 讲一只乌鸦带给我们的启示原文 |
-| 2 | 讲小鼠,小鸟与人类大脑的结构相似 |
-| 3 | 讲he4o在"小鸟生存演示"的实现 |
-
-
-
-
-
-<br><br><br><br><br>
-
-
-## n15p10 AlgNode前_算法结果(algsArr)的迭代
+## n15p9 AlgNode前_算法结果(algsArr)的迭代
 `CreateTime 2018.12.06`
 
 | 简介 >> |
@@ -419,7 +404,7 @@ algNode {
 <br><br><br><br><br>
 
 
-## n15p11 AlgNode中_神经网络(新)
+## n15p10 AlgNode中_神经网络(新)
 `CreateTime 2018.12.10`
 
 > 注: algTypeNode表示:(algNode&absAlgNode)
@@ -458,7 +443,7 @@ algNode {
 <br><br><br><br><br>
 
 
-## n15p12 AlgNode后_索引迭代 `reference入网/algNode替代reference`
+## n15p11 AlgNode后_索引迭代 `reference入网/algNode替代reference`
 `CreateTime 2018.12.18`
 
 | ![](assets/73_索引迭代.png) |
@@ -513,7 +498,7 @@ algNode {
 | toDoList >> | status |
 | --- | --- |
 | 1. 写convertAlgTypeNode() | T |
-| 2. 使dataIn_AssociativeData()中的assData&assMv支持algTypeNode; |  |
+| 2. 使dataIn_AssociativeData()中的assData&assMv支持algTypeNode; | T |
 | 3. ThinkingUtils.analogyOrdersA(),扩展"微信息"类比,而非只pointer;`支持类比构建新conAlgNode` `而非只absFoNode` `参考algNode演化图` | T |
 | 4. 单组临时存在,并在处理后,丢失一些细节; (将指向明确的,进行存瞬时记忆为一组); | 以algTypeNode的方式不会丢失细节,瞬时记忆存conAlgNode |
 | 5. `-(void) dataIn:(NSObject*)algsModel`装箱后,对algNode改动支持 | T |
@@ -537,7 +522,7 @@ algNode {
 <br><br><br><br><br>
 
 
-## n15p13 使用AlgNode构建归纳抽具象网络
+## n15p12 使用AlgNode构建归纳抽具象网络
 `CreateTime 2018.12.28`
 
 | TODOLIST >> |  |  |
@@ -571,8 +556,18 @@ algNode {
 | 2. 局部匹配 | `蛇咬怕绳` 依引用强度前3,做最大计数匹配; |
 | 另: 适当模糊范围 | 使其可匹配 `如:男认1种红色,与女认n种红色` `如:陌生人是人类` `在value层模糊%10 或 在algNode层模糊%90` `a=9,b=2,c=10->a更接近模糊=c` |
 
+
 <br><br><br><br><br>
 
+
+## n15p13 继续接入小鸟大脑
+`CreateTime 2019.01.07`
+
+|  |
+| --- |
+| 1. output的微信息是否要装到algNode再被fo引用;`90%应该被装到alg` |
+
+<br><br><br><br><br>
 
 
 ## ToDoList
