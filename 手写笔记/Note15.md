@@ -563,9 +563,12 @@ algNode {
 ## n15p13 继续接入小鸟大脑
 `CreateTime 2019.01.07`
 
-|  |
-| --- |
-| 1. output的微信息是否要装到algNode再被fo引用;`90%应该被装到alg` |
+|  |  |
+| --- | --- |
+| Q1 | output的微信息是否要装到algNode再被fo引用;`90%应该被装到alg` |
+| A1 | 应该使用algNode,因为如"eat"是祖母输出; |
+|  |  |
+
 
 <br><br><br><br><br>
 
@@ -582,6 +585,7 @@ algNode {
 | 7 | 重构:AIIndex中inModels&outModels改按at&ds分区,懒加载到redis的序列;`以防止inModels太长而性能问题` | T`algNode解决` |
 | 8 | 将absFoNode的absValue_p改成orders;`元素为祖母节点` | T |
 | 9 | 将absAlgNode.value_p改成直接使用value;`索引不再存值` `保留ds&at的索引序列` | 存疑,记忆印记在index |
+| 10 | output支持祖母节点 |  |
 
 | BUG | DESC | STATUS |
 | --- | --- | --- |
