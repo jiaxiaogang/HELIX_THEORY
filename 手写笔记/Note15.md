@@ -594,6 +594,15 @@ algNode {
 //1. 视觉算法中添加坚果的相对位置;
 ```
 
+<br>
+
+| toDoList >> |
+| --- |
+| 1. mv的抽象未指定header; |
+| 2. mv的抽象默认strong = 0; |
+| 3. conMVNode.strong很轻易达到19;而absMVNode则达到38; |
+
+
 <br><br><br><br><br>
 
 
