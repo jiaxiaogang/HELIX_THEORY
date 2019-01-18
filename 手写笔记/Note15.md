@@ -20,7 +20,8 @@
 	- [n15p10 AlgNode中_神经网络(新)](#n15p10-algnode%E4%B8%AD_%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%96%B0)
 	- [n15p11 AlgNode后_索引迭代 `reference入网/algNode替代reference`](#n15p11-algnode%E5%90%8E_%E7%B4%A2%E5%BC%95%E8%BF%AD%E4%BB%A3-reference%E5%85%A5%E7%BD%91algnode%E6%9B%BF%E4%BB%A3reference)
 	- [n15p12 使用AlgNode构建归纳抽具象网络](#n15p12-%E4%BD%BF%E7%94%A8algnode%E6%9E%84%E5%BB%BA%E5%BD%92%E7%BA%B3%E6%8A%BD%E5%85%B7%E8%B1%A1%E7%BD%91%E7%BB%9C)
-	- [n15p13](#n15p13)
+	- [n15p13 继续接入小鸟大脑](#n15p13-%E7%BB%A7%E7%BB%AD%E6%8E%A5%E5%85%A5%E5%B0%8F%E9%B8%9F%E5%A4%A7%E8%84%91)
+	- [n15p14 自动训练机](#n15p14-%E8%87%AA%E5%8A%A8%E8%AE%AD%E7%BB%83%E6%9C%BA)
 	- [ToDoList](#todolist)
 
 <!-- /TOC -->
@@ -563,7 +564,7 @@ algNode {
 ## n15p13 继续接入小鸟大脑
 `CreateTime 2019.01.07`
 
-| QA |  |  |
+| QA >> |  |  |
 | --- | --- | --- |
 | Q1 | output的微信息是否要装到algNode再被fo引用;`90%应该被装到alg` |  |
 | A1 | 应该使用algNode,因为如"eat"是祖母输出; | 已完成 |
@@ -591,17 +592,48 @@ algNode {
 马上饿->需求->空吃->根据fo知道自己差坚果->
 乱投坚果->吃需求(状态饿)->空吃->根据fo类比发现,坚果距离过远->
 摸翅膀->飞行->视觉发现坚果距离变化->主动飞行->发现飞行与距离变化的规律->
-//1. 视觉算法中添加坚果的相对位置;
+
+已调试训练: 直投->吸吮反射->吃->学会吃->马上饿->需求->空吃-> (没吃到的原因:没坚果)
+
+下一步: 乱投->空吃-> (不是不该吃,而是没吃到) (分析没吃到的原因:太远)
+
 ```
 
 <br>
 
-| toDoList >> |
+| 不急TODOLIST >> |
 | --- |
 | 1. mv的抽象未指定header; |
 | 2. mv的抽象默认strong = 0; |
 | 3. conMVNode.strong很轻易达到19;而absMVNode则达到38; |
 
+<br>
+
+| TODOLIST >> | STATUS |
+| --- | --- |
+| 1. 关于微信息大小的对比; `a对比b=delta` |  |
+| 2. TC525行调用dataOut_TryOut()对mv无效时的判定及处理 |  |
+| 3. TC295行updateCMVCache(),在mvCache有饿的需求时,乱投坚果,导致望梅止渴的bug |  |
+
+
+
+<br><br><br><br><br>
+
+
+## n15p14 自动训练机
+`CreateTime 2019.01.18`
+
+| 自动训练机 >> |
+| --- |
+| 1. 类似脚本的步骤; |
+| 2. 一步步,调用小鸟演示的某方法; |
+| 3. 一步步,打出执行日志; |
+| 4. 递归执行; (回调执行或延时下一步) |
+
+| 单步训练模型 >> |
+| --- |
+| 1. 类名,方法名,参数,延时,日志; |
+| 2. 执行,返回值; |
 
 <br><br><br><br><br>
 
