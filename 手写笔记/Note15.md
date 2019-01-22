@@ -713,7 +713,7 @@ algNode {
 | ![](assets/82_决策的迭代.png) |
 | --- |
 
-| ![](assets/Note15-09eb3caa.png) |
+| ![](assets/83_he架构（简）.png) |
 | --- |
 
 <br><br><br><br><br>
