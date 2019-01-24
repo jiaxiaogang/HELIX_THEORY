@@ -24,7 +24,7 @@
 
 	- 我的简介:
 		- 姓名:贾晓刚
-		- 联系方式:17600142717
+		- 联系方式:17611742717
 		- 出生年份:1988.10.21
 		- 籍贯:山西省长治市长治县
 		- 毕业学校:四川科技职工大学
@@ -35,7 +35,8 @@
 	- 工作履历:
     	- unity3d游戏工程师1年;
 		- android,ios,windowsPhone的App开发3年;
-		- AI开发1年;
+		- 推荐引擎开发1年;
+		- AI开发2年;
 
 	- 个人介绍:
 		- 哲学和计算机是我的爱好。而通过AI将哲学、心理学、计算机科学融为一体，让真正的强人工智能落地，是我的梦想。
@@ -102,14 +103,18 @@
 
 8. #### 本轮融资，你们准备融多少，最多出让多少股份？这笔钱预计将达到什么目标？（注意：融资是件很严肃的事，请务必填一个诚实合理的融资方案）。在本次融资前你们有否融过资？如有，请提供上轮融资时间，融资金额，出让比例。
 
-    - 融1000w;出让5%股份。
+    - 融xxxxw;出让x%股份。
     - 这笔钱用来成立公司、吸引技术人才、购置设备和运行公司。
     - 此前并未融过资。
 
 
 9. #### 说明:
 
-	- 个人主页:[http://www.j2717.top](http://www.j2717.top)
+	- 个人主页:[http://www.jiaxiaogang.top](http://www.jiaxiaogang.top)
 	- 项目代码:[https://www.github.com/jiaxiaogang/he4o](https://www.github.com/jiaxiaogang/he4o)
-	- 项目笔记:[http://j2717.top/html/HELIX_THEORY.html](http://j2717.top/html/HELIX_THEORY.html)
-	- 手写笔记:[https://github.com/jiaxiaogang/HELIX_THEORY/tree/master/手写笔记](https://github.com/jiaxiaogang/HELIX_THEORY/tree/master/手写笔记)
+	- 螺旋论:[https://github.com/jiaxiaogang/HELIX_THEORY/tree/master/手写笔记](https://github.com/jiaxiaogang/HELIX_THEORY/tree/master/手写笔记)
+
+
+10. #### PS:
+
+	* 此BP是在为一个朋友填的,本人并无意参与到商业行为与创业大流中;
