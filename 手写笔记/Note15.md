@@ -725,8 +725,14 @@ algNode {
 | 3. 执行方案找祖母条件,要找出差什么条件,并转化成行为方案来解决 | 具象优先 | algScheme |
 | 4. 行为方案,难点在于执行后,产生变化的信息被再次输入到思维控制器 | 具象优先 | actionScheme |
 
+| 思考与问题 >> |
+| --- |
+| 1. aiThinkIn_CommitMvNode:中mvNode是否需要保留到demandManager; |
+
+
 
 <br><br><br><br><br>
+
 
 
 ## ToDoList
