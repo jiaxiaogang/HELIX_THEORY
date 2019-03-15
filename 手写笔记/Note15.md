@@ -1061,6 +1061,7 @@ algNode {
 
 | 从静到动 >> |  |
 | --- | --- |
+| 示图 | ![](assets/98_从静到动.jpg) |
 | 分定义 | A:`静微信息` B:`动微信息` C:`祖母` D:`时序` E:`mindValue` F:`思维` G:`现实世界` |
 | 组定义 | AB`微信息` ABC`定义网络` ABCD`数据` ABCDE`神经网络` ABCDEF`智能体` |
 | 静到动模型 | `A->B` `AB->C` `ABC->D` `ABCD->E` `ABCDE->F` `ABCDEF->G` |
