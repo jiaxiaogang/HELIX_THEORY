@@ -716,6 +716,25 @@ algNode {
 | 注: 此处矛盾不存在,只需要找sames即可,diff可通过联想具象来解决; |
 | 注: 对于如何找两个祖母的diff,两者有可能为纵向关联,或横向同一层等等; |
 
+```objective-c
+/**
+ *  MARK:--------------------类比相减 得出解决方案的条件判定--------------------
+ *  1. 对当前解决方案的时序信息expOrder,与当前已有的条件checkOrder进行类比;
+ *  2. 将未能达到的条件,进行checkAlgNode,并进行联想解决方式; (微信息a=1,飞行,微信息a=2);
+ *  3. 直到所有的条件,都可以转换为out行为时;返回true;
+ *  4. 当中途有一个canAss为false时,则整体失败,返回false;
+ *  5. 当中途有一个条件无法转换为out行为时,则整体失败,返回false;
+ *  注: 此方法已由"内类比"方法代替;
+ *  注: 实时类比,来作条件判定是不现实的,所以我们通过内类比来提前构建网络;
+ */
++(BOOL) analogySubWithExpOrder:(NSArray*)expOrder
+										checkOrder:(NSArray*)checkOrder
+												canAss:(BOOL(^)())canAssBlock
+									checkAlgNode:(BOOL(^)(NSArray* algSames,AIAlgNode *algA,AIAlgNode *algB))checkAlgNodeBlock{
+    return false;
+}
+```
+
 | ![](assets/82_决策的迭代.png) |
 | --- |
 
