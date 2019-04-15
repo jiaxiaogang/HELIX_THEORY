@@ -284,11 +284,15 @@
 | 2. | 找到的坚果与fo中进行类比; `找出距离不同,或带皮的不同` `cLess,cGreater` (变化) |
 | 3. | 将距离与带皮转化成行为,条件的行为化; `如飞行,或去皮` `actionScheme` (行为) |
 
-| fo时序模型迭代 >> |
+| FoT模型 >> |
 | --- |
-| 1. 新模型: OrderChangeModel (OCM时序变化模型); |
+| 简介: fo时序模型已不足以支撑所有时序的情况,也不够简单 (微观最简时序); |
+| 1. 新模型: FromOrderTo (FoT时序变化模型); |
 | 2. 含`变化模型`,`有无模型`,`mv基本模型`,都可以由此模型兼容; |
-| 3. 公式为: `cFront->orders->cBack`; |
+| 3. 公式为: `cFront->order->cTo`; |
+| 4. FoT模型由fo模型/DoChange模型演化而来; |
+| 5. 目前仅支持rangeOrder.size() == 1,的使用; (随后再放开更多) |
+| 6. 新模型用来兼容所有从类比中,发现的各种时序; |
 | TODO: 考虑将mv基本模型,统一为:`cHav->orders->cNone`的模型; |
 | PS: 其中中间的orders为rangeOrders; |
 
