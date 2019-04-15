@@ -284,6 +284,13 @@
 | 2. | 找到的坚果与fo中进行类比; `找出距离不同,或带皮的不同` `cLess,cGreater` (变化) |
 | 3. | 将距离与带皮转化成行为,条件的行为化; `如飞行,或去皮` `actionScheme` (行为) |
 
+| fo时序模型迭代 >> |
+| --- |
+| 1. 新模型: OrderChangeModel (OCM时序变化模型); |
+| 2. 含`变化模型`,`有无模型`,`mv基本模型`,都可以由此模型兼容; |
+| 3. 公式为: `cFront->orders->cBack`; |
+| TODO: 考虑将mv基本模型,统一为:`cHav->orders->cNone`的模型; |
+| PS: 其中中间的orders为rangeOrders; |
 
 
 <br><br><br><br><br>
