@@ -296,6 +296,19 @@
 | TODO: 考虑将mv基本模型,统一为:`cHav->orders->cNone`的模型; |
 | PS: 其中中间的orders为rangeOrders; |
 
+| 祖母行为化示图 >> |
+| --- |
+| ![](assets/106_祖母行为化.png) |
+| 1. 以memOrder为起点,其中A4,A5为需行为化的两个祖母; |
+| 2. A4找到A4fo,由`A6->A7`实现,且A7是isOut类型; |
+| 3. A6找到A6fo,由A8实现,此时将A8返回给A4fo; |
+| 4. A4fo将`A8->A7`返回给memOrder; |
+| 5. 此时memOrder为`A1,A2,A3,A8,A7,A5(未实现)`,然后开始实现A5; |
+| 6. 此时找到A5fo,由A9实现; |
+| 7. 找到A9fo,由A10实现; |
+| 8. 找不到A10fo,返回A8fo失败,再返回A5fo失败,再返回memOrder; |
+| 9. 最终整个memOrder因A5而导致判定失败; |
+
 
 <br><br><br><br><br>
 
