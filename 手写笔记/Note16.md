@@ -309,6 +309,16 @@
 | 8. 找不到A10fo,返回A8fo失败,再返回A5fo失败,再返回memOrder; |
 | 9. 最终整个memOrder因A5而导致判定失败; |
 
+| 单个条件祖母行为化 >> |
+| --- |
+| ![](assets/107_单个条件祖母行为化.png) |
+| 1. 题中,A1为条件祖母; |
+| 2. 先直接对条件祖母判断cHavA1; |
+| 3. 否则检查其absPorts,并找出可cHav的: `absA1`; |
+| 4. 对absA1中的value_ps进行取差集: `absDistance`; |
+| 5. 找出absDistance的cLess,并行为化; |
+| 注: 红色为最终判定失败; 绿色为最终判定成功; |
+
 
 <br><br><br><br><br>
 
