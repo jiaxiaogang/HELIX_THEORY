@@ -334,6 +334,33 @@
 | 4 | cGreater `躲避汽车` |
 | 结果 | 将`预测`与`诉求`信息进行类比,并得出是`cHav/cNone`与`cGreater/cLess` |
 
+| algScheme中subValue行为化方案 >> |
+| --- |
+| **1. 简单暴力方案: 5%采用** |
+| //此处还未发现具象坚果,所以只需先判定,subValue的cGreater和cLess是可以被变化的,即可; |
+| **2. 精细靠谱方案: 95%采用** |
+| //1. 我们从subAlgFo中,读取到我们所得到的结果,便是 "预测信息"; |
+| //2. 将 "预测信息" 中的对应标识的"预测subValue",与 "诉求信息" subValue进行对比; |
+| //3. 将此两者信息进行类比,得出一个cGreater/cLess,后判定其行为化可行与否; |
+
+| subValue行为化示图 >> |
+| --- |
+| ![](assets/109_subValue行为化.png) |
+| 1. 以蓝圈subValue开始; |
+| 2. 以红圈查找cLess结束; |
+| `诉求信息`: 为距离为`0`; |
+| `预测信息`: 为每一次得到坚果时的一些距离,此处有`5,8,10`等; |
+
+| subValue行为化代码步骤 >> |
+| --- |
+| 前提: 相伴的subAlg已经找到了其行为化: `subHavAlg`,此处仅对subValue行为化; |
+| 1. 从subHavAlg联想其"引用序列"的时序:subHavFo; |
+| 2. 从subHavFo联想其"具象序列":conSubHavFo; |
+| 3. 从conSubHavFo中,找到与conSubHavFo.subValue作为预测信息; |
+| 4. 将诉求信息:subValue与预测信息:conSubHavFo.subValue进行类比,并得出cLess/cGreater; |
+| 结果: 说白了,就是分析到: "`坚果会掉到树下`,`我们可以飞过去吃`;" |
+
+
 <br><br><br><br><br>
 
 
