@@ -619,7 +619,7 @@
 | --- | --- |
 | 简介 | 意识流处理范围有哪些? |
 | 原则 | `conAlg,conFo,conMv`及其相关的ports都放到意识流; |
-| 1,conNode | 意识流主体,直接用XGWedis存,而不进行持久化; |
+| 1,conNode | 意识流主体,直接用XGRedis存,而不进行持久化; |
 | 2,memRefPorts | 微信息引用序列,写memRefPorts; |
 | 3,memConPorts | 其抽象节点absNode的conPorts,写memConPorts; |
 
@@ -645,7 +645,11 @@
 | 9 | 将AlgNode.refPorts改为单文件方式; |  |
 | 10 | 将except_ps不应期,中的node改为port; |  |
 | 11 | 将energy集成到TOAlgScheme行为化评价器中; |  |
+| 12 | 将XGRedis和XGWedis的存储空间整合,以节约内存; |  |
 
+| BUG | DESC | STATUS |
+| --- | --- | --- |
+| 1 | 当祖母嵌套时,content_ps的内容就变了,此时因此content_ps而产生的md5的header也匹配不上了; |  |
 
 ```
 //TIME:20190226
