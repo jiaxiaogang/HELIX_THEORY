@@ -15,7 +15,8 @@
   - [n16p8 v1.1测试与细节完善](#n16p8-v11%E6%B5%8B%E8%AF%95%E4%B8%8E%E7%BB%86%E8%8A%82%E5%AE%8C%E5%96%84)
   - [n16p9 v1.1性能优化](#n16p9-v11%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)
   - [n16p10 训练](#n16p10-%E8%AE%AD%E7%BB%83)
-  - [n16p11 意识流双序列](#n16p11-%E6%84%8F%E8%AF%86%E6%B5%81%E5%8F%8C%E5%BA%8F%E5%88%97)
+  - [n16p11 意识流双序列-内存网络](#n16p11-%E6%84%8F%E8%AF%86%E6%B5%81%E5%8F%8C%E5%BA%8F%E5%88%97-%E5%86%85%E5%AD%98%E7%BD%91%E7%BB%9C)
+  - [n16p12 内存网络的使用](#n16p12-%E5%86%85%E5%AD%98%E7%BD%91%E7%BB%9C%E7%9A%84%E4%BD%BF%E7%94%A8)
   - [TODOLIST](#todolist)
 
 <!-- /TOC -->
@@ -598,7 +599,7 @@
 <br><br><br><br><br>
 
 
-## n16p11 意识流双序列
+## n16p11 意识流双序列-内存网络
 `CreateTime 2019.05.09`
 
 > ##### 简介:  
@@ -622,6 +623,25 @@
 | 1,conNode | 意识流主体,直接用XGRedis存,而不进行持久化; |
 | 2,memRefPorts | 微信息引用序列,写memRefPorts; |
 | 3,memConPorts | 其抽象节点absNode的conPorts,写memConPorts; |
+
+
+<br><br><br><br><br>
+
+
+## n16p12 内存网络的使用
+`CreateTime 2019.05.17`
+
+| 使用入口 >> |
+| --- |
+| 1. memRefPorts |
+| 2. memAbsPorts |
+| 3. memConPorts |
+
+| 具体要做的事 >> |
+| --- |
+| 1. 代码中要避免memNode持久化,`会导致无法过期` `需解决判断是否属于memNet的问题`; |
+| 2. 要让memPorts中,过期的移除; |
+| 3. 要将saveDB集成到AIPointer中; |
 
 
 <br><br><br><br><br>
