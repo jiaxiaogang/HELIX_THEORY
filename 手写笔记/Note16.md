@@ -639,9 +639,18 @@
 
 | 具体要做的事 >> |
 | --- |
-| 1. 代码中要避免memNode持久化,`会导致无法过期` `需解决判断是否属于memNet的问题`; |
+| 1. 代码中要避免memNode持久化,`会导致无法过期` `需解决判断是否属于memNet的问题`; (演化为问题,见下表) |
 | 2. 要让memPorts中,过期的移除; |
-| 3. 要将saveDB集成到AIPointer中; |
+| 3. 要将saveDB集成到AIPointer中; (完成) |
+
+| memNet使用中的问题 >> |
+| --- |
+| ![](assets/121_memNet转变hdNet的问题.png) |
+| 1. 前提: 内存中,a1,a2,a3在被f1引用着; |
+| 2. 变化: f1被抽象为f2; |
+| 3. 情况: 此时f2引用了a1和a3; |
+| 4. 需求: a1和a3此时需要被转变到hdNet中; |
+| 5. 问题: memNet到hdNet的转变过程是怎样的? |
 
 
 <br><br><br><br><br>
@@ -666,6 +675,8 @@
 | 10 | 将except_ps不应期,中的node改为port; |  |
 | 11 | 将energy集成到TOAlgScheme行为化评价器中; |  |
 | 12 | 将XGRedis和XGWedis的存储空间整合,以节约内存; |  |
+| 13 | 用pointer.isMem替代saveDB (因为saveDB参数难以持续追踪) | T |
+| 14 | IndexRefrence和AINetUtil.insertPointer微信息部分有重复,重构之; |  |
 
 | BUG | DESC | STATUS |
 | --- | --- | --- |
