@@ -652,6 +652,13 @@
 | 4. 需求: a1和a3此时需要被转变到hdNet中; |
 | 5. 问题: memNet到hdNet的转变过程是怎样的? |
 
+| memNet转hdNet持久化问题的解决 >> |
+| --- |
+| 1. ref和memRef用两份,node和memNode也用两份; |
+| 2. memNode转为hdNode时,如果已存在则strong+1,如果不存在改isMem=false并直接转存hdNet; |
+| 注1. ports使用memPorts,文件名区分; |
+| 注2. node使用isMem属性,路径区分; |
+
 
 <br><br><br><br><br>
 
