@@ -652,12 +652,20 @@
 | 4. 需求: a1和a3此时需要被转变到hdNet中; |
 | 5. 问题: memNet到hdNet的转变过程是怎样的? |
 
-| memNet转hdNet持久化问题的解决 >> |
+| memNet到hdNet转移的过程 >> |
 | --- |
 | 1. ref和memRef用两份,node和memNode也用两份; |
 | 2. memNode转为hdNode时,如果已存在则strong+1,如果不存在改isMem=false并直接转存hdNet; |
-| 注1. ports使用memPorts,文件名区分; |
-| 注2. node使用isMem属性,路径区分; |
+| 注. 文件名区分: `ports使用memPorts`,`node使用memNode`; |
+
+| TITLE | memNet->hdNet的转移代码实现 |
+| --- | --- |
+| 示图 | ![](assets/122_memNet到hdNet的转移思考.png) |
+| 说明 | 构建新的需持久化的抽象时,必须把`所有相关信息`都转移到hdNet; |
+| 释词 | 所有相关信息包含:`本信息和引用信息`; |
+| 举例 | foNode转移时,需要连带其orders中algNode,以及algNode.refPorts,以algNode.content_ps中value.refPorts; |
+| 时机 | 一定是新构建抽象时,才会触发转移; |
+| 代码 | 将转移代码单独封装成方法,供调用; |
 
 
 <br><br><br><br><br>
