@@ -666,6 +666,7 @@
 | 举例 | foNode转移时,需要连带其orders中algNode,以及algNode.refPorts,以algNode.content_ps中value.refPorts; |
 | 时机 | 一定是新构建抽象时,才会触发转移; |
 | 代码 | 将转移代码单独封装成方法,供调用; |
+| 原则 | 我们仅在abs抽象时,对所需的祖母进行转移,而fo和mv不必进行转移; |
 
 
 <br><br><br><br><br>
@@ -691,11 +692,13 @@
 | 11 | 将energy集成到TOAlgScheme行为化评价器中; |  |
 | 12 | 将XGRedis和XGWedis的存储空间整合,以节约内存; |  |
 | 13 | 用pointer.isMem替代saveDB (因为saveDB参数难以持续追踪) | T |
-| 14 | IndexRefrence和AINetUtil.insertPointer微信息部分有重复,重构之; |  |
+| 14 | IndexRefrence和AINetUtil.insertPointer微信息部分有重复,重构之; `仅mv和abcMv在调用,可尝试删掉IndexRefresh并替换到NetUtils方式;` |  |
+
 
 | BUG | DESC | STATUS |
 | --- | --- | --- |
 | 1 | 当祖母嵌套时,content_ps的内容就变了,此时因此content_ps而产生的md5的header也匹配不上了; |  |
+| 2 | setNodePointerToDirectionReference()在二分查pointerArr,却用portArr存; |  |
 
 ```
 //TIME:20190226
