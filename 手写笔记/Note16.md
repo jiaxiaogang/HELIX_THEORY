@@ -16,7 +16,8 @@
   - [n16p9 v1.1性能优化](#n16p9-v11%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)
   - [n16p10 训练](#n16p10-%E8%AE%AD%E7%BB%83)
   - [n16p11 意识流双序列-内存网络](#n16p11-%E6%84%8F%E8%AF%86%E6%B5%81%E5%8F%8C%E5%BA%8F%E5%88%97-%E5%86%85%E5%AD%98%E7%BD%91%E7%BB%9C)
-  - [n16p12 内存网络的使用](#n16p12-%E5%86%85%E5%AD%98%E7%BD%91%E7%BB%9C%E7%9A%84%E4%BD%BF%E7%94%A8)
+  - [n16p12 内存网络的转移](#n16p12-%E5%86%85%E5%AD%98%E7%BD%91%E7%BB%9C%E7%9A%84%E8%BD%AC%E7%A7%BB)
+  - [n16p13 内存网络的使用](#n16p13-%E5%86%85%E5%AD%98%E7%BD%91%E7%BB%9C%E7%9A%84%E4%BD%BF%E7%94%A8)
   - [TODOLIST](#todolist)
 
 <!-- /TOC -->
@@ -624,18 +625,22 @@
 | 2,memRefPorts | 微信息引用序列,写memRefPorts; |
 | 3,memConPorts | 其抽象节点absNode的conPorts,写memConPorts; |
 
+| 相对 >> | DESC |
+| --- | --- |
+| 1. memNet为动->hdNet为静 | 有相对,有转移; |
+| 2. tc为动->皮层为静 | 疑不算相对,因为不循环; |
+| 3. 小脑是固化脑->大脑是思维脑; | 小脑对于输出的固化网络 |
+
 
 <br><br><br><br><br>
 
 
-## n16p12 内存网络的使用
+## n16p12 内存网络的转移
 `CreateTime 2019.05.17`
 
-| 使用入口 >> |
+| 内存网络的使用入口 (下节开用) >> |
 | --- |
-| 1. memRefPorts |
-| 2. memAbsPorts |
-| 3. memConPorts |
+| `1. memRefPorts`,`2. memAbsPorts`,`3. memConPorts` |
 
 | 具体要做的事 >> |
 | --- |
@@ -667,6 +672,26 @@
 | 时机 | 一定是新构建抽象时,才会触发转移; |
 | 代码 | 将转移代码单独封装成方法,供调用; |
 | 原则 | 我们仅在abs抽象时,对所需的祖母进行转移,而fo和mv不必进行转移; |
+
+
+
+<br><br><br><br><br>
+
+
+## n16p13 内存网络的使用
+`CreateTime 2019.05.23`
+
+| 使用入口 >> |
+| --- |
+| 1. memRefPorts |
+| 2. memAbsPorts |
+| 3. memConPorts |
+
+| 具体工作 >> |
+| --- |
+| 1. 识别时取memRefPorts优先识别; |
+| 2. 一切取ports的都优先取memPorts; |
+| ![](assets/123_memNet的使用具体工作.png) |
 
 
 <br><br><br><br><br>
