@@ -687,11 +687,12 @@
 | 2. memAbsPorts |
 | 3. memConPorts |
 
-| 具体工作 >> |
-| --- |
-| 1. 识别时取memRefPorts优先识别; |
-| 2. 一切取ports的都优先取memPorts; |
-| ![](assets/123_memNet的使用具体工作.png) |
+| 具体工作 >> | STATUS |
+| --- | --- |
+| 1. 识别时取memRefPorts优先识别; | T |
+| 2. 一切取ports的都优先取memPorts; |  |
+| 3. 构建抽象时,去重,优先取memPorts; | T |
+| ![](assets/123_memNet的使用具体工作.png) |  |
 
 
 <br><br><br><br><br>
