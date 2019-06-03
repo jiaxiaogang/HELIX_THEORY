@@ -694,7 +694,8 @@
 | 3. 构建抽象时,去重,优先取memPorts; | T |
 | 4. 对ThinkIn代码检查支持内存网络; | T |
 | 5. 对ThinkOut代码检查支持内存网络; | T |
-| 6. 对ThinkControl代码检查支持内存网络; |  |
+| 6. 对ThinkControl代码检查支持内存网络; | T |
+| 7. Output & ThinkingUtils & NVUtils & AINet & AINetUtils | T |
 | ![](assets/123_memNet的使用具体工作.png) |  |
 
 
