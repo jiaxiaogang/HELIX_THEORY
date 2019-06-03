@@ -18,6 +18,7 @@
   - [n16p11 意识流双序列-内存网络](#n16p11-%E6%84%8F%E8%AF%86%E6%B5%81%E5%8F%8C%E5%BA%8F%E5%88%97-%E5%86%85%E5%AD%98%E7%BD%91%E7%BB%9C)
   - [n16p12 内存网络的转移](#n16p12-%E5%86%85%E5%AD%98%E7%BD%91%E7%BB%9C%E7%9A%84%E8%BD%AC%E7%A7%BB)
   - [n16p13 内存网络的使用](#n16p13-%E5%86%85%E5%AD%98%E7%BD%91%E7%BB%9C%E7%9A%84%E4%BD%BF%E7%94%A8)
+  - [n16p14 训练2](#n16p14-%E8%AE%AD%E7%BB%832)
   - [TODOLIST](#todolist)
 
 <!-- /TOC -->
@@ -697,6 +698,20 @@
 | 6. 对ThinkControl代码检查支持内存网络; | T |
 | 7. Output & ThinkingUtils & NVUtils & AINet & AINetUtils | T |
 | ![](assets/123_memNet的使用具体工作.png) |  |
+
+
+<br><br><br><br><br>
+
+
+## n16p14 训练2
+`CreateTime 2019.06.03`
+
+> ![](assets/124_训练2.png)
+
+| 点 | 描述 | 解释 |
+| --- | --- | --- |
+| 1 | 训练多种可能性 | 包括8方向各自独立学习到网络 |
+| 2 | 神经网络可视化 | 学习日志 / 动态扩张可视化 |
 
 
 <br><br><br><br><br>
