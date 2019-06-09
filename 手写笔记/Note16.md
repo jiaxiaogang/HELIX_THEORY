@@ -741,6 +741,15 @@
 | 3. 数据 | 1个nodeArr,1个refPorts等; |
 | 4. 架构 | baseView -> value_alg_fo_mv |
 
+| 接口设计 >> |  |
+| --- | --- |
+| 1. 模块id | 如`value` `alg` `fo` `mv` |
+| 2. refPorts | 引用与被引用关联 |
+| 3. absConPorts | 抽具象关联 |
+| 4. nodeView | 可默认白圆,或指定nodeView |
+| 5. lineColor | 默认灰色,或指定颜色; |
+| 6. tipsDesc | 指向节点或线时,显示的内容; |
+
 
 <br><br><br><br><br>
 
