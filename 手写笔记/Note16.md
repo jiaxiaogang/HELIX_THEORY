@@ -763,6 +763,14 @@
 | **2. 同层节点选择器** |
 | 1. 当同层节点过多时,会有互相覆盖的情况; |
 | 2. 此时,可以做一个选择器,来帮助选择高亮目标节点; |
+|  |
+| **3. 多个独立组问题(在同一模块下,会有一组节点独立与另一组节点无关联)** |
+| 前提:在fori和forj双层循环中: |
+| 1. iItem与jItem有关系,且iLayer未知,jLayer已知,得出(iLayer=jLayer+-1); |
+| 2. iItem与jItem有关系,且iLayer已知,jLayer已知,判定iLayer与jLayer大小是否符合,符合则跳过,不符合则修正iLayer=(iLayer+-delta); |
+| 3. iItem与jItem有关系,且jLayer未知,得出jLayer=(iLayer+-1); |
+| 4. iItem与jItem无关系,得出jLayer不变; |
+| 本质上,就是排序, |
 
 
 <br><br><br><br><br>
