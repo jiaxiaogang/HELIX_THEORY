@@ -873,6 +873,9 @@
 | 7 | 模块x满,导致node位置变化,而line未更新导致指向错误的bug | T |
 | 8 | 多次直投,发现抽象出的mvNode是null; (因为创建absMv时,转换conMvs失败,导致抽具象关联失败,且未存储) | T |
 | 9 | BUG:联想到的`识别用`的mvNode是null; | T(同上) |
+| 10 | 思维活跃度能量消耗过快,改为float类型,alg消耗0.1/fo消耗1.0 | T |
+| 11 | 越是抽象的foNode,反而orders越长; |  |
+| 12 | 在场景视觉中,有些view不应该被小鸟看见 (如:嵌套的containsView) | T(仅车,路,灯,树,食物可见) |
 
 
 <br><br><br><br><br>
@@ -899,6 +902,7 @@
 | 12 | 将XGRedis和XGWedis的存储空间整合,以节约内存; |  |
 | 13 | 用pointer.isMem替代saveDB (因为saveDB参数难以持续追踪) | T |
 | 14 | IndexRefrence和AINetUtil.insertPointer微信息部分有重复,重构之; `仅mv和abcMv在调用,可尝试删掉IndexRefresh并替换到NetUtils方式;` |  |
+| 15 | 皮层算法,放到AIFoundation之外; | T |
 
 
 | BUG | DESC | STATUS |
