@@ -858,9 +858,10 @@
  */
 ```
 
-| TODO: | DESC | STATUS |
-| --- | --- | --- |
-| 1 | 调试"吃-坚果-mv+"时序 |  |
+| TODO: | STATUS |
+| --- | --- |
+| 1. 调试"吃-坚果-mv+"时序 |  |
+| 2. absManager中,对alg&fo的防重; |  |
 
 
 <br><br><br><br><br>
