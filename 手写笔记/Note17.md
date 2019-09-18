@@ -10,6 +10,7 @@
   - [n17p3 TIR(ThinkInReason)-理性识别预测](#n17p3-tirthinkinreason-%E7%90%86%E6%80%A7%E8%AF%86%E5%88%AB%E9%A2%84%E6%B5%8B)
   - [n17p4 TIR&TOR-理性思维汇总](#n17p4-tirtor-%E7%90%86%E6%80%A7%E6%80%9D%E7%BB%B4%E6%B1%87%E6%80%BB)
   - [n17p5 TIR_Fo()理性时序](#n17p5-tir_fo%E7%90%86%E6%80%A7%E6%97%B6%E5%BA%8F)
+  - [n17p6 TIR模型](#n17p6-tir%E6%A8%A1%E5%9E%8B)
   - [TODOLIST](#todolist)
 
 <!-- /TOC -->
@@ -196,6 +197,25 @@
 | **总结:** |
 | 1. 对`匹配`到的时序,后续将要发生的事,为预测; |
 | 2. 对`匹配`到的时序,所导致的mv变化,为预测; |
+
+
+
+<br><br><br><br><br>
+
+
+## n17p6 TIR模型
+`CreateTime 2019.09.18`
+
+| TIR模型草图2 >> |
+| --- |
+| ![](assets/150_TIR模型草图2.png) |
+
+| TIR模型图 >> |
+| --- |
+| ![](assets/151_TIR模型.png) |
+| 1. 整体由理性向感性,由具象向抽象; |
+| 2. 预测即将发生的`事`与`mv变化`; |
+
 
 
 <br><br><br><br><br>
