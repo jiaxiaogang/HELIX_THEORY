@@ -220,8 +220,21 @@ TIR模型草图2 >>
 
 | TIR_ALG模型 >> |
 | --- |
-| ![](assets/152_TIR_ALG模型.png) |
+| ![](assets/152_TIR_ALG模型2.png) |
+| 1. 输入A1,并识别匹配到A2; |
+| 2. 构建A3,作为A1和A2的抽象; |
+| 3. 好不容易建立起A2的absPorts,也要将有效的absPorts继给A3 (图中A4,A5); |
 
+| TIR_FO模型 >> |
+| --- |
+| ![](assets/153_TIR_FO模型(未完成).png) |
+| 1. 先内类比,找出变化; |
+| 2. 再联想抽象概念被引用 `的时序`; |
+
+| TODO | STATUS |
+| --- | --- |
+| 1. 将createAbsAlg时,conAlg.absPorts中有效的部分,继给新抽象节点; |  |
+| 2. 将TIR_FO细化模型画出来,并作用于代码设计; |  |
 
 <br><br><br><br><br>
 
