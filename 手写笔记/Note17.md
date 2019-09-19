@@ -206,9 +206,11 @@
 ## n17p6 TIR模型
 `CreateTime 2019.09.18`
 
-| TIR模型草图2 >> |
-| --- |
-| ![](assets/150_TIR模型草图2.png) |
+<left>
+<img src="assets/150_TIR模型草图2.png" width="20%" />
+
+TIR模型草图2 >>
+</left>
 
 | TIR模型图 >> |
 | --- |
@@ -216,6 +218,9 @@
 | 1. 整体由理性向感性,由具象向抽象; |
 | 2. 预测即将发生的`事`与`mv变化`; |
 
+| TIR_ALG模型 >> |
+| --- |
+| ![](assets/152_TIR_ALG模型.png) |
 
 
 <br><br><br><br><br>
