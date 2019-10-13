@@ -11,6 +11,7 @@
   - [n17p6 TIR模型](#n17p6-tir%E6%A8%A1%E5%9E%8B)
   - [n17p7 TIR_FO模型到代码](#n17p7-tir_fo%E6%A8%A1%E5%9E%8B%E5%88%B0%E4%BB%A3%E7%A0%81)
   - [n17p8 TOR模型](#n17p8-tor%E6%A8%A1%E5%9E%8B)
+  - [n17p9 TOR代码计划](#n17p9-tor%E4%BB%A3%E7%A0%81%E8%AE%A1%E5%88%92)
   - [TODOLIST](#todolist)
 
 <!-- /TOC -->
@@ -372,6 +373,21 @@ TIR模型草图2 >>
 | 3. 并且将识别算法细化,进行了全面的alg,fo,mv的识别与预测; |
 | 4. 又通过最直接的方式,将其激活的节点(最后一桢的所有结果)进行保留; |
 | 5. 供给TOP使用,以使TOP有更多的行为化成功; |
+
+
+
+
+<br><br><br><br><br>
+
+
+## n17p9 TOR代码计划
+`CreateTime 2019.10.13`
+
+1. 把mv加入到demandManager;
+  * 判断matchingFo.mv有值才加入demandManager,同台竞争,执行顺应mv;
+  * 判断matchValue的匹配度,对mv的迫切度产生"正相关"影响;
+2. 将对matchingFo和matchingAlg做为激活节点,添加到demandManager中,供理性(实)使用;
+3. 对TOP的运作5个scheme做改动,以应用"激活"节点;
 
 
 <br><br><br><br><br>
