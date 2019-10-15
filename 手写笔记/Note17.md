@@ -383,11 +383,20 @@ TIR模型草图2 >>
 ## n17p9 TOR代码计划
 `CreateTime 2019.10.13`
 
-1. 把mv加入到demandManager;
-  * 判断matchingFo.mv有值才加入demandManager,同台竞争,执行顺应mv;
-  * 判断matchValue的匹配度,对mv的迫切度产生"正相关"影响;
-2. 将对matchingFo和matchingAlg做为激活节点,添加到demandManager中,供理性(实)使用;
-3. 对TOP的运作5个scheme做改动,以应用"激活"节点;
+| 初步代码计划 >> |
+| --- |
+| 1. 把mv加入到demandManager; |
+| `___1.1 判断matchingFo.mv有值才加入demandManager,同台竞争,执行顺应mv;` |
+| `___1.2 判断matchValue的匹配度,对mv的迫切度产生"正相关"影响;` |
+| 2. 将对matchingFo和matchingAlg做为激活节点,添加到demandManager中,供理性(实)使用; |
+| 3. 对TOP的运作5个scheme做改动,以应用"激活"节点; |
+
+| 理性mv加入demand逆向抵消的合理性分析 >> |
+| --- |
+| 前提: 预测并非已成现实,那么在demandManager中逆向抵消会导致并未真正解决; |
+| 实例: 饿了,马上可以拿到面条,只是问题解决在望,并非已解决; |
+| Q: 这里要思考一下,RMV和PMV这两者的区分,并分别给予合理的处理; |
+| A: 望梅止渴,只要饥饿状态还在,会再次触发的,所以可以抵消,今后有更深层问题再说; |
 
 
 <br><br><br><br><br>
