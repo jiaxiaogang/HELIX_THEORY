@@ -11,7 +11,8 @@
   - [n17p6 TIR模型](#n17p6-tir%E6%A8%A1%E5%9E%8B)
   - [n17p7 TIR_FO模型到代码](#n17p7-tir_fo%E6%A8%A1%E5%9E%8B%E5%88%B0%E4%BB%A3%E7%A0%81)
   - [n17p8 TOR模型](#n17p8-tor%E6%A8%A1%E5%9E%8B)
-  - [n17p9 TOR代码计划](#n17p9-tor%E4%BB%A3%E7%A0%81%E8%AE%A1%E5%88%92)
+  - [n17p9 TOR代码实践1](#n17p9-tor%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B51)
+  - [n17p10 TOR代码实践2](#n17p10-tor%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B52)
   - [TODOLIST](#todolist)
 
 <!-- /TOC -->
@@ -380,7 +381,7 @@ TIR模型草图2 >>
 <br><br><br><br><br>
 
 
-## n17p9 TOR代码计划
+## n17p9 TOR代码实践1
 `CreateTime 2019.10.13`
 
 | 初步代码计划 >> |
@@ -410,6 +411,23 @@ TIR模型草图2 >>
 | **TOP中对应改动 >>** |
 | 1. 在每个scheme中,对activeCache做优先使用; |
 | 2. 此处关键难点,在于TOP"感"想法,和TOR的"实"数据间的协作; |
+
+
+
+<br><br><br><br><br>
+
+
+## n17p10 TOR代码实践2
+`CreateTime 2019.10.16`
+
+| TC模型联合分析 >> |
+| --- |
+| ![](assets/169_TC模型联合分析.png) |
+| 1. 由上图可见,activeCache应由TOP来提供; |
+| 2. 然后TOR中,来负责`决策末`的行为化; |
+| 注: TOP有可能独立完成行为化,TOR只是更加补刀完善; |
+| 如: TOP想吃面,但没面,而此时TOR有面时,可以与其对应行为化; |
+
 
 
 <br><br><br><br><br>
