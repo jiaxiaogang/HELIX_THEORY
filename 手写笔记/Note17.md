@@ -473,6 +473,11 @@ TIR模型草图2 >>
 | 2. 整理TOP中的行为化代码,看是否拆分一些出来到TOR中; |
 | 3. TOR的向性,是从左至右,从上至下,这一原则一定要符合; |
 | 4. TOR的思维energy,源于其预测这一点,如果不足够时,可以尝试别的方式,比如依curMvModel再次给思维注入一定量的活跃度; |
+| 5. demandModel.except_ps标志了不想,mvModel.except_p标志了行为化失败; |
+
+| TODOTOMORROW >> |
+| --- |
+| 1. 细化保留:行为化失败的细节原因(至少到absAlg),因为TOR要用; |
 
 
 <br><br><br><br><br>
