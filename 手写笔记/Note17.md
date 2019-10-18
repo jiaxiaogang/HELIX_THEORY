@@ -13,6 +13,7 @@
   - [n17p8 TOR模型](#n17p8-tor%E6%A8%A1%E5%9E%8B)
   - [n17p9 TOR代码实践1](#n17p9-tor%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B51)
   - [n17p10 TOR代码实践2](#n17p10-tor%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B52)
+  - [n17p11 TOR代码实践3](#n17p11-tor%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B53)
   - [TODOLIST](#todolist)
 
 <!-- /TOC -->
@@ -458,6 +459,21 @@ TIR模型草图2 >>
 | --- | --- |
 | Q1 | 思考下,把mv提交给demandManager后,是否需要排好优先级; |
 | A1 | 不需要,因为使用时,会实时排序; |
+
+
+<br><br><br><br><br>
+
+
+## n17p11 TOR代码实践3
+`CreateTime 2019.10.18`
+
+| 方案1代码实践分析 >> |
+| --- |
+| 1. 整理demandModel.subModel.except_ps,并依此,做TOR中的匹配,进尔行为化; |
+| 2. 整理TOP中的行为化代码,看是否拆分一些出来到TOR中; |
+| 3. TOR的向性,是从左至右,从上至下,这一原则一定要符合; |
+| 4. TOR的思维energy,源于其预测这一点,如果不足够时,可以尝试别的方式,比如依curMvModel再次给思维注入一定量的活跃度; |
+
 
 <br><br><br><br><br>
 
