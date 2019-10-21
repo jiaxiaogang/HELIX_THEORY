@@ -475,9 +475,15 @@ TIR模型草图2 >>
 | 4. TOR的思维energy,源于其预测这一点,如果不足够时,可以尝试别的方式,比如依curMvModel再次给思维注入一定量的活跃度; |
 | 5. demandModel.except_ps标志了不想,mvModel.except_p标志了行为化失败; |
 
-| TODOTOMORROW >> |
+| TOP&TOR协作的向性示图 >> |
 | --- |
-| 1. 细化保留:行为化失败的细节原因(至少到absAlg),因为TOR要用; |
+| ![](assets/172_TOP&TOR协作的向性示图.png) |
+| 1. 如图: 将行为化整体从TOP交由TOR来执行; |
+| 2. 在TOR达标后,最终应输出一个行为化成功的actions输出; |
+
+| TODO >> | STATUS |
+| --- | --- |
+| 1. 更细化的保留行为化失败的细节原因(至少到absAlg),因为TOR要用; | 整个行为化交给TOR执行 |
 
 
 <br><br><br><br><br>
