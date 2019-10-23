@@ -14,6 +14,7 @@
   - [n17p9 TOR代码实践1](#n17p9-tor%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B51)
   - [n17p10 TOR代码实践2](#n17p10-tor%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B52)
   - [n17p11 TOR代码实践3](#n17p11-tor%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B53)
+  - [n17p12 TOR之行为化代码迭代](#n17p12-tor%E4%B9%8B%E8%A1%8C%E4%B8%BA%E5%8C%96%E4%BB%A3%E7%A0%81%E8%BF%AD%E4%BB%A3)
   - [TODOLIST](#todolist)
 
 <!-- /TOC -->
@@ -496,6 +497,20 @@ TIR模型草图2 >>
 | ![](assets/173_TOR将ActiveCache加入行为化示图.png) |
 | 1. matchMv(如饱) 预测对于demandManager.curMvModel(如饿) 的直接解决暂不支持; |
 | 2. 但如果支持,可能会大大提高行为化成功率 (如,直接吃面前的面,肯定比买菜做面行为化成功率更高) |
+
+
+<br><br><br><br><br>
+
+
+## n17p12 TOR之行为化代码迭代
+`CreateTime 2019.10.23`
+
+| 行为化代码迭代分析(现有流程) >> |
+| --- |
+| ![](assets/174_行为化代码迭代分析(现有流程).png) |
+| 1. 现有流程,仅是针对每个algNode进行行为化,(双线) |
+| 2. 双线,分别为:直接cHav,和cHav+cValue修正; |
+| 3. TODO: 中间红椭圆框起来部分,可以直接由activeCache来解决; |
 
 
 <br><br><br><br><br>
