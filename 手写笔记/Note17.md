@@ -491,6 +491,11 @@ TIR模型草图2 >>
 | 2. 针对"概念嵌套"的变动,对单个概念行为化convert2Out_Single()方法变动 |
 | 3. 针对"内类比大小"的取消,对行为化相关代码做变动; |
 
+| TOR将ActiveCache加入行为化示图 >> |
+| --- |
+| ![](assets/173_TOR将ActiveCache加入行为化示图.png) |
+| 1. matchMv(如饱) 预测对于demandManager.curMvModel(如饿) 的直接解决暂不支持; |
+| 2. 但如果支持,可能会大大提高行为化成功率 (如,直接吃面前的面,肯定比买菜做面行为化成功率更高) |
 
 
 <br><br><br><br><br>
