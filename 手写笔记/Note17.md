@@ -583,9 +583,11 @@ TIR模型草图2 >>
 |  | ![](assets/177_概念抽具象外类比交集示图.png) |
 | 6. 组分 | 源于内类比 |
 |  | ![](assets/178_概念组分嵌套内类比差集示图.png) |
-| 7. 代码 | 将content_ps和refPorts分开,还是放一起? |
-|  | 分开 `95%` |
-|  | 放一起 `5%` |
+| 7. 代码 | Q: refPorts_Fo和refPorts_Alg分开,还是放一起? |
+|  | A: 分开 `95%` |
+|  | A: 放一起 `5%` |
+| 8. 代码 | Q: content_ps_Alg和content_ps_Fo分开,还是放一起? |
+|  | A: 放一起 |
 
 
 <br><br><br><br><br>
