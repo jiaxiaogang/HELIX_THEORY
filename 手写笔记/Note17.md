@@ -597,6 +597,21 @@ TIR模型草图2 >>
 | 注: a3要去重,因为要根据a4的引用,联想assF3,外类比,找更确切; |
 | 解: a3先不去重,a4去重,然后在TCUtils.getAlgNodeWithInnerType()联想a4; |
 
+```c
+//静概念与动概念的关系:   a4的知识表示方案:
+//1. 现代码方案: (抽具象关系)
+a4.identifier = a3.identifier
+a4.content_ps = value_p(cHavValue/cNoneValue)
+a3.absPorts 指向 a4
+a4.conPorts 指向 a3
+
+//2. 现规划方案: (组分关系)
+a4.content_ps = @[a3.pointer]
+a3.refPorts_Inner 指向 a4;
+
+//3. 结果:
+目前,先不改为方案二,保持方案一,并把方案1的抽具象关系切断;
+```
 
 <br><br><br><br><br>
 
