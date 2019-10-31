@@ -595,6 +595,7 @@ TIR模型草图2 >>
 | 1. a3不能与a2/a1有抽具象关系,因为"皮"不是"坚果"; |
 | 2. a4不能与a3有抽具象关系,因为这两者是嵌套引用关系 (可写成refPorts_Inner) |
 | 注: a3要去重,因为要根据a4的引用,联想assF3,外类比,找更确切; |
+| 解: a3先不去重,a4去重,然后在TCUtils.getAlgNodeWithInnerType()联想a4; |
 
 
 <br><br><br><br><br>
