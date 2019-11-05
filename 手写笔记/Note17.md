@@ -630,7 +630,7 @@ a3.refPorts_Inner 指向 a4;
 `CreateTime 2019.11.04`
 
 > 更名警告:
-> 1. 以上matchAlg&matchFo; 由activeCache更名为瞬时网络(shortNet);
+> 1. 以上matchAlg&matchFo; 由activeCache更名为瞬时网络(shortMatch);
 
 | 理性决策分类 >> |
 | --- |
@@ -648,9 +648,13 @@ a3.refPorts_Inner 指向 a4;
 
 | 网络\思维 | 理性作用力 | 感性作用力 |
 | --- | --- | --- |
-| 瞬时 | 大 | 小 |
-| 短时 | 中 | 中 |
-| 长时 | 小 | 大 |
+| **瞬时** | 大 | 小 |
+| **短时** | 中 | 中 |
+| **长时** | 小 | 大 |
+
+| 代码计划 >> |
+| --- |
+| 1. 在所有outScheme中,涉及短时和长时的前面加上对瞬时的支持; |
 
 
 <br><br><br><br><br>
