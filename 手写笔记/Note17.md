@@ -658,6 +658,7 @@ a3.refPorts_Inner 指向 a4;
 | 1. 在所有outScheme中,涉及短时和长时的前面加上对瞬时的支持; |
 | 2. 总结下outScheme中,有多少处使用短时&长时,在前面插入瞬时; |
 | 3. 行为化中,针对概念嵌套的代码 (如fo.content_ps.count=2),先去掉; |
+| ![](assets/181_行为化支持瞬时示例图.png) |
 
 
 <br><br><br><br><br>
