@@ -659,6 +659,7 @@ a3.refPorts_Inner 指向 a4;
 | 2. 总结下outScheme中,有多少处使用短时&长时,在前面插入瞬时; |
 | 3. 行为化中,针对概念嵌套的代码 (如fo.content_ps.count=2),先去掉; |
 | ![](assets/181_行为化支持瞬时示例图.png) |
+| 4. 考虑将TOP.foScheme搬到TOR,优先使用matchFo做第一解决方案;(TOP仅决定mv优先级和评价,其余全由TOR来完成) |
 
 
 <br><br><br><br><br>
