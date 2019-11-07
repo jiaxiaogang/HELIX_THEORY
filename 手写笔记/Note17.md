@@ -661,6 +661,9 @@ a3.refPorts_Inner 指向 a4;
 | ![](assets/181_行为化支持瞬时示例图.png) |
 | 4. 考虑将TOP.foScheme搬到TOR,优先使用matchFo做第一解决方案;(TOP仅决定mv优先级和评价,其余全由TOR来完成) |
 
+| 行为化实例辅助分析代码 >> |
+| --- |
+| ![](assets/182_行为化实例辅助分析代码.png) |
 
 <br><br><br><br><br>
 
