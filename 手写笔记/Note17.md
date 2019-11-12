@@ -687,6 +687,21 @@ a3.refPorts_Inner 指向 a4;
 | Q1. subM是否多余 (如坚果带皮) |
 | Q2. subC是否需满足 (如坚果不在身边) |
 
+　　<font color="blue">Q1实例分析：有一些信息是不影响的（如坚果有个小斑点），另外一些则影响（如坚果皮）。  
+　　是否影响的前提条件之一：是必须有此概念（比如坚果皮）。实例如：非美术生，分不清粉红和桃红，因为在稀疏码到特征，到没有这个细化的概念。</font>
+
+<font face="黑体">我是黑体字</font>
+
+<font face="微软雅黑">我是微软雅黑</font>
+
+<font face="STCAIYUN">我是华文彩云</font>
+
+<font color=#0099ff size=7 face="黑体">color=#0099ff size=72 face="黑体"</font>
+
+<font color=#00ffff size=72>color=#00ffff</font>
+
+<font color=gray size=72>color=gray</font>
+
 
 <br><br><br><br><br>
 
