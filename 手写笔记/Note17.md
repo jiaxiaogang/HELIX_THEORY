@@ -780,6 +780,37 @@ a3.refPorts_Inner 指向 a4;
 | --- |
 | ![](assets/189_单概念行为化代码设计.png) |
 
+```objective-c
+//单概念行为化伪代码:
+/**
+ *  MARK:--------------------单个概念的行为化--------------------
+ */
+-(NSArray*) convert2Out_Single_Alg:(AIKVPointer*)curAlg_p{
+    NSMutableArray *result = [[NSMutableArray alloc] init];
+    //1. 写MC关系匹配代码;
+    //  2. MC不匹配,则转到6
+    //  3. MC匹配时,判断是否可里氏替换;
+    //      4. 可替换,success
+    //      5. 不可替换,changeM2C,判断条件为value_p还是alg_p;
+    //          6. alg_p,递归到1;
+    //          7. value_p,调用convert_Single_Value(value_p);
+    //8. 长时cHav,是否联想到;
+    //  9. 未联想到,failure
+    //  10. 联想到,判断range是否导致转移;
+    //      11. 转移,convert_Single_Alg(range),递归到1;
+    //      12. 未转移,success
+    return result;
+}
+
+/**
+ *  MARK:--------------------对单稀疏码的变化进行行为化--------------------
+ */
+-(NSArray*) convert2Out_Single_Value:(AIKVPointer*)value_p{
+    NSMutableArray *result = [[NSMutableArray alloc] init];
+    //1. 判断要做cLess还是cGreater;
+    return result;
+}
+```
 
 <br><br><br><br><br>
 
