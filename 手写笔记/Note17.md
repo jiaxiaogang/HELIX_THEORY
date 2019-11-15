@@ -805,9 +805,13 @@ a3.refPorts_Inner 指向 a4;
 /**
  *  MARK:--------------------对单稀疏码的变化进行行为化--------------------
  */
--(NSArray*) convert2Out_Single_Value:(AIKVPointer*)value_p{
+-(NSArray*) convert2Out_Single_Value:(AIKVPointer*)value_p type:(InnerType)type{
     NSMutableArray *result = [[NSMutableArray alloc] init];
-    //1. 判断要做cLess还是cGreater;
+    //1. 根据type和value_p找cLess/cGreater
+    //  2. 找不到,failure;
+    //  3. 找到,判断range是否导致条件C转移;
+    //    4. 未转移: success
+    //    5. 转移: C条件->递归到convert2Out_Single_Alg();
     return result;
 }
 ```
