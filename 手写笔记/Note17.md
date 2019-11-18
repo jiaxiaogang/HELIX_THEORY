@@ -805,7 +805,7 @@ a3.refPorts_Inner 指向 a4;
 /**
  *  MARK:--------------------对单稀疏码的变化进行行为化--------------------
  */
--(NSArray*) convert2Out_Single_Value:(AIKVPointer*)value_p type:(InnerType)type{
+-(NSArray*) convert2Out_Single_Value:(AIKVPointer*)value_p type:(AnalogyInnerType)type{
     NSMutableArray *result = [[NSMutableArray alloc] init];
     //1. 根据type和value_p找cLess/cGreater
     //  2. 找不到,failure;
@@ -816,6 +816,7 @@ a3.refPorts_Inner 指向 a4;
 }
 ```
 
+***
 <br><br><br><br><br>
 
 
