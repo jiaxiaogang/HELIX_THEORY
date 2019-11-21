@@ -782,37 +782,50 @@ a3.refPorts_Inner 指向 a4;
 
 ```objective-c
 //单概念行为化伪代码:
+
+/**
+ *  MARK:--------------------总入口fo--------------------
+ */
+-(void) convert2Out_Fo:(NSArray*)curAlg_ps{
+  //1. for循环调用convert2Out_Alg();
+}
+
 /**
  *  MARK:--------------------单个概念的行为化--------------------
  */
--(NSArray*) convert2Out_Single_Alg:(AIKVPointer*)curAlg_p{
-    NSMutableArray *result = [[NSMutableArray alloc] init];
-    //1. 写MC关系匹配代码;
-    //  2. MC不匹配,则转到6
-    //  3. MC匹配时,判断是否可里氏替换;
-    //      4. 可替换,success
-    //      5. 不可替换,changeM2C,判断条件为value_p还是alg_p;
-    //          6. alg_p,递归到1;
-    //          7. value_p,调用convert_Single_Value(value_p);
-    //8. 长时cHav,是否联想到;
-    //  9. 未联想到,failure
-    //  10. 联想到,判断range是否导致转移;
-    //      11. 转移,convert_Single_Alg(range),递归到1;
-    //      12. 未转移,success
-    return result;
+-(void) convert2Out_Alg:(AIKVPointer*)curAlg_p{
+  //1. MC之里氏匹配;
+  //  2. 匹配 -> success
+  //  3. 无匹配 -> 做同级匹配:
+  //      4. 无匹配 -> 跳到12;
+  //      5. 匹配 -> changeM2C,判断条件为value_p还是alg_p;
+  //          6. alg_p,递归到1;
+  //          7. value_p,调用convert_RelativeValue(value_p),找glAlg;
+  //            8. 未找到,跳到12;
+  //            9. 找到,调用relative_Fos(); 判断range是否导致转移;
+  //              10. 转移,递归到convert2Out_Fo(range);
+  //              11. 未转移,success
+  //12. 长时hnAlg,是否联想到;
+  //  13. 未联想到,failure
+  //  14. 联想到,调用relative_Fos(); 判断range是否导致转移;
+  //      15. 转移,递归到convert2Out_Fo(range);
+  //      16. 未转移,success
 }
 
 /**
  *  MARK:--------------------对单稀疏码的变化进行行为化--------------------
  */
--(NSArray*) convert2Out_Single_Value:(AIKVPointer*)value_p type:(AnalogyInnerType)type{
-    NSMutableArray *result = [[NSMutableArray alloc] init];
-    //1. 根据type和value_p找cLess/cGreater
-    //  2. 找不到,failure;
-    //  3. 找到,判断range是否导致条件C转移;
-    //    4. 未转移: success
-    //    5. 转移: C条件->递归到convert2Out_Single_Alg();
-    return result;
+-(void) convert2Out_RelativeValue:(AIKVPointer*)value_p type:(AnalogyInnerType)type{
+  //1. 根据type和value_p找glAlg;
+  //  2. 找不到,failure;
+  //  3. 找到,调用relative_Fos();
+}
+
+/**
+ *  MARK:--------------------末口fos--------------------
+ */
+-(void) convert2Out_RelativeFo_ps:(NSArray*)relativeFo_ps{
+  //1. for循环递归到fo总入口,有一个成功即可;
 }
 ```
 *-----代码实践分界线,此线以下笔记为行为化代码迭代后-----*
@@ -823,6 +836,8 @@ a3.refPorts_Inner 指向 a4;
 | 1. 图中C为change转移的缩写; |
 | 2. 图中绿色线为转移后流程线; |
 | 3. 图中左右两根绿色线,为递归线; |
+| 4. 补充箭头: (_value) -> (_fos) //_value的变化,也需时序来实现; |
+
 
 <br><br><br><br><br>
 
