@@ -858,7 +858,7 @@ a3.refPorts_Inner 指向 a4;
 | 目的 | 使当前的matchFo时序,能够直接达成matchMv价值; |
 | 方案1 | 根据matchMv与demandMv进行比较,如果相抵,则直接尝试达成matchFo,来解决; |
 
-`本节搁置,再回归训练,只要不影响到乌鸦训练,本版本可暂不迁移foScheme();`
+`本节搁置,先回归训练,只要不影响到乌鸦训练,本版本可暂不迁移foScheme();`
 
 
 <br><br><br><br><br>
