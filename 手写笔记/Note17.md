@@ -1043,6 +1043,11 @@ a3.refPorts_Inner 指向 a4;
 | 猜测 | 是否将TIR重构,支持内心的时序传入TIR总入口,并形成TR理性整体循环? |
 | 解析 | TR整体中,对LSPFo.TR再循环,形成类似分形的螺旋循环; |
 
+| 17205 | TR分形循环模型图 >> |
+| --- | --- |
+| 示图 | ![](assets/197_TR分形循环模型图.png) |
+
+
 | TODOTOMORROW >> |
 | --- |
 | 1. 将CheckScore_LSP()方法,写到TIR,得出shortMatchModel传回TOR; |
