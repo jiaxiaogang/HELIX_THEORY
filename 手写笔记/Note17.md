@@ -23,6 +23,7 @@
   - [n17p18 回归训练](#n17p18-%E5%9B%9E%E5%BD%92%E8%AE%AD%E7%BB%83)
   - [n17p19 TOR回归评价](#n17p19-tor%E5%9B%9E%E5%BD%92%E8%AF%84%E4%BB%B7)
   - [n17p20 TOR回归评价之反思](#n17p20-tor%E5%9B%9E%E5%BD%92%E8%AF%84%E4%BB%B7%E4%B9%8B%E5%8F%8D%E6%80%9D)
+  - [n17p21 同级MC的反思](#n17p21-%E5%90%8C%E7%BA%A7mc%E7%9A%84%E5%8F%8D%E6%80%9D)
   - [TODOLIST](#todolist)
 
 <!-- /TOC -->
@@ -1104,6 +1105,21 @@ a3.refPorts_Inner 指向 a4;
 | 示图 | ![](assets/201_反思递归checkScore代码示图.png) |
 | 图解 | 蓝色: 正向传递checkScore,反向调用checkScore; |
 | 图解 | 在_fo中,对newCheckScore和oldCheckScore进行打包; |
+
+
+<br><br><br><br><br>
+
+## n17p21 同级MC的反思
+`CreateTime 2019.12.13`
+
+> 上节中,重点解决了LSPMC的反思评价,但对于同级的反思却支持的并不好,本节中,重点对同级MC进行迭代,并支持其反思评价;
+
+| 17211 | 论断与分析 |
+| --- | --- |
+| 论断1 | 长时网络的change转移,可能不需要评价; |
+| 论断2 | 并非所有的同级MC变化,都需要修正,如鸡蛋有双黄,但并不影响我们食用;但反例是,苹果有点脏,我们就要洗一下再吃; |
+| 论断2分析 | 经分析,无论是鸡蛋,还是苹果,都以抽象作为是否修正的反思与评价,而不是具象中的细节对比; |
+| 论断2代码 | 对比M和C的absPorts,并对M.absPorts进行反思评价; |
 
 
 <br><br><br><br><br>
