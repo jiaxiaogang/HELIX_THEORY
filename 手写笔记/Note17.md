@@ -1140,6 +1140,7 @@ a3.refPorts_Inner 指向 a4;
 | --- | --- |
 | 示图 | ![](assets/203_LSPMC多反思模型.png) |
 | 代码 | 把mAlg的特化抽象节点,分别作为matchAlg进行反思回调,如`脏`,`毒` |
+| 实例 | ![](assets/204_MC反思实例.png) |
 
 
 <br><br><br><br><br>
