@@ -1155,7 +1155,15 @@ a3.refPorts_Inner 指向 a4;
 | 分析 | 依次进行 |
 | 结论1 | 猜想: 以特征相似度做为MC匹配判断; (m的特征包含c的特征xx%) |
 | 结论2 | 确定: 以mAlg.absPorts用作评价; |
-| 问题 | 在matchAlg识别生成时,并没有将assAlg的absPorts继过来,导致mAlg.absPorts实际是空的; |
+
+一: 问题:在matchAlg构建时,未继承assAlg.absPorts,导致mAlg.absPorts是空的;
+  1. 分析: 根据想什么构建什么的原则,matchAlg.absPorts本来就应该是空的;
+  2. 答案: 所以,要将matchAlg改为当时匹配的即有absAlgNode,而非新构建;
+
+二: 特征相似度做为MC匹配
+  1. 算法: 可参考复用TIR.matchAlg()的代码,进行相似度计算;
+  2. 修正: 对异同特征的`修正` (距离变近问题);
+  3. 评价: 对mAlg特化抽象的`评价` (脏苹果洗净问题);
 
 | TODO | DESC | STATUS |
 | --- | --- | --- |
