@@ -1159,9 +1159,9 @@ a3.refPorts_Inner 指向 a4;
 **一: 问题:在matchAlg构建时,未继承assAlg.absPorts,导致mAlg.absPorts是空的;**
   1. **分析:** 根据想什么构建什么的原则,matchAlg.absPorts本来就应该是空的;
   2. **答案:** 所以,要将matchAlg改为当时匹配的即有absAlgNode,而非新构建;
-  3. **示图:** ![](assets/205_TIRALG1912新模型.png)
+  3. **TIRALG新模型:** ![](assets/205_TIRALG1912新模型.png)
   4. **示例:** 我们初见四不像,也很难说它是什么(似而非),但可以说它是动物(全含);
-  <center><img src="assets/206_插图四不像.png" width="200" /><br/>四不像</center>
+  <div align=center><img width="200" src="assets/206_插图四不像.png"/><br/>四不像</div>
   5. **总结:** 加入`全含`/`非全含`后,TIRALG更加准确,理性,实用性强;
 
 **二: MC匹配通用模型**
@@ -1176,8 +1176,10 @@ a3.refPorts_Inner 指向 a4;
 
 | TODO | DESC | STATUS |
 | --- | --- | --- |
-| 1 | 找证据证明17214中,以特征相似度做MC匹配判断的猜想; |  |
-| 2 | 解决matchAlg.absPorts为空的问题; |  |
+| 1 | 找证据证明17214中,以特征相似度做MC匹配判断的猜想; | 转为类比全含和非全含方式 |
+| 2 | 解决matchAlg.absPorts为空的问题; | 已解决 |
+| 3 | 写TIRALG新模型代码 |  |
+| 4 | 写TOR_MC通用模型代码 |  |
 
 
 <br><br><br><br><br>
