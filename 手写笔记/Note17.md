@@ -1156,15 +1156,16 @@ a3.refPorts_Inner 指向 a4;
 | 结论1 | 猜想: 以特征相似度做为MC匹配判断; (m的特征包含c的特征xx%) |
 | 结论2 | 确定: 以mAlg.absPorts用作评价; |
 
-**一: 问题:在matchAlg构建时,未继承assAlg.absPorts,导致mAlg.absPorts是空的;**
+**一: 问题:在matchAlg构建时,未继承assAlg.absPorts,导致mAlg.absPorts是空的; 17215**
   1. **分析:** 根据想什么构建什么的原则,matchAlg.absPorts本来就应该是空的;
   2. **答案:** 所以,要将matchAlg改为当时匹配的即有absAlgNode,而非新构建;
   3. **TIRALG新模型:** ![](assets/205_TIRALG1912新模型.png)
   4. **示例:** 我们初见四不像,也很难说它是什么(似而非),但可以说它是动物(全含);
   <div align=center><img width="200" src="assets/206_插图四不像.png"/><br/>四不像</div>
   5. **总结:** 加入`全含`/`非全含`后,TIRALG更加准确,理性,实用性强;
+  6. **举例:** 一陌生动物,看起来最似狮子,应识别为全含的"动物"/"猫科动物",而非狮子;
 
-**二: MC匹配通用模型**
+**二: MC匹配通用模型 17216**
   1. **算法:** 可参考复用TIR.matchAlg()的代码,进行特征相似度计算 (废弃);
   2. **修正:** 对异同特征的`修正` (距离变近问题);
   3. **评价:** 对mAlg特化抽象的`评价` (脏苹果洗净问题);
