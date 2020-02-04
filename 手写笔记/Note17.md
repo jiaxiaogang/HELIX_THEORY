@@ -1069,7 +1069,7 @@ a3.refPorts_Inner 指向 a4;
 | 2 | 循环1: 传入_alg(吃),isOut=true,返回success |
 | 3 | 循环2: 传入_alg(火),根据MC判定有火,返回success |
 | 4 | 循环3: 传入_alg(蘑菇),毒蘑菇是蘑菇(mIsC),组成LSPFo[吃,火烧,毒蘑菇] |
-| 5 | 反思到TIR,得到预测matchFo[吃,毒]->(死mv-) |
+| 5 | 反思到TIR,得到预测matchFo[吃,毒]->{死mv-} |
 | 6 | 根据CheckScore_LSPRethink,评价不可行,并返回failure |
 
 | 17208 | 跨循环层导致反思未见效问题 => 递归反思 |
@@ -1083,7 +1083,7 @@ a3.refPorts_Inner 指向 a4;
 | 5 | 传入_fo(rangeFo[火,生蘑菇]),循环两次判定_alg; |
 | 6 | 循环1: 传入_alg(火),mc判定mIsC,返回success |
 | 7 | 循环2: 传入_alg(生蘑菇),生毒蘑菇是生蘑菇(mIsC),组成LSPFo[火,生毒蘑菇] |
-| 8 | 反思到TIR,得到预测matchFo[烧,毒蘑菇]->(mv平) |
+| 8 | 反思到TIR,得到预测matchFo[烧,毒蘑菇]->{mv平} |
 | 9 | 根据CheckScore_LSPRethink,评价可行,并返回success |
 | 注 | 以上例子,表明在跨层时,反思无法100%见效;跨越多轮循环,反思越难见效; |
 | 解决方案1 | 尝试跨层重组LSPFo(线性累加fo,或嵌套fo),如[吃,[生毒蘑菇,火,熟毒蘑菇]] `20%` |
