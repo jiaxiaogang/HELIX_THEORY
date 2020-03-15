@@ -437,6 +437,11 @@
 |  | ![](assets/226_Alg.content为空BUG调试A.png) |  |
 |  | 分析: 在从XGRedis取值,最开始为5,突然变成0,待调试日志继续断点查明; |  |
 | 20200310 | 查下为什么那么多远投坚果,最终 (Height5).refPorts才3个; |  |
+| 20200315 | 非全含导致的识别alg失败 | T |
+|  | 原因: 因每次都在同一位置,导致抽象坚果,只在一个位置被抽象,远投更换了位置,自然无法全含; |  |
+|  | 解决: 点摸翅膀,再直投,重复几次,即可; |  |
+|  | 疑问: 重启下app后,好像远投,还是无法识别; |  |
+| 20200315 | `Terminating app due to uncaught exception ‘NSGenericException’, reason: ‘*** Collection <__NSArrayM: 0xb550c30> was mutated while being enumerated` 将异步存heLog去掉,暂未再闪; | T |
 
 
 <br><br><br><br><br>
