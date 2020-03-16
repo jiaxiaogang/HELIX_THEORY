@@ -766,7 +766,7 @@
 | 2 | **直投** |
 |  | 生成conAlg(g255,size5,pos38,dis0) |
 |  | =>抽象出absAlg(g255,size5,pos38,dis0) |
-| 3 | **移动,并直投** |
+| 3 | **重启,移动,并直投** |
 |  | 生成conAlg(g255,size5,pos27,dis0) |
 |  | =>抽象出absAlg(g255,size5,dis0) |
 | 4 | **远投** |
