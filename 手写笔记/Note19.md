@@ -99,12 +99,25 @@
 //19032 伪代码;
 +(void) analogy_Feedback_Diff:(AIFoNodeBase*)mFo p:(AIFoNodeBase*)pFo{
     if(不符合预测){ //指mMv和pMv同类型不同向 (一正一负);
-        //1. 第1级: 类比fo.content_ps;
-        //2. 第2级: 类比alg.content_ps;
+        /** 第1级: 类比fo.content_ps;
+          *  M:[abcd]->{mv+}
+          *  P:[a3bcxyz]->{mv-}
+          *  ms:[d]->{mv-/4}; (价值影响权重=ms数/M数);
+          *  ps:[3xyz]->{mv-*4/7}; (价值影响权重=ps数/P数);
+          */
+
+        /** 第2级: 类比alg.content_ps;
+          * M:[(w1),(d5,h6)]->{mv+};
+          * P:[a,(w1,b2),(d5,h3)]->{mv-};
+          * ms:[(h6)]->{mv-/2};
+          * ps:[a,(b2),(h3)]->{mv-*3/3}
+          */
+
         //3. 构建: 概念,时序和MV;
     }
 }
 ```
+***
 
 | 19033 | TODO | STATUS |
 | --- | --- | --- |
