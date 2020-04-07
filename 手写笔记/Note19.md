@@ -5,7 +5,7 @@
 - [测试 & 细节改动 & 训练](#%E6%B5%8B%E8%AF%95--%E7%BB%86%E8%8A%82%E6%94%B9%E5%8A%A8--%E8%AE%AD%E7%BB%83)
   - [n19p1 精细化训练2](#n19p1-%E7%B2%BE%E7%BB%86%E5%8C%96%E8%AE%AD%E7%BB%832)
   - [n19p2 TIR_Alg_FromRT算法迭代](#n19p2-tir_alg_fromrt%E7%AE%97%E6%B3%95%E8%BF%AD%E4%BB%A3)
-  - [n19p3 预测不符引发: 反馈类比](#n19p3-%E9%A2%84%E6%B5%8B%E4%B8%8D%E7%AC%A6%E5%BC%95%E5%8F%91-%E5%8F%8D%E9%A6%88%E7%B1%BB%E6%AF%94)
+  - [n19p3 反向反馈类比](#n19p3-%E5%8F%8D%E5%90%91%E5%8F%8D%E9%A6%88%E7%B1%BB%E6%AF%94)
 
 <!-- /TOC -->
 
@@ -73,18 +73,20 @@
 | --- | --- |
 | 认知与反馈示图 | ![](assets/243_认知与反馈示图.png) |
 | 说明 | 绿色: 根据MModel识别与预测,进行反馈认知; |
-
-| 19025 | 向性
-| --- |
+| 说明2 | 反馈imv与预测mModel.mv,根据同反向,产生同向和反向两种反馈类比; |
+| 说明3 | 因同向反馈类比与现有的analogy_Outside()类似,故现在我们只写Feedback_Diff(); `转至n19p3` |
 
 <br><br><br><br>
 
-### n19p3 预测不符引发: 反馈类比
+### n19p3 反向反馈类比
 `CreateTime 2020.04.06`
 
-**简介:** 在TIP时,假如imv与mModel的预测不符,会触发类比,以快速获取非常确切的抽象常识;本节从此出发,设计此类比算法;  
-> 简写说明:
-> 1. MP (Match&Proto) `M指识别预测的,P指原始输入的`
+**1. 简介:**   
+　　在TIP时,假如反馈的imv与mModel的预测不符,会触发反向类比,以快速获取非常确切的抽象常识;本节从此出发,设计此类比算法;  
+
+**2. 曾用名:**
+1. 占位规律,参考:n13p15;
+2. 找不同,参考:n15p15, n15p17;
 
 | 19031 | 不相符的原因,归咎于两种: |
 | --- | --- |
@@ -95,7 +97,7 @@
 
 ```objective-c
 //19032 伪代码;
-+(void) analogy_MP:(AIFoNodeBase*)mFo p:(AIFoNodeBase*)pFo{
++(void) analogy_Feedback_Diff:(AIFoNodeBase*)mFo p:(AIFoNodeBase*)pFo{
     if(不符合预测){ //指mMv和pMv同类型不同向 (一正一负);
         //1. 第1级: 类比fo.content_ps;
         //2. 第2级: 类比alg.content_ps;
@@ -107,6 +109,6 @@
 | 19033 | TODO | STATUS |
 | --- | --- | --- |
 | 1 | 瞬时记忆中放match而不是proto; |  |
-| 2 | 为MP算法的结果,制定新的时序类型 (同时新类型的refPorts); | 暂不做 |
+| 2 | 为Feedback算法的结果,制定新的时序类型 (同时新类型的refPorts) (可考虑先由ds/at来做类型,不改refPorts,取指定类型的refPorts时可由指针标识进行类型筛选); |  |
 
 <br>
