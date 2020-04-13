@@ -237,13 +237,13 @@
 | 1 | TIR_Alg取相似seemAlg功能; |
 | 2 | TIR_Fo取相似seemFo功能; |
 | 3 | 当SeemFo.mv预测价值与TIP真实发生相符时,进行外类比, |
-| 伪代码 | `见19063` |
 
 | 19062 | 使用范围说明 |
 | --- | --- |
-| 综述 | 本文算法,可仅供全含失败时,用于正向反馈类比,全含成功时,还是以原有matchAF进行正反反馈类比; |
 | 1 | 本文中SeemAlg&SeemFo仅供正向反馈类比使用; |
 | 2 | 本文前MatckAlg&MatchFo继续供TIP(正向反馈类比)和TOR(MC)使用; |
+| 优先级 | 概念匹配的优先级排序为:fuzzyAlg > matchAlg > seemAlg; |
+| 综述 | seemFo取每桢最优先概念进行构建,并用于正向反馈类比; |
 
 ```c
 //19063 概念识别算法(相似版)伪代码;
@@ -261,3 +261,7 @@ TIR_Fo_改动(){
 ```
 
 <br>
+
+| TODOLIST |  |
+| --- | --- |
+| 20200414 | 将ShortMemory与ShortMatchManager合并; |
