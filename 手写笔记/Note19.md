@@ -420,7 +420,9 @@ TIR_Fo_改动(protoFo){
 | --- | --- |
 | 1. 支持用dataSource做当analogyType用; | T |
 | 2. 内类比构建器中,用"有无大小"的值,来做dataSource; | T |
-| 3. 反向类比支持"cPlus和cSub"的值,来做dataSource; |  |
+| 3. 反向类比支持"cPlus和cSub"的值,来做dataSource; | T |
+| 4. 在AINetUtils中,支持根据type取不同的抽象pors; | T |
+| 5. 在MC_Value中,不对所有稀疏码进行遍历处理,而是只对absPorts中,影响了价值正负的部分进行处理; |  |
 
 
 <br><br><br><br>
