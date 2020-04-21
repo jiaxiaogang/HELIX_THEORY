@@ -495,6 +495,71 @@ TIR_Fo_改动(protoFo){
 | 满足C | C匹配上就加工M,匹配不上就转移C,转移失败就整体行为化失败; |
 | 修正M | 完全是为了C,所以是否行为化稀疏码,行为化哪些稀疏码,都以C为基准; |
 
+```java
+//19106伪代码完整版
+
+void alg_cHav(AlgNode c){
+  //对概念找cHav;
+  c = c.findCHav()
+  if (c != null) {
+    this.mc_v3(c,m);
+  }else{
+    //整体行为化失败;
+    failure();
+  }
+}
+
+void mc_v3(AlgNode C,AlgNode M){
+    //1. 判断有效性
+    if(mIsC){
+        //2.1 C的mv+处理;
+        Array cPlus = C.absPlus;
+
+        //2.2 到CFo中,判断是否也包含此mv+,包含才有效;
+        Array cFoPlus = cFo.absPlus;
+        if (cFoPlus.contains(cPlus.item)) {
+            //2.3 再到M中判断,是否不包含此mv+ (M缺失同区不同值的mv+) ,不包含才需满足;
+            Array mPlus = M.absPlus;
+            if (!mPlus.contains(cPlus.item)) {
+                //2.4 对C此值进行满足 (如C中含距0,而M中为距50);
+                if (M.item.identifier == cPlus.item.identifier) {
+                    this.mc_Value(M.item.value,cPlus.item.value);
+                }else{
+                    //2.5 匹配不上,转移 (M中无与C同区不同值,无法加工成功);
+                    this.alg_cHav(C);
+                }
+            }else{
+                //2.6 无需处理;
+                success();
+            }
+        }else{
+          //2.7 无需处理
+          success();
+        }
+
+        //3.1 取M的不同区mv- (排除掉刚已处理过的);
+        Array mSubs = M.absSub - alreadyMSub;
+
+        //3.2 对M的mv-做有效性判断: 从CFo的具象两层中,找同区不同值的mv-,(比如找到CFo具象中,吃热食物,M中为冷食物,吃了肚子疼,行为化加热);
+        Array cFoPlus2Layer = cFo.absPlus + cFo.conPorts.absPlus;
+        Array validM2CDic = (mSubs.identifier & cFoPlus2Layer.identifier);
+
+        //3.3 逐一对M做修正;
+        for(id item in validM2CDic){
+            this.mc_Value(item.cValue,item.mValue);
+        }
+    }else{
+        //4. m不是c,直接转移;
+        this.alg_cHav(C);
+    }
+}
+
+void mc_Value(Value cValue,Value mValue){
+  //对稀疏码value进行行为化;
+}
+
+```
+
 <br><br><br><br>
 
 ### n19p11 双向任务在TO的不同处理;
