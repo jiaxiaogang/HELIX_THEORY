@@ -512,39 +512,39 @@ void alg_cHav(AlgNode c){
 void mc_v3(AlgNode C,AlgNode M){
     //1. 判断有效性
     if(mIsC){
-        //2.1 C的mv+处理;
+        //2. C的mv+处理;
         Array cPlus = C.absPlus;
 
-        //2.2 到CFo中,判断是否也包含此mv+,包含才有效;
+        //2.1 有效性判断1: 到CFo中,判断是否也包含此mv+,包含才有效 (C甜,也正是要吃甜的);
         Array cFoPlus = cFo.absPlus;
         if (cFoPlus.contains(cPlus.item)) {
-            //2.3 再到M中判断,是否不包含此mv+ (M缺失同区不同值的mv+) ,不包含才需满足;
+            //2.2 有效性判断2: 再判断M是否包含此mv+,不包含才需满足 (C甜,M不能甜);
             Array mPlus = M.absPlus;
             if (!mPlus.contains(cPlus.item)) {
-                //2.4 对C此值进行满足 (如C中含距0,而M中为距50);
+                //2.3 有效性判断3: 再到M中找同区不同值,对C稀疏码进行满足 (如C中含距0,而M中为距50);
                 if (M.item.identifier == cPlus.item.identifier) {
                     this.mc_Value(M.item.value,cPlus.item.value);
                 }else{
-                    //2.5 匹配不上,转移 (M中无与C同区不同值,无法加工成功);
+                    //2.3B 匹配不上,转移;
                     this.alg_cHav(C);
                 }
             }else{
-                //2.6 无需处理;
+                //2.2B 无需处理;
                 success();
             }
         }else{
-          //2.7 无需处理
+          //2.1B 无需处理
           success();
         }
 
-        //3.1 取M的不同区mv- (排除掉刚已处理过的);
+        //3. M的mv-处理 (排除掉刚已处理过的);
         Array mSubs = M.absSub - alreadyMSub;
 
-        //3.2 对M的mv-做有效性判断: 从CFo的具象两层中,找同区不同值的mv-,(比如找到CFo具象中,吃热食物,M中为冷食物,吃了肚子疼,行为化加热);
+        //3.1 有效性判断: 从CFo的具象两层中,到mv+中找同区不同值的稀疏码映射,(比如CFo或其具象中,吃热食物mv+,而M冷吃了还肚子疼mv-,则需修正);
         Array cFoPlus2Layer = cFo.absPlus + cFo.conPorts.absPlus;
         Array validM2CDic = (mSubs.identifier & cFoPlus2Layer.identifier);
 
-        //3.3 逐一对M做修正;
+        //3.2 逐一对M做修正 (如:行为化加热);
         for(id item in validM2CDic){
             this.mc_Value(item.cValue,item.mValue);
         }
