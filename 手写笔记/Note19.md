@@ -560,6 +560,11 @@ void mc_Value(Value cValue,Value mValue){
 
 ```
 
+| 19107_MC_V3模型图 |
+| --- |
+| ![](assets/250_MC_V3模型图.png) |
+| 如图可见,修正M路径,与满足C路径,二者同代码结构,所以可复用一份代码; |
+
 <br><br><br><br>
 
 ### n19p11 双向任务在TO的不同处理;
