@@ -17,6 +17,7 @@
   - [n19p12 回归测训4](#n19p12-%E5%9B%9E%E5%BD%92%E6%B5%8B%E8%AE%AD4)
   - [n19p13 关联强度整理](#n19p13-%E5%85%B3%E8%81%94%E5%BC%BA%E5%BA%A6%E6%95%B4%E7%90%86)
   - [n19p14 决策-SP协作](#n19p14-%E5%86%B3%E7%AD%96-sp%E5%8D%8F%E4%BD%9C)
+  - [n19p15 双向任务——决策对mModel全面支持2](#n19p15-%E5%8F%8C%E5%90%91%E4%BB%BB%E5%8A%A1%E5%86%B3%E7%AD%96%E5%AF%B9mmodel%E5%85%A8%E9%9D%A2%E6%94%AF%E6%8C%812)
 
 <!-- /TOC -->
 
@@ -611,8 +612,8 @@ void mc_Value(Value cValue,Value mValue){
 | 12114 | 决策模式转换 |
 | --- | --- |
 | 右负转左正 | mModel为右负时,根据matchFo找兄弟cSFo,即左正 (修正M); |
-| 左正转右负 | TOP.mcScheme触发,根据cFo找兄弟cPFo,即右负 (两者与M对比满足C); |
-| 左正取右正 | TOP.mcScheme优先取用mModel.matcoFo.mv+; |
+| 左正转右负 | TOP.mcScheme触发,优先取用右正cPFo(mModel.matchFo优先)`与3同理`,其次根据cFo找兄弟cSFo,即右负 (两者与M对比满足C); |
+| 左正取右正 | TOP.mcScheme优先取用mModel.matcoFo.mv+ `注:此条与2同理`; |
 
 | TODO | STATUS |
 | --- | --- |
@@ -730,6 +731,35 @@ void mc_Value(Value cValue,Value mValue){
 |  | a. 左正则用C取兄弟cSFo,优先用C与M对比,次用cSFo对M对比,满足即可; |
 |  | b. 右负则用M取兄弟cPFo,只要能够修正M实现cPFo,就可以; |
 
+| TODO | STATUS |
+| --- | --- |
+| 1. 对cPFo和cSFo兄弟节点进行互指向; |  |
+
+<br><br><br><br>
+
+### n19p15 双向任务——决策对mModel全面支持2
+`CreateTime 2020.04.29`
+
+续n19p11
+
+| 19151 | 代码规划-双索引协作 |
+| --- | --- |
+| **左正** | A:TOP.mcScheme()先方向索引,后fo向具象时又以mModel为指引; |
+|  | *>实例: 什么有安全感?在家时,想到家带来安全感,在玩想到朋友带来安全感;* |
+|  | B:如果mModel指引没结果,则以左正fo找兄弟右负cSFo; |
+|  | *>实例: 如想不到什么有安全感?则想什么不安全?风雨?由此房子有安全感;* |
+| 示图 | ![](assets/252_TOP双索引示图.png) |
+| **右负** | C:mModel右负,根据matchFo找兄弟左正cPFo; |
+|  | *>实例:有人砍我?兄弟节点反杀即可;* |
+|  | D:如果找不到cPFo,则根据matchFo.abs层,再尝试; |
+|  | *>实例:反杀不了?向抽象想到有人对我造成威胁,找警察或者逃回家;* |
+| **右正** | E:mModel右正,无需求,等左正时,取用mModel.matchFo指引,与A重复; |
+|  | *>实例:手有坚果,但不饿,饿时?直接取matchFo吃掉即可;* |
+
+| TODO | STATUS |
+| --- | --- |
+| 1. 在mModel中,添加mAlgIndex属性值; |  |
+| 2. 思考下左正的MCV3算法规则改动; |  |
 
 <br><br><br><br>
 
