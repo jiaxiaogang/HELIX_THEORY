@@ -17,7 +17,6 @@
   - [n19p12 回归测训4](#n19p12-%E5%9B%9E%E5%BD%92%E6%B5%8B%E8%AE%AD4)
   - [n19p13 关联强度整理](#n19p13-%E5%85%B3%E8%81%94%E5%BC%BA%E5%BA%A6%E6%95%B4%E7%90%86)
   - [n19p14 决策-SP协作](#n19p14-%E5%86%B3%E7%AD%96-sp%E5%8D%8F%E4%BD%9C)
-  - [n19p15 决策全面使用mModel](#n19p15-%E5%86%B3%E7%AD%96%E5%85%A8%E9%9D%A2%E4%BD%BF%E7%94%A8mmodel)
 
 <!-- /TOC -->
 
@@ -730,12 +729,6 @@ void mc_Value(Value cValue,Value mValue){
 | 2 | MC算法的M和C要提前取自兄弟fo节点; |
 |  | a. 左正则用C取兄弟cSFo,优先用C与M对比,次用cSFo对M对比,满足即可; |
 |  | b. 右负则用M取兄弟cPFo,只要能够修正M实现cPFo,就可以; |
-
-
-<br><br><br><br>
-
-### n19p15 决策全面使用mModel
-`CreateTime 2020.04.28`
 
 
 <br><br><br><br>
