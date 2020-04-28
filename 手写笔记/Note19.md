@@ -733,7 +733,7 @@ void mc_Value(Value cValue,Value mValue){
 
 | TODO | STATUS |
 | --- | --- |
-| 1. 对cPFo和cSFo兄弟节点进行互指向; |  |
+| 1. 对cPFo和cSFo兄弟节点进行互指向; | T |
 
 <br><br><br><br>
 
@@ -755,6 +755,13 @@ void mc_Value(Value cValue,Value mValue){
 |  | *>实例:反杀不了?向抽象想到有人对我造成威胁,找警察或者逃回家;* |
 | **右正** | E:mModel右正,无需求,等左正时,取用mModel.matchFo指引,与A重复; |
 |  | *>实例:手有坚果,但不饿,饿时?直接取matchFo吃掉即可;* |
+| **总结** | 1. 右负,也要放到demand池去竞争,最终决策时,还是TOP转成左正; |
+|  | 2. 右正,先在mModelManager中,也是待TOP决策时,转成左正; |
+|  | 3. 所以以上,都是围绕左正的,全都是mModelManager对左正的指引罢了; |
+| **综合** | 进行综合代码规划,将以上几种综合成mModelManager+左正; |
+|  | 1. mModel存`右负->找兄弟节点解决,或者向抽象再找兄弟解决;` |
+|  | 2. mModel存`右正->自身顺着解决,` |
+|  | 3. TOP`左正->向具象,以mModel指引`,根据mModel.matchFo找右正/负,找不到时,则根据matchAlg; |
 
 | TODO | STATUS |
 | --- | --- |
