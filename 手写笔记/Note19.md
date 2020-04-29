@@ -577,6 +577,9 @@ void mc_Value(Value cValue,Value mValue){
 
 　　在以往mModel在决策中仅支持MC，其中只是对mModel.matchAlg的支持，而对mModel.matchFo和价值预测都未支持，本节针对决策中对mModel的全面使用，做思考与设计变动。
 
+**名词:**
+1. 兄弟节点: 在反向反馈类比构建器中,构建的P和S一对节点,称为兄弟节点;
+
 | 19111 | 双向任务 |
 | --- | --- |
 | 1. 左向任务 | **从内而外,比如饿了,想吃食物;** |
@@ -740,7 +743,10 @@ void mc_Value(Value cValue,Value mValue){
 ### n19p15 双向任务——决策对mModel全面支持2
 `CreateTime 2020.04.29`
 
-续n19p11
+续n19p11 简写说明:
+1. SMF+: 表示Same同区MatchFo正价值影响 (即右正);
+2. DMA-: 表示Diff不同区MatchAlg负价值索引联想 (即左负)
+  - 注:左负是为了由此找到兄弟左正;
 
 | 19151 | 代码规划-双索引协作 |
 | --- | --- |
@@ -761,7 +767,17 @@ void mc_Value(Value cValue,Value mValue){
 | **综合** | 进行综合代码规划,将以上几种综合成mModelManager+左正; |
 |  | 1. mModel存`右负->找兄弟节点解决,或者向抽象再找兄弟解决;` |
 |  | 2. mModel存`右正->自身顺着解决,` |
-|  | 3. TOP`左正->向具象,以mModel指引`,根据mModel.matchFo找右正/负,找不到时,则根据matchAlg; |
+|  | 3. TOP`左正->向具象,以mModel指引`,根据mModel.matchFo找右正/负,找不到时,则根据matchAlg `转至下表19152`; |
+
+| 19152 | TOP->4种mModel应用方式->TOR (汇于左正) |
+| --- | --- |
+| 简介 | 按照matchFo与demand是否同区,分两种,再按正与负分两种,共2x2=4种; |
+| SMF+ | 同区预测正,将matchFo+作为CFo行为化; |
+| SMF- | 同区预测负,将matchFo-的兄弟节点作为CFo行为化; |
+| DMA+ | 非同区无预测,mv方向索引找正价值解决方案; |
+|  | ![](assets/253_DMA正示图.png) |
+| DMA- | 非同区无预测,mv方向索引找负价值的兄弟节点解决方案; |
+|  | ![](assets/254_DMA负示图.png) |
 
 | TODO | STATUS |
 | --- | --- |
