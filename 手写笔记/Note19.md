@@ -744,8 +744,8 @@ void mc_Value(Value cValue,Value mValue){
 `CreateTime 2020.04.29`
 
 续n19p11 简写说明:
-1. SMF+: 表示Same同区MatchFo正价值影响 (即右正);
-2. DMA-: 表示Diff不同区MatchAlg负价值索引联想 (即左负)
+1. S+: 表示Same同区MatchFo正价值影响 (即右正);
+2. D-: 表示Diff不同区MatchAlg负价值索引联想 (即左负)
   - 注:左负是为了由此找到兄弟左正;
 
 | 19151 | 代码规划-双索引协作 |
@@ -769,14 +769,21 @@ void mc_Value(Value cValue,Value mValue){
 |  | 2. mModel存`右正->自身顺着解决,` |
 |  | 3. TOP`左正->向具象,以mModel指引`,根据mModel.matchFo找右正/负,找不到时,则根据matchAlg `转至下表19152`; |
 
-| 19152 | TOP->4种mModel应用方式->TOR (汇于左正) |
+| 19152 | 应用mModel后,TOP四种工作模式 |
 | --- | --- |
-| 简介 | 按照matchFo与demand是否同区,分两种,再按正与负分两种,共2x2=4种; |
-| SMF+ | 同区预测正,将matchFo+作为CFo行为化; |
-| SMF- | 同区预测负,将matchFo-的兄弟节点作为CFo行为化; |
-| DMA+ | 非同区无预测,mv方向索引找正价值解决方案; |
+| 简介1 | 按照matchFo与demand是否同区,分两种,再按正与负分两种,共2x2=4种; |
+| 简介2 | 一切提交给TOR,且汇于左正; |
+| S+ | **同区预测正,将matchFo+作为CFo行为化;** |
+| S- | **同区预测负,将matchFo-的兄弟节点作为CFo行为化;** |
+|  | 难点: 对cutIndex进行处理,cutIndex是描述matchFo的截点的,如何用来定位兄弟节点中的cutIndex? |
+|  | 举例: 已发生的无法修正 (比如车很近,我已来不及躲避,只好行为化为"做好撞击准备",或者将车击退); |
+|  | 分析: 很近来不及躲是时序识别预测的事,与cutIndex无关;车有多近,采用何行为是matchFo对应的兄弟节点给出行为化的事,与cutIndex亦无关,而是与SubNode和PlusNode相关,因为无非是解决行车与智能体间的距离与方向问题; |
+|  | 解决: a. 即使已撞上的车,也可以触发躲避,闪开; |
+|  | b. 对sub和plus的修正,无需cutIndex; |
+|  | c. 所以先不处理cutIndex,而是以指定subNode和plusNode来替代; |
+| D+ | **非同区无预测,mv方向索引找正价值解决方案;** |
 |  | ![](assets/253_DMA正示图.png) |
-| DMA- | 非同区无预测,mv方向索引找负价值的兄弟节点解决方案; |
+| D- | **非同区无预测,mv方向索引找负价值的兄弟节点解决方案;** |
 |  | ![](assets/254_DMA负示图.png) |
 
 | TODO | STATUS |
