@@ -800,7 +800,9 @@ void mc_Value(Value cValue,Value mValue){
 
 　　在n19015中，TOP应用mModel后，有了四种工作模式，分别为：P+、P-、R+、R-。而TOP最终是要提交给TOR做行为化的，本文将应对此变化，对TOR进行迭代。
 
-**19161. 参数说明**
+**19161_TOR四模式的参数**
+1. 所有`R`都会有cutIndex (即是理性的,则有已发生的部分);
+2. 所有`负`都有SP (即是负的,则指定了正的方向);
 
 | 模式 | cutIndex | cFo | S | P |
 | --- | --- | --- | --- | --- |
@@ -809,7 +811,7 @@ void mc_Value(Value cValue,Value mValue){
 | P+ |  | √ |  |  |
 | P- |  | √ | √ | √ |
 
-**19162. TOR做什么?**
+**19162_TOR四模式分析**
 
 | 模式 | 类别 | 感性 | 实例 | TOR做什么? | 代码 |
 | --- | --- | --- | --- | --- | --- |
@@ -818,7 +820,7 @@ void mc_Value(Value cValue,Value mValue){
 | P+ | 感正 | 盼->喜 | 饿做饭,困睡觉 | 期盼好事->行为实现 | fo全部mc |
 | P- | 感负 | 忧->悲 | 疼揉揉,累歇歇 | 担忧坏事->行为避免 | sp |
 
-**19163. 代码规划**
+**19163_代码初步规划**
 
 | 模式 | 代码规划 |
 | --- | --- |
@@ -826,6 +828,13 @@ void mc_Value(Value cValue,Value mValue){
 | R- | 对cutIndex之后的plusNode中部分进行实现,比如躲开车; |
 | P+ | 对cFo所有alg,进行逐一行为化 (即TOR一直在跑的左正模式); |
 | P- | 对plusNode中部分进行实现,比如疫情不出门了; |
+
+**19164_TOR.R+模式模型**
+
+| 示图 | ![](assets/255_TOR的R+模型.png) |
+| --- | --- |
+| 解读 | 仅对下一元素进行isOut判断,true则输出,false则等待; |
+| 缓存 | 对outModel的保留先不做,靠mModel短时来试下能否支撑下来,不行再做; |
 
 <br><br><br><br>
 
