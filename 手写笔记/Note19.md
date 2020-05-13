@@ -848,6 +848,14 @@ void mc_Value(Value cValue,Value mValue){
 |  | 如: 上帧为躲开车,下帧可能就直接预测mv+了,顺势开心起来即可; |
 |  | 如: 上帧为躲开车,下帧因车位置变化,转向另一个R-,可能面向另一个方向躲; |
 
+**19166_TOR.P+模式模型**
+
+| 示图 | ![](assets/257_TOR的P+模型.png) |
+| --- | --- |
+| 缓存 | 使用outModel结构化缓存,做简单的计划能力; |
+|  | 比如做饭的主线计划,含支线买菜,洗菜等; |
+| cutIndex | 用outModel来提取cutIndex,即任务做到什么进度了; |
+
 <br><br><br><br>
 
 | TODOLIST |  |
