@@ -835,14 +835,14 @@ void mc_Value(Value cValue,Value mValue){
 
 | 示图 | ![](assets/255_TOR的R+模型.png) |
 | --- | --- |
-| 解读 | 仅对下一元素进行isOut判断,true则输出,false则等待; |
+| 说明 | 对matchFo下一元素进行isOut判断,true则输出,false则等待; |
 | 缓存 | 对outModel的保留先不做,靠mModel短时来试下能否支撑下来,不行再做; |
 
 **19165_TOR.R-模式模型**
 
 | 示图 | ![](assets/256_TOR的R-模型.png) |
 | --- | --- |
-| 解读 | 仅对下一元素进行先isSP,后isOut判断; |
+| 说明 | 对matchFo下一元素进行先isSP,后isOut判断; |
 | 缓存 | 对outModel的保留先不做,因为下轮循环,再一次重新决策即可; |
 | 循环 | 下轮循环,会重新决策,其可能指向另外一个R+或R-; |
 |  | 如: 上帧为躲开车,下帧可能就直接预测mv+了,顺势开心起来即可; |
@@ -852,9 +852,19 @@ void mc_Value(Value cValue,Value mValue){
 
 | 示图 | ![](assets/257_TOR的P+模型.png) |
 | --- | --- |
-| 缓存 | 使用outModel结构化缓存,做简单的计划能力; |
+| 说明 | 对matchFo首个元素进行cHav行为化; |
+| 缓存 | 使用outModel结构化缓存,做简单的计划能力; (废弃) |
 |  | 比如做饭的主线计划,含支线买菜,洗菜等; |
-| cutIndex | 用outModel来提取cutIndex,即任务做到什么进度了; |
+| cutIndex | 用outModel来提取cutIndex,即任务做到什么进度了; (废弃) |
+| 外循环 | 无论是否存outModel,下轮循环都重新识别,并极可能转至R+ |
+|  | 因为已做过的存在瞬时序列中,压根不需要outModel存cutIndex; |
+
+**19167_TOR.P-模式模型**
+
+| 示图 | ![](assets/258_TOR的P-模型.png) |
+| --- | --- |
+| 说明 | 对plusFo首个元素直接进行行为化实现; |
+| 转移 | 在下轮时,可能转移至R+或者P+; |
 
 <br><br><br><br>
 
