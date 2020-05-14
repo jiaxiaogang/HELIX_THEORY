@@ -866,7 +866,17 @@ void mc_Value(Value cValue,Value mValue){
 | 说明 | 对plusFo首个元素直接进行行为化实现; |
 | 转移 | 在下轮时,可能转移至R+或者P+; |
 
+| 19168 | 转移分析 |
+| --- | --- |
+| R+ | 无需要转移 |
+| R- | 转R+/R- |
+| P+ | 转R+ |
+| P- | 转R+/P+ |
+| 问题 | P+和P-很难在下轮时,转到R+; |
+
 <br><br><br><br>
+
+### TODOLIST
 
 | TODOLIST |  |
 | --- | --- |
