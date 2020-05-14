@@ -880,6 +880,15 @@ void mc_Value(Value cValue,Value mValue){
 | P+ | 转R+ | 将mFo带给outModel,后用于下轮的预测 (如炒菜买到菜了); |
 | P- | 转P-/R+ | 实现的pFo与其pcFo,带给R预测 (如累已买到水); |
 
+| 19169 | 短时记忆分析 |
+| --- | --- |
+| OutModel | 1. outModel作为TO的短时记忆模型,保证了外循环下任务的持续; |
+|  | 2. R+R-P+P-四者都要->存到outModel->一次仅处理单帧; |
+| 协作示图 | ![](assets/259_短时记忆协作示图.png) |
+|  | 1. TOP借助mModel更好的跳转到TOR; |
+|  | 2. TIR借助outModel更及时的预测到TIP (判断当前瞬时与下一帧匹配); |
+
+
 <br><br><br><br>
 
 ### TODOLIST
