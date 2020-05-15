@@ -888,6 +888,11 @@ void mc_Value(Value cValue,Value mValue){
 |  | 1. TOP借助mModel更好的跳转到TOR; |
 |  | 2. TIR借助outModel更及时的预测到TIP (判断当前瞬时与下一帧匹配); |
 
+| TODOLIST | STATUS |
+| --- | --- |
+| 1. 一次只对一帧进行行为化; |  |
+| 2. 行为化成功时,添加到outModel短时记忆中; |  |
+| 3. TIR_Fo识别算法,优先从outModel中,做更及时的预测; |  |
 
 <br><br><br><br>
 
