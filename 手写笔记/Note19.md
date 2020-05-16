@@ -887,12 +887,18 @@ void mc_Value(Value cValue,Value mValue){
 | 协作示图 | ![](assets/259_短时记忆协作示图.png) |
 |  | 1. TOP借助mModel更好的跳转到TOR; |
 |  | 2. TIR借助outModel更及时的预测到TIP (判断当前瞬时与下一帧匹配); |
+| OutModel模型 | outModel结构化模型不变,检查下,是否具备: |
+|  | 1. score: 评分,用于实时竞争; |
+|  | 2. status: 状态,用于当前是否`不应期`或`长期激活`的判断; |
+|  | 总结: 同时`长期激活`状态多个子方案,会以score互相实时竞争; |
 
 | TODOLIST | STATUS |
 | --- | --- |
 | 1. 一次只对一帧进行行为化; |  |
 | 2. 行为化成功时,添加到outModel短时记忆中; |  |
 | 3. TIR_Fo识别算法,优先从outModel中,做更及时的预测; |  |
+| 4. 不存在`等待`,所谓等待,只是不必输出行为即可cHav的节点 (等事实发生); |  |
+| 5. 真正向下帧跳转,发生在事实发生之后 (即新的input匹配到); |  |
 
 <br><br><br><br>
 
