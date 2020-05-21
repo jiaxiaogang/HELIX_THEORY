@@ -981,6 +981,14 @@ void mc_Value(Value cValue,Value mValue){
 |  | 3. cHav中,会与matchAlg协作,找出合适的cHavFo; |
 |  | 4. 可能再次转移,再次cHav找subCHavFo,如此递归直至行为输出解决了此帧问题; |
 
+| 19193 | 原则2:normalFo和innerFo的区别是什么? |
+| --- | --- |
+| cHav构建 | ![](assets/262_内类比cHav构建图.png) |
+| 说明 | 由图可见 |
+|  | 1. normalFo是感性的确切化 (fo->mv); |
+|  | 2. innerFo是理性的确切化 (a1,a2...->a3); |
+| 结果 | 所以用normalFo做流程控制,用innerFo做单帧推进是正确的; |
+
 | TODO | STATUS |
 | --- | --- |
 | 1. 将TOR.P+的取交集,转为方向索引取抽象时序提交至outModel,并逐帧cHav递归行为化; |  |
