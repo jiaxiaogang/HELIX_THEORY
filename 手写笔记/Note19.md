@@ -915,6 +915,17 @@ void mc_Value(Value cValue,Value mValue){
 | 说明 | 蓝色为每一次负预测时,向下子实现; |
 |  | 黄色为,每一次子实现后,回归父级移动至下帧; |
 
+| TODO | STATUS |
+| --- | --- |
+| 1. 对TOP的另外三个模式集成TOFoModel; | T |
+| 2. 对TOR.R+集成TOFoModel; | T |
+| 3. TOR中isOut=false时处等待,改为cHav行为化 (包括R+,P+); | T |
+| 4. 行为化成功(input下帧匹配)时,跳转至下帧 (更新status为Finish); |  |
+| 5. TOR中,isOut=true时直接status=ActYes | T |
+| 6. 对行为化toAction,评价失败时status=ScoreNo; |  |
+| 7. 对行为化toAction,跳转时outModel添加subOutModel; |  |
+| 8. 将toAction.cHav方法,改为多轮输出行为化结果,而非单次; |  |
+
 <br><br><br><br>
 
 ### n19p18 决策四模式之行为化迭代
