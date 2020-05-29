@@ -970,6 +970,7 @@ void mc_Value(Value cValue,Value mValue){
 | 1. TOR.P+放至outModel后,如何判定首帧未自动出现,后转至行为化(参考原则4) |  |
 | 2. 将TOR的默认行为由`等待`改为`cHav行为化`,参考19182原则4; |  |
 | 3. 检查下内类比方法,有没有做到非常全面的aIndex和bIndex之间构建cHavFo; |  |
+| 4. 考虑将TOAction._SP()方法中,对_GL的判断,向抽象和具象延伸,而避免调用_Hav(); |  |
 
 
 <br><br><br><br>
