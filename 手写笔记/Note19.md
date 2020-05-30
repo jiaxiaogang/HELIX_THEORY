@@ -923,8 +923,16 @@ void mc_Value(Value cValue,Value mValue){
 | 4. 行为化成功(input下帧匹配)时,跳转至下帧 (更新status为Finish); |  |
 | 5. TOR中,isOut=true时直接status=ActYes | T |
 | 6. 对行为化toAction,评价失败时status=ScoreNo; |  |
-| 7. 对行为化toAction,跳转时outModel添加subOutModel; |  |
-| 8. 将toAction.cHav方法,改为多轮输出行为化结果,而非单次; |  |
+| 7. 对行为化toAction,跳转时outModel添加subOutModel; | T |
+| 8. 将toAction.cHav方法,改为多轮输出行为化结果,而非单次; | T |
+| 9. 调用TOAction.`_SP,_P,_GL,_Hav,_Fos,_Fo`时,实例一个outModel当参数传进去; | T |
+| 10. 在下面传给GL时,生成TOValueModel; | T |
+| 11. 传给_Alg时,生成TOAlgModel; | T |
+| 12. 在方法执行中status变化的,重新对status赋值即可; | T |
+| 13. 在_Alg方法转移时,对TOAlgModel生成actionFoModel; | T |
+| 14. 每一次subAct时,都直接进行输出 (中断只有两种情况,理性的即行为化失败,感性的即评价失败); | T |
+| 15. 每次获取到一个新的fo时,都要尝试进行评价,以中止此subOutModel; |  |
+| 16. 对单帧Finish的,要在下轮input传回判断是否符合要求,并跳转至下帧; |  |
 
 <br><br><br><br>
 
