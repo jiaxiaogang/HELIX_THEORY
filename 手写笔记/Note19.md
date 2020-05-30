@@ -1001,6 +1001,13 @@ void mc_Value(Value cValue,Value mValue){
 |  | 2. innerFo是理性的确切化 (a1,a2...->a3); |
 | 结果 | 所以用normalFo做流程控制,用innerFo做单帧推进是正确的; |
 
+| 19194 | 决策与外循环 |
+| --- | --- |
+| 示图 | ![](assets/263_决策与外循环.png) |
+| 说明 | 1. OutModel输出actions到行为后,递归回TOP; |
+|  | 2. TOP再根据DemandManager和思维活跃度,继续下轮循环; |
+|  | 3. 允许subOutModel将自己上报给DamandModel,并在下轮循环时,直接判断行为有效性; |
+
 | TODO | STATUS |
 | --- | --- |
 | 1. 将TOR.P+的取交集,转为方向索引取抽象时序提交至outModel,并逐帧cHav递归行为化; |  |
