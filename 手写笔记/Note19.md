@@ -2,27 +2,27 @@
 
 <!-- TOC -->
 
-- [测试 & 细节改动 & 训练](#%E6%B5%8B%E8%AF%95--%E7%BB%86%E8%8A%82%E6%94%B9%E5%8A%A8--%E8%AE%AD%E7%BB%83)
-  - [n19p1 规划性训练2](#n19p1-%E8%A7%84%E5%88%92%E6%80%A7%E8%AE%AD%E7%BB%832)
-  - [n19p2 TIR_Alg_FromRT算法迭代](#n19p2-tir_alg_fromrt%E7%AE%97%E6%B3%95%E8%BF%AD%E4%BB%A3)
-  - [n19p3 反向反馈类比](#n19p3-%E5%8F%8D%E5%90%91%E5%8F%8D%E9%A6%88%E7%B1%BB%E6%AF%94)
-  - [n19p4 外类比迭代: 正向反馈类比](#n19p4-%E5%A4%96%E7%B1%BB%E6%AF%94%E8%BF%AD%E4%BB%A3-%E6%AD%A3%E5%90%91%E5%8F%8D%E9%A6%88%E7%B1%BB%E6%AF%94)
-  - [n19p5 规划性训练3](#n19p5-%E8%A7%84%E5%88%92%E6%80%A7%E8%AE%AD%E7%BB%833)
-  - [n19p6 扩展识别算法支持: MatchType_Seem](#n19p6-%E6%89%A9%E5%B1%95%E8%AF%86%E5%88%AB%E7%AE%97%E6%B3%95%E6%94%AF%E6%8C%81-matchtype_seem)
-  - [n19p7 RTAlg反思:全面性迭代](#n19p7-rtalg%E5%8F%8D%E6%80%9D%E5%85%A8%E9%9D%A2%E6%80%A7%E8%BF%AD%E4%BB%A3)
-  - [n19p8 结合`MC_Value`和`反向类比`分析决策失败的问题](#n19p8-%E7%BB%93%E5%90%88mc_value%E5%92%8C%E5%8F%8D%E5%90%91%E7%B1%BB%E6%AF%94%E5%88%86%E6%9E%90%E5%86%B3%E7%AD%96%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98)
-  - [n19p9 用"V+A"来解决反向类比与MC_Value的协作问题](#n19p9-%E7%94%A8va%E6%9D%A5%E8%A7%A3%E5%86%B3%E5%8F%8D%E5%90%91%E7%B1%BB%E6%AF%94%E4%B8%8Emc_value%E7%9A%84%E5%8D%8F%E4%BD%9C%E9%97%AE%E9%A2%98)
-  - [n19p10 MC_Alg算法迭代V3](#n19p10-mc_alg%E7%AE%97%E6%B3%95%E8%BF%AD%E4%BB%A3v3)
-  - [n19p11 双向任务——决策对mModel全面支持](#n19p11-%E5%8F%8C%E5%90%91%E4%BB%BB%E5%8A%A1%E5%86%B3%E7%AD%96%E5%AF%B9mmodel%E5%85%A8%E9%9D%A2%E6%94%AF%E6%8C%81)
-  - [n19p12 回归测训4](#n19p12-%E5%9B%9E%E5%BD%92%E6%B5%8B%E8%AE%AD4)
-  - [n19p13 关联强度整理](#n19p13-%E5%85%B3%E8%81%94%E5%BC%BA%E5%BA%A6%E6%95%B4%E7%90%86)
-  - [n19p14 决策-SP协作](#n19p14-%E5%86%B3%E7%AD%96-sp%E5%8D%8F%E4%BD%9C)
-  - [n19p15 双向任务——决策对mModel全面支持2](#n19p15-%E5%8F%8C%E5%90%91%E4%BB%BB%E5%8A%A1%E5%86%B3%E7%AD%96%E5%AF%B9mmodel%E5%85%A8%E9%9D%A2%E6%94%AF%E6%8C%812)
-  - [n19p16 决策四模式从TOP到TOR](#n19p16-%E5%86%B3%E7%AD%96%E5%9B%9B%E6%A8%A1%E5%BC%8F%E4%BB%8Etop%E5%88%B0tor)
-  - [n19p17 决策四模式之OutModel短时记忆](#n19p17-%E5%86%B3%E7%AD%96%E5%9B%9B%E6%A8%A1%E5%BC%8F%E4%B9%8Boutmodel%E7%9F%AD%E6%97%B6%E8%AE%B0%E5%BF%86)
-  - [n19p18 决策四模式之行为化迭代](#n19p18-%E5%86%B3%E7%AD%96%E5%9B%9B%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%A1%8C%E4%B8%BA%E5%8C%96%E8%BF%AD%E4%BB%A3)
-  - [n19p19 P+模式重新改回递归](#n19p19-p%E6%A8%A1%E5%BC%8F%E9%87%8D%E6%96%B0%E6%94%B9%E5%9B%9E%E9%80%92%E5%BD%92)
-  - [n19p20 决策与外循环深度集成OutModel](#n19p20-%E5%86%B3%E7%AD%96%E4%B8%8E%E5%A4%96%E5%BE%AA%E7%8E%AF%E6%B7%B1%E5%BA%A6%E9%9B%86%E6%88%90outmodel)
+- [测试 & 细节改动 & 训练](#测试--细节改动--训练)
+  - [n19p1 规划性训练2](#n19p1-规划性训练2)
+  - [n19p2 TIR_Alg_FromRT算法迭代](#n19p2-tir_alg_fromrt算法迭代)
+  - [n19p3 反向反馈类比](#n19p3-反向反馈类比)
+  - [n19p4 外类比迭代: 正向反馈类比](#n19p4-外类比迭代-正向反馈类比)
+  - [n19p5 规划性训练3](#n19p5-规划性训练3)
+  - [n19p6 扩展识别算法支持: MatchType_Seem](#n19p6-扩展识别算法支持-matchtype_seem)
+  - [n19p7 RTAlg反思:全面性迭代](#n19p7-rtalg反思全面性迭代)
+  - [n19p8 结合`MC_Value`和`反向类比`分析决策失败的问题](#n19p8-结合mc_value和反向类比分析决策失败的问题)
+  - [n19p9 用"V+A"来解决反向类比与MC_Value的协作问题](#n19p9-用va来解决反向类比与mc_value的协作问题)
+  - [n19p10 MC_Alg算法迭代V3](#n19p10-mc_alg算法迭代v3)
+  - [n19p11 双向任务——决策对mModel全面支持](#n19p11-双向任务决策对mmodel全面支持)
+  - [n19p12 回归测训4](#n19p12-回归测训4)
+  - [n19p13 关联强度整理](#n19p13-关联强度整理)
+  - [n19p14 决策-SP协作](#n19p14-决策-sp协作)
+  - [n19p15 双向任务——决策对mModel全面支持2](#n19p15-双向任务决策对mmodel全面支持2)
+  - [n19p16 决策四模式从TOP到TOR](#n19p16-决策四模式从top到tor)
+  - [n19p17 决策四模式之OutModel短时记忆](#n19p17-决策四模式之outmodel短时记忆)
+  - [n19p18 决策四模式之行为化迭代](#n19p18-决策四模式之行为化迭代)
+  - [n19p19 P+模式重新改回递归](#n19p19-p模式重新改回递归)
+  - [n19p20 决策与外循环深度集成OutModel](#n19p20-决策与外循环深度集成outmodel)
   - [TODOLIST](#todolist)
 
 <!-- /TOC -->
@@ -794,8 +794,8 @@ void mc_Value(Value cValue,Value mValue){
 
 | TODO | STATUS |
 | --- | --- |
-| 1. 在mModel中,添加mAlgIndex属性值; |  |
-| 2. 思考下左正的MCV3算法规则改动; |  |
+| 1. 在mModel中,添加mAlgIndex属性值; | T |
+| 2. 思考下左正的MCV3算法规则改动; | 过期任务 |
 
 
 <br><br><br><br>
@@ -887,10 +887,10 @@ void mc_Value(Value cValue,Value mValue){
 
 | TODOLIST | STATUS |
 | --- | --- |
-| 1. 一次只对一帧进行行为化; |  |
-| 2. 行为化成功时,添加到outModel短时记忆中; |  |
+| 1. 一次只对一帧进行行为化; | T |
+| 2. 行为化成功时,添加到outModel短时记忆中; | T |
 | 3. TIR_Fo识别算法,优先从outModel中,做更及时的预测; | 废弃 (就存outModel中即可) |
-| 4. 真正向下帧跳转,发生在事实发生之后 (即新的input匹配到); |  |
+| 4. 真正向下帧跳转,发生在事实发生之后 (即新的input匹配到); | T |
 
 <br><br><br><br>
 
@@ -921,9 +921,9 @@ void mc_Value(Value cValue,Value mValue){
 | 1. 对TOP的另外三个模式集成TOFoModel; | T |
 | 2. 对TOR.R+集成TOFoModel; | T |
 | 3. TOR中isOut=false时处等待,改为cHav行为化 (包括R+,P+); | T |
-| 4. 行为化成功(input下帧匹配)时,跳转至下帧 (更新status为Finish); |  |
+| 4. 行为化成功(input下帧匹配)时,跳转至下帧 (更新status为Finish); | T |
 | 5. TOR中,isOut=true时直接status=ActYes | T |
-| 6. 对行为化toAction,评价失败时status=ScoreNo; |  |
+| 6. 对行为化toAction,评价失败时status=ScoreNo; | T |
 | 7. 对行为化toAction,跳转时outModel添加subOutModel; | T |
 | 8. 将toAction.cHav方法,改为多轮输出行为化结果,而非单次; | T |
 | 9. 调用TOAction.`_SP,_P,_GL,_Hav,_Fos,_Fo`时,实例一个outModel当参数传进去; | T |
@@ -932,8 +932,8 @@ void mc_Value(Value cValue,Value mValue){
 | 12. 在方法执行中status变化的,重新对status赋值即可; | T |
 | 13. 在_Alg方法转移时,对TOAlgModel生成actionFoModel; | T |
 | 14. 每一次subAct时,都直接进行输出 (中断只有两种情况,理性的即行为化失败,感性的即评价失败); | T |
-| 15. 每次获取到一个新的fo时,都要尝试进行评价,以中止此subOutModel; |  |
-| 16. 对单帧Finish的,要在下轮input传回判断是否符合要求,并跳转至下帧; |  |
+| 15. 每次获取到一个新的fo时,都要尝试进行评价,以中止此subOutModel; | T |
+| 16. 对单帧Finish的,要在下轮input传回判断是否符合要求,并跳转至下帧; | T |
 
 <br><br><br><br>
 
@@ -985,9 +985,9 @@ void mc_Value(Value cValue,Value mValue){
 | TODO | STATUS |
 | --- | --- |
 | 1. TOR.P+放至outModel后,如何判定首帧未自动出现,后转至行为化(参考原则4) |  |
-| 2. 将TOR的默认行为由`等待`改为`cHav行为化`,参考19182原则4; |  |
+| 2. 将TOR的默认行为由`等待`改为`cHav行为化`,参考19182原则4; | T |
 | 3. 检查下内类比方法,有没有做到非常全面的aIndex和bIndex之间构建cHavFo; |  |
-| 4. 考虑将TOAction._SP()方法中,对_GL的判断,向抽象和具象延伸,而避免调用_Hav(); |  |
+| 4. 考虑将TOAction._SP()方法中,对_GL的判断,向抽象和具象延伸,而避免调用_Hav(); | 改在SP指引下找同级可替代节点; |
 | 5. SP加工废除group和solo重组方式转移; |  |
 | > 示例: 因为如果野兽没有牙,我就无法通过拔牙避免它咬我; |  |
 | > 解决方式为:从S向下找matchAlg,再向下找protoAlg,如果实在找不到与p同区的稀疏码,来类比并进行GL,那就直接行为化失败返回; |  |
@@ -1023,7 +1023,7 @@ void mc_Value(Value cValue,Value mValue){
 | TODO | STATUS |
 | --- | --- |
 | 1. 将TOR.P+的取交集,转为方向索引取抽象时序提交至outModel,并逐帧cHav递归行为化; |  |
-| 2. 在TOAction.cHav()中,添加不依赖SP的发散联想cHav,参考19192示图; |  |
+| 2. 在TOAction.cHav()中,添加不依赖SP的发散联想cHav,参考19192示图; | T |
 
 
 <br><br><br><br>
@@ -1053,6 +1053,22 @@ void mc_Value(Value cValue,Value mValue){
 |  | 3. Demand完成时推动流程未画出,因为Demand完成为总流程完成; |
 | 总结 | 以上各种流程可以统一写到一套方法代码中,模型图如下: |
 |  | ![](assets/266_外循环输入推进决策算法模型.png) |
+
+| 19204 | 流程控制之:Failure和Begin |
+| --- | --- |
+| 简介 | 在决策流程控制中,不仅包含Finish时,还有Failure时的递归转移; |
+|  | 1. 在status失败时,保留参数和不应期到outModel; |
+|  | 2. 每次递归再决策时,使用保留参数和不应期继续循环; |
+
+| 19205 | 流程控制之:Begin |
+| --- | --- |
+| 简介 | 1. 每一个新的任务demand,仅做触发和保留参数; |
+|  | 2. 在每次status发生变化时,再调用流程控制方法,对流程进行控制 (或递归,或转移等); |
+|  | 3. 每次转移时,由Begin方法统一调用`_Hav`与`_GL`; |
+
+| TODO | STATUS |
+| --- | --- |
+| 1. _SP方法中的checkAlg,支持在SP指引下找同级可替代节点,缓存至replaceAlgs行为化; |  |
 
 <br><br><br><br>
 
