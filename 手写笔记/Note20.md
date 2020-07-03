@@ -327,9 +327,11 @@
 
 | TODO | DESC | STATUS |
 | --- | --- | --- |
-| 1 | 删掉TIRAlg的fuzzy功能; |  |
-| 2 | 删掉TIRFo写了一半的`更加确切的时序价值预测`代码; |  |
-| 3 | 整理TOAlgModel代码,使理性评价与GL的数据兼容至TOAlgModel和决策流程控制中; |  |
+| 1 | 删掉TIRAlg的fuzzy功能; | T |
+| 2 | 删掉TIRFo写了一半的`更加确切的时序价值预测`代码; | T |
+| 3 | 整理TOAlgModel代码,使理性评价与GL的数据兼容至TOAlgModel和决策流程控制中; | T |
+| 4 | 写理性决策PM算法; | T |
+| 5 | 将理性决策算法PM集成到TOR与决策流程控制中; | T |
 
 
 <br/><br/><br/><br/><br/>
