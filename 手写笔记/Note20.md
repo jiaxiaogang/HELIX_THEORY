@@ -700,6 +700,10 @@
 | BUG5 | _GL行为化中,找glAlg时,距小相对节点的具象都为空,导致联想glAlg失败; |
 |  | ![](assets/307_20151BUG5联想glAlg具象指向为空.png) |
 |  | 解决: 将protoFo和matchAFo的构建改为isMem=false,从而内类比构建时序时,具象指向为持久化时序,便可解决此bug `参考dataIn_NoMV()`; |
+| BUG6 | BUG5解决后训练,发现新BUG; |
+|  | ![](assets/308_20151BUG6_getInnerAlg方法返回不相干结果.png) |
+|  | 分析: 经调试,在第一步,取innerValue_p时就以小却取了大; |
+|  | 怀疑: 怀疑是内中外类比,导致抽象出飞GL与距GL形成时序,具体BUG源头在构建期; |
 
 | 20152 | 决策递归嵌套 |
 | --- | --- |
