@@ -922,6 +922,13 @@
 | --- | --- |
 | 1 | 在PM评价中,对这些反省类比构建的SP抽象进行应用; |
 
+| TODO | STATUS |
+| --- | --- |
+| 1. 在AIShortMatchModel中写inputTime; |  |
+| 2. 在AIFoNodeBase构建时,将inputTime输入到fo.deltaTimeDic中; |  |
+| 3. 在[AINetUtils relateFo: mv:]时,将mvNode的inputTime输入到FoNodeBase.deltaTimeDic末位; |  |
+
+
 <br/><br/><br/><br/><br/>
 
 
