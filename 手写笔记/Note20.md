@@ -31,6 +31,7 @@
   - [n20p17 训练飞行方向](#n20p17-训练飞行方向)
   - [n20p18 PM评价BUG-反向反馈类比迭代为反省类比](#n20p18-pm评价bug-反向反馈类比迭代为反省类比)
   - [n20p19 反省类比代码规划](#n20p19-反省类比代码规划)
+  - [n20p20 反省类比代码实践](#n20p20-反省类比代码实践)
   - [TODOLIST](#todolist)
 
 <!-- /TOC -->
@@ -925,8 +926,25 @@
 | TODO | STATUS |
 | --- | --- |
 | 1. 在AIShortMatchModel中写inputTime; | T |
-| 2. 在AIFoNodeBase构建时,将inputTime输入到fo.deltaTimeDic中; |  |
-| 3. 在[AINetUtils relateFo: mv:]时,将mvNode的inputTime输入到FoNodeBase.deltaTimeDic末位; |  |
+
+<br/><br/><br/><br/><br/>
+
+
+### n20p20 反省类比代码实践
+`CreateTime 2020.08.18`
+
+| 20201 | 时序的deltaTimes规则 |
+| --- | --- |
+| 示图 | ![](assets/320_时序deltaTimes规则.png) |
+| 说明 | 图中,蓝色数字为deltaTimes间隔; |
+|  | 1. 在具象时序时,将inputTime直接传入; |
+|  | 2. 如图:在抽象时序时,取Max(各间隔间); |
+
+| TODO | STATUS |
+| --- | --- |
+| 1. 构建具象时序,将inputTime输入到deltaTimes中; |  |
+| 2. 构建抽象时序,自动从具象中提取deltaTimes; |  |
+| 3. 在[AINetUtils relateFo: mv:]时,将mvNode的inputTime输入到FoNodeBase.deltaTimes末位; |  |
 
 
 <br/><br/><br/><br/><br/>
