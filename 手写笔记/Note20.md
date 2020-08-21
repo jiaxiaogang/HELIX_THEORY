@@ -940,11 +940,19 @@
 |  | 1. 在具象时序时,将inputTime直接传入; |
 |  | 2. 如图:在抽象时序时,取Max(各间隔间); |
 
+| 20202 | 触发器代码规则 |
+| --- | --- |
+| 示图 | ![](assets/321_反省的两种触发器.png) |
+| 1 | 在输出行为(ActYes)时,构建感性触发器(mvDeltaTime); |
+| 2 | 在决策整体成功(Demand.status=Finish)时,构建理性触发器(fo.deltaTimes); |
+| 3 | 当触发器超时(deltaTx1.3)后,触发; |
+| 4 | 触发后,先判断此时的任务是否还在等待状态(ActYes); |
+
 | TODO | STATUS |
 | --- | --- |
-| 1. 构建具象时序,将inputTime输入到deltaTimes中; |  |
-| 2. 构建抽象时序,自动从具象中提取deltaTimes; |  |
-| 3. 在[AINetUtils relateFo: mv:]时,将mvNode的inputTime输入到FoNodeBase.deltaTimes末位; |  |
+| 1. 构建具象时序,将inputTime输入到deltaTimes中; | T |
+| 2. 构建抽象时序,自动从具象中提取deltaTimes; | T |
+| 3. 在[AINetUtils relateFo: mv:]时,将mvNode的inputTime输入到FoNodeBase.deltaTimes末位; | T |
 
 
 <br/><br/><br/><br/><br/>
