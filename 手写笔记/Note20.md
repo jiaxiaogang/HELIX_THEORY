@@ -952,12 +952,19 @@
 | 3 | 当_Hav中ATType为HNGL时,构建理性触发器(fo.deltaTimes),目标为HNGL的变化; |
 | 4 | 当触发器超时(deltaTx1.3)后,触发; |
 | 5 | 触发后,先判断此时的任务是否还在等待状态(ActYes); |
+| 步骤 | 1. 三处构建触发器: (最好到操作的TOModel中构建触发器) |
+|  | > a. demand.ActYes处 |
+|  | > b. 行为化Hav().HNGL.ActYes处 |
+|  | > c. 行为输出ActYes处 |
+|  | 2. 外循环回来,把各自实际输入的概念,存入到TOAlgModel/TOFoModel中 (最好在MP中存,因为MP在对其进行处理,面向的数据全); |
+|  | 3. 当生物钟触发器触发时,如果未输入有效"理性推进" 或 "感性抵消",则对这些期望与实际的差距进行反省类比; |
 
 | TODO | STATUS |
 | --- | --- |
 | 1. 构建具象时序,将inputTime输入到deltaTimes中; | T |
 | 2. 构建抽象时序,自动从具象中提取deltaTimes; | T |
-| 3. 在[AINetUtils relateFo: mv:]时,将mvNode的inputTime输入到FoNodeBase.deltaTimes末位; | T |
+| 3. 在[relateFo:mv:]时,将mvNode的inputTime输入到mvDeltaTimes; | T |
+| 4. 写singleLoopBackWithActYes()流程控制方法,构建触发器; |  |
 
 
 <br/><br/><br/><br/><br/>
