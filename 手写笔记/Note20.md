@@ -965,6 +965,8 @@
 | 2. 构建抽象时序,自动从具象中提取deltaTimes; | T |
 | 3. 在[relateFo:mv:]时,将mvNode的inputTime输入到mvDeltaTimes; | T |
 | 4. 写singleLoopBackWithActYes()流程控制方法,构建触发器; |  |
+| 5. 在OuterPushMiddleLoop支持inputMv抵消demand,其下fo设为Finish; |  |
+| 6. 在TOFoModel中集成支持timeTrigger(); |  |
 
 
 <br/><br/><br/><br/><br/>
