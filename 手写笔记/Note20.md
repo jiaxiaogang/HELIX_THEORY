@@ -964,9 +964,13 @@
 | 1. 构建具象时序,将inputTime输入到deltaTimes中; | T |
 | 2. 构建抽象时序,自动从具象中提取deltaTimes; | T |
 | 3. 在[relateFo:mv:]时,将mvNode的inputTime输入到mvDeltaTimes; | T |
-| 4. 写singleLoopBackWithActYes()流程控制方法,构建触发器; |  |
+| 4. 写singleLoopBackWithActYes()流程控制方法; |  |
 | 5. 在OuterPushMiddleLoop支持inputMv抵消demand,其下fo设为Finish; |  |
 | 6. 在TOFoModel中集成支持timeTrigger(); |  |
+| 7. 在OuterPushMiddleLoop,waitModel为ActYes且为HNGL时,仅判定其是否符合HNGL变化,并设定为Finish; |  |
+| 8. demand.subFo结束,调用在ActYes流程控制中构建触发器; | T |
+| 9. 行为化_Hav的HNGL,调用在ActYes流程控制中构建触发器; |  |
+| 10. 行为化行为输出时,调用在ActYes流程控制中构建触发器; |  |
 
 
 <br/><br/><br/><br/><br/>
