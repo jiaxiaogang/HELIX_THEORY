@@ -952,12 +952,28 @@
 | 3 | 当_Hav中ATType为HNGL时,构建理性触发器(fo.deltaTimes),目标为HNGL的变化; |
 | 4 | 当触发器超时(deltaTx1.3)后,触发; |
 | 5 | 触发后,先判断此时的任务是否还在等待状态(ActYes); |
-| 步骤 | 1. 三处构建触发器: (最好到操作的TOModel中构建触发器) |
+
+| 20203 | 触发器代码步骤 |
+| --- | --- |
+| 1 | 三处构建触发器: (最好到操作的TOModel中构建触发器) |
 |  | > a. demand.ActYes处 |
 |  | > b. 行为化Hav().HNGL.ActYes处 |
 |  | > c. 行为输出ActYes处 |
-|  | 2. 外循环回来,把各自实际输入的概念,存入到TOAlgModel/TOFoModel中 (最好在MP中存,因为MP在对其进行处理,面向的数据全); |
-|  | 3. 当生物钟触发器触发时,如果未输入有效"理性推进" 或 "感性抵消",则对这些期望与实际的差距进行反省类比; |
+| 2 | 外循环回来,把各自实际输入的概念,存入到TOAlgModel/TOFoModel中 (最好在PM中存,因为PM在对其进行处理,面向的数据全); |
+|  | > a. 改为新写commitFromOuterInputReason方法,进行处理; |
+|  | > b. 相符判断: "isOut输出"和"demand完成"和"HNGL.H"时,直接根据mIsC判断外循环输入是否符合即可; |
+|  | > c. 相符判断: 其中GL的相符判断,转20204; |
+| 3 | 当生物钟触发器触发时,如果未输入有效"理性推进" 或 "感性抵消",则对这些期望与实际的差距进行反省类比; |
+
+| 20204 | GL的真实输入相符判断与保留 |
+| --- | --- |
+| 简介 | GL的相符判断,因为涉及到稀疏码变化,与概念输入的判断不太一样,如下图: |
+| 示图 | ![](assets/322_外循环保留真实概念之GL处理示图.png) |
+| 示例 | GL处理时,需要对`期望`与`真实`概念`除变化特征外`是否有共同抽象做判断,比如我希望坚果变近,但近处出现一碗面; |
+|  | 1. 出现面很正常,因为我以前经历过多次,一飞近坚果就出现面 / 坚果变面; |
+|  | 2. 出现面不正常,本来坚果和面都存在,我飞近坚果,结果只有面变近了; |
+|  | 分析: 在确切化之前,二者都可能,而确切化后,经验就要帮助到此处运作; |
+|  | 结论: 暂不深究,直接判断`期望`与`真实`概念的absPorts是否有交集; |
 
 | TODO | STATUS |
 | --- | --- |
@@ -965,9 +981,9 @@
 | 2. 构建抽象时序,自动从具象中提取deltaTimes; | T |
 | 3. 在[relateFo:mv:]时,将mvNode的inputTime输入到mvDeltaTimes; | T |
 | 4. 写singleLoopBackWithActYes()流程控制方法; |  |
-| 5. 在OuterPushMiddleLoop支持inputMv抵消demand,其下fo设为Finish; |  |
-| 6. 在TOFoModel中集成支持timeTrigger(); |  |
-| 7. 在OuterPushMiddleLoop,waitModel为ActYes且为HNGL时,仅判定其是否符合HNGL变化,并设定为Finish; |  |
+| 5. 在OuterPushMiddleLoop支持inputMv抵消demand,其下fo设为Finish; `改由原DemandManager实现` | T |
+| 6. 在TOFoModel中集成支持timeTrigger();`改到ActYes流程控制中` | T |
+| 7. 在OuterPushMiddleLoop,waitModel为ActYes且为HNGL时,仅判定其是否符合HNGL变化,并设定为OuterBack状态; | T |
 | 8. demand.subFo结束,调用在ActYes流程控制中构建触发器; | T |
 | 9. 行为化_Hav的HNGL,调用在ActYes流程控制中构建触发器; |  |
 | 10. 行为化行为输出时,调用在ActYes流程控制中构建触发器; |  |
