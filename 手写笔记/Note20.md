@@ -989,18 +989,21 @@
 |  | 3. 根据subFo,从稀疏码向概念,再向时序索引查找,同样foNode的另外的assSubFo,并进行外类比; |
 |  | 4. 外类比构建更确切的S时序,如果已存在,则加强; |
 
+| 20206 | 将反省结果应用于PM理性评价 |
+| --- | --- |
+
 | TODO | STATUS |
 | --- | --- |
 | 1. 构建具象时序,将inputTime输入到deltaTimes中; | T |
 | 2. 构建抽象时序,自动从具象中提取deltaTimes; | T |
 | 3. 在[relateFo:mv:]时,将mvNode的inputTime输入到mvDeltaTimes; | T |
-| 4. 写singleLoopBackWithActYes()流程控制方法; |  |
+| 4. 写singleLoopBackWithActYes()流程控制方法; | T |
 | 5. 在OuterPushMiddleLoop支持inputMv抵消demand,其下fo设为Finish; `改由原DemandManager实现` | T |
 | 6. 在TOFoModel中集成支持timeTrigger();`改到ActYes流程控制中` | T |
 | 7. 在OuterPushMiddleLoop,waitModel为ActYes且为HNGL时,仅判定其是否符合HNGL变化,并设定为OuterBack状态; | T |
 | 8. demand.subFo结束,调用在ActYes流程控制中构建触发器; | T |
-| 9. 行为化_Hav的HNGL,调用在ActYes流程控制中构建触发器; |  |
-| 10. 行为化行为输出时,调用在ActYes流程控制中构建触发器; |  |
+| 9. 行为化_Hav的HNGL,调用在ActYes流程控制中构建触发器; | T |
+| 10. 行为化行为输出时,调用在ActYes流程控制中构建触发器; | 暂不写 |
 
 
 <br/><br/><br/><br/><br/>
