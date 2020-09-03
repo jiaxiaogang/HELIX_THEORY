@@ -991,6 +991,12 @@
 
 | 20206 | 将反省结果应用于PM理性评价 |
 | --- | --- |
+| 示图 | ![](assets/326_SP用于PM理性评价短时记忆示图.png) |
+| 说明 | 如图,PM操作M模型的base为当前帧,再base为当前方案时序; |
+| 步骤 | 1. 取outModel.base,得到当前帧curAlg; |
+|  | 2. 取outModel.base.base,得到当前解决方案curFo; |
+|  | 3. 根据curFo取ATSubPorts,查对应在curAlg上是否长过教训; |
+|  | 4. 或者curFo中,没有距>0的概念,所以查下是否对预期Fo将具象概念替换进去,然后再形成时序和ATSub抽象指向 (废弃此步,因为我也看不懂当时写的啥意思来着); |
 
 | TODO | STATUS |
 | --- | --- |
