@@ -329,4 +329,4 @@ x2,y4,灰1
 
 | TODO | STATUS |
 | --- | --- |
-| 1. 在生物钟触发器触发时,判断下outModel是否有根(在demandManager下) |  |
+| 1. 在生物钟触发器触发时,判断下outModel是否有根(在demandManager下) | T |
