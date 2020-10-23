@@ -360,7 +360,9 @@ x2,y4,灰1
 |  | 因现在matchAlg=`A8(速高皮)`,A8太抽象,必须先类比A185和A186得到Anew; |
 | 方案 | Anew介于抽象和具象间,先TIR_Alg.Seem到A185,后外类比解决; |
 | 暂停 | 暂停此处内类比迭代,转至n21p9做Seem识别迭代,并触发外类比得到ANew; |
-| 继续 | TODOTOMORROW:在内类比GL中,将GL延伸支持protoAlg.abs->; |
+| 问题 | 可否不建立Anew和GL的关联,而从Anew.conPorts中分析其是否`GL稳定`? |
+|  | 答:不行,太麻烦,直接以Anew抽象指向GL的方式更好,即提前归纳学习好; |
+| 代码 | 综上问题,所以我们对内类比GL时,将GL延伸到protoAlg.abs中; |
 
 
 <br><br><br>
