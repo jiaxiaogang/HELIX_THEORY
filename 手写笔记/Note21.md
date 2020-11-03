@@ -470,8 +470,9 @@ x2,y4,灰1
 | 说明 | 对range倒序逐个取refPorts与GL.refPorts取交集,作为assFo外类比; |
 | 新做法 | ![](assets/355_内中外类比迭代取assFo新.png) |
 | 说明 | 对protoAlg的seemAlgs逐个尝试与GL.conPorts取交集,有效则取其fo作为assFo外类比; |
-| 步骤 | 1. 将TIR_Alg中,seemAlgs返回成数组 (所有局部匹配排序后的结果); |
-|  | 2. 将内中外类比,改为新做法; |
+| 步骤 | 1. 将TIR_Alg中,seemAlgs返回成数组 (所有局部匹配排序后的结果); T |
+|  | 2. 将内中外类比,改为新做法; T |
+|  | 3. 将内中外类比中protoAlg与seemAlg的抽象absA,指向abAlg; |
 
 <br><br><br><br><br>
 
