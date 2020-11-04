@@ -463,7 +463,7 @@ x2,y4,灰1
 | 评价与类比 | 二者共同点是都是bool对比; |
 |  | 二者不同点是类比是找规律,评价则是判断是否继续; |
 
-| 21113 | 内中外类比迭代方案2 |
+| 21113 | 内中外类比迭代方案2 `T` |
 | --- | --- |
 | 简介 | 以当前GL具象指向的protoAlg为索引,向seemAlgs逐个进行assFo查找; |
 | 旧做法 | ![](assets/354_内中外类比迭代取assFo旧.png) |
@@ -472,7 +472,18 @@ x2,y4,灰1
 | 说明 | 对protoAlg的seemAlgs逐个尝试与GL.conPorts取交集,有效则取其fo作为assFo外类比; |
 | 步骤 | 1. 将TIR_Alg中,seemAlgs返回成数组 (所有局部匹配排序后的结果); T |
 |  | 2. 将内中外类比,改为新做法; T |
-|  | 3. 将内中外类比中protoAlg与seemAlg的抽象absA,指向abAlg; |
+|  | 3. 将内中外类比中protoAlg与seemAlg的抽象absA,指向glAlg`转向21114`; |
+
+| 21114 | 内中外类比迭代之_将BackConAlg集成到innerFo中; |
+| --- | --- |
+| 简介 | 在21113中,已将内中外类比迭代至v2,但步骤3中,仍有些尾活,由本表来做; |
+| 示图 | ![](assets/356_内中外类比网络结构复查_现.png) |
+| 说明 | 如图,用glFo:assFo外类比,有以下问题: |
+|  | 1. glFo中不包含backConAlg,所以需单独做backConAlg:protoAlg=absA3; |
+|  | 2. absA3所在时序,也需单独处理 (其实根本就缺这个fo); |
+| 方案 | 1. 将backConAlg放到glFo中,即`range+backConAlg+glAlg`; |
+|  | 2. 1.根据glAlg向glFo联想; 2.再向下分别与backConAlg.refPorts和seemAlg.refPorts取交,取得两个conFo; 3.再分别截出range+backAlg部分; 4.并进行类比,得出absFo; 5.再抽象指向glFo; |
+| 分析 | `方案1改动较大,但一劳永逸`; `方案2太麻烦,且第1步性能就不好`; |
 
 <br><br><br><br><br>
 
