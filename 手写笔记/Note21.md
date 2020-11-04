@@ -483,7 +483,10 @@ x2,y4,灰1
 |  | 2. absA3所在时序,也需单独处理 (其实根本就缺这个fo); |
 | 方案 | 1. 将backConAlg放到glFo中,即`range+backConAlg+glAlg`; |
 |  | 2. 1.根据glAlg向glFo联想; 2.再向下分别与backConAlg.refPorts和seemAlg.refPorts取交,取得两个conFo; 3.再分别截出range+backAlg部分; 4.并进行类比,得出absFo; 5.再抽象指向glFo; |
-| 分析 | `方案1改动较大,但一劳永逸`; `方案2太麻烦,且第1步性能就不好`; |
+|  | 3. 将内类比构建中,加一个`range+backConAlg`的中间fo,并标记为GL类型; |
+| 分析 | `方案1改动较大,但一劳永逸 30%`; |
+|  | `方案2太麻烦,且第1步性能就不好 0%`; |
+|  | `方案3无性能问题,且改动也不大,可以考虑 70%` |
 
 <br><br><br><br><br>
 
