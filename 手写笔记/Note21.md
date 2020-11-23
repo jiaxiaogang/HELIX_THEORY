@@ -603,6 +603,13 @@ x2,y4,灰1
 |  | 2. 所以导致此BUG的原因在于S和P不够抽象,即经历太少; |
 | 方案 | 1. 制定更多训练步骤,使S和P在外类比中变的更加抽象; |
 
+| 21147 | BUG_PM修正GL失败时,会直接否掉当前解决方案 `T` |
+| --- | --- |
+| 说明 | 在PM修正单条GL失败时,会直接取下一个解决方案,导致当前方案没怎么试就弃疗了; |
+| 分析 | PM修正GL失败时,其实可以再尝试relativeFos获取alg,而不是直接整个否掉; |
+| 方案 | 在PM修正GL失败时,使_Hav继续relativeFos获取alg.cHav; |
+| 代码 | 对PM返回bool改成三个回调:`failure,success,notNeedPM`,来应对不同逻辑; |
+
 <br><br><br><br><br>
 
 ## TODOLIST
