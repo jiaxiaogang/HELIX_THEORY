@@ -1,12 +1,11 @@
-# 螺旋论本质上是一个熵减机理论。
+# 熵减机
 
-[![](https://img.shields.io/badge/%20QQGroup-528053635%20-orange.svg)](tencent://message/?uin=283636001&Site=&Menu=yes)
+[![](https://img.shields.io/badge/%20QQ%e7%be%a4-528053635%20-orange.svg)](tencent://message/?uin=283636001&Site=&Menu=yes)
 [![](https://img.shields.io/badge/%20QQ-在线交谈%20-orange.svg)](http://wpa.qq.com/msgrd?v=3&uin=283636001&site=qq&menu=yes)
 [![](https://img.shields.io/badge/%20QQ-客户端交谈%20-orange.svg)](tencent://message/?uin=283636001&Site=&Menu=yes)
-![](https://img.shields.io/badge/%20Wechat-jia2764894%20-orange.svg)
-![](https://img.shields.io/badge/%20in-iphone%20-orange.svg)
+![](https://img.shields.io/badge/%20%e5%be%ae%e4%bf%a1-jia2764894%20-orange.svg)
+![](https://img.shields.io/badge/%20buildin-iOS%20-orange.svg)
 [![License](https://img.shields.io/badge/license-GPL-blue.svg)](LICENSE)
-[![Join the chat at https://gitter.im/jiaxiaogang/he4o](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jiaxiaogang/he4o)
 
 ***
 
@@ -16,26 +15,23 @@
 3. 无熵增的世界不需要智能体，而无熵减的世界要智能体也无用。
 4. 熵活跃度越高的环境，越容易孕育智能体。
 
-## 2. 运用：
+## 2. 模型：
 
-螺旋论的意义：螺旋论本质是一个 "熵减机" 理论,其可用于且不限于构建AGI等熵减系统;
+* 熵减机可用于且不限于构建AGI等熵减系统。
+* 信息熵减机模型：是熵减机在信息处理系统的模型。
 
-## 3. 模型：
+## 3. 实践：
 
-信息熵减机模型：是螺旋论在信息处理系统的模型。
+HE系统内核：he4o是在熵减机理论模型上实践出来的通用人工智能项目，本理论与he4o互相印证,共同形成;
 
-## 4. 实验：
+## 4. 三要素：
 
-HE系统内核：he4o是在螺旋论理论上实践出来的通用人工智能项目，本理论与he4o互相印证,共同形成;
-
-## 5. 三要素：
-
-1. 定义：定义是从无到有,从模糊到相对确切的过程;
-2. 相对：几乎所有做法都有相对,有些横向相对与纵向相对;
-3. 循环：无相对不循环,有了相对就有循环;循环亦无处不在,较明显的有三层循环,内层MindValud循环,中层思维网络循环,外层即智能体与现实世界的循环;
+1. 定义：定义是从无到有,从模糊到相对确切的过程。
+2. 相对：几乎所有做法都有相对。
+3. 循环：有相对即有循环，较明显的有三层循环：`内层价值循环`、`中层思维与网络循环`、`外层智能体与现实世界循环`。
 
 
-## 6. 手稿：
+## 5. 手稿：
 
 | 手写笔记目录 >> |  |
 | --- | --- |
