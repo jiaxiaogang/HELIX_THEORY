@@ -797,6 +797,8 @@ v2.0五测中,getInnerAlg中,我们如何判定稳定性? (比如:`右果右飞�
 | --- | --- |
 | 示图 | ![](assets/379_GL联想absAlg被glFo引用0条的BUG.png) |
 | 说明 | 在内中外类比构建absAlg时至少被glFo引用了1次,但在此处联想却是0条`参考21115`; |
+| 分析 | 示图首行代码中,取glConAlg.refPorts,错写成了glAlg.refPorts; |
+| 结果 | 改glAlg为glConAlg后,问题解决; |
 
 <br><br><br><br><br>
 
