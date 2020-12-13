@@ -818,7 +818,14 @@ v2.0五测中,getInnerAlg中,我们如何判定稳定性? (比如:`右果右飞�
 | 调试 | 调试发现,在内中外类比的`fo:[左上果,飞]`往往与`assFo:[右果,飞]`相差甚远,导致其抽象总是无向果`createAbsFo:[无向果,飞]`,而没左上果; |
 |  | ![](assets/382_21194调试BUG原因.png) |
 | 分析 | 而assFo是根据partAlg_ps索引所得 (参考21113); |
-| 结果 | 将partAlg_ps改为matchAlg_ps后,恢复正常; |
+| 分析2 | A169源于parts联想assFo后的内中外类比构建所得; |
+|  | 一旦有了A169,就可以以matchs中的A169,为启发联想assFo; |
+|  | `parts`构建`A169`->`联想matchs`才有效,所以parts和matchs都需支持; |
+| todo1 | 所以21113联想assFo方式改为:先part触发,后match增强,二者各取三条; |
+| 分析3 | 调试测得,取交集时,会使原有part或match的匹配度有序被打乱; |
+|  | 导致总是与并不那么匹配的assFo进行内中外类比; |
+| todo2 | 使交集保持有序,即可; |
+| 结果 | 修复todo1和todo2后,BUG恢复; |
 
 <br><br><br><br><br>
 
