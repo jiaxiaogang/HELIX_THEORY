@@ -979,6 +979,7 @@
 
 | 20205 | 反省类比 |
 | --- | --- |
+| 示图 | ![](assets/387_反省类比示图.png) |
 | 原则1 | 无需收集realFo,直接对每个subAlgModel单独取用处理即可; |
 |  | 直接将status=ActYes的TOModelBase交由反省类比算法,算法对每个subAlgModel中取出realContent_p,并单独进行类比,取得结果构建成ATSub抽象; |
 | 原则2 | 其实反省类比,并没有进行类比,而是将决策中的即有的类比结果收集起来; |
