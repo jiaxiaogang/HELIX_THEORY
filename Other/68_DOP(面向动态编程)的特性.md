@@ -19,4 +19,4 @@
    参考：[《he4o系统》](https://github.com/jiaxiaogang/he4o)
 
 4. **无BUG:**  
-   　　DOP无语言，所以无格式规范，其容错性自然最高，随意输入不会有BUG。
+   　　DOP无语言，所以无格式规范，其容错性自然最高，随意输入不会有BUG（指后天）。
