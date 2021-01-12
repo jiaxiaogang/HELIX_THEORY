@@ -129,4 +129,8 @@
 | 分析 | 在构建SP时,difStrong=具象最大的强度,而不是1,导致此BUG |
 | 最终 | 在relateGeneralAbs()中,将SP时difStrong设为1; |
 
+| 22033 | 有效glFo被FRS评价为否的问题 |
+| --- | --- |
+| 示图 | ![](assets/409_有效glFo被FRS评价为否的问题.png) |
+
 <br><br><br>
