@@ -290,7 +290,17 @@
 | 22072 | 时序总是识别到HNGL导致危险预测不灵敏 |
 | --- | --- |
 | 示图 | ![](assets/413_时序总是识别到HNGL导致危险预测不灵敏.png) |
+| 分析 | 有时候也能识别到指向mv的matchFo,只是较少,大数还是识别到HNGLFo; |
+| 方案 | 使TIR_Fo支持多识别,以使识别的结果更全面,不受这混乱率影响 `转22073`; |
 
-
+| 22073 | 多时序识别迭代 |
+| --- | --- |
+| todo1 | 参考22072,本表进行多时序识别迭代支持 T; |
+| todo2 | matchFos应用到: 反思结果的FPS评价,进行更多元评价 T; |
+| todo3 | matchFos应用到: In反省类比触发器,以更全面的In反省 T; |
+| todo4 | matchFos应用到: 外类比,以使之更全面的类比抽象 T; |
+| todo5 | matchFos应用到: tip_OPushM,使之更全面改变status状态 T; |
+| todo6 | matchFos应用到: tir_OPushM,使之更全面改变status状态 T; |
+| todo7 | 在决策中,暂不应用多时序,但需将默认matchFo改为含mv且最迫切那条 T; |
 
 <br><br><br>
