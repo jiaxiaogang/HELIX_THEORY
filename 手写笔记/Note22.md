@@ -315,4 +315,9 @@
 | todo6 | matchFos应用到: tir_OPushM,使之更全面改变status状态 T; |
 | todo7 | 在决策中,暂不应用多时序,但需将默认matchFo改为含mv且最迫切那条 T; |
 
+| 22074 | 测得3BUG_SFo没有Y距_0条方案_时序识别重复 |
+| --- | --- |
+| 示图 | ![](assets/414_测得3BUG_SFo没有Y距_0条方案_时序识别重复.png) |
+| 分析 | BUG2,应该ReasonDemand还是原来的,未抵消更新为新的F10/F16; |
+
 <br><br><br>
