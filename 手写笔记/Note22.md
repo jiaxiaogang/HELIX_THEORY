@@ -476,6 +476,7 @@
 | 示图 | ![](assets/418_反向反馈外类比示图.png) |
 | 代码 | 1. 预测mv与真实mv之间求deltaMv,即使真实mv=0,deltaMv也!=0; |
 |  | 2. 虚mv时序: 是指预测mv-真实mv,得出的mv,其迫切度可以为0,但delta!=0; |
+| 应用 | 将反向反馈外类比结果用于R-模式 (需mIsC判断与matchFos有场景关联); |
 
 | TODO | STATUS |
 | --- | --- |
