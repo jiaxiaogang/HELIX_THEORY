@@ -487,8 +487,10 @@
 | 说明 | In反省最大功能就是更快找出SP,以帮助决策时更快修正(越来越准); |
 |  | > 如果In反省类比,仅作用于实mv,那么仅对P-模式获取SP有助益; |
 |  | > 但不作用于虚mv的话,则对R-模式无任何助益了,所以本表使之支持; |
-| 1 | 预测虚mv,在tip_OPushM中,不发生反向delta即为顺; |
-| 2 | 预测虚mv,在tip_OPushM中,会发生反向delta即为逆; |
+| 预测实mv | 1. tip_OPushM反馈同向,则为OutBackSameDelta = ATPlus |
+|  | 2. tip_OPushM未反馈同向,则为LastWait = ATSub |
+| 预测虚mv | 1. tip_OPushM反馈反向,则为OutBackDiffDelta = ATSub; |
+|  | 2. tip_OPushM未反馈反向,则为LastWait = ATPlus; |
 
 | TODO | STATUS |
 | --- | --- |
