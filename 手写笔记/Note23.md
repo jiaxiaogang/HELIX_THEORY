@@ -52,11 +52,12 @@
 |  | 说明:如图TIRFo失败,即当前场景都认识不清,何淡在getInnerV3中应用; |
 | 分析 | 1. 将TIRFo的结果中,不指向mv的放开 (并处理可能导致的副作用); |
 |  | --> 但仅是放开normal部分,而不放开HNGL和虚mv的部分; |
-|  | 3. 将inModel.protoFo改为彻底由最具象protoAlg构建 (并处理副作用); |
-|  | --> 因图中A113非最具象概念,它与inModel.matchAlgs是同层,结构操作乱; |
+|  | 2. 将TIRFo时,识别目标由matchAFo改为protoAlg (并处理副作用); |
+|  | --> 因为:如图现在matchAFo.A113与inModel.matchAlgs是同层,结构操作乱; |
 |  | --> 会导致判断全含时,A113特征不全导致失败; |
 |  | --> 并且A113当前向抽象取的assIndexes也不全; |
-|  | 4. 将TIRFo方法中的assIndexes,改为直接使用inModel.matchAlgs; |
+|  | 3. 将TIRFo方法中的assIndexes,改为直接使用inModel.matchAlgs; |
+|  | --> 因为TIRAlg不限层,所以无论是matchAlgs或absPorts,都算支持多层; |
 
 <br><br><br>
 
