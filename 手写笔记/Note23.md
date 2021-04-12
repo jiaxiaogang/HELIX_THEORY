@@ -48,6 +48,15 @@
 | --- | --- |
 | 示图 | ![](assets/439_九测无GL距小经验的BUG.png) |
 | 说明 | 在23011第2步中,已经训练右飞变近,但在第3步时,还是未找到GL经验; |
+| 调试 | ![](assets/441_23014BUG调试.png) |
+|  | 说明:如图TIRFo失败,即当前场景都认识不清,何淡在getInnerV3中应用; |
+| 分析 | 1. 将TIRFo的结果中,不指向mv的放开 (并处理可能导致的副作用); |
+|  | --> 但仅是放开normal部分,而不放开HNGL和虚mv的部分; |
+|  | 3. 将inModel.protoFo改为彻底由最具象protoAlg构建 (并处理副作用); |
+|  | --> 因图中A113非最具象概念,它与inModel.matchAlgs是同层,结构操作乱; |
+|  | --> 会导致判断全含时,A113特征不全导致失败; |
+|  | --> 并且A113当前向抽象取的assIndexes也不全; |
+|  | 4. 将TIRFo方法中的assIndexes,改为直接使用inModel.matchAlgs; |
 
 <br><br><br>
 
