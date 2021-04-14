@@ -59,6 +59,14 @@
 |  | 3. 将TIRFo方法中的assIndexes,改为直接使用inModel.matchAlgs; |
 |  | --> 因为TIRAlg不限层,所以无论是matchAlgs或absPorts,都算支持多层; |
 
+| 23015 | 23014分析2改为protoFo后无法构建F14的问题 `T` |
+| --- | --- |
+| 简介 | 改为protoFo后,发现最初还没抽象时,仅相似的两个fo无法识别并外类比; |
+| 问题 | 无法外类比`A`就无法抽象`B`,无法抽象就无法识别`C`(识别就是识别抽象); |
+| 分析 | 以上ABC三模块形成死循环,所以必须在起初留下一个切入口来解决之; |
+| 分析 | 改动前无问题,因为matchAFo在构建时没有mAlg就会用partAlg,算切入口; |
+| 方案 | 将tirFo的fo参数改为:识别到matchAlg时才用protoFo,否则还用matchAFo; |
+
 <br><br><br>
 
 ## n23p02 网络可视化迭代
