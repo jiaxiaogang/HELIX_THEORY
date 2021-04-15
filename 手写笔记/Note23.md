@@ -50,14 +50,16 @@
 | 说明 | 在23011第2步中,已经训练右飞变近,但在第3步时,还是未找到GL经验; |
 | 调试 | ![](assets/441_23014BUG调试.png) |
 |  | 说明:如图TIRFo失败,即当前场景都认识不清,何淡在getInnerV3中应用; |
-| 分析 | 1. 将TIRFo的结果中,不指向mv的放开 (并处理可能导致的副作用); |
+| 分析 | 1. 将TIRFo的结果中,不指向mv的放开 (并处理可能导致的副作用) `T`; |
 |  | --> 但仅是放开normal部分,而不放开HNGL和虚mv的部分; |
+|  | --> 将不指向mv的命名为matchRFos,原指向的改为matchPFos; |
 |  | 2. 将TIRFo时,识别目标由matchAFo改为protoAlg (并处理副作用) `T`; |
 |  | --> 因为:如图现在matchAFo.A113与inModel.matchAlgs是同层,结构操作乱; |
 |  | --> 会导致判断全含时,A113特征不全导致失败; |
 |  | --> 并且A113当前向抽象取的assIndexes也不全; |
-|  | 3. 将TIRFo方法中的assIndexes,改为直接使用inModel.matchAlgs; |
+|  | 3. 将TIRFo方法中的assIndexes,改为直接使用inModel.matchAlgs `T`; |
 |  | --> 因为TIRAlg不限层,所以无论是matchAlgs或absPorts,都算支持多层; |
+|  | --> 结果: 先不改,因为fromRethink时无matchAlgs,但absPorts更通用支持; |
 
 | 23015 | 23014分析2改为protoFo后无法构建F14的问题 `T` |
 | --- | --- |
@@ -66,6 +68,13 @@
 | 分析 | 以上ABC三模块形成死循环,所以必须在起初留下一个切入口来解决之; |
 | 分析 | 改动前无问题,因为matchAFo在构建时没有mAlg就会用partAlg,算切入口; |
 | 方案 | 将tirFo的fo参数改为:识别到matchAlg时才用protoFo,否则还用matchAFo; |
+
+| 23016 | 23014分析1放开matchRFos后,应用总结 `T` |
+| --- | --- |
+| 1 | 原matchFos改为matchPFos后,原调用全不变默认为matchPFos; |
+| 2 | 现matchRFos由以下几处调用: |
+|  | a. analogyInner_Outside_V3()中联想assFo处改为用matchRFos; |
+| TODO | 将有mv指向的fo.ds和无mv指向的fo.ds改为ATPercept和ATReason; |
 
 <br><br><br>
 
