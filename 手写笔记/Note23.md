@@ -15,6 +15,7 @@
 - [九测(融合训练)](#九测融合训练)
   - [n23p01 九测-觅食防撞融合训练 (getInnerV3回测)](#n23p01-九测-觅食防撞融合训练-getinnerv3回测)
   - [n23p02 网络可视化迭代](#n23p02-网络可视化迭代)
+  - [n23p03 getInnerHN拆分](#n23p03-getinnerhn拆分)
 
 <!-- /TOC -->
 
@@ -50,14 +51,14 @@
 | 说明 | 在23011第2步中,已经训练右飞变近,但在第3步时,还是未找到GL经验; |
 | 调试 | ![](assets/441_23014BUG调试.png) |
 |  | 说明:如图TIRFo失败,即当前场景都认识不清,何淡在getInnerV3中应用; |
-| 分析 | 1. 将TIRFo的结果中,不指向mv的放开 (并处理可能导致的副作用) `T`; |
+| TODO | 1. 将TIRFo的结果中,不指向mv的放开 (并处理可能导致的副作用) `T`; |
 |  | --> 但仅是放开normal部分,而不放开HNGL和虚mv的部分; |
 |  | --> 将不指向mv的命名为matchRFos,原指向的改为matchPFos; |
-|  | 2. 将TIRFo时,识别目标由matchAFo改为protoAlg (并处理副作用) `T`; |
+| TODO | 2. 将TIRFo时,识别目标由matchAFo改为protoAlg (并处理副作用) `T`; |
 |  | --> 因为:如图现在matchAFo.A113与inModel.matchAlgs是同层,结构操作乱; |
 |  | --> 会导致判断全含时,A113特征不全导致失败; |
 |  | --> 并且A113当前向抽象取的assIndexes也不全; |
-|  | 3. 将TIRFo方法中的assIndexes,改为直接使用inModel.matchAlgs `T`; |
+| TODO | 3. 将TIRFo方法中的assIndexes,改为直接使用inModel.matchAlgs `T`; |
 |  | --> 因为TIRAlg不限层,所以无论是matchAlgs或absPorts,都算支持多层; |
 |  | --> 结果: 先不改,因为fromRethink时无matchAlgs,但absPorts更通用支持; |
 
@@ -76,6 +77,15 @@
 |  | a. analogyInner_Outside_V3()中联想assFo处改为用matchRFos; |
 | TODO | 将有mv指向的fo.ds和无mv指向的fo.ds改为ATPercept和ATReason; |
 
+| 23017 | 回测23014无GL经验BUG |
+| --- | --- |
+| 日志 | ![](assets/442_回测23014无GL经验BUG.png) |
+| 说明 | 如图,当前maskFo仅有protoFo:F203一条,看来并未取到matchFos; |
+| 分析 | 1. 在TIRFo识别后,protoFo并非结束,所以并不会与matchFos抽具象关联 |
+|  | 2. 现在getInnerV3中取absPorts是取不到matchFos的; |
+| 方案 | 直接将protoFo所在的inModel.matchFos传入getInnerV3取GL经验; |
+| 延伸 | HN时,没有inModel参数可传,并且似乎与GL时联想路径也不同 `转n23p03`; |
+
 <br><br><br>
 
 ## n23p02 网络可视化迭代
@@ -93,5 +103,24 @@
 | 23022 | 快捷添加节点迭代 |
 | --- | --- |
 | 1 | 将addNode窗口的参数,改为指定格式的字符串拼接; |
+
+<br><br><br>
+
+## n23p03 getInnerHN拆分
+`CreateTime 2021.04.16`
+
+在getInnerV3迭代后,发现GL和HN的联想是不同路径的(参考23017),本节将针对HN的独立做笔记;
+
+| 23031 | 示例说明:`获取HN经验`的`联想路径` |
+| --- | --- |
+| 比如 | P-解决方案,想吃桃,步骤如下: |
+| 1 | getInnerHN取得: [超市,买得到桃],返给决策; |
+| 2 | 又需要找到超市,再到getInnerHN取得:[出发点,去超市],返给决策; |
+| 3 | 出发点在inModels中发现自己在家,找到具象时序:[家出发,去,X路A辉超市]; |
+| 说明 | 由例可见,二者在联想路径的向性上完全相反; |
+|  | 1. GL的路径向性为:下右向上左 (从时序向着抽象的概念的联想); |
+|  | 2. HN的路径向性为:左上向右下 (从概念向着时序的具象的联想); |
+| 代码 | 独立写getInnerHN方法,并传入cAlg来联想; |
+
 
 <br><br><br>
