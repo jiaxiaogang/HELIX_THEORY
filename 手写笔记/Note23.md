@@ -77,7 +77,7 @@
 |  | a. analogyInner_Outside_V3()中联想assFo处改为用matchRFos; |
 | TODO | 将有mv指向的fo.ds和无mv指向的fo.ds改为ATPercept和ATReason; |
 
-| 23017 | 回测23014无GL经验BUG |
+| 23017 | 回测23014无GL经验BUG `T` |
 | --- | --- |
 | 日志 | ![](assets/442_回测23014无GL经验BUG.png) |
 | 说明 | 如图,当前maskFo仅有protoFo:F203一条,看来并未取到matchFos; |
@@ -85,6 +85,18 @@
 |  | 2. 现在getInnerV3中取absPorts是取不到matchFos的; |
 | 方案 | 直接将protoFo所在的inModel.matchFos传入getInnerV3取GL经验; |
 | 延伸 | HN时,没有inModel参数可传,并且似乎与GL时联想路径也不同 `转n23p03`; |
+| 结果 | 按着方案,改代码后,依然无法获取GL经验,转23018; |
+
+| 23018 | 取不到GL经验的BUG |
+| --- | --- |
+| 调试 | 调试发现,在内中外类比期就未对matchRFos形成嵌套GL,所以用时取不到; |
+| 调试 | 1. 内类比是对protoFo,每次protoFo都不同,无法互相识别为matchRFos; |
+|  | 2. 内中外类比是根据matchRFos来联想assFo,从而形成matchRFos的GL; |
+|  | 3. 如上死循环,所以protoFo之间的嵌套GL,永远无法互相"内中外类比"; |
+|  | 4. 所以matchRFos永远不会指向GL; |
+| 分析 | 类似TIR_Fo时使用matchAFo,此处也可以做"激活期"; |
+| 方案 | 将相似的protoFo,指向的GL作为assFo与abFo激活类比; |
+|  | 注: 因此处partAlg并未做时序识别,故此处相似protoFo由matchRFos向具象取; |
 
 <br><br><br>
 
