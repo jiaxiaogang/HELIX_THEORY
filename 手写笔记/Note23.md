@@ -327,6 +327,7 @@
 | 说明 | 已对8个单方向觅食训练ok,但在变向训练中,发现没能变向; |
 | 调试 | ![](assets/467_调试变向失败的问题.png) |
 | 分析 | ![](assets/468_torOPushM循环衔接To短时记忆示图.png) |
+|  | ![](assets/469_torOPushM循环衔接To短时记忆示图.png) |
 | 如图 | 当前问题为: 外循环后,衔接尾部还是头部的问题; |
 |  | > 原做法为: 从尾部衔接,更新target的独特码,并继续PM; |
 |  | > 现需求为: 从头部衔接,将target直接替换掉,并继续决策流程控制; |
@@ -334,6 +335,11 @@
 | 方案 | 在tor_OPushM中不转PM,直接对target.baseAlg再次调用begin决策流程; |
 |  | target.base.begin()会自己找到latestProtoA,并继续决策行为化; |
 
+| 23076 | _Hav的不应期太抽象导致常切断决策流程 |
+| --- | --- |
+| 示图 | ![](assets/470_Hav的不应期太抽象导致常切断决策流程.png) |
+| 方案 | 将_Hav()中构建reModel时,把matchA改成protoA; |
+| 防错 | 查代码,看所有调用reModel的地方,是否会有别的错误发生; |
 
 
 <br><br><br>
