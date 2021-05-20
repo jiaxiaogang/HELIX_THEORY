@@ -378,4 +378,8 @@
 | 方案 | 在tor_OPushM中将成功的replaceAlg设置为finish或actNo; |
 |  | 然后在_GL()中,仅对actNo的做不应期,finish的不做; |
 
+| 2307a | GL总是优先从protoF取经验但它常常太具象偶然 |
+| --- | --- |
+| 示图 | ![](assets/476_GL总是优先从protoF取经验但它常常太具象偶然.png) |
+
 <br><br><br>
