@@ -370,5 +370,12 @@
 | 调试 | 而tirFo已抽象出absRFo,且内中外类比中将GL嵌套其下,所以: |
 | 方案 | 将getInnerGL中的mask参数改为:protoFo+inModel.absRFos后,实测ok; |
 
+| 23079 | 飞错方向再飞回来的protoA会被_GL()不应期掉的问题 |
+| --- | --- |
+| 示图 | ![](assets/475_GL会不应期掉曾有效的protoA.png) |
+| 问题 | 因为alg是防重的,如果飞错方向再飞回来,那么protoAlg会已进入不应期; |
+|  | 导致飞回来的protoA不能作为GL加工参考 (如:距20飞错距30再飞回距20); |
+| 方案 | 在tor_OPushM中将成功的replaceAlg设置为finish或actNo; |
+|  | 然后在_GL()中,仅对actNo的做不应期,finish的不做; |
 
 <br><br><br>
