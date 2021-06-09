@@ -572,11 +572,17 @@
 | 23123 | 子任务流程未正常进入ActYes状态的问题1 |
 | --- | --- |
 | 示图 | ![](assets/489_子任务流程未正常进入ActYes状态的问题.png) |
-| 调试 | 发现,在静默成功的actYes流程控制中,取findIndex和deltaTime一直失败; |
 
 | 23124 | 子任务流程未正常进入ActYes状态的问题2 |
 | --- | --- |
 | 示图 | ![](assets/490_子任务流程未正常进入ActYes状态的问题2.png) |
 | 复现 | 防撞训练前两步,重启后,下飞即可复现; |
+
+| 23125 | 来的及评价后的ActYes反省触发器不执行问题 `T` |
+| --- | --- |
+| 调试 | 发现,在静默成功的actYes流程控制中,取findIndex和deltaTime一直失败; |
+| 分析 | 1. 取findIndex方法不对,应该根据ARSTime方式取下标才能取到; |
+|  | 2. 应以rDemand.matchFo计算deltaTime,因为静默成功本来就是在等它; |
+| 结果 | 改了`取findIndex方式`和`deltaTime计算方式`,后ok; |
 
 <br><br><br>
