@@ -724,6 +724,8 @@
 | 说明 | F2,F3这些dsFo的A8应该静默等待才对,但却走了cHav代码,并最终失败; |
 | 疑问 | 查为什么A8在ARS_Time评价中通过了,而不是走向静默等待ActYes; |
 | 调试 | 经查,发现反思的已发生cutIndex定义不清晰,导致ARSTime评价失准; |
-| 分析 | 应将反思时的cutIndex匹配截点,与actionIndex已发生部分,分开表示; |
+| 分析 | 应将反思时的lastMatchIndex匹配截点,与cutIndex已发生截点,分开表示; |
+| 方案 | fromShortMem时,cutIndex = lastMatchIndex; |
+|  | fromRT反思时,cutIndex需从父任务中做判断 (默认为-1); |
 
 <br><br><br>
