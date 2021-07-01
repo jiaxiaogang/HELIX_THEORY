@@ -732,7 +732,7 @@
 | 方案 | fromShortMem时,cutIndex = lastMatchIndex; |
 |  | fromRT反思时,cutIndex需从父任务中做判断 (默认为-1) `转至23153`; |
 
-| 23153 | 反思时TOM的cutIndex取值 |
+| 23153 | 反思时TOM的cutIndex取值-方案制定 |
 | --- | --- |
 | 简介 | 本表主要针对反思的cutIndex取值源进行分析并撸码; |
 | 方案1 | 从反思的baseFo的actionIndex取值 `5%`; |
@@ -744,5 +744,10 @@
 | 方案2 | 逐级从父级R任务继承传递cutIndex `95%`; |
 |  | 父级: 从dsFo.baseRDemand的cutIndex继承,来判断当前cutIndex; |
 |  | 根级: 最终rootRDemand.cutIndex来自TIR_Fo.fromTIM的cutIndex; |
+|  | 示图: ![](assets/498_TOM的cutIndex继承传递示图.png) |
+
+| 23154 | 反思时TOM的cutIndex取值-代码规划 |
+| --- | --- |
+| 代码 | 从base的`0-cutIndex`,在cur中匹配lastIndex,作为当前的cutIndex; |
 
 <br><br><br>
