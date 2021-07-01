@@ -708,6 +708,8 @@
 ## n23p15 十测3-子任务测试
 `CreateTime 2021.06.25`
 
+缩略词: `cutIndex=>已发生截点`,`actionIndex=>行为化进度截点`,`fromTIM=>瞬时记忆时序识别`;
+
 | 23151 | dsFo经验太具象的问题 `T` |
 | --- | --- |
 | 示图 | ![](assets/495_重复多余的下飞动作.png) |
@@ -719,13 +721,28 @@
 | 调试 | ![](assets/497_查dsFo经验太具象的问题.png) |
 |  | 说明: 如图示,更抽象的dsFo是存在的,只是被不应期掉了 `转至23152`; |
 
-| 23152 | 抽象dsFo被不应期掉的原因 |
+| 23152 | 抽象dsFo被不应期掉的原因 `因demand已发生截点有误,转至23153` |
 | --- | --- |
 | 说明 | F2,F3这些dsFo的A8应该静默等待才对,但却走了cHav代码,并最终失败; |
 | 疑问 | 查为什么A8在ARS_Time评价中通过了,而不是走向静默等待ActYes; |
 | 调试 | 经查,发现反思的已发生cutIndex定义不清晰,导致ARSTime评价失准; |
+| 说明 | 1. fo.actionIndex没所谓,即使错了在行为化中也会自行更正; |
+|  | 2. 但demand.cutIndex(已发生截点)必须正确,不然就会影响`来的及评价`; |
 | 分析 | 应将反思时的lastMatchIndex匹配截点,与cutIndex已发生截点,分开表示; |
 | 方案 | fromShortMem时,cutIndex = lastMatchIndex; |
-|  | fromRT反思时,cutIndex需从父任务中做判断 (默认为-1); |
+|  | fromRT反思时,cutIndex需从父任务中做判断 (默认为-1) `转至23153`; |
+
+| 23153 | 反思时TOM的cutIndex取值 |
+| --- | --- |
+| 简介 | 本表主要针对反思的cutIndex取值源进行分析并撸码; |
+| 方案1 | 从反思的baseFo的actionIndex取值 `5%`; |
+|  | 分析: 仅actionIndex=-1时,才进行反思,所以此方案会全返-1; |
+|  | 问题: 这么做会导致ARS_Time评价结果,全变成来的及,静默等待; |
+|  | 例如: 即使父任务中已出现老虎,子任务还要等待老虎出现,显然是不理性的; |
+|  | 解释: cutIndex本身就是ARS_Time判断的标杆,是不容错误的; |
+|  | 解释: 不像actionIndex允许错,在ARS_Time评价后,再自行修正; |
+| 方案2 | 逐级从父级R任务继承传递cutIndex `95%`; |
+|  | 父级: 从dsFo.baseRDemand的cutIndex继承,来判断当前cutIndex; |
+|  | 根级: 最终rootRDemand.cutIndex来自TIR_Fo.fromTIM的cutIndex; |
 
 <br><br><br>
