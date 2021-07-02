@@ -750,4 +750,21 @@
 | --- | --- |
 | 代码 | 从base的`0-cutIndex`,在cur中匹配lastIndex,作为当前的cutIndex; |
 
+| 23155 | 反思时TOM的cutIndex取值-示例分析 |
+| --- | --- |
+| 示例1 | 当直接`扔木棒`预测到危险时,木棒已投出,在子任务中cutIndex = 0; |
+|  | > rootRDemand: 扔木棒,有撞的->危险 `cutIndex = 0` |
+|  | ——> dsFo: 避开撞来的木棒 |
+|  | ——> rtFo: 木棒,有危险 |
+|  | ——> subDemand: 木棒,有危险 `cutIndex = 0` |
+| 示例2 | 当`下飞`预测到危险时,木棒未投出,在子任务中cutIndex = -1; |
+|  | > rootRDemand: 飞下,有被木棒,撞的->危险 `cutIndex = 0` |
+|  | ——> dsFo: 避开撞来的木棒 |
+|  | ——> rtFo: 木棒,有危险 |
+|  | ——> subDemand: 木棒,有危险 `cutIndex = -1` |
+| 总结 | 两个例子的:`解决方案dsFo`,`反思rtFo`,`子任务subDemand`都一样; |
+|  | 但rootDemand.cutIndex不同,所以subDemand继承的cutIndex也不同; |
+| 结果 | 导致例1要及时的行为化躲避,但例2却可以静默等待; |
+
+
 <br><br><br>
