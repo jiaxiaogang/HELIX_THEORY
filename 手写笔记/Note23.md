@@ -749,6 +749,11 @@
 | 23154 | 反思时TOM的cutIndex取值-代码规划 |
 | --- | --- |
 | 代码 | 从base的`0-cutIndex`,在cur中匹配lastIndex,作为当前的cutIndex; |
+| 疑问1 | 是否仅判断matchFo中的0-lastMatchIndex部分? |
+|  | A: 是的,因为lastMatchIndex之后部分,只是预测,不可能已发生; |
+| 疑问2 | 找cutIndex时,是对matchFo进行全含判断,还是仅判断匹配lastIndex; |
+|  | A: 全含,因为baseDemand的已发生部分,也是全发生了; |
+| 代码 | 对cur的0-lastMatchIndex部分与base的0-cutIndex部分做全含判断; |
 
 | 23155 | 反思时TOM的cutIndex取值-示例分析 |
 | --- | --- |
