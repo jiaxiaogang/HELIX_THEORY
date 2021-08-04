@@ -1019,7 +1019,9 @@
 |  | 调试: 搜索所有训练过程中的`IRT构建SPFo`日志; |
 |  | 分析: 发现取sPorts的curFo嵌套sp太少,而curAlg嵌套sp数量正常 |
 |  | 怀疑: 因为curFo本身已经非常抽象了,所以它指向的sp较少; |
-| 调试 | 通过网络可视化查curFo与curAlg及其二者的抽具象的sp; |
-|  | 经查,curAlg指向sp较多,而curFo指向只有两个P没有S; |
+| 调试 | ![](assets/512_Fo指向P但Alg却指向S的问题.png) |
+|  | 问题1: 经可视化查,curAlg指向sp较多,而curFo指向只有P没有S; |
+|  | 问题2: F指向P而A却指向S,应该A70和F23类型一致才对; |
+
 
 <br><br><br>
