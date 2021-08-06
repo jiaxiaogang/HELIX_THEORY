@@ -1020,13 +1020,18 @@
 |  | 分析: 发现取sPorts的curFo嵌套sp太少,而curAlg嵌套sp数量正常 |
 |  | 怀疑: 因为curFo本身已经非常抽象了,所以它指向的sp较少; |
 | 调试 | ![](assets/512_Fo指向P但Alg却指向S的问题.png) |
-|  | 问题1: 经可视化查,curAlg指向sp较多,而curFo指向只有P没有S; |
+|  | 问题1: 经可视化查,curAlg指向sp较多,而curFo指向只有P没有S `转23206`; |
 |  | 问题2: F指向P而A却指向S,应该A70和F23类型一致才对 `转23205`; |
 
 | 23205 | F和A指向的SP不一致的问题 |
 | --- | --- |
 | 说明 | 参考23204示图,F和A指向的SP不一致; |
-| 分析 | AIAlgNodeManager.createAbsAlg_NoRepeat()中防重没支持ds防重; |
-| 重测 | 改后,根据23194(1,2步)训练得`FZ7,左上飞,直投木棒`,问题未出现; |
+| 修复 | 改AIAlgNodeManager.createAbsAlg_NoRepeat中支持ds防重; |
+| 重训 | 依23194(1,2步)训练得`FZ7,左上飞,直投木棒`,`FZ8,右上飞,直投木棒`; |
+| 结果 | 改后bug不再现,说明已经好了,此BUG修复完成; |
+
+| 23206 | R解决方案在PM中指向0条sPorts的问题 |
+| --- | --- |
+| 分析 | 在训练FZ7和FZ8中发现,好像这个curFo是在加载FZ8后最后两步才生成的; |
 
 <br><br><br>
