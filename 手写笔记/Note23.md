@@ -1064,6 +1064,8 @@
 | 说明 | 查R任务的dsFo是否进行actYes,然后对其ORT反思到SP; |
 | 调试 | 训练`FZ9,左下飞,直击`,分析日志得到下图; |
 | 分析 | ![](assets/513_dsFo在ORT中未生成S的问题调试分析.png) |
+| 方案 | 对analogy_Feedback_Diff()中dsFo的mvDeltaTime赋值; |
+| 回测 | TODOTOMORROW: 重新23207训练,得到FZ10,并看此BUG是否已经ok; |
 
 
 <br><br><br>
