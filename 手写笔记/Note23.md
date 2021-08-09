@@ -1064,8 +1064,12 @@
 | 说明 | 查R任务的dsFo是否进行actYes,然后对其ORT反思到SP; |
 | 调试 | 训练`FZ9,左下飞,直击`,分析日志得到下图; |
 | 分析 | ![](assets/513_dsFo在ORT中未生成S的问题调试分析.png) |
-| 方案 | 对analogy_Feedback_Diff()中dsFo的mvDeltaTime赋值; |
-| 回测 | TODOTOMORROW: 重新23207训练,得到FZ10,并看此BUG是否已经ok; |
+| 问题1 | 对analogy_Feedback_Diff()中dsFo的mvDeltaTime赋值; |
+|  | 回测: 此方案代码后,重新23207训练,得到`FZ10,右上飞,直击`; |
+|  | 结果: dsFo有mvDeltaTime了,但此方案不采用,因为应该用matchFo的时间; |
+|  | 例子: 不让车撞到,不是我躲安全地带多久,而是取决于当前撞来的车有多快; |
+| 问题2 | 查为什么actYes中matchFo:F11的mvDeltaTime为0; |
+|  | ![](assets/514_dsFo的反省触发器时间为0的问题2.png) |
 
 
 <br><br><br>
