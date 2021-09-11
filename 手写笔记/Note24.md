@@ -40,6 +40,9 @@
 |  | > 考虑改为matchRFos与其抽象取GL经验 (从稳定找普适); |
 |  | 原则: 决策期,具象优先`matchRFos`,延展抽象`matchRFos.absPorts`; |
 |  | 延展: matchRFos有匹配度,如有问题可考虑加入cutIndex实现精准控制; |
+| 实践 | 通过前面分析1,2中的原则,来制定代码迭代; |
+| 1. 体 | ![](assets/529_内中外类比assFo联想示图迭代.png) |
+| 2. 用 | ![](assets/530_getInnerGL经验联想示图.png) |
 
 
 <br><br><br><br><br>
