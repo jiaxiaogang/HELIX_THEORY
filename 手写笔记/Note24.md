@@ -43,6 +43,17 @@
 | 实践 | 通过前面分析1,2中的原则,来制定代码迭代; |
 | 1. 体 | ![](assets/529_内中外类比assFo联想示图迭代.png) |
 | 2. 用 | ![](assets/530_getInnerGL经验联想示图.png) |
+| 结果 | 将`体`改为absRFos+matchRFos后,发现永远取不到assGLFo `转至24013` |
+
+| 24013 | 无法生成absGL问题 |
+| --- | --- |
+| 问题 | 见24012结果,gl一直停留在最具象,没有向抽象寸进,导致assGLFo总为0条; |
+| 分析 | 1. 在构建absRFos时,没有做任何GL抽象操作; |
+|  | 2. 在内中外类比v5中,absRFos和matchRFos也都是抽象的,全没GL嵌套; |
+| 方案1 | 内中外类比中,应对首条seemFo(相似非全含fo)做支持,完成gl抽象起步; |
+|  | 内中外类比中,应对首条seemFo进行外类比; |
+| 方案2 | 或直接用matchRFos.conPorts作为seemFo `即回滚到原v4代码` |
+|  | 此时seemFo外类比就不用了,因为matchRFos就是它们的外类比抽象结果; |
 
 
 <br><br><br><br><br>
