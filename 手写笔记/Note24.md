@@ -118,6 +118,13 @@
 |  | 问题: 这样的话F119就可以用于解决`向大,X大,距小,Y距大`,互相空S掉; |
 |  | 方案: 将atType集成到AIKVPointer中,并作用于alg防重,可以避免它混乱; |
 
+| 24019 | glFo&glAlg防重不全面,导致空S混乱问题代码实践 |
+| --- | --- |
+| 代码 | 需要将视觉属性名如`distanceY`和type如`G`集成到glConAlg中; |
+| 代码 | 将glConAlg赋值pointer.type,并将`distanceY`赋值到pointer.ds; |
+|  | 将glFo赋值pointer.type,并将`distanceY`赋值到pointer.ds; |
+|  | 这样话,F179就会有四个不同的F119,分别各自被空S,避免彼此误伤; |
+|  |  |
 
 
 <br><br><br><br><br>
