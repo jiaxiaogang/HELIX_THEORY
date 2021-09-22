@@ -120,14 +120,16 @@
 
 | 24019 | glFo&glAlg防重不全面,导致空S混乱问题代码实践 |
 | --- | --- |
+| 各类示图 | ![](assets/536_hnglsp节点取用区分判断方式不同分析.png) |
 | 实践简介 | 需要将视觉属性名如`distanceY`和type如`G`集成到glConAlg中; |
 | 套用实例 | 1. 将glConAlg赋值pointer.type & 并将distanceY赋值到ds; |
 |  | 2. 将glFo赋值pointer.type & 并将distanceY赋值到ds; |
 |  | 结果: 这样话,F179就会有四个不同的F119,分别各自被空S,避免彼此误伤; |
 | 概念部分 | 1. 将所有的createAbsAlg_NoRepeat()新增type节点; `T` |
 |  | 2. 将Same类型全改成ATDefault类型; `T` |
-|  | 3. 将`distanceY`这些赋值到ds; |
-| 时序部分 |  |
+|  | 3. 构建hnglAlg时,将`distanceY`这些传递赋值到ds `T`; |
+| 时序部分 | 1. 将所有的createAbsFo_NoRepeat()新增type节点; |
+|  | 2. 构建hnglFo时,将`distanceY`这些传递赋值到ds; |
 
 
 <br><br><br><br><br>
