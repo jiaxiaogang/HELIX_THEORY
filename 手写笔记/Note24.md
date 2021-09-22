@@ -121,15 +121,18 @@
 | 24019 | glFo&glAlg防重不全面,导致空S混乱问题代码实践 |
 | --- | --- |
 | 各类示图 | ![](assets/536_hnglsp节点取用区分判断方式不同分析.png) |
+| 示图改1 | `GL下探在V,需要at&ds&type判别`,`而HNSPD仅在AF,type即可判别`; |
 | 实践简介 | 需要将视觉属性名如`distanceY`和type如`G`集成到glConAlg中; |
 | 套用实例 | 1. 将glConAlg赋值pointer.type & 并将distanceY赋值到ds; |
 |  | 2. 将glFo赋值pointer.type & 并将distanceY赋值到ds; |
+|  | 3. 仅GL时,需将`distanceY`赋值传递到A和F的ds下 (参考:示图改1); |
 |  | 结果: 这样话,F179就会有四个不同的F119,分别各自被空S,避免彼此误伤; |
 | 概念部分 | 1. 将所有的createAbsAlg_NoRepeat()新增type节点; `T` |
 |  | 2. 将Same类型全改成ATDefault类型; `T` |
-|  | 3. 构建hnglAlg时,将`distanceY`这些传递赋值到ds `T`; |
-| 时序部分 | 1. 将所有的createAbsFo_NoRepeat()新增type节点; |
-|  | 2. 构建hnglFo时,将`distanceY`这些传递赋值到ds; |
+|  | 3. 构建glAlg时,将`distanceY`这些传递赋值到ds `T`; |
+| 时序部分 | 1. 将所有的createAbsFo_NoRepeat()新增type节点 `T`; |
+|  | 2. 构建glFo时,将`distanceY`这些传递赋值到ds `T`; |
+| TODO | 废弃glConAlg,因为联想GL经验路径早改为场景联想,而非glConAlg索引; |
 
 
 <br><br><br><br><br>
