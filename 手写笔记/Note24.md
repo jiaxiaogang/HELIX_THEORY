@@ -132,9 +132,9 @@
 |  | 3. 构建glAlg时,将`distanceY`这些传递赋值到ds `T`; |
 | 时序部分 | 1. 将所有的createAbsFo_NoRepeat()新增type节点 `T`; |
 |  | 2. 构建glFo时,将`distanceY`这些传递赋值到ds `T`; |
-| 使用部分 | 1. 废弃dataSource和type互转,及所有调用代码; |
+| 使用部分 | 1. 废弃dataSource和type互转,及所有调用代码 `T`; |
 |  | 2. 废弃取glConAlg的方法: getHNGLConAlg_ps(); |
-|  | 3. 在AINetUtils中取ports的众多方法中,用ds筛选改成用type筛选; |
+|  | 3. 在AINetUtils中取ports的众多方法中,用ds筛选改成用type筛选 `T`; |
 |  | 4. 把所有生成AIKVPointer的方法,加上type参数 `T`; |
 | TODO | 废弃glConAlg,因为联想GL经验路径早改为场景联想,而非glConAlg索引; |
 
