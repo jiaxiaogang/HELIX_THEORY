@@ -143,8 +143,10 @@
 | 概念部分 | 1. 将所有的createAbsAlg_NoRepeat()新增type节点; `T` |
 |  | 2. 将Same类型全改成ATDefault类型; `T` |
 |  | 3. 构建glAlg时,将`distanceY`这些传递赋值到ds `T`; |
+|  | 4. 构建glAlg时,将`FLY_RDS`这些传递赋值到at (因为有时没ds) `T`; |
 | 时序部分 | 1. 将所有的createAbsFo_NoRepeat()新增type节点 `T`; |
 |  | 2. 构建glFo时,将`distanceY`这些传递赋值到ds `T`; |
+|  | 3. 构建glFo时,将`FLY_RDS`这些传递赋值到at (因为有时没ds) `T`; |
 | 使用部分 | 1. 废弃dataSource和type互转,及所有调用代码 `T`; |
 |  | 2. 废弃getHNGLConAlg_ps(),以及glConAlgs的包含判断代码; `T`; |
 |  | > 联想GL经验路径早改为场景联想,现又改了vDS==fo.ds匹配判断; |
@@ -163,5 +165,7 @@
 | 自检1 | 测下getHN经验时vDS匹配判断代码是否多余,多余告警; |
 | 自检2 | 测生成GL的AIKVPointer时的ds是否正常赋值,因为它影响node防重; |
 | 自检3 | 测生成非GL的AIKVPointer时的ds是否为" ",因为它影响node防重; |
+| 自检4 | 行为飞稀疏码的isOut为false的问题; |
+| 自检5 | 测生成GL的AIKVPointer时的at是否正常赋值,因为它影响node防重; |
 
 <br><br><br><br><br>
