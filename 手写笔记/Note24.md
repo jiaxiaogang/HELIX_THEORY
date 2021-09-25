@@ -153,6 +153,10 @@
 |  | 3. 在AINetUtils中取ports的众多方法中,用ds筛选改成用type筛选 `T`; |
 |  | 4. 把所有生成AIKVPointer的方法,加上type参数 `T`; |
 
+| 24022 | 迭代完回归测试 |
+| --- | --- |
+| BUG1 | glFo内中外类比,非末位alg类比构建absAlg时,使用Type=GL的问题 `T`; |
+
 <br><br><br>
 
 ## n24p03 单元测试-自检告警机制
@@ -167,5 +171,6 @@
 | 自检3 | 测生成非GL的AIKVPointer时的ds是否为" ",因为它影响node防重; |
 | 自检4 | 行为飞稀疏码的isOut为false的问题; |
 | 自检5 | 测生成GL的AIKVPointer时的at是否正常赋值,因为它影响node防重; |
+| 自检6 | 测从conAlgs取type应唯一,否则查为何不同type的alg会类比抽象; |
 
 <br><br><br><br><br>
