@@ -157,7 +157,10 @@
 | --- | --- |
 | BUG1 | glFo内中外类比,非末位alg类比构建absAlg时,使用Type=GL的问题 `T`; |
 | BUG2 | 构建SFo时,at&ds竟有值,经查是从conNodes中取的,改为仅GL时才取 `T`; |
-| BUG3 | 有时外类比构建absAlg时,两个conAlg不是同一类型,导致自检6问题; |
+| BUG3 | 有时外类比构建absAlg时,两个conAlg不是同一类型,触发自检6 `T`; |
+|  | > 原因1是构建SPFo时,收集的shortAlg为Default类型,而非SP类型导致; |
+|  | > 原因2是alg构建器中,从conAlgs中防重没判断at&sp&type导致错乱; |
+| BUG4 | FZ26-1训练中,发现H类型Fo中有S类型的Alg,触发自检6; |
 
 | 24023 | 训练步骤整理 | 训练目标 |
 | --- | --- | --- |
@@ -181,5 +184,6 @@
 | 自检4 | 行为飞稀疏码的isOut为false的问题; |
 | 自检5 | 测生成GL的AIKVPointer时的at是否正常赋值,因为它影响node防重; |
 | 自检6 | 测从conNodes取at&ds&type应唯一,否则查为何不同的node会类比抽象; |
+| 自检7 | 测构建SPFo时,元素有两种类型的原因(参考24022BUG3) |
 
 <br><br><br><br><br>
