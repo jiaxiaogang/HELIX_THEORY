@@ -185,5 +185,7 @@
 | 自检5 | 测生成GL的AIKVPointer时的at是否正常赋值,因为它影响node防重; |
 | 自检6 | 测从conNodes取at&ds&type应唯一,否则查为何不同的node会类比抽象; |
 | 自检7 | 测构建SPFo时,元素有两种类型的原因(参考24022BUG3) |
+| 自检8 | 测构建Fo时,有不匹配type的元素原因(参考24022BUG4) |
+
 
 <br><br><br><br><br>
