@@ -162,6 +162,9 @@
 |  | > 原因2是alg构建器中,从conAlgs中防重没判断at&sp&type导致错乱; |
 | BUG4 | FZ26-1训练中,发现H类型Fo中有S类型的Alg,触发自检6 `T`; |
 |  | > 原因是在TIR_Alg识别中,取refPorts时没有筛选normal类型; |
+| BUG5 | 因为ATSame和ATDiff导致TIR_Fo识别到Fos结果很少 `T`; |
+|  | > 在TIR_Fo中,仅取normal结果,所以没包含ATSame和ATDiff; |
+|  | > 将这俩type外类比时改为Default,因为这俩只是描述mv实虚并非fo类型; |
 
 | 24023 | 训练步骤整理 | 训练目标 |
 | --- | --- | --- |
