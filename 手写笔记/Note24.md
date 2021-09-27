@@ -160,7 +160,8 @@
 | BUG3 | 有时外类比构建absAlg时,两个conAlg不是同一类型,触发自检6 `T`; |
 |  | > 原因1是构建SPFo时,收集的shortAlg为Default类型,而非SP类型导致; |
 |  | > 原因2是alg构建器中,从conAlgs中防重没判断at&sp&type导致错乱; |
-| BUG4 | FZ26-1训练中,发现H类型Fo中有S类型的Alg,触发自检6; |
+| BUG4 | FZ26-1训练中,发现H类型Fo中有S类型的Alg,触发自检6 `T`; |
+|  | > 原因是在TIR_Alg识别中,取refPorts时没有筛选normal类型; |
 
 | 24023 | 训练步骤整理 | 训练目标 |
 | --- | --- | --- |
