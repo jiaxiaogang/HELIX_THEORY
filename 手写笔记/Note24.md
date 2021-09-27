@@ -165,6 +165,9 @@
 | BUG5 | 因为ATSame和ATDiff导致TIR_Fo识别到Fos结果很少 `T`; |
 |  | > 在TIR_Fo中,仅取normal结果,所以没包含ATSame和ATDiff; |
 |  | > 将这俩type外类比时改为Default,因为这俩只是描述mv实虚并非fo类型; |
+| BUG6 | 有时R取到dsFo解决方案,却又指向实mv `T`; |
+|  | > 查应该是BUG5不区分Diff和Same,导致原本虚Fo防重无效,重赋值成实fo; |
+|  | > 方案: 将BUG5改成不区分ATSame,但区分ATDiff; |
 
 | 24023 | 训练步骤整理 | 训练目标 |
 | --- | --- | --- |
