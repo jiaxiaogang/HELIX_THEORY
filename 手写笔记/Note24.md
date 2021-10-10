@@ -283,6 +283,12 @@
 | 原因 | 现R任务对dsFo进行PM时,它是后期SP,所以很难取到足够的SP供评价; |
 | 求解 | 所以在PM中,仅靠dsFo.SP是不够的,想办法将IRT也加入进来很重要; |
 | 方案 | 发R模式将dsFo传入PM时,补充将rMatchFo.SP也作用于评价; |
+| 实践 | 1. pm_GetValidSPAlg_ps()取rMatchFo的SP(直接absPorts取即可) T |
+|  | 2. AIScore.VRS()中,支持demand传入,并对rMatchFo进行评分; T |
+|  | 3. AIScore.score4Value()中,兼容支持rMatchFo时的评分; T |
+|  | 4. 在AIScore.VRS()中,支持将rMatchFo的评分作用于评价; |
+|  | 5. 在PM()中,支持从rMatchFo.SP取最近的p做修正目标; |
+| TODO | 对P模式的matchFo的SP也要作用于评价 `随后重回觅食训练时,再支持`; |
 
 
 
