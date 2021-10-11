@@ -286,7 +286,7 @@
 | 实践 | 1. pm_GetValidSPAlg_ps()取rMatchFo的SP(直接absPorts取即可) T |
 |  | 2. AIScore.VRS()中,支持demand传入,并对rMatchFo进行评分; T |
 |  | 3. AIScore.score4Value()中,兼容支持rMatchFo时的评分; T |
-|  | 4. 在AIScore.VRS()中,支持将rMatchFo的评分作用于评价; |
+|  | 4. 在AIScore.VRS()中,支持将rMatchFo的评分作用于评价; T |
 |  | 5. 在PM()中,支持从rMatchFo.SP取最近的p做修正目标; |
 | TODO | 1. 对P模式的matchFo的SP也要作用于评价 `随后重回觅食训练时,再支持`; |
 |  | > 因为P模式也有导致任务的matchFo,只是它现在没保留到pDemand中; |
@@ -302,6 +302,7 @@
 | 导致 | 它会导致Y距35被VRS误评价为通过; |
 | 说明 | Y距35在危险地带,却P强度12(经历多),说明每一次躲开都计入为P了; |
 | 分析 | 既然躲开了,那么Y距35其实已经失效了,理应废弃这条反思,以最新Y距为准; |
+| 调试 | 从FZ27日志中,分析Y距35的P形成,都是由哪里形成的,路径是什么; |
 
 
 
