@@ -288,13 +288,14 @@
 |  | 2. AIScore.VRS()中,支持demand传入,并对rMatchFo进行评分; T |
 |  | 3. AIScore.score4Value()中,兼容支持rMatchFo时的评分; T |
 |  | 4. 在AIScore.VRS()中,支持将rMatchFo的评分作用于评价; T |
-|  | 5. 在PM()中,支持从rMatchFo.SP取最近的p做修正目标; |
+|  | 5. 在PM()中,支持从rMatchFo.SP取最近的p做修正目标; T |
 | TODO | 1. 对P模式的matchFo的SP也要作用于评价 `随后重回觅食训练时,再支持`; |
 |  | > 因为P模式也有导致任务的matchFo,只是它现在没保留到pDemand中; |
 |  | 2. 考虑将PM中P最近的mostSimilarAlg废弃掉,而转为采用强度最强的; |
 |  | > 因为直接取mostSimilar与自由竞争相违背,不改先,后有时间再改; |
 |  | 3. 为避免VRS束波求和SP数多者占优,考虑将平均作用力也作用其中; |
 |  | > tips:加入平均作用力是否有新的不公呢? `考虑明白后再实践` |
+| 结果 | 实践5条全完成,按FZ27的步骤重训得到FZ29 (未完成); |
 
 | 24054 | 24053改动回测-SP定义混乱 |
 | --- | --- |
