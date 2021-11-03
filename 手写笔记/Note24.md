@@ -648,8 +648,9 @@
 |  | 3. 从每个pFo的SP,并从中取出同区码的值; |
 |  | 4. 对每个同区码值,分别在sFo.pPorts和sPorts做score4Value()评分`; |
 |  | 5. 评分结果生成VRSReasonResultModel,并将score最大的作为修正目标; |
-| TODO | 1. BUG1-改变最稳定排序方法; |
-|  | 2. BUG2-写取修正值的方法; |
+| TODO1 | BUG1-改变最稳定排序方法; |
+| 结果 | ![](assets/546_24103BUG1修复完成.png) |
+| TODO2 | BUG2-写取修正值的方法; |
 
 | 24104 | P模式迭代PMV4计划 `待后回测P模式再来迭代` |
 | --- | --- |
