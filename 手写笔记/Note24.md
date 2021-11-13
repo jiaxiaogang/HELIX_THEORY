@@ -695,10 +695,12 @@
 
 | 24107 | R决策任务池代码实践 |
 | --- | --- |
-| 1 | 继续使用DemandManager.loopCache将R任务树中的所有itemFo存进去; |
+| 1 | 继续将R任务树中的所有itemFo存在DemandManager.loopCache `不动`; |
 | 2 | loopCache排序因子新定义demandUrgentTo (R任务用迫切度*匹配度) `T`; |
-| 3 | DemandManager写可根据单条R任务,取得其所有抽具象路径R任务组; |
+| 3 | DemandManager写可根据单条R任务,取得其所有抽具象路径R任务组 `T`; |
 | 4 | R行为化类中,写多R稳定性竞争方法; |
+| 5 | 当一条rDemand完成时,它的整个抽具象路径全设为完成状态; |
+| 6 | 当一条rDemand失败时,仅它自己失败,别的可继续决策 `不动`; |
 
 
 <br><br><br>
