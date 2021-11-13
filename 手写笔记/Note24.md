@@ -693,6 +693,14 @@
 |  | > 首要R决策任务 = 排在最前的fo及其抽具象路径fo组成mModels; |
 |  | > 行为化: 从mModels场景中,找出最稳定的进行p修正; |
 
+| 24107 | R决策任务池代码实践 |
+| --- | --- |
+| 1 | 继续使用DemandManager.loopCache将R任务树中的所有itemFo存进去; |
+| 2 | loopCache排序因子新定义demandUrgentTo (R任务用迫切度*匹配度) `T`; |
+| 3 | DemandManager写可根据单条R任务,取得其所有抽具象路径R任务组; |
+| 4 | R行为化类中,写多R稳定性竞争方法; |
+
+
 <br><br><br>
 
 ## n24p11 回测PM修正目标
