@@ -1080,6 +1080,12 @@ PM有可能只需要改动多码中的一部分后,即可符合非常稳定的Pl
 |  | 结果: 所以将outReflect废除掉,并调整架构图如下: |
 | 示图 | ![](assets/558_思维控制器架构图2021V3版.png) |
 
+| 24165 | PRH三种Demand分析 |
+| --- | --- |
+| 说明 | 对于percept,reason,cHav三种任务,分别有三种Demand,路径也各不同; |
+| P路径 | input->直接转forecastMV->生成PDemand; |
+| R路径 | input->regroup->recognition->forecastMV->RDemand; |
+| H路径 | jump->直接生成HDemand; |
 
 <br><br><br>
 
@@ -1098,5 +1104,6 @@ PM有可能只需要改动多码中的一部分后,即可符合非常稳定的Pl
 | 6 | 废弃PM,用`重组,反思,产生子任务`,来替代它的作用; |
 | 7 | `紧急情况`迭代为`解决方案所需时间 > 父任务能给的时间`时,情况紧急; |
 |  | 代码: 在action中,判断solution所需时间和父任务剩余时间对比; |
+| 8 | 写HDemand类型 `T`; |
 
 <br><br><br><br><br>
