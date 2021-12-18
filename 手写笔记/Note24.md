@@ -1313,17 +1313,29 @@ PM有可能只需要改动多码中的一部分后,即可符合非常稳定的Pl
 
 在一节TCPlan中,综合评分,并取出末枝执行,传到TCSolution中来,本节将针对TCSolution做代码复审 (因为TCSolution早已写完,本次迭代只是与TCPlan协作的部分小更改);
 
-| 24201 | TCPlan与TCSolution协作 |
+| 24201 | TCPlan与TCSolution协作 `作废,转24203` |
 | --- | --- |
 | 1 | TCPlan从root出发,并输出endBranch; |
 | 2 | TCSolution从endBranch出发,而向root递归; |
 
-| 24202 | TCSolution代码规划 |
+| 24202 | TCSolution代码规划1-递归方案 `废弃,转24203` |
 | --- | --- |
 | 1 | 开始: endBranch取S(limit=3),S综合评分为正`转顺利`,负`转不顺`; |
 | 2 | 顺利: 转TCAction->TCOut->TCInput->TCPlan->TCSolution循环; |
 | 3 | 不顺: 继续下条S,三条全跪,则递归baseDemand,直至rootDemand层; |
 | 4 | 失败: 最终所有层全取完3条S仍失败,则递归到root失败,转secondRoot; |
 | 总结 | 成功时,继续螺旋,失败时最终递归TCPlan继续下一任务; |
+
+| 24203 | TCSolution代码规划2-螺旋方案 |
+| --- | --- |
+| 说明 | TCSolution不递归,因为递归片面,而从root开始才是综合最优选择; |
+| 1 | endBranch算法末枝达到3条时,则最优执行TCAction; |
+|  | 1) 执行成功时,标记actYes/finish,并下轮循环 (等待返回/继续baseFo); |
+|  | 2) 执行失败时,标记failure/actNo,并下轮循环 (回baseFo尝试下一方案); |
+| 2 | endBranch频域末枝小于3条,且都为负分时,执行TCSolution取下一方案; |
+|  | 1) 下一方案成功时,标记waitAct,并下轮循环 (重新竞争末枝转Action); |
+|  | 2) 下一方案失败时,标记withOut,并下轮循环 (竞争末枝转Action); |
+| 3 | 如所有层3条S全失败,则root设为failure不应期,转secondRoot; |
+
 
 <br><br><br><br><br>
