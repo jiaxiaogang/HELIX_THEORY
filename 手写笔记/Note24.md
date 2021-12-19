@@ -32,6 +32,7 @@
   - [n24p18 螺旋架构-流程控制](#n24p18-螺旋架构-流程控制)
   - [n24p19 螺旋架构-TCPlan决策计划](#n24p19-螺旋架构-tcplan决策计划)
   - [n24p20 螺旋架构-TCSolution决策执行](#n24p20-螺旋架构-tcsolution决策执行)
+  - [n24p21 螺旋架构-TCAction](#n24p21-螺旋架构-tcaction)
 
 <!-- /TOC -->
 
@@ -1305,6 +1306,7 @@ PM有可能只需要改动多码中的一部分后,即可符合非常稳定的Pl
 | 3 | 根据得分字典,从root向sub,取最优路径; |
 | 4 | 从最优路径末枝的解决方案,转给TCSolution执行; |
 | 终 | TCPlan仅解决从`可执行的末枝`出发的问题,而执行部分转TCSolution; |
+| 改 | 其中第2步综合评分独立为TCScore,第3步最优路径继续延用TCPlan名称; |
 
 <br><br><br>
 
@@ -1329,13 +1331,26 @@ PM有可能只需要改动多码中的一部分后,即可符合非常稳定的Pl
 | 24203 | TCSolution代码规划2-螺旋方案 |
 | --- | --- |
 | 说明 | TCSolution不递归,因为递归片面,而从root开始才是综合最优选择; |
-| 1 | endBranch算法末枝达到3条时,则最优执行TCAction; |
-|  | 1) 执行成功时,标记actYes/finish,并下轮循环 (等待返回/继续baseFo); |
-|  | 2) 执行失败时,标记failure/actNo,并下轮循环 (回baseFo尝试下一方案); |
-| 2 | endBranch频域末枝小于3条,且都为负分时,执行TCSolution取下一方案; |
-|  | 1) 下一方案成功时,标记waitAct,并下轮循环 (重新竞争末枝转Action); |
-|  | 2) 下一方案失败时,标记withOut,并下轮循环 (竞争末枝转Action); |
-| 3 | 如所有层3条S全失败,则root设为failure不应期,转secondRoot; |
+| 1 | endBranch >= 0分时,执行TCAction `转24204`; |
+| 2 | endBranch < 0分时,且末枝S小于3条,执行TCSolution取下一方案; |
+|  | a) 下一方案成功时,标记waitAct,并下轮循环 (重新竞争末枝转Action); |
+|  | b) 下一方案失败时,标记withOut,并下轮循环 (竞争末枝转Action); |
+| 3 | endBranch < 0分时,且末枝S达到3条时,则最优执行TCAction `转24204`; |
+
+<br><br><br>
+
+## n24p21 螺旋架构-TCAction
+`CreateTime 2021.12.19`
+
+上节末尾TCSolution会调用TCAction,然后此节主要看TCAction的流程;
+
+| 24211 | TCAction执行流程分析 |
+| --- | --- |
+| 执行成功 | 标记actYes/finish,并下轮循环 (等待返回/继续baseFo); |
+| 执行失败 | 当TCAction失败时,根据不同失败程度,分为以下三种; |
+|  | 1. 单条S失败时,标记failure/actNo,并下轮循环 (回baseFo取下一方案); |
+|  | 2. 当前层3条S全失败时,则baseDemand设为failure不应期,并下轮循环; |
+|  | 3. 当所有层3条S全失败,则root设为failure不应期,下轮转secondRoot; |
 
 
 <br><br><br><br><br>
