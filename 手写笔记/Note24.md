@@ -1361,7 +1361,7 @@ PM有可能只需要改动多码中的一部分后,即可符合非常稳定的Pl
 | 5 | TCScore支持对WithOut,且子解决方案全ActNo时,才理性淘汰 `T`; |
 | 6 | 当所有层所有S全失败时,转secondRoot `T`; |
 | 7 | A最优末枝为actYes时,向root传染,转secondRoot `T`; |
-| 8 | B任意feedback时,root再将actYes设回wait,继续firstRoot; |
+| 8 | B任意feedback时,root再将actYes设回runing,继续firstRoot `T`; |
 
 
 <br><br><br><br><br>
