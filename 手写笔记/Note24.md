@@ -1354,11 +1354,14 @@ PM有可能只需要改动多码中的一部分后,即可符合非常稳定的Pl
 
 | 24212 | 新螺旋架构代码实践TODO |
 | --- | --- |
-| 1 | 迭代hSolution(); |
+| 1 | 迭代hSolution() `转25011`; |
 | 2 | 迭代`F时间紧急`评价 (紧急状态) `T`; |
 | 3 | 整理`A下标不急`评价 (弄巧成拙) `T`; |
 | 4 | 决策过程受阻且无输出时,直接下轮循环跳到决策之始开始 `T`; |
 | 5 | TCScore支持对WithOut,且子解决方案全ActNo时,才理性淘汰 `T`; |
+| 6 | 当所有层所有S全失败时,转secondRoot `T`; |
+| 7 | A最优末枝为actYes时,向root传染,转secondRoot `T`; |
+| 8 | B任意feedback时,root再将actYes设回wait,继续firstRoot; |
 
 
 <br><br><br><br><br>
