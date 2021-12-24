@@ -67,5 +67,9 @@ H以往是用maskAlg联想的(参考n23p03),但它脱离场景,本文对hSolutio
 | 3 | feedbackTIR和TOR两个理性反馈,构建的SP中找H经验; |
 |  | 分析: 只有SP是在当前场景下的反馈 |
 | 4 | 弃用H类型节点 (因为脱离场景,用SP替代) `先不做,参考25013-1`; |
+| 5 | hSolution的maskFos要收集:`自身+向抽象+向具象`; |
+| 6 | 分别在maskFos的SP中找H; |
+| 7 | TOOut.out()中isHNGL_toModel判断要改掉,因为H类型已弃用; |
+| 8 | 核实原有SP对新hSolution的支持 `已核实部分` |
 
 <br><br><br><br><br>
