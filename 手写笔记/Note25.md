@@ -135,5 +135,14 @@ H以往是用maskAlg联想的(参考n23p03),但它脱离场景,本文对hSolutio
 | 7 | 强度: SP增强单纯为线性,不存在再外类比的爆发式增涨 (更稳定,好事); |
 | 8 | 反省2: IRT反省可直接重写,改动太大; |
 
+| 25032 | 反省分裂迭代-在系统内整体运行流程 |
+| --- | --- |
+| 1 | 在TCForecast中构建IRT触发器 `T`; |
+| 2 | 在TIR和TIP两个feedback中反馈 `T`; |
+| 3 | 触发反省算法 `构建` (独立写TCRethink); |
+| 4 | hSolution和rSolution使用SP (SP稳定性竞争); |
+| 5 | actYes输出后,构建ORT反省触发器; |
+| 6 | 在feedbackTOP和TOR中反馈; |
+| 7 | 触发反省算法 `增强`; |
 
 <br><br><br><br><br>
