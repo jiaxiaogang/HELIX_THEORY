@@ -108,8 +108,8 @@ H以往是用maskAlg联想的(参考n23p03),但它脱离场景,本文对hSolutio
 
 | 25025 | 代码规划 |
 | --- | --- |
-| 1 | TCForecast预测输入时序,在理性反省路径要处理PFos也要处理RFos; |
-| 2 | 正反向反馈外类比,改成感性IRT反省,构建感性SP; |
+| 1 | TCForecast预测输入时序,在理性反省路径要处理PFos也要处理RFos `T`; |
+| 2 | 正反向反馈外类比,改成感性IRT反省,构建感性SP `T`; |
 | 3 | 废弃HN构建 (可先将HN内类比关掉,但不删其代码,等hSolution跑定再删) |
 | 4 | 感性和理性SP的表征,可以给SP节点增加forIndex来表示; |
 | 5 | 写理性IRT算法; |
@@ -126,8 +126,8 @@ H以往是用maskAlg联想的(参考n23p03),但它脱离场景,本文对hSolutio
 
 | 25031 | forecastIRT迭代分析 |
 | --- | --- |
-| 1 | pFos+rFos都参与反省; |
-| 2 | 仅反省一步:非末位理性反省cutIndex之后一帧,末位且有mv时则感性反省; |
+| 1 | pFos+rFos都参与反省 `T`; |
+| 2 | 仅反省一步:非末位理性反省cutIndex后一帧,末位且有mv时则感性反省 `T` |
 | 3 | 表征1: foNode下新增spDic<index,spModel> (末位index=-1); |
 | 4 | 表征2: 将SP节点拆分成内容和强度值:内容保留于时序中,强度在spModel; |
 | 5 | 表征3: spModel表征S和P强度值 (这样SP节点也可废弃了); |
