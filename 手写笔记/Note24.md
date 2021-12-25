@@ -1362,6 +1362,7 @@ PM有可能只需要改动多码中的一部分后,即可符合非常稳定的Pl
 | 6 | 当所有层所有S全失败时,转secondRoot `T`; |
 | 7 | A最优末枝为actYes时,向root传染,转secondRoot `T`; |
 | 8 | B任意feedback时,root再将actYes设回runing,继续firstRoot `T`; |
+| 9 | solution中,当hDemand解决方案为0条时,触发取首条的代码逻辑; |
 
 
 <br><br><br><br><br>

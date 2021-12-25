@@ -56,7 +56,7 @@ H以往是用maskAlg联想的(参考n23p03),但它脱离场景,本文对hSolutio
 | --- | --- |
 | R描述 | rSolution是从短时记忆树的RS取conPorts解决方案并做稳定性PK得出; |
 | R特性 | rSolution偏感性`稳定性=SP的率`; |
-| H描述 | hSolution是从当前场景下,取`自身+向抽象+向具象`,并分别在其SP中找H; |
+| H描述 | hSolution是从当前场景下,取`自身+向抽象+向具象`,并分别在其SP中找H |
 | H特性 | hSolution偏理性`经验性=SP的内容`; |
 
 | 25015 | 代码规划 |
@@ -64,15 +64,15 @@ H以往是用maskAlg联想的(参考n23p03),但它脱离场景,本文对hSolutio
 | 1 | 将HFo的末位,传到regroup(),进行识别反思; |
 |  | a. 目前已经支持在feedback反馈后,传到regroup; |
 |  | b. 而取到hSolution后,行为化和反馈前,是否进行regroup反思 (需分析); |
-| 2 | 尝试迭代rSolution (与N契合模型分析); |
-|  | 分析: SP替代了N的作用,所以不必迭代之 `暂不做`; |
-| 3 | feedbackTIR和TOR两个理性反馈,构建的SP中找H经验; |
+| 2 | 尝试迭代rSolution (与N契合模型分析) `T`; |
+|  | 分析: SP替代了N的作用,所以不必迭代之 `T`; |
+| 3 | feedbackTIR和TOR两个理性反馈,构建的SP中找H经验 `完成TIR 50%`; |
 |  | 分析: 只有SP是在当前场景下的反馈 |
-| 4 | 弃用H类型节点 (因为脱离场景,用SP替代) `先不做,参考25013-1`; |
-| 5 | hSolution的maskFos要收集:`自身+向抽象+向具象`; |
-| 6 | 分别在maskFos的SP中找H; |
+| 4 | 弃用H类型节点 (因为脱离场景,用SP替代) `参考25013-1,转至25025-3 T`; |
+| 5 | hSolution的maskFos要收集:`自身+向抽象+向具象` `T`; |
+| 6 | 在maskFos中根据SP评分竞争,找出最好的H解决方案 `T`; |
 | 7 | TOOut.out()中isHNGL_toModel判断要改掉,因为H类型已弃用; |
-| 8 | 核实原有SP对新hSolution的支持 `已核实部分` |
+| 8 | 核实原有SP对新hSolution的支持 `T` |
 
 <br><br><br>
 
@@ -116,6 +116,7 @@ H以往是用maskAlg联想的(参考n23p03),但它脱离场景,本文对hSolutio
 | 6 | 写感性IRT算法 `T`; |
 | 7 | 写理性ORT算法; |
 | 8 | 写感性ORT算法; |
+| 9 | rSolution()算法迭代_针对SP反省分裂迭代的兼容; |
 
 <br><br><br>
 
