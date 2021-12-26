@@ -61,17 +61,17 @@ H以往是用maskAlg联想的(参考n23p03),但它脱离场景,本文对hSolutio
 
 | 25015 | 代码规划 |
 | --- | --- |
-| 1 | 将HFo的末位,传到regroup(),进行识别反思; |
-|  | a. 目前已经支持在feedback反馈后,传到regroup; |
+| 1 | 将HFo的末位,传到regroup(),进行识别反思 `暂不支持,随后需要再说`; |
+|  | a. 目前已经支持在feedback反馈后,传到regroup `feedbackRegroup`; |
 |  | b. 而取到hSolution后,行为化和反馈前,是否进行regroup反思 (需分析); |
 | 2 | 尝试迭代rSolution (与N契合模型分析) `T`; |
 |  | 分析: SP替代了N的作用,所以不必迭代之 `T`; |
-| 3 | feedbackTIR和TOR两个理性反馈,构建的SP中找H经验 `完成TIR 50%`; |
+| 3 | feedbackTIR和TOR两个理性反馈,构建的SP中找H经验 `T`; |
 |  | 分析: 只有SP是在当前场景下的反馈 |
 | 4 | 弃用H类型节点 (因为脱离场景,用SP替代) `参考25013-1,转至25025-3 T`; |
 | 5 | hSolution的maskFos要收集:`自身+向抽象+向具象` `T`; |
 | 6 | 在maskFos中根据SP评分竞争,找出最好的H解决方案 `T`; |
-| 7 | TOOut.out()中isHNGL_toModel判断要改掉,因为H类型已弃用; |
+| 7 | TOOut.out()中isHNGL_toModel判断要改掉,因为H类型已弃用 `T`; |
 | 8 | 核实原有SP对新hSolution的支持 `T` |
 
 <br><br><br>
@@ -114,9 +114,9 @@ H以往是用maskAlg联想的(参考n23p03),但它脱离场景,本文对hSolutio
 | 4 | 感性和理性SP的表征,可以给SP节点增加spIndex来表示 `T`; |
 | 5 | 写理性IRT算法 `T`; |
 | 6 | 写感性IRT算法 `T`; |
-| 7 | 写理性ORT算法; |
-| 8 | 写感性ORT算法; |
-| 9 | rSolution()算法迭代_针对SP反省分裂迭代的兼容; |
+| 7 | 写理性ORT算法 `T`; |
+| 8 | 写感性ORT算法 `T`; |
+| 9 | rSolution()算法迭代_针对SP反省分裂迭代的兼容 `T`; |
 
 <br><br><br>
 
@@ -146,8 +146,8 @@ H以往是用maskAlg联想的(参考n23p03),但它脱离场景,本文对hSolutio
 | 2 | 在TIR和TIP两个feedback中反馈 `T`; |
 | 3 | 触发IRT反省算法 `构建` (独立写TCRethink) `T`; |
 | 4 | hSolution和rSolution使用SP (SP稳定性竞争) `T`; |
-| 5 | actYes输出后,构建ORT反省触发器 `完成rActYes`; |
-| 6 | 在feedbackTOP和TOR中反馈 `完成feedbackTOP`; |
-| 7 | 触发ORT反省算法 `增强`; |
+| 5 | actYes输出后,构建ORT反省触发器 `T`; |
+| 6 | 在feedbackTOP和TOR中反馈 `T`; |
+| 7 | 触发ORT反省算法 `增强` `T`; |
 
 <br><br><br><br><br>
