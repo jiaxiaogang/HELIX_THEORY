@@ -137,6 +137,7 @@ H以往是用maskAlg联想的(参考n23p03),但它脱离场景,本文对hSolutio
 | 8 | 反省2: IRT反省可直接重写,改动太大 `T`; |
 | 9 | 决策: h解决方案在action()达到目标帧targetSPIndex时,调用hActYes`T` |
 | 10 | 决策: 下标不急(弄巧成拙)评价,兼容支持输出类型(不能主动放出狮子) `T`; |
+| 11 | 反馈: 整个rActYes针对rSolutionFo进行反省,而不是demand.fo `T`; |
 
 | 25032 | 反省分裂迭代-在系统内整体运行流程 |
 | --- | --- |
@@ -145,8 +146,8 @@ H以往是用maskAlg联想的(参考n23p03),但它脱离场景,本文对hSolutio
 | 2 | 在TIR和TIP两个feedback中反馈 `T`; |
 | 3 | 触发IRT反省算法 `构建` (独立写TCRethink) `T`; |
 | 4 | hSolution和rSolution使用SP (SP稳定性竞争) `T`; |
-| 5 | actYes输出后,构建ORT反省触发器; |
-| 6 | 在feedbackTOP和TOR中反馈; |
+| 5 | actYes输出后,构建ORT反省触发器 `完成rActYes`; |
+| 6 | 在feedbackTOP和TOR中反馈 `完成feedbackTOP`; |
 | 7 | 触发ORT反省算法 `增强`; |
 
 <br><br><br><br><br>
