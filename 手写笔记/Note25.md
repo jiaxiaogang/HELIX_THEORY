@@ -111,7 +111,7 @@ H以往是用maskAlg联想的(参考n23p03),但它脱离场景,本文对hSolutio
 | 1 | TCForecast预测输入时序,在理性反省路径要处理PFos也要处理RFos `T`; |
 | 2 | 正反向反馈外类比,改成感性IRT反省,构建感性SP `T`; |
 | 3 | 废弃HN构建 (可先关掉,但不删代码,等hSolution跑定再删) `T`; |
-| 4 | 感性和理性SP的表征,可以给SP节点增加forIndex来表示 `T`; |
+| 4 | 感性和理性SP的表征,可以给SP节点增加spIndex来表示 `T`; |
 | 5 | 写理性IRT算法 `T`; |
 | 6 | 写感性IRT算法 `T`; |
 | 7 | 写理性ORT算法; |
@@ -129,19 +129,22 @@ H以往是用maskAlg联想的(参考n23p03),但它脱离场景,本文对hSolutio
 | --- | --- |
 | 1 | pFos+rFos都参与反省 `T`; |
 | 2 | 仅反省一步:非末位理性反省cutIndex后一帧,末位且有mv时则感性反省 `T` |
-| 3 | 表征1: foNode下新增spDic<index,spStrong> (末位index=-1) `T`; |
+| 3 | 表征1: fo节点新增spDic<spIndex,spStrong> (末位key=fo长度) `T`; |
 | 4 | 表征2: 将SP节点拆分成内容和强度值:内容保留于时序中,强度在spDic `T` |
 | 5 | 表征3: spStrong表征S和P强度值 (这样SP节点也可废弃了) `T`; |
 | 6 | 反省1: 这样也无需对SP再外类比了 (SP内容留在时序中,没的类比了) `T`; |
 | 7 | 强度: SP增强单纯为线性,不存在再外类比的爆发式增涨 (更稳定,好事) `T`; |
 | 8 | 反省2: IRT反省可直接重写,改动太大 `T`; |
+| 9 | 决策: h解决方案在action()达到目标帧targetSPIndex时,调用hActYes`T` |
+| 10 | 决策: 下标不急(弄巧成拙)评价,兼容支持输出类型(不能主动放出狮子) `T`; |
 
 | 25032 | 反省分裂迭代-在系统内整体运行流程 |
 | --- | --- |
+| 说明 | 本表步骤为现有步骤的基础上整理,有一部分要调整,大部分无需调整; |
 | 1 | 在TCForecast中构建IRT触发器 `T`; |
 | 2 | 在TIR和TIP两个feedback中反馈 `T`; |
 | 3 | 触发IRT反省算法 `构建` (独立写TCRethink) `T`; |
-| 4 | hSolution和rSolution使用SP (SP稳定性竞争); |
+| 4 | hSolution和rSolution使用SP (SP稳定性竞争) `T`; |
 | 5 | actYes输出后,构建ORT反省触发器; |
 | 6 | 在feedbackTOP和TOR中反馈; |
 | 7 | 触发ORT反省算法 `增强`; |
