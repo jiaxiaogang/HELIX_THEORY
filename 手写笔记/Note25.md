@@ -11,6 +11,7 @@
   - [n25p01 螺旋架构-hSolution](#n25p01-螺旋架构-hsolution)
   - [n25p02 分裂理性反省和感性反省](#n25p02-分裂理性反省和感性反省)
   - [n25p03 反省分裂迭代-forecastIRT](#n25p03-反省分裂迭代-forecastirt)
+  - [n25p04 回归测试](#n25p04-回归测试)
 
 <!-- /TOC -->
 
@@ -149,5 +150,26 @@ H以往是用maskAlg联想的(参考n23p03),但它脱离场景,本文对hSolutio
 | 5 | actYes输出后,构建ORT反省触发器 `T`; |
 | 6 | 在feedbackTOP和TOR中反馈 `T`; |
 | 7 | 触发ORT反省算法 `增强` `T`; |
+
+<br><br><br>
+
+## n25p04 回归测试
+`CreateTime 2021.12.27`
+
+| 25041 | solution()对首条S的支持 |
+| --- | --- |
+| 问题 | HRP三种Demand在任务生成后,都直接调用了TCScore,此时它们S为空; |
+| 分析 | 此时执行score和plan,取最优路径末枝S(因为为空); |
+| 说明 | 本表重要解决这一问题的继续决策问题; |
+| 方案1 | 在scoreDic中把SRH都收集下,solution()只直接执行行为化; |
+| 方案2 | 在scoreDic还是仅收集S,然后在solution()判断subDemands; |
+| 方案3 | 在scoreDic还是仅收集S,后在plan中判断subDemand,solution只执行; |
+| 分析 | RH之间不存在评分竞争关系,所以不合适放到scoreDic和plan.best竞争中; |
+|  | 所以选择方案2,在solution中写死规则来实现即可 `转25041`; |
+|  | 所以选择方案3,plan对S取最优,同时对末尾RH做优先级规则; |
+
+| 25042 | solution()对首条S的支持-代码实践 |
+| --- | --- |
+|  | 子subDemands中,finish和without的不做处理,actYes状态的继续等待,其它的就以先HDemand后RDemands的优先级处理; |
 
 <br><br><br><br><br>
