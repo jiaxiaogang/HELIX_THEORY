@@ -11,7 +11,8 @@
   - [n25p01 螺旋架构-hSolution](#n25p01-螺旋架构-hsolution)
   - [n25p02 分裂理性反省和感性反省](#n25p02-分裂理性反省和感性反省)
   - [n25p03 反省分裂迭代-forecastIRT](#n25p03-反省分裂迭代-forecastirt)
-  - [n25p04 回归测试](#n25p04-回归测试)
+  - [n25p04 回归测试-HRP下首条S问题](#n25p04-回归测试-hrp下首条s问题)
+  - [n25p05 回归测试2](#n25p05-回归测试2)
 
 <!-- /TOC -->
 
@@ -153,7 +154,7 @@ H以往是用maskAlg联想的(参考n23p03),但它脱离场景,本文对hSolutio
 
 <br><br><br>
 
-## n25p04 回归测试
+## n25p04 回归测试-HRP下首条S问题
 `CreateTime 2021.12.27`
 
 PRH三个任务在生成后,都直接转向了TCScore,而此时PRH下没有一条S,要从TCPlan下选出最优S,则肯定选不到,导致为空,本节解决这一部分;
@@ -181,5 +182,16 @@ PRH三个任务在生成后,都直接转向了TCScore,而此时PRH下没有一�
 | 6 | 每一级,都取最优S继续深入 `T`; |
 | 7 | 每一级,只要感性淘汰,则不继续深入 `T`; |
 | 8 | bestFo下所有subDemands都已完成或失败时,继续bestFo `T`; |
+
+<br><br><br>
+
+## n25p05 回归测试2
+`CreateTime 2021.12.28`
+
+| 25051 | BUG1_rSolution()下取rs的问题 |
+| --- | --- |
+| 说明 | 原本rs是从loopCache任务池取同抽具象路径上的R任务组; |
+| 问题 | 但事实上现在loopCache只存root,rs方法算过期无用方法; |
+| 结果 | 改为在rSolution中取:R任务生成时的pFos下同mv标识的替代RS `T`; |
 
 <br><br><br><br><br>
