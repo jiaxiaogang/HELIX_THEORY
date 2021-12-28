@@ -156,7 +156,9 @@ H以往是用maskAlg联想的(参考n23p03),但它脱离场景,本文对hSolutio
 ## n25p04 回归测试
 `CreateTime 2021.12.27`
 
-| 25041 | solution()对首条S的支持 |
+PRH三个任务在生成后,都直接转向了TCScore,而此时PRH下没有一条S,要从TCPlan下选出最优S,则肯定选不到,导致为空,本节解决这一部分;
+
+| 25041 | 工作记忆树任务下_首条S的支持-问题分析 |
 | --- | --- |
 | 问题 | HRP三种Demand在任务生成后,都直接调用了TCScore,此时它们S为空; |
 | 分析 | 此时执行score和plan,取最优路径末枝S(因为为空); |
@@ -164,12 +166,20 @@ H以往是用maskAlg联想的(参考n23p03),但它脱离场景,本文对hSolutio
 | 方案1 | 在scoreDic中把SRH都收集下,solution()只直接执行行为化; |
 | 方案2 | 在scoreDic还是仅收集S,然后在solution()判断subDemands; |
 | 方案3 | 在scoreDic还是仅收集S,后在plan中判断subDemand,solution只执行; |
-| 分析 | RH之间不存在评分竞争关系,所以不合适放到scoreDic和plan.best竞争中; |
-|  | 所以选择方案2,在solution中写死规则来实现即可 `转25041`; |
-|  | 所以选择方案3,plan对S取最优,同时对末尾RH做优先级规则; |
+| 分析1 | RH之间不存在评分竞争关系,所以不合适放到scoreDic和plan.best竞争; |
+|  | 所以选择方案2,在solution中写死规则来实现即可 `废弃`; |
+| 分析2 | Score评分,Plan路径,Solution解决,路径未必是竞争,RH优先级也是; |
+|  | 所以选择方案3,plan对S取最优,同时对末尾RH做优先级规则 `转25041`; |
 
-| 25042 | solution()对首条S的支持-代码实践 |
+| 25042 | 工作记忆树任务下_首条S的支持-代码实践 |
 | --- | --- |
-|  | 子subDemands中,finish和without的不做处理,actYes状态的继续等待,其它的就以先HDemand后RDemands的优先级处理; |
+| 1 | 在Plan竞争方法中对子subDemands判断和优先级来实现 `T`; |
+| 2 | 其中subDemand: finish和without的不做处理 `T` |
+| 3 | 其中subDemand: actYes状态则中止决策,继续等待; |
+| 4 | 其它状态的,就以先R后H的优先级处理 (磨刀不误砍柴) `原本如此 T`; |
+| 5 | 其它状态的,如是为空S,直接返回subDemand为末枝 (root也照样) `T`; |
+| 6 | 每一级,都取最优S继续深入 `T`; |
+| 7 | 每一级,只要感性淘汰,则不继续深入 `T`; |
+| 8 | bestFo下所有subDemands都已完成或失败时,继续bestFo `T`; |
 
 <br><br><br><br><br>

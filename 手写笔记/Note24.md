@@ -1308,6 +1308,11 @@ PM有可能只需要改动多码中的一部分后,即可符合非常稳定的Pl
 | 终 | TCPlan仅解决从`可执行的末枝`出发的问题,而执行部分转TCSolution; |
 | 改 | 其中第2步综合评分独立为TCScore,第3步最优路径继续延用TCPlan名称; |
 
+| 24196 | TCScore的scoreDic数据结构图 |
+| --- | --- |
+| 说明 | TCScore.Multi方法中有竞争,所以scoreDic并非全树评分字典,如下图 |
+| 评分字典 | ![](assets/562_TCScore的评分字典数据结构示图.png) |
+
 <br><br><br>
 
 ## n24p20 螺旋架构-TCSolution决策执行
