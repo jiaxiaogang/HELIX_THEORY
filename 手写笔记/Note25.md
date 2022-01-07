@@ -140,6 +140,7 @@ H以往是用maskAlg联想的(参考n23p03),但它脱离场景,本文对hSolutio
 | 9 | 决策: h解决方案在action()达到目标帧targetSPIndex时,调用hActYes`T` |
 | 10 | 决策: 下标不急(弄巧成拙)评价,兼容支持输出类型(不能主动放出狮子) `T`; |
 | 11 | 反馈: 整个rActYes针对rSolutionFo进行反省,而不是demand.fo `T`; |
+| 12 | 模型: 4个feedback反省分别对应4个rethink反省 `T`; |
 
 | 25032 | 反省分裂迭代-在系统内整体运行流程 |
 | --- | --- |
