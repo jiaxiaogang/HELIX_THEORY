@@ -215,4 +215,18 @@ PRH三个任务在生成后,都直接转向了TCScore,而此时PRH下没有一�
 |  | 即: `动中静`转`静中静`,并非actYes状态,也应处理被动反馈; |
 | 代码 | 在feedbackTOR中,对HDemand时的处理,非actYes状态的也处理 `T`; |
 
+| 24055 | scoreDic常把已淘汰取成0分 |
+| --- | --- |
+| 问题 | 错取成0分,导致ActNo淘汰的S还继续进行solution,死循环; |
+| 分析 | scoreDic的key直接用kvPointer导致常取不到value,导致默认值0; |
+| 结果 | 将key由kvPointer改成Pit2FStr(kvPointer) `T`; |
+
+| 24056 | scoreDic还是偶然把已淘汰取成0分 |
+| --- | --- |
+| 示图 | ![](assets/563_scoreDic的key覆写问题.png) |
+| 分析 | 工作记忆树的枝点未防重处理,所以评分会有重复key,覆写导致错取成0分; |
+| 方案1 | 分析对工作记忆树枝点防重; |
+| 方案2 | 将scoreDic的key改成solutionFo的%p内存指针地址; |
+
+
 <br><br><br><br><br>
