@@ -13,6 +13,7 @@
   - [n25p03 反省分裂迭代-forecastIRT](#n25p03-反省分裂迭代-forecastirt)
   - [n25p04 回归测试-HRP下首条S问题](#n25p04-回归测试-hrp下首条s问题)
   - [n25p05 回归测试训练2](#n25p05-回归测试训练2)
+  - [n25p06 deltaTime改成from-to表征](#n25p06-deltatime改成from-to表征)
 
 <!-- /TOC -->
 
@@ -236,5 +237,13 @@ PRH三个任务在生成后,都直接转向了TCScore,而此时PRH下没有一�
 | 示图 | ![](assets/564_hSolution死循环问题.png) |
 | 分析 | F118中首条元素就是A1:不能做为H解决方案 `因为首条没因,不能凭空出现` |
 | 结果 | 把h解决方案取spIndex改成从0开始判断,并必须>0才有效 `T`; |
+
+<br><br><br>
+
+## n25p06 deltaTime改成from-to表征
+`CreateTime 2022.01.10`
+
+反省迭代后,对deltaTime的判断越来越多,而紧急评价为否也越来越多;可以发现像触发器一般取deltaTime的max值,而紧急评价时又可以取它的min值,因为抓抓紧可能0.3s内也可以做完一个篮球动作,而慢一点这个动作可以延长到1s以上;本文将针对此需求把deltaTime表征成from-to方式,以使两种用法都支持;
+
 
 <br><br><br><br><br>
