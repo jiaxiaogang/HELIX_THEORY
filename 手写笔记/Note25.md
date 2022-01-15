@@ -343,7 +343,8 @@ GL废弃后，必须明确的对撞不到或者安全地带有明确独立的概
 | --- | --- |
 | 问题 | 参考方案1-识别是从微向宏,V可控,宏观不可控,但有3个控制手段; |
 | 1 | 广入: 所有的稀疏码索引序列的refPorts全取出做交集; |
-| 2 | 有序: 可以按nearA排序; |
+| 2 | 有序: 全含的按`nearA`排序,局部的按`nearA * matchValue`排序; |
+|  | 其中: `matchValue = matchCount / algContentCount`; |
 | 3 | 窄出: 可以限定概念结果数量 (取nearA有序序列的前limit条); |
 
 <br><br><br>
