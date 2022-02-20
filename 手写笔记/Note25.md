@@ -485,6 +485,10 @@ n25p08的相近匹配已写完并初步测试ok，n25p09的想像力需求还不
 |  | ![](assets/576_FZ36中rSolution解决方案的SP测得两个问题.png) |
 | 3.问题 | 经查,在FZ36-5左右时,发现即使安全地带偏击,也会反省S,而不是P; |
 | 分析 | 经调试,并不是没有SP,而是spIndex都是1,而F134这些mvSPIndex=2; |
+| 方案1 | 反省时,不仅要反省当下index的SP,也要计入反省末尾到mv的SP; |
+|  | 分析,否掉,因为一堆烩在一起就乱套了; |
+| 方案2 | 在计算spScore稳定性评分时,从startSPIndex到endSPIndex综合评分; |
+|  | 采纳,这样评分更综合,更全面,也更准确 `转25114`; |
 
 | 25112 | 训练步骤规划 `参考25101` | 训练目标 |
 | --- | --- | --- |
@@ -501,5 +505,12 @@ n25p08的相近匹配已写完并初步测试ok，n25p09的想像力需求还不
 | 示图 | ![](assets/577_rSolution中靠前最有效的几条S太耗时BUG.png) |
 | 说明 | 随着训练,如果耗时是取MAX(A,B)的话,那么训练越有效的耗时也越大; |
 | 分析 | 单取MAX不行,可考虑改成MIN和MAX两个deltaTime值; |
+
+| 25114 | 综合计算SPIndex评分 |
+| --- | --- |
+| 说明 | 参考25111B方案2,从startSPIndex->endSPIndex综合计算稳定性评分; |
+| 公式 | `综评 = startSPScore * start+1SPScore * ... * endSPScore;` |
+| 细节 | 1. 每个index下的spScore默认为1.0分; |
+|  | 2. 每个index下的spScore评分范围为0-1分; |
 
 <br><br><br><br><br>
