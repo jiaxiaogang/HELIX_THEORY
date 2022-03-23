@@ -774,4 +774,13 @@ n25p08的相近匹配已写完并初步测试ok，n25p09的想像力需求还不
 |  | 4. 播放速度调整 (0.25倍到3倍,黄色高亮为当前速度); |
 |  | 5. 触发帧日志consoleLog框 `暂不做`; |
 
+| 25184 | 深拷贝TOModel-RDemand中的inModel太大问题 `选用方案2` |
+| --- | --- |
+| 问题 | 现在的rDemand.inModel仅用做需求来源,存整个inModel太大了; |
+| 分析 | inModel太大,对序列化性能影响也大,弃用inModel; |
+| 方案1 | 改成仅存生成任务的那几条pFos; |
+|  | 分析: 废弃,pFos也不小,并且有些pFo并未生成rDemand |
+| 方案2 | 来源标识fromIden,用inModel的内存地址,替代原inModel (采用); |
+|  | 分析: 取用RDemand的同伴时,从树中遍历同批次的RDemands即可; |
+
 <br><br><br><br><br>
