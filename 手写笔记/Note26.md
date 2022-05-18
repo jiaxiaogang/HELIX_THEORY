@@ -221,9 +221,10 @@
 | TODO1 | 对识别pFos按照AT分组,每组生成一个demandModel `T`; |
 | TODO2 | 迭代DemandModel改为: 空壳demand + 下辖pFos `T`; |
 | TODO3 | 将TCSolution()改成多个pFos下的解决方案进行竞争 `T`; |
-| TODO4 | DemandModel的评分共享下辖pFos中的最高分; |
-| TODO5 | solution解决方案共享,成果共享; |
-| TODO6 | 在arsTime取deltaTime时,取pFos中maxDeltaTime为准; |
+| TODO4 | DemandModel的评分共享下辖pFos中的最高分 `T`; |
+| TODO5 | solution解决方案共享,共用三条limit `T`; |
+| TODO6 | 在arsTime取deltaTime时,取pFos中maxDeltaTime为准 `转26051`; |
+| TODO7 | solution成果共享,即demand的状态共享 `不用改代码,T`; |
 
 ***
 
