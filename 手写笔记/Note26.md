@@ -217,10 +217,11 @@
 
 | 26042 | 多pFos构建单个任务-代码实践 (参考26035-方案2); |
 | --- | --- |
-| TODO1 | 对识别pFos按照AT分组,每组生成一个demandModel; |
-| TODO2 | 迭代DemandModel改为: 空壳demand + 下辖pFos; |
-| TODO3 | 将TCSolution()改成多个pFos下的解决方案进行竞争; |
+| TODO1 | 对识别pFos按照AT分组,每组生成一个demandModel `T`; |
+| TODO2 | 迭代DemandModel改为: 空壳demand + 下辖pFos `T`; |
+| TODO3 | 将TCSolution()改成多个pFos下的解决方案进行竞争 `T`; |
 | TODO4 | DemandModel的评分共享下辖pFos中的最高分; |
-| TODO4 | solution解决方案共享,成果共享; |
+| TODO5 | solution解决方案共享,成果共享; |
+| TODO6 | 在arsTime取deltaTime时,取pFos中maxDeltaTime为准; |
 
 <br><br><br><br><br>
