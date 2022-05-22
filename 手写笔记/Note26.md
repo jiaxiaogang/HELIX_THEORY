@@ -454,13 +454,13 @@
 
 | 26095 | 有效率-代码规划 |
 | --- | --- |
-| 1 | R任务倒计时触发器,判断是否发生负价值,得出有效性; |
-| 2 | R任务给所有任务源pFos有效或无效计分; |
-| 3 | R任务在feedbackTOP中,做mv反馈状态更新 `改改原代码支持下`; |
+| 1 | R任务倒计时触发器,判断是否发生负价值,得出有效性 `T`; |
+| 2 | R任务给所有任务源pFos有效或无效计分 `T`; |
+| 3 | R任务在feedbackTOP中,做mv反馈状态更新 `T`; |
 | 4 | H任务倒计时触发器,判断是否得到H目标,得出有效性; |
 | 5 | H任务给任务源hFo有效或无效计分; |
-| 6 | H任务在feedbackTOR中,做HAlg反馈状态更新 `本就有 T`; |
-| 7 | 任务源fo中加effectDic,并写effectModel模型; |
+| 6 | H任务在feedbackTOR中,做HAlg反馈状态更新 `T`; |
+| 7 | 任务源fo中加effectDic,并写effectStrong模型 `T`; |
 | 8 | 写effectScore()有效率计算方法; |
 | 9 | TCSolution中以有效率排序; |
 
