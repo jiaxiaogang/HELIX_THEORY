@@ -630,11 +630,11 @@
 
 | 25122 | 代码规划 |
 | --- | --- |
-| 第1步 | 用pFo取抽象absPFos,再用absPFos取具象sameLayerPFos; |
-| 第2步 | 将pFos+absPFos+sameLayerPFos收集为allPFos; |
-| 第3步 | 过滤掉allPFos中无mv指向的; |
+| 第1步 | 用pFo取抽象absPFos,再用absPFos取具象sameLayerPFos `T`; |
+| 第2步 | 将pFos+absPFos+sameLayerPFos收集为allPFos `T`; |
+| 第3步 | 过滤掉allPFos中无mv指向的 `T`; |
 | 第4步 | 过滤出allPFos中有效率排名前100 且 >0.2的; |
-| 第5步 | 根据排名依次取出itemPFo与原本的protoFo; |
+| 第5步 | 依次取itemPFo与原本的protoFo对比全含匹配度等; |
 | 第6步 | 对itemPFo和protoFo计算它俩相近度,匹配度,判断>70%; |
 | 第7步 | 根据`稀疏码标识`找出lastIndex; |
 | 第8步 | 计算稳定性,判断>80% (多训练第1步,就能获得高SP稳定性); |
