@@ -895,9 +895,13 @@ HE在开发过程中，使用了太多的示例，从示例出发用于分析理
 | 26161 | 封装H慢思考方法-代码实践 |
 | --- | --- |
 | 模型 | ![](assets/625_H慢思考模型.png) |
+| 0 | cansets = targetFo + absFos + sameLayerFos `T`; |
 | 1 | 前段匹配 (targetFo前段全含cansetFo前段) `T`; |
 | 2 | 中段加工 (可以为0条,0条时无需加工); |
 | 3 | 后段: H目标帧匹配 `T`; |
-| 4 | 排序因子 = 前段匹配率 x 中段稳定性 x 后段匹配度 |
+| 4 | 排序因子 = 前段匹配率 x 中段稳定性 x 后段匹配度 `T`; |
+| 5 | 中段稳定性 = 从cutIndex后一帧到targetIndex的衰后稳定性 `T`; |
+| 6 | FRSTime评价兼容H任务:`最近R给的时间 >= S下帧所需时间` `T`; |
+| 7 | 中段`(targetIndex-cutIndex>1)`为0条时,FRSTime评价直接通过 `T`; |
 
 <br><br><br><br><br>
