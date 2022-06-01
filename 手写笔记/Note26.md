@@ -988,8 +988,11 @@ HE在开发过程中，使用了太多的示例，从示例出发用于分析理
 | TODO2 | actYes有反馈时,调用TCScore `T`; |
 | TODO3 | 任务池root竞争时,当末尾为actYes时向父传染,即排除掉此root `T`; |
 |  | > 然后可以尝试下别的root,比如等饭看电视; |
-| TODO4 | actYes向上层传染,只要下层还在actYes,则上层不取新S; |
-| TODO5 | 查下TCScore中,是否对挂起状态的自身与base评了min分; |
+| TODO4 | actYes向上层传染,只要下层还在actYes,则上层不取新S `T`; |
+| TODO5 | 查下TCScore中,是否对挂起状态的自身与base评了min分 `弃掉`; |
+|  | > 只要root响应激活了,那它肯定有末枝可执行,那actYes也应正常评分; |
+|  | > 挂起不能评min分,不然它的下层就无法响应,推进action下一帧; |
 | TODO6 | 当HDemand.targetAlg提前反馈时,HDemand改为finish状态 `T`; |
+| TODO7 | 查TCPlan中,中层ActYes则继续向下找路径,因为中层不向下传染 `T`; |
 
 <br><br><br><br><br>
