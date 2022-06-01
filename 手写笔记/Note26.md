@@ -977,16 +977,19 @@ HE在开发过程中，使用了太多的示例，从示例出发用于分析理
 | 上示例 | base应不响应: base作为协作者,应等下挂起的子任务; |
 | 原则 | 综上,传染原则为: 挂起状态自身及向上传染,不向下传染; |
 |  | ![](assets/626_挂起的传染机制示图.png) |
+| 例外 | finish为截停状态,如hDemand已为finish状态,它下面却挂了一个actYes |
+|  | 此时,传染会被截停,即末端不是最末的那个actYes,而是hDemand; |
 | 解释 | 现在的actYes状态,有些像执行中,等待中,等含义; |
 | 结果 | 选定方案2,代码实践转下表; |
 
 | 26185 | 挂起任务不响应-代码实践 |
 | --- | --- |
-| TODO1 | actYes仅标记自己,不向上标记base和root; |
-| TODO2 | actYes有反馈时,调用TCScore; |
-| TODO3 | 任务池root竞争时,当末尾为actYes时向父传染,即排除掉此root; |
+| TODO1 | actYes仅标记自己及所在的demand,不向上标记base和root `T`; |
+| TODO2 | actYes有反馈时,调用TCScore `T`; |
+| TODO3 | 任务池root竞争时,当末尾为actYes时向父传染,即排除掉此root `T`; |
 |  | > 然后可以尝试下别的root,比如等饭看电视; |
 | TODO4 | actYes向上层传染,只要下层还在actYes,则上层不取新S; |
 | TODO5 | 查下TCScore中,是否对挂起状态的自身与base评了min分; |
+| TODO6 | 当HDemand.targetAlg提前反馈时,HDemand改为finish状态 `T`; |
 
 <br><br><br><br><br>
