@@ -1320,10 +1320,12 @@ HE在开发过程中，使用了太多的示例，从示例出发用于分析理
 | --- | --- |
 | TODO1 | 独立封装AIAnalyst类 `T`; |
 | TODO2 | 时序识别时对pFo和maskFo的匹配下标记录映射indexDic `T`; |
-| TODO3 | 用pFo和cansetFo做Analyst; |
+| TODO3 | 用pFo和cansetFo做Analyst `T`; |
 | TODO4 | 每帧analyst都映射转换成maskFo的帧元素比对; |
-| TODO5 | 根R任务时: pFo的已发生截点,取indexDic的最后一位; |
-| TODO6 | 子R任务时: pFo的已发生截点,取父fo.actionIndex对应indexDic; |
+| TODO5 | 根R任务时:pFo已发生个数=indexDic的最后一位 `T`; |
+| TODO6 | 子R任务时:pFo已发生个数=父fo.actionIndex对应indexDic `T` |
+| TODO7 | H任务时: targetFo已发生个数=它的actionIndex `本如此`; |
+| TODO8 | 因为需要pFo,将快慢思考改成先analyst比对转模型,再合并候选集; |
 | 注 | maskFo在识别时表示protoFo,在反思时表示regroupFo; |
 
 
