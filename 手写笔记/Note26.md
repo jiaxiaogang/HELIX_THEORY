@@ -1314,12 +1314,17 @@ HE在开发过程中，使用了太多的示例，从示例出发用于分析理
 |  | 2. 然后用R1到protoFo中取出相应的部分,得出结果R2; |
 |  | 3. 用R2和cansetFo进行对比,分析出结果R3; |
 | 优点 | 这样得到的cansetFo才最简单干净,即有指导性又有具象稳定性和匹配度; |
-| 结果 | 经分析,此方案成立 `实践转26232`; |
+| 结果 | 经分析,此方案成立,但步骤太表面了废弃 `实践转26232`; |
 
 | 26232 | 迭代analyst-代码实践 |
 | --- | --- |
 | TODO1 | 独立封装AIAnalyst类 `T`; |
-| TODO2 | 用pFo做下标指导,取出protoFos中对应的下标数组 (参考步骤1) |
+| TODO2 | 时序识别时对pFo和maskFo的匹配下标记录映射indexDic `T`; |
+| TODO3 | 用pFo和cansetFo做Analyst; |
+| TODO4 | 每帧analyst都映射转换成maskFo的帧元素比对; |
+| TODO5 | 根R任务时: pFo的已发生截点,取indexDic的最后一位; |
+| TODO6 | 子R任务时: pFo的已发生截点,取父fo.actionIndex对应indexDic; |
+| 注 | maskFo在识别时表示protoFo,在反思时表示regroupFo; |
 
 
 <br><br><br><br><br>
