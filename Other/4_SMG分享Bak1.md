@@ -192,4 +192,4 @@
 
 ![](https://github.com/jiaxiaogang/Resource/blob/master/Img/SMG/QQGroupQRCode.png?raw=true)
 
-另:我的个人主页:<http://www.jiaxiaogang.cn>
+另:我的个人主页:<http://jiaxiaogang.github.io/>

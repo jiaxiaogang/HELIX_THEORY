@@ -44,7 +44,7 @@
 		- 都说本性难移,但我早在13岁时把自己性格由内向180度大转弯成外向;我坚信我强大的思维能力,创造能力和优秀的实践能力,可以让我实现梦想。
 
 	- 个人主页:
-		- http://www.jiaxiaogang.cn
+		- http://jiaxiaogang.github.io/
 
 
 
@@ -110,7 +110,7 @@
 
 9. #### 说明:
 
-	- 个人主页:[http://www.jiaxiaogang.cn](http://www.jiaxiaogang.cn)
+	- 个人主页:[http://jiaxiaogang.github.io/](http://jiaxiaogang.github.io/)
 	- 项目代码:[https://www.github.com/jiaxiaogang/he4o](https://www.github.com/jiaxiaogang/he4o)
 	- 螺旋论:[https://github.com/jiaxiaogang/HELIX_THEORY/tree/master/手写笔记](https://github.com/jiaxiaogang/HELIX_THEORY/tree/master/手写笔记)
 
