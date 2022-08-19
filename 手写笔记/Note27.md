@@ -373,9 +373,12 @@
 | --- | --- |
 | 简介 | 经27064调试分析,TCScore调用时,其实是它的调用者TCDemand在慢; |
 | 说明 | 本表负责,分析TCDemand具体慢代码块,并优化; |
-| 调试 | 经分析,在AIScore.score4Demand()中评分慢,主要执行次太多; |
+| 调试 | 经调试,最终是DemandManager.refreshCmvCacheSort()太慢 |
+| 原因 | 它执行了4千多次score4Demand()评分,共消耗1s多 `参考27065代码块`; |
+| 方案 | 把AIScore.score4MV_v2加上缓存; |
 
 ```c
+//27065代码块:
 //27065调试日志与慢代码
 Score4Demand88_1 计数:4712 均耗:6 读:0 写:0
 for (AIMatchFoModel *pFo in rDemand.pFos) {
