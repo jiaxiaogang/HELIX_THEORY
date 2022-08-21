@@ -420,6 +420,11 @@ for (AIMatchFoModel *pFo in rDemand.pFos) {
 | 卡顿 | 训练到第2步最后一次(第10次)时,卡在3分1s秒,一直跑在卡顿; |
 | 日志 | ![](assets/646_训练TCRecognition卡顿日志.png) |
 | 说明 | 1. 可以打开`卡顿进植物模式`,看下当时的root是否有卡顿; |
-|  | 2. 如图,无论当时是否卡root,这个TCRecognition都有必要优化下; |
+|  | > 经测,卡顿进入植物模式后,并没有root卡顿 (有18个root); |
+| 说明 | 2. 如图,无论当时是否卡root,这个TCRecognition都有必要优化下; |
+|  | > 经测识别算法(TIUtils时序识别)的性能; |
+|  | 慢代码1: `取refPorts`用时286ms(总626ms); |
+|  | 慢代码2: `AIAnalyst.compareCansetAlg()比对`用时73ms(总626ms) |
+| 说明 | 3. 分析下日志,看为什么没有root循环卡,却可以卡那么久; |
 
 <br><br><br><br><br>
