@@ -436,6 +436,12 @@ for (AIMatchFoModel *pFo in rDemand.pFos) {
 |  | > 经测识别算法(TIUtils时序识别)的性能; |
 |  | 慢代码1: `取refPorts`用时286ms(总626ms); |
 |  | 慢代码2: `AIAnalyst.compareCansetAlg()比对`用时73ms(总626ms) |
+| 结果 | 优化refPorts卡顿后,TCRecognition已经不卡了 `T`; |
 | 说明 | 3. 分析下日志,看为什么没有root循环卡,却可以卡那么久; |
+|  | 分析: 看日志比较有规律的在循环,应该是死循环了 `转27082`; |
+
+| 27083 | 训练第2步(10轮/次)第10次时死循环卡死问题 |
+| --- | --- |
+| 复现 | `FZ5802-9,训练第10次飞躲`,跑1分钟左右,即可复现; |
 
 <br><br><br><br><br>
