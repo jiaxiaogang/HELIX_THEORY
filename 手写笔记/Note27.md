@@ -1,4 +1,4 @@
-# 乌鸦挑战-TC数据流配置测调
+# 乌鸦挑战-TC数据流配置测调 & 迭代反思TCRefrection
 
 > 注:
 > 1. 在n26中，做了继续整理了TC数据流,快慢思考,AIAnalyst分析器,本文在此基础上继续做TC数据流整理,并回归训练;
@@ -412,6 +412,10 @@ for (AIMatchFoModel *pFo in rDemand.pFos) {
 | 6 | 思考 | TCSolution | 动 | 春 | 决 |
 | 7 | 反思 | TCRefrection | 动 | 夏 | 策 |
 | 8 | 行为 | TCOut | 动 | 夏 | 出 |
+
+| 27073-更新-HE系统架构图V3 |
+| --- |
+| ![](assets/647_HE架构图V3.png) |
 
 ***
 
