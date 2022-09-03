@@ -513,6 +513,13 @@ for (AIMatchFoModel *pFo in rDemand.pFos) {
 | 思路 | 所以任务失效机制需要从反省入手来写; |
 | 代码 | 以前都是任务递归到根部完成时finish,现在加一个反省过期时失效状态; |
 
+| 27093 | 父任务失效机制-代码规划 |
+| --- | --- |
+| 简介 | 理性的下帧,和感性的最终,都需用于反省,与失效的处理; |
+|  | 1. 理性: forecastReasonIRT.reasonInRethink() |
+|  | 2. 感性: forecastPerceptIRT.forecastPerceptIRT() |
+|  | > 以上两个反省处,一个对理性下帧,一个对末帧,都需处理; |
+
 ***
 
 ## n27p10 再测TCRefrection & 测父任务失效机制
