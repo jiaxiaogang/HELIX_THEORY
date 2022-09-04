@@ -409,14 +409,14 @@ for (AIMatchFoModel *pFo in rDemand.pFos) {
 
 | 27072 | 思维 | 代码 | 二 | 四 | 八 |
 | --- | --- | --- | --- | --- | --- |
-| 1 | 感知 | TCInput | 静 | 秋 | 入 |
-| 2 | 识别 | TCRecognition | 静 | 秋 | 认 |
-| 3 | 学习 | TCLearning | 静 | 冬 | 知 |
-| 4 | 任务 | TCDemand | 静 | 冬 | 需 |
-| 5 | 计划 | TCPlan | 动 | 春 | 求 |
-| 6 | 思考 | TCSolution | 动 | 春 | 决 |
-| 7 | 反思 | TCRefrection | 动 | 夏 | 策 |
-| 8 | 行为 | TCOut | 动 | 夏 | 出 |
+| 1 | 感知 | TCInput | 0静 | 1秋 | 1入 |
+| 2 | 识别 | TCRecognition | 0静 | 1秋 | 0认 |
+| 3 | 学习 | TCLearning | 0静 | 0冬 | 1知 |
+| 4 | 任务 | TCDemand | 0静 | 0冬 | 0需 |
+| 5 | 计划 | TCPlan | 1动 | 0春 | 0求 |
+| 6 | 思考 | TCSolution | 1动 | 0春 | 1决 |
+| 7 | 反思 | TCRefrection | 1动 | 1夏 | 0策 |
+| 8 | 行为 | TCOut | 1动 | 1夏 | 1出 |
 
 | 27073-更新-HE系统架构图V3 |
 | --- |
