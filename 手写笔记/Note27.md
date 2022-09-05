@@ -553,10 +553,18 @@ for (AIMatchFoModel *pFo in rDemand.pFos) {
 | 说明 | fbTIR和fbTIP两个反馈,只照顾到了瞬时序列 |
 | 问题 | 瞬时序列只有4帧,而4帧前生成的任务,它的pFo就无法收到反馈; |
 | 方案1 | TI反馈中,在瞬时序列的基础上,再加上对roots的反馈支持; |
+|  | 分析: 现在瞬时序列中其实并没有matchRFos,虽然反馈还在支持它; |
 | 方案2 | TI反馈中,改成仅对roots的反馈支持; |
 |  | 分析: 现在识别rFos其实是关闭的,所以只对roots中的pFos支持也一样的; |
 |  | 优点: 这样反馈和触发器就全部由新构建的rootDemand来推进即可; |
 |  | 优点: 这样一条线:`反馈->构建任务->触发器`全都以roots数据为准; |
+| 分析 | 直接选用方案2,因为方案1的rFos在识别算法中其实已经废弃了,不管它; |
+| 实践1 | 以上提到的`反馈->构建任务->触发器`流程优化: |
+| todo1 | 删掉rForecast和pForecast,TCFeedback直接调用TCDemand; |
+| todo2 | 然后TCDemand再调用forecastReasonIRT&forecastPerceptIRT; |
+| 实践2 | 将feedbackTIR和TIP改成仅对roots的反馈支持; |
+| todo3 | fbTIR改用roots `T`; |
+| todo4 | fbTIP改用roots `T`; |
 
 ***
 
