@@ -559,9 +559,9 @@ for (AIMatchFoModel *pFo in rDemand.pFos) {
 |  | 优点: 这样反馈和触发器就全部由新构建的rootDemand来推进即可; |
 |  | 优点: 这样一条线:`反馈->构建任务->触发器`全都以roots数据为准; |
 | 分析 | 直接选用方案2,因为方案1的rFos在识别算法中其实已经废弃了,不管它; |
-| 实践1 | 以上提到的`反馈->构建任务->触发器`流程优化: |
-| todo1 | 删掉rForecast和pForecast,TCFeedback直接调用TCDemand; |
-| todo2 | 然后TCDemand再调用forecastReasonIRT&forecastPerceptIRT; |
+| 实践1 | 以上提到的`反馈->构建任务->反省触发器`流程优化: |
+| todo1 | 删掉rForecast和pForecast,TCFeedback直接调用TCDemand `T`; |
+| todo2 | 然后TCDemand再调用反省触发器forecast_Multi() `T`; |
 | 实践2 | 将feedbackTIR和TIP改成仅对roots的反馈支持; |
 | todo3 | fbTIR改用roots `T`; |
 | todo4 | fbTIP改用roots `T`; |
