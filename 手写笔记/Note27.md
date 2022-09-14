@@ -546,7 +546,7 @@ for (AIMatchFoModel *pFo in rDemand.pFos) {
 | 4 | 理性反馈:`已反馈(P)`继续下帧触发器; |
 | 5 | 理性反馈:`已反馈(P)`更新demand的评分缓存 `T`; |
 | 6 | 继续下帧时,重置status状态和isExpired失效状态 `T`; |
-| 7 | 继续下帧时,更新indexDic识别的帧概念匹配字典; |
+| 7 | 继续下帧时,更新indexDic识别的帧概念匹配字典 `转27097`; |
 | 8 | 继续下帧时,更新下匹配度 `T`; |
 
 | 27096 | 反馈未照顾到任务中的pFo的问题 |
@@ -566,6 +566,20 @@ for (AIMatchFoModel *pFo in rDemand.pFos) {
 | 实践2 | 将feedbackTIR和TIP改成仅对roots的反馈支持; |
 | todo3 | fbTIR改用roots `T`; |
 | todo4 | fbTIP改用roots `T`; |
+
+| 27097 | 父任务失效机制-更新indexDic带来的影响问题 |
+| --- | --- |
+| 描述 | 随着反馈与cutIndex的帧推进,indexDic也需要更新; |
+| IN | 而indexDic是由识别系统生成的proto与match之间的映射字典; |
+| OUT | 在Analyze分析器比对时序时,需要通过indexDic从protoFo取元素; |
+| 问题 | 如果单纯更新indexDic,不更新protoFo/regroupFo,那么就可能越界; |
+| 分析 | 代码现状: |
+|  | 1. demand会记录下当时inShortModel的protoFo和regroupFo; |
+|  | 2. 用indexDic.value当下标从demand.protoFo/regroupFo取元素; |
+| 线索 | 1. 所以protoFo/regroupFo必须随着indexDic一起更新; |
+|  | 2. 而反省触发器是随着pFo来的,所以不能更新在demand中; |
+| 方案 | 在pFo中,新写一个updateMaskFoContent_ps,用来存和更新元素序列; |
+|  | 说明: 在每次更新indexDic时,同步把updateMaskFoContent_ps也更新下; |
 
 ***
 
