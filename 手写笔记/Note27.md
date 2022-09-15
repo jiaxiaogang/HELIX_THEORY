@@ -548,6 +548,7 @@ for (AIMatchFoModel *pFo in rDemand.pFos) {
 | 6 | 继续下帧时,重置status状态和isExpired失效状态 `T`; |
 | 7 | 继续下帧时,更新indexDic识别的帧概念匹配字典 `转27097`; |
 | 8 | 继续下帧时,更新下匹配度 `T`; |
+| 9 | 在反馈时,即可触发下帧触发器,而不是非要等上帧触发器到期; |
 
 | 27096 | 反馈未照顾到任务中的pFo的问题 |
 | --- | --- |
@@ -578,8 +579,11 @@ for (AIMatchFoModel *pFo in rDemand.pFos) {
 |  | 2. 用indexDic.value当下标从demand.protoFo/regroupFo取元素; |
 | 线索 | 1. 所以protoFo/regroupFo必须随着indexDic一起更新; |
 |  | 2. 而反省触发器是随着pFo来的,所以不能更新在demand中; |
-| 方案 | 在pFo中,新写一个updateMaskFoContent_ps,用来存和更新元素序列; |
-|  | 说明: 在每次更新indexDic时,同步把updateMaskFoContent_ps也更新下; |
+| 方案 | 在pFo中,新写一个realMaskFoContent_ps,用来存和更新元素序列; |
+|  | 说明: 在每次更新indexDic时,同步把realMaskFoContent_ps也更新下; |
+| todo1 | 把pFo下的maskFo改成realMaskFo `T`; |
+| todo2 | 反馈顺利时,同时更新realMaskFo `T`; |
+| todo3 | 在indexDic调用中,从demand取maskFo改成从pFo.realMaskFo取 `T` |
 
 ***
 
