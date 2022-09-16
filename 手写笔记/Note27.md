@@ -597,6 +597,10 @@ for (AIMatchFoModel *pFo in rDemand.pFos) {
 |  | 2. 这样才能让每个触发器判断当时帧是否无反馈; |
 | 分析 | 方案1确实精简,但用cutIndex判断status有些取巧,不符合定义明确原则; |
 |  | 所以选择方案2,数据清晰,定义明确,易维护,不易出bug; |
+| todo1 | pFo下把status改成数组,每帧独立一个值; |
+| todo2 | 有反馈时,及时处理反省功能; |
+| todo3 | 有反馈时,及时处理推进cutIndex到下帧功能; |
+| todo4 | 无反馈时,在触发器中判断status数组里的状态,并设为失败; |
 
 ***
 
