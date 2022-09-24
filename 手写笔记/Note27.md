@@ -698,5 +698,9 @@ n27p09中写了`父任务失效机制`,本节测试;
 |  | todo1: Demand加isExpired方法,判断其pFos全失效,返回true `T`; |
 |  | todo2: 在TCDemand.getCanDecisionDemand中,过滤掉失效的root `T`; |
 |  | todo3: 在TCScore中,当子demand失效时,不进行综评 `T`; |
+| 问题3 | 改完问题2,回测第2步第3次`FZ6102-3`,又卡顿了; |
+|  | ![](assets/650_不稳定的pFo依然一直循环生成root示图.png) |
+|  | 如图: 一直有新的root(循环了20次以上),但每次都是一样的pFo1116,1198; |
+|  | 如图: F1116,1198其实S都达到40 (很不稳定),但它们依然在循环生成root; |
 
 <br><br><br><br><br>
