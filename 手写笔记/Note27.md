@@ -716,7 +716,19 @@ n27p09中写了`父任务失效机制`,本节测试;
 |  | todo1: 重训FZ6102-8,看下思维可视化的情况; |
 |  | 更新: 重训FZ6102-8没复现卡,直至训练到-10都没卡; |
 |  | todo2: 调试下超慢的TC操作,具体的慢代码块; |
-|  | todo3: 看把前段时间那个慢的refPorts优化下 (把mem彻底废弃掉); |
+|  | todo3: 看把前段时间慢的refPorts优化下 (把mem彻底弃掉) `转27124`; |
+
+| 27124 | 废弃isMem和refPorts中的mem `参考27123-问题4-todo3` |
+| --- | --- |
+| 说明 | 在早前,XGRedis就已替代了isMem方案,只是isMem相关代码一直没删 |
+| todo1 | 把AIPointer下的isMem及其调用代码删掉 `T`; |
+| todo2 | 废弃内存缓存时间配置中isMem部分的配置 `T` |
+| todo3 | 废弃内存缓存路径配置中isMem部分的配置 `T` |
+| todo4 | 把refPorts中废弃isMem部分 `T`; |
+| todo5 | regroupFo也不存在isMem=true下了,而是直接存hd `T`; |
+|  | > 这么做可以让时间跨度更高,其实倒是好事; |
+| todo6 | Input时,alg从打包到isMem=true改为hd `T`; |
+|  | > 其实原本即使打包到内存,生成时序时,照样会转移到硬盘; |
 
 ***
 
