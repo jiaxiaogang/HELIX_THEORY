@@ -888,13 +888,12 @@ n27p09中写了`父任务失效机制`,本节测试;
 
 | 27153 | 实践规划-TODOLIST |
 | --- | --- |
-| todo1 | 特征层不用类比出新的抽象节点,而是从即有具象中竞争出抽象; |
-| todo2 | 特征相近度可以在node中存一个nearDic; |
-| todo3 | 在特征识别时,就对其相近度,构建特征抽具象关联; |
+| todo1 | 特征层不用类比出新的抽象,而是从即有具象中竞争出抽象 `转2,3,7`; |
+| todo2 | 相似度可以在algNode中分别存abs和con两个matchDic `T`; |
+| todo3 | 概念识别后,直接对matchAlg和protoAlg构建抽具象关联 `T` |
 | todo4 | 在外类比中,原sameValue_ps也改为由特征mIsC判断得出; |
 | todo5 | 存的相近度,再复用到概念识别算法中; |
 | todo6 | 概念识别算法返回结果改成AIAlgMatchModel附带相近度等 `T`; |
-| todo7 | 概念识别后,直接对matchAlg和protoAlg构建抽具象关联 `T`; |
-
+| todo7 | 概念识别时,支持强中取准,即抽象竞争强者愈强; |
 
 <br><br><br><br><br>
