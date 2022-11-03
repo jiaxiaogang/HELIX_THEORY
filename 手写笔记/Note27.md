@@ -988,6 +988,17 @@ n27p09中写了`父任务失效机制`,本节测试;
 |  | > 又预测的危险其实已经不是前面的危险了,前面的已解; |
 | 结果 | 此问题等测试时肯定会遇到 `暂停:等遇到时再继续`; |
 
+| 27175 | 复用相似度之: TODOLIST |
+| --- | --- |
+| 1 | AIMatchFoModel.feedbackPushFrame反馈时计算相似度复用 `T` |
+| 2 | AIAnalyst.compareRCansetFo比对alg复用相似度; |
+|  | 分析: R时方法中mask就是pFo.realMaskFo,所以: |
+|  | 1. pFo.matchFo.content部分,canset抽象指向它; |
+|  | 2. realMaskFo再后来发生的部分: |
+|  | > `则有可能proto指向某个canset` 或 `cansetA和protoA有共同抽象` |
+| 3 | AIAnalyst.compareHCansetFo比对alg复用相似度; |
+|  | 分析: H时,canset抽象指向targetFo,所以直接复用相似度即可; |
+
 ***
 
 ## n27p18 抽象多层多样性之: 回测
