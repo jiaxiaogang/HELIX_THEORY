@@ -978,7 +978,7 @@ n27p09中写了`父任务失效机制`,本节测试;
 | 27173 | 复用相似度之: 反思部分代码实践 |
 | --- | --- |
 | 简述 | 现反思的竞争机制大体ok,只需要调整前段匹配改为方案2即可; |
-| todo1 | 把反思的前段匹配度改为由mA和cA来比对; |
+| todo1 | 把反思的前段匹配度改为由mA和cA来比对 `转27175-4`; |
 
 | 27174 | 27172的扩展: 因mA比对cA导致的反思不到位问题 |
 | --- | --- |
@@ -996,8 +996,13 @@ n27p09中写了`父任务失效机制`,本节测试;
 |  | 1. pFo.matchFo.content部分,canset抽象指向它; |
 |  | 2. realMaskFo再后来发生的部分: |
 |  | > `则有可能proto指向某个canset` 或 `cansetA和protoA有共同抽象` |
-| 3 | AIAnalyst.compareHCansetFo比对alg复用相似度; |
+| 3 | AIAnalyst.compareHCansetFo比对alg复用相似度 `T`; |
 |  | 分析: H时,canset抽象指向targetFo,所以直接复用相似度即可; |
+| 4 | AIAnalyst.compareFromSolutionCanset复用alg相似度; |
+|  | 代码: 把pFo传到Analyst中,比对时复用cansetA抽象指向pFo.alg的值; |
+|  | 问题: 和2一样,有content部分和realMaskFo后部分的不同情况; |
+| 思路 | 或者我们不需要处理realMaskFo,只需要根据content_ps来即可... |
+|  | > 前段本就只是为了判断canset与match的匹配度; |
 
 ***
 
