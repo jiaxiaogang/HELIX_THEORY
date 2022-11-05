@@ -992,17 +992,17 @@ n27p09中写了`父任务失效机制`,本节测试;
 | --- | --- |
 | 1 | AIMatchFoModel.feedbackPushFrame反馈时计算相似度复用 `T` |
 | 2 | AIAnalyst.compareRCansetFo比对alg复用相似度; |
-|  | 分析: R时方法中mask就是pFo.realMaskFo,所以: |
-|  | 1. pFo.matchFo.content部分,canset抽象指向它; |
-|  | 2. realMaskFo再后来发生的部分: |
-|  | > `则有可能proto指向某个canset` 或 `cansetA和protoA有共同抽象` |
+|  | 分析: R时方法中mask就是pFo.realMaskFo,即protoFo,所以: |
+|  | 1. pFo.matchFo则: `canset抽象指向pFo.matchFo`; |
+|  | 2. pFo.realMaskFo则: `cansetA和protoA有共同抽象` |
+|  | ![](assets/653_反思中前段相似度计算问题示图.png) |
 | 3 | AIAnalyst.compareHCansetFo比对alg复用相似度 `T`; |
 |  | 分析: H时,canset抽象指向targetFo,所以直接复用相似度即可; |
 | 4 | AIAnalyst.compareFromSolutionCanset复用alg相似度; |
-|  | 代码: 把pFo传到Analyst中,比对时复用cansetA抽象指向pFo.alg的值; |
-|  | 问题: 和2一样,有content部分和realMaskFo后部分的不同情况; |
-| 思路 | 或者我们不需要处理realMaskFo,只需要根据content_ps来即可... |
+|  | 代码: 把pFo传到Analyst中,然后复用cansetA抽象指向pFo.matchA的值; |
+| 思路 | 或者我们不需要处理realMaskFo,只需要根据matchFo来即可... |
 |  | > 前段本就只是为了判断canset与match的匹配度; |
+| 示例 | 看能不想个示例,在canset与proto不匹配时,因为canset与match匹配,而最终选定canset并推进行为化; |
 
 ***
 
