@@ -1002,7 +1002,9 @@ n27p09中写了`父任务失效机制`,本节测试;
 |  | 代码: 把pFo传到Analyst中,然后复用cansetA抽象指向pFo.matchA的值; |
 | 思路 | 或者我们不需要处理realMaskFo,只需要根据matchFo来即可... |
 |  | > 前段本就只是为了判断canset与match的匹配度; |
-| 示例 | 看能不想个示例,在canset与proto不匹配时,因为canset与match匹配,而最终选定canset并推进行为化; |
+| 示例 | 想个示例,在canset与proto不匹配时,因为canset与match匹配,而最终选定canset并推进行为化; |
+| 举例 | 小朋友用玩具做食物玩(matchA),然后想到用玩具水果(protoA)做水果沙拉(cansetA); |
+|  | 说明: 只要小朋友这么想了且做了,哪怕只是玩玩(忽略regroup反思),那么也是从决策系统中取得了这一解决方案; |
 
 ***
 
