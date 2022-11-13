@@ -1036,9 +1036,9 @@ n27p09中写了`父任务失效机制`,本节测试;
 | --- | --- |
 | 说明 | 时序识别仅返回indexDic,而cutIndex&matchValue全由它算出来; |
 | todo1 | 迭代时序全含算法V2,仅返回indexDic字典 `T`; |
-| todo2 | 根据indexDic中max(assIndex)得出截点cutIndex; |
+| todo2 | 根据indexDic中max(assIndex)得出截点cutIndex `T`; |
 |  | 算法数据: indexDic对应的KV全是mIsC成立的protoA和assA,所以: |
-| todo3 | 可遍历indexDic,然后复用相似度,算出sumNear&nearCount; |
+| todo3 | 可遍历indexDic,然后复用相似度,算出sumNear&nearCount `T`; |
 | todo4 | 在Solution快慢思考pk时,也可根据indexDic比对时序; |
 |  | 性能: 需要根据cansetFo.content来算,如canset有70条,那么就要70条IO |
 |  | 分析: 那也比现在性能好,现在的比对是完全将每条alg又取出来再比对的; |
