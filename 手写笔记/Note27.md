@@ -1042,7 +1042,20 @@ n27p09中写了`父任务失效机制`,本节测试;
 | todo4 | 在Solution快慢思考pk时,也可根据indexDic比对时序; |
 |  | 性能: 需要根据cansetFo.content来算,如canset有70条,那么就要70条IO |
 |  | 分析: 那也比现在性能好,现在的比对是完全将每条alg又取出来再比对的; |
-| todo5 | 持久化存储indexDic到foNode中; |
+| todo5 | 持久化存储indexDic到foNode中 `T`; |
+| todo6 | 对时序识别结果,直接和protoFo建立抽具象关联 `T`; |
+|  | Q: matchFo在cutIndex后是预测部分,那么二者直接抽具象关联可取吗? |
+|  | A: 虽然match可能有proto不含的部分,但有index坐镇,其实可辨别; |
+|  | A: 并且,本来proto也是希望更敏锐的识别到matchFo预测的; |
+|  | TODOTOMORROW: 分析下todo6是否不应该构建关联; |
+
+| 27178 | 迭代外类比支持indexDic |
+| --- | --- |
+| 思路1 | 用rLearning的indexDic,使外类比更快速取得类比结果; |
+| 思路2 | 用外类比获得indexDic,使pLearning的抽具象也有indexDic缓存; |
+|  | TODOTOMORROW: 分析下R帧识别,P帧识别,直接抽具象关联,和外类比抽具象关联,这多个之间的关系,看怎么理顺一下; |
+|  | 如: R帧识别后,不必调用外类比 (查下决策时是否有用到它的外类比成果); |
+|  | 如: P帧时,不必建立直接抽具象关联,因为它都没经历识别; |
 
 ***
 
