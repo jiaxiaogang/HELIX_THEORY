@@ -1144,7 +1144,7 @@ n27p09中写了`父任务失效机制`,本节测试;
 2. 第二段R关联,在n27p18已有分析,本节仅做代码实践即可;
 3. 第三段S类比,在本节中做分析与实践;
 
-| 27201 | R关联代码实践-TODOLIST |
+| 27201 | R关联代码实践-认知部分-TODOLIST |
 | --- | --- |
 | 说明 | realMaskFo和realDeltaTimes都是原proto加逐帧发生时收集的; |
 | 1 | 在预测中时序完全时,将realMaskFo生成protoFo `T`; |
@@ -1154,6 +1154,12 @@ n27p09中写了`父任务失效机制`,本节测试;
 |  | > 放任这种游离protoFo先不改,因为改的话太麻烦了,随后有不良影响再改; |
 | 5 | 在预测时序完全时,将realDeltaTimes生成protoFo `T`; |
 | 6 | 将以上1&2&3&5封装成pushFrameFinish(),推进完全时调用 `T` |
+
+| 27202 | R关联代码实践-决策部分-TODOLIST |
+| --- | --- |
+| 1 | 在TCSolution中取conCansets `T`; |
+| 2 | 取conCansets的limit由5改成500,因为它可复用数据多,性能ok `T`; |
+| 3 | 改Analyze.compareRCansetFo()支持持久化indexDic的复用; |
 
 
 <br><br><br><br><br>
