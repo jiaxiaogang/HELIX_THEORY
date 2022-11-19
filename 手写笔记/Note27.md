@@ -1146,11 +1146,14 @@ n27p09中写了`父任务失效机制`,本节测试;
 
 | 27201 | R关联代码实践-TODOLIST |
 | --- | --- |
+| 说明 | realMaskFo和realDeltaTimes都是原proto加逐帧发生时收集的; |
 | 1 | 在预测中时序完全时,将realMaskFo生成protoFo `T`; |
-| 2 | 在预测中`时序完全时`,将protoFo计入conCansets中; |
-| 3 | 在预测中`时序完全时`,将indexDic计入fo持久化; |
+| 2 | 在预测中`时序完全时`,将protoFo计入conCansets中 `T`; |
+| 3 | 在预测中`时序完全时`,将indexDic计入fo持久化 `T`; |
 | 4 | 在识别前不必生成regroupFo和protoFo `随后再改` |
 |  | > 放任这种游离protoFo先不改,因为改的话太麻烦了,随后有不良影响再改; |
+| 5 | 在预测时序完全时,将realDeltaTimes生成protoFo `T`; |
+| 6 | 将以上1&2&3&5封装成pushFrameFinish(),推进完全时调用 `T` |
 
 
 <br><br><br><br><br>
