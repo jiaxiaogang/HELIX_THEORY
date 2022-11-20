@@ -1041,7 +1041,7 @@ n27p09中写了`父任务失效机制`,本节测试;
 | todo2 | 根据indexDic中max(assIndex)得出截点cutIndex `T`; |
 |  | 算法数据: indexDic对应的KV全是mIsC成立的protoA和assA,所以: |
 | todo3 | 可遍历indexDic,然后复用相似度,算出sumNear&nearCount `T`; |
-| todo4 | 在Solution快慢思考pk时,也可根据indexDic比对时序; |
+| todo4 | 在Solution快慢思考pk时,也可根据indexDic比对时序 `转27202`; |
 |  | 性能: 需要根据cansetFo.content来算,如canset有70条,那么就要70条IO |
 |  | 分析: 那也比现在性能好,现在的比对是完全将每条alg又取出来再比对的; |
 | todo5 | 持久化存储indexDic到foNode中 `T`; |
@@ -1159,9 +1159,10 @@ n27p09中写了`父任务失效机制`,本节测试;
 | --- | --- |
 | 1 | 在TCSolution中取conCansets `T`; |
 | 2 | 取conCansets的limit由5改成500,因为它可复用数据多,性能ok `T`; |
-| 3 | 改Analyze.compareRCansetFo()支持持久化indexDic的复用; |
-| 4 | 改Analyze.compareHCansetFo()支持持久化indexDic的复用; |
+| 3 | 改R快慢思考,支持复用持久化indexDic和matchValue `T`; |
+| 4 | 改H快慢思考,支持复用持久化indexDic和matchValue `T`; |
 | 5 | Analyze比对由`proto改成match`与canset比对 (参考27175-示例) `T` |
+| 6 | 改决策反思时,支持复用持久化indexDic和matchValue; |
 
 
 <br><br><br><br><br>
