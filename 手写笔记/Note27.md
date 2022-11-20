@@ -1160,6 +1160,8 @@ n27p09中写了`父任务失效机制`,本节测试;
 | 1 | 在TCSolution中取conCansets `T`; |
 | 2 | 取conCansets的limit由5改成500,因为它可复用数据多,性能ok `T`; |
 | 3 | 改Analyze.compareRCansetFo()支持持久化indexDic的复用; |
+| 4 | 改Analyze.compareHCansetFo()支持持久化indexDic的复用; |
+| 5 | Analyze比对由`proto改成match`与canset比对 (参考27175-示例) `T` |
 
 
 <br><br><br><br><br>
