@@ -1003,13 +1003,14 @@ n27p09中写了`父任务失效机制`,本节测试;
 |  | ![](assets/653_反思中前段相似度计算问题示图.png) |
 | 3 | AIAnalyst.compareHCansetFo比对alg复用相似度 `T`; |
 |  | 分析: H时,canset抽象指向targetFo,所以直接复用相似度即可; |
-| 4 | AIAnalyst.compareFromSolutionCanset复用alg相似度; |
+| 4 | AIAnalyst.compareFromSolutionCanset复用alg相似度 `转27192`; |
 |  | 代码: 把pFo传到Analyst中,然后复用cansetA抽象指向pFo.matchA的值; |
 | 思路 | 或者我们不需要处理realMaskFo,只需要根据matchFo来即可... |
 |  | > 前段本就只是为了判断canset与match的匹配度; |
 | 示例 | 想个示例,在canset与proto不匹配时,因为canset与match匹配,而最终选定canset并推进行为化; |
 | 举例 | 小朋友用玩具做食物玩(matchA),然后想到用玩具水果(protoA)做水果沙拉(cansetA); |
 |  | 说明: 只要小朋友这么想了且做了,哪怕只是玩玩(忽略regroup反思),那么也是从决策系统中取得了这一解决方案; |
+|  | 跟进: 上述推进没问题,但反思还有另一问题,当前反思全是同层 `转27192` |
 | 5 | 在时序识别算法中复用alg持久化相似度 `T`; |
 | 6 | 在时序识别算法中,将indexDic持久化存储 `转27176`; |
 |  | 注: 如果Analyst时序比对中,重算indexDic的成本低,则可不存不复用; |
@@ -1118,6 +1119,25 @@ n27p09中写了`父任务失效机制`,本节测试;
 | 调试 | 需要实测下,在跑决策时遇到的问题,再针对分析修改; |
 |  | > 涉及1: 有了丰富的抽象,经常可以有反馈匹配,但其却未必有效; |
 
+| 27192 | 复用indexDic和matchValue的决策反思迭代 |
+| --- | --- |
+| 参考 | 参考27175-4,反思在复用indexDic和matchValue时遇到新的问题 |
+| 旧况 | 反思以前的做法是,在cansets中找出与protoCansets最相近的5条为准; |
+| 原则 | 但cansets全是同层,**从同层反思是原则性错误;** |
+| 原因 | 因为同层再相似也只是相似,它不表示场景匹配,可能误判; |
+| 比如 | 食物A像铁块,不能因为看着像就怕咯牙,因为食物A可能并不硬; |
+| Q1 | 新的canset无抽象反思不到的问题; |
+| A1 | 正常,当技能成熟后都是抽象canset了,具象的很难出头; |
+|  | > 而具象任务,即使无法反思也没什么,毕竟新知识就是容易犯点低级错误; |
+| Q2 | 现conCansets单独存储后,canset全没mv指向反思不出个所以然; |
+|  | 分析: 所以需要找出抽象canset的好坏评分,但canset一般无mv指向; |
+| A2 | canset可根据matchFo的mv判断正负,它只需要有spDic即可; |
+| 总结 | Q1指明canset需要再抽象,Q2指明canset需要spDic; |
+| 方案 | 想办法习得抽象canset 和 SP好坏,然后向抽象进行反思即可; |
+|  | 1. 在行为化完全(结束)时,类比canset得到抽象canset; |
+|  | 2. 在行为化完全(结束)时,记录spDic得到SP; |
+|  | TODOTOMORROW20221120: 复习下OutRethink反省时的代码... |
+
 ***
 
 ## n27p20 抽象多层多样性之: 回测
@@ -1162,7 +1182,10 @@ n27p09中写了`父任务失效机制`,本节测试;
 | 3 | 改R快慢思考,支持复用持久化indexDic和matchValue `T`; |
 | 4 | 改H快慢思考,支持复用持久化indexDic和matchValue `T`; |
 | 5 | Analyze比对由`proto改成match`与canset比对 (参考27175-示例) `T` |
-| 6 | 改决策反思时,支持复用持久化indexDic和matchValue; |
+| 6 | 改决策反思时,支持复用持久化indexDic和matchValue `转27192`; |
+|  | 现反思代码是通过同层间找相似进行,同层没法复用,转29192专项解决下; |
 
+| 27203 | 分析三段S类比: canset的再抽象 |
+| --- | --- |
 
 <br><br><br><br><br>
