@@ -1146,7 +1146,7 @@ n27p09中写了`父任务失效机制`,本节测试;
 
 | 27193 | 反思迭代实践规划-TODOLIST |
 | --- | --- |
-| 1 | 在行为化结束时,类比`canset和realProto真实发生序列`; |
+| 1 | 在行为化结束时,类比`canset和realProto真实发生序列` `转27203`; |
 | 2 | 将正在行为化中的canset自身spDic为反思评价依据; |
 
 ***
@@ -1196,7 +1196,20 @@ n27p09中写了`父任务失效机制`,本节测试;
 | 6 | 改决策反思时,支持复用持久化indexDic和matchValue `转27192`; |
 |  | 现反思代码是通过同层间找相似进行,同层没法复用,转29192专项解决下; |
 
-| 27203 | 分析三段S类比: canset的再抽象 |
+| 27203 | 分析三段S类比: canset的再抽象-实践前分析 |
 | --- | --- |
+| 说明 | 参考27193-1: 在行为化完成时,真实发生与解决方案进行类比抽象; |
+| 问题 | `protoCansetFo,cansetFo和absCansetFo`三者是否全挂在原任务下; |
+| 回答 | cansetFo原本就在,absCansetFo肯定会,protoCansetFo也可先挂上 |
+| 备注 | protoCansetFo就像认知期类比的protoFo一样,会成为游离fo; |
+| 结果 | 那么也与认知期的protoFo一样先挂上,等以后游离太多有问题再处理它; |
+
+| 27204 | 分析三段S类比: canset的再抽象-TODOLIST |
+| --- | --- |
+| 1 | 在feedbackTOR中,补全feedbackAlg的记录; |
+| 2 | 在feedbackTOP中,补全feedbackMv的记录; |
+| 3 | 在TCEffect结束时,将feedbackAlg&Mv记录打包成protoCansetFo; |
+| 4 | 然后对canset与protoCansetFo进行类比; |
+| 5 | 类比抽象的absCanset也做为原任务的conCanset新候选方案; |
 
 <br><br><br><br><br>
