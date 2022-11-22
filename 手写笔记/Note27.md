@@ -1204,12 +1204,40 @@ n27p09中写了`父任务失效机制`,本节测试;
 | 备注 | protoCansetFo就像认知期类比的protoFo一样,会成为游离fo; |
 | 结果 | 那么也与认知期的protoFo一样先挂上,等以后游离太多有问题再处理它; |
 
+| 27203b | 分析三段S类比: canset的再抽象-实践前代码回顾 |
+| --- | --- |
+| 说明 | 本表通过回顾现有代码各模块,来制定现在的改动应该怎么改 |
+| 模块1 | actYes触发器 |
+|  | 支持: 中间帧和末端; |
+|  | 功能: 反省结算 |
+| 模块2 | feedbackTOR & TOP |
+|  | 支持: 中间帧和末端; |
+|  | 功能: 反馈时记录feedbackAlg和feedbackMv; |
+| 模块3 | effect触发器 |
+|  | 支持: 末端(targetSPIndex) |
+|  | 功能: 记录有效率 & 记录独立effectDic字典; |
+|  | effectDic功能可考虑废除 `转27205` |
+| 结论 | 1. feedback模块可以补全feedbackAlg和feedbackMv的记录 |
+|  | 2. actYes触发器可以在最终行为化完成时,生成实际protoFo并调用类比; |
+
 | 27204 | 分析三段S类比: canset的再抽象-TODOLIST |
 | --- | --- |
-| 1 | 在feedbackTOR中,补全feedbackAlg的记录; |
-| 2 | 在feedbackTOP中,补全feedbackMv的记录; |
-| 3 | 在TCEffect结束时,将feedbackAlg&Mv记录打包成protoCansetFo; |
+| 1 | 在feedbackTOR中,补全feedbackAlg的记录 `T`; |
+| 2 | 在feedbackTOP中,补全feedbackMv的记录 `T`; |
+| 3 | 在TCActYes结束时,将feedbackAlg&Mv记录打包成protoCansetFo; |
 | 4 | 然后对canset与protoCansetFo进行类比; |
 | 5 | 类比抽象的absCanset也做为原任务的conCanset新候选方案; |
+
+| 27205 | 废除effect模块 |
+| --- | --- |
+| 说明 | effect的功能主要有3个: |
+| 功能1 | 记录有效率 |
+|  | 废除依据: 有效率可以通过SP计算出来 = `每一步的S总和最终的P的比率` |
+| 功能2 | 独立effectDic |
+|  | 废除依据: effectDic也没啥用,用conCansets加有效率也能实时得出; |
+| 功能3 | canset向别的pFos扩散 |
+|  | 说明: effect可将将pFos下任一个的解决方案扩散到所有pFos下; |
+|  | 废除依据: 我灭火的同时不疼了,但不能说我以后怎么疼都用末火器喷; |
+| 结论 | effect功能可废除; |
 
 <br><br><br><br><br>
