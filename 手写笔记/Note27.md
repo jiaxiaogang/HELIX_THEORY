@@ -1224,9 +1224,12 @@ n27p09中写了`父任务失效机制`,本节测试;
 | --- | --- |
 | 1 | 在feedbackTOR中,补全feedbackAlg的记录 `T`; |
 | 2 | 在feedbackTOP中,补全feedbackMv的记录 `T`; |
-| 3 | 在TCActYes结束时,将feedbackAlg&Mv记录打包成protoCansetFo; |
-| 4 | 然后对canset与protoCansetFo进行类比; |
-| 5 | 类比抽象的absCanset也做为原任务的conCanset新候选方案; |
+| 3 | R任务在ActYes最终成功时,将每帧feedbackAlg打包成protoFo `T` |
+| 4 | 然后对当前执行中canset与protoFo进行类比 `T`; |
+| 5 | 类比抽象的absCanset也做为原任务的conCanset新候选方案 `T`; |
+| 6 | H任务在ActYes最终成功时,将每帧feedbackAlg打包成protoFo; |
+| 7 | 将conCansets改成conCansetsDic,每帧都对应一个conCansets `T`; |
+| 8 | H任务下的canset再抽象,则挂到ConCansetsDic中H下标对应的Values中; |
 
 | 27205 | 废除effect模块 |
 | --- | --- |
