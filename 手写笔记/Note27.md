@@ -1227,9 +1227,23 @@ n27p09中写了`父任务失效机制`,本节测试;
 | 3 | R任务在ActYes最终成功时,将每帧feedbackAlg打包成protoFo `T` |
 | 4 | 然后对当前执行中canset与protoFo进行类比 `T`; |
 | 5 | 类比抽象的absCanset也做为原任务的conCanset新候选方案 `T`; |
-| 6 | H任务在ActYes最终成功时,将每帧feedbackAlg打包成protoFo; |
+| 6 | H任务在ActYes最终成功时,将每帧feedbackAlg打包成protoFo `T`; |
 | 7 | 将conCansets改成conCansetsDic,每帧都对应一个conCansets `T`; |
-| 8 | H任务下的canset再抽象,则挂到ConCansetsDic中H下标对应的Values中; |
+|  | > 扩展: 关于H任务的conCansets演化过程 `转27204b` |
+| 8 | H任务下的canset再抽象,挂到ConCansetsDic中H下标对应的Value中 `T` |
+| 9 | R任务行为化最终失败时,处理还没想好 (暂停) |
+| 10 | H任务行为化最终失败时,处理还没想好 (暂停) |
+| 11 | canset的再抽象,是否应该生成新的indexDic以供复用? |
+| 12 | canset的类比算法,复用Analogy是否有哪不适用? |
+
+| 27204b | H任务的canset解决方案的演化过程 |
+| --- | --- |
+| 简述 | 演化过程为: `从R的cansets中找->生成H任务自己的->抽象hCanset` |
+| 1 | R任务的解决方案最先生成,而它的中间帧每个都是一个H; |
+| 2 | 所以H任务的canset最终是由R任务的canset来的; |
+| 3 | 更后面帧的conCansets中,包含前面帧的H解决方案; |
+| 4 | 所以H某帧的解决方案=SUM(>hIndex的所有后面帧的解决方案)之和; |
+| 5 | 然后canset再抽象,其正在解决哪帧H,就挂到conCansetDic的哪帧下面; |
 
 | 27205 | 废除effect模块 |
 | --- | --- |
