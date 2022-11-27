@@ -1298,6 +1298,8 @@ n27p09中写了`父任务失效机制`,本节测试;
 |  | >> 你没大意,你躲了,但没躲开,被砸但没疼,此功劳应归于棉皮,而非躲避; |
 |  | >> 你没大意,你躲了,也躲开了,诶?打不着,此功劳应归于躲避,而非棉皮; |
 |  | 综上: 只有躲完才归于躲避,所以ActYes行为化中状态的S才进行再类比; |
+|  | 多S问题: rDemand有多个pFo,如果同R下的别的S有躲,另一个没呢? |
+|  | 回答: 目前暂只针对同pFo下的canset进行抽象,不串到别的S做判断 `T`; |
 | H任务 | 而H任务则只需要到O反馈中判断即可; |
 |  | H方案: H的target帧有feedbackTOR反馈时,H任务计做提前`完成`; |
 |  | > 代码在feedbackTOR中对H任务有效性判断(Feedback320行),改即可; |
@@ -1328,7 +1330,7 @@ n27p09中写了`父任务失效机制`,本节测试;
 | 3 | 因为27206c-原本ActYes触发canset外类比的代码废弃掉; |
 | 4 | 改类比算法,支持canset再类比时,返回indexDic `转27206d-方案2`; |
 | 5 | H任务在feedbackTOR中,触发调用canset再类比 `T`; |
-| 6 | R任务在forecast中,触发调用canset再类比; |
+| 6 | R任务在forecast中,触发调用canset再类比 `T`; |
 | 7 | 写个方法,将order收集到的feedbackAlg的帧,的下标数组返回 `T`; |
 | 8 | 取出原targetOrPFo与solutionFo的oldIndexDic `T`; |
 | 9 | 根据feedbackAlg下标数组,到oldIndexDic筛选出有效部分 `T`; |
