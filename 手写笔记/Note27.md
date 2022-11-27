@@ -1284,7 +1284,7 @@ n27p09中写了`父任务失效机制`,本节测试;
 |  | 分析: 此时,并不是有一帧有反馈,而是父级任务有完成的; |
 |  | 思路: 这个完成触使它的子solutionFo提前完成,触发类比; |
 |  | 结果: 当targetIndex反馈: 它的子级可打包protoFo,并canset再类比; |
-| 结果 | 选定方案2,代码实践`转27207`; |
+| 结果 | 选定方案2,代码实践 `转27206b继续细化,实践转27207`; |
 
 | 27206c | canset再类比-触发时机方案分析 (针对R和H各自情况分析) |
 | --- | --- |
@@ -1324,15 +1324,15 @@ n27p09中写了`父任务失效机制`,本节测试;
 | 描述 | 前几表分析出: 仅收集有反馈部分,且触发源,及改类比器返回indexDic; |
 | 实践 | 以上分析结果,全放在本表中进行代码实践改动; |
 | 1 | 在canset再类比时protoFo仅收集有feedbackAlg发生的部分 `T`; |
-| 2 | 参考27206b-targetIndex有反馈时,子solutionFo计为行为化完成; |
+| 2 | 参考27206b-targetIndex有反馈时,子solutionFo计为行为化完成 `T`; |
 | 3 | 因为27206c-原本ActYes触发canset外类比的代码废弃掉; |
-| 4 | 改类比算法,支持canset再类比时,返回indexDic; |
-| 5 | H任务在feedbackTOR中,触发调用canset再类比; |
+| 4 | 改类比算法,支持canset再类比时,返回indexDic `转27206d-方案2`; |
+| 5 | H任务在feedbackTOR中,触发调用canset再类比 `T`; |
 | 6 | R任务在forecast中,触发调用canset再类比; |
-| 7 | 写个方法,将order收集到的feedbackAlg的帧,的下标数组返回; |
-| 8 | 取出原targetOrPFo与solutionFo的oldIndexDic; |
-| 9 | 根据feedbackAlg下标数组,到oldIndexDic筛选出有效部分; |
-| 10 | 根据有效部分newIndexDic,将它的V改成123...这样的值; |
-| 11 | 将newIndexDic存为absCansetFo的映射字典; |
+| 7 | 写个方法,将order收集到的feedbackAlg的帧,的下标数组返回 `T`; |
+| 8 | 取出原targetOrPFo与solutionFo的oldIndexDic `T`; |
+| 9 | 根据feedbackAlg下标数组,到oldIndexDic筛选出有效部分 `T`; |
+| 10 | 根据有效部分newIndexDic,将它的V改成012...这样的新下标对应值 `T` |
+| 11 | 将newIndexDic存为absCansetFo的映射字典 `T`; |
 
 <br><br><br><br><br>
