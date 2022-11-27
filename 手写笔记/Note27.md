@@ -1286,7 +1286,7 @@ n27p09中写了`父任务失效机制`,本节测试;
 |  | 结果: 当targetIndex反馈: 它的子级可打包protoFo,并canset再类比; |
 | 结果 | 选定方案2,代码实践`转27207`; |
 
-| 27206c | 父完成子canset类比-方案细化-针对R和H各自情况分析 |
+| 27206c | canset再类比-触发时机方案分析 (针对R和H各自情况分析) |
 | --- | --- |
 | 说明 | R和H任务的父完成判断是不同的,本表分析它的不同,分别制定实践规划; |
 | 思路 | R任务是IO都有涉猎,H则是纯O任务,所以如下R和H: |
@@ -1297,9 +1297,27 @@ n27p09中写了`父任务失效机制`,本节测试;
 |  | >> 你大意了,没有躲,被砸但没疼,此功劳应归于棉皮,而非躲避; |
 |  | >> 你没大意,你躲了,但没躲开,被砸但没疼,此功劳应归于棉皮,而非躲避; |
 |  | >> 你没大意,你躲了,也躲开了,诶?打不着,此功劳应归于躲避,而非棉皮; |
+|  | 综上: 只有躲完才归于躲避,所以ActYes行为化中状态的S才进行再类比; |
 | H任务 | 而H任务则只需要到O反馈中判断即可; |
 |  | H方案: H的target帧有feedbackTOR反馈时,H任务计做提前`完成`; |
 |  | > 代码在feedbackTOR中对H任务有效性判断(Feedback320行),改即可; |
+|  | 综上: 有反馈时,只要H任务在ActYes行为化中的状态,即进行再类比; |
+| 结果 | H在feedbackTOR触发,R在Forecast触发 `实践转27207-5&6`; |
+
+| 27206d | 支持canset再类比时,生成其indexDic; |
+| --- | --- |
+| 说明 | 决策时需复用每个canset的indexDic,所以再类比也需要indexDic; |
+| 方案1 | 在类比算法中,直接算出并返回indexDic; |
+|  | 弃用: 因为TI的P帧也会调用类比,而P帧和前几帧matchFo都外类比; |
+|  | 而前几帧matchFo要indexDic没啥用,而它们都计算indexDic也没必要; |
+| 方案2 | 在canset再类比后,单独写算法取出indexDic并持久化; |
+|  | 步骤: 再类比的protoFo其实是SFo(solution)的其中几帧,如[1,3,5]; |
+|  | 而protoFo与SFo类比后,得到的是solution的元素:[sAlg1,sAlg3,sAlg5] |
+|  | 生成indexDic1: 可以先取出targetOrPFo和solutionFo的indexDic; |
+|  | 生成indexDic2: 然后从此indexDic中,筛选出有SFo的1,3,5帧部分; |
+|  | 生成indexDic3: 如:[1=1,2=2,3=3,4=5]筛选后为[1=1,3=3,4=5]; |
+|  | 然后因为absCansetFo只有3帧,所以最终结果为:[1=1,3=2,4=3]; |
+| 结果 | 选定方案2,代码实践`转27207-7至11`; |
 
 | 27207 | canset再抽象的`改类比算法与生成indexDic`->TODOLIST |
 | --- | --- |
@@ -1307,7 +1325,14 @@ n27p09中写了`父任务失效机制`,本节测试;
 | 实践 | 以上分析结果,全放在本表中进行代码实践改动; |
 | 1 | 在canset再类比时protoFo仅收集有feedbackAlg发生的部分 `T`; |
 | 2 | 参考27206b-targetIndex有反馈时,子solutionFo计为行为化完成; |
-| 3 | 回顾下原本ActYes触发canset外类比,的代码是否应废弃; |
+| 3 | 因为27206c-原本ActYes触发canset外类比的代码废弃掉; |
 | 4 | 改类比算法,支持canset再类比时,返回indexDic; |
+| 5 | H任务在feedbackTOR中,触发调用canset再类比; |
+| 6 | R任务在forecast中,触发调用canset再类比; |
+| 7 | 写个方法,将order收集到的feedbackAlg的帧,的下标数组返回; |
+| 8 | 取出原targetOrPFo与solutionFo的oldIndexDic; |
+| 9 | 根据feedbackAlg下标数组,到oldIndexDic筛选出有效部分; |
+| 10 | 根据有效部分newIndexDic,将它的V改成123...这样的值; |
+| 11 | 将newIndexDic存为absCansetFo的映射字典; |
 
 <br><br><br><br><br>
