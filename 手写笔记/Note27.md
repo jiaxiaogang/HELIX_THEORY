@@ -1318,7 +1318,7 @@ n27p09中写了`父任务失效机制`,本节测试;
 |  | 生成indexDic1: 可以先取出targetOrPFo和solutionFo的indexDic; |
 |  | 生成indexDic2: 然后从此indexDic中,筛选出有SFo的1,3,5帧部分; |
 |  | 生成indexDic3: 如:[1=1,2=2,3=3,4=5]筛选后为[1=1,3=3,4=5]; |
-|  | 然后因为absCansetFo只有3帧,所以最终结果为:[1=1,3=2,4=3]; |
+|  | 然后因为absCansetFo只有3帧,所以最终结果为:[1=0,3=1,4=2]; |
 | 结果 | 选定方案2,代码实践`转27207-7至11`; |
 
 | 27207 | canset再抽象的`改类比算法与生成indexDic`->TODOLIST |
@@ -1327,7 +1327,7 @@ n27p09中写了`父任务失效机制`,本节测试;
 | 实践 | 以上分析结果,全放在本表中进行代码实践改动; |
 | 1 | 在canset再类比时protoFo仅收集有feedbackAlg发生的部分 `T`; |
 | 2 | 参考27206b-targetIndex有反馈时,子solutionFo计为行为化完成 `T`; |
-| 3 | 因为27206c-原本ActYes触发canset外类比的代码废弃掉; |
+| 3 | 因为27206c-原本ActYes触发canset外类比的代码废弃掉 `T`; |
 | 4 | 改类比算法,支持canset再类比时,返回indexDic `转27206d-方案2`; |
 | 5 | H任务在feedbackTOR中,触发调用canset再类比 `T`; |
 | 6 | R任务在forecast中,触发调用canset再类比 `T`; |
@@ -1336,5 +1336,6 @@ n27p09中写了`父任务失效机制`,本节测试;
 | 9 | 根据feedbackAlg下标数组,到oldIndexDic筛选出有效部分 `T`; |
 | 10 | 根据有效部分newIndexDic,将它的V改成012...这样的新下标对应值 `T` |
 | 11 | 将newIndexDic存为absCansetFo的映射字典 `T`; |
+| 12 | 改慢思考算法,使抽象canset有机会脱颖而出; |
 
 <br><br><br><br><br>
