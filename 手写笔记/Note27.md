@@ -1333,6 +1333,12 @@ n27p09中写了`父任务失效机制`,本节测试;
 | --- | --- |
 | 方案 | canset的竞争力体现为: `SP更高,且更懒`; |
 | todo1 | absCanset可以继承当前执行中canset的spDic; |
+|  | 步骤1. 取得solutionFo有反馈的帧数组,如Arr1[2,3,7]; |
+|  | 步骤2. Arr1的每两个元素间所有值,如第3个元素7即取Arr2[4,5,6,7]; |
+|  | 步骤3. Arr2每个元素为key,取solutionFo.spDic的sp值,为Arr3[sp1,sp2,sp3,sp4]; |
+|  | 步骤4. Arr3的末位P做为最终综合P值 (即absCanset第3帧的p值); |
+|  | 步骤5. Arr3的除末位外的P和所有的S求和,做为最终综合S值 (即absCanset第3帧的s值); |
+|  | 注: 分析下,这里是不是应该相乘?但相乘的sp怎么继承值? |
 | todo2 | 将正在行为化中的canset自身spDic为反思评价依据; |
 | todo3 | 排查慢思考算法,实测抽象canset竞争能靠前; |
 
