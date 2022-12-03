@@ -724,6 +724,8 @@
 | 第1步 | 候选集有效判断 (初步对比S候选集是否适用于protoFo) `T`; |
 | 1 | cansetFo前段,从前到后在protoFo中找匹配,必须每位都找到 `T`; |
 |  | > 有一帧canset在proto里没匹配到,即proto全含canset部分结束,前段完; |
+|  | 2022.12.03: 未匹配到未必是结束,可能是因为具象在抽象里没有; |
+|  | 2022.12.03: 改为用indexDic根据matchCutIndex取得cansetCutIndex; |
 | 2 | 直至匹配到protoFo的末位为止,此时cansetFo的截点为cutIndex `T`; |
 | 3 | 此时判断cansetFo在cutIndex后面还有>=0位数,即通过 `T`; |
 | 4 | 计算前段匹配度=`匹配度总和 / protoFo.count` `T`; |
