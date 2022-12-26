@@ -1543,8 +1543,8 @@ n27p09中写了`父任务失效机制`,本节测试;
 | 2722f | '危险地带'的具象概念非常杂乱问题: 后续竞争机制 |
 | --- | --- |
 | 实践1 | 先把fo识别结果加上`综合竞争`; |
-|  | todo11. 将content_ps改成contentPorts,以方计算sumRefStrong |
-|  | todo12. 抽象节点的contentPorts传入初始强度值; |
+|  | todo11. 将content_ps改成contentPorts,以方便计算sumRefStrong`T` |
+|  | todo12. 抽象时序的contentPorts复用初始强度(从外类比的assFo复用) |
 |  | todo13. 便用indexDic求出已发生部分的sumRefStrong |
 |  | todo14. AIRank里加上时序识别时的综合竞争方法; |
 | 实践2 | mIsC判断改为contains,避免强度弱的被激活; |
