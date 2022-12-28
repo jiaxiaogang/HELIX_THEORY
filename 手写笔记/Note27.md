@@ -1546,8 +1546,8 @@ n27p09中写了`父任务失效机制`,本节测试;
 |  | todo11. 将content_ps改成contentPorts,以方便计算sumRefStrong`T` |
 |  | todo12. 抽象时序的contentPorts复用初始强度(从外类比的assFo复用)`T` |
 |  | > 说明: 类比时orderSames一定源自assFo,所以从它复用强度即可; |
-|  | todo13. 便用indexDic求出已发生部分的sumRefStrong |
-|  | todo14. AIRank里加上时序识别时的综合竞争方法; |
+|  | todo13. 便用indexDic求出已发生部分的sumRefStrong `T`; |
+|  | todo14. AIRank里加上时序识别时的综合竞争方法 `T`; |
 | 实践2 | mIsC判断改为contains,避免强度弱的被激活; |
 |  | todo21. 回顾下代码,看mIsC哪里不好,需要改成contains; |
 | 实践3 | 宏观一级有效反馈时,则相邻微观级强度增强; |
