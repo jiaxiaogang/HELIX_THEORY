@@ -1549,7 +1549,8 @@ n27p09中写了`父任务失效机制`,本节测试;
 |  | todo13. 便用indexDic求出已发生部分的sumRefStrong `T`; |
 |  | todo14. AIRank里加上时序识别时的综合竞争方法 `T`; |
 | 实践2 | mIsC判断改为contains,避免强度弱的被激活; |
-|  | todo21. 回顾下代码,看mIsC哪里不好,需要改成contains; |
+|  | todo21. 回顾下代码,看mIsC哪里不好,需要改成contains `T`; |
+|  | > 没哪不好,全是contains,在识别和类比中的mIsC与contains等效; |
 | 实践3 | 宏观一级有效反馈时,则相邻微观级强度增强; |
 |  | todo31. 回顾下代码,每一次微向宏时,如何判定有效反馈; |
 
