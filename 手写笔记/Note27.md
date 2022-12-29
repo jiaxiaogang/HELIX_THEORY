@@ -1557,6 +1557,6 @@ n27p09中写了`父任务失效机制`,本节测试;
 |  | todo31. 概念识别结束,立马增强refStrong `原代码即如此`; |
 |  | todo32. 时序识别结束,增强contentPorts.strong `T`; |
 |  | todo33. 时序识别结束,refStrong改为仅增强indexDic已发生部分 `T`; |
-
+| 结果 | 回测下自然竞争,及训练得到危险/安全地带,转`n28p01`; |
 
 <br><br><br><br><br>
