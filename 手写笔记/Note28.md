@@ -30,5 +30,8 @@
 | --- | --- |
 | 复现 | `FZ67,危险地带,直投`,发现执行方案的末帧deltaTime=0,导致反省为P; |
 | 示图 | ![](assets/663_触发器时间为0导致无效方案P值高的BUG.png) |
+| 调试 | 经调试,canset本来就没Mv指向,所以=0; |
+| 方案 | 应继承任务的mvDeltaTime,等pFo自然无解时,此处再触发即是准确的; |
+| 结果 | 改为pFo.mvDeltaTime后,回测ok; |
 
 <br><br><br><br><br>
