@@ -1,11 +1,12 @@
-# 乌鸦挑战-TC数据流配置测调
+# 螺旋调教 & TCSolution前段条件满足迭代
 
 ***
 
 <!-- TOC -->
 
-- [乌鸦挑战-TC数据流配置测调](#乌鸦挑战-tc数据流配置测调)
+- [螺旋调教 & TCSolution前段条件满足迭代](#螺旋调教--tcsolution前段条件满足迭代)
   - [n28p01 回测](#n28p01-回测)
+  - [n28p02 TCSolution迭代: canset前段条件满足](#n28p02-tcsolution迭代-canset前段条件满足)
 
 <!-- /TOC -->
 
@@ -47,5 +48,19 @@
 | 分析3 | 现代码用indexDic判断截点,indexDic即mIsC容易不太匹配时也有关联; |
 |  | 说明: 学习后期`危险地带`很明确时,是否改为contains判断匹配; |
 | 方案 | 综上三条分析,即前段必须全contains满足,才做为解决方案并行为化后段; |
+| 结果 | 即本问题其实是`solutionFo前段条件满足`问题,`代码实践转n28p02`; |
+
+***
+
+## n28p02 TCSolution迭代: canset前段条件满足
+`CreateTime 2023.01.04`
+
+在上节测试中,发现`无效解决方案`的问题,后经28014的三条分析,解决方案的前段应由瞬时序列判断contains成立,然后行为化后段,本节重点对其代码实践;
+
+| 28021 | TCSolution迭代: canset前段条件满足-代码实践 |
+| --- | --- |
+| todo1 | TCSolution的cansets写前段条件满足代码; |
+
+
 
 <br><br><br><br><br>
