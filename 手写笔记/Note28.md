@@ -66,12 +66,16 @@
 |  | > 原因: canset与pFo有indexDic所以肯定关联,但关联过度广泛(泛而不准) |
 |  | > 分析: 所以现在需要改为contains判断,不能依赖indexDic; |
 | 问题2 | `准备枪`肯定不在瞬时记忆中,那么我们不能通过瞬时序列判断contains; |
-|  | > 分析: 那么它就在工作记忆树中,比如路径如下: |
-|  | > 顺着pFo,找出它的protoFo,然后识别的matchFos,进而判断contains; |
+|  | 分析: 那么它就在工作记忆树中,比如路径如下: |
+|  | 目标: 顺着pFo,找出它当时识别的matchAlgs,进而判断contains; |
+|  | 因为: protoFo/regroupFo本来就是protoAlg或feedbackProtoAlg组成; |
+|  | 结果: 所以protoAlg的抽象即matchAlgs `转28022-todo1`; |
+| 结果 | 综上,现有代码27224压根没起到作用,本次条件满足代码改动`转28022`; |
 
 | 28022 | 迭代Canset前段条件满足-代码实践 |
 | --- | --- |
-| todo1 | TCSolution的cansets写前段条件满足代码; |
+| todo1 | 顺着工作记忆找出每帧的概念识别结果matchAlgs; |
+| todo2 | TCSolution的cansets写前段条件满足代码; |
 
 
 <br><br><br><br><br>
