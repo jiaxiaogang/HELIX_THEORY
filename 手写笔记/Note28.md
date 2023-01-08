@@ -74,8 +74,11 @@
 
 | 28022 | 迭代Canset前段条件满足-代码实践 |
 | --- | --- |
-| todo1 | 顺着工作记忆找出每帧的概念识别结果matchAlgs; |
-| todo2 | TCSolution的cansets写前段条件满足代码; |
+| todo1 | 顺着工作记忆找出每帧的概念识别结果matchAlgs `T`; |
+| todo2 | 判断每帧的matchAlgs是否包含对应的cansetAlg `T`; |
+| todo3 | TCSolution的cansets写前段条件满足代码 (一帧不包含则过虑掉) `T`; |
+| todo4 | 所有已发生帧,都要判断一下条件满足 (<ptAleardayCount部分) `T`; |
+| todo5 | 将前段条件满足功能写到`canset候选集过滤器`中 `T`; |
 
 
 <br><br><br><br><br>
