@@ -106,7 +106,10 @@
 | todo1 | 将basePFoOrTargetFo在短时记忆树R下层的每层H中一直传递 `T`; |
 | todo2 | 写H向工作记忆树根方向找R.protoFo的递归方法 `T`; |
 | todo3 | 递归方法中,计算28024回答2中sumIndexDic的方式 `T`; |
-| todo4 | 找到R.protoFo后,退出递归,算法可复用28022中R任务时的代码; |
-| todo5 | 前段条件满足的代码,也复用28022中R任务时的代码; |
+| todo4 | 找到R.protoFo后,退出递归,算法可复用28022中R任务时的代码 `T`; |
+| todo5 | 前段条件满足的代码,也复用28022中R任务时的代码 `T`; |
+| todo6 | 将H任务递归算法写成最终返回cansetMatchIndexDic `T`; |
+| todo7 | H任务取cansetMatchIndexDic与R任务取它复用一个算法 `T`; |
+| todo8 | H任务向root方向找pFo (R任务也封装复用一个算法) `T`; |
 
 <br><br><br><br><br>
