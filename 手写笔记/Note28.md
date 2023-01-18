@@ -157,5 +157,8 @@
 
 | 28035 | 识别时相似度改为求乘-TODOLIST |
 | --- | --- |
+| todo1 | 概念识别计算sumNear用相乘 `T`; |
+| todo2 | 时序识别计算sumNear用相乘 `T`; |
+| todo3 | 在compareCansetFo()中前段匹配度也改为相乘 (参考26128-1-4); |
 
 <br><br><br><br><br>
