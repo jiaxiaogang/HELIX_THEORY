@@ -161,6 +161,7 @@
 | --- | --- |
 | todo1 | 概念识别计算sumNear用相乘 `T`; |
 | todo2 | 时序识别计算sumNear用相乘 `T`; |
-| todo3 | 在compareCansetFo()中前段匹配度也改为相乘 (参考26128-1-4); |
+| todo3 | 在compareCansetFo()中前段匹配度也改为相乘(参考26128-1-4)`T` |
+| todo4 | 检查以上三个初始相似度由0改为1 `T`; |
 
 <br><br><br><br><br>
