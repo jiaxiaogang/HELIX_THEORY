@@ -237,11 +237,20 @@
 
 | 28051 | 回测条件满足-又测得28023的空帧问题 |
 | --- | --- |
+| 问题 | 本表主要描述了canset前段条件满足判断不完全问题 `前因场景不同`; |
 | 示图 | ![](assets/667_又测得条件满足的空帧问题.png) |
 | 说明 | 如图,此处仅对canset的第3帧判断了条件满足,但前两帧却都未曾满足; |
 | 分析 | 前因和后果,可能前面的每一帧都很重要,少一帧场景条件也不一样; |
 | 示例 | 参考canset=[拿枪,遇老虎]示图,此时遇到老虎,但可能没拿过枪; |
 |  | 可能matchFo中压根不要求枪,并且有可能protoFo中也没满足枪条件; |
-| 思路 | 即:cansetFo的前段条件必须全满足? |
+| 思路 | 即:cansetFo的前段条件必须全满足 (protoFo中有mIsC指向它); |
+| 方案 | canset前段部分从前向后逐帧判断,必须全被protoFo满足,实践`转28052` |
+
+| 28052 | Canset前段条件满足不完全问题-代码实践TODOLIST |
+| --- | --- |
+| 1 | 根据pFoOrTargetFo.ptAleardayCount取得对应canset的中段截点 |
+| 2 | 在CansetFosFilter()遍历cansetFo前段,判断protoFo条件满足; |
+| 3 | 单条cansetAlg判断满足: `用protoAlg有mIsC指向cansetAlg为准` |
+| 4 | 在CansetFosFilter()过滤掉canset后段没元素的(行为化有可做的); |
 
 <br><br><br><br><br>
