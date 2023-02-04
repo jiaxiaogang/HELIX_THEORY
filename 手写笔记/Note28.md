@@ -9,7 +9,8 @@
   - [n28p02 迭代Canset前段条件满足](#n28p02-迭代canset前段条件满足)
   - [n28p03 回测条件满足代码](#n28p03-回测条件满足代码)
   - [n28p04 回测识别越来越准问题](#n28p04-回测识别越来越准问题)
-  - [n28p05 回测条件满足功能](#n28p05-回测条件满足功能)
+  - [n28p05 解决条件满足不完全问题](#n28p05-解决条件满足不完全问题)
+  - [n28p06 回测条件满足功能](#n28p06-回测条件满足功能)
 
 <!-- /TOC -->
 
@@ -89,6 +90,7 @@
 | 比如 | matchFo是[遇老虎],cansetFo是[拿枪,遇老虎] |
 | 说明 | 此时,即使canset的遇老虎条件满足,但拿枪未必满足; |
 | 思路 | 所以要从protoFo中,看有没有(拿枪),而这一判断不能依赖matchFo; |
+| 结果 | 本节具体方案和代码实践: `转28051 & 28052`; |
 
 | 28024 | 迭代Canset前段条件满足-H任务 |
 | --- | --- |
@@ -227,12 +229,12 @@
 
 ***
 
-## n28p05 回测条件满足功能
+## n28p05 解决条件满足不完全问题
 `CreateTime 2023.02.02`
 
 在上节中，修复并回测了识别没能越来越准问题，本节：
 1. `回测条件满足的功能`
-2. 解决`28023空帧的问题`
+2. 解决`28023空帧的问题: 条件满足不完全问题`
 3. `回测Solution取得有效解决方案的问题 (参考条件满足之前的手稿)`
 
 | 28051 | 回测条件满足-又测得28023的空帧问题 |
@@ -248,9 +250,19 @@
 
 | 28052 | Canset前段条件满足不完全问题-代码实践TODOLIST |
 | --- | --- |
-| 1 | 根据pFoOrTargetFo.ptAleardayCount取得对应canset的中段截点 |
-| 2 | 在CansetFosFilter()遍历cansetFo前段,判断protoFo条件满足; |
-| 3 | 单条cansetAlg判断满足: `用protoAlg有mIsC指向cansetAlg为准` |
-| 4 | 在CansetFosFilter()过滤掉canset后段没元素的(行为化有可做的); |
+| 1 | 根据pFoOrTargetFo.ptAleardayCount取得对应canset的中段截点 `T` |
+|  | 提示: ptAleardayCount = cutIndex+1或actionIndex; |
+| 2 | 在CansetFosFilter()遍历cansetFo前段,判断protoFo条件满足 `T`; |
+| 3 | 单条cansetAlg判断满足: `用protoAlg有mIsC指向cansetAlg为准` `T`; |
+| 4 | 在CansetFosFilter()过滤掉canset后段没元素的(行为化有可做的) `T`; |
+
+***
+
+## n28p06 回测条件满足功能
+`CreateTime 2023.02.04`
+
+在上节中，修复条件满足不完全问题,本节:
+1. `回测条件满足的功能`
+2. `回测Solution取得有效解决方案的问题 (参考条件满足之前的手稿)`
 
 <br><br><br><br><br>
