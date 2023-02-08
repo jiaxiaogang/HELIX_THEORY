@@ -291,7 +291,8 @@
 |  | 线索: 因为上飞不算反馈,没法加入realMaskFo,故无法生成到canset中; |
 | 思路 | 参考调试2,pFo.realMaskFo实际经历中,缺了不相关却有用的帧; |
 | 方案 | 需要将不算反馈的`上飞`,也加入到生成canset中,此问题即解; |
-| todo1 | 在pFo中,新写feedbackOtherFrame(),当反馈了不匹配的帧时调用 `T` |
-| todo2 | 在feedbackTIR中对mIsC不匹配时,调用feedbackOtherFrame() `T` |
+| todo1 | 新写pFo.feedbackOtherFrame(){反馈不匹配时也记录实际发生帧}`T` |
+| todo2 | feedbackTIR中只要wait且未匹配到,即调用feedbackOtherFrame`T` |
+| 结果 | 经代码实践方案后,此BUG已修复,可以生成有后段的S候选集了 `T`; |
 
 <br><br><br><br><br>
