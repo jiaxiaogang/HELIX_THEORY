@@ -279,7 +279,7 @@
 | BUG1 | 刚开始训练第一步时AITest14中断,后查下原因; |
 | BUG2 | `7102,路偏上位置,直投`,日志中Solution没有解决方案 `转28063`; |
 
-| 28063 | FZ71-BUG2: 解决方案候选集全没后段的BUG; |
+| 28063 | BUG2: 解决方案候选集全没后段-> pFo实际经历新增不相关帧 |
 | --- | --- |
 | 说明 | 1. 在第2步训练时,识别和形成R任务的pFo都是`F879,F892,F893` |
 |  | 2. 最后测试时,也是这三个,但就是rSolution取到0条方案; |
@@ -289,6 +289,9 @@
 | 调试2 | 经查代码,具象canset是由pFo.realMaskFo生成的; |
 |  | 构成: 而realMaskFo是由反馈成功时的一帧帧proto拼起来的; |
 |  | 线索: 因为上飞不算反馈,没法加入realMaskFo,故无法生成到canset中; |
-| 方案 | 参考调试2,需要将不算反馈的`上飞`,也加入到生成canset中,此问题即解; |
+| 思路 | 参考调试2,pFo.realMaskFo实际经历中,缺了不相关却有用的帧; |
+| 方案 | 需要将不算反馈的`上飞`,也加入到生成canset中,此问题即解; |
+| todo1 | 在pFo中,新写feedbackOtherFrame(),当反馈了不匹配的帧时调用 `T` |
+| todo2 | 在feedbackTIR中对mIsC不匹配时,调用feedbackOtherFrame() `T` |
 
 <br><br><br><br><br>
