@@ -342,6 +342,19 @@
 | 示图 | ![](assets/669_触发canset再类比的proto只有行为BUG.png) |
 | 问题 | proto只有飞,导致抽象出的absCanset就只有飞; |
 | 分析 | 导致抽象出的absCanset压根没有场景满足的可能; |
-| 方案 | 尝试把cutIndex前段也拼接到proto中,这样就ok了; |
+| 思路 | 尝试把cutIndex前段也拼接到proto中,这样就ok了; |
+| 方案1 | 从solutionFo取前段+有反馈的feedbackAlg,生成protoFo; |
+|  | 分析: 前段其实是pFo,所以从solutionFo取前段其实是不够真实的; |
+|  | 结果: 但因为`不允许抽具象跨层`,所以solutionFo就是它的实际发生`95%` |
+| 方案2 | 直接取pFo.realMaskFo,生成protoFo; |
+|  | 分析: 此方案全是实际发生,但H任务的base是targetFo,而不是pFo; |
+|  | 且pFo太抽象,如果pFo中取proto前段,那么类比后最终会在absCanset中 |
+|  | 那么今后,这条absCanset,在判断条件满足很难成功,因为它的元素太抽象 |
+|  | > 所以,原则上,尽量不要让跨抽具象层级的事发生 (迪米特法则); |
+|  | 结果: 所以pFo虽然是绝对的实际发生部分,但不允许这么跨层使用它 `5%`; |
+| 原则 | 方案中提到原则: 禁止跨层使用抽具象 (类似迪迷特法则); |
+|  | 因为关系是就近的,跨层即使真实却没就近关系,其真实没法用 (没法判断); |
+| todo | 选定方案1,在取proto的order方法中,加入前段部分 `T`; |
+| 结果 | 已实现方案1,未测; |
 
 <br><br><br><br><br>
