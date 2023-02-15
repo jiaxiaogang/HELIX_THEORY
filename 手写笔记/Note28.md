@@ -371,8 +371,9 @@
 
 | 28071 | canset再类比触发极少,查下原因 |
 | --- | --- |
-| 思路1 | 经查代码,主要查下`test17:核实下,R和H任务...;` |
-| 思路2 | 查下,在飞躲成功时,看日志会不会触发,然后看下触发时机是否ok; |
+| 思路 | 经查代码,主要查下`test17:核实下,R和H任务...;` |
+| 调试 | 经查原代码为S.status=actYes才执行canset再类比; |
+| 修复 | 而实测中它是runing状态而不是actYes,所以兼容在runing时也执行 `T`; |
 
 | 28072 | S的AIRank老是返回`左躲`方案 |
 | --- | --- |
@@ -414,6 +415,15 @@
 | 问题 | 比如怕光虫,我们用灯能是退它,但它对别的虫子咬人是无效的; |
 |  | 如果我们把光虫的canset记录到咬人虫下面,是无效的; |
 | 结果 | 把TCEffect.rEffect下改为仅对取得canset的pFo有效 `T`; |
+
+| 28077 | BUG_撞到后也触发了构建canset及canset外类比; |
+| --- | --- |
+| 现代码 | 1. 在pFo的预测forecast_Single(),触发了pushFrameFinish; |
+|  | 2. 在pushFrameFinish中未判断pFo的状态,就直接构建了canset及再类比; |
+| 调试 | 经调试,撞到和未躲成功时,pFo的状态不同,如下: |
+|  | 状态1: pFo的下帧(或mv末帧)未发生时,状态为TIStatus_OutBackNone |
+|  | 状态2: pFo的mv末帧发生时,状态为TIStatus_OutBackSameDelta; |
+| 修复 | 在pushFrameFinish中判断:只有情况1时才生成canset及外类比 `T` |
 
 ***
 
