@@ -488,8 +488,9 @@
 | 28084 | 前段竞争-代码实践-TODOLIST |
 | --- | --- |
 | 1 | compareCansetFo更名为getSolutionModel并移至TCSolutionUtil `T` |
-| 2 | 在getSolutionModel()中计算前段时,执行过滤和计算竞争值; |
-| 3 | 竞争值用`衰减强度值*衰减匹配度`来计算出竞争力值; |
-| 4 | 在AIRank中,单独写前段竞争器,并过滤仅保留前20%; |
+| 2 | 将cansetFilterV2废弃,过滤器整合到getSolutionModel()中 `T` |
+| 3 | 在getSolutionModel()中计算前段时,执行过滤和计算竞争值; |
+| 4 | 竞争值用`衰减强度值*衰减匹配度`来计算出竞争力值; |
+| 5 | 在AIRank中,单独写前段竞争器,并过滤仅保留前20%; |
 
 <br><br><br><br><br>
