@@ -489,8 +489,9 @@
 | --- | --- |
 | 1 | compareCansetFo更名为getSolutionModel并移至TCSolutionUtil `T` |
 | 2 | 将cansetFilterV2废弃,过滤器整合到getSolutionModel()中 `T` |
-| 3 | 在getSolutionModel()中计算前段时,执行过滤和计算竞争值; |
-| 4 | 竞争值用`衰减强度值*衰减匹配度`来计算出竞争力值; |
-| 5 | 在AIRank中,单独写前段竞争器,并过滤仅保留前20%; |
+| 3 | 在getSolutionModel()中计算前段时,过滤掉条件不满足 `T`; |
+| 4 | 写getMatchAndStrongByFrontIndexDic,计算竞争值(匹配度,强度) `T`; |
+| 5 | 写AIRank.solutionFrontRank`衰减强度值*衰减匹配度`新排名器 `T`; |
+| 6 | 写前段竞争后,过滤仅保留前20%; |
 
 <br><br><br><br><br>
