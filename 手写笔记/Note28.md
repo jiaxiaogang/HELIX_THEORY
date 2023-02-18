@@ -480,6 +480,8 @@
 | 分析 | "条件满足"决定了此处protoAlg到cansetAlg绝对有关联; |
 |  | > 所以,protoAlg到canset的指向强度,和匹配度都可以复用; |
 |  | 结果: 用protoAlg到cansetAlg的衰减强度*衰减匹配度来竞争; |
+|  | 问题: protoAlg和cansetAlg的抽具象强度永远是1,因为proto很难重复; |
+|  | 修改: 所以此处强度改为与以往一样的,refStrong被引用强度吧; |
 | 方案3 | **用pFoOrRegroupFo.conAlgs的强度和匹配度来竞争;** |
 | 优点 | 这么做肯定会留有方案结果,因为只要有cansets,就会有竞争靠前的; |
 | 缺点 | canset未必是pFo的具象,还是方案2更直接可靠且可复用"条件满足"代码; |
@@ -493,5 +495,10 @@
 | 4 | 写getMatchAndStrongByFrontIndexDic,计算竞争值(匹配度,强度) `T`; |
 | 5 | 写AIRank.solutionFrontRank`衰减强度值*衰减匹配度`新排名器 `T`; |
 | 6 | 写前段竞争后,过滤仅保留前20%; |
+
+| 28085 | BUG_测得前段refStrong总是1 |
+| --- | --- |
+| 原因 | 因为cansetFo在S最终胜利激活后,也没更新它的强度,所以一直是0; |
+| 修复 | 在Solution最终激活canset后,将其前段引用强度更新+1 `T`; |
 
 <br><br><br><br><br>
