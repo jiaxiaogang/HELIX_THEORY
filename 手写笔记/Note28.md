@@ -527,7 +527,7 @@
 | --- | --- |
 | 参考 | 28082-中段未发生不能用匹配度,要用衰减后稳定性*衰减后有效率 |
 
-| 28092 | 后段-方案规划 |
+| 28092 | 后段-方案规划 & 代码实践 |
 | --- | --- |
 | 分析 | 仅H有后段,后段即targetAlg,targetAlg就是最直接的需求; |
 | 问题1 | 而它的具象conPorts的algs很繁杂,需要择优; |
@@ -538,7 +538,9 @@
 |  | > 然后写solutionBackRank()来计算排名,最后保留20%的cansets; |
 | 优点 | 即保证`后段的强度匹配度有用`,又保证`绝对找出cansets中更好部分`; |
 | 实践 | 以上方案可选用,实践在本表下方继续: |
-| todo1 | 根据后段计算竞争值到SolutionModel模型下; |
-| todo2 | 写solutionBackRank(); |
+| todo1 | 计算后段匹配度竞争值到SolutionModel模型下 `T`; |
+| todo2 | 计算后段强度竞争值到SolutionModel模型下 `T`; |
+| todo3 | 写solutionBackRank()竞争器 `T`; |
+| todo4 | 写最终激活canset后,使后段抽具象强度+1 `T`; |
 
 <br><br><br><br><br>
