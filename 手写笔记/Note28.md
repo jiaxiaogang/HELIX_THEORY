@@ -614,14 +614,14 @@
 |  | 而`飞后视觉木棒`触发的时序识别,又为0条 (很难顺利识别到结果); |
 | 示图 | ![](assets/671_时序识别算法无法满足连续飞躲的要求.png) |
 | 分析 | 因为时序识别的索引太单一,然后又限制ref激活条数,导致此BUG; |
-| 方案 | 可以尝试将索引改成protoFo所有帧取ref,然后取交集做为识别结果; |
+| 方案 | 提升时序识别率: 将索引改成protoFo所有帧的absAlg做索引取ref; |
+| 结果 | 本表针对时序识别率低和不够准的问题做了方案,实践`转28107`; |
 
-| 28107 | 时序识别可靠性迭代代码实践-TODOLIST |
+| 28107 | 提升时序识别率-TODOLIST |
 | --- | --- |
-| todo1 | 迭代为时序识别v2,rInput时用各帧matchAlgs做refPorts; |
-| todo2 | regroupFo调用时序识别时,也用absAlgs做refPorts; |
-| todo3 | 对所有refPorts做交集,并交集计数(有交集计1分); |
-| todo4 | 对交集做顺序检查,即保证先后顺序不错乱; |
-| todo5 | 全含检查,前段不能有漏帧 (proto必须满足match的前段); |
+| todo1 | 迭代为时序识别v2,rInput时用各帧matchAlgs做refPorts `T`; |
+| todo2 | regroupFo调用时序识别时,也用absAlgs做refPorts `T`; |
+| todo3 | 原时序全含判断方法不变 `T`; |
+| todo4 | 最终时序识别结果保留前20% `T`; |
 
 <br><br><br><br><br>
