@@ -891,10 +891,12 @@ F4027[A3999(高100,Y207,皮0,距135,Y距_路上1.0_-33,X2,X距387),A3597(飞↖)
 | 现状 | TCScore仅对最优先root竞争,继续飞未必是最优先root |
 | 说明 | 飞前躲任务,和飞后躲任务,都是躲任务,只是位置更新了,哪个更优先呢? |
 | 目标 | 最好能实现: 新位置的任务优先级能大于旧位置的任务 (待深入分析); |
+| 调试 | `FZ75,路中偏上出生,扔木棒`,可顺利连续飞躲,明天看下日志; |
 
 | 28142 | 在AINetIndex的getDataPointerWithData()中failure中报: |
 | --- | --- |
 | 错误 | [__NSArrayI insertObject:atIndex:]: unrecognized selector sent to instance 0x7f9653928000 libc++abi.dylib: terminate_handler unexpectedly threw an exception |
 | 方案 | 先重训练下看能否复现,这很久的代码了,怀疑是持久化被打断导致的; |
+| 结果 | 经重训练FZ75第三步,BUG不复现,以后再遇到此BUG时再说吧,先这; |
 
 <br><br><br><br><br>
