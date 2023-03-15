@@ -1179,10 +1179,14 @@ F4027[A3999(高100,Y207,皮0,距135,Y距_路上1.0_-33,X2,X距387),A3597(飞↖)
 
 | 28182 | Canset惰性期-TODOLIST |
 | --- | --- |
-| todo1 | 打开matchRFos时序识别; |
-| todo2 | matchRFos也做I预测与I反省累计SP; |
-| todo3 | 在时序识别完成后,支持下抽具象关联; |
-| todo4 | 外类比的matchFo肯定是抽象,todo3已经关联了 `不做外类比`; |
-| todo5 | 在Solution中,对SP加入门门槛,即惰性期内canset无效; |
+| 简述 | 本表打开matchRFos,然后做SP和EFF的更新,然后加上惰性门槛; |
+| todo1 | 打开matchRFos时序识别 `T`; |
+| todo2 | matchRFos也做I预测与I反省累计SP `T`; |
+| todo3 | rFos预测推进失败不设为Canset(因为它失败并不意味着解决了pFo)`T` |
+| todo4 | 在时序识别完成后,支持下抽具象关联 `T`; |
+| todo5 | 外类比的matchFo肯定是抽象,todo3已经关联了 `不做外类比`; |
+| todo6 | 当pFo中途中止生成新canset时,与当前同场景的旧cansets要eff+1; |
+|  | 场景判断: 用cansets和matchRFos取交集,即可取得mIsC成立的同场景; |
+| todo7 | 在Solution中,对SP加入门门槛,即惰性期内canset无效; |
 
 <br><br><br><br><br>
