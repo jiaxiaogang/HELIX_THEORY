@@ -1190,6 +1190,7 @@ F4027[A3999(高100,Y207,皮0,距135,Y距_路上1.0_-33,X2,X距387),A3597(飞↖)
 | todo7 | 当pFo有mv反馈时,与当前同场景的旧cansets要eff-1 `T`; |
 | todo8 | 在feedbackPushFrame时,把H解决方案的eff也更新下 `先不做`; |
 |  | > 目前需求不够明确,等测得H实际中遇到需要惰性期时,再支持吧; |
-| todo9 | 在Solution中,对SP加入门门槛,即惰性期内canset无效; |
+| todo9 | 在Solution中用SP或EFF门槛,判断为惰性期,期内canset无效 `T`; |
+|  | 尝试1: 先用每帧sp之和都<5,即惰性期; |
 
 <br><br><br><br><br>
