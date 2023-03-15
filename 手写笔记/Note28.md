@@ -1185,8 +1185,11 @@ F4027[A3999(高100,Y207,皮0,距135,Y距_路上1.0_-33,X2,X距387),A3597(飞↖)
 | todo3 | rFos预测推进失败不设为Canset(因为它失败并不意味着解决了pFo)`T` |
 | todo4 | 在时序识别完成后,支持下抽具象关联 `T`; |
 | todo5 | 外类比的matchFo肯定是抽象,todo3已经关联了 `不做外类比`; |
-| todo6 | 当pFo中途中止生成新canset时,与当前同场景的旧cansets要eff+1; |
-|  | 场景判断: 用cansets和matchRFos取交集,即可取得mIsC成立的同场景; |
-| todo7 | 在Solution中,对SP加入门门槛,即惰性期内canset无效; |
+| todo6 | 当pFo中途中止生成新canset时,与当前同场景的旧cansets要eff+1`T` |
+|  | 场景判断: 用cansets和matchRFos取交集,即可取得mIsC成立的同场景`T` |
+| todo7 | 当pFo有mv反馈时,与当前同场景的旧cansets要eff-1 `T`; |
+| todo8 | 在feedbackPushFrame时,把H解决方案的eff也更新下 `先不做`; |
+|  | > 目前需求不够明确,等测得H实际中遇到需要惰性期时,再支持吧; |
+| todo9 | 在Solution中,对SP加入门门槛,即惰性期内canset无效; |
 
 <br><br><br><br><br>
