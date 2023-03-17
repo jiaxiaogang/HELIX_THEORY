@@ -1220,6 +1220,7 @@ F4027[A3999(高100,Y207,皮0,距135,Y距_路上1.0_-33,X2,X距387),A3597(飞↖)
 |  | 即: protoFo有效防撞生成新canset时,再判断下与旧cansets相关的+1; |
 |  | 优点1: protoFo已发生完全,与旧canset判断条件满足全面且准确; |
 |  | 优点2: 且只判断条件满足,而不必执行Solution算法其它部分,性能好; |
+|  | 总结: 其实就是Canset的场景内识别算法,加上用条件满足来做全含判断; |
 | 方案2 | solution执行到最后再过滤sp,条件满足的进入成长; |
 |  | 即: 最终输出canset候选集,全部进入成长期,只要最终有效防撞,全+1; |
 |  | 缺点1: 这里只判断了前段条件满足,后段却可能不满足,计+1有点不准确; |
@@ -1231,7 +1232,8 @@ F4027[A3999(高100,Y207,皮0,距135,Y距_路上1.0_-33,X2,X距387),A3597(飞↖)
 | tips | 条件满足其实是识别内的识别,它是cansets与protoFo的场景内识别算法; |
 | todo1 | 把matchRFos识别关掉,不用它了 (参考28184-原因1&2) `T`; |
 | todo2 | 废弃rInEffect判断matchRFos交集更新eff+1的代码 `T`; |
-| todo3 | 构建新canset时,判断与旧cansets间的条件满足; |
-| todo4 | 对条件满足的旧cansets,做SP和EFF的更新; |
+| todo3 | 构建新canset时,判断与旧cansets间的条件满足 `T`; |
+|  | > 在TIUtils中写recognitionCansetFo()识别算法 `T`; |
+| todo4 | 对条件满足的旧cansets,做SP和EFF的更新 `T`; |
 
 <br><br><br><br><br>
