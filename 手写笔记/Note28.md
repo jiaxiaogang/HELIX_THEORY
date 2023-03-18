@@ -1236,6 +1236,7 @@ F4027[A3999(高100,Y207,皮0,距135,Y距_路上1.0_-33,X2,X距387),A3597(飞↖)
 |  | > 在TIUtils中写recognitionCansetFo()识别算法 `T`; |
 | todo4 | 对条件满足的旧cansets,做SP和EFF的更新 `T`; |
 | todo5 | 在feedbackTIP反馈mv任务失败:也做Canset识别,SP和EFF计负 `T`; |
-| todo6 | 将惰性期阈值,调整为eff的HN值之和<=2时为惰性期 `T`; |
+| todo6 | 惰性期阈值: 调整为eff的H值>2时脱离惰性期 `T`; |
+| todo7 | 将eff.H默认调整为1,而不是0 `T`; |
 
 <br><br><br><br><br>
