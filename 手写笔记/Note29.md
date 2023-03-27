@@ -225,4 +225,22 @@ R新Canset:F565[A559(高100,皮0,向19,距117)] (状态:无反馈 fromPFo:F415 �
 | todo2 | 新空概念的具象指向3a,3b `T`; |
 | todo3 | 新空概念的抽象指向`共同抽象集` `T`; |
 
+| 29032 | 构建absCansetFo后,需要继承SP和EFF-方案规划与实践TODOLIST |
+| --- | --- |
+| 说明 | 上表做了不包含帧的类比,类比写完了,本表要针对类比后构建抽象需要改什么 (主要需要加上继承SP和EFF); |
+| 分析 | 关于继承哪些SP和EFF,以下分析: |
+| 1 | 如果absCanset是复用的,非新建: |
+|  | a. 如果旧Canset本来就指向它了,则将抽象cansetFo的SP和EFF+1就行吧? |
+|  | b. 如果旧Canset是新指向它的 (那么就把旧cansetFo的SP和EFF都累计给absCanset); |
+| 2 | 如果absCanset本来没有,新建的: |
+|  | a. 此时直接将旧Canset的Sp和EFF累计给absCanset; |
+| 方案 | 根据以上分析可得,只要absFo和conFo之间是新关联,即继承它的sp和eff (两个conFo都这样处理); |
+| 实践 | 实践规划: 在absCanset的构建方法里,支持下继承SP和EFF; |
+| todo1 | 将两处调用createAbsFo_NoRepeat的地方,都收集起来conFos和absFo的indexDic,然后传到构建absFo方法中; |
+| todo2 | 再写一个更新sp和eff的方法,参考如下:updateRefStrong两个方法即可; |
+|  | a. [AINetUtils updateRefStrongByIndexDic:item.indexDic2 matchFo:item.matchFo]; |
+|  | b. [AINetUtils updateContentStrongByIndexDic:item.indexDic2 matchFo:item.matchFo]; |
+| todo3 | 将indexDic映射也存到新absFo上: 代码如下: |
+|  | a. [protoOrRegroupFo updateIndexDic:matchFo indexDic:item.indexDic2]; |
+
 <br><br><br><br><br>
