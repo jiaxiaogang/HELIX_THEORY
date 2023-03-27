@@ -237,6 +237,9 @@ R新Canset:F565[A559(高100,皮0,向19,距117)] (状态:无反馈 fromPFo:F415 �
 | 方案 | 根据以上分析可得,只要absFo和conFo之间是新关联,即继承它的sp和eff (两个conFo都这样处理); |
 | 实践 | 实践规划: 在absCanset的构建方法里,支持下继承SP和EFF; |
 | todo1 | 将两处调用createAbsFo_NoRepeat的地方,都收集起来conFos和absFo的indexDic,然后传到构建absFo方法中; |
+| todo1.1 | 新旧Canset映射为<1:3,2:5,4:7>时,newIndexDic=<1:3,2:5,3:7>,oldIndexDic=<1:1,2:2,3:4> `T`; |
+|  | 示例: canset类比计算indexDic的示例: 其中canset类比抽象时,比如newCanset和oldCanset映射为<1:3,2:5,4:7>; |
+| todo1.2 | analogyOutside外类比时,也要支持生成protoIndexDic和assIndexDic两个映射字典; |
 | todo2 | 再写一个更新sp和eff的方法,参考如下:updateRefStrong两个方法即可; |
 |  | a. [AINetUtils updateRefStrongByIndexDic:item.indexDic2 matchFo:item.matchFo]; |
 |  | b. [AINetUtils updateContentStrongByIndexDic:item.indexDic2 matchFo:item.matchFo]; |
