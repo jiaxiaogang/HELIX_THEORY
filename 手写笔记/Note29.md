@@ -240,9 +240,10 @@ R新Canset:F565[A559(高100,皮0,向19,距117)] (状态:无反馈 fromPFo:F415 �
 | todo1.1 | 新旧Canset映射为<1:3,2:5,4:7>时,newIndexDic=<1:3,2:5,3:7>,oldIndexDic=<1:1,2:2,3:4> `T`; |
 |  | 示例: canset类比计算indexDic的示例: 其中canset类比抽象时,比如newCanset和oldCanset映射为<1:3,2:5,4:7>; |
 | todo1.2 | analogyOutside外类比时,也要支持生成protoIndexDic和assIndexDic两个映射字典 `T`; |
-| todo2 | 再写一个更新sp和eff的方法,参考如下:updateRefStrong两个方法即可; |
-|  | a. [AINetUtils updateRefStrongByIndexDic:item.indexDic2 matchFo:item.matchFo]; |
-|  | b. [AINetUtils updateContentStrongByIndexDic:item.indexDic2 matchFo:item.matchFo]; |
+| todo2 | 构建抽象absFo后,要根据具象Fo更新下absFo的sp和eff (分为继承assFo的和后续+1两种更新如下:) `T`; |
+| todo2.1 | 根据分析1&2,判断absFo和assFo之间是否新关联 `T`; |
+| todo2.2 | assFo和absFo未关联,则先继承assFo的sp和EFF `T`; |
+| todo2.3 | 无论是否已关联,两个conFo都分别给absFo带来SP和EFF的+1; |
 | todo3 | 将indexDic映射也存到新absFo上: 代码如下: |
 |  | a. [protoOrRegroupFo updateIndexDic:matchFo indexDic:item.indexDic2]; |
 
