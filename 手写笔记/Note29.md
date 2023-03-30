@@ -272,6 +272,20 @@ R新Canset:F565[A559(高100,皮0,向19,距117)] (状态:无反馈 fromPFo:F415 �
 
 | 29042 | 性能差: Canset识别结果太多,都在调用类比导致性能差问题 |
 | --- | --- |
-| 方案 | Canset识别支持AIFilter过滤器即可,排名机制按SP为主&EFF为辅; |
+| 方案 | Canset识别支持AIFilter过滤器即可,排名机制按SP为主&EFF为辅 `T`; |
+
+| 29043 | 增强Canset迁移性后-决策改动部分之: 空概念无法执行问题 |
+| --- | --- |
+| 问题 | 空概念是没法执行的,那么怎么执行,含有空概念的解决方案? |
+| 方案1 | 决策时,空概念Canset没法执行,向具象再下探 `95%`; |
+|  | 深入: 则TCSolution要分两步,第1步找出思路absFo,第2步找出conFo具体可执行的推进; |
+| 方案2 | 直接执行空概念所在的Canset,只是actionIndex那一帧下探一下 `5%`; |
+|  | 否决: 因为执行fo不允许跳出fo,比如conFo中有比absFo多出的帧; |
+|  | 比如: absFo是[饭,做],conFo是[洗,土豆,炒],如果单纯改成[土豆,做]则可能不干净; |
+
+| 29044 | BUG: PINDiskCache报错 |
+| --- | --- |
+| BUG1 | ERROR: The item couldn’t be saved because the file name “com.pinterest.PINDiskCache.” is invalid |
+| BUG2 | [[PINDiskCache alloc] initWithName:@"" rootPath:saveRootPath],报NSInvalidArgumentException错误 |
 
 <br><br><br><br><br>
