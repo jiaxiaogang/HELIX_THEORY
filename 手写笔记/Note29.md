@@ -287,5 +287,13 @@ R新Canset:F565[A559(高100,皮0,向19,距117)] (状态:无反馈 fromPFo:F415 �
 | --- | --- |
 | BUG1 | ERROR: The item couldn’t be saved because the file name “com.pinterest.PINDiskCache.” is invalid |
 | BUG2 | [[PINDiskCache alloc] initWithName:@"" rootPath:saveRootPath],报NSInvalidArgumentException错误 |
+| 复现 | 训练到防撞第2步很容易复现 (可以将构建空概念时的ds>100时打断点); |
+| 线索 | 经查,应该是rootPath长度太长导致报错,经查rootPath有长度超过100都不止的情况 `名称为A1A1A1...`; |
+| 分析 | ![](assets/678_Canset类比空概念越来越交集方案示图.png) |
+| 调试 | ![](assets/679_空概念嵌套循环BUG.png) |
+| 说明 | 如上,当空概念生成图中的流程,在第1次发生还一切正常; |
+|  | 第2次A情况,A5A6有共同抽象A1,导致又生成了A1A1,并抽象指向A1 (以此循环无穷尽也); |
+|  | 第2次B情况,A1A5有共同抽象A7,导致又生成了A1A1,并抽象指向A7 (以此循环无穷尽也); |
+| 思路 | 分析下,如何避免以上两种情况的死循环问题 (且不能影响持续构建越来越交集的空概念); |
 
 <br><br><br><br><br>
