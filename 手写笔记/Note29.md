@@ -462,5 +462,22 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 |  | > 此时可激活canset2,它因为抽象统计更多SPEFF,可体现出迁移性; |
 | 情况2 | 如图: 下次发生protoFo3时,也会识别到scene4; |
 |  | > 但不应该激活canset2,因为protoFo3太近,canset2并不管用,应该激活canset5才对; |
+| 补充 | 即使识别不到scene4,也可以主动从absPorts取到scene4; |
+| 总结1 | 情况1时canset3可继承canset2的竞争值,而情况2时canset4只能继承canset5而不是canset2; |
+| 总结2 | 即: 使用时,要主动顺着抽象场景,找自己能继承的absCanset `转29062-决策`; |
+
+| 29062 | 步骤分析: 让上图动态跑起来,分析变化步骤 |
+| --- | --- |
+| 示例 | 比如第1次protoFo是炒鸡蛋,第2次是煸豆角,二者能抽象到做饭吗? |
+| 问题 | 其中"鸡蛋和豆角"到了抽象sceneFo中都成了"饭",而"炒和煸"到了抽象sceneFo中都成了"做"; |
+| 说明 | 以下通过认知和决策两个部分的步骤分析,整理一下整个提升Canset迁移性的过程; |
+| 认知 | 生成新canset时,可向着它的抽象sceneFo推举它; |
+|  | 1. 推举后,还是要生成抽象sceneFo上的absCansetFo (它依然有Canset识别和类比); |
+|  | 2. 只是由以前的从sceneFo.conCansets中识别,改为从absSceneFo.conCansets中识别了 (全含算法要跟着变下); |
+|  | 结果: 即canset自己爬升,改成顺着sceneFo爬升了; |
+| 决策 | TCSolution求解时,可以用识别到的matchPFos结果,向它的抽象sceneFo继承absCanset的竞争值 `参考29061-总结2` |
+|  | 1. 先找着absSceneFo,然后再取它的conCansets; |
+|  | 2. 然后判断它与当前canset有抽具象关联时,即继承它的竞争值; |
+|  | 结果: 即原本的canset直接取absCanset改成顺着sceneFo找absCanset了; |
 
 <br><br><br><br><br>
