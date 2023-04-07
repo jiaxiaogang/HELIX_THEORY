@@ -431,5 +431,10 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 
 | 29058 | 共同点抽象增强迁移性后->决策: 代码TODOLIST |
 | --- | --- |
+| 1 | 为方便今后灵活改动,将absCanset的各值取出后,封装成模型,然后做为参数传到继承算法中; |
+| 2 | SP按conCanset的SP比例来继承 (即子SP*父SP); |
+| 3 | EFF按conCanset的EFF比例来继承 (即子EFF*父EFF); |
+| 4 | Strong按对应帧来继承; |
+| 5 | 多个父(absCanset)时,多次继承; |
 
 <br><br><br><br><br>
