@@ -489,13 +489,18 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | 29064 | 决策改动再分析 |
 | --- | --- |
 | 图 | ![](assets/681_通过共同点抽象改动后网络结构图分析决策改动.png) |
-| 观点1 | 具象sceneFo上找scene优先,如果找不着,可以到抽象上找; |
+| 观点1 | 不需要继承Canset的SPEFFStrong,因为各是各的,继承后只会让率越乘更低; |
+|  | ★原则: 无论是从抽或具象场景取了canset,它们的SPEFF是分别存各的,竞争时也各用各的; |
+| 观点2 | 具象sceneFo上找scene优先,如果找不着,可以到抽象上找; |
 |  | 比如: 有protoFo4[向5距66场景]从未有过Canset,它可以到sceneFo4上找着canset2尝试解决; |
 |  | 但是: 像protoF3本来就有canset4,那么他就只能优先继承canset5,其次才是canset2; |
 |  | 另外: 如果protoF3尝试过canset2,但是躲失败了,也应该为protoF3记录canset2,并记失败一次; |
-|  | 结果1. 优先从具象找canset,找不到时从抽象找(迁移过来用); |
-|  | 结果2. 即使从抽象找来的canset,也要统计具象自己的SPEFF; |
+|  | 结果1. 如果一个canset在抽具象场景全有,则优先从具象取用,但也要将SPEFF结果统计到抽象一份; |
+|  | >>> 即编程中的@override |
+|  | 结果2. 如果一个canset在抽象场景有,而具象无,则从抽象取用,但也要将SPEFF结果统计到具象一份; |
+|  | >>> 则编程中的super.method(); |
+|  | 结果3. matchPFos有抽象也有具象,也可以向着它的抽象再找一级,找所有的cansets做候选集(达成迁移); |
+|  | 结果4. 无论从哪个场景下取的canset,最后都对它的抽象分别统计SPEFF,并对它的具象与matchPFos交集统计SPEFF; |
 |  | TODOTOMORROW20230408. 画图分析一下此处抽具象场景下的canset决策和统计细节; |
-| 观点2 | 不需要继承Canset的SPEFFStrong,因为各是各的,继承后只会让率越乘更低; |
 
 <br><br><br><br><br>
