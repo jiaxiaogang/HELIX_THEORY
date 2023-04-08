@@ -483,8 +483,8 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 
 | 29063 | Canset识别类比改到absSceneFo上进行TODOLIST |
 | --- | --- |
-| 1 | 新Canset时,同时为每条absSceneFo各生成一个newCanset4AbsScene,并挂到它下面; |
-| 2 | 每条newCanset4AbsScene都要触发Canset识别类比; |
+| todo1 | 新Canset时,同时为每条absSceneFo各生成一个newCanset4AbsScene,并挂到它下面; |
+| todo2 | 每条newCanset4AbsScene都要触发Canset识别类比; |
 
 | 29064 | 决策改动再分析 |
 | --- | --- |
@@ -508,9 +508,19 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | 综合 | 以上分析比较散,但整体上带★的6条是比较明确的结论,分别如下: |
 |  | 1.识别时pFos与protoF同长 2.取抽具两层候选集 3.具象无则方法继承 4.具象有则override 5.抽具分别统计SPEFF 6.抽具各用各的SPEFF |
 | 结果 | 这6条结论,分别涵盖了决策中涉及到本次改动的全部: 从场景两层要求,到候选集源,抽具优先级,SPEFF写用; |
+| todo1 | 识别时pFos与protoF同长 |
+| todo2 | TCSolution取抽具两层候选集 |
+| todo3 | 方法继承: 具象层不包含的canset,则使用抽象层的; |
+| todo4 | override: 具象层包含的canset,则使用具象层的; |
+| todo5 | 抽具象两层分别统计SPEFF (两层都构建canset); |
+| todo6 | TCSolution竞争时,抽具象各用各的SPEFF值; |
 
 | 29065 | 两层scene三层canset示图分析 |
 | --- | --- |
 | 示图 | ![](assets/682_两层scene三层canset示图.png) |
+| 说明 | 如图,感觉三层canset有点复杂,分析下能不能简化? |
+| 尝试1 | `空概念canset`这一层是否可删除? |
+|  | 前提: 我们的目标是必须能够抽象出canset (以达到迁移的目的),而canset中有场景包含帧,也有场景不含帧; |
+|  | 回答: 场景包含帧依附场景即能够抽象,但不包含帧需要另外类比才能抽象 `所以空概念canset这一层不可删除`; |
 
 <br><br><br><br><br>
