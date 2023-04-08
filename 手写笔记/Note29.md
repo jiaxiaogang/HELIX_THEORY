@@ -522,5 +522,6 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | 尝试1 | `空概念canset`这一层是否可删除? |
 |  | 前提: 我们的目标是必须能够抽象出canset (以达到迁移的目的),而canset中有场景包含帧,也有场景不含帧; |
 |  | 回答: 场景包含帧依附场景即能够抽象,但不包含帧需要另外类比才能抽象 `所以空概念canset这一层不可删除`; |
+| 结果 | 因为决策期的`下向性`,其实仅体现在这两层场景和三层方案,再简化怕啥也没了...所以先这么着吧 `放弃简化`; |
 
 <br><br><br><br><br>
