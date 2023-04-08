@@ -490,17 +490,27 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | --- | --- |
 | 图 | ![](assets/681_通过共同点抽象改动后网络结构图分析决策改动.png) |
 | 观点1 | 不需要继承Canset的SPEFFStrong,因为各是各的,继承后只会让率越乘更低; |
-|  | ★原则: 无论是从抽或具象场景取了canset,它们的SPEFF是分别存各的,竞争时也各用各的; |
+|  | ★SPEFF各管各原则: 无论是从抽或具象场景取了canset,它们的SPEFF是分别存各的,竞争时也各用各的; |
 | 观点2 | 具象sceneFo上找scene优先,如果找不着,可以到抽象上找; |
 |  | 比如: 有protoFo4[向5距66场景]从未有过Canset,它可以到sceneFo4上找着canset2尝试解决; |
 |  | 但是: 像protoF3本来就有canset4,那么他就只能优先继承canset5,其次才是canset2; |
 |  | 另外: 如果protoF3尝试过canset2,但是躲失败了,也应该为protoF3记录canset2,并记失败一次; |
-|  | 结果1. 如果一个canset在抽具象场景全有,则优先从具象取用,但也要将SPEFF结果统计到抽象一份; |
-|  | >>> 即编程中的@override |
-|  | 结果2. 如果一个canset在抽象场景有,而具象无,则从抽象取用,但也要将SPEFF结果统计到具象一份; |
-|  | >>> 则编程中的super.method(); |
-|  | 结果3. matchPFos有抽象也有具象,也可以向着它的抽象再找一级,找所有的cansets做候选集(达成迁移); |
-|  | 结果4. 无论从哪个场景下取的canset,最后都对它的抽象分别统计SPEFF,并对它的具象与matchPFos交集统计SPEFF; |
-|  | TODOTOMORROW20230408. 画图分析一下此处抽具象场景下的canset决策和统计细节; |
+|  | ★override. 如果一个canset在抽具象场景全有,则优先从具象取用 (类似编程中的@override); |
+|  | ★方法继承. 如果一个canset在抽象场景有,而具象无,则从抽象取用 (即编程中的方法继承); |
+| 观点3 | ★pFos长度需与protoFo一致. 在时序识别时,仅识别与protoFo长度一致的matchPFos; |
+|  | >>> 好处1. 在决策时,抽具象层级更明确,matchPFos就是具象一级,它的抽象就是抽象一级; |
+|  | >>> 好处2. 这样的话,共同点抽象的抽具象层级就两层,那么抽具象无论是override还是继承功能,都容易达成; |
+|  | >>> 结果. 此条影响太广,不过两条好处也很吸引人,所以得做 `95%`; |
+| 观点4 | 明确说明: 在观点3的基础上: matchPFos就是具象一级: |
+|  | ★从抽具两层取候选. matchPFos是具象,加上他的抽象一层,这两层,收集所有的cansets做候选集 (达成迁移); |
+| 观点5 | 无论是抽具象哪上面取得的canset,最后统计SPEFF时,抽具象上全要统计一份; |
+|  | ★抽具两层分别统计SPEFF. `具象canset向所有抽象扩展统计,抽象canset向取他的具象扩展统计`; |
+| 综合 | 以上分析比较散,但整体上带★的6条是比较明确的结论,分别如下: |
+|  | 1.识别时pFos与protoF同长 2.取抽具两层候选集 3.具象无则方法继承 4.具象有则override 5.抽具分别统计SPEFF 6.抽具各用各的SPEFF |
+| 结果 | 这6条结论,分别涵盖了决策中涉及到本次改动的全部: 从场景两层要求,到候选集源,抽具优先级,SPEFF写用; |
+
+| 29065 | 两层scene三层canset示图分析 |
+| --- | --- |
+| 示图 | ![](assets/682_两层scene三层canset示图.png) |
 
 <br><br><br><br><br>
