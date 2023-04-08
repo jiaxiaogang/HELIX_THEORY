@@ -493,6 +493,9 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 |  | 比如: 有protoFo4[向5距66场景]从未有过Canset,它可以到sceneFo4上找着canset2尝试解决; |
 |  | 但是: 像protoF3本来就有canset4,那么他就只能优先继承canset5,其次才是canset2; |
 |  | 另外: 如果protoF3尝试过canset2,但是躲失败了,也应该为protoF3记录canset2,并记失败一次; |
+|  | 结果1. 优先从具象找canset,找不到时从抽象找(迁移过来用); |
+|  | 结果2. 即使从抽象找来的canset,也要统计具象自己的SPEFF; |
+|  | TODOTOMORROW20230408. 画图分析一下此处抽具象场景下的canset决策和统计细节; |
 | 观点2 | 不需要继承Canset的SPEFFStrong,因为各是各的,继承后只会让率越乘更低; |
 
 <br><br><br><br><br>
