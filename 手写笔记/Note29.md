@@ -479,5 +479,20 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 |  | 1. 先找着absSceneFo,然后再取它的conCansets; |
 |  | 2. 然后判断它与当前canset有抽具象关联时,即继承它的竞争值; |
 |  | 结果: 即原本的canset直接取absCanset改成顺着sceneFo找absCanset了; |
+| 总结 | 看来本节并不是推翻`Canset识别类比`,而是让Canset识别类比改到在absSceneFo上进行; |
+
+| 29063 | Canset识别类比改到absSceneFo上进行TODOLIST |
+| --- | --- |
+| 1 | 新Canset时,同时为每条absSceneFo各生成一个newCanset4AbsScene,并挂到它下面; |
+| 2 | 每条newCanset4AbsScene都要触发Canset识别类比; |
+
+| 29064 | 决策改动再分析 |
+| --- | --- |
+| 图 | ![](assets/681_通过共同点抽象改动后网络结构图分析决策改动.png) |
+| 观点1 | 具象sceneFo上找scene优先,如果找不着,可以到抽象上找; |
+|  | 比如: 有protoFo4[向5距66场景]从未有过Canset,它可以到sceneFo4上找着canset2尝试解决; |
+|  | 但是: 像protoF3本来就有canset4,那么他就只能优先继承canset5,其次才是canset2; |
+|  | 另外: 如果protoF3尝试过canset2,但是躲失败了,也应该为protoF3记录canset2,并记失败一次; |
+| 观点2 | 不需要继承Canset的SPEFFStrong,因为各是各的,继承后只会让率越乘更低; |
 
 <br><br><br><br><br>
