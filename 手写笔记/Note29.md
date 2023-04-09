@@ -545,4 +545,13 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | todo3 | 似层: 仅从似层cansets做识别类比,并将结果absCanset挂在似层下; |
 | todo4 | 交层: 则取所有它下面的似层(除发起的似层外)cansets做识别类比,并将结果absCanset挂在交层下; |
 
+| 29067 | 性能考虑-懒操作 |
+| --- | --- |
+| 问题 | 如果29066-todo2每次都对交层进行识别类比,如果有多个抽象呢?难道都要分别识别类比?性能怎么办? |
+| 解答 | 全采用`懒`操作,这些找各交层做识别类比的操作,全废弃掉 (即不多做任何事,总是到不得不时再做操作); |
+| todo1 | 懒识别: 新生成canset时,仅在似层进行识别类比,不到交层进行识别类比; |
+| todo2 | 懒推举: 似层无解,有同级别的似层迁移来canset时,最终输出最佳S前,先将其推举构建到交层; |
+| todo3 | 懒统计: 交层迁移来的canset,无论canset是否有效,都要为canset在交层统计EFF值; |
+| todo4 | 懒统计: 为解决似层任务,无论canset是否有效,也无论canset源自哪,都要为canset在似层统计EFF值; |
+
 <br><br><br><br><br>
