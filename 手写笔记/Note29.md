@@ -512,7 +512,7 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | 综合 | 以上分析比较散,但整体上带★的6条是比较明确的结论,分别如下: |
 |  | 1.识别时pFos与protoF同长 2.取抽具两层候选集 3.具象无则方法继承 4.具象有则override 5.抽具分别统计SPEFF 6.抽具各用各的SPEFF |
 | 结果 | 这6条结论,分别涵盖了决策中涉及到本次改动的全部: 从场景两层要求,到候选集源,抽具优先级,SPEFF写用; |
-| todo1 | 概念识别改为仅识别似层; |
+| todo1 | 概念识别改为仅识别似层 `T`; |
 | todo1.1 | TCFeedback兼容仅识别似层 (原来的contains不行了,因为全是似层,waitA却可能是交层); |
 | todo1.2 | TCForecast和TCDemand兼容仅识别似层 (因为结果全是似层,看是否需要向abs取下交层,以找到mv指向); |
 | todo2 | TCSolution取抽具两层候选集 |
@@ -541,6 +541,8 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 |  | 第3步,因为两个第三帧有共同抽象,所以两个canset类比抽象得到[向5,上飞,向7]; |
 | 结果 | 本表简化成功 (废除了空概念canset和推举canset),可以相应应用到Canset类比算法中,实践如下; |
 | todo1 | 不需要真的推举,但在取用时要取出它们以实现等效; |
-| todo2 | 似层和交层分别进行Canset识别和类比; |
+| todo2 | 每次构建新Canset时,同时做似层和交层两次canset识别类比; |
+| todo3 | 似层: 仅从似层cansets做识别类比,并将结果absCanset挂在似层下; |
+| todo4 | 交层: 则取所有它下面的似层(除发起的似层外)cansets做识别类比,并将结果absCanset挂在交层下; |
 
 <br><br><br><br><br>
