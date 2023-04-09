@@ -454,6 +454,10 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 
 上节因29059问题中断,转本节在`场景共同点抽具象的基础上进行决策改动`;
 
+* 名词: 本文涉及`两层场景`:
+1. **交层**: 更抽象层为: 共同点抽象后缺了某些元素的层 (即缺一些元素的抽象节点),统称为: 集合交集层 (简称: 交层);
+2. **似层**: 内部概念全是相似度没缺元素的: (即通过相近度匹配到的概念间的抽具象关系),统称为: 强化相似层 (简称: 似层);
+
 | 29061 | 通过整理最近改动的`场景共同点抽具象`网络结构图,来分析决策怎么改 |
 | --- | --- |
 | 示图 | ![](assets/681_通过共同点抽象改动后网络结构图分析决策改动.png) |
@@ -497,7 +501,7 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 |  | 另外: 如果protoF3尝试过canset2,但是躲失败了,也应该为protoF3记录canset2,并记失败一次; |
 |  | ★override. 如果一个canset在抽具象场景全有,则优先从具象取用 (类似编程中的@override); |
 |  | ★方法继承. 如果一个canset在抽象场景有,而具象无,则从抽象取用 (即编程中的方法继承); |
-| 观点3 | ★pFos长度需与protoFo一致. 在时序识别时,仅识别与protoFo长度一致的matchPFos; |
+| 观点3 | ★概念识别仅识别似层结果 (这么做,时序识别时因为索引全是似层,所以时序识别结果也全是似层的); |
 |  | >>> 好处1. 在决策时,抽具象层级更明确,matchPFos就是具象一级,它的抽象就是抽象一级; |
 |  | >>> 好处2. 这样的话,共同点抽象的抽具象层级就两层,那么抽具象无论是override还是继承功能,都容易达成; |
 |  | >>> 结果. 此条影响太广,不过两条好处也很吸引人,所以得做 `95%`; |
@@ -508,7 +512,9 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | 综合 | 以上分析比较散,但整体上带★的6条是比较明确的结论,分别如下: |
 |  | 1.识别时pFos与protoF同长 2.取抽具两层候选集 3.具象无则方法继承 4.具象有则override 5.抽具分别统计SPEFF 6.抽具各用各的SPEFF |
 | 结果 | 这6条结论,分别涵盖了决策中涉及到本次改动的全部: 从场景两层要求,到候选集源,抽具优先级,SPEFF写用; |
-| todo1 | 识别时pFos与protoF同长 |
+| todo1 | 概念识别改为仅识别似层; |
+| todo1.1 | TCFeedback兼容仅识别似层 (原来的contains不行了,因为全是似层,waitA却可能是交层); |
+| todo1.2 | TCForecast和TCDemand兼容仅识别似层 (因为结果全是似层,看是否需要向abs取下交层,以找到mv指向); |
 | todo2 | TCSolution取抽具两层候选集 |
 | todo3 | 方法继承: 具象层不包含的canset,则使用抽象层的; |
 | todo4 | override: 具象层包含的canset,则使用具象层的; |
