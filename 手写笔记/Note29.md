@@ -518,6 +518,9 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | todo2 | TCSolution取抽具两层候选集 |
 | todo3 | 方法继承: 具象层不包含的canset,则使用抽象层的; |
 | todo4 | override: 具象层包含的canset,则使用具象层的; |
+| todo4.1 | 似层和交层的cansets分别都取出; |
+| todo4.2 | 因为似层优先: 所以过滤掉交层中的似层 (交层=交层-似层); |
+| todo4.3 | 剩下的交层和似层,共同参与Solution竞争,直至输出最佳S结果; |
 | todo5 | 抽具象两层分别统计SPEFF (两层都构建canset); |
 | todo6 | TCSolution竞争时,抽具象各用各的SPEFF值; |
 
@@ -550,8 +553,11 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | 问题 | 如果29066-todo2每次都对交层进行识别类比,如果有多个抽象呢?难道都要分别识别类比?性能怎么办? |
 | 解答 | 全采用`懒`操作,这些找各交层做识别类比的操作,全废弃掉 (即不多做任何事,总是到不得不时再做操作); |
 | todo1 | 懒识别: 新生成canset时,仅在似层进行识别类比,不到交层进行识别类比; |
-| todo2 | 懒推举: 似层无解,有同级别的似层迁移来canset时,最终输出最佳S前,先将其推举构建到交层; |
-| todo3 | 懒统计: 交层迁移来的canset,无论canset是否有效,都要为canset在交层统计EFF值; |
+| todo2 | 懒推举: 似层无解,有同级别的似层迁移来canset时,最终输出最佳S前,将其推举到交层,并转换为交层canset; |
+| todo3 | 懒统计: 交层的canset执行,根据eff是否有效,转向如下: |
+| todo3.1 | 无效时: 交层的canset执行完并EFF无效时,在交层和似层分别计eff-1; |
+| todo3.2 | 有效时: 交层的canset执行完并EFF有效时,在交层和似层分别生成新canset; |
+| todo3.3 | 有效时: 交层和似层生成新Canset后,分别各自调用自己的识别类比; |
 | todo4 | 懒统计: 为解决似层任务,无论canset是否有效,也无论canset源自哪,都要为canset在似层统计EFF值; |
 
 <br><br><br><br><br>
