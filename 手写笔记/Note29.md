@@ -556,8 +556,8 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | 问题 | 如果29066-todo2每次都对交层进行识别类比,如果有多个抽象呢?难道都要分别识别类比?性能怎么办? |
 | 解答 | 全采用`懒`操作,这些找各交层做识别类比的操作,全废弃掉 (即不多做任何事,总是到不得不时再做操作); |
 | todo1 | 懒识别: 新生成canset时,仅在似层进行识别类比,不到交层进行识别类比; |
-| todo1.1 | 识别场景包含帧用mIsC来判断(newCansetA抽象指向oldCansetA); |
-| todo1.2 | 场景不包含帧,则判断二者是否有共同抽象; |
+| todo1.1 | 识别场景包含帧用mIsC来判断(newCansetA抽象指向oldCansetA) `T`; |
+| todo1.2 | 场景不包含帧,则判断二者是否有共同抽象 `T`; |
 | todo1.3 | 场景不包含帧,有共同抽象时,直接用analogyAlg类比newCansetA和oldCansetA得出抽象A); |
 | todo2 | 懒推举: 似层无解,有同级别的似层迁移来canset时,最终输出最佳S前,将其推举到交层,并转换为交层canset; |
 | todo3 | 懒统计: 交层的canset执行,根据eff是否有效,转向如下: |
