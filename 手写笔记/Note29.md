@@ -452,7 +452,10 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 ## n29p06 共同点抽象5: `在场景共同点抽具象基础上分析决策所需的改动`
 `CreateTime 2023.04.07`
 
-上节因29059问题中断,转本节在`场景共同点抽具象的基础上进行决策改动`;
+上节因29059问题中断,转本节在`场景共同点抽具象的基础上进行决策改动`,其实并不是中断,只是最近的canset迁移性,增加了决策中的抽具象结构,它的改动很大,影响很广,所以本节继续深入分析细节,做以下三件工作:
+1. "canset抽具象还是要依附场景抽具象"来切入思考;
+2. 然后将以往没分析透彻的通过画图等手段分析透彻;
+3. 分析完后,付诸代码实践;
 
 * 名词: 本文涉及`两层场景`:
 1. **交层**: 更抽象层为: 共同点抽象后缺了某些元素的层 (即缺一些元素的抽象节点),统称为: 集合交集层 (简称: 交层);
@@ -487,8 +490,8 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 
 | 29063 | Canset识别类比改到absSceneFo上进行TODOLIST |
 | --- | --- |
-| todo1 | 新Canset时,同时为每条absSceneFo各生成一个newCanset4AbsScene,并挂到它下面; |
-| todo2 | 每条newCanset4AbsScene都要触发Canset识别类比; |
+| todo1 | 新Canset时,同时为每条absSceneFo各生成一个newCanset4AbsScene,并挂到它下面 `废弃,转29067-todo2`; |
+| todo2 | 每条newCanset4AbsScene都要触发Canset识别类比 `废弃,转29067-todo1`; |
 
 | 29064 | 决策改动再分析 |
 | --- | --- |
@@ -543,16 +546,19 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 |  | 第2次,[向5距66,上飞,向7距88],在似层构建一个S,交层再构建一个[向5,上飞,向7距88] |
 |  | 第3步,因为两个第三帧有共同抽象,所以两个canset类比抽象得到[向5,上飞,向7]; |
 | 结果 | 本表简化成功 (废除了空概念canset和推举canset),可以相应应用到Canset类比算法中,实践如下; |
-| todo1 | 不需要真的推举,但在取用时要取出它们以实现等效; |
-| todo2 | 每次构建新Canset时,同时做似层和交层两次canset识别类比; |
-| todo3 | 似层: 仅从似层cansets做识别类比,并将结果absCanset挂在似层下; |
-| todo4 | 交层: 则取所有它下面的似层(除发起的似层外)cansets做识别类比,并将结果absCanset挂在交层下; |
+| todo1 | 推举不能太频繁,采用懒推举 `转29067-todo2 T`; |
+| todo2 | 每次构建新Canset时,同时做似层和交层两次canset识别类比 `废弃,转29067-todo1&3.3`; |
+| todo3 | 似层: 仅从似层cansets做识别类比,并将结果absCanset挂在似层下 `转29067-todo1`; |
+| todo4 | 交层: 取所有它下面的似层(除发起的似层外)cansets做识别类比,并将结果abs挂在交层下 `废弃,转29067-todo3.3` |
 
 | 29067 | 性能考虑-懒操作 |
 | --- | --- |
 | 问题 | 如果29066-todo2每次都对交层进行识别类比,如果有多个抽象呢?难道都要分别识别类比?性能怎么办? |
 | 解答 | 全采用`懒`操作,这些找各交层做识别类比的操作,全废弃掉 (即不多做任何事,总是到不得不时再做操作); |
 | todo1 | 懒识别: 新生成canset时,仅在似层进行识别类比,不到交层进行识别类比; |
+| todo1.1 | 识别场景包含帧用mIsC来判断(newCansetA抽象指向oldCansetA); |
+| todo1.2 | 场景不包含帧,则判断二者是否有共同抽象; |
+| todo1.3 | 场景不包含帧,有共同抽象时,直接用analogyAlg类比newCansetA和oldCansetA得出抽象A); |
 | todo2 | 懒推举: 似层无解,有同级别的似层迁移来canset时,最终输出最佳S前,将其推举到交层,并转换为交层canset; |
 | todo3 | 懒统计: 交层的canset执行,根据eff是否有效,转向如下: |
 | todo3.1 | 无效时: 交层的canset执行完并EFF无效时,在交层和似层分别计eff-1; |
