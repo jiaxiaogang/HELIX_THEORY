@@ -558,12 +558,27 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | todo1 | 懒识别: 新生成canset时,仅在似层进行识别类比,不到交层进行识别类比; |
 | todo1.1 | 识别场景包含帧用mIsC来判断(newCansetA抽象指向oldCansetA) `T`; |
 | todo1.2 | 场景不包含帧,则判断二者是否有共同抽象 `T`; |
-| todo1.3 | 场景不包含帧,有共同抽象时,直接用analogyAlg类比newCansetA和oldCansetA得出抽象A); |
+| todo1.3 | 场景不包含帧,有共同抽象时,直接用analogyAlg类比newCansetA和oldCansetA得出抽象A `弃,转29069`; |
 | todo2 | 懒推举: 似层无解,有同级别的似层迁移来canset时,最终输出最佳S前,将其推举到交层,并转换为交层canset; |
 | todo3 | 懒统计: 交层的canset执行,根据eff是否有效,转向如下: |
 | todo3.1 | 无效时: 交层的canset执行完并EFF无效时,在交层和似层分别计eff-1; |
 | todo3.2 | 有效时: 交层的canset执行完并EFF有效时,在交层和似层分别生成新canset; |
 | todo3.3 | 有效时: 交层和似层生成新Canset后,分别各自调用自己的识别类比; |
 | todo4 | 懒统计: 为解决似层任务,无论canset是否有效,也无论canset源自哪,都要为canset在似层统计EFF值; |
+
+| 29068 | 两层scene两层canset不变的情况下: 允许canset出现空概念 |
+| --- | --- |
+| 说明 | 在29067-todo1.3实际写alg外类比时,发现几个问题如下: |
+| 问题1 | 有共同抽象的两个cansetAlg要怎么类比,按交集还是匹配度? (注:二者平级无法复用匹配度); |
+| 问题2 | 有多个共同抽象时,此处仅类比出一条,别的可能永远类比不出,即: 场景类比成果未应用到Canset上; |
+| 问题示例 | 比如炸和炒抽象出用油制作,那么下次如果是蒸呢?再抽象一次吗? |
+| 分析 | 这些问题`空概念`可解,空概念即延用了场景类比的成果,又可扩展性强; |
+| 方案 | 在absCanset中空概念常态化,当成普通概念用,只是指向多个抽象; |
+| 重点 | **启用空概念,但仅改为可在absCanset中出现 (两层scene两层canset别的部分不变)** |
+| 示图 | ![](assets/684_两层scene两层canset图启用空概念部分.png) |
+| todo1 | 场景不包含帧,有共同抽象时,直接用构建空概念 `代码本就如此 T`; |
+| todo2 | TCSolution求解时,如果最佳S有空概念,则再向具象取一层,取出无空概念的canset做为最终输出; |
+| todo3 | 空概念取它的具象cansets竞争机制,可尝试用EFF竞争; |
+
 
 <br><br><br><br><br>
