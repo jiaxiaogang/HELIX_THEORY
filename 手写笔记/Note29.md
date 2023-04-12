@@ -585,6 +585,12 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | 取步骤 | ![](assets/685_自己父类兄弟取候选集步骤图.png) |
 | 优先级 | 分别从三者取cansets,优先级: 自己 > 父类 > 兄弟 |
 | 数据结构 | ![](assets/686_自己父类兄弟候选集数据结构图.png) |
-| todo1 | 先写数据模型(AICansetModel) + type(自己,父类,兄弟枚举); |
+| todo1 | 先写数据模型(AICansetModel) + type(自己,父类,兄弟枚举) `T`; |
+| todo2 | 目前仅支持R任务,等到做去皮训练时有需要再支持H任务 `暂不做`; |
+| todo2.1 | 支持H任务时,需要根据targetIndex在取(三步的)步骤中,依次判断含目标帧的indexDic映射 `暂不做`; |
+| todo3 | 写getCansetFos_SlowV3()支持三级收集候选集 `T`; |
+| todo4 | 在getCansetFos_SlowV3()取父类和兄弟时,需要有同类mv指向,否则取到解决别的任务的,白得; |
+| todo5 | override实现: 每条canseModel的cansets都需根据优先级更高的防重; |
+|  | 即: validCasets = protoCansets - base.cansets; |
 
 <br><br><br><br><br>
