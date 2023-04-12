@@ -555,7 +555,7 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | --- | --- |
 | 问题 | 如果29066-todo2每次都对交层进行识别类比,如果有多个抽象呢?难道都要分别识别类比?性能怎么办? |
 | 解答 | 全采用`懒`操作,这些找各交层做识别类比的操作,全废弃掉 (即不多做任何事,总是到不得不时再做操作); |
-| todo1 | 懒识别: 新生成canset时,仅在似层进行识别类比,不到交层进行识别类比; |
+| todo1 | 懒识别: 无论是似层还是交层,什么时候有输入或推举一条canset时,就在它的conCansets中进行识别类比; |
 | todo1.1 | 识别场景包含帧用mIsC来判断(newCansetA抽象指向oldCansetA) `T`; |
 | todo1.2 | 场景不包含帧,则判断二者是否有共同抽象 `T`; |
 | todo1.3 | 场景不包含帧,有共同抽象时,直接用analogyAlg类比newCansetA和oldCansetA得出抽象A `弃,转29069`; |
@@ -591,6 +591,7 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | todo3 | 写getCansetFos_SlowV3()支持三级收集候选集 `T`; |
 | todo4 | 在getCansetFos_SlowV3()取父类和兄弟时,需要有同类mv指向,否则取到解决别的任务的,白得; |
 | todo5 | override实现: 每条canseModel的cansets都需根据优先级更高的防重; |
-|  | 即: validCasets = protoCansets - base.cansets; |
+|  | 公式: `validCasets = protoCansets - base.cansets` (注: 此公式需要用抽具象相关来判断相减 `转todo5.1`); |
+| todo5.1 | 推举后canset和原canset是同一个,且canset类比抽象有抽具象关联,所以用mIsC即可实现此公式; |
 
 <br><br><br><br><br>
