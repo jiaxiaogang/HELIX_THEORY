@@ -590,8 +590,14 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | todo2.1 | 支持H任务时,需要根据targetIndex在取(三步的)步骤中,依次判断含目标帧的indexDic映射 `暂不做`; |
 | todo3 | 写getCansetFos_SlowV3()支持三级收集候选集 `T`; |
 | todo4 | 在getCansetFos_SlowV3()取父类和兄弟时,需要有同类mv指向,否则取到解决别的任务的,白得; |
-| todo5 | override实现: 每条canseModel的cansets都需根据优先级更高的防重; |
+| todo5 | override实现: 每条canseModel的cansets都需根据优先级高一级的防重 `T`; |
+|  | 注: 优先级高两层不用管,比如:brother不用i来防重,因为二者有交互必然会在father留下痕迹,所以单用father一级防重即可; |
 |  | 公式: `validCasets = protoCansets - base.cansets` (注: 此公式需要用抽具象相关来判断相减 `转todo5.1`); |
 | todo5.1 | 推举后canset和原canset是同一个,且canset类比抽象有抽具象关联,所以用mIsC即可实现此公式; |
+| todo5.2 | 无论是哪种情况,mIsC判断时,都以father为抽象来判断mIsC (因为father本来就是二者的抽象方向); |
+| todo5.3 | 公式使用1: `brother有效canset = brother.conCansets - father.conCansets` `T`; |
+| todo5.4 | 公式使用2: `father有效canset = father.conCansets - i.conCansets` `T`; |
+| todo5.5 | 公式使用3: `i有效canset = i.conCansets` `T`; |
+| todo6 | 鉴于性能考虑,`自己,父类,兄弟`三者的任一个不能全激活,写每个内部的竞争机制; |
 
 <br><br><br><br><br>
