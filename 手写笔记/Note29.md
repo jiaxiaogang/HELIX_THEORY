@@ -518,7 +518,7 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | todo1 | 概念识别改为仅识别似层 `T`; |
 | todo1.1 | TCFeedback兼容仅识别似层 (原来的contains不行了,因为全是似层,waitA却可能是交层); |
 | todo1.2 | TCForecast和TCDemand兼容仅识别似层 (因为结果全是似层,看是否需要向abs取下交层,以找到mv指向); |
-| todo2 | TCSolution取抽具两层候选集 |
+| todo2 | TCSolution取抽具两层候选集 `转29069 T`; |
 | todo3 | 方法继承: 具象层不包含的canset,则使用抽象层的; |
 | todo4 | override: 具象层包含的canset,则使用具象层的; |
 | todo4.1 | 似层和交层的cansets分别都取出; |
@@ -580,5 +580,11 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | todo2 | TCSolution求解时,如果最佳S有空概念,则再向具象取一层,取出无空概念的canset做为最终输出; |
 | todo3 | 空概念取它的具象cansets竞争机制,可尝试用EFF竞争; |
 
+| 29069 | 从:自己,父类,兄弟三者取cansets `参考29064-todo2` |
+| --- | --- |
+| 取步骤 | ![](assets/685_自己父类兄弟取候选集步骤图.png) |
+| 优先级 | 分别从三者取cansets,优先级: 自己 > 父类 > 兄弟 |
+| 数据结构 | ![](assets/686_自己父类兄弟候选集数据结构图.png) |
+| todo1 | 先写数据模型(AICansetModel) + type(自己,父类,兄弟枚举); |
 
 <br><br><br><br><br>
