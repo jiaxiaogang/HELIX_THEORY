@@ -518,11 +518,11 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | todo1 | 概念识别改为仅识别似层 `T`; |
 | todo1.1 | TCFeedback兼容仅识别似层 (原来的contains不行了,因为全是似层,waitA却可能是交层); |
 | todo1.2 | TCForecast和TCDemand兼容仅识别似层 (因为结果全是似层,看是否需要向abs取下交层,以找到mv指向); |
-| todo2 | TCSolution取抽具两层候选集 `转29069 T`; |
-| todo3 | 方法继承: 具象层不包含的canset,则使用抽象层的; |
-| todo4 | override: 具象层包含的canset,则使用具象层的; |
-| todo4.1 | 似层和交层的cansets分别都取出; |
-| todo4.2 | 因为似层优先: 所以过滤掉交层中的似层 (交层=交层-似层); |
+| todo2 | TCSolution取抽具两层候选集 `转29069-todo3 T`; |
+| todo3 | 方法继承: 具象层不包含的canset,则使用抽象层的 `转29069-todo3 T`; |
+| todo4 | override: 具象层包含的canset,则使用具象层的 `转29069-todo3 T`; |
+| todo4.1 | 似层和交层的cansets分别都取出 `转29069-todo3 T`; |
+| todo4.2 | 因为似层优先: 所以过滤掉交层中的似层 (交层=交层-似层) `转29069-todo5 T`; |
 | todo4.3 | 剩下的交层和似层,共同参与Solution竞争,直至输出最佳S结果; |
 | todo5 | 抽具象两层分别统计SPEFF (两层都构建canset); |
 | todo6 | TCSolution竞争时,抽具象各用各的SPEFF值; |
@@ -589,7 +589,7 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | todo2 | 目前仅支持R任务,等到做去皮训练时有需要再支持H任务 `暂不做`; |
 | todo2.1 | 支持H任务时,需要根据targetIndex在取(三步的)步骤中,依次判断含目标帧的indexDic映射 `暂不做`; |
 | todo3 | 写getCansetFos_SlowV3()支持三级收集候选集 `T`; |
-| todo4 | 在getCansetFos_SlowV3()取父类和兄弟时,需要有同类mv指向,否则取到解决别的任务的,白得; |
+| todo4 | 在getCansetFos_SlowV3()取父类和兄弟时,需要有同类mv指向,否则取到解决别的任务的,白得 `T`; |
 | todo5 | override实现: 每条canseModel的cansets都需根据优先级高一级的防重 `T`; |
 |  | 注: 优先级高两层不用管,比如:brother不用i来防重,因为二者有交互必然会在father留下痕迹,所以单用father一级防重即可; |
 |  | 公式: `validCasets = protoCansets - base.cansets` (注: 此公式需要用抽具象相关来判断相减 `转todo5.1`); |
@@ -599,5 +599,6 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | todo5.4 | 公式使用2: `father有效canset = father.conCansets - i.conCansets` `T`; |
 | todo5.5 | 公式使用3: `i有效canset = i.conCansets` `T`; |
 | todo6 | 鉴于性能考虑,`自己,父类,兄弟`三者的任一个不能全激活,写每个内部的竞争机制; |
+|  | > 先不写,随后测得性能问题后再写 `暂不写` |
 
 <br><br><br><br><br>
