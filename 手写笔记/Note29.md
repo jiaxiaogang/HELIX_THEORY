@@ -593,8 +593,8 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | todo5 | override实现: 每条canseModel的cansets都需根据优先级高一级的防重 `T`; |
 |  | 注: 优先级高两层不用管,比如:brother不用i来防重,因为二者有交互必然会在father留下痕迹,所以单用father一级防重即可; |
 |  | 公式: `validCasets = protoCansets - base.cansets` (注: 此公式需要用抽具象相关来判断相减 `转todo5.1`); |
-| todo5.1 | 推举后canset和原canset是同一个,且canset类比抽象有抽具象关联,所以用mIsC即可实现此公式; |
-| todo5.2 | 无论是哪种情况,mIsC判断时,都以father为抽象来判断mIsC (因为father本来就是二者的抽象方向); |
+| todo5.1 | 推举后canset和原canset是同一个,且canset类比抽象有抽具象关联,所以用mIsC即可实现此公式 `T`; |
+| todo5.2 | 无论是哪种情况,mIsC判断时,都以father为抽象来判断mIsC (因为father本来就是二者的抽象方向) `T`; |
 | todo5.3 | 公式使用1: `brother有效canset = brother.conCansets - father.conCansets` `T`; |
 | todo5.4 | 公式使用2: `father有效canset = father.conCansets - i.conCansets` `T`; |
 | todo5.5 | 公式使用3: `i有效canset = i.conCansets` `T`; |
