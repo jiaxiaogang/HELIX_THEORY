@@ -585,7 +585,7 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | 取步骤 | ![](assets/685_自己父类兄弟取候选集步骤图.png) |
 | 优先级 | 分别从三者取cansets,优先级: 自己 > 父类 > 兄弟 |
 | 数据结构 | ![](assets/686_自己父类兄弟候选集数据结构图.png) |
-| todo1 | 先写数据模型(AICansetModel) + type(自己,父类,兄弟枚举) `T`; |
+| todo1 | 先写数据模型(AISceneModel) + type(自己,父类,兄弟枚举) `T`; |
 | todo2 | 目前仅支持R任务,等到做去皮训练时有需要再支持H任务 `暂不做`; |
 | todo2.1 | 支持H任务时,需要根据targetIndex在取(三步的)步骤中,依次判断含目标帧的indexDic映射 `暂不做`; |
 | todo3 | 写getCansetFos_SlowV3()支持三级收集候选集 `T`; |
@@ -598,6 +598,8 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | todo5.3 | 公式使用1: `brother有效canset = brother.conCansets - father.conCansets` `T`; |
 | todo5.4 | 公式使用2: `father有效canset = father.conCansets - i.conCansets` `T`; |
 | todo5.5 | 公式使用3: `i有效canset = i.conCansets` `T`; |
+| todo5.6 | 需要将cutIndex传递到`自己,父类,兄弟`三者中,因为判断前中后段要用 `T`; |
+| todo5.6 | AISceneModel中cutIndex映射不上的,过滤掉,因为截点找不着,它就未必有什么能迁移成功的解 `T`; |
 | todo6 | 鉴于性能考虑,`自己,父类,兄弟`三者的任一个不能全激活,写每个内部的竞争机制; |
 |  | > 先不写,随后测得性能问题后再写 `暂不写` |
 
