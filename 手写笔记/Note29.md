@@ -580,7 +580,7 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | todo2 | TCSolution求解时,如果最佳S有空概念,则再向具象取一层,取出无空概念的canset做为最终输出; |
 | todo3 | 空概念取它的具象cansets竞争机制,可尝试用EFF竞争; |
 
-| 29069 | 从:自己,父类,兄弟三者取cansets `参考29064-todo2` |
+| 29069 | 从:自己,父类,兄弟三级场景取cansets `参考29064-todo2` |
 | --- | --- |
 | 取步骤 | ![](assets/685_自己父类兄弟取候选集步骤图.png) |
 | 优先级 | 分别从三者取cansets,优先级: 自己 > 父类 > 兄弟 |
@@ -602,5 +602,11 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | todo5.6 | AISceneModel中cutIndex映射不上的,过滤掉,因为截点找不着,它就未必有什么能迁移成功的解 `T`; |
 | todo6 | 鉴于性能考虑,`自己,父类,兄弟`三者的任一个不能全激活,写每个内部的竞争机制; |
 |  | > 先不写,随后测得性能问题后再写 `暂不写` |
+| todo7 | 最佳CansetModel激活后,它的SceneModel也存到最终生成的TOFoModel中 `T`; |
+| todo8 | 根据CansetModel不同执行哪条actionFo: 写个方法,让"含空概念"的执行它的具象,而别的执行canset自身 |
+|  | >  按说它的具象应该也在同一个sceneModel下,写成TOFoModel下的方法来写不同实现; |
+| todo9 | 根据CansetModel不同执行不同的feedback反馈: 也写成TOFoModel下的方法来写不同实现; |
+| todo10 | 根据CansetModel不同执行不同的推举或继承操作: 也封装成一个方法写不同实现; |
+| todo11 | 根据CansetModel不同执行不同的SPEFF统计: 也封装成一个方法实现不同统计; |
 
 <br><br><br><br><br>
