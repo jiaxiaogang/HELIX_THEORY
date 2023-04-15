@@ -559,12 +559,12 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | todo1.1 | 识别场景包含帧用mIsC来判断(newCansetA抽象指向oldCansetA) `T`; |
 | todo1.2 | 场景不包含帧,则判断二者是否有共同抽象 `T`; |
 | todo1.3 | 场景不包含帧,有共同抽象时,直接用analogyAlg类比newCansetA和oldCansetA得出抽象A `弃,转29069`; |
-| todo2 | 懒推举: 似层无解,有同级别的似层迁移来canset时,最终输出最佳S前,将其推举到交层,并转换为交层canset; |
-| todo3 | 懒统计: 交层的canset执行,根据eff是否有效,转向如下: |
-| todo3.1 | 无效时: 交层的canset执行完并EFF无效时,在交层和似层分别计eff-1; |
-| todo3.2 | 有效时: 交层的canset执行完并EFF有效时,在交层和似层分别生成新canset; |
-| todo3.3 | 有效时: 交层和似层生成新Canset后,分别各自调用自己的识别类比; |
-| todo4 | 懒统计: 为解决似层任务,无论canset是否有效,也无论canset源自哪,都要为canset在似层统计EFF值; |
+| todo2 | 懒推举: 似层无解,有同级别的似层迁移来canset时,最终输出最佳S前,将其推举到交层,并转换为交层canset `转29069-todo10.1`; |
+| todo3 | 懒统计: 交层的canset执行,根据eff是否有效,转向如下: `转29069-todo11`; |
+| todo3.1 | 无效时: 交层的canset执行完并EFF无效时,在交层和似层分别计eff-1 `转29069-todo11`; |
+| todo3.2 | 有效时: 交层的canset执行完并EFF有效时,在交层和似层分别生成新canset `转29069-todo11`; |
+| todo3.3 | 有效时: 交层和似层生成新Canset后,分别各自调用自己的识别类比 `转29069-todo10.1&11&12`; |
+| todo4 | 懒统计: 为解决似层任务,无论canset是否有效,也无论canset源自哪,都要为canset在似层统计EFF值 `转29069-todo11`; |
 
 | 29068 | 两层scene两层canset不变的情况下: 允许canset出现空概念 |
 | --- | --- |
@@ -603,10 +603,16 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | todo6 | 鉴于性能考虑,`自己,父类,兄弟`三者的任一个不能全激活,写每个内部的竞争机制; |
 |  | > 先不写,随后测得性能问题后再写 `暂不写` |
 | todo7 | 最佳CansetModel激活后,它的SceneModel也存到最终生成的TOFoModel中 `T`; |
-| todo8 | 根据CansetModel不同执行哪条actionFo: 写个方法,让"含空概念"的执行它的具象,而别的执行canset自身 |
+| todo8 | 根据CansetModel不同执行哪条actionFo: 写个方法,让"含空概念"的执行它的具象,而别的执行canset自身 `T` |
 |  | >  按说它的具象应该也在同一个sceneModel下,写成TOFoModel下的方法来写不同实现; |
 | todo9 | 根据CansetModel不同执行不同的feedback反馈: 也写成TOFoModel下的方法来写不同实现; |
-| todo10 | 根据CansetModel不同执行不同的推举或继承操作: 也封装成一个方法写不同实现; |
+| todo10 | 根据CansetModel不同执行不同的迁移(推举或继承)操作: 也封装成一个方法写不同实现; |
+| todo10.1 | 懒迁移: 最终输出最佳S前,源于Brother则迁移到Father和I,源于Father则迁移到I; |
+|  | > 这样的话,无论canset从哪迁移来的,最后执行的actionFo都是I下面的; |
+|  | > 迁移时,要保证迁移前和迁移后的canset有抽具象关联 (以便今后同时更新它们的SPEFF) `转todo11.2`; |
 | todo11 | 根据CansetModel不同执行不同的SPEFF统计: 也封装成一个方法实现不同统计; |
+| todo11.1 | 无论SPEFF结果是正是负,都进行统计更新; |
+| todo11.2 | 每次执行后,分别对I,Father两级进行统计更新 (I和Father的canset的抽具象关联可用于此处判断); |
+| todo12 | 识别类比: 在SPEFF统计为正+1时,调用canset识别类比; |
 
 <br><br><br><br><br>
