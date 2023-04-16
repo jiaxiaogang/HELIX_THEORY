@@ -460,6 +460,8 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 * 名词: 本文涉及`两层场景`:
 1. **交层**: 更抽象层为: 共同点抽象后缺了某些元素的层 (即缺一些元素的抽象节点),统称为: 集合交集层 (简称: 交层);
 2. **似层**: 内部概念全是相似度没缺元素的: (即通过相近度匹配到的概念间的抽具象关系),统称为: 强化相似层 (简称: 似层);
+3. **Brother,Father,I**: 在Canset迁移时,主要执行I任务,而I可以从Father继承方案,也可以由Brother通过Father迁移来方案;
+4. **传承关联**: Brother与Father,或I与Father之间的Canset推举之后,二者间构建一个关联,称为传承关联 `说白了,就是你的技能是跟哪个老师学的,以后自己赚了钱反馈恩师时要用到这个记录`;
 
 | 29061 | 通过整理最近改动的`场景共同点抽具象`网络结构图,来分析决策怎么改 |
 | --- | --- |
@@ -609,10 +611,13 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | todo10 | 根据CansetModel不同执行不同的迁移(推举或继承)操作: 也封装成一个方法写不同实现; |
 | todo10.1 | 懒迁移: 最终输出最佳S前,源于Brother则迁移到Father和I,源于Father则迁移到I; |
 |  | > 这样的话,无论canset从哪迁移来的,最后执行的actionFo都是I下面的; |
-|  | > 迁移时,要保证迁移前和迁移后的canset有抽具象关联 (以便今后同时更新它们的SPEFF) `转todo11.2`; |
+| todo10.2 | 迁移后,将迁移前后的canset构建`传承关联(参考文首名词解释)` (以便今后同时更新它们的SPEFF或避免重复传承); |
+|  | ![](assets/687_Canset迁移前后构建传承关联.png) |
+|  | 上图说明: `1. 推举后,Father和Brother构建传承关联`,`2. 交层EFF更新时,Father的EFF也更新,且它的抽象也更新` |
 | todo11 | 根据CansetModel不同执行不同的SPEFF统计: 也封装成一个方法实现不同统计; |
 | todo11.1 | 无论SPEFF结果是正是负,都进行统计更新; |
-| todo11.2 | 每次执行后,分别对I,Father两级进行统计更新 (I和Father的canset的抽具象关联可用于此处判断); |
+| todo11.2 | 每次执行后,分别对I,Father两级进行统计更新 (I和Father的canset的传承关联可用于此处判断); |
+| todo11.3 | 每次执行后,分别对I,Father两级各自的抽象cansetFo也要更新; |
 | todo12 | 识别类比: 在SPEFF统计为正+1时,调用canset识别类比; |
 
 <br><br><br><br><br>
