@@ -609,10 +609,11 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | todo7 | 最佳CansetModel激活后,它的SceneModel也存到最终生成的TOFoModel中 `T`; |
 | todo8 | 输出最佳CansetModel前检查可行性(含空概念即不可行),不可行时延着它的具象,换一个最佳CansetModel输出 `T` |
 |  | >  它的具象应在同一个最佳CansetModel的候选集sortModels中取; |
-| todo9 | 根据CansetModel不同执行不同的feedback反馈: 也写成TOFoModel下的方法来写不同实现; |
+| todo9 | 根据CansetModel不同执行不同的feedback反馈: 也写成TOFoModel下的方法来写不同实现 `转如下实践 T`; |
+|  | > 实践: 直接在TOFoModel中重写getContent_p()方法,优先返回iCanset,为空时返content_p,这样feedback就不用改 `T`; |
 | todo10 | 根据CansetModel不同执行不同的迁移(推举或继承)操作: 也封装成一个方法写不同实现 `T`; |
 | todo10.1 | 懒迁移: 最终输出最佳S后,源于Brother则迁移到Father和I,源于Father则迁移到I `T`; |
-|  | > 这样的话,无论canset从哪迁移来的,最后执行的actionFo都是I下面的; |
+| todo10.1b | 无论canset从哪迁移来的,最后执行行为化的都是iCanset (不兼容的H任务等还是执行content_p) `T`; |
 |  | ![](assets/688_Canset迁移的推举继承算法示图.png) |
 |  | 上图步骤说明: `1.遍历迁移前canset 2.判断迁移前Canset->迁移前Scene->迁移后Scene的映射 3.映射通过则采纳迁移后Scene的元素 4.映射不通过则采纳迁移前Canset的元素 5.最终拼凑出新的迁移后Canset` |
 | todo10.2 | 迁移后,将迁移前后的canset构建`迁移关联(参考文首名词解释)` (以便同时更新它们的SPEFF或避免重复迁移) `T`; |
