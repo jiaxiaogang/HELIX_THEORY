@@ -461,7 +461,7 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 1. **交层**: 更抽象层为: 共同点抽象后缺了某些元素的层 (即缺一些元素的抽象节点),统称为: 集合交集层 (简称: 交层);
 2. **似层**: 内部概念全是相似度没缺元素的: (即通过相近度匹配到的概念间的抽具象关系),统称为: 强化相似层 (简称: 似层);
 3. **Brother,Father,I**: 在Canset迁移时,主要执行I任务,而I可以从Father继承方案,也可以由Brother通过Father迁移来方案;
-4. **传承关联**: Brother与Father,或I与Father之间的Canset推举之后,二者间构建一个关联,称为传承关联 `说白了,就是你的技能是跟哪个老师学的,以后自己赚了钱反馈恩师时要用到这个记录`;
+4. **迁移关联**: Brother与Father,或I与Father之间的Canset推举之后,二者间构建一个关联,称为transfer关联 `说白了,就是你的技能是跟哪个老师学的,以后自己赚了钱反馈恩师时要用到这个记录`;
 5. **推举**: 迁移分为拿和放,其中拿是从brother->father,称为推举;
 6. **继承**: 迁移分为拿和放,其中放是从father->i,称为继承;
 
@@ -607,20 +607,20 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | todo6 | 鉴于性能考虑,`自己,父类,兄弟`三者的任一个不能全激活,写每个内部的竞争机制; |
 |  | > 先不写,随后测得性能问题后再写 `暂不写` |
 | todo7 | 最佳CansetModel激活后,它的SceneModel也存到最终生成的TOFoModel中 `T`; |
-| todo8 | 根据CansetModel不同执行哪条actionFo: 写个方法,让"含空概念"的执行它的具象,而别的执行canset自身 `T` |
-|  | >  按说它的具象应该也在同一个sceneModel下,写成TOFoModel下的方法来写不同实现; |
+| todo8 | 输出最佳CansetModel前检查可行性(含空概念即不可行),不可行时延着它的具象,换一个最佳CansetModel输出 `T` |
+|  | >  它的具象应在同一个最佳CansetModel的候选集sortModels中取; |
 | todo9 | 根据CansetModel不同执行不同的feedback反馈: 也写成TOFoModel下的方法来写不同实现; |
 | todo10 | 根据CansetModel不同执行不同的迁移(推举或继承)操作: 也封装成一个方法写不同实现 `T`; |
 | todo10.1 | 懒迁移: 最终输出最佳S后,源于Brother则迁移到Father和I,源于Father则迁移到I `T`; |
 |  | > 这样的话,无论canset从哪迁移来的,最后执行的actionFo都是I下面的; |
 |  | ![](assets/688_Canset迁移的推举继承算法示图.png) |
 |  | 上图步骤说明: `1.遍历迁移前canset 2.判断迁移前Canset->迁移前Scene->迁移后Scene的映射 3.映射通过则采纳迁移后Scene的元素 4.映射不通过则采纳迁移前Canset的元素 5.最终拼凑出新的迁移后Canset` |
-| todo10.2 | 迁移后,将迁移前后的canset构建`传承关联(参考文首名词解释)` (以便同时更新它们的SPEFF或避免重复传承) `T`; |
+| todo10.2 | 迁移后,将迁移前后的canset构建`迁移关联(参考文首名词解释)` (以便同时更新它们的SPEFF或避免重复迁移) `T`; |
 |  | ![](assets/687_Canset迁移前后构建传承关联.png) |
-|  | 上图说明: `1. 推举后,Father和Brother构建传承关联`,`2. 交层EFF更新时,Father的EFF也更新,且它的抽象也更新` |
+|  | 上图说明: `1. 推举后,Father和Brother构建迁移关联`,`2. 交层EFF更新时,Father的EFF也更新,且它的抽象也更新` |
 | todo11 | 根据CansetModel不同执行不同的SPEFF统计: 也封装成一个方法实现不同统计; |
 | todo11.1 | 无论SPEFF结果是正是负,都进行统计更新; |
-| todo11.2 | 每次执行后,分别对I,Father两级进行统计更新 (I和Father的canset的传承关联可用于此处判断); |
+| todo11.2 | 每次执行后,分别对I,Father两级进行统计更新 (I和Father的canset的迁移关联可用于此处判断); |
 | todo11.3 | 每次执行后,分别对I,Father两级各自的抽象cansetFo也要更新; |
 | todo12 | 识别类比: 在SPEFF统计为正+1时,调用canset识别类比; |
 
