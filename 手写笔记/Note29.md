@@ -623,6 +623,7 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | todo11.1 | 无论SPEFF结果是正是负,都进行统计更新 `T`; |
 | todo11.2 | 每次执行后,分别对I,Father两级进行统计更新 `T`; |
 | todo11.3 | 每次执行后,分别对I,Father两级各自的抽象cansetFo也要更新; |
-| todo12 | 识别类比: 在SPEFF统计为正+1时,调用canset识别类比; |
+| todo12 | 识别类比: 在TCTransfer迁移完成时,调用canset识别类比 `T`; |
+| todo12.1 | canset类比抽象时,不对SPEFF+1,因为迁移完成不表示已正向发生 `T`; |
 
 <br><br><br><br><br>
