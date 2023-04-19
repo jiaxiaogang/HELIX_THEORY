@@ -619,9 +619,9 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | todo10.2 | 迁移后,将迁移前后的canset构建`迁移关联(参考文首名词解释)` (以便同时更新它们的SPEFF或避免重复迁移) `T`; |
 |  | ![](assets/687_Canset迁移前后构建传承关联.png) |
 |  | 上图说明: `1. 推举后,Father和Brother构建迁移关联`,`2. 交层EFF更新时,Father的EFF也更新,且它的抽象也更新` |
-| todo11 | 根据CansetModel不同执行不同的SPEFF统计: 也封装成一个方法实现不同统计; |
-| todo11.1 | 无论SPEFF结果是正是负,都进行统计更新; |
-| todo11.2 | 每次执行后,分别对I,Father两级进行统计更新 (I和Father的canset的迁移关联可用于此处判断); |
+| todo11 | 根据CansetModel不同执行不同的SPEFF统计: 也封装成一个方法实现不同统计 `T`; |
+| todo11.1 | 无论SPEFF结果是正是负,都进行统计更新 `T`; |
+| todo11.2 | 每次执行后,分别对I,Father两级进行统计更新 `T`; |
 | todo11.3 | 每次执行后,分别对I,Father两级各自的抽象cansetFo也要更新; |
 | todo12 | 识别类比: 在SPEFF统计为正+1时,调用canset识别类比; |
 
