@@ -332,7 +332,7 @@ R新Canset:F565[A559(高100,皮0,向19,距117)] (状态:无反馈 fromPFo:F415 �
 
 | 29053 | Canset迁移性增强增强迁移性后->决策: 分析哪里需要改,怎么改 |
 | --- | --- |
-| 示图 | ![](assets/680_Canset迁移性增强增强迁移性后决策示图.png) |
+| 示图 | ![](assets/680_共同点抽象增强迁移性后决策示图.png) |
 | 注解 | 1. F3场景过具象迁移性差,大几率是无解的: 必须在更抽象上找到迁移性强的解决方案才ok; |
 | 说明 | 决策向性下,是找到稳定且可行的Canset的过程: 跑起来步骤分析如下: |
 |  | 步骤1. F1一般可被matchPFos识别到; |
@@ -441,7 +441,7 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 
 | 29059 | Canset迁移性增强后网络结构图分析 `因这张图,本节全部中止作废 T` |
 | --- | --- |
-| 示图 | ![](assets/681_通过Canset迁移性增强改动后网络结构图分析决策改动.png) |
+| 示图 | ![](assets/681_通过共同点抽象改动后网络结构图分析决策改动.png) |
 | ★重点 | 此图中体现出的迁移性,是因为sceneFo的Canset迁移性增强带来的; |
 | ★问题 | 而本节上面分析的迁移性,是canset自身的类比抽象带来的 (空概念absCanset); |
 | ★改动 | 显然,二者功能重复了,说白了,就是上面做的canset识别类比都没啥用,应该废弃掉 `先关掉`; |
@@ -471,7 +471,7 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 
 | 29061 | 通过整理最近改动的`场景共同点抽具象`网络结构图,来分析决策怎么改 |
 | --- | --- |
-| 示图 | ![](assets/681_通过Canset迁移性增强改动后网络结构图分析决策改动.png) |
+| 示图 | ![](assets/681_通过共同点抽象改动后网络结构图分析决策改动.png) |
 | 分析 | 关于示图中protoFo1和protoFo2可迁移,但protoFo3不可迁移,各举一例如下: |
 | 情况1 | 如图: 下次发生protoFo2时,也会识别到scene4; |
 |  | > 此时可激活canset2,它因为抽象统计更多SPEFF,可体现出迁移性; |
@@ -503,7 +503,7 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 
 | 29064 | 决策改动再分析 |
 | --- | --- |
-| 图 | ![](assets/681_通过Canset迁移性增强改动后网络结构图分析决策改动.png) |
+| 图 | ![](assets/681_通过共同点抽象改动后网络结构图分析决策改动.png) |
 | 观点1 | 不需要继承Canset的SPEFFStrong,因为各是各的,继承后只会让率越乘更低; |
 |  | ★SPEFF各管各原则: 无论是从抽或具象场景取了canset,它们的SPEFF是分别存各的,竞争时也各用各的; |
 | 观点2 | 具象sceneFo上找scene优先,如果找不着,可以到抽象上找; |
@@ -641,5 +641,9 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 `CreateTime 2023.04.20`
 
 在n29p02-n29p06间,改了许多,在n29p04初步回测了下,现在整体写完,再回归测试;
+
+| 29071 | 回测规划 |
+| --- | --- |
+| 简介 | 通过防撞训练前两步,先跑跑看; |
 
 <br><br><br><br><br>
