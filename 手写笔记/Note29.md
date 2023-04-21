@@ -644,6 +644,8 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 
 | 29071 | 回测规划 |
 | --- | --- |
-| 简介 | 通过防撞训练前两步,先跑跑看; |
+| 手训 | 防撞训练第1步基础上,进行偏上手动躲开xN次; |
+| 分析 | 从中观察习得canset,以及canset的迁移性; |
+| 测项1 | 测下手训第3次左右,TCScene能不能取到SceneTree; |
 
 <br><br><br><br><br>
