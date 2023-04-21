@@ -648,4 +648,13 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | 分析 | 从中观察习得canset,以及canset的迁移性; |
 | 测项1 | 测下手训第3次左右,TCScene能不能取到SceneTree; |
 
+| 29072 | TCScene的BUG: 因为有多条共同抽象的可能性,所以father和brother中的元素是有可能重复的; |
+| --- | --- |
+| 分析 | 比如: i1和i2有共同的抽象father1,那么就会生成两次father1的SceneModel; |
+| 方案1 | 如果要加防重的话,构建[AISceneModel newWithBase]时就给防重了; |
+|  | 缺点: 但这样会导致SceneModel重复生成时,会有多个base,这样TCScece就无法生成树形结果了; |
+| 方案2 | 到后面TCSolution竞争时再加去重功能; |
+|  | 问题: 那到TCTransfer时,canset迁移哪个base?还是多个base去重后,canset迁移到多个base下? |
+| 结果 | 暂停: 先不解决,先不解决看有影响时再来加防重功能 `待测出问题再来解决`; |
+
 <br><br><br><br><br>
