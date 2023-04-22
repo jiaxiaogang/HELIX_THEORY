@@ -657,8 +657,14 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 |  | 问题: 那到TCTransfer时,canset迁移哪个base?还是多个base去重后,canset迁移到多个base下? |
 | 结果 | 暂停: 先不解决,先不解决看有影响时再来加防重功能 `待测出问题再来解决`; |
 
-| 29073 | 从120多条SceneModel转成CansetModel只有0条的问题 |
+| 29073 | 从120多条SceneModel转成CansetModel只有0条的问题 `T` |
 | --- | --- |
 | 调试 | 在override算法有返回,但到convert2CansetModel后全返nil了; |
+| 原因 | 经调试,发现全是`惰性期`过滤导致返回nil; |
+| 分析 | 现在时序识别全是似层 (参考29064-todo1),导致抽象挂不到canset,而具象是很难多次发生的; |
+|  | 所以,同样的具象fo不太可能发生>2次 (hStrong>2才能结束惰性期),所以convert2CansetModel()全被惰性期过滤成nil了; |
+| 回顾 | 回顾惰性期功能: 当时因为第2步反射训练时,容易乱飞,所以加了惰性期(参考n28p18上); |
+| 现状 | 现在canset加了override和transfer后,感觉保留惰性期的必要性不大; |
+| 方案 | 先写个开关,关掉惰性期,等随后测训中如果再有用时再来打开 `改后回测ok T`; |
 
 <br><br><br><br><br>
