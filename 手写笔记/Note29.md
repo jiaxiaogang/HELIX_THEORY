@@ -657,4 +657,8 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 |  | 问题: 那到TCTransfer时,canset迁移哪个base?还是多个base去重后,canset迁移到多个base下? |
 | 结果 | 暂停: 先不解决,先不解决看有影响时再来加防重功能 `待测出问题再来解决`; |
 
+| 29073 | 从120多条SceneModel转成CansetModel只有0条的问题 |
+| --- | --- |
+| 调试 | 在override算法有返回,但到convert2CansetModel后全返nil了; |
+
 <br><br><br><br><br>
