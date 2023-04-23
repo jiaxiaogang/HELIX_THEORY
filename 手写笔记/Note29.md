@@ -667,4 +667,10 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | 现状 | 现在canset加了override和transfer后,感觉保留惰性期的必要性不大; |
 | 方案 | 先写个开关,关掉惰性期,等随后测训中如果再有用时再来打开 `改后回测ok T`; |
 
+| 29074 | TCCanset中override算法过滤无效BUG |
+| --- | --- |
+| 分析 | 经查,在override算法中,取filter时,是用abs和con抽具象路径上取的; |
+| 原因 | 但其实像father和i的canset迁移过,有迁移关联,而不是抽具象关联; |
+| 修复 | 将override中取filters,由使用抽具象关联改为使用迁移关联即可 `T`; |
+
 <br><br><br><br><br>
