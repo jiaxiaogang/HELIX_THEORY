@@ -687,5 +687,8 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 |  | 说明: 见以上日志,第2次时,Father有识别到F217和F609,并且Brother也有取到F678和F431; |
 | 问题 | 根据F678和F431取得候选数共7+12=19条,但全部被过滤掉了,但下全被过滤的原因; |
 | 分析 | 怀疑是brother的前段不可能条件满足,待调试确定下(重训第2步第2次可调试),然后再分析解决方案; |
+| 方案1 | 在convert2CansetModel()之前先将brother生成为迁移后fatherSceneFo,但不存储hd; |
+| 方案2 | 在convert2CansetModel()中,在判断条件满足时,针对brother时做优化; |
+| 决择 | 方案1复用了迁移代码,并且未造成问题,但方案2更符合不滥改的原则; |
 
 <br><br><br><br><br>
