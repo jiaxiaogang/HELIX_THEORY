@@ -688,7 +688,15 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | 问题 | 根据F678和F431取得候选数共7+12=19条,但全部被过滤掉了,但下全被过滤的原因; |
 | 分析 | 怀疑是brother的前段不可能条件满足,待调试确定下(重训第2步第2次可调试),然后再分析解决方案; |
 | 方案1 | 在convert2CansetModel()之前先将brother生成为迁移后fatherSceneFo,但不存储hd; |
+|  | 缺点: 方案1复用了迁移代码,并且未造成提前迁移sceneFo,会造成性能等问题 `5%`; |
 | 方案2 | 在convert2CansetModel()中,在判断条件满足时,针对brother时做优化; |
-| 决择 | 方案1复用了迁移代码,并且未造成问题,但方案2更符合不滥改的原则; |
+|  | 优点: 相对方案1,方案2更符合不滥改的原则; |
+|  | 缺点: 方案2的brother与i毕竟太远,判断起来要mIsC2,跨两层可能导致条件满足成了摆设 `5%`; |
+| 方案3 | 综合方案1和2,迁移支持取iAlg(且不存),然后在判断条件满足时还是原来的mIsC判断protoA is iAlg即可 `95%`; |
+|  | 注: iAlg与iFo迁移代码同理,但iAlg只是取得iAlg返回,不构建新节点,然后用于在条件满足中判断mIsC时用; |
+| 总结 | 方案3综合了1和2的优点,且排除了1和2的缺点,所以选用,实践如下: |
+| todo1 | 实现方式: 在TCTransfer写支持alg的推举和继承 (原来是对fo迁移,现在是支持下alg迁移); |
+| todo2 | 前段条件满足-兼容canset是从brother来的情况; |
+| todo3 | 前段条件满足-兼容canset是从father来的情况; |
 
 <br><br><br><br><br>
