@@ -695,8 +695,9 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | 方案3 | 综合方案1和2,迁移支持取iAlg(且不存),然后在判断条件满足时还是原来的mIsC判断protoA is iAlg即可 `95%`; |
 |  | 注: iAlg与iFo迁移代码同理,但iAlg只是取得iAlg返回,不构建新节点,然后用于在条件满足中判断mIsC时用; |
 | 总结 | 方案3综合了1和2的优点,且排除了1和2的缺点,所以选用,实践如下: |
-| todo1 | 实现方式: 在TCTransfer写支持alg的推举和继承 (原来是对fo迁移,现在是支持下alg迁移); |
-| todo2 | 前段条件满足-兼容canset是从brother来的情况; |
-| todo3 | 前段条件满足-兼容canset是从father来的情况; |
+| todo1 | 实现方式: 在TCTransfer写支持alg的推举和继承 (原来是对fo迁移,现在是支持下alg迁移) `T`; |
+| todo2 | 前段条件满足-兼容canset是从brother来的情况 `T`; |
+| todo3 | 前段条件满足-兼容canset是从father来的情况 `T`; |
+| todo4 | 复查下所有updateConCanset()时,都把scene和canset补上indexDic映射; |
 
 <br><br><br><br><br>
