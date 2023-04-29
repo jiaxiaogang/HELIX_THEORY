@@ -699,6 +699,14 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | todo1 | 实现方式: 在TCTransfer写支持alg的推举和继承 (原来是对fo迁移,现在是支持下alg迁移) `T`; |
 | todo2 | 前段条件满足-兼容canset是从brother来的情况 `T`; |
 | todo3 | 前段条件满足-兼容canset是从father来的情况 `T`; |
-| todo4 | 复查下所有updateConCanset()时,都把scene和canset补上indexDic映射; |
+| todo4 | 复查下所有updateConCanset()时,都把scene和canset补上indexDic映射 `转29076`; |
+
+| 29076 | 补全canset的indexDic (参考29075-todo4) |
+| --- | --- |
+| 简介 | 要兼容canset迁移时判断条件满足,需要所有canset与scene有indexDic映射,本节补全缺失的indexDic; |
+| todo1 | 补全canset迁移后的indexDic `T` |
+|  | ![](assets/690_取canset迁移后的indexDic.png) |
+| todo2 | 补全canset类比后的indexDic |
+|  | ![](assets/691_取Canset类比后的indexDic.png) |
 
 <br><br><br><br><br>
