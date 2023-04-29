@@ -701,12 +701,20 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | todo3 | 前段条件满足-兼容canset是从father来的情况 `T`; |
 | todo4 | 复查下所有updateConCanset()时,都把scene和canset补上indexDic映射 `转29076`; |
 
-| 29076 | 补全canset的indexDic (参考29075-todo4) |
+| 29076 | 补全canset的indexDic (参考29075-todo4) `T` |
 | --- | --- |
 | 简介 | 要兼容canset迁移时判断条件满足,需要所有canset与scene有indexDic映射,本节补全缺失的indexDic; |
 | todo1 | 补全canset迁移后的indexDic `T` |
+|  | 步骤: 根据fatherCanset与fatherScene的映射(上) 与 fatherScene与iScene的映射(下) |
+|  | > 得出 => iScene与iCanset(由fatherCanset逐帧对应得出)的映射(下) `示图如下`; |
 |  | ![](assets/690_取canset迁移后的indexDic.png) |
-| todo2 | 补全canset类比后的indexDic |
+| todo2 | 补全canset类比后的indexDic `T` |
+|  | 步骤: 根据scene与oldCanset的映射(下) 与 oldCanset与absCanset的映射(上) |
+|  | >  得出 => absCanset与scene的映射(上) `示图如下`; |
 |  | ![](assets/691_取Canset类比后的indexDic.png) |
+
+| 29077 | 回测29075-场景判断失败导致Canset迁移失败的BUG |
+| --- | --- |
+| 步骤 | 防撞训练第2步手测: 第1次在路偏上右侧手动躲开,第2次在跑偏上左侧,直投后看能不能躲开; |
 
 <br><br><br><br><br>
