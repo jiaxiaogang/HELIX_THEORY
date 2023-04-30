@@ -700,6 +700,7 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | todo2 | 前段条件满足-兼容canset是从brother来的情况 `T`; |
 | todo3 | 前段条件满足-兼容canset是从father来的情况 `T`; |
 | todo4 | 复查下所有updateConCanset()时,都把scene和canset补上indexDic映射 `转29076`; |
+| todo5 | 迁移前canset和proto无抽具象关联,所以前段条件满足后,要用迁移后cansetA与protoA来计算前段匹配度 `T`; |
 
 | 29076 | 补全canset的indexDic (参考29075-todo4) `T` |
 | --- | --- |
