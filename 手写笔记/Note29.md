@@ -735,4 +735,16 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | 思路2 | 同一批pFos,能不能互相印证canset的有效性?以帮助更准确的对canset竞争评价; |
 |  | 比如: pFo1迁移过某canset并确定它无效,pFo2现在又迁移类似的canset时,它是否也大几率无效? |
 
+| 2907a | 一次rSolution调用上千次convert2CansetModel的性能问题 |
+| --- | --- |
+| 简介 | 如下日志,防撞三步训练完后,rSolution执行时调用上千次convert2CansetModel: 数据量大,性能太差 |
+| 日志 | rSolution打印: `R场景树枝点数 I:3 + Father:13 + Brother:375 = 总:391` |
+|  | `DEBUG匹配 => 循环圈:1 前辍:TCCanset.m 代码块:convert2Canset 3 计数:1431 均耗:1 = 总耗:1151 读:412 写:0` |
+|  | `DEBUG匹配 => 循环圈:1 前辍:TCCanset.m 代码块:convert2Canset endR 计数:573 均耗:1 = 总耗:440 读:166 写:0` |
+| 说明 | 如上日志: 有375条brother,且1431次进入convert2CansetModel(),最终输出617条cansetModel; |
+| 方案1 | 增强override的防重机制 `参考29079-思路2` |
+| 方案2 | 在getOverrideCansets()中对father和brother的cansets做防重; |
+| 方案3 | 在getOverrideCansets()中加上transferAlg前的判断,如果会生成多条一样的结果,则对其做防重 (最好别迁移了直接); |
+|  | 比如: 张三打人和李四和王五打人,都迁移成我打人,则3次生成经防重只生成一条; |
+
 <br><br><br><br><br>
