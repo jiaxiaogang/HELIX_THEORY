@@ -731,9 +731,11 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | 复现 | 防撞第1步正常训练,第2步用认知模式训练,然后投路偏下偏左一点,会错误的向右飞,没成功躲开 |
 | 思路1 | 首先现在没有负SPEFF数据,所以错也是正常现象,所以如下: |
 |  | 继续训练先: 先做下试错训练，使负SPEFF统计跑出来些数据。训练后测下负统计数据作用于canset竞争; |
+|  | 示图: ![](assets/692_试错训练后也飞错方向被撞.png),如图,试错训练后也没用,照样飞错方向被撞到; |
 |  | 然后: 尝试将transferAlg都存下来，在竞争时看要不要综合一下它的speff数据。 |
 | 思路2 | 同一批pFos,能不能互相印证canset的有效性?以帮助更准确的对canset竞争评价; |
 |  | 比如: pFo1迁移过某canset并确定它无效,pFo2现在又迁移类似的canset时,它是否也大几率无效? |
+| 暂停 | `先做2907a,防重性能机制`,避免各种cansets一堆,影响到飞错方向 `暂停,先做2907a`; |
 
 | 2907a | 一次rSolution调用上千次convert2CansetModel的性能问题 |
 | --- | --- |
@@ -746,5 +748,6 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | 方案2 | 在getOverrideCansets()中对father和brother的cansets做防重; |
 | 方案3 | 在getOverrideCansets()中加上transferAlg前的判断,如果会生成多条一样的结果,则对其做防重 (最好别迁移了直接); |
 |  | 比如: 张三打人和李四和王五打人,都迁移成我打人,则3次生成经防重只生成一条; |
+| todo1 | 看下断点: "测下override过滤生效"; |
 
 <br><br><br><br><br>
