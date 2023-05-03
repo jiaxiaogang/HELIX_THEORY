@@ -747,7 +747,11 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | 说明 | 如上日志: 有375条brother,且1431次进入convert2CansetModel(),最终输出617条cansetModel; |
 | 方案 | 将TCCanset的竞争机制改下,无论是激活的cansets还是激活后的防重机制都迭代下 `转29081`; |
 
-本节前面全解决了,直到29079暂停先修2907a,而2907a的改动转下节继续;
+1. 已解决: 本节前面各BUG全解决了,至29077-FZ79手训防撞第2步也可以使用迁移后的canset顺利飞行躲开;
+2. 未解决:
+   - 在29072测得用scene树取得的cansets有重复可能 (转29081-改项5);
+   - 29079测得各种cansets太冗余了,导致各种飞错方向,却来不及对它们全判负SPEFF (转29081修后回测);
+   - 2907a测得性能问题,需改进竞争机制,宽入窄出配置调整 (转29081);
 
 ***
 
@@ -758,16 +762,17 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 
 | 29081 | 通过以下修改项各项并行改动,迭代改进cansets的宽入窄出竞争过滤机制 |
 | --- | --- |
-| 改项1 | **增强override的防重机制 `参考29079-思路2`** |
+| **改项1** | **增强override的防重机制 `参考29079-思路2`** |
 | todo1 | 单条iScene对整个scene树下的所有fatherCanset都有override防重作用; |
 | todo2 | 单条fatherScene对整个scene树下的所有brotherCanset都override有防重作用; |
-| 改项2 | **在getOverrideCansets()中对整个scene树中全局father和brother中重复出现的canset做综合评分;** |
+| **改项2** | **在getOverrideCansets()中对整个scene树中全局father和brother中重复出现的canset做综合评分;** |
 | todo3 | 整个scene树下的所有fatherCansets中重复的canset综合speff评分; |
 | todo4 | 整个scene树下的所有brotherCansets中重复的canset综合speff评分; |
-| 改项3 | **判断transferAlg后,如果会生成多条一样的结果,则对其做防重(注意此处:未生成迁移后的fo);** |
+| **改项3** | **判断transferAlg后,如果会生成多条一样的结果,则对其做防重(注意此处:未生成迁移后的fo);** |
 |  | 比如: 张三打人和李四和王五打人,都迁移成我打人,则3次生成经防重只生成一条; |
 | todo5 | 其实生成了三条,只是它综合了speff评分 `参考todo3 & todo4`; |
-| 改项4 | **对每个fatherScene和brotherScene根据effectDic对他的cansets做竞争和限制limit;** |
-| todo6 | 写AIFilter对effectStrong评分进行竞争限制20%的limit激活; |
+| **改项4** | **对每个fatherScene和brotherScene根据effectDic对他的cansets做竞争和限制limit;** |
+| todo6 | 写AIFilter对effectStrong评分进行竞争限制20%的limit激活 `T`; |
+| **改项5** | **fatherScene和brotherScene也要支持防重 (参考29072)** |
 
 <br><br><br><br><br>
