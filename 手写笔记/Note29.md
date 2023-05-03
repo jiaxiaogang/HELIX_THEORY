@@ -12,6 +12,7 @@
   - [n29p05 Canset迁移性增强4: `在Canset抽具象基础上分析决策所需的改动`](#n29p05-canset迁移性增强4-在canset抽具象基础上分析决策所需的改动)
   - [n29p06 Canset迁移性增强5: `在场景共同点抽具象基础上分析决策所需的改动`](#n29p06-canset迁移性增强5-在场景共同点抽具象基础上分析决策所需的改动)
   - [n29p07 Canset迁移性增强6: `整体回测`](#n29p07-canset迁移性增强6-整体回测)
+  - [n29p08 Cansets宽入窄出竞争机制配置调整](#n29p08-cansets宽入窄出竞争机制配置调整)
 
 <!-- /TOC -->
 
@@ -737,17 +738,36 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 |  | 比如: pFo1迁移过某canset并确定它无效,pFo2现在又迁移类似的canset时,它是否也大几率无效? |
 | 暂停 | `先做2907a,防重性能机制`,避免各种cansets一堆,影响到飞错方向 `暂停,先做2907a`; |
 
-| 2907a | 一次rSolution调用上千次convert2CansetModel的性能问题 |
+| 2907a | 一次rSolution调用上千次convert2CansetModel的性能问题: cansets竞争机制迭代 |
 | --- | --- |
 | 简介 | 如下日志,防撞三步训练完后,rSolution执行时调用上千次convert2CansetModel: 数据量大,性能太差 |
 | 日志 | rSolution打印: `R场景树枝点数 I:3 + Father:13 + Brother:375 = 总:391` |
 |  | `DEBUG匹配 => 循环圈:1 前辍:TCCanset.m 代码块:convert2Canset 3 计数:1431 均耗:1 = 总耗:1151 读:412 写:0` |
 |  | `DEBUG匹配 => 循环圈:1 前辍:TCCanset.m 代码块:convert2Canset endR 计数:573 均耗:1 = 总耗:440 读:166 写:0` |
 | 说明 | 如上日志: 有375条brother,且1431次进入convert2CansetModel(),最终输出617条cansetModel; |
-| 方案1 | 增强override的防重机制 `参考29079-思路2` |
-| 方案2 | 在getOverrideCansets()中对father和brother的cansets做防重; |
-| 方案3 | 在getOverrideCansets()中加上transferAlg前的判断,如果会生成多条一样的结果,则对其做防重 (最好别迁移了直接); |
+| 方案 | 将TCCanset的竞争机制改下,无论是激活的cansets还是激活后的防重机制都迭代下 `转29081`; |
+
+本节前面全解决了,直到29079暂停先修2907a,而2907a的改动转下节继续;
+
+***
+
+## n29p08 Cansets宽入窄出竞争机制配置调整
+`CreateTime 2023.05.02`
+
+在上节末,训练飞错方向了(参考29079),然后也测得性能问题(参考2907a),本节先迭代canset宽入窄出改进性能问题,然后再回测下飞错方向的问题;
+
+| 29081 | 通过以下修改项各项并行改动,迭代改进cansets的宽入窄出竞争过滤机制 |
+| --- | --- |
+| 改项1 | **增强override的防重机制 `参考29079-思路2`** |
+| todo1 | 单条iScene对整个scene树下的所有fatherCanset都有override防重作用; |
+| todo2 | 单条fatherScene对整个scene树下的所有brotherCanset都override有防重作用; |
+| 改项2 | **在getOverrideCansets()中对整个scene树中全局father和brother中重复出现的canset做综合评分;** |
+| todo3 | 整个scene树下的所有fatherCansets中重复的canset综合speff评分; |
+| todo4 | 整个scene树下的所有brotherCansets中重复的canset综合speff评分; |
+| 改项3 | **判断transferAlg后,如果会生成多条一样的结果,则对其做防重(注意此处:未生成迁移后的fo);** |
 |  | 比如: 张三打人和李四和王五打人,都迁移成我打人,则3次生成经防重只生成一条; |
-| todo1 | 看下断点: "测下override过滤生效"; |
+| todo5 | 其实生成了三条,只是它综合了speff评分 `参考todo3 & todo4`; |
+| 改项4 | **对每个fatherScene和brotherScene根据effectDic对他的cansets做竞争和限制limit;** |
+| todo6 | 写AIFilter对effectStrong评分进行竞争限制20%的limit激活; |
 
 <br><br><br><br><br>
