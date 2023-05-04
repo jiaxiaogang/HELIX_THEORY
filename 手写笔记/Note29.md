@@ -766,13 +766,16 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | todo1 | 单条iScene对整个scene树下的所有fatherCanset都有override防重作用; |
 | todo2 | 单条fatherScene对整个scene树下的所有brotherCanset都override有防重作用; |
 | **改项2** | **在getOverrideCansets()中对整个scene树中全局father和brother中重复出现的canset做综合评分;** |
-| todo3 | 整个scene树下的所有fatherCansets中重复的canset综合speff评分; |
-| todo4 | 整个scene树下的所有brotherCansets中重复的canset综合speff评分; |
+| todo21 | 整个scene树下的所有fatherCansets中重复的canset综合speff评分; |
+| todo22 | 整个scene树下的所有brotherCansets中重复的canset综合speff评分; |
 | **改项3** | **判断transferAlg后,如果会生成多条一样的结果,则对其做防重(注意此处:未生成迁移后的fo);** |
 |  | 比如: 张三打人和李四和王五打人,都迁移成我打人,则3次生成经防重只生成一条; |
-| todo5 | 其实生成了三条,只是它综合了speff评分 `参考todo3 & todo4`; |
+|  | 反方: 我在水里和天上打人往往失败,但在陆地上打人却能成功; |
+|  | 所以: 多条iScene还是会生成多条,以上只是多条brother推举到father时要防重; |
+| todo31 | 其实生成了三条,只是它综合了speff评分 `参考todo21 & todo22`; |
+| todo32 | 推举的防重机制能够fo的构建全局防重机制即可实现 `T`; |
 | **改项4** | **对每个fatherScene和brotherScene根据effectDic对他的cansets做竞争和限制limit;** |
-| todo6 | 写AIFilter对effectStrong评分进行竞争限制20%的limit激活 `T`; |
+| todo41 | 写AIFilter对effectStrong评分进行竞争限制20%的limit激活 `T`; |
 | **改项5** | **fatherScene和brotherScene也要支持防重 (参考29072)** |
 
 <br><br><br><br><br>
