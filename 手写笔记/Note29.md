@@ -762,20 +762,37 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 
 | 29081 | 通过以下修改项各项并行改动,迭代改进cansets的宽入窄出竞争过滤机制 |
 | --- | --- |
-| **改项1** | **增强override的防重机制 `参考29079-思路2`** |
-| todo1 | 单条iScene对整个scene树下的所有fatherCanset都有override防重作用; |
-| todo2 | 单条fatherScene对整个scene树下的所有brotherCanset都override有防重作用; |
+| **改项1** | **增强override的防重机制 `参考29079-思路2`: 同一批pFos,是否可以互相印证canset的有效性?** |
+| todo11 | 单条iScene对整个scene树下的所有fatherCanset都有override防重作用 `废弃 (参考-改项2-疑问)`; |
+| todo12 | 单条fatherScene对整个scene树下的所有brotherCanset都override有防重作用 `废弃 (参考-改项2-疑问)`; |
 | **改项2** | **在getOverrideCansets()中对整个scene树中全局father和brother中重复出现的canset做综合评分;** |
-| todo21 | 整个scene树下的所有fatherCansets中重复的canset综合speff评分; |
-| todo22 | 整个scene树下的所有brotherCansets中重复的canset综合speff评分; |
+| todo21 | 整个scene树下的所有fatherCansets中重复的canset综合speff评分 `废弃 (参考-改项2-疑问)`; |
+| todo22 | 整个scene树下的所有brotherCansets中重复的canset综合speff评分 `废弃 (参考-改项2-疑问)`; |
+|  | 疑问: 多条iScene指向同一个fatherScene时,虽然fatherScene重复了,但它迁移时指向的iScene不同; |
+|  | 所以: 它们其实是有不同的,至少在transfer生成iCanset时,它们是不一样的,所以todo11,todo12,todo21,todo22全废弃; |
 | **改项3** | **判断transferAlg后,如果会生成多条一样的结果,则对其做防重(注意此处:未生成迁移后的fo);** |
 |  | 比如: 张三打人和李四和王五打人,都迁移成我打人,则3次生成经防重只生成一条; |
 |  | 反方: 我在水里和天上打人往往失败,但在陆地上打人却能成功; |
 |  | 所以: 多条iScene还是会生成多条,以上只是多条brother推举到father时要防重; |
-| todo31 | 其实生成了三条,只是它综合了speff评分 `参考todo21 & todo22`; |
+| todo31 | 其实生成了三条,只是它综合了speff评分 (参考todo21 & todo22) `废弃 需继续深入细节,转29082示图`; |
+|  | 分析: 这条没啥问题,本来就是生成三条,但怎么实现综合speff评分?需要继续深入分析,转29082示图 |
 | todo32 | 推举的防重机制能够fo的构建全局防重机制即可实现 `T`; |
 | **改项4** | **对每个fatherScene和brotherScene根据effectDic对他的cansets做竞争和限制limit;** |
 | todo41 | 写AIFilter对effectStrong评分进行竞争限制20%的limit激活 `T`; |
 | **改项5** | **fatherScene和brotherScene也要支持防重 (参考29072)** |
+| **结果** | 本表有些浮于表现,没想透彻,导致除了todo32和todo41外别的都没写,`转由29082继续`; |
+
+| 29082 | 继续深入分析飞错方向问题 (说白了,还是cansets的竞争机制问题,让更准确的canset更易执行行为化) |
+| --- | --- |
+| 说明 | 本节继续深入分析: 通过分析怎样的迁移更准确,怎样的不一定准确,来解决飞错方向的问题 |
+| 示图 | ![](assets/693_pFos互相印证canset有效性分析示图.png) |
+| 思路1 | **如图思路1方案分析如下 `95%`:** |
+|  | 1. 如图,s2和s3中间层共同抽象只可能是似层(如s4),而s4也是father层,用它来预判c1迁移到c3后可能无效; |
+|  | 2. 相当于s1将c1继承给s2,然后s2又将c2推举到s4,这么一继承一推举,确实看起来此思路可行; |
+|  | 3. 即在当前pFos迁移过,它的迁移性就更强: 在一继承一推举中,与当前pFos相关性强的,它的可迁移性越强; |
+| 思路2 | **如图思路2方案分析如下 `5%`:** |
+|  | 1. s2和s3差异有可能巨大,此时共享负经验显然不准确 (比如:少年我打不死老虎,青年我继承打老虎技能后可能轻松虐它); |
+|  | 2. 即: 少年我和青年我,想共享speff经验,最好是找到二者的共同抽象,这样共享起来有依据 (即思路1的做法); |
+| 结果 | 思路2太简单暴力,导致准确度不足,所以思路2废弃,而思路1无此问题,暂选定思路1; |
 
 <br><br><br><br><br>
