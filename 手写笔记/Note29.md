@@ -905,10 +905,12 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | 2908a | 求解使用识别-实践规划 |
 | --- | --- |
 | todo1 | 前期验证: 将匹配度打印出来,看下改之前飞错方向时,它的baseScene匹配度是否很低; |
-| todo2 | 写Scene求解过滤器 (复用识别匹配度做竞争过滤器); |
+| todo2 | 写Scene求解过滤器 (复用识别匹配度做竞争过滤器) `T`; |
 | todo3 | 应用Scene求解过滤器: 在TCScene中取father和brother时调用 `T`; |
-| todo4 | 回测下,是否真的在稳定性的scene下: 如[向350棒],生成了稳定的canset[向350棒,上飞]; |
+| todo4 | Scene求解过滤器仅保留前20%的结果 `T`; |
+| todo5 | Scene求解过滤器过滤掉无conCansets的结果 `T`; |
+| todo6 | 回测下,是否真的在稳定性的scene下: 如[向350棒],生成了稳定的canset[向350棒,上飞]; |
 
-在29081-todo41加了TCCanset的竞争机制(稳定性竞争),在2908a写TCScene竞争机制(使用识别算法实现);
+**本节总结: 在29081-todo41加了TCCanset的竞争机制(稳定性竞争),在2908a写TCScene竞争机制(使用识别算法实现);**
 
 <br><br><br><br><br>
