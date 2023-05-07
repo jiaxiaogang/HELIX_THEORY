@@ -898,9 +898,16 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | 解答1 | TCScene改为仅取最匹配前20%的absFathers和conBrothers进行后续操作; |
 |  | 补充: 要求absFathers和conBrothers必须是含cansets的部分,才有资格进行20%的竞争; |
 | 小结 | 根据问题1和解答1,可见竞争的断层就在`求解的TCScene中`,即验证了29086b的结果,断层确实在求解中; |
-| 方案 | 将TCScene中加上竞争 (通过识别算法来实现Father和Brother层的竞争激活); |
-|  | TODOTOMORROW20230507: 加上`求解用识别来实现竞争`; |
+| 方案 | 加上`求解使用识别`,将TCScene中加上竞争 (通过识别算法来实现Father和Brother层的竞争激活) `实践转2908a`; |
 
 **小结: 其实现在缺失的还是`29088-结果 & 29089-解答1`中指出的`缺失竞争问题`,因为HE的各模块取数据其实都要有伸有缩,只要有伸没缩就必然会带来混乱问题;**
+
+| 2908a | 求解使用识别-实践规划 |
+| --- | --- |
+| todo1 | 前期验证: 将匹配度打印出来,看下改之前飞错方向时,它的baseScene匹配度是否很低; |
+| todo2 | 在TCScene中取father和brother时加上识别竞争过滤器; |
+| todo3 | 回测下,是否真的在稳定性的scene下: 如[向350棒],生成了稳定的canset[向350棒,上飞]; |
+
+在29081-todo41加了TCCanset的竞争机制(稳定性竞争),在2908a写TCScene竞争机制(使用识别算法实现);
 
 <br><br><br><br><br>
