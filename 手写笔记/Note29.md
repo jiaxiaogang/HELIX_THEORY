@@ -13,6 +13,7 @@
   - [n29p06 Canset迁移性增强5: `在场景共同点抽具象基础上分析决策所需的改动`](#n29p06-canset迁移性增强5-在场景共同点抽具象基础上分析决策所需的改动)
   - [n29p07 Canset迁移性增强6: `整体回测`](#n29p07-canset迁移性增强6-整体回测)
   - [n29p08 Cansets宽入窄出竞争机制配置调整](#n29p08-cansets宽入窄出竞争机制配置调整)
+  - [n29p09 回测TCCanset和TCScene竞争机制](#n29p09-回测tccanset和tcscene竞争机制)
 
 <!-- /TOC -->
 
@@ -914,5 +915,15 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | todo6 | 回测下,是否真的在稳定性的scene下: 如[向350棒],生成了稳定的canset[向350棒,上飞]; |
 
 **本节总结: 在29081-todo41加了TCCanset的竞争机制(稳定性竞争),在2908a写TCScene竞争机制(使用识别算法实现);**
+
+***
+
+## n29p09 回测TCCanset和TCScene竞争机制
+`CreateTime 2023.05.08`
+
+| 29091 | 测得conFo和absFo用indexDic复用匹配度为0 |
+| --- | --- |
+| 调试 | 经调试,indexDic映射的抽具象alg间没有matchValue存着,但alg间的mIsC关联是有的; |
+| todo | 查下在alg生成关联时,却没存上matchValue; |
 
 <br><br><br><br><br>
