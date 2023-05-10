@@ -921,9 +921,11 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 ## n29p09 回测TCCanset和TCScene竞争机制
 `CreateTime 2023.05.08`
 
-| 29091 | 测得conFo和absFo用indexDic复用匹配度为0 |
+| 29091 | 测得Scene过滤器排序因子:匹配度全是0: 取到的conFo和absFo用indexDic复用匹配度为0 |
 | --- | --- |
 | 调试 | 经调试,indexDic映射的抽具象alg间没有matchValue存着,但alg间的mIsC关联是有的; |
-| todo | 查下在alg生成关联时,却没存上matchValue; |
+| 修复 | 经查,在类比器中alg类比时,生成抽象alg与具象alg未存匹配度,导致复用时为null,加上后ok了 `T`; |
+| 回测1 | 经回测,alg类比后不再有未存上匹配度的问题 `T`; |
+| 回测2 | 经回测,Scene过滤器排序因子取匹配度也有值了 `T`; |
 
 <br><br><br><br><br>
