@@ -975,5 +975,8 @@ P强度:(36)	> F676[A672(高100,皮0,向355,距191)]->{-3.09} (SP:{0 = S0P35;1 =
 | 日志 | item场景(Father):F634[A633(高100,皮0,向355)] 取得候选数:0 转成候选模型数:0 |
 |  | item场景(Father):F726[A725(高100,皮0,距149)] 取得候选数:0 转成候选模型数:0 |
 |  | item场景(Father):F628[A627(高100,皮0,向359)] 取得候选数:0 转成候选模型数:0... |
+| 线索 | 经查,在TCTransfer中迁移后的newCanset存到了targetIndex下,而canset的target和sceneFo的target是两回事 |
+|  | canset的target是`执行目标`,而scene的target是`任务目标`,**二者用错了导致存下的canset存错地方,所以取不到** |
+| 方案 | 将canset执行目标转成scene的任务目标,然后再存canset到转换后的正确位置即可 `T`; |
 
 <br><br><br><br><br>
