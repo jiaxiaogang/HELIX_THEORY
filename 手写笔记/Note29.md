@@ -935,6 +935,7 @@ if ([SMGUtils filterSingleFromArr:itemCanset.contentPorts checkValid:^BOOL(AIPor
 | --- | --- |
 | 说明 | 防撞训练第3步后,出生路中偏右上,扔木棒,结果下飞了,应该上飞才对 |
 | 调试 | 见29092代码段日志,概念和时序识别时就有向2和向6,结果F1067取得了CansetF2910最终执行输出; |
+| 结果 | 尝试在训练过程中,使speff越来越准确 `转29093`; |
 
 ```c
 29092代码段
@@ -978,5 +979,9 @@ P强度:(36)	> F676[A672(高100,皮0,向355,距191)]->{-3.09} (SP:{0 = S0P35;1 =
 | 线索 | 经查,在TCTransfer中迁移后的newCanset存到了targetIndex下,而canset的target和sceneFo的target是两回事 |
 |  | canset的target是`执行目标`,而scene的target是`任务目标`,**二者用错了导致存下的canset存错地方,所以取不到** |
 | 方案 | 将canset执行目标转成scene的任务目标,然后再存canset到转换后的正确位置即可 `T`; |
+
+| 29094 | 日志测试分析下整个训练过程中,canset越来越准确度的演化过程 |
+| --- | --- |
+| 尝试1 | 看能不手训第2步(包括正常躲开和错误被撞),然后观察speff的准确度变化; |
 
 <br><br><br><br><br>
