@@ -1017,5 +1017,7 @@ P强度:(36)	> F676[A672(高100,皮0,向355,距191)]->{-3.09} (SP:{0 = S0P35;1 =
 | 日志3 | 刚由father迁移成F1589: `迁移结果: iScene:F777 Canset:F1589` |
 |  | 立马eff更新成了H1N1: `Eff更新S:F1589 (index:1 H1N1)` |
 | 问题3 | 经查F1589文件的创建时间和修改时间一致,应该是新的,但它为什么在无效时更新的H是1呢? |
+| 线索 | 在effect()方法中,无论是fatherCanset还是iCanset全用了iScene,导致fatherCanset统计的EFF在错误的场景下; |
+| 修复 | 在每个ifbCanset都对应一个ifbScene,执行effect()时,一一对应着执行统计更新 `T`; |
 
 <br><br><br><br><br>
