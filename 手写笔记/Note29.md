@@ -1079,5 +1079,8 @@ P强度:(36)	> F676[A672(高100,皮0,向355,距191)]->{-3.09} (SP:{0 = S0P35;1 =
 | 方案 | 迭代solutionFoRankingV3(),废弃前后段的匹配度强度竞争,改为:用cansetFo的speff进行排名竞争,实践如下: |
 | todo1 | 用迁移前取到的cansetFo来进行speff竞争,因为迁移后还没speff这些数据 `T`; |
 | todo2 | 根据AICansetModel的cutIndex和targetIndex来计算稳定性和有效性 `T`; |
+| 另bug1 | AIRank的排序排反了,上面示图中出现啥结果都有可能 (是个低级错误,却未测到的bug); |
+| 另bug2 | AIRank取speff值有问题,因为错用了int类型,导致归1化后只会取成0或1,上面示图压根没算清楚speff值 (低级错误); |
+| 结果 | 方案实践后,又改了几个影响到排名的BUG(未必是此方案的功劳,BUG也明确影响到了排序),但全改后现在还ok `T`; |
 
 <br><br><br><br><br>
