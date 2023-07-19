@@ -511,6 +511,7 @@ F4497[M328{↑饿-16},A787(距27,向127,果),飞↑,A4488(距0,向225,果),A2893
 | 方案 | 思维和Demo都在主线程,看能不能把思维异步下,从根源上解决二者互卡的问题 (以前试过失败了,这次更坚决试下); |
 | 遇坑 | 异步执行后,很多模块(如概念识别)等非常耗时 `电脑当时在卡,电脑cpu不卡后自然就好了 T`; |
 | todo1 | 将TC的三个commit方法和AITime的触发器,都切换到TC线程 `T`; |
-| todo2 | 封装线程安全的MutableArray,避免多线程操作闪退 (主要是DemandManager的loopCache数组) `T`; |
+| todo2 | 封装线程安全的AsyncMutableArray,避免多线程操作闪退 (DemandManager的loopCache数组等) `T`; |
+| todo3 | AsyncMutableArray支持forEash方法,避免循环里面的array内容时有多线程操作闪退问题 `T`; |
 
 <br><br><br><br><br>
