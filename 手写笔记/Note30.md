@@ -513,5 +513,6 @@ F4497[M328{↑饿-16},A787(距27,向127,果),飞↑,A4488(距0,向225,果),A2893
 | todo1 | 将TC的三个commit方法和AITime的触发器,都切换到TC线程 `T`; |
 | todo2 | 封装线程安全的AsyncMutableArray,避免多线程操作闪退 (DemandManager的loopCache数组等) `T`; |
 | todo3 | AsyncMutableArray支持forEash方法,避免循环里面的array内容时有多线程操作闪退问题 `T`; |
+| todo4 | tc线程由串改为并行,因为外界随时会输入信号,不应排队 (如果TC在忙,可在某些模块因优先级不足而中断,但不该排队) `T` |
 
 <br><br><br><br><br>
