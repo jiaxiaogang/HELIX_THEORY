@@ -773,6 +773,24 @@ Demand竞争 ==> START 共1条
 
 线索: 看起来似乎是因为HDemand的baseAlgModel是actYes状态,导致它激活失败;
 疑点: 但algModel并不是末帧,它应该不能算endHavActYes;
+  > 在现在代码的endHavActYes()方法中,demandModel是被排除不算末枝的,所以只因为baseAlgModel是ActYes状态就不激活了;
+分析: 以下顺着思路分析此问题 (主要围绕HDemand是否也应计入endActYes判断中来思考),并随思随记:
+1. HDemandModel应该计入,因为HDemandModel也有可能有解;
+      a. 疑问: HDemand.baseAlg到底应该自然发生,还是推进H任务后发生?这是一个问题 (答案见`分析结果`);
+              * 如果是前者,那么H任务就不必执行;
+              * 如果是后者,那么H任务就应该执行;
+      b. 尝试例1: 在等西红柿变红的过程中,是否再放入可催熟的苹果呢? (此例失败,略过);
+              * 此例催熟的动机,应该是另一个R任务,所以此例不适用于本问题,略过;
+      c. 尝试例2: 如果想要坚果随时就会有,那还需要对带皮果去皮吗? (显然,是否执行H任务,要看baseAlg自然出现的SP稳定性);
+              * 比如: baseAlg 50%会自然发生,而HDemandModel的稳定性是60%,那么我们就可以尝试执行HCanset;
+              * 再如: baseAlg 99%会自然发生,而HDemandModel的稳定性是60%,那么我们还不如原地等待呢;
+2. RDemandModel是否计入呢?
+      a. 如果不计入,那么子R任务就没法跑了;
+分析结果: 根据c例子,hDemand不管怎样都应该先执行下,只是在hSolution反思时,要pk一下是否值得行为化;
+方案: 在endHavActYes()方法中,应该不排除demandModel (支持此方案的正例如下);
+  正例1. 经查旧代码，在28143暴力的认为HDemand无解不算末枝，但HDemand并非无解时呢？却没照顾到 (即逻辑有漏洞)。
+  正例2. 以上`分析-c尝试例2`的两个例子，说明无论hDemand是否有解或反思通过，此处都应该优先执行hDemand。
+todo1: 先将hDemandModel也计入末枝actYes判断中,RDemand不动(因为不影响当前问题,先不动它) `T`;
 ```
 
 ***
