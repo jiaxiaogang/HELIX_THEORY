@@ -945,6 +945,8 @@ todo2. 在反思通过时优先执行子H任务,而不通过时优先执行子R�
 | 说明 | 在30126-训得问题,发现H任务全是无计可施; |
 | 复现 | `FZ8604,饿`,然后直接看hSolution的日志,发现无计可施; |
 | 原因 | 经查,因为hSolution_Slow()不支持`TCScene & TCCanset & TCTransfer`功能,导致全是无计可施; |
+| 方案 | 当时写TCScene,TCCanset,TCTransfer这些功能时,只对R任务做了支持,现在补上H任务的支持即可; |
+| todo1 | 捋一捋TCScene,TCCanset,TCTransfer这系列代码,对H任务兼容支持下 `T`; |
 
 ***
 
