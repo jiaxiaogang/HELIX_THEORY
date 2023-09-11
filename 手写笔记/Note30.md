@@ -947,6 +947,16 @@ todo2. 在反思通过时优先执行子H任务,而不通过时优先执行子R�
 | 原因 | 经查,因为hSolution_Slow()不支持`TCScene & TCCanset & TCTransfer`功能,导致全是无计可施; |
 | 方案 | 当时写TCScene,TCCanset,TCTransfer这些功能时,只对R任务做了支持,现在补上H任务的支持即可; |
 | todo1 | 捋一捋TCScene,TCCanset,TCTransfer这系列代码,对H任务兼容支持下 `T`; |
+| 回测 | 经回测还是无计可施,但原因与本表初有所不同了,查修见下表; |
+
+**小结-30127主要对H任务支持了TCScene,TCCanset,TCTransfer三大模块**
+
+| 30128 | 回测上表改动 |
+| --- | --- |
+| 问题 | 在hGetSceneTree()返回0条结果,经调试,发现h任务的targetFo是R任务的canset,而不是scene; |
+| 原因 | 因为h的targetFo压根不是scene,所以I从抽象取不到FatherScene,因为I压根不是sceneFo; |
+| 原则 | **肯定得回到scene,不能canset当成scene,否则即使sceneTree有结果,canset下也无法再取到hCanset解;** |
+
 
 ***
 
