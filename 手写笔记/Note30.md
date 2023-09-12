@@ -956,7 +956,16 @@ todo2. 在反思通过时优先执行子H任务,而不通过时优先执行子R�
 | 问题 | 在hGetSceneTree()返回0条结果,经调试,发现h任务的targetFo是R任务的canset,而不是scene; |
 | 原因 | 因为h的targetFo压根不是scene,所以I从抽象取不到FatherScene,因为I压根不是sceneFo; |
 | 原则 | **肯定得回到scene,不能canset当成scene,否则即使sceneTree有结果,canset下也无法再取到hCanset解;** |
+| 示图 | ![](assets/706_H任务共享R任务的iScene.png) |
+| 结果 | 根据上图修复此BUG后 (把R的sceneFo用于H任务的scene),回测发现H可激活canset了,不再是无计可施 `T`; |
 
+**小结-30128修复了H任务取scene错误的小小BUG;**
+
+| 30129 | H输出canset的targetIndex错误 |
+| --- | --- |
+| 问题说明 | 上节回测后,发现H输出canset的targetIndex=fo.count而不是正确的2(第2帧是坚果); |
+| 修复isH | 测得的isH传错了,导致targetIndex=fo.count错误; |
+| 问题转移 | isH的值改正后,又发现TCCanset.convert2CansetModel()在H任务时返回Nil; |
 
 ***
 
