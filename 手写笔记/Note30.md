@@ -991,10 +991,12 @@ todo2. 在反思通过时优先执行子H任务,而不通过时优先执行子R�
 
 上节末,发现HCanset从RCansets的理性节点部分来求是不对的,H应该有自己的场景和cansets挂载;
 
-| 30131 | 父子场景-RCanset做为HScene |
+| 30131 | HCanset由R场景改为单独场景-RCanset做为HScene |
 | --- | --- |
-| 说明 | 按道理,应该是RScene->RCanset(做为HScene)->HCanset,这样的父子场景结构 (RCanset同时也是HScene); |
-| 缺点 | 这么做相应迁移性是会弱一些的,但首先主要是应该做父子场景,其次才是它的迁移性问题,到时候遇到迁移性差问题再解决便是; |
+| 说明 | 根据30129-缺点3条来看,HCanset应该有自己的独立HScene,与RScene间接关联,形成类似嵌套关系; |
+| 方案 | 应该是RScene->RCanset(做为HScene)->HCanset,这样的父子场景结构 (RCanset同时也是HScene); |
+|  | 缺点: 这么做相应迁移性是会弱一些的,但首先主要是应该做好父子场景,其次才是它的迁移性问题 `以后遇到了再解决`; |
+|  | **缺点的解决思路: HCanset的迁移性是依附于RCanset的,只要HCanset该跟的时候紧跟着RCanset就能具备合理的迁移性;** |
 
 ***
 
