@@ -999,9 +999,17 @@ todo2. 在反思通过时优先执行子H任务,而不通过时优先执行子R�
 |  | **缺点的解决思路: HCanset的迁移性是依附于RCanset的,只要HCanset该跟的时候紧跟着RCanset就能具备合理的迁移性;** |
 | todo1 | 在TCRethink.reasonOutRethink()中,每一条canset的SP更新,同时为其新增一条spIndex下的hCanset `T`; |
 |  | > 说白了,以前仅统计SP值,而现在要对每一次SP+1的发生,构建hCanset了 (相当于canset的canset,还增强了SP的可解释性); |
-| todo2 | 在TCScene.hGetSceneTree()中,改回rCanset做为hScene (参考30128); |
-| todo3 | 在hSolution流程中,改为从hScene取hCansets; |
-| todo4 | 回测,在`FZ8604,饿,鸟上方附近扔坚果`,看能不能feedbackTOR匹配上,然后生成HCanset; |
+| todo2 | 在TCScene.hGetSceneTree()中,改回rCanset做为hScene (参考30128) `T`; |
+| todo3 | 在hSolution流程中,改为从hScene取hCansets `TCScene改后,这些都自然ok了,不需要改 T`; |
+| todo4 | 回测,在`FZ8604,饿,鸟上方附近扔坚果`,看能不能feedbackTOR匹配上,然后生成HCanset `T`; |
+|  | > 经回测,有feedbackTOR匹配上的,也有生成HCanset; |
+| 结果 | 按方案修复,且回测有效 `T`; |
+
+**小结: 本节将RCanset做为HScene,并在OR反省时生成hCanset;**
+
+| 30132 | 训练学习:`饿时,扔有皮果并压破皮`的过程,学HCanset |
+| --- | --- |
+| 训练步骤 | `FZ8604,饿,鸟上方路上扔有皮果,压破皮`,看能否学会破皮HCanset; |
 
 ***
 
