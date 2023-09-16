@@ -1011,8 +1011,11 @@ todo2. 在反思通过时优先执行子H任务,而不通过时优先执行子R�
 | --- | --- |
 | 训练步骤 | `FZ8604,饿,鸟上方路上扔有皮果,压破皮`,看能否学会破皮HCanset; |
 | 训得问题 | 没训练出预想中的[有皮果,压,无皮果],经查rCanset在OR反省时取到的order实则是每条TOAlgModel的feedbackAlg; |
-| 方案1 | 可把TOFoModel的feedbackAlg方式,改成类似pFo.realMaskFo的方式; |
-| 方案2 | 调试下TOFoModel的base中找到pFo,然后从它的realMaskFo中能不能取到我们想要的; |
+| 方案 | 可把TOFoModel的feedbackAlg方式,改成类似pFo.realMaskFo的方式; |
+|  | 前提: 先调试下TOFoModel的base中找到pFo,然后从它的realMaskFo中能不能取到我们想要的; |
+|  | 调试: 从basePFo倒是可以取到realMaskFo,取得realMaskFo如下: |
+|  | >>> F23394[A23334(向90,距12,果),M448{↑饿-16},A23334(向90,距12,果),M448{↑饿-16},A23334(向90,距12,果)] |
+|  | 前提2: 查下,在rCanset执行状态=actYes后,或者failure后,是否已经获得不到反馈,对以上realMaskFo有没影响; |
 
 ***
 
