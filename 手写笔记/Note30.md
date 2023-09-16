@@ -1010,6 +1010,9 @@ todo2. 在反思通过时优先执行子H任务,而不通过时优先执行子R�
 | 30132 | 训练学习:`饿时,扔有皮果并压破皮`的过程,学HCanset |
 | --- | --- |
 | 训练步骤 | `FZ8604,饿,鸟上方路上扔有皮果,压破皮`,看能否学会破皮HCanset; |
+| 训得问题 | 没训练出预想中的[有皮果,压,无皮果],经查rCanset在OR反省时取到的order实则是每条TOAlgModel的feedbackAlg; |
+| 方案1 | 可把TOFoModel的feedbackAlg方式,改成类似pFo.realMaskFo的方式; |
+| 方案2 | 调试下TOFoModel的base中找到pFo,然后从它的realMaskFo中能不能取到我们想要的; |
 
 ***
 
