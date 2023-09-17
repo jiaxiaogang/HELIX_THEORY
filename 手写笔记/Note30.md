@@ -1005,17 +1005,22 @@ todo2. 在反思通过时优先执行子H任务,而不通过时优先执行子R�
 |  | > 经回测,有feedbackTOR匹配上的,也有生成HCanset; |
 | 结果 | 按方案修复,且回测有效 `T`; |
 
-**小结: 本节将RCanset做为HScene,并在OR反省时生成hCanset;**
+**小结: 本表将RCanset做为HScene,并在OR反省时生成hCanset;**
 
 | 30132 | 训练学习:`饿时,扔有皮果并压破皮`的过程,学HCanset |
 | --- | --- |
 | 训练步骤 | `FZ8604,饿,鸟上方路上扔有皮果,压破皮`,看能否学会破皮HCanset; |
 | 训得问题 | 没训练出预想中的[有皮果,压,无皮果],经查rCanset在OR反省时取到的order实则是每条TOAlgModel的feedbackAlg; |
 | 方案 | 可把TOFoModel的feedbackAlg方式,改成类似pFo.realMaskFo的方式; |
-|  | 前提: 先调试下TOFoModel的base中找到pFo,然后从它的realMaskFo中能不能取到我们想要的; |
+| 前提1 | 先调试下TOFoModel的base中找到pFo,然后从它的realMaskFo中能不能取到我们想要的; |
 |  | 调试: 从basePFo倒是可以取到realMaskFo,取得realMaskFo如下: |
 |  | >>> F23394[A23334(向90,距12,果),M448{↑饿-16},A23334(向90,距12,果),M448{↑饿-16},A23334(向90,距12,果)] |
-|  | 前提2: 查下,在rCanset执行状态=actYes后,或者failure后,是否已经获得不到反馈,对以上realMaskFo有没影响; |
+| 前提2 | 查下,在rCanset执行状态=actYes后,或者failure后,是否已经获得不到反馈,对以上realMaskFo有没影响; |
+|  | >>> 看起来只要是在有效期(isExpired=true)的pFo,都会接受realMaskFo反馈; |
+|  | >>> 结论: 现在先不管这个了,等测到有realMaskFo有缺失帧时,再来补查这块,而不是主动去查; |
+| 结果 | 经以上两个前提分析,此方案是可行的 `T`; |
+
+**小结: 本表尝试训练30131的成果,但不顺利,改进了下,用pFo.realMaskFo来生成hCanset后ok;**
 
 ***
 
