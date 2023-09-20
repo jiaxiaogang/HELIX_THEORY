@@ -997,6 +997,7 @@ todo2. 在反思通过时优先执行子H任务,而不通过时优先执行子R�
 | 方案 | 应该是RScene->RCanset(做为HScene)->HCanset,这样的父子场景结构 (RCanset同时也是HScene); |
 |  | 缺点: 这么做相应迁移性是会弱一些的,但首先主要是应该做好父子场景,其次才是它的迁移性问题 `以后遇到了再解决`; |
 |  | **缺点的解决思路: HCanset的迁移性是依附于RCanset的,只要HCanset该跟的时候紧跟着RCanset就能具备合理的迁移性;** |
+|  | >>> 而rCanset是会被多个RDemand复用的,**只要rCanset的迁移性够强,那么hCanset的迁移性就足够;** |
 | todo1 | 在TCRethink.reasonOutRethink()中,每一条canset的SP更新,同时为其新增一条spIndex下的hCanset `T`; |
 |  | > 说白了,以前仅统计SP值,而现在要对每一次SP+1的发生,构建hCanset了 (相当于canset的canset,还增强了SP的可解释性); |
 | todo2 | 在TCScene.hGetSceneTree()中,改回rCanset做为hScene (参考30128) `T`; |
@@ -1043,6 +1044,8 @@ OR反省(好 第1帧)为rCanset:F16894[A602(距14,向47,棒),飞↑,A5705(向353
 
 | 30133 | 训测下一步流程: 上表习得的hCanset能否正常激活 |
 | --- | --- |
+| 问题 | 并不能顺利激活,本来怀疑是rCanset覆盖不够导致,就加训了下生成更多hCanset; |
+|  | 结果,在加训后,rCanset也激活不了了... |
 
 ***
 
