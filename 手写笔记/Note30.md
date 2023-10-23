@@ -1346,6 +1346,13 @@ rAlg反馈_M(A9900) isC(A3524) 结果:0
 | todo1 | 判断cansetA反馈时,可以根据cansetAlg的共同抽象来判断; |
 | todo2 | 废弃cansetFo识别和类比; |
 | todo3 | 在SPEFF时,要遍历一下共同抽象cansetAlgs,都分别生成新的canset并SPEFF+-1计数; |
+|  | > 回顾: 以前有个TCRethinkUtil.spEff4Abs()方法,就是把抽象canset也顺便更新了SPEFF |
+|  | > Q:那现在要改动什么呢? A:现在要改为只有共同抽象部分所生成的absCanset才更新SPEFF; |
+| todo4 | 以前的生成canset比较混乱(在多外都有代码调用生成newCanset),可以先捋一下究竟要统一下在哪里生成比较好; |
+| todo5 | hCanset生成时机也捋一下,看以前的生成时机是否ok; |
+| todo6 | canset没有类比抽象后,怎么实现把多余帧剔除呢? `暂无需剔除 T` |
+|  | > 分析: canset的简单时序也应受普通时序的简短所影响,而非自行找规律来剔除; |
+|  | > 结果: 所以先不写多余帧剔除功能跑着先,看如果到时候确实有必要时,再来继续想这个问题; |
 
 ***
 
