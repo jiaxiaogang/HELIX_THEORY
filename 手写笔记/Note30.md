@@ -1349,18 +1349,25 @@ rAlg反馈_M(A9900) isC(A3524) 结果:0
 |  | > 回顾: 以前有个TCRethinkUtil.spEff4Abs()方法,就是把抽象canset也顺便更新了SPEFF |
 |  | > Q:那现在要改动什么呢? A:现在要改为只有共同抽象部分所生成的absCanset才更新SPEFF; |
 | todo4 | 以前的生成canset比较混乱(在多外都有代码调用生成newCanset),可以先捋一下究竟要统一下在哪里生成比较好; |
-|  | **共有7处生成canset,如下:** |
-|  | todo4.1 canset类比后生成absCanset (todo2会废弃这条); |
-|  | todo4.2 feedbackTOR()中有反馈时,hCanset会再类比生成absHCanset (同上,需废弃); |
-|  | todo4.3 reasonOutRethink()时,会生成新的hCanset; |
-|  | todo4.4 transferJiCen()从father继承后,会生成新的canset (不必废弃,迁移后生成新的很正常); |
-|  | todo4.5 transfer4TuiJu()从brother推举后,会生成新的canset (不必废弃,迁移后生成新的很正常); |
-|  | todo4.6 在pushFrameFinish()中会有实际protoFo和solutionFo类比生成absCanset (需废弃,参考3014a-问题3); |
-|  | todo4.7 在pushFrameFinish()中会将实际protoFo生成为新的canset,并调用canset识别抽象 (新的不用废弃,抽象废弃); |
+|  | **(一) 经查,现代码共有7处生成canset,如下:** |
+|  | 1. canset类比后生成absCanset (todo2会废弃这条); |
+|  | 2. feedbackTOR()中有反馈时,hCanset会将执行中的solutionFo和真实的protoFo再类比生成absHCanset (不用废弃); |
+|  | 3. reasonOutRethink()时,会生成新的hCanset (自然解,不废弃); |
+|  | 4. transferJiCen()从father继承后,会生成新的canset (不必废弃,迁移后生成新的很正常); |
+|  | 5. transfer4TuiJu()从brother推举后,会生成新的canset (不必废弃,迁移后生成新的很正常); |
+|  | 6. 在pushFrameFinish()中会有实际protoFo和solutionFo类比生成absCanset (需废弃,参考3014a-问题3); |
+|  | 7. 在pushFrameFinish()中会将实际protoFo生成为新的canset (自然解,不废弃); |
+|  | 8. 在7生成新canset后,会调用canset识别抽象 (canset识别类比全废弃); |
+|  | **(二) 具体哪些要保留呢(除下面保留之外的都废弃掉)?如下:** |
+|  | todo4.1 自然的解,应直接生成新canset (如3&7); |
+|  | todo4.2 执行中的解,与真实protoFo不太一样,可先对二者类比,后生成为新的canset (如2&6); |
+|  | todo4.3 迁移后的解,可直接生成新canset (如4&5); |
+|  | todo4.4 为`猜测尝试`生成为canset (这条不是保留,而是为前三个todo补足哪里还需要生成canset) `在todo3已实践 T`; |
 | todo5 | hCanset生成时机也捋一下,看以前的生成时机是否ok; |
-| todo6 | canset没有类比抽象后,怎么实现把多余帧剔除呢? `暂无需剔除 T` |
+| todo6 | canset没有类比抽象后,怎么实现把多余帧剔除呢? `todo4.2已做,参考追加 T` |
 |  | > 分析: canset的简单时序也应受普通时序的简短所影响,而非自行找规律来剔除; |
 |  | > 结果: 所以先不写多余帧剔除功能跑着先,看如果到时候确实有必要时,再来继续想这个问题; |
+|  | > 追加: 其实在todo4.2中,是有剔除功能的 `在todo4.2已实践,此处不用做`; |
 
 ***
 
