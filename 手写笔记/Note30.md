@@ -1467,10 +1467,8 @@ rAlg反馈_M(A9900) isC(A3524) 结果:0
 7. `tempLogPrerfix RCanset预想与实际类比未执行,F9092 状态:3 //状态3是ActNo`
 // 线索: 说白了,预想失败了(rCansetF9092因过度具象失败),但`实际F9134成功了`,那么二者是否顶着失败来类比抽象呢;
 
-8. `tempLogPrefix solution to actNo-------->`
-`tempLogPrefix RCanset预想与实际类比:F9182[A13(16,7),A1829(距33,向140,皮果)] (curS:F8382 状态:Runing fromPFo:F1832 帧:2)`
+8. `tempLogPrefix RCanset预想与实际类比:F9270[A13(16,7),A1829(距33,向140,皮果)] (curS:F3637 状态:ActNo fromPFo:F1832 帧:2)`
 // 回测: 根据7线索制定30153-方案,并修改后,回测得到以上日志,在ActNo后,可以顺利触发"预想与实际"类比了;
-//TODOTOMORROW: 明天再回测下,以上打的日志中显示,curSolution是Runing状态,而不是ActNo;
 ```
 
 **小结: 3014d-todo8的未能执行"预想与实际"类比的问题,最终在30153-方案被解决了,做法就是加了状态判断,即使ActNo已失败,但实际却有效,也可以触发Canset类比抽象;**
