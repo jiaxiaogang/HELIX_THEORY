@@ -1476,6 +1476,10 @@ rAlg反馈_M(A9900) isC(A3524) 结果:0
 | 30154 | 回测 |
 | --- | --- |
 | 测1 | 在FZ884的基础上,多跑下30145-步骤3(跑生成rCanset),看下rCanset的抽象情况是否ok(主要提高可行性); |
+|  | 问题: ![](assets/710_测得预想与实际类比absCanset过度抽象问题.png) |
+|  | 经查: 实际protoFo取的getOrderUseMatchAndFeedbackAlg(),而生成新Canset取的convertOrders4NewCansetV2() |
+|  | 调试: 前者收集的是子algModel有feedbackTOR反馈的,而后者收集的是feedbackTIR实际发生的一帧帧收录进来的; |
+|  | 思路: 所以前者是solutionFo执行的实际情况,而后者才是真实发生的全序列(不受solutionFo局限的)情况; |
 | 测2 | 然后跟着测下hCanset的抽象情况,顺便打日志看下hCanset的强度演化是否正常; |
 
 ***
