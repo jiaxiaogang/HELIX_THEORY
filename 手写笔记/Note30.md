@@ -1480,6 +1480,10 @@ rAlg反馈_M(A9900) isC(A3524) 结果:0
 |  | 经查: 实际protoFo取的getOrderUseMatchAndFeedbackAlg(),而生成新Canset取的convertOrders4NewCansetV2() |
 |  | 调试: 前者收集的是子algModel有feedbackTOR反馈的,而后者收集的是feedbackTIR实际发生的一帧帧收录进来的; |
 |  | 思路: 所以前者是solutionFo执行的实际情况,而后者才是真实发生的全序列(不受solutionFo局限的)情况; |
+|  | todo1. 在RCanset预想与实际类比时,将实际(protoFo)改为采用convertOrders4NewCansetV2()生成的newRCanset `T`; |
+|  | todo2. 在HCanset预想与实际类比时,将实际(protoFo)改为采用convertOrders4NewCansetV2()生成 `T`; |
+|  | todo3. 在HCanset预想与实际类比时,并没有把实际fo生成为newHCanset `随后看需要了挂成hCanset T`; |
+|  | todo4. 核查下,在`预想与实际类比`前,必须把当前的rInput帧存到pFo.realMaskFo中,避免生成实际fo时缺失这一帧; |
 | 测2 | 然后跟着测下hCanset的抽象情况,顺便打日志看下hCanset的强度演化是否正常; |
 
 ***
