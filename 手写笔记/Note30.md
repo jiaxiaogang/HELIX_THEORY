@@ -1483,7 +1483,11 @@ rAlg反馈_M(A9900) isC(A3524) 结果:0
 |  | todo1. 在RCanset预想与实际类比时,将实际(protoFo)改为采用convertOrders4NewCansetV2()生成的newRCanset `T`; |
 |  | todo2. 在HCanset预想与实际类比时,将实际(protoFo)改为采用convertOrders4NewCansetV2()生成 `T`; |
 |  | todo3. 在HCanset预想与实际类比时,并没有把实际fo生成为newHCanset `随后看需要了挂成hCanset T`; |
-|  | todo4. 核查下,在`预想与实际类比`前,必须把当前的rInput帧存到pFo.realMaskFo中,避免生成实际fo时缺失这一帧; |
+|  | todo4. 核实下,在`生成实际fo`时,最新的rInput一帧已存到pFo.realMaskFo中,避免缺失最后一帧 `转4.1和4.2`; |
+|  | todo4.1 newRCanset是自然未发生触发的,所以realMaskFo肯定收集的全 `核查ok通过,不用改代码 T`; |
+|  | todo4.2 而newHCanset是有反馈触发的: 先在feedbackTIR中将新帧收集到realMaskFo,再在feedbackTOR就判断有反馈触发预想与实际hCanset类比,所以应该保证feedbackTIR在feedbackTOR之前执行,避免生成`实际fo`时缺失最后一帧 `T`; |
+|  | todo5. 回测下todo4.2的改动,不会造成别的影响; |
+|  | todo6. 回测下`预想与实际类比`结果会不会还有过度抽象问题; |
 | 测2 | 然后跟着测下hCanset的抽象情况,顺便打日志看下hCanset的强度演化是否正常; |
 
 ***
