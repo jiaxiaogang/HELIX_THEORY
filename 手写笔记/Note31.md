@@ -824,10 +824,12 @@ Demand竞争 <<<== SUCCESS 共2条
 
 | 31073 | 多Cansets候选集接受反馈实时响应竞争: 代码实践 |
 | --- | --- |
-| TODO1 | 在feedbackTOR中,先对rCansetA的反馈,支持所有候选集判断反馈; |
+| TODO1 | 取出每个CansetModel时,直接为其生成伪迁移的TCJiCenModel和TCTuiJuModel(参考31066-TODO5) `T`; |
+|  | 解释: 以方便后续在feedbackTOR或Canset实时竞争时,方便复用使用这些数据; |
+| TODO2 | 在feedbackTOR中,先对rCansetA的反馈,支持所有候选集判断反馈; |
 |  | 另外: 可以把mcIsBro改成mIsC试下 (参考31072-细节3&5); |
-| TODO2 | 改下TCSolution中canset的ranking算法,让有feedbackTOR时能及时响应cutIndex推进和canset评分; |
-| TODO3 | 让Cansets竞争像TCScore一样,每次TO循环都重跑下(另外可以加rankScore缓存以实现复用省算力); |
+| TODO3 | 改下TCSolution中canset的ranking算法,让有feedbackTOR时能及时响应cutIndex推进和canset评分; |
+| TODO4 | 让Cansets竞争像TCScore一样,每次TO循环都重跑下(另外可以加rankScore缓存以实现复用省算力); |
 |  | 解释: 因为现在是TI和TO两个线程,所以TI的feedback不能直接响应到TO,只能在TO下轮循环中通过工作记忆发现变化; |
 
 ***
