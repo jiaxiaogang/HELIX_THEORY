@@ -820,18 +820,33 @@ Demand竞争 <<<== SUCCESS 共2条
 |  | >>> 现在再看这一条,完全没必要: 1.absCanset并不依赖"猜测尝试" 2.猜测尝试可能过度抽象 (参考细节3); |
 | 总结 | 本表方案大方向正向证据充足,可以边写实践边在实践过程中针对代码细节再分析推进 `转下表`; |
 
-| 31072b | Cansets实时竞争: 捋一捋整个流程 |
+**小结: 31071-31072分析了本节Cansets实时竞争的起因,深入细节分析,以及制定方案,下面继续深入分析整理下思路;**
+
+| 31072b | Cansets实时竞争: 继续深入分析下关键问题点; |
 | --- | --- |
-| 说明 | 整理下从反馈到最后Canset的反省SPEFF更新,这整个步骤跑的流程; |
+| 说明 | 本表,分析下上表方案中会遇到的两个关键问题: |
+| 问题1 | CansetModel什么时候由用转体(执行transferCreate()构建iCanset); |
+|  | 首先. TOFoModel是要触发器和反省SPEFF的,我们不可能为所有CansetModels做这些 (这耗能耗空间,且没必要); |
+|  | 线索. 在实时竞争中能够最终获胜的bestResult,它算是质的明确胜者; |
+|  | 原则. 我们可以尽量迟的由用转体 (避免生成没能激活成bestResult的canset); |
+|  | 解答. 在输出bestResult后,将cansetModel由用转体 (调用transferCreate()构建iCanset); |
+| 问题2 | Canset实时竞争后,bestResult也随时可能被拉下来,即推进中就被后浪拍死,那它不应该继续执行SPEFF更新; |
+|  | 比如. 比如买菜途中,想起家里还有饺子,不买菜了,回家煮饺子; |
+|  | 解答. 即触发器触发后,发生bestResult已被后浪拍死,那它就不应该更新SPEFF (因为已经不推进了); |
+| 结果 | 本表分析了CansetModel由用转体的契机,然后分析了bestResult被后浪拍死后的后续 `T`; |
 
-明日: CansetModel用不用改成TOFoModel的子类
-1. TOFoModel要触发器,而没best的CansetModel应该没资格生成触发器吧?
-   - 找个示例分析下,未激活的Canset在失败后,会不会计SPEFF-1 (应该不会,它没资格这么消耗资源);
-2. 即: 是best后,从虚转实?还是一直是虚的,到哪步清算时才转实?
-   - 是best后,由虚转实吗? (best后,思维真的要推进它了,它也确实需要更多关注了: 是否来的急,触发器等)
-3. 即: 反馈 -> 推进cansets实时竞争 -> 推进best由虚转实 -> 生成为TOFoModel -> 推进触发器等 -> 推进SPEFF变化;
+| 31072c | Cansets实时竞争: 捋一捋整个流程 |
+| --- | --- |
+| 说明 | 结合前面两张表的成果: 整理下从反馈到最后Canset的反省SPEFF更新,这整个步骤跑的流程; |
+| 步骤1 | TI反馈 (所有TOFoModel和CansetModels候选集都要接受反馈); |
+| 步骤2 | TO候选集实时竞争 |
+| 步骤3 | TO得出bestResult由用转体 (生成iCanset); |
+| 步骤4 | 生成为TOFoModel,并交由TCAction行为化 |
+| 步骤5 | 构建TOFoModel触发器 |
+| 步骤6 | 推进SPEFF变化 (如果触发的bestResult已被后浪拍死,则不更新SPEFF值); |
+| 结果 | 本表流程捋顺了,下面可以开始实践了 `T`; |
 
-**小结: 31071-31072分析了本节Cansets实时竞争的起因,深入细节分析,以及制定方案,下面开始代码实践;**
+**小结: 31072b-31072c分析了Cansets实时竞争会遇到的关键问题,并且捋了下整个流程,下面开始代码实践;**
 
 | 31073 | 多Cansets候选集接受反馈实时响应竞争: 代码实践 |
 | --- | --- |
@@ -842,6 +857,8 @@ Demand竞争 <<<== SUCCESS 共2条
 | TODO3 | 改下TCSolution中canset的ranking算法,让有feedbackTOR时能及时响应cutIndex推进和canset评分; |
 | TODO4 | 让Cansets竞争像TCScore一样,每次TO循环都重跑下(另外可以加rankScore缓存以实现复用省算力); |
 |  | 解释: 因为现在是TI和TO两个线程,所以TI的feedback不能直接响应到TO,只能在TO下轮循环中通过工作记忆发现变化; |
+| TODO5 | 输出bestResult后由用转体 (参考31072b-问题1); |
+| TODO6 | 反省时,如果bestResult已被后浪拍死,则不更新SPEFF值 (参考31072b-问题2); |
 
 ***
 
