@@ -854,6 +854,19 @@ Demand竞争 <<<== SUCCESS 共2条
 |  | 解释: 以方便后续在feedbackTOR或Canset实时竞争时,方便复用使用这些数据; |
 | TODO2 | 在feedbackTOR中,先对rCansetA的反馈,支持所有候选集判断反馈; |
 |  | 另外: 可以把mcIsBro改成mIsC试下 (参考31072-细节3&5); |
+| 中途 | 中途遇到细节问题,并插入TODO2bcde等任务,起因如下: |
+|  | 1. 在TODO2实践中发现: feedbackTOR对cansetModel有效时,需要推进cutIndex+1,记录feedbackAlg等; |
+|  | 2. 所以考虑到两个模型相似性很高: 干脆把AICansetModel合并到TOFoModel中 `转TODO2b`; |
+|  | 3. 另外: CansetModel在初始化时,就构建到工作记忆中,连接base和base.actionFoModels; |
+|  | 4. 说白了,CansetModel,TOFoModel有它们的共同点(上面几条都是共同点),也有不同点如下: |
+|  | 5. 不同点1: 阶段不同,即是否已`由用转体`只是一个进化阶段 `转TODO2c`; |
+|  | 6. 不同点2: 状态不同,即使由用转体后,也可以被后浪拍死(新增besting和bested状态) `转TODO2d`; |
+|  | 7. 不同点3: 反省不同,只有besting且触发器触发反省,才更新SPEFF值 `转TODO2e`; |
+| 总结 | 起因123主要分析和合并AICansetModel和TOFoModel,起因567主要解决二者3个不同点处理; |
+| TODO2b | 模型合同: 将AICansetModel模型合并到TOFoModel中 `T`; |
+| TODO2c | 阶段不同: 在bestResult决出后,再触发`由用转体`,进行行为化; |
+| TODO2d | 状态不同: 新增bestingStatus和bestedStatus两个状态; |
+| TODO2e | 反省不同: 只有bestingStatus的在触发器后,才反省SPEFF值; |
 | TODO3 | 改下TCSolution中canset的ranking算法,让有feedbackTOR时能及时响应cutIndex推进和canset评分; |
 | TODO4 | 让Cansets竞争像TCScore一样,每次TO循环都重跑下(另外可以加rankScore缓存以实现复用省算力); |
 |  | 解释: 因为现在是TI和TO两个线程,所以TI的feedback不能直接响应到TO,只能在TO下轮循环中通过工作记忆发现变化; |
