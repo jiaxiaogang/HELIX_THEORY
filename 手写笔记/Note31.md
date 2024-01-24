@@ -866,15 +866,15 @@ Demand竞争 <<<== SUCCESS 共2条
 | 总结 | 起因123主要分析和合并AICansetModel和TOFoModel,起因567主要解决二者3个不同点处理; |
 | TODO2b | 模型合同: 将AICansetModel模型合并到TOFoModel中 `T`; |
 | TODO2c | 阶段不同: 在bestResult决出后,再触发`由用转体` `T`; |
-| TODO2d | 状态不同: 新增bestingStatus和bestedStatus两个状态; |
-| TODO2e | 反省不同: 只有bestingStatus的在触发器后,才反省SPEFF值; |
+| TODO2d | 状态不同: 新增bestingStatus和bestedStatus两个状态 `T`; |
+| TODO2e | 反省不同: 只有bestingStatus的在触发器后,才反省SPEFF值等 `T`; |
 | TODO2f | 第一次调用solution时初始化,生成所有CansetModel为TOFoModel,第二次时只竞争不重复生成 `T`; |
 | TODO3 | 改下TCSolution中canset的ranking算法,让有feedbackTOR时能及时响应cutIndex推进和canset评分; |
 | TODO4 | 让Cansets竞争像TCScore一样,每次TO循环都重跑下(另外可以加rankScore缓存以实现复用省算力); |
 |  | 解释: 因为现在是TI和TO两个线程,所以TI的feedback不能直接响应到TO,只能在TO下轮循环中通过工作记忆发现变化; |
 | TODO4b | 每次竞争的不应期,仅把已经failure失败的TOFoModel不应期掉; |
-| TODO5 | 输出bestResult后由用转体 (参考31072b-问题1); |
-| TODO6 | 反省时,如果bestResult已被后浪拍死,则不更新SPEFF值 (参考31072b-问题2); |
+| TODO5 | 输出bestResult后由用转体 (参考31072b-问题1) `在TODO2c已做 T`; |
+| TODO6 | 反省时,如果bestResult已被后浪拍死,则不更新SPEFF值 (参考31072b-问题2) `在TODO2e已做 T`; |
 
 ***
 
