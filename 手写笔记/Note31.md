@@ -852,7 +852,7 @@ Demand竞争 <<<== SUCCESS 共2条
 | --- | --- |
 | TODO1 | 取出每个CansetModel时,直接为其生成伪迁移的TCJiCenModel和TCTuiJuModel(参考31066-TODO5) `T`; |
 |  | 解释: 以方便后续在feedbackTOR或Canset实时竞争时,方便复用使用这些数据; |
-| TODO2 | 在feedbackTOR中,先对rCansetA的反馈,支持所有候选集判断反馈; |
+| TODO2 | 在feedbackTOR中,先对rCansetA的反馈,支持所有候选集判断反馈 `T`; |
 |  | 另外: 可以把mcIsBro改成mIsC试下 (参考31072-细节3&5); |
 | 中途 | 中途遇到细节问题,并插入TODO2bcde等任务,起因如下: |
 |  | 1. 在TODO2实践中发现: feedbackTOR对cansetModel有效时,需要推进cutIndex+1,记录feedbackAlg等; |
@@ -880,6 +880,11 @@ Demand竞争 <<<== SUCCESS 共2条
 | TODO4b | 每次竞争的不应期,仅把已经failure失败的TOFoModel不应期掉; |
 | TODO5 | 输出bestResult后由用转体 (参考31072b-问题1) `在TODO2c已做 T`; |
 | TODO6 | 反省时,如果bestResult已被后浪拍死,则不更新SPEFF值 (参考31072b-问题2) `在TODO2e已做 T`; |
+| TODO7 | 借着这次改动feedbackTOR方法的机会,把原来feedbackTOR里一堆代码整理下 `T`; |
+|  | 1. 整理TOFoModel.feedbackPushFrameThenStep()方法,目前有三个用途如下: `T`; |
+|  | 2. 用途1-R任务推进一帧则构建newHCanset `T`; |
+|  | 3. 用途2-H任务推进完成则触发类比抽象生成absHCanset `T`; |
+|  | 4. 用途3-原来老旧的那些更新status为finish或back等的代码也先留着在里面吧,随后证实不会再用了再删 `T`; |
 
 ***
 
