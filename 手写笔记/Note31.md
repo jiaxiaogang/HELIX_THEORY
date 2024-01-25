@@ -859,6 +859,7 @@ Demand竞争 <<<== SUCCESS 共2条
 |  | 2. 所以考虑到两个模型相似性很高: 干脆把AICansetModel合并到TOFoModel中 `转TODO2b`; |
 |  | 3. 另外: CansetModel在初始化时,就构建到工作记忆中,连接base和base.actionFoModels; |
 |  | 3b. 另外: 但只初始化一次,后面再调用solution时,只竞争排序,避免重复生成到actionFoModels `转TODO2f`; |
+|  | 3c. 为便于接受反馈到feedbackAlg,需提前把生成子TOAlgModel,并把cutIndex+1 `转TODO2g` |
 |  | 4. 说白了,CansetModel,TOFoModel有它们的共同点(上面几条都是共同点),也有不同点如下: |
 |  | 5. 不同点1: 阶段不同,即是否已`由用转体`只是一个进化阶段 `转TODO2c`; |
 |  | 6. 不同点2: 状态不同,即使由用转体后,也可以被后浪拍死(新增besting和bested状态) `转TODO2d`; |
@@ -869,6 +870,8 @@ Demand竞争 <<<== SUCCESS 共2条
 | TODO2d | 状态不同: 新增bestingStatus和bestedStatus两个状态 `T`; |
 | TODO2e | 反省不同: 只有bestingStatus的在触发器后,才反省SPEFF值等 `T`; |
 | TODO2f | 第一次调用solution时初始化,生成所有CansetModel为TOFoModel,第二次时只竞争不重复生成 `T`; |
+| TODO2g | 在生成CansetModel时就把TOAlgModel生成,把cutIndex+1,以便于接受反馈 `T`; |
+|  | > 而在TCAction中就不需要再生成TOAlgModel和cutIndex++了 `T`; |
 | TODO3 | 改下TCSolution中canset的ranking算法,让有feedbackTOR时能及时响应cutIndex推进和canset评分; |
 | TODO4 | 让Cansets竞争像TCScore一样,每次TO循环都重跑下(另外可以加rankScore缓存以实现复用省算力); |
 |  | 解释: 因为现在是TI和TO两个线程,所以TI的feedback不能直接响应到TO,只能在TO下轮循环中通过工作记忆发现变化; |
