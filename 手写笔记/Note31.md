@@ -870,8 +870,10 @@ Demand竞争 <<<== SUCCESS 共2条
 | TODO2d | 状态不同: 新增bestingStatus和bestedStatus两个状态 `T`; |
 | TODO2e | 反省不同: 只有bestingStatus的在触发器后,才反省SPEFF值等 `T`; |
 | TODO2f | 第一次调用solution时初始化,生成所有CansetModel为TOFoModel,第二次时只竞争不重复生成 `T`; |
-| TODO2g | 在生成CansetModel时就把TOAlgModel生成,把cutIndex+1,以便于接受反馈 `T`; |
-|  | > 而在TCAction中就不需要再生成TOAlgModel和cutIndex++了 `T`; |
+| TODO2g | 写成TOFoMode.pushNextFrame(),用于cutIndex+1和生成TOAlgModel,以便接受反馈feedbackAlg `T` |
+|  | 1. pushNextFrame的代码相当于将TCAction推进一帧的代码提前执行了,所以在TCAction中废弃这些代码 `T`; |
+|  | 2. 在生成CansetModel时就调用pushNextFrame(),为接受反馈做好准备 `T`; |
+|  | 3. 在feedbackTOR有反馈时,也调用pushNextFrame()为下帧准备 `T`; |
 | TODO3 | 改下TCSolution中canset的ranking算法,让有feedbackTOR时能及时响应cutIndex推进和canset评分; |
 | TODO4 | 让Cansets竞争像TCScore一样,每次TO循环都重跑下(另外可以加rankScore缓存以实现复用省算力); |
 |  | 解释: 因为现在是TI和TO两个线程,所以TI的feedback不能直接响应到TO,只能在TO下轮循环中通过工作记忆发现变化; |
