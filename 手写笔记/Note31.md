@@ -874,16 +874,20 @@ Demand竞争 <<<== SUCCESS 共2条
 |  | 1. pushNextFrame的代码相当于将TCAction推进一帧的代码提前执行了,所以在TCAction中废弃这些代码 `T`; |
 |  | 2. 在生成CansetModel时就调用pushNextFrame(),为接受反馈做好准备 `T`; |
 |  | 3. 在feedbackTOR有反馈时,也调用pushNextFrame()为下帧准备 `T`; |
-| TODO3 | 改下TCSolution中canset的ranking算法,让有feedbackTOR时能及时响应cutIndex推进和canset评分; |
+| TODO3 | 改下TCSolution中canset的ranking算法,让有feedbackTOR时能及时响应cutIndex推进和canset评分 `T` |
 |  | 回顾: 现在的solutionFoRankingV3()是1级目标eff,1级下帧sp稳定性,3级h值; |
-|  | 分析: 这不都是且关系,应该应该按乘么,以前有一锤子买卖的感觉,现在是候选集实时竞争了; |
-| TODO3b | 因TODO3的回顾和分析: 竞争改成中后段所有帧sp稳定性(相乘),做为竞争因子; |
-|  | 疑问2: sceneSP是预测和实际发生,cansetSP是预想和实际推进,二者不同不应互相影响; |
-| TODO3c | 把sceneSP和cansetSP明确区分成两个spDic; |
-|  | 疑问3: 同一个canset的SP值,在不同场景下可能不一样 (比如在家做饭易,在野外做饭难); |
-| TODO3d | 把cansetSPStrong模型中加上sceneFo_p,以区分各场景下sp不同; |
-|  | 疑问1: 但R任务的最后一帧是mv指向,是没有SP值的; |
-| TODO3e | 看下把canset执行完成后,有没解决R任务,也计成一条cansetSPStrong值; |
+|  | 思路: 因TODO3的回顾和分析: 竞争改成中后段所有帧sp稳定性(相乘),做为竞争因子; |
+|  | 方案: 这不都是且关系,应该应该按乘么,以前有一锤子买卖的感觉,现在是候选集实时竞争了; |
+|  | 实践: 把solutionFoRankingV3()改成仅按未推进的中后段SP稳定性做第一竞争因子 `T`; |
+| TODO3c | 把sceneSP和cansetSP明确区分成两个spDic `先不做,因为需求不迫切 T`; |
+|  | 疑问c: sceneSP是预测和实际发生,cansetSP是预想和实际推进,二者不同不应互相影响; |
+|  | 解答c: 暂不做,目前一直没区分scene和canset的SP,但用着还ok,那么此需求就不迫切,可以先不做; |
+| TODO3d | 把cansetSPStrong模型中加上sceneFo_p,以区分各场景下sp不同 `先不做,因为需求不迫切 T`; |
+|  | 疑问d: 同一个canset的SP值,在不同场景下可能不一样 (比如在家做饭易,在野外做饭难); |
+|  | 解答d: 暂不做,目前一直没区分不同场景,但用着还ok,那么此需求就不迫切,可以先不做; |
+| TODO3e | 看下把canset执行完成后,有没解决R任务,也计成一条cansetSPStrong值 `OP反省本就如此 T`; |
+|  | 疑问e: 但R任务的最后一帧是mv指向,是没有SP值的; |
+|  | 解答e: perceptOutRethink()中本来就是这样的,最后一帧mv是有SP值的; |
 | TODO4 | 让Cansets竞争像TCScore一样,每次TO循环都重跑下(另外可以加rankScore缓存以实现复用省算力); |
 |  | 解释: 因为现在是TI和TO两个线程,所以TI的feedback不能直接响应到TO,只能在TO下轮循环中通过工作记忆发现变化; |
 | TODO4b | 每次竞争的不应期,仅把已经failure失败的TOFoModel不应期掉; |
