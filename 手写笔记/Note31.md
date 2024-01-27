@@ -888,9 +888,8 @@ Demand竞争 <<<== SUCCESS 共2条
 | TODO3e | 看下把canset执行完成后,有没解决R任务,也计成一条cansetSPStrong值 `OP反省本就如此 T`; |
 |  | 疑问e: 但R任务的最后一帧是mv指向,是没有SP值的; |
 |  | 解答e: perceptOutRethink()中本来就是这样的,最后一帧mv是有SP值的; |
-| TODO4 | 让Cansets竞争像TCScore一样,每次TO循环都重跑下(另外可以加rankScore缓存以实现复用省算力); |
+| TODO4 | 让Cansets竞争像TCScore一样,每次TO循环都重跑下(另外可以加rankScore缓存以实现复用省算力) `T`; |
 |  | 解释: 因为现在是TI和TO两个线程,所以TI的feedback不能直接响应到TO,只能在TO下轮循环中通过工作记忆发现变化; |
-| TODO4b | 每次竞争的不应期,仅把已经failure失败的TOFoModel不应期掉; |
 | TODO5 | 输出bestResult后由用转体 (参考31072b-问题1) `在TODO2c已做 T`; |
 | TODO6 | 反省时,如果bestResult已被后浪拍死,则不更新SPEFF值 (参考31072b-问题2) `在TODO2e已做 T`; |
 | TODO7 | 借着这次改动feedbackTOR方法的机会,把原来feedbackTOR里一堆代码整理下 `T`; |
@@ -898,6 +897,13 @@ Demand竞争 <<<== SUCCESS 共2条
 |  | 2. 用途1-R任务推进一帧则构建newHCanset `T`; |
 |  | 3. 用途2-H任务推进完成则触发类比抽象生成absHCanset `T`; |
 |  | 4. 用途3-原来老旧的那些更新status为finish或back等的代码也先留着在里面吧,随后证实不会再用了再删 `T`; |
+| TODO8 | 每次竞争的不应期,仅把已经withOut失败的TOFoModel不应期掉 (已证实失败的,不必再参与求解并行为化) `T` |
+|  | 细则: 另外,失败时是要有传染性的,不能只失败一条,而是将其传递给受此失败影响的所有工作记忆枝点,如下: |
+| TODO8b | withOut要向父级传递,即:一条hDemand无计可施,那它的父级targetAlg和targetFo也失败; |
+| TODO8c | withOut要向兄弟传递,即:targetAlg失败时,所有含targetAlg的所CansetModels都要失败; |
+|  | 说明: 即支持批量withOut,不止是当前besting因targetAlg失败,而是所有含这一帧的全失败; |
+|  | 例子: 比如没厨房,所有做饭的cansetModels应该全失败了; 再如没钱,所有买饭的cansetModels应该全失败; |
+|  | 优点: 避免一个条件不满足,还会激活类似的,如此死循环似的,反复验证失败,做许多无用功; |
 
 ***
 
