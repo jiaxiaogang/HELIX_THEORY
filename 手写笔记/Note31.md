@@ -11,7 +11,8 @@
   - [n31p02c 学会搬运](#n31p02c-学会搬运)
   - [n31p05 运用搬运](#n31p05-运用搬运)
   - [n31p06 重跑学搬运-rCansetA反馈过度宽泛问题 (宽入未窄出)](#n31p06-重跑学搬运-rcanseta反馈过度宽泛问题-宽入未窄出)
-  - [n31p07 Cansets实时竞争](#n31p07-cansets实时竞争)
+  - [n31p07 Cansets实时竞争1: 主体改动](#n31p07-cansets实时竞争1-主体改动)
+  - [n31p08 Cansets实时竞争2: 替代TCPlan模块](#n31p08-cansets实时竞争2-替代tcplan模块)
   - [n31pN TODO备忘](#n31pn-todo备忘)
 
 <!-- /TOC -->
@@ -776,7 +777,7 @@ Demand竞争 <<<== SUCCESS 共2条
 
 ***
 
-## n31p07 Cansets实时竞争
+## n31p07 Cansets实时竞争1: 主体改动
 `CreateTime 2024.01.18`
 
 上节仅仅接受RCansetA的持续反馈,和对每次反馈进行评价的方式不够彻底,本节转向更加彻底的方式: 当有反馈时,多Cansets候选集都会判断是否被反馈到,并且以此实时响应Cansets的竞争变化;
@@ -904,6 +905,31 @@ Demand竞争 <<<== SUCCESS 共2条
 |  | 说明: 即支持批量withOut,不止是当前besting因targetAlg失败,而是所有含这一帧的全失败; |
 |  | 例子: 比如没厨房,所有做饭的cansetModels应该全失败了; 再如没钱,所有买饭的cansetModels应该全失败; |
 |  | 优点: 避免一个条件不满足,还会激活类似的,如此死循环似的,反复验证失败,做许多无用功; |
+
+**小结: 本节主要做了CansetModels实时竞争,即每个CansetModels都可以持续接受反馈,并因此实时竞争,然后附带也改了一些别的:**
+1. 支持伪迁移 -> 由用转体;
+2. 写了feedbackTOR反馈的推进帧pushNextFrame();
+3. 改了CansetModels的ranking算法: solutionFoRankingV3()竞争改为SP稳定性为第一竞争因子;
+4. 每次TO.solution都跑下实时竞争代码 (下节还会深化这一条,直接由实时竞争来替代TCPlan模块);
+5. 顺便把feedbackTOR的代码以及它的关键功能: `H任务的演化过程` 整理了一下;
+6. 支持withOut状态向父级和兄弟的传染;
+
+***
+
+## n31p08 Cansets实时竞争2: 替代TCPlan模块
+`CreateTime 2024.01.28`
+
+上节中,做了CansetModels实时竞争,它改动算很大了,对别的模块也有所影响,而本节就是针对它对TCPlan的影响,对TCPlan进行迭代: 主要是对CansetModels实时竞争的加强,直接用实时竞争来重写TCPlan模块;
+
+| 31081 | 考虑用CansetModels实时竞争替代TCScore和TCPlan两个模块的功能 |
+| --- | --- |
+| 回顾1 | 以前TCScore是将子任务评成分,计算综合评分,而事实上无论Canset是否有效,都是为了解决父任务; |
+|  | 思路1. 无论你怎么综合评分,事实上最终真正造成的价值是确定的,就是父.父.父...直到rootDemand (即root分); |
+|  | 解答1. **即: TCScore可以直接全废除,全改为root的任务分,即是每个分枝的综合评分;** |
+| 回顾2 | 以前TCPlan是以TCScore的评分来的,如果解答1成立,那么它每个分枝得分都一样,TCPlan没法pk出高低; |
+|  | 思路2. 而CansetModels实时竞争,其实就是给每个分枝TOFoModel竞争出rank结果; |
+|  | 解答2. **所以TCPlan可以直接废除,可以改为CansetModels从root向sub逐级进行CansetModels实时竞争;** |
+| 综合 | 综上解答1和解答2,可以将旧有TCScore废除,TCPlan迭代为由CansetModels实时竞争得出endBestBranch; |
 
 ***
 
