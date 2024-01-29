@@ -12,7 +12,7 @@
   - [n31p05 运用搬运](#n31p05-运用搬运)
   - [n31p06 重跑学搬运-rCansetA反馈过度宽泛问题 (宽入未窄出)](#n31p06-重跑学搬运-rcanseta反馈过度宽泛问题-宽入未窄出)
   - [n31p07 Cansets实时竞争1: 主体改动](#n31p07-cansets实时竞争1-主体改动)
-  - [n31p08 Cansets实时竞争2: 替代TCPlan模块](#n31p08-cansets实时竞争2-替代tcplan模块)
+  - [n31p08 Cansets实时竞争2: 迭代TCPlan模块](#n31p08-cansets实时竞争2-迭代tcplan模块)
   - [n31pN TODO备忘](#n31pn-todo备忘)
 
 <!-- /TOC -->
@@ -916,7 +916,7 @@ Demand竞争 <<<== SUCCESS 共2条
 
 ***
 
-## n31p08 Cansets实时竞争2: 替代TCPlan模块
+## n31p08 Cansets实时竞争2: 迭代TCPlan模块
 `CreateTime 2024.01.28`
 
 上节中,做了CansetModels实时竞争,它改动算很大了,对别的模块也有所影响,而本节就是针对它对TCPlan的影响,对TCPlan进行迭代: 主要是对CansetModels实时竞争的加强,直接用实时竞争来重写TCPlan模块;
@@ -930,6 +930,40 @@ Demand竞争 <<<== SUCCESS 共2条
 |  | 思路2. 而CansetModels实时竞争,其实就是给每个分枝TOFoModel竞争出rank结果; |
 |  | 解答2. **所以TCPlan可以直接废除,可以改为CansetModels从root向sub逐级进行CansetModels实时竞争;** |
 | 综合 | 综上解答1和解答2,可以将旧有TCScore废除,TCPlan迭代为由CansetModels实时竞争得出endBestBranch; |
+| 追加 | TCScore现在跑的善可,且综合评分等功能也不可轻易全然废除,所以不废除TCScore,迭代下TCPlan即可,转下表; |
+
+* 31082-以下继续扩展想细节,从1到15分析了几来几回,但不整理了,整理麻烦,原稿粘到下面;
+1. 优惠等于赚钱。
+2. 子任务比父任务花费少等于赚。
+3. 正价值子任务直接计入综合评分影响竞争
+4. 负价值子任务without后计入综合评分影响竞争。
+5. 在选择买牛肉和鸡肉之间，价格会影响cansets实时竞争：而影响方式是直接对比了食物价格和好不好吃。两种子任务评分。
+6. 即食物价格的反思可以对应上价格价值映射(可是canset是没有指向mv的)，得支持批量反思，整个cansets同时反思出价值评分。
+7. besting一条canset时，再反思它，并且支持cansets批量得出反思评分(比如买牛肉和买鸡肉)
+8. 比如买饭觉得贵，又转向做饭，再反思做饭麻烦，又批量反思得出做饭太麻烦负评分。
+9. 然后再对cansets竞争时，pk平价买饭＞做饭＞买贵饭
+10. 如果此时突然想到冰箱有饭，又会转向在家直接吃，而不是买平价饭。
+11. 综评价值分会穿透任务树多层，而cansets实时竞争则不会，综评分优先级大于cansets竞争。
+12. 那么TCScore应该无法废除吧？
+13. 综上，其实只需要改两点，第一：反思支持批量。第二：cansets竞争可集成到TCPlan中。
+14. 或者：TCPlan和TCScore大致不变，只是把TCScore中actionFoModels改成besting和bested的筛选出来。别的都不改了. 现在在跑着大致其实还行算正常;
+15. 如果TCScore只取besting和bested状态的actionFoModels的话,不必批量反思,一共不激活几条,没必要;
+16. 结果: 本表观点未整理,但总得总结下成果,转下表 `转31083`;
+
+**小结:**
+1. 31081主张大改: 即直接废除TCScore和重写TCPlan;
+2. 31082改为小改: 回顾代码发现TCScore综合评分等还重要不能废除,且CansetModels实时竞争也可以用来融入迭代下TCPlan即可,转下表;
+
+| 31083 | 根据31082,只改以下两点,且最终其实就是迭代TCPlan为重点; |
+| --- | --- |
+| TODO1 | TCScore中改成仅以besting和bested做子R任务的综合评分; |
+| TODO2 | 在TCPlan取endBranch时,从root到sub,依次对每层的CansetModels进行竞争 |
+|  | 2.1 第一因子是besting&ed的综合价值分 (看是否大于父任务分,大于则必然好于没best的那些Cansets); |
+|  | 2.2 第二因子以CansetModels的SP稳定性竞争来即可 (即感性一致,则看谁更理性好); |
+| TODO3 | 主要迭代一下TCPlan,一级级从root到sub竞争抉出endBestBranch; |
+|  | 3.1 感性分不一样时,以感性为best为胜; |
+|  | 3.2 感性分一样时,则以CansetModels竞争SP最稳定为胜; |
+|  | 3.3 遇到WithOut时,则pass掉转向下一分枝; |
 
 ***
 
