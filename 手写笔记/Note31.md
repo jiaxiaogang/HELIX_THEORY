@@ -899,12 +899,13 @@ Demand竞争 <<<== SUCCESS 共2条
 |  | 3. 用途2-H任务推进完成则触发类比抽象生成absHCanset `T`; |
 |  | 4. 用途3-原来老旧的那些更新status为finish或back等的代码也先留着在里面吧,随后证实不会再用了再删 `T`; |
 | TODO8 | 每次竞争的不应期,仅把已经withOut失败的TOFoModel不应期掉 (已证实失败的,不必再参与求解并行为化) `T` |
-|  | 细则: 另外,失败时是要有传染性的,不能只失败一条,而是将其传递给受此失败影响的所有工作记忆枝点,如下: |
-| TODO8b | withOut要向父级传递,即:一条hDemand无计可施,那它的父级targetAlg和targetFo也失败; |
-| TODO8c | withOut要向兄弟传递,即:targetAlg失败时,所有含targetAlg的所CansetModels都要失败; |
+|  | 细则: 另外,失败时是要有传染性的,不能只失败一条,而是将其传染给受此失败影响的所有工作记忆枝点,如下: |
+| TODO8b | withOut要向父级传染,即:一条hDemand无计可施,那它的父级targetAlg和targetFo也失败 `T`; |
+| TODO8c | withOut要向兄弟传染,即:targetAlg失败时,所有含targetAlg的所CansetModels都要失败 `T`; |
 |  | 说明: 即支持批量withOut,不止是当前besting因targetAlg失败,而是所有含这一帧的全失败; |
 |  | 例子: 比如没厨房,所有做饭的cansetModels应该全失败了; 再如没钱,所有买饭的cansetModels应该全失败; |
 |  | 优点: 避免一个条件不满足,还会激活类似的,如此死循环似的,反复验证失败,做许多无用功; |
+|  | 实践: 当前targetFo同一个Cansets池子里的兄弟,如果现在也在等待一模一样的targetAlg,那么全计为失败 `T`; |
 
 **小结: 本节主要做了CansetModels实时竞争,即每个CansetModels都可以持续接受反馈,并因此实时竞争,然后附带也改了一些别的:**
 1. 支持伪迁移 -> 由用转体;
