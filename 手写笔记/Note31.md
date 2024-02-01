@@ -957,14 +957,19 @@ Demand竞争 <<<== SUCCESS 共2条
 
 | 31083 | 根据31082,只改以下两点,且最终其实就是迭代TCPlan为重点; |
 | --- | --- |
-| TODO1 | TCScore中改成仅以besting和bested做子R任务的综合评分; |
-| TODO2 | 在TCPlan取endBranch时,从root到sub,依次对每层的CansetModels进行竞争 |
+| TODO1 | TCScore中改成仅以besting和bested做子R任务的综合评分 `T`; |
+| TODO2 | 在TCPlan取endBranch时,从root到sub,依次对每层的CansetModels进行竞争 `转TODO4.1` |
 |  | 2.1 第一因子是besting&ed的综合价值分 (看是否大于父任务分,大于则必然好于没best的那些Cansets); |
 |  | 2.2 第二因子以CansetModels的SP稳定性竞争来即可 (即感性一致,则看谁更理性好); |
-| TODO3 | 主要迭代一下TCPlan,一级级从root到sub竞争抉出endBestBranch; |
+| TODO3 | 主要迭代一下TCPlan,一级级从root到sub竞争抉出endBestBranch `再想透些,整理下 转TODO4`; |
 |  | 3.1 感性分不一样时,以感性为best为胜; |
 |  | 3.2 感性分一样时,则以CansetModels竞争SP最稳定为胜; |
 |  | 3.3 遇到WithOut时,则pass掉转向下一分枝; |
+| TODO4 | TCPlan迭代V2: 主要全面支持下Cansets实时竞争; |
+| TODO4.1 | 逐层Cansets竞争,一级因子是评分(默认为0),二级因子是SP稳定性; |
+| TODO4.2 | 只要排序后有解(ArrIsOk),取第1个,并且推进它的子任务 (递归下一层); |
+| TODO4.3 | 当子任务无解时(且父解Score<root任务分,即得不偿失),改父状态为ScoreNo,改root任务状态为WithOut; |
+|  | 说明: 说白了,最好的都得不偿失,那么相当于这一根任务整体无计可施了; |
 
 ***
 
