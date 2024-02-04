@@ -13,6 +13,7 @@
   - [n31p06 重跑学搬运-rCansetA反馈过度宽泛问题 (宽入未窄出)](#n31p06-重跑学搬运-rcanseta反馈过度宽泛问题-宽入未窄出)
   - [n31p07 Cansets实时竞争1: 主体改动](#n31p07-cansets实时竞争1-主体改动)
   - [n31p08 Cansets实时竞争2: 迭代TCPlan模块](#n31p08-cansets实时竞争2-迭代tcplan模块)
+  - [n31p09 Cansets实时竞争3: 回测训练](#n31p09-cansets实时竞争3-回测训练)
   - [n31pN TODO备忘](#n31pn-todo备忘)
 
 <!-- /TOC -->
@@ -974,7 +975,7 @@ Demand竞争 <<<== SUCCESS 共2条
 | TODO4.4 | 当任务有解且得大于失(Score>root任务分),可继续下层,即使下层失败,也可以bestFo强行执行 `T`; |
 | TODO4.5 | 当任务无解,直接返回nil,向上递归 (递归后,上层bestFo会强行执行,因为能到这层,说明上层得大于失) `T` |
 | TODO4.6 | 子任务无解时,改子解状态为ActNo,改父状态为ScoreNo,父任务状态为WithOut等 `T`; |
-| TODO5 | 把Solution()中来不及的,反思不通过的,全都改成ScoreNo或actNo状态,以使在实时竞争时,能及时过滤掉; |
+| TODO5 | 把Solution()中反思不通过的,及时改成ScoreNo或actNo状态,以使在实时竞争时,能及时过滤掉 `T`; |
 
 **小结: TCPlanV2的大概逻辑如下:**
 1. 未初始化过则初始化Cansets;
@@ -983,6 +984,13 @@ Demand竞争 <<<== SUCCESS 共2条
 4. 有解但得不偿失 => 则递归到上一层;
 5. 有解且得大于失 => 则继续向下一层;
 6. 有解且得大于失 且 下层全失败 => 强行执行这一层的最佳Canset;
+
+***
+
+## n31p09 Cansets实时竞争3: 回测训练
+`CreateTime 2024.02.04`
+
+回顾一下写实时竞争的起因,以及当时训练的阶段是什么情况,明天规划下怎么测下Cansets实时竞争相关改动;
 
 ***
 
