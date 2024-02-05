@@ -14,6 +14,7 @@
   - [n31p07 Cansets实时竞争1: 主体改动](#n31p07-cansets实时竞争1-主体改动)
   - [n31p08 Cansets实时竞争2: 迭代TCPlan模块](#n31p08-cansets实时竞争2-迭代tcplan模块)
   - [n31p09 Cansets实时竞争3: 回测训练](#n31p09-cansets实时竞争3-回测训练)
+  - [n31p10 继续迭代hSolutionV3](#n31p10-继续迭代hsolutionv3)
   - [n31pN TODO备忘](#n31pn-todo备忘)
 
 <!-- /TOC -->
@@ -991,6 +992,15 @@ Demand竞争 <<<== SUCCESS 共2条
 `CreateTime 2024.02.04`
 
 回顾一下写实时竞争的起因,以及当时训练的阶段是什么情况,明天规划下怎么测下Cansets实时竞争相关改动;
+
+**春节期间不适于搞训练,因为训练是偏散的信息堆中找规律适于连续性比较强的工作状态,所以先继续写hSolutionV3(),转下节;**
+
+***
+
+## n31p10 继续迭代hSolutionV3
+`CreateTime 2024.02.05`
+
+接`31053`,本节,继续迭代hSolutionV3();
 
 ***
 
