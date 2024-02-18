@@ -1017,13 +1017,14 @@ Demand竞争 <<<== SUCCESS 共2条
 |  | c. 在别的scene中,取cutIndex到index2之间的所有hCansets; |
 |  | d. 第2步: 只要这些hCansets的目标 与 targetAlg 有mIsC关系,则列为有效hCansets; |
 |  | 注: d已经算第2步筛选有效了,在31103还会继续分析是否确实是mIsC关系; |
-| 方案2 | 从cutIndex到targetIndex之间的hCansets; |
-|  | a. 直接取cutIndex到targetIndex之间的所有hCansets; |
+| 方案2 | 从cutIndex到fo.count之间的hCansets; |
+|  | a. 直接取cutIndex到sceneFo.count之间的所有hCansets; |
 | 抉择 | 对比: 方案1看起来更严谨,而方案2更简单; |
 |  | 宽窄分析: 严谨带来窄出效果,以宽入窄出原则来看,此时激活hCansets最好是能宽入,而非窄出; |
 |  | 简繁分析: 且方案1会带来代码复杂,要先判断下帧的下标等,会让代码更复杂许多; |
 |  | 综合: 根据以上分析,先用方案2; |
 | 结果 | 选定方案2,转下表继续`筛选有效`; |
+| 实践 | 不用改代码,getConCansets()方法本就如此 `T`; |
 
 | 31103 | 第2步: 筛选出有效的hCansets |
 | --- | --- |
@@ -1052,6 +1053,7 @@ Demand竞争 <<<== SUCCESS 共2条
 | 方案2 | 根据抽具象alg的mcIsBro关系,来判断关系有效; |
 |  | 即: 我们可以用玻璃杯,棉花糖,砖头等当锤子,这很宽泛,几乎没啥可过滤的,因为张医生刘医生都是医生,也都是物体; |
 | 结果 | 选定方案2,用alg的mcIsBro来筛选,它非常宽泛,好处是:带来更好的创造力,挑战是:需要更多的竞争挑战; |
+| 实践 | 判断下hCansetTargetAlg目标帧,与h任务的targetAlg目标帧的mcIsBro关系来筛选即可 `T`; |
 
 | 31104 | 第3步: hCansets的迁移机制; |
 | --- | --- |
