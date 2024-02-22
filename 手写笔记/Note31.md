@@ -1166,7 +1166,18 @@ Demand竞争 <<<== SUCCESS 共2条
 |  | 1. 而这两个RScene之间,有R场景树; |
 | 思路 | 如上示例分析,无非就是各种结构之间的indexDic来回合并计算; |
 | 示图 | ![](assets/713_HCanset迁移之indexDic计算示图.png) |
-| 方案 | 所以此处要想推进,首先得写个方法,能够承载各种indexDic在R场景树之中的indexDic计算....最终算出indexDic关系... |
+| 方案 | 将以上"迁移源,迁移目标,场景树"三个结构的indexDic,通过综合计算,最终算出indexDic关系 `实践转下表`; |
+
+| 31113 | 实践: hCanset迁移的综合映射计算 |
+| --- | --- |
+| TODO1 | from: 把取到hCanset的源头,计为迁移源,综合计算此结构的indexDic (见上图左侧部分图); |
+| TODO2 | to: 把hCanset迁移到的目标,计为迁移目标,综合计算此结构的indexDic (见上图右侧部分图); |
+| TODO3 | tree: 捋顺场景树结构部分的indexDic关系; |
+|  | 问题: 如果from和to都是B或F层,但没有共同的F或I怎么办? (因为I源自pFos是多个); |
+|  | 分析: 即to中targetFoM所在的pFo未必能把from所在的pFo下的hCanset迁移过来; |
+|  | 方案1: 是否针对to中targetFoM所在的pFo重新搞一套sceneTree? |
+|  | 解答1: 没必要,因为搞出来的和现在的sceneTree一样 `方案1否掉`; |
+|  | 方案2: 各个pFo树隔离开,每颗树就仅迁移自己树上的hCansets,别的pFo不尝试; |
 
 ***
 
