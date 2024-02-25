@@ -1181,6 +1181,8 @@ Demand竞争 <<<== SUCCESS 共2条
 |  | 思路2: 比如在火虫的例子中,解决火pFo时,可以随着找灭火器,解决咬pFo时,可以找风精油; |
 |  | 解答2: 但在解决火时,是不会想到找风精油的,即使此时它有用,说明它只从当前火pFo这颗树上在找hCansets; |
 |  | 结果: 选定方案2,改为仅从当前targetFoM所在的pFo这一颗树下进行hCansets迁移 `T`; |
+| TODO5 | 问题: 迁移到to的protoRCanset下,还是由用转体后的iRCanset下面; |
+|  | 解答: 现在的任务就是在推进由用转体后的iRCanset,所以应该迁移到iRCanset下面; |
 
 ***
 
