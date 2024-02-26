@@ -1183,6 +1183,10 @@ Demand竞争 <<<== SUCCESS 共2条
 |  | 结果: 选定方案2,改为仅从当前targetFoM所在的pFo这一颗树下进行hCansets迁移 `T`; |
 | TODO5 | 问题: 迁移到to的protoRCanset下,还是由用转体后的iRCanset下面; |
 |  | 解答: 现在的任务就是在推进由用转体后的iRCanset,所以应该迁移到iRCanset下面; |
+| TODO6 | 问题: 随着上面两个问题,对目前控制中的知识结构进行了两次简化,感觉31112中的示图可以简化了; |
+|  | 起因1. from和to处在同一个pFo下,即和原来的rCanset迁移时一样了,无非就是IFB走向I,要么推举,要么推举+继承; |
+|  | 起因2. to必然已经由用转体,必然有IScene和ICanset (参考31113-TODO5); |
+|  | 结果: 可简化为对from的hCanset写一个推举算法,一个继承算法 (唯一与R迁移不同是它在RCanset下,所以多一层) |
 
 ***
 
