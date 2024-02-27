@@ -112,7 +112,7 @@
 
 	- 个人主页:[http://jiaxiaogang.github.io/](http://jiaxiaogang.github.io/)
 	- 项目代码:[https://www.github.com/jiaxiaogang/he4o](https://www.github.com/jiaxiaogang/he4o)
-	- 螺旋论:[https://github.com/jiaxiaogang/HELIX_THEORY/tree/master/手写笔记](https://github.com/jiaxiaogang/HELIX_THEORY/tree/master/手写笔记)
+	- 螺旋熵减理论:[https://github.com/jiaxiaogang/HELIX_THEORY/tree/master/手写笔记](https://github.com/jiaxiaogang/HELIX_THEORY/tree/master/手写笔记)
 
 
 10. #### PS:
