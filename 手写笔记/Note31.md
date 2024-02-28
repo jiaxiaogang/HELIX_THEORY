@@ -1168,8 +1168,9 @@ Demand竞争 <<<== SUCCESS 共2条
 | 示图 | ![](assets/713_HCanset迁移之indexDic计算示图.png) |
 | 方案 | 将以上"迁移源,迁移目标,场景树"三个结构的indexDic,通过综合计算,最终算出indexDic关系 `实践转下表`; |
 
-| 31113 | 实践: hCanset迁移的综合映射计算 |
+| 31113 | 实践: hCanset迁移 (综合映射计算和迭代推举继承算法等) |
 | --- | --- |
+| 说明 | 本表边推进TODOLIST边思考路途遇到的问题; |
 | TODO1 | from: 把取到hCanset的源头,计为迁移源,综合计算此结构的indexDic (见上图左侧部分图); |
 | TODO2 | to: 把hCanset迁移到的目标,计为迁移目标,综合计算此结构的indexDic (见上图右侧部分图); |
 | TODO3 | tree: 捋顺场景树结构部分的indexDic关系; |
@@ -1187,6 +1188,10 @@ Demand竞争 <<<== SUCCESS 共2条
 |  | 起因1. from和to处在同一个pFo下,即和原来的rCanset迁移时一样了,无非就是IFB走向I,要么推举,要么推举+继承; |
 |  | 起因2. to必然已经由用转体,必然有IScene和ICanset (参考31113-TODO5); |
 |  | 结果: 可简化为对from的hCanset写一个推举算法,一个继承算法 (唯一与R迁移不同是它在RCanset下,所以多一层) |
+| TODO7 | 问题: H比R多一层,是否它就应该多一次推举且多一次继承? |
+|  | ![](assets/714_H迁移示图.png) |
+|  | 说明: 从上图可见,H的迁移的继承和推举,都需要多执行一层; |
+|  | 结果: 在推举和继承算法中计算indexDic时,多计算一个(hCanset和hScene之间的那一个); |
 
 ***
 
