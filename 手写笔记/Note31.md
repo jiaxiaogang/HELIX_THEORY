@@ -1171,9 +1171,9 @@ Demand竞争 <<<== SUCCESS 共2条
 | 31113 | 实践: hCanset迁移 (综合映射计算和迭代推举继承算法等) |
 | --- | --- |
 | 说明 | 本表边推进TODOLIST边思考路途遇到的问题; |
-| TODO1 | from: 把取到hCanset的源头,计为迁移源,综合计算此结构的indexDic (见上图左侧部分图); |
-| TODO2 | to: 把hCanset迁移到的目标,计为迁移目标,综合计算此结构的indexDic (见上图右侧部分图); |
-| TODO3 | tree: 捋顺场景树结构部分的indexDic关系; |
+| TODO1 | from: 把取到hCanset的源头,计为迁移源,综合计算此结构的indexDic(见上图左侧部分)`转31113-TODO8` |
+| TODO2 | to: 把hCanset迁移的目标,计为迁移目标,综合计算此结构的indexDic(见上图右侧部分)`转31113-TODO8` |
+| TODO3 | tree: 捋顺场景树结构部分的indexDic关系`转31113-TODO4&TODO8`; |
 | TODO4 | 问题: 如果from和to都是B或F层,但没有共同的F或I怎么办? (因为I源自pFos是多个) `T`; |
 |  | 分析: 即to中targetFoM所在的pFo未必能把from所在的pFo下的hCanset迁移过来; |
 |  | 方案1: 是否针对to中targetFoM所在的pFo重新搞一套sceneTree? |
@@ -1188,10 +1188,12 @@ Demand竞争 <<<== SUCCESS 共2条
 |  | 起因1. from和to处在同一个pFo下,即和原来的rCanset迁移时一样了,无非就是IFB走向I,要么推举,要么推举+继承; |
 |  | 起因2. to必然已经由用转体,必然有IScene和ICanset (参考31113-TODO5); |
 |  | 结果: 可简化为对from的hCanset写一个推举算法,一个继承算法 (唯一与R迁移不同是它在RCanset下,所以多一层) |
-| TODO7 | 问题: H比R多一层,是否它就应该多一次推举且多一次继承? |
+| TODO7 | 问题: H比R多一层,是否它就应该多一次推举且多一次继承? `T,具体实现转31113-TODO8` |
 |  | ![](assets/714_H迁移示图.png) |
 |  | 说明: 从上图可见,H的迁移的继承和推举,都需要多执行一层; |
 |  | 结果: 在推举和继承算法中计算indexDic时,多计算一个(hCanset和hScene之间的那一个); |
+| TODO8 | 综合计算indexDic: 从抽象向具象依次判断,从最抽象开始逐层判断与下个indexDic是否有映射 `T`; |
+|  | 条件: 所有层跑完最终映射成功,则收集这一条; 但中途任一层不成功链条断开,则不收集这一条; |
 
 ***
 
