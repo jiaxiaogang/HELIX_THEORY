@@ -1194,7 +1194,7 @@ Demand竞争 <<<== SUCCESS 共2条
 |  | 结果: 在推举和继承算法中计算indexDic时,多计算一个(hCanset和hScene之间的那一个); |
 | TODO8 | 综合计算indexDic: 从抽象向具象依次判断,从最抽象开始逐层判断与下个indexDic是否有映射 `T`; |
 |  | 条件: 所有层跑完最终映射成功,则收集这一条; 但中途任一层不成功链条断开,则不收集这一条; |
-| TODO9 | 综合计算indexDic: 在抽具象转向时的综合计算 (向上转为向下,或下转上); |
+| TODO9 | 综合计算indexDic: 在抽具象转向时的综合计算 (向上转为向下,或下转上) `T`; |
 |  | ![](assets/715_H迁移之推举算法indexDic综合计算.png) |
 |  | 名词说明: 1型-像图中左侧一边的纵向多层抽具象的综合计算; |
 |  | 名词说明: 8型-像图中顶部fatherRScene左右各一个分叉的综合计算; |
@@ -1220,7 +1220,9 @@ Demand竞争 <<<== SUCCESS 共2条
 |  | 1. H推举时不往fatherRCanset走这一步,只走到fatherRScene,它在father层也不由用转体; |
 |  | 2. 我们只触发fatherRScene的帧替换,但却不找fatherRCanset层,也不由用转体(用完就走); |
 |  | 3. 在继承时,再落实到i.rCanset这一层,同时也会触发由用转体; |
+| 示图 | ![](assets/716_H迁移之推举示图.png) |
 | 解答 | H推举仅推举到fatherRScene层且不触发由用转体,继承时再落实到iRCanset层且会由用转体; |
+| TODO | 如图,H推举时: 改为只推举到fatherRScene,不降到fatherRCanset `T`; |
 
 ***
 
