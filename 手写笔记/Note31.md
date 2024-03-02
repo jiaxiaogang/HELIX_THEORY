@@ -1224,6 +1224,20 @@ Demand竞争 <<<== SUCCESS 共2条
 | 解答 | H推举仅推举到fatherRScene层且不触发由用转体,继承时再落实到iRCanset层且会由用转体; |
 | TODO | 如图,H推举时: 改为只推举到fatherRScene,不降到fatherRCanset `T`; |
 
+| 31115 | H迁移之继承迭代 |
+| --- | --- |
+| 说明 | 如上表中的H推举示图,H在继承时,因为不同类型其网络结构也是不同的,需要各自搞综合indexDic计算等; |
+| 实践 | 如下,不同的type迁移源(F/B),不同的任务(H/R),他们的结构都是不同的,要区分计算综合indexDic,如下: |
+| TODO1 | 第1种: type=father & H任务时(迁移要经历二上二下)求出综合indexDic,结构如下: |
+|  | 从fatherHCanset向上->fatherRCanset->fatherRScene,再向下->iRScene->iRCanset |
+| TODO2 | 第2种: type=father & R任务时(迁移要经历一上一下)求出综合indexDic,结构如下: |
+|  | 从fatherRCanset向上->fatherRScene,再向下->iRScene |
+| TODO3 | 第3种: type=brother & H任务时(迁移要经历一上二下)求出综合indexDic,结构如下: |
+|  | 从fatherHCanset向上->fatherRScene,再向下->iRScene->iRCanset |
+| TODO4 | 第4种: type=brother & R任务时(迁移要经历一上一下)求出综合indexDic,结构如下: |
+|  | 从fatherRCanset向上->fatherRScene,再向下->iRScene |
+| 结果 | 以上都完成了,还没测 `T`; |
+
 ***
 
 ## n31pN TODO备忘
