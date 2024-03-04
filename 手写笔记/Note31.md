@@ -839,22 +839,22 @@ Demand竞争 <<<== SUCCESS 共2条
 | 31072b | Cansets实时竞争: 继续深入分析下关键问题点; |
 | --- | --- |
 | 说明 | 本表,分析下上表方案中会遇到的两个关键问题: |
-| 问题1 | CansetModel什么时候由用转体(执行transferCreate()构建iCanset); |
+| 问题1 | CansetModel什么时候由虚转实(执行transferCreate()构建iCanset); |
 |  | 首先. TOFoModel是要触发器和反省SPEFF的,我们不可能为所有CansetModels做这些 (这耗能耗空间,且没必要); |
 |  | 线索. 在实时竞争中能够最终获胜的bestResult,它算是质的明确胜者; |
-|  | 原则. 我们可以尽量迟的由用转体 (避免生成没能激活成bestResult的canset); |
-|  | 解答. 在输出bestResult后,将cansetModel由用转体 (调用transferCreate()构建iCanset); |
+|  | 原则. 我们可以尽量迟的由虚转实 (避免生成没能激活成bestResult的canset); |
+|  | 解答. 在输出bestResult后,将cansetModel由虚转实 (调用transferCreate()构建iCanset); |
 | 问题2 | Canset实时竞争后,bestResult也随时可能被拉下来,即推进中就被后浪拍死,那它不应该继续执行SPEFF更新; |
 |  | 比如. 比如买菜途中,想起家里还有饺子,不买菜了,回家煮饺子; |
 |  | 解答. 即触发器触发后,发生bestResult已被后浪拍死,那它就不应该更新SPEFF (因为已经不推进了); |
-| 结果 | 本表分析了CansetModel由用转体的契机,然后分析了bestResult被后浪拍死后的后续 `T`; |
+| 结果 | 本表分析了CansetModel由虚转实的契机,然后分析了bestResult被后浪拍死后的后续 `T`; |
 
 | 31072c | Cansets实时竞争: 捋一捋整个流程 |
 | --- | --- |
 | 说明 | 结合前面两张表的成果: 整理下从反馈到最后Canset的反省SPEFF更新,这整个步骤跑的流程; |
 | 步骤1 | TI反馈 (所有TOFoModel和CansetModels候选集都要接受反馈); |
 | 步骤2 | TO候选集实时竞争 |
-| 步骤3 | TO得出bestResult由用转体 (生成iCanset); |
+| 步骤3 | TO得出bestResult由虚转实 (生成iCanset); |
 | 步骤4 | 生成为TOFoModel,并交由TCAction行为化 |
 | 步骤5 | 构建TOFoModel触发器 |
 | 步骤6 | 推进SPEFF变化 (如果触发的bestResult已被后浪拍死,则不更新SPEFF值); |
@@ -875,12 +875,12 @@ Demand竞争 <<<== SUCCESS 共2条
 |  | 3b. 另外: 但只初始化一次,后面再调用solution时,只竞争排序,避免重复生成到actionFoModels `转TODO2f`; |
 |  | 3c. 为便于接受反馈到feedbackAlg,需提前把生成子TOAlgModel,并把cutIndex+1 `转TODO2g` |
 |  | 4. 说白了,CansetModel,TOFoModel有它们的共同点(上面几条都是共同点),也有不同点如下: |
-|  | 5. 不同点1: 阶段不同,即是否已`由用转体`只是一个进化阶段 `转TODO2c`; |
-|  | 6. 不同点2: 状态不同,即使由用转体后,也可以被后浪拍死(新增besting和bested状态) `转TODO2d`; |
+|  | 5. 不同点1: 阶段不同,即是否已`由虚转实`只是一个进化阶段 `转TODO2c`; |
+|  | 6. 不同点2: 状态不同,即使由虚转实后,也可以被后浪拍死(新增besting和bested状态) `转TODO2d`; |
 |  | 7. 不同点3: 反省不同,只有besting且触发器触发反省,才更新SPEFF值 `转TODO2e`; |
 | 总结 | 起因123主要分析和合并AICansetModel和TOFoModel,起因567主要解决二者3个不同点处理; |
 | TODO2b | 模型合同: 将AICansetModel模型合并到TOFoModel中 `T`; |
-| TODO2c | 阶段不同: 在bestResult决出后,再触发`由用转体` `T`; |
+| TODO2c | 阶段不同: 在bestResult决出后,再触发`由虚转实` `T`; |
 | TODO2d | 状态不同: 新增bestingStatus和bestedStatus两个状态 `T`; |
 | TODO2e | 反省不同: 只有bestingStatus的在触发器后,才反省SPEFF值等 `T`; |
 | TODO2f | 第一次调用solution时初始化,生成所有CansetModel为TOFoModel,第二次时只竞争不重复生成 `T`; |
@@ -904,7 +904,7 @@ Demand竞争 <<<== SUCCESS 共2条
 |  | 解答e: perceptOutRethink()中本来就是这样的,最后一帧mv是有SP值的; |
 | TODO4 | 让Cansets竞争像TCScore一样,每次TO循环都重跑下(另外可以加rankScore缓存以实现复用省算力) `T`; |
 |  | 解释: 因为现在是TI和TO两个线程,所以TI的feedback不能直接响应到TO,只能在TO下轮循环中通过工作记忆发现变化; |
-| TODO5 | 输出bestResult后由用转体 (参考31072b-问题1) `在TODO2c已做 T`; |
+| TODO5 | 输出bestResult后由虚转实 (参考31072b-问题1) `在TODO2c已做 T`; |
 | TODO6 | 反省时,如果bestResult已被后浪拍死,则不更新SPEFF值 (参考31072b-问题2) `在TODO2e已做 T`; |
 | TODO7 | 借着这次改动feedbackTOR方法的机会,把原来feedbackTOR里一堆代码整理下 `T`; |
 |  | 1. 整理TOFoModel.feedbackPushFrameThenStep()方法,目前有三个用途如下: `T`; |
@@ -921,7 +921,7 @@ Demand竞争 <<<== SUCCESS 共2条
 |  | 实践: 当前targetFo同一个Cansets池子里的兄弟,如果现在也在等待一模一样的targetAlg,那么全计为失败 `T`; |
 
 **小结: 本节主要做了CansetModels实时竞争,即每个CansetModels都可以持续接受反馈,并因此实时竞争,然后附带也改了一些别的:**
-1. 支持伪迁移 -> 由用转体;
+1. 支持伪迁移 -> 由虚转实;
 2. 写了feedbackTOR反馈的推进帧pushNextFrame();
 3. 改了CansetModels的ranking算法: solutionFoRankingV3()竞争改为SP稳定性为第一竞争因子;
 4. 每次TO.solution都跑下实时竞争代码 (下节还会深化这一条,直接由实时竞争来替代TCPlan模块);
@@ -1182,11 +1182,11 @@ Demand竞争 <<<== SUCCESS 共2条
 |  | 思路2: 比如在火虫的例子中,解决火pFo时,可以随着找灭火器,解决咬pFo时,可以找风精油; |
 |  | 解答2: 但在解决火时,是不会想到找风精油的,即使此时它有用,说明它只从当前火pFo这颗树上在找hCansets; |
 |  | 结果: 选定方案2,改为仅从当前targetFoM所在的pFo这一颗树下进行hCansets迁移 `T`; |
-| TODO5 | 问题: 迁移到to的protoRCanset下,还是由用转体后的iRCanset下面; |
-|  | 解答: 现在的任务就是在推进由用转体后的iRCanset,所以应该迁移到iRCanset下面; |
+| TODO5 | 问题: 迁移到to的protoRCanset下,还是由虚转实后的iRCanset下面; |
+|  | 解答: 现在的任务就是在推进由虚转实后的iRCanset,所以应该迁移到iRCanset下面; |
 | TODO6 | 问题: 随着上面两个问题,对目前控制中的知识结构进行了两次简化,感觉31112中的示图可以简化了; |
 |  | 起因1. from和to处在同一个pFo下,即和原来的rCanset迁移时一样了,无非就是IFB走向I,要么推举,要么推举+继承; |
-|  | 起因2. to必然已经由用转体,必然有IScene和ICanset (参考31113-TODO5); |
+|  | 起因2. to必然已经由虚转实,必然有IScene和ICanset (参考31113-TODO5); |
 |  | 结果: 可简化为对from的hCanset写一个推举算法,一个继承算法 (唯一与R迁移不同是它在RCanset下,所以多一层) |
 | TODO7 | 问题: H比R多一层,是否它就应该多一次推举且多一次继承? `T,具体实现转31113-TODO8` |
 |  | ![](assets/714_H迁移示图.png) |
@@ -1217,11 +1217,11 @@ Demand竞争 <<<== SUCCESS 共2条
 |  | 3后期阶段: 自身rCanset下就能找着足够的解; |
 | 分析 | 三个阶段,可以找同样代码来跑,即无论处在第几阶段,都延着RScene树来取解,至于23阶段只是它在竞争中取胜罢了; |
 | 思路 | 至于上面的H迁移问题,我们可以只推举到rScene这一层,继承时,再继承到rCanset即可,如下: |
-|  | 1. H推举时不往fatherRCanset走这一步,只走到fatherRScene,它在father层也不由用转体; |
-|  | 2. 我们只触发fatherRScene的帧替换,但却不找fatherRCanset层,也不由用转体(用完就走); |
-|  | 3. 在继承时,再落实到i.rCanset这一层,同时也会触发由用转体; |
+|  | 1. H推举时不往fatherRCanset走这一步,只走到fatherRScene,它在father层也不由虚转实; |
+|  | 2. 我们只触发fatherRScene的帧替换,但却不找fatherRCanset层,也不由虚转实(用完就走); |
+|  | 3. 在继承时,再落实到i.rCanset这一层,同时也会触发由虚转实; |
 | 示图 | ![](assets/716_H迁移之推举示图.png) |
-| 解答 | H推举仅推举到fatherRScene层且不触发由用转体,继承时再落实到iRCanset层且会由用转体; |
+| 解答 | H推举仅推举到fatherRScene层且不触发由虚转实,继承时再落实到iRCanset层且会由虚转实; |
 | TODO | 如图,H推举时: 改为只推举到fatherRScene,不降到fatherRCanset `T`; |
 
 | 31115 | H迁移之继承迭代 |
