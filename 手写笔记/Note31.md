@@ -17,6 +17,7 @@
   - [n31p10 继续迭代hSolutionV3](#n31p10-继续迭代hsolutionv3)
   - [n31p11 继续迭代hSolutionV3: 之hCanset迁移部分](#n31p11-继续迭代hsolutionv3-之hcanset迁移部分)
   - [n31p12 继续迭代hSolutionV3: 之hCanset过滤排序实时竞争机制](#n31p12-继续迭代hsolutionv3-之hcanset过滤排序实时竞争机制)
+  - [n31p13 Canset实时竞争和HSolutionV3迭代: 回测训练](#n31p13-canset实时竞争和hsolutionv3迭代-回测训练)
   - [n31pN TODO备忘](#n31pn-todo备忘)
 
 <!-- /TOC -->
@@ -1276,9 +1277,29 @@ Demand竞争 <<<== SUCCESS 共2条
 
 | 31121 | 分析应该该哪些代码,怎么改 |
 | --- | --- |
+| 说明 | 补齐hCanset关于alg匹配度,等的过滤竞争机制 (参考31105-第4步); |
 | 回顾 | 参考31105先用匹配度过滤,至于后面的SP竞争现在就有代码不用改; |
 | TODO1 | 废除Override算法,因为它本质上只是一个防重复迁移的过滤器,直接写到RHSolution()里得了 `T`; |
-| TODO2 | 在第二步判断mcIsBro成立时,将匹配度存下来,然后把匹配低的20%过滤掉; |
+| TODO2 | 在第二步判断mcIsBro成立时,将匹配度存下来,然后把匹配低的20%过滤掉 (末尾淘汰) `T`; |
+| TODO3 | mcIsBro匹配度 = conA和absA的匹配度 * conB和absA的匹配度 (如果有多个absA,则找出评分最大的)`T` |
+| TODO4 | 把31103-mcIsBro过滤器,改为mcIsBro匹配度=0的过滤掉 (其实是等效的,只是此表许多实践需要算成值) `T` |
+
+| 31122 | 实时竞争机制,可以直接复用R的,看了下代码没啥问题; |
+| --- | --- |
+
+**总结:本节主要写了hCanset的过滤器部分,对于实时竞争机制直接复用了R的,至此hSolutionV3()正式迭代完成;**
+
+***
+
+## n31p13 Canset实时竞争和HSolutionV3迭代: 回测训练
+`CreateTime 2024.03.12`
+
+回顾一下写实时竞争和迭代HSolutionV3的起因,以及当时训练的阶段是什么情况,规划下怎么测下相关改动:
+1. hSolutionV3: 应该是因为R的路径取不到H解,H解始末都多一层 (参考31053-H有皮果总是无计可施);
+2. 实时竞争: 应该是因为feedback反馈条件mcIsBro太宽泛问题(所以改为mIsC),所以需要支持连续反馈,随时接受反馈并因此更新TO竞争 (参考n31p06);
+
+
+
 
 ***
 
