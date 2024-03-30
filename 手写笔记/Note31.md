@@ -1365,7 +1365,17 @@ Demand竞争 <<<== SUCCESS 共2条
 |  | 步骤3. 步骤1的结果和步骤2的结果,合在一起,可以顺利feedbackTOR反馈上; |
 | 回顾核实 | 去代码里核实下,上面整理的三步骤哪里对不上 (相关代码模块: 概念识别,canset类比),然后把对不上的改好; |
 |  | 1. 经核实概念识别需要打开交层,不过为了不影响过去的逻辑,识别结果需单独把交层存一个变量 `转TODO1`; |
+|  | 2. 经核实构建新HCanset和再类比看起来都ok `参考31134-代码段1`; |
 | TODO1 | 改下概念识别算法,交层也返回,因为这里feedbackTOR判断反馈absCansetA时,必须交层才能判断到,要用 `T`; |
+
+```c
+//31134-代码段1: 现在的NewCanset和AbsCanset构建时机如下:
+1. 在AIMatchFoModel.pushFrameFinish()中,构建RCanset和再类比;
+2. 在TOFoModel中step2_FeedbackThenCreateHCanset()中,构建HCanset和再类比;
+结果: 看起来,HCanset的新建和再类比都ok,第2次经历时就可以顺利触发HCanset的再类比并抽象;
+```
+
+
 
 ***
 
