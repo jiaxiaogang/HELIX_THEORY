@@ -18,6 +18,8 @@
   - [n31p11 继续迭代hSolutionV3: 之hCanset迁移部分](#n31p11-继续迭代hsolutionv3-之hcanset迁移部分)
   - [n31p12 继续迭代hSolutionV3: 之hCanset过滤排序实时竞争机制](#n31p12-继续迭代hsolutionv3-之hcanset过滤排序实时竞争机制)
   - [n31p13 Canset实时竞争和HSolutionV3迭代: 回测训练](#n31p13-canset实时竞争和hsolutionv3迭代-回测训练)
+  - [n31p14 训练搬运hCanset](#n31p14-训练搬运hcanset)
+  - [n31p15 迭代Canset的IndexDic算法](#n31p15-迭代canset的indexdic算法)
   - [n31pN TODO备忘](#n31pn-todo备忘)
 
 <!-- /TOC -->
@@ -1388,6 +1390,8 @@ Demand竞争 <<<== SUCCESS 共2条
         1. NewHCanset全是针对matchPFos下的所有rCansets池来反馈的,所以这一步没啥问题;
         2. 所以为什么,hSolutionV3会取不到hCanset呢?
         3. 所以为什么,再一次反馈时,不会触发absHCanset呢?难道是因为所有H任务的actionFoModels全反馈失败了吗? (查下);
+        4. **原因**: 经查因为RHCanset许多地方生成时indexDic计算的不对,也有indexDic为空的,导致hCanset激活全失败;
+        5. **结果**: 转下节,先把各种canset的indexDic生成整明白,再回来从这继续测,然后再测n31p14,不过indexDic的问题是个大工程 `转n31p15`;
 
 ***
 
@@ -1405,6 +1409,46 @@ Demand竞争 <<<== SUCCESS 共2条
 |  | >>> 参考31026-代码段2-OR反省部分,日志可见可顺利生成新hCanset; |
 |  | 结果: 关注1和关注2都实训顺利 `接下来可以正式训练下第8步,转31027`; |
 |  | 说明: 这里8.3还没测,8.2转31134了... |
+
+
+***
+
+## n31p15 迭代Canset的IndexDic算法
+`CreateTime 2024.04.10`
+
+起因：在n31p13末尾，测得HCanset的indexDic总是空的，不对。
+推陈：旧有方式是把realMaskFo和realIndexDic都存在pFo中，再通过convertOldIndexDic2NewIndexDic()来处理跨层综合计算，但这种方式不成，有BUG算不对。
+出新：本节重点迭代下每个Canset的indexDic算法，使之又准确，又直观，可用性强。
+
+* 31151-简介:
+  - 每一次canset生成时，都需要把indexDic取到存下。但indexDic在工作记忆树中是需要综合计算的，并不是那么单一简单的可算。本节主要解决它怎么算的问题。
+* 31152-回顾: (原来的代码主要是：convertOldIndexDic2NewIndexDic()和realMaskFo这些);
+  - 以前的做法是：在pFo下存一个realMaskFo和indexDic，等构建rCanset时就用它来构建。而HCanset也一样在复用这个pFo下的realMaskFo，但H时其知识结构与R完全不同。
+  - R和H在此处的不同：
+    - R是预测pFo，然后用真实发生来构建RCanset。
+    - H是预测TOFOModel,然后用真实发生来构建HCanset。
+  - 困难点：H比R多一层，但H也需要把R的已发生成果用起来，这是本节最大的难点。
+* 31153-分析现有工作记忆结构和数据要求：
+  - 以前已经明确，现在需要满足的条件：（在这个条件的基础上分析此节问题的解决方案）
+    1. realMaskFo中的元素需要是最具象概念(protoAlg)。
+    2. pFo下会记录所有的realMaskFo（含已发生部分和后续反馈的所有protoAlg(含反馈成立与不成立的))。
+    3. pFo和其下的TOFoModel的已发生部分各管各的，后续反馈是否成立也是各管各的（反馈是否成立决定了它的indexDic映射）。
+* 31154-方案规划：
+  - 方案1. 从pFo取realMaskFo，然后向子枝节一层层综合计算indexDic。
+    - 问题：任务有多层，这么算有些繁琐（解决：可以以pFo为界，子任务有R任务时，算下一个pFo，挡着中断跨层递归了)。
+    - 缺点：RCanset和HCanset有映射的，又未必与RScene(pFo)层有任何映射，所以这也不是且关系，这样indexDic计算很复杂，如下：
+      1. 前段indexDic从pFo的已发生继承。
+      2. 中段（pFo在cutIndex之后又发生的部分）。
+      3. 后段（在HCanset中发生的部分）。
+  - 分析：从方案1分析，大家的realMaskFo都一模一样（因为无论是否反馈匹配都会存进去）。但indexDic却是各有各的（因为它依赖是否反馈匹配）。所以改进成方案2如下：
+  - 方案2. 每一层cansetFo的indexDic都单存一份（realMaskFo都复用basePFo的）。
+    - 优点：简单，只需要做到两步：
+      1. 从base一级继承已发生indexDic。
+      2. 从自己反馈成立时，追加后续indexDic。
+  - 抉择：从以上分析来看，两个方案虽等效。但因为方案1太复杂，方案2则更易于理解也更易于实现。（采用方案2）
+* 31155-方案2TODOLIST
+    - todo1：需要把base一层已发生indexDic继承过来。
+    - todo2：
 
 ***
 
