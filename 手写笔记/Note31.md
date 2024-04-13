@@ -1422,33 +1422,46 @@ Demand竞争 <<<== SUCCESS 共2条
 
 * 31151-简介:
   - 每一次canset生成时，都需要把indexDic取到存下。但indexDic在工作记忆树中是需要综合计算的，并不是那么单一简单的可算。本节主要解决它怎么算的问题。
+
 * 31152-回顾: (原来的代码主要是：convertOldIndexDic2NewIndexDic()和realMaskFo这些);
   - 以前的做法是：在pFo下存一个realMaskFo和indexDic，等构建rCanset时就用它来构建。而HCanset也一样在复用这个pFo下的realMaskFo，但H时其知识结构与R完全不同。
   - R和H在此处的不同：
     - R是预测pFo，然后用真实发生来构建RCanset。
     - H是预测TOFOModel,然后用真实发生来构建HCanset。
   - 困难点：H比R多一层，但H也需要把R的已发生成果用起来，这是本节最大的难点。
+
 * 31153-分析现有工作记忆结构和数据要求：
   - 以前已经明确，现在需要满足的条件：（在这个条件的基础上分析此节问题的解决方案）
     1. realMaskFo中的元素需要是最具象概念(protoAlg)。
     2. pFo下会记录所有的realMaskFo（含已发生部分和后续反馈的所有protoAlg(含反馈成立与不成立的))。
     3. pFo和其下的TOFoModel的已发生部分各管各的，后续反馈是否成立也是各管各的（反馈是否成立决定了它的indexDic映射）。
+
 * 31154-方案规划：
-  - 方案1. 从pFo取realMaskFo，然后向子枝节一层层综合计算indexDic。
+  - **方案1. 从pFo取realMaskFo，然后向子枝节一层层综合计算indexDic。**
     - 问题：任务有多层，这么算有些繁琐（解决：可以以pFo为界，子任务有R任务时，算下一个pFo，挡着中断跨层递归了)。
     - 缺点：RCanset和HCanset有映射的，又未必与RScene(pFo)层有任何映射，所以这也不是且关系，这样indexDic计算很复杂，如下：
       1. 前段indexDic从pFo的已发生继承。
       2. 中段（pFo在cutIndex之后又发生的部分）。
       3. 后段（在HCanset中发生的部分）。
   - 分析：从方案1分析，大家的realMaskFo都一模一样（因为无论是否反馈匹配都会存进去）。但indexDic却是各有各的（因为它依赖是否反馈匹配）。所以改进成方案2如下：
-  - 方案2. 每一层cansetFo的indexDic都单存一份（realMaskFo都复用basePFo的）。
+  - **方案2. 每一层cansetFo的indexDic都单存一份（realMaskFo都复用basePFo的）。**
     - 优点：简单，只需要做到两步：
       1. 从base一级继承已发生indexDic。
       2. 从自己反馈成立时，追加后续indexDic。
-  - 抉择：从以上分析来看，两个方案虽等效。但因为方案1太复杂，方案2则更易于理解也更易于实现。（采用方案2）
-* 31155-方案2TODOLIST
-    - todo1：需要把base一层已发生indexDic继承过来。
-    - todo2：
+    - todo1: 需要把base一层已发生indexDic继承过来 `已废弃`;
+    - todo2: 需要在每次feedback匹配时,计入新的indexDic `已废弃`;
+    - 抉择：从以上分析来看，两个方案虽等效。但因为方案1太复杂，方案2则更易于理解也更易于实现。（采用方案2）
+    - pass掉: base层的indexDic即使不继承过来,也可以翻查到 (所以它没必要), 而feedback匹配时,其实也会记录feedbackAlg (所以它也没必要), 所以这个方案的做法有些显多余,不如啥也不干,就等最终取indexDic时,来base和feedbackAlg中找线索,并生成正确的最终indexDic即可 (转方案3);
+  - **方案3. 如果按方案2的优点来看,我们是不是不需要给每个TOFoModel记录独立的indexDic,在最后结算indexDic时,递归依据取呗,是能取到的 (参考方案2-pass掉),步骤如下**:
+      1. 后段依据递归一层层向base取: 只需要向着base依次取有feedbackAlg的TOAlgModel就行了;
+      2. 前段在最上一层base层取: 直至最终递归到PFo时,取到它的前段映射 (已发生部分);
+    - 优点: 此方案更简单,只是要多加注释把这里的数据结构和算法讲明白,避免今后回来时忘了怎么写怎么设计的;
+    - 抉择: 在方案2的基础上,设计出了更简单的方案3,方案3其实与现在的convertOldIndexDic2NewIndexDic()算法是一个意思,只是修复了它在前段,以及base中,取indexDic有诸多错误的BUG;
+  - **结果: 本表中方案3最优,改动也最小,下表中进行实践 `方案3实践-转31155`;**
+
+* 31155-上表方案3TODOLIST
+    - todo1: 迭代convertOldIndexDic2NewIndexDic()算法,使之可以向base层递归,来分别取每个base层反馈匹配到的indexDic;
+    - todo2: 迭代convertOldIndexDic2NewIndexDic()算法,使之可以最终递归到pFo时,把任务成立之初,就已经发生的indexDic也计过来;
 
 ***
 
