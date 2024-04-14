@@ -1465,10 +1465,8 @@ Demand竞争 <<<== SUCCESS 共2条
 ```c
 31155-上表方案2实践规划:
 说明: 如下代码是方案2每个枝节的RealModel模型,它在初始化时,用伪代码分析了一下,它的indexDic数据结构及得到我们要的综合indexDic的方式;
--(void) initRealModel {
-    //1. 初始化;
-    self.realModel = [[AIRealModel alloc] init];
-
+-(void) recordRealModel {
+    //1. 初始化
     if (self.isH) {
         //1. 取得realMaskAlgs与RCanset已发生部分的映射 (RCanset已发生截点是容易取得的);
         //      a. pFo.indexDic2记录的是pFo与realMask之间的映射,这里需要转一下,转成realMask与rCanset的映射;
@@ -1479,8 +1477,11 @@ Demand竞争 <<<== SUCCESS 共2条
         AIMatchFoModel *pFo = (AIMatchFoModel*)self.basePFoOrTargetFoModel;
     }
 }
+//结果: 此处不仅是H和R,还是H还有子H,这些初始indexDic怎么计算?转下表分析;
 ```
 
+31156-上表方案2实践中遇到问题: (每个cansetFo与真实发生的indexDic,初始时从base继承过来怎么计算?) 示图分析:
+  * ![](assets/717_Canset的初始IndexDic分析.png)
 
 ***
 
