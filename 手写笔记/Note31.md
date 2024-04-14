@@ -1462,26 +1462,34 @@ Demand竞争 <<<== SUCCESS 共2条
     - 缺点: 递归判断每个TOAlgModel的feedbackAlg是麻烦的,并且如果哪天protoAlg防重出了问题,这里也会出问题,总之这个方案看似精简了数据,但各个枝节的数据模型会不那么独立易读;
   - **抉择: 本表中方案3改动最小,但方案2写出来后会更加易读解耦,所以先选定方案2,在下表中进行实践 `实践-转31155`;**
 
-```c
+```java
 31155-上表方案2实践规划:
 说明: 如下代码是方案2每个枝节的RealModel模型,它在初始化时,用伪代码分析了一下,它的indexDic数据结构及得到我们要的综合indexDic的方式;
--(void) recordRealModel {
-    //1. 初始化
-    if (self.isH) {
-        //1. 取得realMaskAlgs与RCanset已发生部分的映射 (RCanset已发生截点是容易取得的);
-        //      a. pFo.indexDic2记录的是pFo与realMask之间的映射,这里需要转一下,转成realMask与rCanset的映射;
-        //2. 后续feedbackTOR反馈匹配时,更新这个字典;
+
+//HCanset的IndexDic计算:
+void recordRealModel {
+    //前注: 当前要生成的realCansetToIndexDic是要给当前cansetTo建立hCanset用;
+    if (!self.isH) {
+        //-------------- base是pFo时 --------------
+        //结构说明. matchFo(pFo)是当前的sceneTo;
+        //第1步. 在basePFo中取到indexDic2 (matchFo与real的映射,也即当前sceneTo与real的映射)
+        //  第1b步: 此处需要筛选出realMaskAlgs与pFo已发生部分的映射 (pFo已发生部分是容易取得的);
     } else {
-        //1. 得得realMaskAlgs与pFo已发生部分的映射 (pFo已发生部分是容易取得的);
-        //2. 后续feedbackTIR反馈匹配时,更新这个字典;
-        AIMatchFoModel *pFo = (AIMatchFoModel*)self.basePFoOrTargetFoModel;
+        //-------------- base就是HCanset时 --------------
+        //结构说明. base.cansetTo就是当前的sceneTo;
+        //第1步. 在base中取到realCansetToIndexDic (base.cansetTo与real的映射,也即当前sceneTo与real的映射)
     }
+    //第2步. 在当前xvModel中取到sceneTo与cansetTo的映射;
+    //第3步. 计算: 根据以上两个映射,计算出: 当前cansetTo和real的映射;
+
+    //后注. 后续feedbackTOR反馈匹配时,更新这个字典;
 }
-//结果: 此处不仅是H和R,还是H还有子H,这些初始indexDic怎么计算?转下表分析;
+//结果: 这三步,仅第1步在base是R或H的情况下是不同的,第2第3步都是一模一样的;
 ```
 
-31156-上表方案2实践中遇到问题: (每个cansetFo与真实发生的indexDic,初始时从base继承过来怎么计算?) 示图分析:
-  * ![](assets/717_Canset的初始IndexDic分析.png)
+31156-上表31155的方案2实践的示图 (每个cansetTo与real的映射,初始时怎么计算?) 可参考下图:
+  * ![](assets/718_HCanset的初始IndexDic分析.png)
+  * 注: 这图比较过于简单了,主要这图是给个直观的数据结构观,具体的算法步骤还是参数31155的三步;
 
 ***
 
