@@ -1448,20 +1448,39 @@ Demand竞争 <<<== SUCCESS 共2条
     - 优点：简单，只需要做到两步：
       1. 从base一级继承已发生indexDic。
       2. 从自己反馈成立时，追加后续indexDic。
-    - todo1: 需要把base一层已发生indexDic继承过来 `已废弃`;
-    - todo2: 需要在每次feedback匹配时,计入新的indexDic `已废弃`;
+    - todo1: 需要把base一层已发生indexDic继承过来 `转31155`;
+    - todo2: 需要在每次feedback匹配时,计入新的indexDic `转31155`;
     - 抉择：从以上分析来看，两个方案虽等效。但因为方案1太复杂，方案2则更易于理解也更易于实现。（采用方案2）
-    - pass掉: base层的indexDic即使不继承过来,也可以翻查到 (所以它没必要), 而feedback匹配时,其实也会记录feedbackAlg (所以它也没必要), 所以这个方案的做法有些显多余,不如啥也不干,就等最终取indexDic时,来base和feedbackAlg中找线索,并生成正确的最终indexDic即可 (转方案3);
+    - 缺点: base层的indexDic即使不继承过来,也可以翻查到 (所以它没必要), 而feedback匹配时,其实也会记录feedbackAlg (所以它也没必要), 所以这个方案的做法有些显多余,不如啥也不干,就等最终取indexDic时,来base和feedbackAlg中找线索,并生成正确的最终indexDic即可 (转方案3);
   - **方案3. 如果按方案2的优点来看,我们是不是不需要给每个TOFoModel记录独立的indexDic,在最后结算indexDic时,递归依据取呗,是能取到的 (参考方案2-pass掉),步骤如下**:
       1. 后段依据递归一层层向base取: 只需要向着base依次取有feedbackAlg的TOAlgModel就行了;
       2. 前段在最上一层base层取: 直至最终递归到PFo时,取到它的前段映射 (已发生部分);
     - 优点: 此方案更简单,只是要多加注释把这里的数据结构和算法讲明白,避免今后回来时忘了怎么写怎么设计的;
     - 抉择: 在方案2的基础上,设计出了更简单的方案3,方案3其实与现在的convertOldIndexDic2NewIndexDic()算法是一个意思,只是修复了它在前段,以及base中,取indexDic有诸多错误的BUG;
-  - **结果: 本表中方案3最优,改动也最小,下表中进行实践 `方案3实践-转31155`;**
-
-* 31155-上表方案3TODOLIST
     - todo1: 迭代convertOldIndexDic2NewIndexDic()算法,使之可以向base层递归,来分别取每个base层反馈匹配到的indexDic;
     - todo2: 迭代convertOldIndexDic2NewIndexDic()算法,使之可以最终递归到pFo时,把任务成立之初,就已经发生的indexDic也计过来;
+    - 缺点: 递归判断每个TOAlgModel的feedbackAlg是麻烦的,并且如果哪天protoAlg防重出了问题,这里也会出问题,总之这个方案看似精简了数据,但各个枝节的数据模型会不那么独立易读;
+  - **抉择: 本表中方案3改动最小,但方案2写出来后会更加易读解耦,所以先选定方案2,在下表中进行实践 `实践-转31155`;**
+
+```c
+31155-上表方案2实践规划:
+说明: 如下代码是方案2每个枝节的RealModel模型,它在初始化时,用伪代码分析了一下,它的indexDic数据结构及得到我们要的综合indexDic的方式;
+-(void) initRealModel {
+    //1. 初始化;
+    self.realModel = [[AIRealModel alloc] init];
+
+    if (self.isH) {
+        //1. 取得realMaskAlgs与RCanset已发生部分的映射 (RCanset已发生截点是容易取得的);
+        //      a. pFo.indexDic2记录的是pFo与realMask之间的映射,这里需要转一下,转成realMask与rCanset的映射;
+        //2. 后续feedbackTOR反馈匹配时,更新这个字典;
+    } else {
+        //1. 得得realMaskAlgs与pFo已发生部分的映射 (pFo已发生部分是容易取得的);
+        //2. 后续feedbackTIR反馈匹配时,更新这个字典;
+        AIMatchFoModel *pFo = (AIMatchFoModel*)self.basePFoOrTargetFoModel;
+    }
+}
+```
+
 
 ***
 
