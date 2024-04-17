@@ -20,6 +20,7 @@
   - [n31p13 Canset实时竞争和HSolutionV3迭代: 回测训练](#n31p13-canset实时竞争和hsolutionv3迭代-回测训练)
   - [n31p14 训练搬运hCanset](#n31p14-训练搬运hcanset)
   - [n31p15 迭代Canset的IndexDic算法](#n31p15-迭代canset的indexdic算法)
+  - [n31p16 回测Canset的IndexDic算法](#n31p16-回测canset的indexdic算法)
   - [n31pN TODO备忘](#n31pn-todo备忘)
 
 <!-- /TOC -->
@@ -1490,6 +1491,24 @@ void recordRealModel {
 31156-上表31155的方案2实践的示图 (每个cansetTo与real的映射,初始时怎么计算?) 可参考下图:
   * ![](assets/718_HCanset的初始IndexDic分析.png)
   * 注: 这图比较过于简单了,主要这图是给个直观的数据结构观,具体的算法步骤还是参数31155的三步;
+
+**总结: 本节主要整理了Canset的IndexDic计算:**
+1. NewRCanset延用原有PFo.indexDic2 `没改`;
+2. NewHCanset参考PFo.indexDic2的方式,将初始和更新分成两个步来实现 (将base已发生部分做为初始,将feedbackTOR反馈匹配做逐帧更新) `主要迭代了这条`;
+3. AbsRCanset简化了下,使用zonHeDic计算方式 `精简了下`;
+4. AbsHCanset简化了下,使用zonHeDic计算方式 `精简了下`;
+**结果: 其实主要是NewHCanset迭代(因为它在修改前彻底是错误的),另外三条只是顺带更新简化了下;**
+
+***
+
+## n31p16 回测Canset的IndexDic算法
+
+对上节的改动进行测试;
+
+* 31161-回测步骤规划:
+  - 还算31135制定的步骤来训练,那个正好应该可以触发NewRHCanset和AbsRHCanset这四个;
+  - 训练步骤: 动物模式(`路边出生,饿,路上扔带皮果,扔棒去皮,手动飞至,触发吃掉`)x路下3次 (注:鸟与果相对位置要稳定些);
+  - 注意: 在31135时,newRCanset,absRCanset,newHCanset都有构建,但就是没触发构建absHCanset,因为hSolution执行了多次,全是无计可施,所以压根没激活过hCanset,所以没触发absHCanset,本次训练可以关注下还有没这个问题;
 
 ***
 
