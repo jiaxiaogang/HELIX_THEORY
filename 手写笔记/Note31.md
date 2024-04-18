@@ -1507,10 +1507,12 @@ void recordRealModel {
 
 * 31161-回测步骤规划:
   - 还算31135制定的步骤来训练,那个正好应该可以触发NewRHCanset和AbsRHCanset这四个;
-  - 训练步骤: 动物模式(`路边出生,饿,路上扔带皮果,扔棒去皮,手动飞至,触发吃掉`)x路下3次 (注:鸟与果相对位置要稳定些) `训练基础为FZ913,存为FZ934`;
-    1. 训练第1次,执行到20多次NewRCanset;
-    2. 训练第2,3次,还是执行NewRCanset (明日: 查下为什么rSolution全是无计可施);
+  - 训练步骤: 动物模式(`路边出生,饿,路上扔带皮果,扔棒去皮,手动飞至,触发吃掉`) x 路下n次 (注:鸟与果相对位置要稳定些) `训练基础为FZ913,存为FZ934`;
   - 注意: 在31135时,newRCanset,absRCanset,newHCanset都有构建,但就是没触发构建absHCanset,因为hSolution执行了多次,全是无计可施,所以压根没激活过hCanset,所以没触发absHCanset,本次训练可以关注下还有没这个问题;
+  - 训练记录:
+    1. 训练前1,2次时: 执行到许多次NewRCanset (且indexDic都有值);
+    2. 训练第3,4次时: rSolution开始有结果,第3次20%有结果,第4次时80%的rSolution有结果;
+    3. 训练第4,5次时: 执行到两次AbsRCanset (且indexDic都有值);
 
 ***
 
