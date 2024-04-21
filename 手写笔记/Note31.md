@@ -1513,8 +1513,8 @@ void recordRealModel {
     1. 训练前1,2次时: 执行到许多次NewRCanset (且indexDic都有值);
     2. 训练第3,4次时: rSolution开始有结果,第3次20%有结果,第4次时80%的rSolution有结果;
     3. 训练第4,5次时: 执行到两次AbsRCanset (且indexDic都有值);
-    4. 明日: 观察下,在hSolution都取到0条原因;
-       - 分析: 在修indexDic之前还取得过hCanset,只是被IndexDic筛选没了,所以这次应该也会有,只是还没训练到那么多轮,所以还没经验可取而已;
+    4. 训练第10次时: 执行到一次NewHCanset (且indexDic有值);
+    5. 明日: 观察下,在hSolution能取到hCanset (在修indexDic之前取得过hCanset,只是被IndexDic筛选没了);
 
 ***
 
