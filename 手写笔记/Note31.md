@@ -1514,6 +1514,16 @@ void recordRealModel {
     2. 训练第3,4次时: rSolution开始有结果,第3次20%有结果,第4次时80%的rSolution有结果;
     3. 训练第4,5次时: 执行到两次AbsRCanset (且indexDic都有值);
     4. 训练第10次时: 执行到一次NewHCanset (且indexDic有值);
+       * 这个NewHCanset还是执行的比较少,考虑下,要不要把NewHCanset的门槛降一下:
+         - 使feedbackTIR可以NewHCanset?  
+           - rScene是不需要hCanset的,转下条;  
+         - 使候选集的cansetFrom能够构建NewHCanset?  
+           - cansetFrom毕竟不是当前场景,按道理来说它不算推进中,也不算激活...(难道此事无解么),再转下条  
+         - 产生任务后,让子弹飞一会儿,多激活几条RCanset,再喂带皮果/木棒,使之有更多NewHCanset的机会;  
+           - 慢些点训练的步骤,是可以打出:
+              - Canset演化> NewHCanset:F5898[↑饿-16,4果,↑饿-16,4果,4棒,4棒] toScene:F5240[↑饿-16,4果,4棒,4棒,4果,飞↑,4棒,4果,4棒,吃] 第3帧:A5203
+              - Canset演化> NewHCanset:F5909[4果,↑饿-16,4果,4棒,4棒,4棒,4果,飞↑,4棒,4果,4棒,吃] toScene:F4085[↑饿-16,4果,4果,4棒,4果,飞↑,4棒,4果,4棒,吃] 第2帧:A4030
+
     5. 明日: 观察下,在hSolution能取到hCanset (在修indexDic之前取得过hCanset,只是被IndexDic筛选没了);
 
 ***
