@@ -1509,7 +1509,7 @@ void recordRealModel {
   - 还算31135制定的步骤来训练,那个正好应该可以触发NewRHCanset和AbsRHCanset这四个;
   - 训练步骤: 动物模式(`路边出生,饿,路上扔带皮果,扔棒去皮,手动飞至,触发吃掉`) x 路下n次 (注:鸟与果相对位置要稳定些) `训练基础为FZ913,存为FZ934`;
   - 注意: 在31135时,newRCanset,absRCanset,newHCanset都有构建,但就是没触发构建absHCanset,因为hSolution执行了多次,全是无计可施,所以压根没激活过hCanset,所以没触发absHCanset,本次训练可以关注下还有没这个问题;
-  - 训练记录:
+  - 训练记录1:
     1. 训练前1,2次时: 执行到许多次NewRCanset (且indexDic都有值);
     2. 训练第3,4次时: rSolution开始有结果,第3次20%有结果,第4次时80%的rSolution有结果;
     3. 训练第4,5次时: 执行到两次AbsRCanset (且indexDic都有值);
@@ -1525,6 +1525,13 @@ void recordRealModel {
               - Canset演化> NewHCanset:F5909[4果,↑饿-16,4果,4棒,4棒,4棒,4果,飞↑,4棒,4果,4棒,吃] toScene:F4085[↑饿-16,4果,4果,4棒,4果,飞↑,4棒,4果,4棒,吃] 第2帧:A4030
 
     5. 明日: 观察下,在hSolution能取到hCanset (在修indexDic之前取得过hCanset,只是被IndexDic筛选没了);
+  - 修BUG记录: 在训练记录1之后,改了下面三个问题
+    1. 改了一些取cansetTo取成from的问题;
+    2. 只要非CSNone状态就能触发构建Canset方法;
+    3. 修复有些地方cansetCutIndex取值有问题;
+  - 训练记录2:
+    1. 训练前1,2次时: 执行到许多次NewRCanset (且indexDic都有值);
+    2. 训练第3次时: 有3次AbsRCanset,4次NewHCanset (且indexDic都有值);
 
 ***
 
