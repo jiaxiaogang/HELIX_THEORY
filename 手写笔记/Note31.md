@@ -21,6 +21,7 @@
   - [n31p14 训练搬运hCanset](#n31p14-训练搬运hcanset)
   - [n31p15 迭代Canset的IndexDic算法](#n31p15-迭代canset的indexdic算法)
   - [n31p16 回测Canset的IndexDic算法](#n31p16-回测canset的indexdic算法)
+  - [n31p17 回测feedbackTOR反馈全不成立的问题](#n31p17-回测feedbacktor反馈全不成立的问题)
   - [n31pN TODO备忘](#n31pn-todo备忘)
 
 <!-- /TOC -->
@@ -1532,6 +1533,27 @@ void recordRealModel {
   - 训练记录2:
     1. 训练前1,2次时: 执行到许多次NewRCanset (且indexDic都有值);
     2. 训练第3次时: 有3次AbsRCanset,4次NewHCanset (且indexDic都有值);
+
+**总结: 本节中,各种生成Canset并且indexDic都是有值的,应该不再有空的BUG了**
+**另外, 本节还修了下cansetCutIndex有许多地方用的都不太准确;**
+**另外, 本节测得feedbackTOR几乎全不成立 (它成立时会生成NewHCanset,本节测试中只New了很少的HCanset),转下节继续此问题;**
+
+***
+
+## n31p17 回测feedbackTOR反馈全不成立的问题
+
+在上节末,测得feedbackTOR几乎全是不成立的,这导致很少生成newHCanset;
+而在31134的8.2问题,已经遇过此问题,并针对此问题做过分析,本节接上31134继续解决feedbackTOR反馈不成立的问题;
+
+| 31171 | 回顾31134-8.2: feedbackTOR反馈全不成立 |
+| --- | --- |
+| 回顾 | 在31134末尾,对feedbackTOR的反馈演化 (`从不易反馈成立,到正常可成立`的演化过程): |
+| 说明 | 且在31134中,已经做了方案和实践,使`概念识别`根据`似交理感`输出共四种识别结果; |
+|  | 步骤1. 打开概念识别交层 `已在31134中实现`; |
+|  | 步骤2. 第2次经历类似cansetFo时,可以触发类比得到交层absCanset `这个明天可以测下,看能否过度到交层canset`; |
+|  | 步骤3. 步骤1的结果和步骤2的结果,合在一起,可以顺利feedbackTOR反馈上; |
+| 明日1 | 重训练下看能不能触发: 构建NewRCanset和快速过渡到交层AbsRCanset; |
+| 明日2 | 重训练下看能不能触发: 构建NewHCanset和快速过渡到交层AbsHCanset; |
 
 ***
 
