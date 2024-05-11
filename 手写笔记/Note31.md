@@ -1650,7 +1650,7 @@ RJ-->>>(3) 全含item: A4406(距11,果)       相近度 => 0.00 (count:3)
 | 测试2 | 测下[饿]->{更饿}激活错误canset后,能在SPEFF中得到负反馈; |
 |  | 这条先不测,首先它没法对数百条canset逐一pass,思维在这上面足以耗死,所以要增加pass的传染性; |
 
-| 31176 | 继续训练,遇到新问题: Canset条件不满足的批量传染性 |
+| 31176 | 继续训练,遇到新问题: 支持Canset批量失败 => Canset帧反馈失败的传染机制 |
 | --- | --- |
 | 问题 | 上表测试2: 即使能得到SPEFF的负反馈,也不行,因为canset激活了数百条,负反馈根本压不过来; |
 |  | 说明: 上表改了全激活后,所有canset都有机会了,但这么多canset,怎么批量pass掉失败的,而不是一条条试? |
@@ -1660,7 +1660,14 @@ RJ-->>>(3) 全含item: A4406(距11,果)       相近度 => 0.00 (count:3)
 |  | 2. 虚实考虑: 于其传染负SPEFF,不如直接传染`条件不满足`,因为此时大多数canset并未转实,不太好支持负SPEFF; |
 |  | 3. 性能考虑: 并且当前条件不满足一次,也不至于就把数十个canset全给写一遍负反馈,性能上吃不消; |
 | 方案 | 整理思路得到方案: 当alg反馈不满足时,需要同样alg条件的canset,全部pass掉,不必再行为化尝试; |
-| TODO1 | cansetStatus加一个CS_PASS的状态,即条件无法满足状态; |
+| TODO1 | cansetStatus加一个CS_Infected的状态,即条件无法满足状态 `T`; |
+| TODO2 | canset行为化帧反馈超时失败时传染 (计为CS_Infected状态) `T`: |
+| TODO2A | 如果是末帧(等待mv反馈),则canset池中别的同样在等待mv的,都失败 `T`; |
+| TODO2B | 如果非末帧(等待alg反馈),则canset池中别的同样在等待`同作用alg`的,都失败 `T`; |
+|  | 注: 行为化中的ACansetAlg和别的BCansetAlg之间,是否是`同作用Alg`的判断方法,有如下几种: |
+|  | 方法1. ACansetAlg和BCansetAlg是同一个pit地址,则为`同作用`; |
+|  | 方法2. 用indexDic判断,即行为化中的CansetAlg与sceneTo有映射,然后BCansetAlg同样映射到这一帧,则为`同作用`; |
+| TODO3 | canset行为化帧反馈成功时传染 (这个以前就支持,参考feedbackTOR中commit4FeedbackTOR()); |
 
 TODO测试项3: 测试RCanset有皮果反馈后,能不能继续推后进下一帧;
 
