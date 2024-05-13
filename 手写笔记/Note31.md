@@ -1689,6 +1689,14 @@ RJ-->>>(3) 全含item: A4406(距11,果)       相近度 => 0.00 (count:3)
 | 思路 | 可能深入到canset池的每一条解,来做继用处理; |
 | 方案 | 可以在Canset池加入新条目时,判断旧的工作记忆树上有同质的解,则直接继用,而不必新建Canset; |
 | TODO1 | 继用条件判断: 可以用Canset.basePFoOrTarget & baseSceneModel & sceneCutIndex等来做为继用条件判断; |
+|  | 疑问: 如果针对Canset进行防重,那么它的realCansetToIndexDic也能继用吗? |
+|  | 解答: 经查,realCansetToIndexDic还是很独立的,它全量实时的存在canset下; |
+|  | 原则: H时根据sceneTo和cansetTo防重是必要条件,因为这二者如果变了,那么整个newHCanset和newAbsHCanset都会受影响; |
+|  | 疑问2: R时要根据pFo防重吗?如果不根据,那么newAbsRCanset就会受影响,因为它的actionFoModels全移走了; |
+|  | 分析. 可如果根据pFo和sceneTo来防重,它们的cutIndex可能都不同,这个必须要解决下; |
+|  | > cutIndex更后的,能移至更前的吗?反之呢? |
+| TODO2 | 继用时,将旧有canset直接移动过来,而不是复制,这相当于每一个canset在工作记忆中全局防重了; |
+| TODO3 | 不允许继用自己的base.base.base...这一条线,这样会导致自断根基或死循环 (野指针) `T`; |
 
 TODO测试项3: 测试RCanset有皮果反馈后,能不能继续推后进下一帧;
 
