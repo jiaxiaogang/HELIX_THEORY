@@ -1697,19 +1697,20 @@ RJ-->>>(3) 全含item: A4406(距11,果)       相近度 => 0.00 (count:3)
 | TODO1B | 可以直接把继用条件判断写成TOFoModel.equal()方法; |
 |  | 疑问1: 如果针对Canset进行防重,那么它的realCansetToIndexDic也能继用吗? |
 |  | 解答1: 经查,realCansetToIndexDic还是很独立的,它全量实时的存在canset下; |
-|  | 疑问2: newHCanset和newAbsHCanset都会受影响吗? |
-|  | 分析2a. 构建HCanset的三个参数分别为:basePFo.realMaskFo & sceneFrom & cansetCutIndex; |
-|  | 分析2b. 其中后两个参数是继用条件,它不会变动,所以不会受影响,但basePFo却会变化,这是个问题; |
-|  | 分析3c. 可以把basePFo.realMaskFo也记录到canset中一份; |
-|  | 解答2: 根据sceneTo和cansetTo防重都是直接或间接的必要条件,所以它不会受到影响 (.....明日再看下代码..); |
-|  | 疑问3: R时要根据pFo防重吗?如果不根据,那么newAbsRCanset就会受影响,因为它的actionFoModels全移走了; |
-|  | 分析. 可如果根据pFo和sceneTo来防重,它们的cutIndex可能都不同,这个必须要解决下; |
-|  | > cutIndex更后的,能移至更前的吗?反之呢? |
-| TODO2 | 思考下继用时,将旧有canset直接移动还是复制 `选定复制 T`; |
+|  | 疑问2: cutIndex更后的,可以判断equals为true吗?反之更前的呢? |
+|  | 解答2: 目前先以相等为equal=true,至于大或小先不管 (现在不必想这么多,先写出来测着再说,到时候此问题自有答案); |
+| TODO2 | 思考下继用时,将旧有canset直接移动还是复制 `选定复制,分析过程如下 T`; |
 |  | 移动缺点1. 是会导致在AbsRCanset执行时,取pFo.actionFoModels有可能取不到,因为全移走了; |
 |  | 移动缺点2. 在实时竞争中,如果actionFoModels被移走,也会导致问题; |
+|  | 移动缺点3: 如果是移动的话: newHCanset和newAbsHCanset都会受影响吗? |
+|  | 缺点3分析1. 构建HCanset的三个参数分别为:basePFo.realMaskFo & sceneFrom & cansetCutIndex; |
+|  | 缺点3分析2. 其中后两个参数是继用条件,它不会变动,所以不会受影响,但basePFo却会变化,这是个问题; |
+|  | 缺点3分析3. 可以把basePFo.realMaskFo也记录到canset中一份,; |
+|  | 缺点3解答: 虽然以上分析也不是不可行,但它实践是麻烦且不确定性高(还可能有别的问题); |
 |  | 复制优点1. 无论怎么跑,它都全支持; |
+|  | 抉择: 移动方案因以上3个缺点,几乎不可行了,所以先主要对复制方案进行实践; |
 | TODO2B | 每个TOFoModel的base要改成数组,支持挂在多个base下; |
+| TODO2C | 然后也加一个curRootBase,将当前root树的base也存上,避免不易判断是否在当前root树下; |
 | TODO3 | 不允许继用自己的base.base.base...这一条线,这样会导致自断根基或死循环 (野指针) `T`; |
 
 TODO测试项3: 测试RCanset有皮果反馈后,能不能继续推后进下一帧;
