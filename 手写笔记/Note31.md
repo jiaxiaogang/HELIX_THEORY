@@ -1695,6 +1695,10 @@ RJ-->>>(3) 全含item: A4406(距11,果)       相近度 => 0.00 (count:3)
 |  | 疑问2: R时要根据pFo防重吗?如果不根据,那么newAbsRCanset就会受影响,因为它的actionFoModels全移走了; |
 |  | 分析. 可如果根据pFo和sceneTo来防重,它们的cutIndex可能都不同,这个必须要解决下; |
 |  | > cutIndex更后的,能移至更前的吗?反之呢? |
+|  | 条件1. 其sceneTo一致为条件之一 (R时的pFo.matchFo或H时的targetFo) (这样才能保证它的目标是一致的); |
+|  | 条件2. 其sceneFrom&cansetFrom一致为条件之一 (这样才能保证它的出处是一致的); |
+|  | 条件3. 其cutIndex... (可介入实例加以分析) |
+|  | 条件4. 其targetIndex... (可介入实例加以分析) |
 | TODO2 | 继用时,将旧有canset直接移动过来,而不是复制,这相当于每一个canset在工作记忆中全局防重了; |
 | TODO3 | 不允许继用自己的base.base.base...这一条线,这样会导致自断根基或死循环 (野指针) `T`; |
 
