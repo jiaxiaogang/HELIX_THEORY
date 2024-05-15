@@ -1709,8 +1709,11 @@ RJ-->>>(3) 全含item: A4406(距11,果)       相近度 => 0.00 (count:3)
 |  | 缺点3解答: 虽然以上分析也不是不可行,但它实践是麻烦且不确定性高(还可能有别的问题); |
 |  | 复制优点1. 无论怎么跑,它都全支持; |
 |  | 抉择: 移动方案因以上3个缺点,几乎不可行了,所以先主要对复制方案进行实践; |
-| TODO2B | 每个TOFoModel的base要改成数组,支持挂在多个base下; |
-| TODO2C | 然后也加一个curRootBase,将当前root树的base也存上,避免不易判断是否在当前root树下; |
+| TODO2B | TOFoModel复制的话,那么base怎么办呢?因为它会挂在很多base下; |
+|  | 思路: 每个TOFoModel的base改成数组,支持挂在多个base下; |
+|  | 方案1: 然后也加一个curActiveBase,将当前正在激活的base记录上,避免不易判断是否在哪个base下正激活着; |
+|  | > curActiveBase通过每一次的bestEndBranch4PlanV2确定base为激活状态; |
+|  | 方案2: 给TOFoModel改成壳子,它只有base和content两个字段,然后把原来TOFoModel的所有字段改到contentModel下 |
 | TODO3 | 不允许继用自己的base.base.base...这一条线,这样会导致自断根基或死循环 (野指针) `T`; |
 
 TODO测试项3: 测试RCanset有皮果反馈后,能不能继续推后进下一帧;
