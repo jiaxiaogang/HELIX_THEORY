@@ -1688,13 +1688,13 @@ RJ-->>>(3) 全含item: A4406(距11,果)       相近度 => 0.00 (count:3)
 |  | 总结. 从以上回顾及问题来看,旧的同质任务的合并方式,比较粗略,未深入到细节中,仅作用在Root的表面上; |
 | 思路 | 可能深入到canset池的每一条解,来做继用处理; |
 | 方案 | 可以在Canset池加入新条目时,判断旧的工作记忆树上有同质的解,则直接继用,而不必新建Canset; |
-| TODO1 | 继用条件判断: 可以用Canset.basePFoOrTarget & sceneFrom & CutIndex等来做条件判断,条件分析如下: |
+| TODO1 | 继用条件判断: 可以用Canset.basePFoOrTarget & sceneFrom & CutIndex等来做条件判断,条件分析如下 `T`: |
 |  | 条件1. 其sceneTo一致为条件之一 (R时的pFo.matchFo或H时的targetFo) (这样才能保证它的目标是一致的); |
 |  | 条件2. 其sceneFrom&cansetFrom一致为条件之一 (这样才能保证它的出处是一致的); |
 |  | 条件3. 其sceneTargetIndex一致为条件之一 (这样才能保证它的目标是一致的); |
 |  | 条件4. 其cansetCutIndex一致为条件之一 (可保证它进度一致) 注: 以后发现有放宽的可能时,可放宽此要求; |
 |  | 条件5. 其cansetTargetIndex一致为条件之一 (可保证它目标一致) 注: 以后发现有放宽的可能时,可放宽此要求; |
-| TODO1B | 可以直接把继用条件判断写成TOFoModel.equal()方法; |
+| TODO1B | 可以直接把继用条件判断写成TOFoModel.equal()方法 `T`; |
 |  | 疑问1: 如果针对Canset进行防重,那么它的realCansetToIndexDic也能继用吗? |
 |  | 解答1: 经查,realCansetToIndexDic还是很独立的,它全量实时的存在canset下; |
 |  | 疑问2: cutIndex更后的,可以判断equals为true吗?反之更前的呢? |
@@ -1715,7 +1715,11 @@ RJ-->>>(3) 全含item: A4406(距11,果)       相近度 => 0.00 (count:3)
 |  | > curActiveBase通过每一次的bestEndBranch4PlanV2确定base为激活状态; |
 |  | 方案2: 给TOFoModel改成壳子,它只有base和content两个字段,然后把原来TOFoModel的所有字段改到contentModel下 |
 |  | > 优点: 现在是base,以后会不会还有别的字段也遇到同样需要存每个实例不同的问题?此方案能更好适用这种扩展性; |
-|  | 抉择: 建议先按方案1来实践,因为方案1改动小,在实践中自然能有更多线索,确实需要用方案2时,再转向方案2即可; |
+|  | > 追加: 实践中发现TOFoModel.realCansetToIndexDic也是每个实例不同的,它源于pFo; |
+|  | 方案3: 把pFo也支持下继用,这样的话,就不存在pFo的realMaskFo不同的问题; |
+|  | > 缺点: 如果这样的话,pFo.base呢?它也可能指向不同,导致它的base需要改成数组? |
+|  | > 解答: 因为pFo的realMaskFo很具决定性,如果改成它的base一样时才可复用,那么base就不必改成数组; |
+|  | 抉择: 建议先按方案1来实践,因为方案1改动小,在实践中自然能有更多线索,确实需要用方案2或3时,再转向方案2或3即可; |
 | TODO3 | 不允许继用自己的base.base.base...这一条线,这样会导致自断根基或死循环 (野指针) `T`; |
 
 TODO测试项3: 测试RCanset有皮果反馈后,能不能继续推后进下一帧;
