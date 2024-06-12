@@ -1912,10 +1912,17 @@ flt1 _Fo行为化下标: (4/8) A5070(向92,距11,果) from F5098[A5050(向92,距
 //从上面前2条日志可见: 明明sceneFo和cansetFo中都有`饿`概念,但却没有indexDic映射;
 //导致第3条日志中可见,他还在行为化`A13(饿16)`;
 分析: 如上日志,一个是M1(M1是protoMv),一个是A13(A13是概念识别后生成的absAlg),并且经测M1 Is A13时,mIsC是可以顺利返回true的;
-明日: 一来mIsC可以成立,二来时序识别算法中,如果非全含,是识别不到的;
-疑点: 以前在生成canset时,应该indexDic不会为空,先查下: 
-1. 把演化cansetFo时,把indexDic为空的情况打出来看下;
-2. 把indexDic取到空的,看下直接过滤掉;
+疑点: 有时候在判断A13 is M1 = false,它确实是false,只是这些M1和A13的混乱是哪里来的呢?实际调试查下如下:
+调试: 经调试,发现:M1和M1在进行类比后,会抽象成A13 (此时scene中是M1,但canset类比后AbsCanset中成了A13);
+     > 所以: 这导致canset类比生成AbsCanset时,只要它有M1元素,就必会有此BUG (导致scene中是M1,absCanset中是A13,二者mIsC=false,映射失败);
+方案: 看下支持当mv和alg类型不同,但其特征一模一样时,这种情况支持equal返回true `T`;
+TODO1: 重写equal方法,使一个mv,一个alg类型时,判断其特征值是否一致 `T`;
+TODO2: 性能考虑,可以根据mv的特征的ref来判断,这样即可以判两种类型的一致,又没有性能问题 `T`;
+TODO3: 看下能不能把mv直接废弃掉 (这样应该要重新跑下所有步骤的训练了);
+回测1: 看生成AbsCanset时,还有没indexDic为空的情况;
+
+1.
+2.
 ```
 
 ```txt
