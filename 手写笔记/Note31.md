@@ -1916,10 +1916,11 @@ flt1 _Fo行为化下标: (4/8) A5070(向92,距11,果) from F5098[A5050(向92,距
 调试: 经调试,发现:M1和M1在进行类比后,会抽象成A13 (此时scene中是M1,但canset类比后AbsCanset中成了A13);
      > 所以: 这导致canset类比生成AbsCanset时,只要它有M1元素,就必会有此BUG (导致scene中是M1,absCanset中是A13,二者mIsC=false,映射失败);
 方案: 看下支持当mv和alg类型不同,但其特征一模一样时,这种情况支持equal返回true `T`;
+TODO0: 在概念类比算法中,当algA和algB一致时,直接返回algA (这样就不会M1:M1=A13了) `T`;
 TODO1: 重写equal方法,使一个mv,一个alg类型时,判断其特征值是否一致 `T`;
 TODO2: 性能考虑,可以根据mv的特征的ref来判断,这样即可以判两种类型的一致,又没有性能问题 `T`;
 TODO3: 看下能不能把mv直接废弃掉 (这样应该需要重新跑所有的训练步骤,所以可以先把构建mv的代码废弃掉) `这条改动挺大的,判断mv类型等地方都要跟着改,先不弄了,后面需求更明确时,再说 T`;
-回测1: 看生成AbsCanset时,还有没indexDic为空的情况;
+回测1: 重新在FZ913的基础上训练FZ94的步骤,存为FZ95 (看生成AbsCanset时,还有没明明scene和canset都有饿,但indexDic为空的情况) `参考31183训练步骤`;
 ```
 
 ```txt
