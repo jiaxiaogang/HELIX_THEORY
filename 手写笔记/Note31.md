@@ -1920,7 +1920,9 @@ TODO0: 在概念类比算法中,当algA和algB一致时,直接返回algA (这样
 TODO1: 重写equal方法,使一个mv,一个alg类型时,判断其特征值是否一致 `T`;
 TODO2: 性能考虑,可以根据mv的特征的ref来判断,这样即可以判两种类型的一致,又没有性能问题 `T`;
 TODO3: 看下能不能把mv直接废弃掉 (这样应该需要重新跑所有的训练步骤,所以可以先把构建mv的代码废弃掉) `这条改动挺大的,判断mv类型等地方都要跟着改,先不弄了,后面需求更明确时,再说 T`;
-回测1: 重新在FZ913的基础上训练FZ94的步骤,存为FZ95 (看生成AbsCanset时,还有没明明scene和canset都有饿,但indexDic为空的情况) `参考31183训练步骤`;
+回测: 重新在FZ913的基础上训练FZ94的步骤,存为FZ95 (看生成AbsCanset时,还有没明明scene和canset都有饿,但indexDic为空的情况) `参考31183训练步骤`;
+训练: 在FZ954x7后: `newRCanst,absRCanset,newHCanset,absHCanset` 四个都执行到了 (absH最困难,关键在于慢跑一次,辅助观察flt日志,不难跑出来);
+结果: 经测,在TODO0和TODO1的双重保险下,scene和canset都有饿,但indexDic为空的情况已经没有了 `T`;
 ```
 
 ```txt
