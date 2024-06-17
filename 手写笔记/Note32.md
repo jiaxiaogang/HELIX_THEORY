@@ -42,6 +42,11 @@
 |  | > 借此机会把IN和OUT的SPDic分开 (IN是对scene存SP,OUT是对canset存SP); |
 | TODO1 | 新写一个AIOutSPStrong(),把sceneFrom和cansetFrom存里面,然后把spDic也存里面 `T`; |
 | TODO2 | 在AIFoNodeBase里加一个outSPDic<K=sceneFromPId_cansetFromPId, V=AIOutSPStrong> `T`; |
+| TODO3 | 改下在生成xvModel时(不需要等siModel),就把outSPDic初始一下; |
+| TODO4 | 改下把中间帧超时反馈失败的 (及所有传染到的),在OR反省中计下SP-; |
+| TODO5 | 改下把中间帧反馈成功的 (或被唤醒的),在OR反省中全计下SP+; |
+| TODO6 | 改下把末帧超时未反馈负价值的 (及所有已达到末帧的canset),在OR反省中计下SP+; |
+| TODO7 | 改下把末帧反馈负价值的 (及所有已达到末帧的canset),在OP反省中全计下SP-; |
 
 ```txt
 3201x-接31184结果: 无皮果动机和有皮果动机,都需要加训和试错;
