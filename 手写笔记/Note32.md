@@ -39,6 +39,9 @@
 | 说明 | 见上表试错训练时-遇到问题: 传染只发生在工作记忆中,长时记忆的SPEFF又仅针对转实后的Canset,导致效率低下; |
 | 方案 | 即使不转实,也可以累积SPEFF,这样可以从根本上解决试错效率低下的问题; |
 | 实践 | 可以在sceneTo下,直接针对sceneFrom和cansetFrom记录SPDic,这样性能才ok,可不转实就批量记录SP参数; |
+|  | > 借此机会把IN和OUT的SPDic分开 (IN是对scene存SP,OUT是对canset存SP); |
+| TODO1 | 新写一个AIOutSPStrong(),把sceneFrom和cansetFrom存里面,然后把spDic也存里面 `T`; |
+| TODO2 | 在AIFoNodeBase里加一个outSPDic<K=sceneFromPId_cansetFromPId, V=AIOutSPStrong> `T`; |
 
 ```txt
 3201x-接31184结果: 无皮果动机和有皮果动机,都需要加训和试错;
