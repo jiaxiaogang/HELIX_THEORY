@@ -44,11 +44,12 @@
 | TODO2 | 在AIFoNodeBase里加一个outSPDic<K=sceneFromPId_cansetFromPId, V=AIOutSPStrong> `T`; |
 | TODO3 | 改下在生成xvModel前(更不需要等siModel),就把outSPDic初始一下 `T`; |
 |  | 时机: 在构建canset到canset池时,把cansetFrom的spDic做为初始化outSPDic (加上防重,仅初始化一次) `T` |
-| TODO4 | 改下把中间帧超时反馈失败的 (及所有传染到的),在OR反省中计下SP- `T`; |
-| TODO5 | 改下把中间帧反馈成功的 (或被唤醒的),在OR反省中全计下SP+ `T`; |
+| TODO4 | 改下把中间帧超时反馈失败的 (及所有传染到的),在actYes超时未反馈后,计SP- `T`; |
+| TODO5 | 改下把中间帧反馈成功的 (或被唤醒的),在feedbackTOR反馈匹配后,计SP+ `T`; |
 |  | 另外: 其中唤醒的,应先把传染时的负1回滚一下,再把正1加上 `T`; |
-| TODO6 | 改下把末帧超时未反馈负价值的 (及所有已达到末帧的canset),在OR反省中计下SP+; |
-| TODO7 | 改下把末帧反馈负价值的 (及所有已达到末帧的canset),在OP反省中全计下SP-; |
+| TODO6 | 改下把末帧超时未反馈负价值的 (及所有已达到末帧的canset),在actYes超时未反馈后,计SP+ `T`; |
+| TODO7 | 改下把末帧反馈负价值的 (及所有已达到末帧的canset),在feedbackTOP反馈匹配后,计SP- `T`; |
+| 回测 | 继续上表末的试错训练; |
 
 ```txt
 3201x-接31184结果: 无皮果动机和有皮果动机,都需要加训和试错;
