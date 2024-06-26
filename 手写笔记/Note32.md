@@ -78,6 +78,8 @@
 
 | 32014 | BUG-生成canset时的indexDic又有越界问题了,查下原因 |
 | --- | --- |
+| 原因 | 在NewHCanset时,使用了self.realCansetToIndexDic映射,但这个映射此时也还在更新中,导致有更新后,越界了; |
+| 修复 | 创建NewHCanst时先把realCansetToIndexDic.copy(),这样后续再更新,就不会同步追加到已经创建的NewHCanset映射中 `T`; |
 
 ```txt
 3201x-接31184结果: 无皮果动机和有皮果动机,都需要加训和试错;
