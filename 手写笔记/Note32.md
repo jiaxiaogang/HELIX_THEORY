@@ -762,11 +762,11 @@ flt1 A4148(距77,向19,棒) fromR:F15459[M1{↑饿-16},A4134(向88,距12,皮果)
 | TODO1 | 可以先在代码核实下,哪些不是同效触发类比,改一下; |
 |  | 1. 经查,现在R任务的有效判断有问题,转32118; |
 |  | 2. 经查,现在H任务的有效判断看起来没啥大问题 `转32119 实际核实下代码`; |
-| TODO2 | 包括已经判断同效后,还在做besting状态判断,或者别的什么判断门槛都可以取缔下; |
-|  | 思路: 可以把New&AbsCanset算法的: cansetStatus和status判断取缔掉,改成canset池前10条都参与类比什么的; |
-|  | 明天继续搞这里... |
+| TODO2 | 包括已经判断同效后,还在做besting状态判断,或者别的什么判断门槛都可以取缔下 `转3211a`; |
 | TODO3 | 方便调试: 可以类比时,把抽象层级记录到foNode里,然后使用时把抽象层级打出来方便调试 `T 先不搞`; |
 |  | > 这一条暂时不做,毕竟abs抽象不抽象,通过:概念是抽层还是交层 或 时序元素杂不杂,这些也可看出来; |
+
+**小结: 这三张表主要做:`Canset不够抽象问题`,最终集中在32117,对方案1进行实践;**
 
 | 32118 | New&AbsRCanset触发机制有问题 (参考32117-TODO1); |
 | --- | --- |
@@ -788,11 +788,21 @@ flt1 A4148(距77,向19,棒) fromR:F15459[M1{↑饿-16},A4134(向88,距12,皮果)
 | 经核实 | 现在NewHCanset全是在feedbackTOR反馈成立的时候,才会调用,这个触发机制没有问题 `T`; |
 | 经核实 | 现在AbsHCanset是在整个hCanset推进完成时才会触发,这个有问题,如果hCanset.Target提前完成,也应该类比抽象; |
 |  | 说明: 即AbsHCanset应该支持targetAlg的提前反馈完成,而不必非要一帧帧推进过去; |
-| TODO1 | feedbackTOR时,提前判断下对每个hCanset的targetAlg是不是匹配了,如果匹配了,可以调用下hCanset的类比抽象; |
+| TODO1 | feedbackTOR时,提前判断下对每个hCanset的targetAlg是不是匹配了,如匹配则调用下hCanset的类比抽象 `T`; |
 |  | 细节: hCanset的targetAlg匹配,也就相当于hScene(也就是rCanset)的actIndex匹配; |
 |  | 所以: 改由rCanset.actIndex来触发看起来代码逻辑更简约些 (直接匹配到时,把所有激活过的hCanset全类比抽象一下); |
 
-**小结: 这三张表主要做:`Canset不够抽象问题`,最终集中在32117,对方案1进行实践;**
+| 3211a | 把NewAbsRHCanset的不必要条件全取缔掉 |
+| --- | --- |
+| 目标 | 目标是让无论NewRHCanset还是AbsRHCanset都能频繁学起来,而不是零星几条; |
+| 分析 | 可以把New&AbsCanset算法的: cansetStatus和status判断取缔掉,改成canset池前10条都参与类比什么的; |
+| NewH | 看现在代码,NewHCanset没啥问题,只要CutIndex反馈成立,现在除了CS_None会拦截不跑,别的全会跑NewHCanset; |
+| AbsH | 看现在代码,AbsHCanset没啥问题,只要HTargetAlg反馈成立,现在除了CS_None会拦截不跑,别的全会跑AbsHCanset; |
+| NewR | 看现在代码,NewRCanset没啥问题,只要Demand确定R任务解决了,就不会有任何拦截的生成NewRCanset; |
+| AbsR | 改下代码,除了CS_None外,别的全进行RCanset类比抽象 `T`; |
+| 结果 | 四种构建Canset,有三种不用改,而需要改的一种:AbsRCanset已把不必要的条件过滤取缔了 `T`; |
+
+**小结: 上三张表32118,32119,3211a主要实践:`迭代使学Canset更易发 (调整触发机制 和 减少触发所需条件)`;**
 
 ***
 
