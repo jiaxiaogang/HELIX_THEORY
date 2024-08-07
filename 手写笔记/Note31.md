@@ -891,6 +891,7 @@ Demand竞争 <<<== SUCCESS 共2条
 | TODO2c | 阶段不同: 在bestResult决出后,再触发`由虚转实` `T`; |
 | TODO2d | 状态不同: 新增bestingStatus和bestedStatus两个状态 `T`; |
 | TODO2e | 反省不同: 只有bestingStatus的在触发器后,才反省SPEFF值等 `T`; |
+|  | 后改: 在32142-TODO3中,又改成把这个状态要求去掉了; |
 | TODO2f | 第一次调用solution时初始化,生成所有CansetModel为TOFoModel,第二次时只竞争不重复生成 `T`; |
 | TODO2g | 写成TOFoMode.pushNextFrame(),用于cutIndex+1和生成TOAlgModel,以便接受反馈feedbackAlg `T` |
 |  | 1. pushNextFrame的代码相当于将TCAction推进一帧的代码提前执行了,所以在TCAction中废弃这些代码 `T`; |
