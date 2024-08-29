@@ -7,13 +7,16 @@
 <!-- TOC -->
 
 - [(觅食 & 飞躲 & 踢搬运)三项的多向连续训练,以及三项融合训练](#觅食--飞躲--踢搬运三项的多向连续训练以及三项融合训练)
-  - [n33p01 回顾训练觅食](#n33p01-回顾训练觅食)
+  - [n33p01 回顾多向觅食训练之: (FZ981学无距有向果场景B & FZ982各方向学飞吃)](#n33p01-回顾多向觅食训练之-fz981学无距有向果场景b--fz982各方向学飞吃)
+  - [n33p01b 回顾多向觅食训练之: FZ983试错训练](#n33p01b-回顾多向觅食训练之-fz983试错训练)
+  - [n33p02 完善TCPlanV2流程细节](#n33p02-完善tcplanv2流程细节)
+  - [n33p03 回顾多向觅食训练之: 继续FZ983试错训练](#n33p03-回顾多向觅食训练之-继续fz983试错训练)
 
 <!-- /TOC -->
 
 ***
 
-## n33p01 回顾训练觅食
+## n33p01 回顾多向觅食训练之: (FZ981学无距有向果场景B & FZ982各方向学飞吃)
 `CreateTime 2024.08.09`
 
 训练就两个方法: 一是教的多,二是练的多;
@@ -101,6 +104,11 @@
 
 **小结: 做了FZ982训练完成,下面做FZ983试错训练;`**
 
+***
+
+## n33p01b 回顾多向觅食训练之: FZ983试错训练
+`CreateTime 2024.08.18`
+
 | 33017 | FZ983-尝试试错训练-各方向自行飞吃 |
 | --- | --- |
 | FZ983 | 8个方向方向扔下无皮果,然后让它自己决策行为飞吃; |
@@ -161,6 +169,7 @@ R1. I<F1568 F3789[↑饿-16,3果,飞↙,3果]> {0 = 0;1 = 1;2 = 3;}  H4N0:(分:1
 |  | 如果以后方案2发现不够用,再回来考虑方案1; |
 | 实践 | TODO1-在Canset被传染后,或者状态非ActYes或Runing时,也计进度分 `T`; |
 |  | TODO2-在TCPlan中,如果Root1是静默状态(或者被传染状态),那么这轮TO线程就空转啥也不跑; |
+| 结果 | TODO1做了,而TODO2的问题在于`TCPlan在各种状态下要跑哪个`,这个 `转n33p02里整体完善下细节 T`; |
 
 * **3301a: BUG3-接上表,即使Root可以持续激活,它的RCanset也没能持续激活,而是激活的RCanset在不断变化;**
 - 问题: 这种RCanset不断变化,会导致它不断左突右试,各种乱飞,即使这些RCanset全都不对;
@@ -173,5 +182,78 @@ R1. I<F1568 F3789[↑饿-16,3果,飞↙,3果]> {0 = 0;1 = 1;2 = 3;}  H4N0:(分:1
     - 分析: 这种情况下,F2236应该计了负SPEFF,是正常的;
   - 调试情况2. 还有两次,是因为第三帧飞,没生成SubHDemand (导致了在TCPlan.112行中,它因无HDemand直接计为WithOut状态 ();
     - 分析: 这种情况应该不正常,像F2236的第三帧是飞行为输出,它是不会生成子HDemand任务的;
+- 结果: 这里像`中间帧超时在TCPlanV2的处理,或者中间帧是Out行为在TCPlanV2中的处理`等等 `转n33p02完善下TCPlanV2的细节 T`;
+
+**小结: 本节试错训练不顺利,在试错训练中,测到多个bug,最终指向了前段时间迭代的TCPlanV2还有一些细节问题,转下表继续;**
+
+***
+
+## n33p02 完善TCPlanV2流程细节
+`CreateTime 2024.08.27`
+
+在上节33019&3301a的结果中,测得多种情况或状态下,TCPlanV2现代码对这些情况处理的不太清晰,所以本节把TCPlanV2整理下各种行为化情况,时下一步走向哪里,完善完善细节 (因为原来迭代TCPlanV2时是单纯的迭代完了,却没测,现在算是测下,并看哪里有问题,完善下细节);
+
+```java
+33021-现在测到的要完善哪些细节问题;
+回顾: 现TCPlanV2代码没考虑末帧时的情况,也没考虑中间帧是Out时的情况,本节都补上;
+说明: 下面是把这些完善细节后的伪代码整理如下:
+//6. 三种情况,分别走三块不同逻辑;
+if (canset已经到了末帧) {
+    //一. ================================ 末帧 ================================
+
+    if (bestCanset.feedbackMvAndPlus)
+    //11. 好的mv反馈,说明当前rRootDemand被解决了,不需要再决策 => 继续尝试下一root;
+
+    else if (bestCanset.feedbackMvAndSub && 是持续性任务)
+    //12. 坏的mv反馈: 如果是持续性任务,则该canset失败,继续尝试下一canset;
+
+    else if (bestCanset.feedbackMvAndSub && 非持续性任务)
+    //13. 坏的mv反馈: 如果非持续性任务,则该root失败 => 继续尝试下一root;
+
+    else if (!bestCanset.actYesed && !bestCanset.feedbackMv)
+    //14. 还在等待mv反馈中 => 则继续等待即可;
+
+    else if (bestCanset.actYesed && !bestCanset.feedbackMv)
+    //15. 等待结束,避免负mv成功,则该任务完成 => 继续尝试下一root;
+} else if (frameAlg.content_p.isOut) {
+    //二. ================================ 中间帧_Out ================================
+
+    if (frameAlg.actYesed && !frameAlg.feedbackAlg) //21. actYesed && !feedbackAlg -> 当前行为输出到期也没等到反馈: 把当前bestCanset否掉,重新找出下一个bestCanset,转下一个canset;
+
+    if (frameAlg.feedbackAlg) //22. feedbackAlg -> 则应该在feedbackTOR()中已经转了下一帧,但如果这里如果取curFrame,发现有反馈,还没转,则先不管它,啥不也不执行吧,等它自己转下一帧 (不管什么状态,只要已经反馈了,就都走这里);
+
+    if (!frameAlg.actYesed) //23. 等待中的isOut帧,没有subH,只需要等肢体动作执行完成再转输入rInput后,会反馈成功,还在等待说明还没触发,继续等着即可 (行为输出也是需要时间的,比如飞要0.2s,再静默等等) (参考3301a-调试情况2);
+
+} else {
+    //三. ================================ 中间帧_非Out ================================
+
+    if (frameAlg.actYesed && !frameAlg.feedbackAlg) //31. actYesed && !feedbackAlg -> 当前行为输出到期也没等到反馈: 把当前bestCanset否掉,重新找出下一个bestCanset,转下一个canset;
+
+    if (frameAlg.feedbackAlg) //32. feedbackAlg -> 则应该在feedbackTOR()中已经转了下一帧,但如果这里如果取curFrame,发现有反馈,还没转,则先不管它,啥不也不执行吧,等它自己转下一帧 (不管什么状态,只要已经反馈了,就都走这里);
+
+    if (!subHDemand) //33. 非Out帧等待中,则尝试subH求解 -> 防空检查 (非输出帧的subH不应该为空,没有hDemand是BUG,因为algModel初始时,就有hDemand了) (subH为空时,那这条Canset失败,继续尝试baseDemand的下一条 (逐条尝试))
+
+    if (!subHDemand.alreadyInitCansetModels) //34. subH没求解过,则尝试对subH求解: 成功: 当前条 -> hDemand没初始化过,直接return转hSolution为它求解;
+
+    //35. subH求解过,则subH继续深入下一层: 继续: 下一层 -> 当前条继续向枝叶规划;
+    BOOL success = [self plan4Cansets:subHDemand complate:complate prefixNum:prefixNum + 2];
+
+    if (!success && !frameAlg.actYesed) //36. 如果subH求解全失败了,则咱不解了,咱等着即可,看它能不能自行反馈到,则继续等 -> 如果bestCanset枝叶全失败了,还是静默等等状态,直接返回成功,啥也不用干 (比如: 等饭熟,有苹果也会先吃一个垫垫);
+
+    if (!success && frameAlg.actYesed) //37. 如果subH求解全失败了,它的等待时间也结束了,则当前bestCanset计为失败: 驳回: 下一条 -> 当前hDemand的枝叶全失败了,继续尝试baseDemand的下一条 (逐条尝试);
+}
+```
+
+**总结: 本节完善了TCPlanV2的细节,下表继续回归FZ983试错训练;**
+
+***
+
+## n33p03 回顾多向觅食训练之: 继续FZ983试错训练
+`CreateTime 2024.08.30`
+
+上节完善了TCPlanV2的细节,本节回归多向觅食训练;
+
+| 33031 | 在FZ982的基础上,继续做试错训练,并观察日志还有没什么问题 |
+| --- | --- |
 
 <br><br><br><br><br>
