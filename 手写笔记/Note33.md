@@ -13,6 +13,7 @@
   - [n33p03 回顾多向觅食训练之: 继续测FZ983试错训练-修测到的BUG(第二批)](#n33p03-回顾多向觅食训练之-继续测fz983试错训练-修测到的bug第二批)
   - [n33p04 回顾多向觅食训练之: 继续FZ983试错训练](#n33p04-回顾多向觅食训练之-继续fz983试错训练)
   - [n33p05 迭代Canset类比算法](#n33p05-迭代canset类比算法)
+  - [n33p06 测修outSPDic的多个错误](#n33p06-测修outspdic的多个错误)
 
 <!-- /TOC -->
 
@@ -390,8 +391,37 @@ if (canset已经到了末帧) {
 
 线索: 在oldCanset.realCansetToIndexDic中取得cansetTo到newRCanset的全段映射: {3 = 0;4 = 1;5 = 9;} (K为cansetTo,V为newRCanset下标)
 思路: 根据以上映射,可以不类比,直接得出AbsRCanset为: [M1{↑饿-16},A51(,果),飞↓];
+TODO1: 根据以上思路,用realCansetToIndexDic来重写analogyCanset类比算法 `T`;
+TODO2: 在rCanset类比 和 hCanset类比中启用新的canset类比算法 `T`;
+
+回测: 在写了TODO1和TODO2后,回测如下:
+1. new:F14909[M1{↑饿-16},A51(,果),A14890(距10,向269,果),A14890(距10,向269,果),A14890(距10,向269,果),A14890(距10,向269,果),A14890(距10,向269,果),A14890(距10,向269,果),飞↓,A14906(向264,距0,果)]
+2. old:F10119[飞←,A10078(距12,向273,果),A10063(距12,向263,果),M1{↑饿-16},A51(,果),飞↓,A10090(距0,向252,果)]
+3. createAbsCanset:F14910[M1{↑饿-16},A51(,果),飞↓]
+结果: 如上回测日志,它已经可以顺利类比出`F14910[M1{↑饿-16},A51(,果),飞↓]`;
+待断点测试项: 不过hCanset类比这里没测到,先打上断点随后再测;
 ```
 
+**总结: 本节起因是Canset类比结果不准确,然后经分析,改为介入realCansetToIndexDic来实现类比算法,并将此算法启用到rCanset类比和hCanset类比中;**
+
 ***
+
+## n33p06 测修outSPDic的多个错误
+`CreateTime 2024.09.13`
+
+在32012时,将outSPDic单独出来了,但别的地方TO的代码并没有完全从spDic切到outSPDic,导致它有许多错误,比如:`见33061`;
+
+| 33061 | 本表列出: 都发现哪些outSPDic使用问题 |
+| --- | --- |
+| 问题1 | `迁移模块中转实`时,没有把outSPDic也继承给转实 (此时sceneFrom和cansetFrom已经变了,它应该重新计一份outSPDic); |
+|  | 说明: 现在的outSPDic有问题,以sceneFrom_cansetFrom为k,转实时,又没转变k,导致前后接不上; |
+| 问题2 | `canset类比`时,就没有把原本的outSPDic继承给absCanset; |
+|  | 说明: 在类比抽象canset时,现在是将初始化继承了spDic,改成outSPDic即可; |
+| 问题3 | 错误1和2中,`初始化继承`的outSPDic,都应当避免重复 (因为重复会带来爆炸的SP值); |
+|  | 说明: 看下outSPDic的初始化继承:spDic,应该避免下重复,总不能每抽象或转实一次,就更新一次; |
+| 问题4 | 转实前,其实就是为了竞争,那么是不是不需要转存outSPDic,也可以根据sceneFrom和cansetFrom计算出原来的spScore? |
+|  | 说明: 确实可以,不过先不改这些,原来的用着好好的,虽然不合理,但先不改,等以后确定它没用,再废弃这一做法 `先不改 T`; |
+| 问题5 | 转实后,是不是可以用cansetTo来做k了,此时再初始化outSPDic; |
+|  | 说明: 确实可以,不过目前的做法,相当于sceneFrom和cansetFrom就是它自己的场景和自己,也兼容它 `所以不必做 T`; |
 
 <br><br><br><br><br>
