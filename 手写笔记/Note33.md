@@ -419,9 +419,15 @@ TODO2: 在rCanset类比 和 hCanset类比中启用新的canset类比算法 `T`;
 |  | 说明: 在类比抽象canset时,现在是将初始化继承了spDic,改成outSPDic即可; |
 | 问题3 | 错误1和2中,`初始化继承`的outSPDic,都应当避免重复 (因为重复会带来爆炸的SP值); |
 |  | 说明: 看下outSPDic的初始化继承:spDic,应该避免下重复,总不能每抽象或转实一次,就更新一次; |
-| 问题4 | 转实前,其实就是为了竞争,那么是不是不需要转存outSPDic,也可以根据sceneFrom和cansetFrom计算出原来的spScore? |
-|  | 说明: 确实可以,不过先不改这些,原来的用着好好的,虽然不合理,但先不改,等以后确定它没用,再废弃这一做法 `先不改 T`; |
-| 问题5 | 转实后,是不是可以用cansetTo来做k了,此时再初始化outSPDic; |
-|  | 说明: 确实可以,不过目前的做法,相当于sceneFrom和cansetFrom就是它自己的场景和自己,也兼容它 `所以不必做 T`; |
+
+| 33062 | 问题4: outSPDic在转实前不应该继承到sceneTo下面; |
+| --- | --- |
+| 反据1 | 确实可以,不过先不改这些,原来的用着好好的,虽然不合理,但先不改,等以后确定它没用,再废弃这一做法; |
+| 反据2 | 确实可以,不过目前的做法,相当于sceneFrom和cansetFrom就是它自己的场景和自己,也兼容它 `所以不改也行`; |
+| 正据1 | 过早的迁移outSPDic,导致outSPDic爆炸性占用空间浪费; |
+| 正据2 | 转实后,可以用cansetTo来做k了(不必用sceneFrom_cansetFrom做key),此时再初始化outSPDic; |
+| 正据3 | 现在的更新outSPDic计数,或者canset抽象时继承outSPDic,正好都是转实的,针对sceneTo.cansetTo的outSPDic; |
+| 正据4 | 转实前,其实就是为了竞争,不转存outSPDic,也可以根据sceneFrom和cansetFrom计算spScore; |
+| 所以 | 根据以上分析,需求是充分的,此问题可以改; |
 
 <br><br><br><br><br>
