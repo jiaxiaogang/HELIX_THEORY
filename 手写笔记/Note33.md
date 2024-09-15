@@ -429,5 +429,8 @@ TODO2: 在rCanset类比 和 hCanset类比中启用新的canset类比算法 `T`;
 | 正据3 | 现在的更新outSPDic计数,或者canset抽象时继承outSPDic,正好都是转实的,针对sceneTo.cansetTo的outSPDic; |
 | 正据4 | 转实前,其实就是为了竞争,不转存outSPDic,也可以根据sceneFrom和cansetFrom计算spScore; |
 | 所以 | 根据以上分析,需求是充分的,此问题可以改; |
+| TODO1 | 在初始化canset池时,不迁移继承outSPDic `T`; |
+| TODO2 | outSPDic的key改为cansetTo.pId,value改为spDic<itemK=spIndex,itemV=spStrong> `T`; |
+| TODO3 | 迁移转实时,再迁移继承outSPDic `T`; |
 
 <br><br><br><br><br>
