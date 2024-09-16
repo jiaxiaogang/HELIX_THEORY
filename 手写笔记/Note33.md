@@ -431,6 +431,9 @@ TODO2: 在rCanset类比 和 hCanset类比中启用新的canset类比算法 `T`;
 | 所以 | 根据以上分析,需求是充分的,此问题可以改; |
 | TODO1 | 在初始化canset池时,不迁移继承outSPDic `T`; |
 | TODO2 | outSPDic的key改为cansetTo.pId,value改为spDic<itemK=spIndex,itemV=spStrong> `T`; |
-| TODO3 | 迁移转实时,再迁移继承outSPDic `T`; |
+| TODO3 | 迁移转实时,再迁移继承outSPDic (即把cansetFrom的itemOutSPDic设为cansetTo的默认itemOutSPDic) `T`; |
+| TODO4 | Canset类比抽象后,把conCanset的itemOutSPDic设为absCanset的默认itemOutSPDic `T`; |
+|  | TODO4.1 加上防重,只有新构建absCanset时,初始化一下itemOutSPDic,以后再有重复的,不初始化了 `T`; |
+| 说明 | 这里`TODO3的转实`和`TODO4的抽象`,这两种初始化默认itemOutSPDic的代码逻辑是完全不同的,要各自写方法处理; |
 
 <br><br><br><br><br>
