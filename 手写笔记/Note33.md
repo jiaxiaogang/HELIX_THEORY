@@ -419,6 +419,7 @@ TODO2: 在rCanset类比 和 hCanset类比中启用新的canset类比算法 `T`;
 |  | 说明: 在类比抽象canset时,现在是将初始化继承了spDic,改成outSPDic即可; |
 | 问题3 | 错误1和2中,`初始化继承`的outSPDic,都应当避免重复 (因为重复会带来爆炸的SP值); |
 |  | 说明: 看下outSPDic的初始化继承:spDic,应该避免下重复,总不能每抽象或转实一次,就更新一次; |
+| 结果 | 这三个问题,都在33062中,综合在一个表里,修复了 `转33062`; |
 
 | 33062 | 问题4: outSPDic在转实前不应该继承到sceneTo下面; |
 | --- | --- |
@@ -427,7 +428,7 @@ TODO2: 在rCanset类比 和 hCanset类比中启用新的canset类比算法 `T`;
 | 正据1 | 过早的迁移outSPDic,导致outSPDic爆炸性占用空间浪费; |
 | 正据2 | 转实后,可以用cansetTo来做k了(不必用sceneFrom_cansetFrom做key),此时再初始化outSPDic; |
 | 正据3 | 现在的更新outSPDic计数,或者canset抽象时继承outSPDic,正好都是转实的,针对sceneTo.cansetTo的outSPDic; |
-| 正据4 | 转实前,其实就是为了竞争,不转存outSPDic,也可以根据sceneFrom和cansetFrom计算spScore; |
+| 正据4 | 转实前,其实就是为了竞争,不转存outSPDic,也可以根据sceneFrom和cansetFrom计算spScore `转TODO5`; |
 | 所以 | 根据以上分析,需求是充分的,此问题可以改; |
 | TODO1 | 在初始化canset池时,不迁移继承outSPDic `T`; |
 | TODO2 | outSPDic的key改为cansetTo.pId,value改为spDic<itemK=spIndex,itemV=spStrong> `T`; |
@@ -435,5 +436,11 @@ TODO2: 在rCanset类比 和 hCanset类比中启用新的canset类比算法 `T`;
 | TODO4 | Canset类比抽象后,把conCanset的itemOutSPDic设为absCanset的默认itemOutSPDic `T`; |
 |  | TODO4.1 加上防重,只有新构建absCanset时,初始化一下itemOutSPDic,以后再有重复的,不初始化了 `T`; |
 | 说明 | 这里`TODO3的转实`和`TODO4的抽象`,这两种初始化默认itemOutSPDic的代码逻辑是完全不同的,要各自写方法处理; |
+| TODO5 | 计算outSPScore时,未转实则用cansetFrom的outSP值,转实则用cansetTo的outSP值来计算 `T`; |
+| TODO6 | 更新outSP值时,先判断下有没转实,不转实的不更新 `T`; |
+|  | > 正据6.1-接33031b-协作:outSP只影响长时记忆 & 正据6.2-按本表做法,没转实时outSP更新不了的; |
+| 结果 | 本表主要迭代了outSPDic: 1是转实时初始化 2是抽象时初始化 3是只有转实后才更新outSP值 `T`; |
+
+**小结: 在33062中通过迭代outSPDic,顺便把33061-33062的四个问题给修复了;**
 
 <br><br><br><br><br>
