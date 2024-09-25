@@ -979,7 +979,7 @@ Demand竞争 <<<== SUCCESS 共2条
 
 | 31083 | 根据31082,只改以下两点,且最终其实就是迭代TCPlan为重点; |
 | --- | --- |
-| TODO1 | TCScore中改成仅以besting和bested做子R任务的综合评分 `T`; |
+| TODO1 | TCScore中改成仅以besting和bested做R子任务的综合评分 `T`; |
 | TODO2 | 在TCPlan取endBranch时,从root到sub,依次对每层的CansetModels进行竞争 `转TODO4.1` |
 |  | 2.1 第一因子是besting&ed的综合价值分 (看是否大于父任务分,大于则必然好于没best的那些Cansets); |
 |  | 2.2 第二因子以CansetModels的SP稳定性竞争来即可 (即感性一致,则看谁更理性好); |
