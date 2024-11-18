@@ -955,10 +955,10 @@ createAbsCanset:F6706[M1{↑饿-16},飞↙,A51(,果),A51(,果)]
 | 后续 | 如果推举及时,那么迁移中应该就只需要保留I/F,不需要B了 `转33113`; |
 | TODO1 | 新构建RCanset时,实时推举到F层 (将sp也防重的情况下,累计到F中) `T`; |
 | TODO2 | 新构建HCanset时,实时推举到F层 (借助R场景树进行推举,会复杂些) `T`; |
-| TODO3 | canset子即父: 每次canset计SP+1时,推举到所有F层也累加1; |
+| TODO3 | canset子即父: 每次canset计SP+1时,推举到所有F层也累加1 `T`; |
 |  | 释义: 子即父 (指: 每个个体都是环境的一部分,苹果是水果,苹果也是水果之一; 比如:每个子孙都会为家族带来影响); |
 |  | 原则: 子是父,父非子 (所以子SP可以直接init给和累计给父,但父不允许反过来直接给子); |
-|  | 实现: 在updateOutSPStrong()方法中,直接对absPorts都计一下SP+1; |
+|  | 实现: 在AINetUtils中写了updateOutSPStrongIF方法,对I更新SP后,用transferPort关联把F层也全给SP+1了; |
 | TODO4 | 理顺迁移关联 `T`; |
 | TODO4.1 | 为了性能考虑,可以基于transferPorts迁移关联,来复用迁移成果,避免每次都重新计算迁移 `T`; |
 | TODO4.3 | 无论是推举to,还是继承from,这二者都是父层,在计子即父时,这些父都要计SP+1 `T`; |
