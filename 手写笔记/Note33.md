@@ -1118,7 +1118,7 @@ flt1 R2. I by:FROM<F4012 F623 F2550[↑饿-16,4果,飞↙,4果]> {0 = 0;1 = 1;2 
 | 测试点4 | 测下试错训练能否快速竞争 (时序识别的多样性问题没了,并且可以及时推举,快速竞争了) |
 
 ```java
-33135 - 问题1: 需要优化下决策速度,这里rSolution跑了10s太慢了;
+33135 - 问题1: 需要优化下决策速度,这里rSolution跑了10s太慢了 (主要是第7步之后,到打印flt1R0,这期间比原来慢太多了) `T`;
  194 [08:47:20:266 TO        TCSolution.m  39] =============================== 0 rSolution ===============================
  195 [08:47:20:266 TO        TCSolution.m  39] 任务源:饿 protoFo:F2[M1{↑饿-16}] 已有方案数:0 任务分:-1.94
  196 [08:47:20:404 TO           TCScene.m 112] 第1步 R场景树枝点数 I:20 + Father:26 + Brother:0 = 总:46
@@ -1150,6 +1150,15 @@ flt1 R2. I by:FROM<F4012 F623 F2550[↑饿-16,4果,飞↙,4果]> {0 = 0;1 = 1;2 
 思路3: 也可以看把cansetModels取的时候就增强一下竞争力;
 思路4: 也可以实际测下性能瓶颈在哪里?应该是在spScore算法中,现在父非子了,对取数据要求更高?所以更慢了?这是很可能的疑点线索;
 思路5: 根据31025-代码段可见,有两三百条canset,并且第7步之前,有个两三秒是正常的,而这次慢的问题,主要集中在第7步之后 (应该就是综合sp评分慢,待调试实测下);
+实践: 以上思路全没啥用,经AddDebugCodeBlock_Key和PrintDebugCodeBlock_Key工具实测,找出三处性能慢的代码,如下:
+//2024.11.29: 性能优化: 单次已从6.99优化至0.08ms;
+NSArray *fPorts = [AINetUtils transferPorts_4Father:iScene iCansetContent_ps:iCansetContent_ps];//优化了iCansetHeader直接存成md5Header直接复用,避免拼接字符串上万次,然后判equal也很慢;
+//2024.11.29: 性能优化: 单次已从0.66优化至0.03ms;
+CGFloat foMatchValue = [iScene getAbsMatchValue:fScene.pointer];//优化了fo抽具象匹配度存下来,直接复用,避免取alg元素算匹配度慢;
+//2024.11.30: 性能优化: 单次已从1.14优化至0.02ms;
+NSDictionary *fSPDic = [fScene getItemOutSPDic:fPort.fCansetHeader];//优化了fCanset存成md5Header直接复用,避免fCanset取db出来再content_ps转key慢;
+总结: 这次的慢,主要是因为刚写的`父非子计算综合outSP稳定性算法`的getStableScore_Out()算法太慢所致;
+结果: 修改了以上三处慢代码后,跑rSolution在第7步到打印结果canset的速度已经由16s优化到250ms `T`;
 ```
 
 ```java
