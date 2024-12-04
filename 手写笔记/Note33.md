@@ -1210,6 +1210,8 @@ protoFo:F8690[M6{↑饿-16},A8689(距8,向270,果)]->
     > 方案v4: 所以改为,只有似层且为FrontOrderFo时(即未抽象过的似层),才在类比出absFo时,同时向上推整个assFo的sp值;
       > 说明: 现在的时序识别只有似层,即assFo肯定是似层,但似层也有absFo,它的sp值仍可能很大,所以此方案加个条件,改为具象中,从未抽象过的FrontOrderFo;
     > 方案v4TODO: 在createAbsFo方法中,调用extendSPByIndexDic时,加上assFo必须是AIFrontOrderNode类型的条件 `T`;
+    > 回测: 经回测以上方案v4修改后无效(应该是治标不治本,大SP的来源还在);
+    > 调试: 经调试再查,发现这些大SP就是rethink每次+1这么一个个推举来的,每秒触发一次视觉,每一次都能识别到恒强的似层,它就一直被推着+1;
 ```
 
 <br><br><br><br><br>
