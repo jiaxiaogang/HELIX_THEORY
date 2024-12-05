@@ -1215,8 +1215,8 @@ protoFo:F8690[M6{↑饿-16},A8689(距8,向270,果)]->
     > 线索: 如果多个pFo,都推举同一个F,那么就得防重,不能让这些pFo全推一次,事实上,在整个工作记忆树中,它都几乎是针对同一个场景的;
     > 小结: 方案v4无效,上面的线索指向场景防重,即整个场景中,针对同一个F层,应该只计一次SP,不能每个pFo推一次;
     > 方案v5: 对子即父SP计数防重: **每一次feedback反馈,对同一条F节点,只更新一次SP值;**
-    > 方案v4TODO1 当feedbackTIP/R调用到TCRethink()时,对absF层的SP计数支持防重 (即一次feedback调用中,针对同一个absF时序,只更新一次SP);
-    > 方案v4TODO2 当feedbackTOP/R调用checkAndUpdateOutSPStrong()也同理,对F层的outSP支持防重 (即一次feedback调用中,针对同一个F时序,仅更新一次outSP);
+    > 方案v5TODO1 当feedbackTIP/R调用到TCRethink()时,对absF层的SP计数支持防重 (即一次feedback调用中,针对同一个absF时序,只更新一次SP) `T`;
+    > 方案v5TODO2 当feedbackTOP/R调用checkAndUpdateOutSPStrong()也同理,对F层的outSP支持防重 (即一次feedback调用中,针对同一个F时序,仅更新一次outSP) `T`;
 ```
 
 <br><br><br><br><br>
