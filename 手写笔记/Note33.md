@@ -1217,6 +1217,7 @@ protoFo:F8690[M6{↑饿-16},A8689(距8,向270,果)]->
     > 方案v5: 对子即父SP计数防重: **每一次feedback反馈,对同一条F节点,只更新一次SP值;**
     > 方案v5TODO1 当feedbackTIP/R调用到TCRethink()时,对absF层的SP计数支持防重 (即一次feedback调用中,针对同一个absF时序,只更新一次SP) `T`;
     > 方案v5TODO2 当feedbackTOP/R调用checkAndUpdateOutSPStrong()也同理,对F层的outSP支持防重 (即一次feedback调用中,针对同一个F时序,仅更新一次outSP) `T`;
+    > 方案v5TODO3 为了代码易读性,可以考虑改成: 每一个loopId,计一个防重数组,这样就不必把防重except4SP2F传来传去了 `先测下前两个TODO,这个TODO3是扩展深入的锦上添花之举,可以随后再写`;
 ```
 
 <br><br><br><br><br>
