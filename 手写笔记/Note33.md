@@ -1394,5 +1394,42 @@ protoFo:F8690[M6{↑饿-16},A8689(距8,向270,果)]->
 | 细则 | 1、借助I/FRCanset的迁移关联，从它们的后段（未发生部分）帧中，找与当前行为化中的RCanset的下一帧有映射的。 |
 |  | 2、这个应该好找，因为所有有迁移关联的rCanset是等长一一对应的，所以只要顺着找所有有迁移关联的FCanset的下一帧的h解即可。 |
 |  | 3、看下transferTuiJv_H()，它也应该顺着本来就有的I/FRCanset迁移关联来推举新的HCanset。 |
+| 结果 | 本表，只是粗略的制定了要改：`迭代H推举算法`、`迭代hSolution算法`，这两个顺着R迁移关联进行，具体的见下继续。 |
+
+```java
+33153-分析H推举算法的HCansetTo与HSceneTo的映射怎么取？ & fatHCansetTo的content_ps从哪取？
+说明：即fatHCanset的内容和映射，
+分析1、虽然IFScene之间并不是一一对应，但iCanset和fCanset是一一对应（等长），那iHCanset和fHCanset是否可以一一对应呢？(它等长，且它的scene也等长）。
+分析2、iHCanset与iHScene可映射上的部分 与 fHCanset与fHScene可映射上的部分，是否绝对一致呢?
+分析3、画图分析下 或 示例分析下 或 实际调试下。
+分析4、通过画图也不太好分析，实际调试更不好弄，示例分析比较好弄，下面就用示例分析下：
+
+** 示例分析如下：**
+//FScene=“无距果”->更饿，FRCanset=“无距果，吃了”->不饿，FHCanset=“无距带皮果，压，无距无皮果”。
+//IScene=“有距果”->更饿，IRCanset=“有距果，吃了“->不饿，IHCanset=“有距带皮果，压，有距无皮果”。
+
+** 模拟演化过程：**
+//  1、IHCanset此处推举后，会变成FHCanset=“有距带皮果，压，目标帧”。
+//  2、其中目标帧，在R推举时：
+//      2a、有映射则来自RSceneTo（即：无距果）
+//      2b、无映射则来自RCansetFrom（即：有距果）
+//      3c、这个倒是都还好，关键在于当时R的迁移关联，有没有cansetFromTo的映射？
+//  3、其中第一帧：
+//      3a、这个看起来麻烦，但它明确没映射，所以肯定是延用IHCanset的第一帧。
+//  4、说白了，从A-IHCansetScene到B-FHCansetScene之间的迁移。（重要）
+//      4a、判断A无映射的，从IHCansetFrom取。
+//      4b、判断A有映射的，原本应该从IHScene取，不过IHScene已经迁移成了FHScene，所以改为从FHScene取更准确（即延着R迁移做H迁移）。
+//      4c、这样B的映射，其实与A的映射是一模一样的，因为4a和4b的处理，就是依A的映射，来形成BHCansetTo结果，使它的映射一致了。
+//  5、无论是R迁移还是H迁移，有映射时来自RSceneTo，没映射时来自cansetFrom，而IRScene和FRScene本来就有抽具象关系，所以直至H迁移时：（重要）
+//      5a、有映射的帧，这个抽具象关系依然成立。
+//      5b、无映射的帧，依然采用hSceneTo的对应帧就行了。
+
+** 分析结果：**
+主要看“模拟演化过程”的第4和第5条，它即表明了：IHCanset和IHScene的映射，与FHCanset和FHScene的映射是一模一样的，还表明了：有映射帧对应的FHCansetAlg是IHCansetAlg的抽象。
+
+** TODO **
+TODO1、根据以上分析结果：在transferTuiJv_H_V2中，直接用I层的hCanset和hScene的映射，当成F层的映射用就行。`T`
+TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的：取I层hCansetFrom对应的帧。`T`
+```
 
 <br><br><br><br><br>
