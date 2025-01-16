@@ -1396,7 +1396,7 @@ protoFo:F8690[M6{↑饿-16},A8689(距8,向270,果)]->
 |  | 3、看下transferTuiJv_H()，它也应该顺着本来就有的I/FRCanset迁移关联来推举新的HCanset。 |
 | 结果 | 本表，只是粗略的制定了要改：`迭代H推举算法`、`迭代hSolution算法`，这两个顺着R迁移关联进行，具体的见下继续。 |
 
-```java
+```txt
 33153-分析H推举算法的HCansetTo与HSceneTo的映射怎么取？ & fatHCansetTo的content_ps从哪取？
 说明：即fatHCanset的内容和映射，
 分析1、虽然IFScene之间并不是一一对应，但iCanset和fCanset是一一对应（等长），那iHCanset和fHCanset是否可以一一对应呢？(它等长，且它的scene也等长）。
@@ -1431,5 +1431,18 @@ protoFo:F8690[M6{↑饿-16},A8689(距8,向270,果)]->
 TODO1、根据以上分析结果：在transferTuiJv_H_V2中，直接用I层的hCanset和hScene的映射，当成F层的映射用就行。`T`
 TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的：取I层hCansetFrom对应的帧。`T`
 ```
+
+| 33154 | 抽象HCanset怎么办？它没有迁移关联： |
+| --- | --- |
+| 方案1 | 在虚迁移继承时，变的有关联？（这方案可考虑，能把抽象canset带活就行）。 |
+| 方案2 | 还是在抽象HCanset时，给它补一下迁移关联？（此方案不可行，性能不能这么搞）。 |
+| 变数 | 谁说抽象HCanset推举时，没有迁移关联的？现在无论是NewRCanset还是AbsRCanset，还是NewHCanset和AbsHCanset都调用了推举算法。 |
+|  | 即：AbsHCanset生成时，已经调用了推举算法，并且延着R迁移关联推举上去了。 |
+| 结果 | 本表问题不存在，不必修 `T`。 |
+
+| 33155 | 接33152-迭代hSolutionV4 |
+| --- | --- |
+| TODO1 | 迭代hSolutionV4，延着RCanset的迁移关联，找到并继承hCanset。 |
+| TODO2 | HCanset的Xv迁移，也得延着RCanset的迁移关联进行。 |
 
 <br><br><br><br><br>
