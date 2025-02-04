@@ -1537,6 +1537,11 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 | 33158 | 把hSolutionV3的匹配度为0过滤器去掉，并复现查下为什么匹配度为null |
 | --- | --- |
 | 问题 | 前段时间把直接从B迁移迭代成了BF/FI两步，所以hSolution判断求解目标与hTargetAlg的匹配度时，不能再从共同抽象取最佳匹配度 |
-| 解决 | 现在只有FI迁移，所以直接有抽具象关联，直接取匹配度即可 `T`。 |
+| TODO1 | 现在只有FI迁移，所以直接有抽具象关联，直接取匹配度即可 `T`。 |
+| 调试 | 1、说是FI迁移，其实H迁移时targetIndex必须有映射，不然H迁移会失败。 |
+|  | 2、而迁移时如果有映射就会从hSceneTo取帧，所以hCansetTo的target帧本来取的就是rCansetTo的actIndex帧。 |
+|  | 3、也所以当前targetAlg和hCansetTo.targetIndex本来就是同一个概念。 |
+| TODO2 | 所以本来它两个就是同一个概念，它即使没有共同抽象（没抽象）时，匹配度也应该是1才对 `就按TODO1写代码了，因为同一节点时，TODO1的代码也可以顺利取到1 T`。 |
+| 回测 | 回测了几次，targetAlg和hCansetTo.targetIndex确实是同一概念 `T`。 |
 
 <br><br><br><br><br>
