@@ -1570,6 +1570,7 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 |  | 2B、当前是typeI时：从I迁移关联的F下面取H解。 |
 |  | 2C、当前是typeF时：只需要从F下取就行。 |
 |  | 2D、当前是typeF时：I不管有没有转实，都不需要从I取H解（rCansetTo的I刚继承过来，就没有H解）。 |
+| TODO3 | 原来的H虚迁移算法要跟着改下，现在的hSceneFrom和hSceneTo并非等长一一对应，而是需要通过rScene来综合计算映射。 |
 
 ***
 
