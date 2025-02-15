@@ -1570,7 +1570,19 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 |  | 2B、当前是typeI时：从I迁移关联的F下面取H解。 |
 |  | 2C、当前是typeF时：只需要从F下取就行。 |
 |  | 2D、当前是typeF时：I不管有没有转实，都不需要从I取H解（rCansetTo的I刚继承过来，就没有H解）。 |
-| TODO3 | 原来的H虚迁移算法要跟着改下，现在的hSceneFrom和hSceneTo并非等长一一对应，而是需要通过rScene来综合计算映射。 |
+| TODO3 | 原来的H虚迁移算法要跟着改下，现在的hSceneFrom和hSceneTo并非等长一一对应，而是需要通过rScene来综合计算映射，迁移路径如下：。 |
+|  | 问题：现迁移是直接从sceneFrom迁移到sceneTo，这是有问题的，因为rSceneTo和当前激活中的targetFo压根不是一个rCanset。 |
+|  | 代码回顾1：现迁移路径为：hCansetFrom（F） -> rCansetFrom（F） -> rSceneFrom（F） -> rSceneTo（I） -> rCansetTo（I） -> hCansetTo（I）。 |
+|  | 代码回顾2：因为rCansetTo和rCansetFrom的映射一一对应，所以现代码被简化为：hCansetFrom（F） -> rCansetFromTo（F/I） -> hCansetTo（I）。 |
+|  | 思路：当前取H解的rCanset和targetFo并非同一个，映射也不会一一对应，必须通过rSceneFrom（I或F层）->rSceneTo（I层）->targetFo的路径来综合计算一下。 |
+|  | 方案：而实际的H迁移路径应该是从actionFos（一般是另一个rCanset）取H解，最终迁移到targetFo（当前行为化中的rCanset），迁移路径的实践如下： |
+|  | 实践分析A、当typeI从I取H解时迁移路径为：hCansetFrom（I） -> rCansetFrom（I） -> rSceneFromTo（I） -> targetFo（I） -> hCansetTo（I）。 |
+|  | 实践分析B、当typeI从F取H解时迁移路径为：hCansetFrom（F） -> rCansetFrom（F） -> rSceneFrom（F） -> rSceneTo（I） -> targetFo（I） -> hCansetTo（I）。 |
+|  | 实践分析C、当typeF从F取H解时迁移路径为：hCansetFrom（F） -> rCansetFrom（F） -> rSceneFrom（F） -> rSceneTo（I） -> targetFo（I） -> hCansetTo（I）。 |
+|  | 实践总结D：如上，当从I取H解时迁移路径为：hCansetFrom（I） -> rCansetFrom（I） -> rSceneFromTo（I） -> targetFo（I） -> hCansetTo（I）。 |
+|  | 实践总结E：如上，当从F取H解时迁移路径为：hCansetFrom（F） -> rCansetFrom（F） -> rSceneFrom（F） -> rSceneTo（I） -> targetFo（I） -> hCansetTo（I）。 |
+|  | TODO3A：如上，其实迁移路径都是：hCansetFrom（F） -> rCansetFrom（F） -> rSceneFrom（F） -> rSceneTo（I） -> targetFo（I） -> hCansetTo（I）。 |
+|  | TODO3B：只是当rSceneFrom和rSceneTo是同一个时，可以跳过它俩这一步。 |
 
 ***
 
