@@ -24,6 +24,7 @@
   - [n33p13 回测试错训练，测二次过滤后多样性(主要是有向无距场景)消失BUG](#n33p13-回测试错训练测二次过滤后多样性主要是有向无距场景消失bug)
   - [n33p14 继续回测试错训练，测`有向无距场景`的竞争浮现](#n33p14-继续回测试错训练测有向无距场景的竞争浮现)
   - [n33p15 明确和完善：H迁移延着R迁移关联进行](#n33p15-明确和完善h迁移延着r迁移关联进行)
+  - [n33p15B 迭代hSolutionV4：扩大求解范围和修正迁移路径](#n33p15b-迭代hsolutionv4扩大求解范围和修正迁移路径)
   - [n33p16 继续回测试错训练，测`有向无距场景`的竞争浮现](#n33p16-继续回测试错训练测有向无距场景的竞争浮现)
 
 <!-- /TOC -->
@@ -1548,6 +1549,15 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 **小结：hSolutionV3中匹配度为null的BUG只复现了一次，后死活不复现了，先不管了，等复现时打了断点再查。**
 **总结：本节因春节滑了水，原本H迁移就几乎是延着R迁移来的，本节只是迭代了下transferTuiJv_H_V2()，更加明确了H推举算法延着R进行，然后就是修了下hSolutionV3中有匹配度为null的BUG，这BUG还死活不复现了，真见了鬼。**
 
+***
+
+## n33p15B 迭代hSolutionV4：扩大求解范围和修正迁移路径
+`CreateTime 2025.02.10`
+
+上节末未复现的BUG，又复现了，本节继续修下先，主要修两个部分：
+1、扩大求解范围：typeI层也要从迁移关联的源头F层求H解（因为H解并不是实时同步分布到各个hScene下的，所以要向F层取一下）。
+2、修正迁移路径：hCanset并不是迁移到hSceneFrom对应的hSceneTo下，而是要迁移到targetFo下，二者并不是同一个rCanset，本节修下此问题。
+
 | 33159 | BUG又复现了，经查数据，如下： |
 | --- | --- |
 | 经查 | ![](assets/725_H求解时target映射不对的BUG.png) |
@@ -1583,6 +1593,9 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 |  | 实践总结E：如上，当从F取H解时迁移路径为：hCansetFrom（F） -> rCansetFrom（F） -> rSceneFrom（F） -> rSceneTo（I） -> targetFo（I） -> hCansetTo（I）。 |
 |  | TODO3A：如上，其实迁移路径都是：hCansetFrom（F） -> rCansetFrom（F） -> rSceneFrom（F） -> rSceneTo（I） -> targetFo（I） -> hCansetTo（I）。 |
 |  | TODO3B：只是当rSceneFrom和rSceneTo是同一个时，可以跳过它俩这一步。 |
+| TODO4 | 修正targetIndex也要跟着改下（原来的targetIndex是下一帧，而现在从别的rCanset把H解找到targetFo中来，targetFo的下一帧要实时从中找一找才对）。 |
+|  | TODO4A问：为性能考虑下，从后段一帧帧找targetAlg的mIsC匹配帧，性能不好。 |
+|  | TODO4A解：可以直接从targetAlg及其conAlgs中，找找与迁移后的hCansetToOrder的后段判断下，有没有交集，来取修正后的targetIndex位置。 |
 
 ***
 
