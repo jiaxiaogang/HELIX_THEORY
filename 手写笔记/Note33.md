@@ -1563,7 +1563,8 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 | 经查 | ![](assets/725_H求解时target映射不对的BUG.png) |
 | 说明 | 说白了，是一个I多个F，从不同F迁移过来的rCanset内容完全不同（并不像前面分析的迁移过来的rCanset长度都一样）。 |
 | 思路 | H求解时，从同IF树内别的rCansetTo中找后段(>actIndex)，只要后段任一帧 is TargetAlg成立，即可。 |
-| 1 | 之所以要>actIndex是因为下一帧不行，下一帧与当前H任务同进度，不能啥也不干，就干等经自己实现（必须有中间帧）。 |
+| 1 | 之所以要>actIndex是因为下一帧不行，下一帧与当前H任务同进度，不能啥也不干，就干等它自己实现（必须有中间帧）。 |
+|  | 更新：应该是H解必须有中间帧，而不是rCansetFrom判断有中间帧，是否在干等（用目标帧-截点必须>1）。 |
 | 2 | 迁移推举路径为：hCansetFrom->rCansetFrom(也即rCansetTo)->IRScene（从hCansetFrom推举到IRScene）。 |
 | 3 | 迁移继承路径为：IRScene->targetFo->targetAlg的hCansetTo（从IRScene再继承到hCansetTo）。 |
 | 疑问1 | R迁移本来就存在了（rCansetFrom到rCansetTo部分），H推举路径何时实现？也要像R一样构建h解时就推举吗？ |
