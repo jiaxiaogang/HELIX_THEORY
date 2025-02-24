@@ -1575,13 +1575,13 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 |  | 补充3、构建H时只做R那一重的推举(1)，H求解时需要做：R那一重的继承(2)、H那一重的推举(3) 和 H那一重的继承(4)。 |
 | 疑问2 | 求解H的源从rCanset池可能并不充分，因为许多已迁移过的R解，其rCansetFrom被排除了，但它下面可能有H解。 |
 |  | 分析：最好是实时取出所有的IF，然后从它们下面求h解。 |
-| TODO1 | 还是迭代下hSolutionV4，因为这里的数据结构还是略复杂，建议边写边跑demo调试，避免容易出BUG。 |
-| TODO2 | H求解时，因为H推举的不充分，必须同时从F和I取H解。 |
-|  | 2A、当前是typeI时：从I下面直接取H解。 |
-|  | 2B、当前是typeI时：从I迁移关联的F下面取H解。 |
-|  | 2C、当前是typeF时：只需要从F下取就行。 |
+| TODO1 | 还是迭代下hSolutionV4，不过这里的数据结构还是略复杂，后面多测测 `T`。 |
+| TODO2 | H求解时，因为H推举的不充分，必须同时从F和I取H解。`参考3315a T` |
+|  | 2A、当前是typeI时：从I下面直接取H解 `T`。 |
+|  | 2B、当前是typeI时：从I迁移关联的F下面取H解 `T`。 |
+|  | 2C、当前是typeF时：只需要从F下取就行 `T`。 |
 |  | 2D、当前是typeF时：I不管有没有转实，都不需要从I取H解（rCansetTo的I刚继承过来，就没有H解）。 |
-| TODO3 | 原来的H虚迁移算法要跟着改下，现在的hSceneFrom和hSceneTo并非等长一一对应，而是需要通过rScene来综合计算映射，迁移路径如下：。 |
+| TODO3 | 原来的H虚迁移算法要跟着改下，现在的hSceneFrom和hSceneTo并非等长一一对应，而是需要通过rScene来综合计算映射，迁移路径如下：`T`。 |
 |  | 问题：现迁移是直接从sceneFrom迁移到sceneTo，这是有问题的，因为rSceneTo和当前激活中的targetFo压根不是一个rCanset。 |
 |  | 代码回顾1：现迁移路径为：hCansetFrom（F） -> rCansetFrom（F） -> rSceneFrom（F） -> rSceneTo（I） -> rCansetTo（I） -> hCansetTo（I）。 |
 |  | 代码回顾2：因为rCansetTo和rCansetFrom的映射一一对应，所以现代码被简化为：hCansetFrom（F） -> rCansetFromTo（F/I） -> hCansetTo（I）。 |
@@ -1592,11 +1592,12 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 |  | 实践分析C、当typeF从F取H解时迁移路径为：hCansetFrom（F） -> rCansetFrom（F） -> rSceneFrom（F） -> rSceneTo（I） -> targetFo（I） -> hCansetTo（I）。 |
 |  | 实践总结D：如上，当从I取H解时迁移路径为：hCansetFrom（I） -> rCansetFrom（I） -> rSceneFromTo（I） -> targetFo（I） -> hCansetTo（I）。 |
 |  | 实践总结E：如上，当从F取H解时迁移路径为：hCansetFrom（F） -> rCansetFrom（F） -> rSceneFrom（F） -> rSceneTo（I） -> targetFo（I） -> hCansetTo（I）。 |
-|  | TODO3A：如上，其实迁移路径都是：hCansetFrom（F） -> rCansetFrom（F） -> rSceneFrom（F） -> rSceneTo（I） -> targetFo（I） -> hCansetTo（I）。 |
-|  | TODO3B：只是当rSceneFrom和rSceneTo是同一个时，可以跳过它俩这一步。 |
-| TODO4 | 修正targetIndex也要跟着改下（原来的targetIndex是下一帧，而现在从别的rCanset把H解找到targetFo中来，targetFo的下一帧要实时从中找一找才对）。 |
+|  | TODO3A：如上，其实迁移路径都是：hCansetFrom（I/F） -> rCansetFrom（I/F） -> rSceneFrom（I/F） -> rSceneTo（I） -> targetFo（I） -> hCansetTo（I）`T`。 |
+|  | TODO3B：只是当rSceneFrom和rSceneTo是同一个时，可以跳过它俩这一步 `T`。 |
+|  | TODO3C：当rCansetFrom和rCansetTo是同一个时，可以跳过其间那三步 `T`。 |
+| TODO4 | 修正targetIndex也要跟着改下（原来的targetIndex是下一帧，而现在从别的rCanset把H解找到targetFo中来，targetFo的下一帧要实时从中找一找才对）`T`。 |
 |  | TODO4A问：为性能考虑下，从后段一帧帧找targetAlg的mIsC匹配帧，性能不好。 |
-|  | TODO4A解：可以直接从targetAlg及其conAlgs中，找找与迁移后的hCansetToOrder的后段判断下，有没有交集，来取修正后的targetIndex位置。 |
+|  | TODO4A解：可以直接从targetAlg及其conAlgs中，找找与迁移后的hCansetToOrder的后段判断下，有没有交集，来取修正后的targetIndex位置 `T`。 |
 
 | 3315a | H迁移同步问题 -> for 扩大求解范围 |
 | --- | --- |
