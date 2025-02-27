@@ -1638,7 +1638,11 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 | 正据3 | 虽然没把理论HCanset直接挂到targetIndex下，不过挂了也没用，本来在迁移过程中极大几率映射也会丢失。还不如放到rScene下，到时候再判断其对target有效。 |
 | 另外1 | H的OutSPDic仍然要记到rCanset下，因为SP值必须能够明确到当前rCanset自己。 |
 | 另外2 | 迁移目标仍然是rCansetTo下面，必须把HCanset明确到RCanset下面，才能orders准确。 |
+|  | > 反例：如果我们的targetAlg是找锤子，而hCansetFrom能找着小锤子，那么迁移后hCansetTo是锤子还是小锤子？ |
+|  | > 说明：以上反例的意思是，如果我们知道找到的还是小锤子，那这一条order就不是从rCansetTo下面取的，而是从hCansetFrom下取的。 |
+|  | > 所以：是否意味着，我们不必把hCansetFrom迁移到rCansetTo下面，而是只需要迁移到rSceneTo下。 |
 | 另外3 | 可以给RCanset与HCanset间，加上迁移关联，可以避免重复迁移的性能问题。 |
+| 总结 | 根据以上`正据和另外`的分析，感觉也只是把挂在RCanset下，改成挂在RScene下，............ |
 | TODO | 先按着此方案写一版hSolutionV5出来跑跑看。 |
 
 
