@@ -1635,6 +1635,10 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 | 方案 | 如图，把RScene->RCanset(HScene)->HCanset三层，简化成两层Scene->RHCanset。 |
 | 正据1 | 首先感性解是末帧，理性解是中间帧。二者在存储时没任何冲突。 |
 | 正据2 | R习得新H解，却难迁移，还不如存到RScene下得了，求解方案，迁移方案，还没有H继承滞后问题。 |
+| 正据3 | 虽然没把理论HCanset直接挂到targetIndex下，不过挂了也没用，本来在迁移过程中极大几率映射也会丢失。还不如放到rScene下，到时候再判断其对target有效。 |
+| 另外1 | H的OutSPDic仍然要记到rCanset下，因为SP值必须能够明确到当前rCanset自己。 |
+| 另外2 | 迁移目标仍然是rCansetTo下面，必须把HCanset明确到RCanset下面，才能orders准确。 |
+| 另外3 | 可以给RCanset与HCanset间，加上迁移关联，可以避免重复迁移的性能问题。 |
 | TODO | 先按着此方案写一版hSolutionV5出来跑跑看。 |
 
 
