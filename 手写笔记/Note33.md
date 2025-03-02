@@ -1651,10 +1651,10 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 | 方案 | 根据以上总结，可以采纳示图的改动，把hCansetFrom挂载在rScene下。 |
 | 迟疑 | 需求不够明确：其实本表需求明确的时机是：“真正遇到以上正据4的问题：即当hSolutionV4因为要取所有IF树下的rCanset导致性能有问题时”。 |
 |  | > 不过当前需求明确度也有十之八九了，虽有些迟疑，但还是先做了吧。 |
-| TODO1 | 把构建HCanset时，改成存到RScene下。 |
+| TODO1 | 把构建HCanset时，改成存到RScene下 `T`。 |
 | TODO2 | 把HCanset迁移（推举）路径，改成和RCanset一样的推举路径。 |
-| TODO3 | 先按着此方案写一版hSolutionV5出来跑跑看（主要是取H范围，以及层级少一级后的相关代码和命名等变动）。 |
-| TODO4 | 把HCanset迁移（继承）路径，改成和RCanset一样的继承路径。 |
+| TODO3 | 先按着此方案写一版hSolutionV5出来跑跑看（主要是取H范围，以及层级少一级后的相关代码和命名等变动） `T`。 |
+| TODO4 | 把HCanset迁移（继承）路径，改成和RCanset一样的继承路径 `T`。 |
 | TODO5 | H迁移关联 和 HOutSPDic仍然挂在RCanset下，以保证稳定性得分计算的准确性。 |
 
 <br><br><br><br><br>
