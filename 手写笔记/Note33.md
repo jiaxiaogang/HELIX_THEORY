@@ -1655,10 +1655,13 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 | 迟疑 | 需求不够明确：其实本表需求明确的时机是：“真正遇到以上正据4的问题：即当hSolutionV4因为要取所有IF树下的rCanset导致性能有问题时”。 |
 |  | > 不过当前需求明确度也有十之八九了，虽有些迟疑，但还是先做了吧。 |
 | TODO1 | 把构建HCanset时，改成存到RScene下 `T`。 |
-| TODO2 | 把HCanset迁移（推举）路径，改成和RCanset一样的推举路径。 |
+| TODO2 | 把HCanset迁移（推举）路径，改成和RCanset一样的推举路径 `T`。 |
 | TODO3 | 先按着此方案写一版hSolutionV5出来跑跑看（主要是取H范围，以及层级少一级后的相关代码和命名等变动） `T`。 |
 | TODO4 | 把HCanset迁移（继承）路径，改成和RCanset一样的继承路径 `T`。 |
 | TODO5 | H迁移关联 和 HOutSPDic仍然挂在RCanset下，以保证稳定性得分计算的准确性。 |
+| TODO6 | 分析下，生成新Canset时，应该用basePFo.indexDic2，还是rCanset.realCansetToIndexDic？ |
+|  | > 直观看，应该是用basePFo.indexDic2，因为毕竟新Canset要挂在pFo下。 |
+|  | > 那么realCansetToIndexDic是不是可以废弃掉了？ |
 
 ***
 
