@@ -1659,9 +1659,11 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 | TODO3 | 先按着此方案写一版hSolutionV5出来跑跑看（主要是取H范围，以及层级少一级后的相关代码和命名等变动） `T`。 |
 | TODO4 | 把HCanset迁移（继承）路径，改成和RCanset一样的继承路径 `T`。 |
 | TODO5 | H迁移关联 和 HOutSPDic仍然挂在RCanset下，以保证稳定性得分计算的准确性。 |
-| TODO6 | 分析下，生成新Canset时，应该用basePFo.indexDic2，还是rCanset.realCansetToIndexDic？ |
-|  | > 直观看，应该是用basePFo.indexDic2，因为毕竟新Canset要挂在pFo下。 |
-|  | > 那么realCansetToIndexDic是不是可以废弃掉了？ |
+| TODO6 | 分析下，生成新Canset时，应该用basePFo.indexDic2，还是rCanset.realCansetToIndexDic？`T`。 |
+|  | > 首先basePFo.indexDic2，可用于新Canset，因为1、它整个realMask用于生成新解 2、它要挂在pFo下（NewRHCanset都一样）。 |
+|  | > 而realCansetToIndexDic应用于AbsRHCanset，因为它是用来进行Canset类比的，要的就是cansetTo和realMask的有映射部分。 |
+|  | > 结果：经分析basepFo.indexDic2用于NewRHCanset时，而canset.realCansetToIndexDic用于AbsRHCanset时。 |
+|  | > 实践：除了AbsHCanset构建时要改成realCansetToIndexDic外，另外三处本就如此不用改 `T`。 |
 
 ***
 
