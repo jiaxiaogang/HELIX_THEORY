@@ -1711,6 +1711,7 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 | TODO1 | H写：把H.OutSPDic存储相关代码改成此方案。 |
 | TODO2 | R写：把R.OutSPDic存储相关代码也改成此方案。 |
 | TODO3 | HR读：对OutSP稳定性评分时，也采用新的方式读取OutSPDic值。 |
+| TODO另外 | iRHCansetToOrders要计cutIndex吗？cutIndex也是场景的一部分，可暂不加，后需要再加。 |
 
 | 33173 | OutSPDic存在哪之三：子即父和父非子也得兼容一下此处改动 |
 | --- | --- |
