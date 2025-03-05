@@ -1666,7 +1666,7 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 |  | > 实践：除了AbsHCanset构建时要改成realCansetToIndexDic外，另外三处本就如此不用改 `T`。 |
 | TODO7 | H迁移关联 和 R迁移关联可以一模一样了，可以都采用普通TransferPort，而不必再用单独HTransferPort `T`。 |
 
-| 33172 | HOutSPDic存在哪 |
+| 33172 | HOutSPDic存在哪之一：大致存在哪 |
 | --- | --- |
 | 问题 | 1. H的OutSPDic存在哪里？现做法是存在hScene下，但上面已经把H嵌套简化了，以后不再从hScene取hCanse了。 |
 |  | 2. 如果还存在hScene下，以后取OutSPDic都找不到hScene。 |
@@ -1685,9 +1685,38 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 | 方案 | 可以把OutSPDic存在每一个HRCanset中，反过来把baseScene做为Key，SPStrong做Value。 |
 |  | 说明1：baseScene是指在工作记忆中离它最近上一层的scene。 |
 |  | 说明2：**存的其实是：canset在base场景下时，对canset自己每一帧的SP值。** |
+| 结果 | 此方案ok，选定此方案，下表继续深入分析 `T`。 |
+
+| 33172 | OutSPDic存在哪之二：存在cansetFrom还是cansetTo？ |
+| --- | --- |
+| 问题 | OutSPDic存在hCansetFrom还是hCansetTo中？其可能还没转实，所以只能考虑能不能存到cansetFrom下？ |
+| 方案1 | 那么等转实后，再继承这些outSPDic吗？ |
+| 方案2 | 还是压根不需要转实？每次实时求出orders即可？。 |
+| 感觉 | 尽量选方案2，因为方案2不需要搬运OutSPDic，OutSPDic可不是个小东西，不建议搬来搬去，复杂度太高，空间浪费也高。 |
+| 分析 | 如果采用方案2不转实，尝试分析：当canset针对H或R任务时，其base场景有以下几种可能： |
+| 情况1 | R任务：cansetFrom以fScene为场景时 `否决 T`。 |
+|  | > 1. 能在工作记忆中执行的R解，肯定已经继承迁移到I层了，但因为不转实，就只有iRCansetToOrders。 |
+|  | > 2. fRCansetFrom迁移到不同的I层时，会生成不同的iRCansetToOrders。 |
+|  | > 所以：所以baseSceneKey只能用这个iRCansetToOrders了（这样才准确）。 |
+| 情况2 | H任务：cansetFrom以另一个的fCanset为场景时。 |
+|  | > 1. 能在工作记忆中执行的H解，肯定已经继承迁移到I层了，但因为不转实，就只有iHCansetToOrders。 |
+|  | > 2. fHCansetFrom迁移到不同的I层时，会生成不同的iHCansetToOrders。 |
+|  | > 所以：所以baseSceneKey只能用这个iHCansetToOrders了（这样才准确）。 |
+| 情况3 | R任务：cansetFrom以iScene为base场景时 `否决 T`。 |
+|  | > 否决：方案2不转实，所以不存在iScene下的cansetTo。 |
+| 情况4 | H任务：cansetFrom以iScene下的另一个cansetTo为base场景时 `否决 T`。 |
+|  | > 否决：方案2不转实，所以不存在iScene下的cansetTo。 |
+| 总结 | 情况1和2的iRHCansetToOrders，是由cansetFrom和sceneTo共同生成的，不同cansetFrom或baseSceneTo会导致其不同。 |
+|  | 所以：iRHCansetToOrders即精准明确了它来自哪个cansetFrom，又精准明确了它来自哪个baseSceneTo。 |
 | TODO1 | H写：把H.OutSPDic存储相关代码改成此方案。 |
 | TODO2 | R写：把R.OutSPDic存储相关代码也改成此方案。 |
 | TODO3 | HR读：对OutSP稳定性评分时，也采用新的方式读取OutSPDic值。 |
+
+| 33173 | OutSPDic存在哪之三：子即父和父非子也得兼容一下此处改动 |
+| --- | --- |
+| 方案1 | 顺着RScene的IF树（迁移关联）来做子即父。 |
+| 方案2 | 顺着baseScene的absPorts来做子即父。 |
+| 方案3 | 顺着cansetFrom的absPorts来做子即父。 |
 
 ***
 
