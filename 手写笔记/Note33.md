@@ -1658,12 +1658,36 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 | TODO2 | 把HCanset迁移（推举）路径，改成和RCanset一样的推举路径 `T`。 |
 | TODO3 | 先按着此方案写一版hSolutionV5出来跑跑看（主要是取H范围，以及层级少一级后的相关代码和命名等变动） `T`。 |
 | TODO4 | 把HCanset迁移（继承）路径，改成和RCanset一样的继承路径 `T`。 |
-| TODO5 | H迁移关联 和 HOutSPDic仍然挂在RCanset下，以保证稳定性得分计算的准确性。 |
+| TODO5 | HOutSPDic仍然挂在RCanset下，以保证稳定性得分计算的准确性 `转33172`。 |
 | TODO6 | 分析下，生成新Canset时，应该用basePFo.indexDic2，还是rCanset.realCansetToIndexDic？`T`。 |
 |  | > 首先basePFo.indexDic2，可用于新Canset，因为1、它整个realMask用于生成新解 2、它要挂在pFo下（NewRHCanset都一样）。 |
 |  | > 而realCansetToIndexDic应用于AbsRHCanset，因为它是用来进行Canset类比的，要的就是cansetTo和realMask的有映射部分。 |
 |  | > 结果：经分析basepFo.indexDic2用于NewRHCanset时，而canset.realCansetToIndexDic用于AbsRHCanset时。 |
 |  | > 实践：除了AbsHCanset构建时要改成realCansetToIndexDic外，另外三处本就如此不用改 `T`。 |
+| TODO7 | H迁移关联 和 R迁移关联可以一模一样了，可以都采用普通TransferPort，而不必再用单独HTransferPort `T`。 |
+
+| 33172 | HOutSPDic存在哪 |
+| --- | --- |
+| 问题 | 1. H的OutSPDic存在哪里？现做法是存在hScene下，但上面已经把H嵌套简化了，以后不再从hScene取hCanse了。 |
+|  | 2. 如果还存在hScene下，以后取OutSPDic都找不到hScene。 |
+|  | 3. 但如果改成存到rScene下，rScene又太简略，对OutSPDic的表达肯定不到位，本表分析解决这一问题。 |
+| 示图 | ![](assets/732_OutSPDic存储方式调整.png) |
+| 说明 | 现在是把Canset的OutSPDic稳定性存到Scene下，所以按现在的做法解读上图如下： |
+|  | 1. 如图HCanset.2的实现，存到RScene.3时，表示HCanset对RScene.3的稳定性。 |
+|  | 2. 不准确问题A-2可行，不表示2.5可行，更不表示3可行。 |
+|  | 3. 不准确问题B-进度cutIndex=2时 和 cutIndex=2.5时，会评分一样（因为RScene里只有3）。 |
+|  | 4. HCanset能达成2的评分，更是非常困难，因为RScene中只有3没有2，它只能提供3的达成评分。 |
+| 总结 | 根据以上4条分析，现做法把OutSPDic存在Scene下已经不适用了，需要改进。 |
+| 思路 | Scene的spIndex肯定没有Canset的全，并且rootScene的层级也没有工作记忆中Scene->Canset的层级全。 |
+|  | > 所以：应该把OutSPDic存在每一个canset中，用来描述`Canset自己对任何当前工作记忆base一级场景的SP值`。 |
+| 示例 | 对于将而言，这些是我的先锋军，这些是我的辎重兵，这些是我的水军。但对于士兵而言，这个是我长官，这个是我舍友，这个是我搭档。 |
+|  | > 即：对于RScene可以在每个index挂载RHCanset，而对于RHCanset而言可以对每个无论远近的场景做自己的SP记录。 |
+| 方案 | 可以把OutSPDic存在每一个HRCanset中，反过来把baseScene做为Key，SPStrong做Value。 |
+|  | 说明1：baseScene是指在工作记忆中离它最近上一层的scene。 |
+|  | 说明2：**存的其实是：canset在base场景下时，对canset自己每一帧的SP值。** |
+| TODO1 | H写：把H.OutSPDic存储相关代码改成此方案。 |
+| TODO2 | R写：把R.OutSPDic存储相关代码也改成此方案。 |
+| TODO3 | HR读：对OutSP稳定性评分时，也采用新的方式读取OutSPDic值。 |
 
 ***
 
