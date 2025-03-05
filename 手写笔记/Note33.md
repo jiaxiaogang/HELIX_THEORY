@@ -1714,9 +1714,15 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 
 | 33173 | OutSPDic存在哪之三：子即父和父非子也得兼容一下此处改动 |
 | --- | --- |
-| 方案1 | 顺着RScene的IF树（迁移关联）来做子即父。 |
-| 方案2 | 顺着baseScene的absPorts来做子即父。 |
-| 方案3 | 顺着cansetFrom的absPorts来做子即父。 |
+| 原则 | 子即父，表达的是：同一个Canset对于父子场景的计SP值方式，从子场景同步推举到到父场景。 |
+| 方案1 | 顺着RScene的IF树（迁移关联）来做子即父 `95%`。 |
+| 方案2 | 顺着baseScene的absPorts来做子即父 `5%`。 |
+| 方案3 | 顺着cansetFrom的absPorts来做子即父（违背以上原则，所以此条先否掉）。 |
+| 线索1 | 场景树必须丰富，这个子即父才有意义。所以建议方案1，+1分。 |
+| 线索2 | 顺着RScene的IF树并不算脱离场景，相反rScene比baseScene更接近真场景，所以方案1再+1分。 |
+| 结果 | 根据以上两条线索，暂选定方案1，实践如下： |
+| 实践 | 无论cansetToOrders生成什么了，回到cansetFrom后，它就是cansetFrom自身。 |
+| TODO1 | 所以子即父，直接把OutSPDic计到cansetFrom下，用FRScene做sceneKey即可。 |
 
 ***
 
