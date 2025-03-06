@@ -1716,6 +1716,7 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 | 33173 | OutSPDic存在哪之三：子即父和父非子也得兼容一下此处改动 |
 | --- | --- |
 | 原则 | 子即父，表达的是：同一个Canset对于父子场景的计SP值方式，从子场景同步推举到到父场景。 |
+|  | 父非子，是由子即父决定的，子即父怎么存，父非子就怎么取。 |
 | 方案1 | 顺着RScene的IF树（迁移关联）来做子即父 `95%`。 |
 | 方案2 | 顺着baseScene的absPorts来做子即父 `5%`。 |
 | 方案3 | 顺着cansetFrom的absPorts来做子即父（违背以上原则，所以此条先否掉）。 |
@@ -1723,7 +1724,10 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 | 线索2 | 顺着RScene的IF树并不算脱离场景，相反rScene比baseScene更接近真场景，所以方案1再+1分。 |
 | 结果 | 根据以上两条线索，暂选定方案1，实践如下： |
 | 实践 | 无论cansetToOrders生成什么了，回到cansetFrom后，它就是cansetFrom自身。 |
-| TODO1 | 所以子即父，直接把OutSPDic计到cansetFrom下，用FRScene做sceneKey即可。 |
+|  | 所以：直接把OutSPDic计到cansetFrom下，用FRScene做sceneKey即可。 |
+|  | 另外：cansetFrom就是F.Canset，继承迁移时，有迁移关联，无论是子即父还是父非子，都可以顺着迁移关联来做就最准确。 |
+| TODO1 | 子即父，根据迁移关联，把子SP更新时，直接同步推举到父。 |
+| TODO2 | 父非子，根据迁移关联，把父SP的值，作用于子的评分。 |
 
 ***
 
