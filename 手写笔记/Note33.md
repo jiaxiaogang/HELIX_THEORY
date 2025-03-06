@@ -27,6 +27,7 @@
   - [n33p15B 迭代hSolutionV4：扩大求解范围和修正迁移路径](#n33p15b-迭代hsolutionv4扩大求解范围和修正迁移路径)
   - [n33p16 继续回测试错训练，测`有向无距场景`的竞争浮现](#n33p16-继续回测试错训练测有向无距场景的竞争浮现)
   - [n33p17 简化H嵌套](#n33p17-简化h嵌套)
+  - [n33p17B 迭代OutSPDic表征方式 & 废弃迁移虚转实（IScene层不挂Canset）](#n33p17b-迭代outspdic表征方式--废弃迁移虚转实iscene层不挂canset)
   - [n33p18 电脑有PS了，更新下模型图](#n33p18-电脑有ps了更新下模型图)
 
 <!-- /TOC -->
@@ -1629,6 +1630,8 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 
 在n33p15B中，做完`迭代hSolutionV4：扩大求解范围和修正迁移路径`后，测试时，发现H迁移过于复杂了，它有继承滞后问题，需要R继承后，仍然从F层继承H，本节重点分析这一问题，看能否对其结构进行简化。
 
+说明：以前工作记忆的R和多层子H任务结构，会同步持久化到长时网络中，但这不合理，H解被藏的太深了，应该把它拍平，只保留一层嵌套，本节就干这个。
+
 | 33171 | 画图分析H嵌套过度复杂问题 |
 | --- | --- |
 | 示图 | ![](assets/728_H嵌套过度复杂问题.png) |
@@ -1666,6 +1669,13 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 |  | > 实践：除了AbsHCanset构建时要改成realCansetToIndexDic外，另外三处本就如此不用改 `T`。 |
 | TODO7 | H迁移关联 和 R迁移关联可以一模一样了，可以都采用普通TransferPort，而不必再用单独HTransferPort `T`。 |
 
+***
+
+## n33p17B 迭代OutSPDic表征方式 & 废弃迁移虚转实（IScene层不挂Canset）
+`CreateTime 2025.03.04`
+
+上节简化了H嵌套，那OutSPDic也可跟着变，本节跟进此问题。
+
 | 33172 | HOutSPDic存在哪之一：大致存在哪 |
 | --- | --- |
 | 问题 | 1. H的OutSPDic存在哪里？现做法是存在hScene下，但上面已经把H嵌套简化了，以后不再从hScene取hCanse了。 |
@@ -1694,7 +1704,7 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 | 方案2 | 还是压根不需要转实？每次实时求出orders即可？。 |
 | 感觉 | 尽量选方案2，因为方案2不需要搬运OutSPDic，OutSPDic可不是个小东西，不建议搬来搬去，复杂度太高，空间浪费也高。 |
 | 分析 | 如果采用方案2不转实，尝试分析：当canset针对H或R任务时，其base场景有以下几种可能： |
-| 情况1 | R任务：cansetFrom以fScene为场景时 `否决 T`。 |
+| 情况1 | R任务：cansetFrom以fScene为场景时。 |
 |  | > 1. 能在工作记忆中执行的R解，肯定已经继承迁移到I层了，但因为不转实，就只有iRCansetToOrders。 |
 |  | > 2. fRCansetFrom迁移到不同的I层时，会生成不同的iRCansetToOrders。 |
 |  | > 所以：所以baseSceneKey只能用这个iRCansetToOrders了（这样才准确）。 |
@@ -1708,10 +1718,14 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 |  | > 否决：方案2不转实，所以不存在iScene下的cansetTo。 |
 | 总结 | 情况1和2的iRHCansetToOrders，是由cansetFrom和sceneTo共同生成的，不同cansetFrom或baseSceneTo会导致其不同。 |
 |  | 所以：iRHCansetToOrders即精准明确了它来自哪个cansetFrom，又精准明确了它来自哪个baseSceneTo。 |
+| 方案3 | 结合情况1和2：即在方案2的基础上，补充一点：只在FCanset上存OutSPDic，其中baseSceneToOrders为key。 |
 | TODO1 | H写：把H.OutSPDic存储相关代码改成此方案。 |
 | TODO2 | R写：把R.OutSPDic存储相关代码也改成此方案。 |
 | TODO3 | HR读：对OutSP稳定性评分时，也采用新的方式读取OutSPDic值。 |
 | TODO另外 | iRHCansetToOrders要计cutIndex吗？cutIndex也是场景的一部分，可暂不加，后需要再加。 |
+| TODO4 | **废弃I层Canset**，所有的canset都挂在F层RScene下，所有的OutSPDic都挂在这个F.canset下。 |
+| TODO5 | **废弃迁移转实**，其实已经不需要了，工作记忆执行的TOFoModel全是虚迁移生成的orders，不需要转实。 |
+|  | > 因为这里不转实也不影响执行，不影响评价，不影响工作记忆树一级级长开的使用。 |
 
 | 33173 | OutSPDic存在哪之三：子即父和父非子也得兼容一下此处改动 |
 | --- | --- |
