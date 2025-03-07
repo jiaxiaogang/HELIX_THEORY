@@ -29,6 +29,7 @@
   - [n33p17 简化H嵌套](#n33p17-简化h嵌套)
   - [n33p17B 迭代OutSPDic表征方式 & 废弃迁移虚转实（IScene层不挂Canset）](#n33p17b-迭代outspdic表征方式--废弃迁移虚转实iscene层不挂canset)
   - [n33p18 电脑有PS了，更新下模型图](#n33p18-电脑有ps了更新下模型图)
+  - [n33p19 增强Canset主体性跨IF树迁移性：transferPorts也存至FCanset & canset改成全局防重](#n33p19-增强canset主体性跨if树迁移性transferports也存至fcanset--canset改成全局防重)
 
 <!-- /TOC -->
 
@@ -1752,5 +1753,16 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 | --- |
 | ![](assets/729_思维框架图v6.png) |
 | ![](assets/730_HE架构图V5.png) |
+
+***
+
+## n33p19 增强Canset主体性跨IF树迁移性：transferPorts也存至FCanset & canset改成全局防重
+`CreateTime 2025.03.07`
+
+现在的Canset只存在IF树内，在单个Scene下防重，但这无助于Canset的迁移性，说白了我在北京知道[大火炒饭更香]，到火星上我也应该至少知道这个Canset才对。
+
+那么我们就应该增强Canset的主体性，让它不限制嵌套在某个Scene下，而是只要全网防重中有它，那可以嵌套在多个IF树下。
+
+这样的话，我们在做子即父时，可以顺着迁移关联，找到更远去同步OutSP值等等。具体细节等此需求成熟时，做的时候再考虑。
 
 <br><br><br><br><br>
