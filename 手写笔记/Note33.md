@@ -1723,11 +1723,13 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 | 方案3 | **结合情况1和2：即在方案2的基础上，补充一点：只在FCanset上存OutSPDic，其中baseSceneToOrders为key。** |
 | TODO1 | H写：把H.OutSPDic存储相关代码改成此方案3。 |
 | TODO2 | R写：把R.OutSPDic存储相关代码也改成此方案3。 |
-| TODO3 | HR读：对OutSP稳定性评分时，也采用新的方式读取OutSPDic值。 |
+| TODO3 | HR读：对OutSP稳定性评分时，也采用新的方式读取OutSPDic值 `T`。 |
 | TODO另外 | iRHCansetToOrders要计cutIndex吗？cutIndex也是场景的一部分，可暂不加，后需要再加。 |
 | TODO4 | **废弃I层Canset**，所有的canset都挂在F层RScene下，所有的OutSPDic都挂在这个F.canset下。 |
 | TODO5 | **废弃迁移转实**，其实已经不需要了，工作记忆执行的TOFoModel全是虚迁移生成的orders，不需要转实。 |
 |  | > 因为这里不转实也不影响执行，不影响评价，不影响工作记忆树一级级长开的使用。 |
+| TODO6 | HR更新OutSPDic计数时，兼容此方案3 `T`。 |
+| TODO7 | HR初始OutSPDic字典时，兼容此方案3。 |
 
 | 33173 | OutSPDic存在哪之三：子即父和父非子也得兼容一下此处改动 |
 | --- | --- |
@@ -1743,7 +1745,7 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 |  | 所以：直接把OutSPDic计到cansetFrom下，用FRScene做sceneKey即可。 |
 |  | 另外：cansetFrom就是F.Canset，继承迁移时，有迁移关联，无论是子即父还是父非子，都可以顺着迁移关联来做就最准确。 |
 | TODO1 | 子即父，根据迁移关联，把子SP更新时，直接同步推举到父 `T`。 |
-| TODO2 | 父非子，根据迁移关联，把父SP的值，作用于子的评分。 |
+| TODO2 | 父非子，根据迁移关联，把父SP的值，作用于子的评分 `T`。 |
 
 ***
 
