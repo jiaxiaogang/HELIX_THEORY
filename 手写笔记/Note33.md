@@ -1725,12 +1725,13 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 | TODO2 | R写：把R.OutSPDic存储相关代码也改成此方案3 `T`。 |
 | TODO3 | HR读：对OutSP稳定性评分时，也采用新的方式读取OutSPDic值 `T`。 |
 | TODO另外 | iRHCansetToOrders要计cutIndex吗？cutIndex也是场景的一部分 `可暂不加，后需要再加 T`。 |
-| TODO4 | **废弃I层Canset**，所有的canset都挂在F层RScene下，所有的OutSPDic都挂在这个F.canset下。 |
+| TODO4 | **废弃I层Canset**，所有的canset都挂在F层RScene下，所有的OutSPDic都挂在这个F.canset下 `T`。 |
 | TODO5 | **废弃迁移转实**，其实已经不需要了，工作记忆执行的TOFoModel全是虚迁移生成的orders，不需要转实 `T`。 |
 |  | > 因为这里不转实也不影响执行，不影响评价，不影响工作记忆树一级级长开的使用。 |
 | TODO6 | HR更新OutSPDic计数时，兼容此方案3 `T`。 |
 | TODO7 | HR初始OutSPDic字典时，兼容此方案3 `T`。 |
 | TODO8 | **Canset改成全局防重**，因为它有了更多主体性，可以适用于任何场景 `可先不做，后再需要时再做 T`。 |
+| TODO9 | 因为最近的：H简化层级，OutSPDic挂载变动，废弃iCanset等调整，把所有canset/scene/From/To等命名整理下 `T`。 |
 
 | 33173 | OutSPDic存在哪之三：子即父和父非子也得兼容一下此处改动 |
 | --- | --- |
@@ -1747,6 +1748,8 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 |  | 另外：cansetFrom就是F.Canset，继承迁移时，有迁移关联，无论是子即父还是父非子，都可以顺着迁移关联来做就最准确。 |
 | TODO1 | 子即父，根据迁移关联，把子SP更新时，直接同步推举到父 `T`。 |
 | TODO2 | 父非子，根据迁移关联，把父SP的值，作用于子的评分 `T`。 |
+
+**小结：因为最近的：H简化层级，OutSPDic挂载变动，废弃iCanset，废弃虚转实，重整理命名canset/scene/From/To等，各种改动非常诸多繁杂，要多测测。**
 
 ***
 
