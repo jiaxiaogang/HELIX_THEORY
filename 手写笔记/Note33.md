@@ -1751,6 +1751,18 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 
 **小结：因为最近的：H简化层级，OutSPDic挂载变动，废弃iCanset，废弃虚转实，重整理命名canset/scene/From/To等，各种改动非常诸多繁杂，要多测测。**
 
+| 33174 | 顺便迭代下Canset类比 |
+| --- | --- |
+| 起因 | 最近H嵌套简化，废弃ICanset，RHCanset全挂在FScene下，有更多细节线索，可改进如下现Canset类比算法的问题。 |
+| 现做法 | Canset类比是根据realCansetToIndexDic和oldCanset来进行的（cansetTo其实就是oldCanset）。 |
+|  | > 问题：因为realCansetToIndexDic映射里，本来就是oldCanset有反馈的部分，所以相当于absCanset就是切了oldCanset的前段而已。 |
+| 新做法 | 如下图新做法是直接对NewCanset和OldCanset类比（下图小框中），而NewCanset是由多个canset共同推进得到的反馈总集（下图三个canset）。 |
+|  | > 所以：NewCanset可能包含当前OldCanset的后段（可能由另一个oldCanset推进时反馈得来），这样可以避免现做法只是切前段的问题。 |
+| 示图 | ![](assets/733_迭代Canset类比.png) |
+| 方案1 | 可根据：NewCansetIScene映射 和 OldCansetIScene映射 => 来求出综合映射，来进行类比 `5%`。 |
+| 方案2 | 可根据：NewCanset与OldCanset正向双循环，判定mIsC反馈的成立，来进行类比 `95%`。 |
+| 抉择 | 方案1虽然简单，但可能映射不全。方案2虽然麻烦些，但映射全面。并且方案2也没有性能问题，判断反馈的matchAlgs识别结果可以复用。 |
+
 ***
 
 ## n33p18 电脑有PS了，更新下模型图
