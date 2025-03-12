@@ -27,7 +27,7 @@
   - [n33p15B 迭代hSolutionV4：扩大求解范围和修正迁移路径](#n33p15b-迭代hsolutionv4扩大求解范围和修正迁移路径)
   - [n33p16 继续回测试错训练，测`有向无距场景`的竞争浮现](#n33p16-继续回测试错训练测有向无距场景的竞争浮现)
   - [n33p17 简化H嵌套](#n33p17-简化h嵌套)
-  - [n33p17B 迭代OutSPDic表征方式 & 废弃迁移虚转实（IScene层不挂Canset）](#n33p17b-迭代outspdic表征方式--废弃迁移虚转实iscene层不挂canset)
+  - [n33p17B 迭代OutSPDic表征方式 & 废弃迁移虚转实（IScene层不挂Canset）& 迭代Canset类比](#n33p17b-迭代outspdic表征方式--废弃迁移虚转实iscene层不挂canset-迭代canset类比)
   - [n33p18 电脑有PS了，更新下模型图](#n33p18-电脑有ps了更新下模型图)
   - [n33p19 增强Canset主体性跨IF树迁移性：transferPorts也存至FCanset & canset改成全局防重](#n33p19-增强canset主体性跨if树迁移性transferports也存至fcanset--canset改成全局防重)
 
@@ -1672,7 +1672,7 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 
 ***
 
-## n33p17B 迭代OutSPDic表征方式 & 废弃迁移虚转实（IScene层不挂Canset）
+## n33p17B 迭代OutSPDic表征方式 & 废弃迁移虚转实（IScene层不挂Canset）& 迭代Canset类比
 `CreateTime 2025.03.04`
 
 上节简化了H嵌套，那OutSPDic也可跟着变，本节跟进此问题。
@@ -1762,6 +1762,11 @@ TODO2、生成orders，有映射的：取F层hSceneTo对应的帧，无映射的
 | 方案1 | 可根据：NewCansetIScene映射 和 OldCansetIScene映射 => 来求出综合映射，来进行类比 `5%`。 |
 | 方案2 | 可根据：NewCanset与OldCanset正向双循环，判定mIsC反馈的成立，来进行类比 `95%`。 |
 | 抉择 | 方案1虽然简单，但可能映射不全。方案2虽然麻烦些，但映射全面。并且方案2也没有性能问题，判断反馈的matchAlgs识别结果可以复用。 |
+| TODO1 | 迭代Canset类比V3：写正向双循环，分别找出oldCanset中可抽象的帧，收集成absCansetOrders `T`。 |
+| TODO2 | AbsCanset推举时：需要AbsCanset和IScene的映射，可根据oldCansetIScene映射 和 oldCansetAbsCanset映射综合得出 `T`。 |
+| TODO3 | 至此，本节四处演化构建NewAbsHRCanset可以全部改成orders了 `T`。 |
+
+**小结：本节改动很多，后需要多测测。**
 
 ***
 
