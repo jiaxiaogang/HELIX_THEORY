@@ -607,12 +607,41 @@ Ass特征T302：((0_7:0_4))
  */
 ```
 
-| 34137 | 似层protoT与assT的“indexDic 与 degreeDic”计算 |
+| 34137 | 似层protoT与assT的indexDic计算 |
 | --- | --- |
 | 示图 | ![](assets/745_似层ProtoT与AssT的GV下标映射与符合度映射.png) |
 | 说明 | 如上图，B为protoT，C为似层assT，A为三个absT。 |
-| TODO1 | indexDic直接用A1+A2+A3取交集，然后`先上后下综合映射`得到。 |
-| TODO2 | degreeDic把每次特征识别后得到的存下来，这里复用之，用AB每个GV的 x AC每个GV的 x BC共同AbsT整体的degree值。 |
+| TODO1 | indexDic直接用A1+A2+A3取交集，然后`先上后下综合映射`得到 `T`。 |
+
+| 34138 | 似层protoT与assT的degreeDic计算 |
+| --- | --- |
+| 示图 | ![](assets/745_似层ProtoT与AssT的GV下标映射与符合度映射.png) |
+| 思路 | 用AB每个GV的 x AC每个GV的 x BC共同AbsT整体的degree值。 |
+| 方案1 | degreeDic把每次特征识别后得到的存下来，计算AC每个GV的位置符合度时复用之即可。 |
+|  | 缺点. AC存每个GV的degreeDic还是太耗空间了，建议尽量只用一条整体的，别存成dic了。 |
+| 方案2 | absT和assT之间，只存一条degreeValue值。 |
+|  | 优点1. 这样在protoT与assT类比时，可以同等对待某个absT，要类比剔除就一起剔除。 |
+|  | 优点2. 这样做省空间，其实conPort存一个rect可以代表很多了，具体空间怎么优化，后面时机成熟再看吧。 |
+| 问题1 | 并且还有一个问题，就是同一个GV，可能同时在多个absT中，而它在每个absT中位置符合度都是不同的。 |
+|  | 那么1：我们是否可以认为，当时absT的degree，其实现在已经无法回归到似层T了，并且即使回归，也是不准确的。 |
+|  | 那么2：如果我们不还原assT和protoT每条GV的degreeDic，那么类比时怎么办？ |
+|  | 那么3：既然方案2中也提到了，我们可以同等对待某个absT，那像assT与protoT的类比，借助二者的共同抽象absT来类比即可。 |
+| 解答1 | 如果借助absT类比，那么我们不需要degreeDic，用综合匹配度和综合matchDegree就足够了。 |
+| 结果 | 至此，似层protoT与assT的每条GV计算degreeDic可以否掉了，转下表继续跟进类比时具体怎么办？ |
+| 总结 | 即GV的degreeDic不用算也不用存了，直接借助absT来类比 `转下表继续 T`。 |
+
+| 34139 | 似层protoT与assT的类比 |
+| --- | --- |
+| 说明 | 上表解答1中，制定了似层protoT与assT的类比，借助absT来实现。 |
+| TODO1 | 在protoT与assT类比时，有共同抽象则借助absT来类比，没有共同抽象才通过indexDic和degreeDic来类比。 |
+|  | 公式变成：直接用每个局部特征对于protoT与assT的degree来即可。 |
+| 问题2 | 如果借助absT类比，那么它需要的应该是protoT和assT二者间每个局部特征间的degree值。 |
+|  | 比如：即你画的山水图里的水和我画的山水图里的水，二者符合度高不高（注意：不是指整个山水图符合度）。 |
+|  | 线索：这些水的符合度，在特征识别step2的时候，存在AIFeatureStep2Item_Rect中，但类比时这个model已经销毁了。 |
+| TODO2 | 那么在特征识别step1和step2后，直接分别调用特征类比器 `否掉 T`。 |
+|  | 缺点：最好别动原来的类比触发时机，否则容易引发别的问题。 |
+| TODO3 | 把absT在protoT与assT之间的局部特征位置符合度存下来，方便类比时用它。 |
+|  | 实践：可以暂存“局部特征的位置符合度”在AIFeatureNode中，类比时能用上就行，也不用持久化这些数据。 |
 
 ***
 
