@@ -612,6 +612,8 @@ Ass特征T302：((0_7:0_4))
 | 示图 | ![](assets/745_似层ProtoT与AssT的GV下标映射与符合度映射.png) |
 | 说明 | 如上图，B为protoT，C为似层assT，A为三个absT。 |
 | TODO1 | indexDic直接用A1+A2+A3取交集，然后`先上后下综合映射`得到 `T`。 |
+| 转折 | 这种特征间存映射是极耗空间的，并且在34139中，改为借助absT来类比了，此处要不就先不用了。 |
+| TODO2 | 抽具象特征indexDic先不存了，太占空间，用时再开，类比完就删掉，TODO1的综合映射也不再需要了相关代码删掉 `T`。 |
 
 | 34138 | 似层protoT与assT的degreeDic计算 |
 | --- | --- |
@@ -633,14 +635,14 @@ Ass特征T302：((0_7:0_4))
 | 34139 | 似层protoT与assT的类比 |
 | --- | --- |
 | 说明 | 上表解答1中，制定了似层protoT与assT的类比，借助absT来实现。 |
-| TODO1 | 在protoT与assT类比时，有共同抽象则借助absT来类比，没有共同抽象才通过indexDic和degreeDic来类比。 |
+| TODO1 | 在protoT与assT类比时，有共同抽象则借助absT来类比，没有共同抽象才通过indexDic和degreeDic来类比 `T`。 |
 |  | 公式变成：直接用每个局部特征对于protoT与assT的degree来即可。 |
 | 问题2 | 如果借助absT类比，那么它需要的应该是protoT和assT二者间每个局部特征间的degree值。 |
 |  | 比如：即你画的山水图里的水和我画的山水图里的水，二者符合度高不高（注意：不是指整个山水图符合度）。 |
 |  | 线索：这些水的符合度，在特征识别step2的时候，存在AIFeatureStep2Item_Rect中，但类比时这个model已经销毁了。 |
 | TODO2 | 那么在特征识别step1和step2后，直接分别调用特征类比器 `否掉 T`。 |
 |  | 缺点：最好别动原来的类比触发时机，否则容易引发别的问题。 |
-| TODO3 | 把absT在protoT与assT之间的局部特征位置符合度存下来，方便类比时用它。 |
+| TODO3 | 把absT在protoT与assT之间的局部特征位置符合度存下来，方便类比时用它，类比后就删掉避免野指针 `T`。 |
 |  | 实践：可以暂存“局部特征的位置符合度”在AIFeatureNode中，类比时能用上就行，也不用持久化这些数据。 |
 
 ***
