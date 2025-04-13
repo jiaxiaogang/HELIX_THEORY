@@ -644,6 +644,15 @@ Ass特征T302：((0_7:0_4))
 |  | 缺点：最好别动原来的类比触发时机，否则容易引发别的问题。 |
 | TODO3 | 把absT在protoT与assT之间的局部特征位置符合度存下来，方便类比时用它，类比后就删掉避免野指针 `T`。 |
 |  | 实践：可以暂存“局部特征的位置符合度”在AIFeatureNode中，类比时能用上就行，也不用持久化这些数据。 |
+| TODO4 | 借助absT来类比后，要生成新的整体抽象特征，而此时我们需要这些构建所需的数据。 |
+|  | 分析：需要取得sameContentGV_ps结果 和 其指向protoT与assT的 conPort.rect范围 `转3413a`。 |
+
+| 3413a | 分析以 多个局部absT 生成新 整体absT 所需的数据 |
+| --- | --- |
+| 示图1 | ![](assets/746_多个局部absT生成整体absT的GV内容.png) |
+|  | 如上图：用三个局部absT来取并集，生成整体absT的内部内容。 |
+| 示图2 | ![](assets/747_多个局部absT生成整体absT的conPort.rect在具象中的范围.png) |
+|  | 如上图：用三个局部absT指向conPort.rect取并集，来得到整体absT指向conPort.rect的值（指向protoT和assT的都可分别计算）。 |
 
 ***
 
