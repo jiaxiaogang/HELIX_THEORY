@@ -812,6 +812,18 @@ Ass特征T302：((0_7:0_4))
 | 34163 | 用Debug工具调试性能问题并一一修复 `T` |
 | --- | --- |
 
+| 34164 | 整体特征类比收集用于构建newAbsT的GV有上千条 |
+| --- | --- |
+| 名词释义 | 整体特征类比是借助protoT识别到的absT们来做的，这些absT叫itemAbsT，而最终会类比结果构建成absT，此处称为：newAbsT。 |
+| 说明 | analogyFeature4Step2()中收集的absGVModels数竟然有达到1000的情况，得查下怎么防重。 |
+| 回顾 | 原来的防重是收集过gv指针，且rect一致则防重，这肯定不够用， |
+|  | 一来多个itemAbsT可能各自在同位置有不同只是相似的gv指针。 |
+|  | 二来位置其实也只是位置符合度相似没法用相同位置来防重。 |
+| 方案1 | 通过rect重复来计算，但重复后用哪个itemAbsT下的gv呢？这也是个问题（并且proto和itemAbsT的GV只是位置符合度，并不是绝对映射的）。 |
+| 方案2 | 通过复用protoT和itemAbsT的indexDic来防重（只有proto和itemAbsT的映射，没有assT的），以映射来收集protoT下的gv构建newAbsT。 |
+|  | 优点：方案1压根不可行，方案2还有个好处是newAbsT不会脱离太离谱。 |
+| TODO1 | 以方案2替代下整体特征类比算法 `T`。 |
+
 ***
 
 尾端备忘：
