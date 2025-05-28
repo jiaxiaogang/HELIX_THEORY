@@ -249,3 +249,45 @@
 | 验证 | 验证一下以上猜想，如果只是正常现象，那么就多测测，看偏成熟期后，拼接的protoGT能不能越来越符合原图的样子。 |
 | 查明 | 最终查明，在特征识别中，比如0的内圈0和外圈0，都会被识别，导致重影。 |
 | 修复结果 | 单特征识别后，根据assT.pId来防重下（保留最准确的一条）`T`。 |
+
+```java
+35044：protoGT的元素rect和可视化之后的大小不一致：
+> 在构建protoGT时，再把这个坐标修正下，不要影响类比这里的代码。
+
+**代码回顾：**
+* 16A. 方案1、采用bestGV at assT的位置，做absT的元素位置分布：将gvRect在assT的范围，转成在newAbsT中的位置。
+CGRect assGVRect = VALTOOK(ARR_INDEX(jvBuModel.assT.rects, obj.assIndex)).CGRectValue;
+CGRect bestGV_absT1 = CGRectMake(assGVRect.origin.x - absT_AssT1.origin.x, assGVRect.origin.y - absT_AssT1.origin.y, assGVRect.size.width, assGVRect.size.height);
+
+* 16B. 方案2、采用bestGV at protoT的位置，做absT的元素位置分布：此方案优点在于构建protoGT时，尺寸及位置可以更准确，缺点是类比这里本来就应该以assT为准，不关protoT的事，所以先采用方案1。
+CGRect bestGV_absT2 = CGRectMake(obj.bestGVAtProtoTRect.origin.x - jvBuModel.bestGVsAtProtoTRect.origin.x,obj.bestGVAtProtoTRect.origin.y - jvBuModel.bestGVsAtProtoTRect.origin.y,obj.bestGVAtProtoTRect.size.width, obj.bestGVAtProtoTRect.size.height);
+
+* 二者说明：代码有两种坐标计算方式，一个向ass对齐，一个是向proto对齐，二者是有一个比例的
+* 二者总结：显然，这里是不同粒度间的识别匹配，它天然与proto上的rect就是有一个比例的，如果忽略了这个比例，显示到protoGT上当然就尺寸不准确。
+
+**原因如下：**
+1. 微观上：absT.gvs都是以assT为准进行rects计算的。
+2. 宏观上：protoGT.rects又是以absT at protoT为准的。
+3. 即absT对protoGT而言可能是rect1，而对其内的gvs而言又可能是rect2。
+4. 即rect1和rect2之间的比例问题。。。
+5. 而protoGT中的每个absT的比例差，可能各有不同，所以只有两个方法：
+
+**方案如下：**
+1. 方案1、把absT统一比例向protoGT对齐（即一个个生成protoT单特征），但这样absT与assT的抽具象关联又不那么对齐了。
+   - 缺点：方案1会导致assT和absT之间对齐又不准确了。
+   - 分析：最好是在自己的ass抽具象树内进行对齐（这是符合直觉，也容易调试），那absPort不存scale了，refPort就得存，所以转方案2。
+2. 方案2、protoGT与其元素本来就有比例问题，记录一下xScales和yScales比例到AIGroupFeatureNode中。
+   - 缺点：方案2可以解决比例问题，不过这太复杂了，组特征识别算法是不是也要因此变的更复杂？（因为计算位置符合度等都是依赖rect来计算的）。
+3. 方案3、protoGT的元素的元素都各自有比例，protoGT虽然是用它们表征的，但细到每个gv都得各自变换拼接回protoGT，即每个absT都要存一个dic比例表。
+   - 缺点：方案3更能解决比例问题，不过更复杂，也因此GT识别算法在计算rect时，变的更复杂，容易不可控的出各种太复杂导致的bug。
+4. 方案4、类比时，同时生成absT和protoT，这些protoT用于构建protoGT。
+   - 优点：二者兼得，虽然浪费些空间（但缺点是会影响复用性，如下）。
+   - 缺点：absT的复用性降低了，因为单独生成protoT了，absT就不易复用到，需要测下GT识别会不会因此受影响？不过GT识别本来就是找protoGT，对于变形严重的不易识别到应属正常。
+5. 方案5、尽量还用原来的refPort.rect和tNode.rects来表示比例，即拉伸平铺显示，拉伸的比例替代此需求中要存的scale比例差。
+   - 优点1：实践简单-可复用以往rects相关的代码设计。
+   - 优点2：符合直觉-ass抽具象树内，使用原1:1比例，refPort.rect和rects中使用引用比例，也符合原代码设计。
+
+**方案PK如下：**
+* 原则：单特征的形状和比例，二者必须单独表征各自可独立运行，这样才可保证形状 的 复用性。
+* 抉择：所以，方案4不行，它必然影响复用性，方案2和3虽然也对，但会把代码改的更复杂，而现在tNode下和refPort中存的就有rects，所以选定方案5。
+```
