@@ -262,8 +262,12 @@ CGRect bestGV_absT1 = CGRectMake(assGVRect.origin.x - absT_AssT1.origin.x, assGV
 * 16B. 方案2、采用bestGV at protoT的位置，做absT的元素位置分布：此方案优点在于构建protoGT时，尺寸及位置可以更准确，缺点是类比这里本来就应该以assT为准，不关protoT的事，所以先采用方案1。
 CGRect bestGV_absT2 = CGRectMake(obj.bestGVAtProtoTRect.origin.x - jvBuModel.bestGVsAtProtoTRect.origin.x,obj.bestGVAtProtoTRect.origin.y - jvBuModel.bestGVsAtProtoTRect.origin.y,obj.bestGVAtProtoTRect.size.width, obj.bestGVAtProtoTRect.size.height);
 
-* 二者说明：代码有两种坐标计算方式，一个向ass对齐，一个是向proto对齐，二者是有一个比例的
-* 二者总结：显然，这里是不同粒度间的识别匹配，它天然与proto上的rect就是有一个比例的，如果忽略了这个比例，显示到protoGT上当然就尺寸不准确。
+* 16C. 但这里有个问题，就是每个bestGVObj（AIFeatureJvBuItem）是有不同的scale的，即它并不是按assT直接抽象出来的，而是每个元素识别匹配时都有各自的比例。
+  - 那么：这个比例要体现在bestGV_absT中吗？按ass抽具象树内的原则，肯定是不需要体现，但absT用于生成protoGT时，就丢失了这个gv的scale信息。
+  - 除非：每个GT中，单独把每个itemT.itemGV的scale都存下来（转下面方案3）。
+
+* AB二者说明：代码有两种坐标计算方式，一个向ass对齐，一个是向proto对齐，二者是有一个比例的
+* AB二者总结：显然，这里是不同粒度间的识别匹配，它天然与proto上的rect就是有一个比例的，如果忽略了这个比例，显示到protoGT上当然就尺寸不准确。
 
 **原因如下：**
 1. 微观上：absT.gvs都是以assT为准进行rects计算的。
@@ -280,6 +284,8 @@ CGRect bestGV_absT2 = CGRectMake(obj.bestGVAtProtoTRect.origin.x - jvBuModel.bes
    - 缺点：方案2可以解决比例问题，不过这太复杂了，组特征识别算法是不是也要因此变的更复杂？（因为计算位置符合度等都是依赖rect来计算的）。
 3. 方案3、protoGT的元素的元素都各自有比例，protoGT虽然是用它们表征的，但细到每个gv都得各自变换拼接回protoGT，即每个absT都要存一个dic比例表。
    - 缺点：方案3更能解决比例问题，不过更复杂，也因此GT识别算法在计算rect时，变的更复杂，容易不可控的出各种太复杂导致的bug。
+   - 优点：别的方案都无法把每一个gv的比例存下来，只有这里存下来了，此只有此方案可以完全还原protoGT的原图。
+   - 示例：我们斜着看到一个长方形时，脑中激活的却是正的长方形，我们看到一个写的很漂亮的字时，如果不再去看一眼，却说不出它哪里漂亮的具体特征。
 4. 方案4、类比时，同时生成absT和protoT，这些protoT用于构建protoGT。
    - 优点：二者兼得，虽然浪费些空间（但缺点是会影响复用性，如下）。
    - 缺点：absT的复用性降低了，因为单独生成protoT了，absT就不易复用到，需要测下GT识别会不会因此受影响？不过GT识别本来就是找protoGT，对于变形严重的不易识别到应属正常。
@@ -289,5 +295,7 @@ CGRect bestGV_absT2 = CGRectMake(obj.bestGVAtProtoTRect.origin.x - jvBuModel.bes
 
 **方案PK如下：**
 * 原则：单特征的形状和比例，二者必须单独表征各自可独立运行，这样才可保证形状 的 复用性。
-* 抉择：所以，方案4不行，它必然影响复用性，方案2和3虽然也对，但会把代码改的更复杂，而现在tNode下和refPort中存的就有rects，所以选定方案5。
+* 抉择1：淘汰错误答案：方案1是取此失彼，不可行。方案4必然影响复用性，也不行。方案2画蛇添足没必要（方案5即可以表征protoGT元素的比例又改动简单），也也不行。
+* 抉择2：决赛PK：方案3优点是可还原，缺点是代码和算力会复杂些。方案5缺点是仅估计了整个单特征比例不够还原，但优点是足够简单（可用现tNode.refPort和tNode.rects直接实现）。
+* 结果：根据`方案3-示例`可见：我们未必需要完全还原，可以先用方案5，如果后面确实需要完全还原了 或 方案5不够用了，再回来搞这个方案3吧 `T`。
 ```
