@@ -331,3 +331,11 @@ CGRect bestGV_absT2 = CGRectMake(obj.bestGVAtProtoTRect.origin.x - jvBuModel.bes
 |  | 2、但拼接成protoGT的，却不应该是absT了，不然就难免混乱，因为absT没一个来自proto原图。 |
 | 方案v4 | 还是得原图proto，在单特征识别时，就得把protoT补回来，但protoT是固定粒度，而识别结果assT却是自适应粒度来的。 |
 | 方案v5 | 要不还是识别具层结果，无论是单T还是GT。 |
+| 方案v6 | 尝试：切回向具象取整体特征方案的思考，如下图： |
+|  | ![](assets/771_特征可视化混乱问题.png) |
+|  | 如上图优点是结构比较简单，虽然无法表征“自适应粒度”的所有GV数据，但识别等也也够用。 |
+|  | 缺点是如果protoT不表征自适应粒度所有GV，那我们为什么还要这么做？ |
+| 原则1 | 可视化不能跨图，即assGT1和assGT2的各自局部不能显示在同一个画布中。 |
+| 原则2 | 本表只是可视化问题，绝不可因可视化问题就影响到内核设计。 |
+| 所以 | protoGT绝对不允许由absTs来组成，但由protoDic自适应粒度切的GVs不能持久化。 |
+| 方案v7 | 既然不能存那就不存，可视化时直接在protoDic中现算现取。 |
