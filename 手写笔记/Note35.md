@@ -382,6 +382,11 @@ CGRect bestGV_absT2 = CGRectMake(obj.bestGVAtProtoTRect.origin.x - jvBuModel.bes
 | --- | --- |
 | 说明 | 如下代码段1，训练0五个，1八个后，输入1时，很多粒度层下，最终还是识别成了0，并且是唯一结果。 |
 | 分析 | 查下，为什么训练这么多次，还会经常输出唯一结果？是不是网络结构还是复杂，导致两端碰头困难。 |
+| 怀疑 | 大几率就是因为网络结构的复杂（跨度大，联结少）导致识别结果太过单一。 |
+| TODO1 | 先把单特征识别后assT和protoT建立上抽具象关联再说 `T`。 |
+| TODO2 | 把bestGVs在assT的rect 和 bestGVs在protoT的rect => 计算成assT在protoT的rect，然后存conPort.rect下 `T`。 |
+| TODO3 | assT与protoT的抽具象匹配度，即要取bestGVs的平均匹配度，也要除以assT的长度（匹配数）`T`。 |
+| 结果 | 已改完，后面继续回测视觉（下表回测手写1经常识别成0的问题）。 |
 
 ```md
 ## 35052代码段1
@@ -389,3 +394,7 @@ CGRect bestGV_absT2 = CGRectMake(obj.bestGVAtProtoTRect.origin.x - jvBuModel.bes
 单特征识别结果总结：(Mnist0=1.00 )
 单特征识别结果总结：(Mnist1=0.64 ,Mnist0=0.36 )
 ```
+
+| 35052 | 继续回归测试 |
+| --- | --- |
+| 测试项1 | 先测下手写0和1的识别，尤其先看下识别结果是否还那么单一。 |
