@@ -1126,3 +1126,6 @@ aaaa3000 (0 = 1,100 = 4,300 = 3)
 |  | > assST525 bestGVsAtProtoTRect:<x0 y0 w21 h18> assSTAtProtoGT:<x0 y0 w21 h18> |
 |  | > assST494 bestGVsAtProtoTRect:<x0 y10 w24 h15> assSTAtProtoGT:<x0 y10 w24 h15> |
 | 4 | 所以：显然从assST识别开始，其bestGVsAtProtoTRect计算就有错误。 |
+| 5 | 调试示图：![](assets/777_查ProtoGT不成形调试图1.png) |
+| 说明 | 1、看起来上图没啥问题，ST33的右下角是个上斜线，正好匹配到了Mnist0_4的左上角的上斜线。 |
+|  | 2、所以rect转换后，ST33显示在了ProtoGT的左上角。 |
