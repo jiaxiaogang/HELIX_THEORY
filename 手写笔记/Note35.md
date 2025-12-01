@@ -1202,3 +1202,4 @@ aaaa3000 (0 = 1,100 = 4,300 = 3)
 | --- | --- |
 | 示图 | ![](assets/779_AssST和ProtoGT位置偏了.png) |
 | 说明 | 如上图，明明是0的下半部分，assST为什么在顶端显示？protoGT又为什么也在顶端显示？ |
+| 结果 | 因为本来rect在构建absST和protoGT时，就是左上角marginLeft和marginTop置0的，当然就显示在左上角了 `T`。 |
