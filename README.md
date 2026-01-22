@@ -24,7 +24,9 @@
 
 ## 3. 应用模型：应用于信息系统
 
-![](手写笔记/assets/781_波形周期思维控制器模型.png)
+<div style="border-radius: 50%; overflow: hidden; width: 600px; height: 400px;">
+  <img src='手写笔记/assets/788_波形周期思维控制器模型.png' style="height: 100%; width: 100%;"/>
+</div>
 
 ##### 3.1 用途：为方便大家理解，下面是一些方便理解的简述它能做什么。
 为拟补我语文差和方便别人理解，从简到繁，写了四个版本：  
