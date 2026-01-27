@@ -76,5 +76,6 @@
 |  | 5、用所有的assST.GV取其refPorts来判断是否全含assGT.itemST也是可以的。 |
 |  | 6、不过这仍然需要把assGT.itemST全取出来。 |
 |  | 7、画图分析：这里的启发式激活通路，其实就是assST和assGT.itemST，二者有共同抽象。 |
+| 白话 | **世上没有两片完全一样的树叶，识别本身就是找共同抽象，只是哪个更准罢了（位置符合&匹配度竞争）。** |
 | TODO1 | 其实就是判断assST和assGT.itemST二者mcIsBro=true（参考方案2-本质）。 |
 | TODO2 | 然后把二者共同抽象中，复用匹配度相乘（aIsC 乘 bIsC）最best的匹配度计算出来。 |
