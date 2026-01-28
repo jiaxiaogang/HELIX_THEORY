@@ -103,3 +103,4 @@
 | --- | --- |
 | TODO1 | 其实就是判断assST和assGT.itemST二者mcIsBro=true（参考方案2-本质）。 |
 | TODO2 | 然后把二者共同抽象中，复用匹配度相乘（aIsC 乘 bIsC）最best的匹配度计算出来。 |
+| TODO3 | 即然GT识别自举用isBro来判断，那切入点是不是也应用absST.conST来refGT（现在是用absST在refGT) |
