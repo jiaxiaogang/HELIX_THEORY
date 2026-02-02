@@ -6,6 +6,7 @@
 
 - [继续测和优化GT识别不够准确问题](#继续测和优化gt识别不够准确问题)
   - [n36p01 提升对撞率二、GT识别不准确问题](#n36p01-提升对撞率二gt识别不准确问题)
+  - [n36p01 提升对撞率三、迭代GT识别算法V7](#n36p01-提升对撞率三迭代gt识别算法v7)
 
 <!-- /TOC -->
 
@@ -105,6 +106,7 @@
 | TODO2 | 然后把二者共同抽象中，复用匹配度相乘（aIsC 乘 bIsC）最best的匹配度计算出来。 |
 | TODO3 | 即然GT识别自举用isBro来判断，那切入点是不是也应用absST.conST来refGT（现在是用absST在refGT) |
 | 中断 | 以上3个TODO都很简单，其实难点在于GT自举算法也得跟着改，通路一变，整个位置符合度就得重新计算，转下表。 |
+| 追加 | 其实以上相当于把GT识别算法的通路都加了一层，这已经不单单是改下mcIsBro了，而是整个模型和算法都需要改进 `转n36p02`。 |
 
 **小结：36014本来要实践TODOLIST了，但发现还是想的不够深入，先中断下，转下表先分析下：GT自举算法需要跟着怎么迭代。**
 
@@ -124,3 +126,24 @@
 | 结果 | 经以上分析，看来GT识别确实需要这么大改，且改动挺大的。 |
 
 **小结：35015中，通过预演GT自举算法的步骤，捋顺当前GT识别算法迭代需求的大致情况，且发现这一改动，与先前的ST识别迭代非常相似（ST时是自举切protoRect像素范围，现在是自举预估AtProtoRect范围，其实二者都是回归到ProtoT原图上，取同样的范围，这样可以避免走形问题，并且还始终不脱离ProtoT原图）。**
+
+***
+
+## n36p01 提升对撞率三、迭代GT识别算法V7
+`CreateTime 2026.01.29`
+
+上节末捋顺了提升GT对撞率的方式：用mcIsBro来判断GT识别的匹配，相当于识别通路的大变动，整个识别算法，GT识别自举，GT识别模型，计算Rect都要顺着这个通路做迭代，所以本节在这个思路下迭代下GT识别算法V7版本。
+
+| 36011 | 迭代GT识别算法V7版本：TODOLIST |
+| --- | --- |
+| TODO1 | 把识别过程中的模型迭代为GTModelV2和GTItemV2，支持记录assST、absST、broST `T`。 |
+| TODO2 | 新模型中要支持计算assST、absST、broST分别在Proto的Rect `T` |
+| TODO3 | 先用assST取absST `现就有这个 T` |
+| TODO4 | 再用absST取broST `T` |
+| TODO5 | 再用broST取ref.assGT `T` |
+| TODO6 | 再对每个assGT做GT自举算法 `T` |
+| TODO7 | 性能：用assST_Proto建立rectIndex + absST + broST整个通路来做防重 `T`。 |
+| TODO8 | assGTs结果竞争排序可视化debug等代码复用原代码不变 `不用改` |
+| TODO9 | GT类比算法也改下兼容新的GTModelV2和GTItemV2模型 `T` |
+| TODO10 | 性能1：broST_ProtoRect可用于复用优化性能？还是别的什么作用 `还没明白怎么用，后做` |
+| TODO11 | 性能2：同一个assGT，在同一个broST_ProtoRect.rectIndex时，进行防重 `还没做，后更明确后再做`。 |
