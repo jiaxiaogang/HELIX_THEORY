@@ -270,4 +270,11 @@
 |  | 思路：但它的GV是可以累计起来的。 |
 | 可疑2 | ST识别竞争也得加上显著度吧？ |
 |  | 思路：ST都没有抽象，如果要加显著度，相当于必须分析其GV是否显著了。 |
-| 总结 | 两个可疑都指向GV，相当于抽象ST中，每个GV都要单独统计强度值（AIPort.strong改成字典）。 |
+| 实践分析 | 两个可疑都指向GV，相当于抽象ST中，每个GV都要单独统计强度值（AIPort.strong）。 |
+|  | 但是contentPorts必然是同时统计的，所以字典和不字典也没差别。 |
+|  | 所以：可以把abs的content的总和统计值，统计到con中，这样就可以了。 |
+|  | 相当于在conT.contentPorts中的强度值。 |
+| 白话 | **ST的显著度不能以ST的抽具Port强度来，而是以元素GV的被抽象使用次数来。** |
+| TODO1 | 类比T时，把absT的内容，在assT中的contentPort的strong+1 `T`。 |
+| TODO2 | 在GT识别absST的显著度:以具象(assST/broST)的contentPorts的强度统计来做显著度 `T`。 |
+| 回测 |  |
