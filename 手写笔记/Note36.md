@@ -451,7 +451,7 @@
          A、assST与有效抽象的匹配度 = 匹配的indexDic对应的bestGVs的平均匹配度。
          B、而有效抽象与bro的匹配度 = 。。。（这个总是会很低的，并且介入了absST中都没有的gv，这个不符合熵减原则）。
 总结：上面有五个思路，逐个推进，主要是思路5，从原则角度上推导出如下方案：
-方案：把通路改成assST -> absST，去掉broST，然后识别的assGT改成由absST构成。
+方案1：把通路改成assST -> absST，去掉broST，然后识别的assGT改成由absST构成。
 TODO1：这样就识别不到似层AssGT结果了（因为全是absST来refGT的）`不成立，因为protoGT本就是由absST构成的 T`。
      思路1：即似层的宏观一级应该由交层的微观一级构成，即：构成似层GT的也是absST。
      TODO1.1: 在GT类比中，如果sameOrders长度与protoGT长度一致，则absGT也计做似层（这不现实，类比后很难匹配率=1）。
@@ -459,4 +459,11 @@ TODO1：这样就识别不到似层AssGT结果了（因为全是absST来refGT的
      TODO1.3: ProtoGT本来就是由absST构成的，不用改 `T`。
 TODO2：GT类比时，把absGT与protoGT的匹配度关联，这些代码补上（以前有些我看没写）。
 TODO3：在GT识别算法中，把取broST这步及相关代码全去掉。
+转折：TODO2和TODO3先不做，因为如下疑问，重新制定了方案2（如下）。
+疑问6：当时做assST->absST->broST通路就是为了对撞率，现在去掉broST对撞率必然下降，当然即使不去掉broST对撞率现在也不高。
+分析6：现在简化通路为:assST->absST并不能解决问题，反而会更降低对撞率。
+思路6、还是得让足够明显的ST尽快在竞争中浮现出来，比如：5的下方半圆部分，7的拐角部分。
+方案2：还不如先调整显著assST的竞争力，使显著的局部特征可以快速“竞争浮现”。
+TODO4：使可重用性高的assST能更有竞争力（用assST.absPorts.sumStrong来竞争）`T`。
+TODO5：。。。
 ```
