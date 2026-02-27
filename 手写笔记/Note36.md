@@ -477,3 +477,9 @@ TODO4：使可重用性高的assST能更有竞争力（用assST.absPorts.sumStro
 
 | 36043 | 继续查下GT识别匹配度很低的问题 |
 | --- | --- |
+| 经查 | 现计算方式为：absST.count / MAX(stModel.assT.count, broST.count); |
+| 分析 | assST.count太长了，其实只是识别了bestGVs，不必整个assST全除。 |
+| TODO1 | 改成：absST.count / MAX(stModel.bestGVs.count, broST.count) `T`; |
+|  | 回测：修TODO1后经测，发现GT识别结果中，匹配度达到了0.5。 |
+| TODO2 | 还可以再看下可以不可以再优化下，提升匹配度。 |
+| TODO3 | 现在随着训练，GT识别结果匹配度并没有越来越高，可以查下。 |
