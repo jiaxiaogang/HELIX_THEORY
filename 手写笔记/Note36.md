@@ -485,3 +485,14 @@ TODO4：使可重用性高的assST能更有竞争力（用assST.absPorts.sumStro
 |  | 实践：不管stModel.matchValue，只保留absST.count/MAX(stModel.bestGVs.count,broST.count); |
 |  | 回测：匹配度很正常了，达到0.7了。 |
 | TODO3 | 现在随着训练，GT识别结果匹配度并没有越来越高，可以查下。 |
+|  | 原因1：从ass-abs-bro这个通路太复杂，结果匹配度本来就不好控制。 |
+|  | 原因2：即使往abs时可以强度控制，往bro时的竞争稳定也控制不住。 |
+|  | 原因3：而protoGT现在也是由absST来构建的，可以试下不用broST，简化通路，避免熵增。 |
+|  | 原因4：多一个通路，会导致strong竞争无效，匹配度多出多余信息也会无效。 |
+|  | 所以5：还是把通路assST->absST->broST改成assST->absST试下（参考36042-方案1）。 |
+| 结果 | TODO1和TODO2好了，TODO3转下表简化GT识别通路 `转36044`。 |
+
+| 36044 | GT识别竞争浮现有问题（参考36043-TODO3） |
+| --- | --- |
+| 方案 | 简化GT通路为assST->absST（参考36042-方案1 & 36043-所以5）。 |
+| TODO1 | 先调试下，如果改通路后，能不能识别到，匹配率怎么样，会不会导致别的问题。 |
