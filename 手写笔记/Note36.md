@@ -496,3 +496,10 @@ TODO4：使可重用性高的assST能更有竞争力（用assST.absPorts.sumStro
 | --- | --- |
 | 方案 | 简化GT通路为assST->absST（参考36042-方案1 & 36043-所以5）。 |
 | TODO1 | 先调试下，如果改通路后，能不能识别到，匹配率怎么样，会不会导致别的问题。 |
+
+| 36045 | BUG: 当前GT识别中似乎没有做位置符合判断 |
+| --- | --- |
+| 问题 | 看到GTItemV2中虽然计算了各种通路rect值，但未与assGT的进行比对。 |
+| 回忆 | 但当时好像是用rectIndex进行分组了，判断了rect的匹配。 |
+| 回顾 | 经查代码，确实没有对absST_protoRect 与 absST_AssGTRect进行缩放偏移比对。 |
+| 分析 | 查下在gtZiJv算法中，需要对assGT.item的rect 与 assST->absST在protoRect进行比对。 |
