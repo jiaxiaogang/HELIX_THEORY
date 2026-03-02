@@ -519,3 +519,8 @@ TODO4：使可重用性高的assST能更有竞争力（用assST.absPorts.sumStro
 |  | 否掉：预计与实际的rectIndex完全一致，这种情况太理想，不可取 `T`。 |
 | 方案2 | 实时判断预计与实际的rect交集率，需大于60%。 |
 |  | 实践：bestSTDic收集一条元素就判断一次（已收集的：预计区域 与 实际区域 > 60%交集）。 |
+| TODO1 | 根据现有bests预计任意一个assIndex的rect（以前写过找不到了）`下方展开 T`。 |
+| TODO2 | 计算预计NewBestAbsST在AssGT中的Rect `T`。 |
+|  | 公式：根据1.bests_AssGT 2.bests_Proto 3.newAbsST_Proto 计算出4.newAbsST_AssGT |
+| TODO3 | 然后用预计的newAbsST_AssGT 和 实际的newAbsST_AssGT，计算二者的rect交集率 `T`。 |
+| 测试 | 测下TODO2计算的NewBestAbsSt_AssGTRect是否准确。 |
