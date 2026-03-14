@@ -661,11 +661,14 @@ TODO4：使可重用性高的assST能更有竞争力（用assST.absPorts.sumStro
 | 36074 | 36071-方案1 & 36072-方案3：TODOLIST实践规划 |
 | --- | --- |
 | 方案 | GT自举减少一个维度到GV层，统合成allBestGVs，来提升absST的广入（参考方案1 & 3）。 |
-| TODO1 | 把GT自举算法根据每个assSTs的bestGVs，收集成allBestGVs。 |
-| TODO2 | GT自举的assGT.item直接判断它的contentGVs被allBestGVs全含。 |
-| TODO3 | GT的类比与ProtoGT没关系了，保留现在从assGT中把匹配的元素抽象成absGT即可。 |
+| TODO1 | 把GT自举算法根据每个assSTs的bestGVs，收集成allBestGVs `转TODO4`。 |
+| TODO2 | GT自举的assGT.item直接判断它的contentGVs被allBestGVs全含 `转TODO4`。 |
+| TODO3 | GT的类比与ProtoGT没关系了，保留现在从assGT中把匹配的元素抽象成absGT即可 `转TODO9`。 |
 | 示图 | ![](assets/794_GT自举到GV层.png) |
-| TODO4 | 用ST给GV分组：从ST展开成GV时，按ST中的rects对allBestGVs进行分组，存为：groupSTs。 |
-| TODO5 | 用GT给ST分组：然后递归到GT展开的ST，再按GT中的rects对分组groupSTs进行分组。 |
-| TODO6 | 性能：ST给GV分组，按ST来防重复用（即每个ST仅对GV分组一次）。 |
-| TODO7 | 性能：GT给ST分组，按GT来防重复用（即每个GT仅对ST分组一次）。 |
+| TODO4 | 用ST给GV分组：对ST自举按ST中的rects对allBestGVs分组成ziJvGroup.groups `T`。 |
+| TODO5 | 用GT给ST分组：然后递归到GT展开的ST，再按GT中的rects对分组groupSTs进行分组 `T`。 |
+| TODO6 | 性能：ST给GV分组，按ST来防重复用（即每个ST仅对GV分组一次）`T`。 |
+| TODO7 | 性能：GT给ST分组，按GT来防重复用（即每个GT仅对ST分组一次）`T`。 |
+| TODO8 | 同时迭代下GT识别V9算法，采用以上自举算法 `T`。 |
+| TODO9 | 同时迭代下GT识别的结果模型，从GTModelV2迭代成ZiJvGroup `T`。 |
+| TODO10 | 同时迭代下GT类比算法，从GTModelV2迭代成支持ZiJvGroup `T`。 |
