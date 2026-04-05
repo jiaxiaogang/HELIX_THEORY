@@ -243,7 +243,7 @@ https://m.sohu.com/a/237401249_313170/?pvid=000115_3w_a
 > he4o实践: https://v.youku.com/v_show/id_XMzY1NTAyNTg2MA==.html?spm=a2h0j.11185381.listitem_page1.5~A
 
 ##### 赤臂生  19:48:12
-> he4oPPT: https://github.com/jiaxiaogang/HELIX_THEORY/blob/master/Other/9_%E5%85%AC%E5%8F%B8%E5%86%85AI%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB20180628.pptx
+> he4oPPT: https://github.com/jiaxiaogang/HELIX_THEORY/blob/master/文章/9_%E5%85%AC%E5%8F%B8%E5%86%85AI%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB20180628.pptx
 
 ##### 人工智能深度学习  19:49:51
 > 你的PPT好象不见了.
