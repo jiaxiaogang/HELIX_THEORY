@@ -408,7 +408,7 @@
 		- 树形神经网络
 		- 将OOP中的指针、继承、接口、属性、抽象、值、多态、block等以Data的形式表示。
   3. AwarenessLayer
-		- 参考:[N3P20](../手写笔记/Note3.md#n3p20demand170803)
+		- 参考:[N3P20](../手稿/Note3.md#n3p20demand170803)
 		- 使Data产生逻辑;
 		- 将OOP中的异步,多线程等以Awareness,Demand,Think等形式实现。`MainThread状态`
 
