@@ -76,7 +76,7 @@
 		- 抽象与结构
 		- 不过度依赖算法与大数据
 		- 先天noData
-		- [等等](https://github.com/jiaxiaogang/HELIX_THEORY/blob/master/Book/SUMMARY.md#目录)
+		- [等等](https://github.com/jiaxiaogang/HELIX_THEORY/blob/master/其它/Book/SUMMARY.md#目录)
 
 4. #### 创始团队成员之间相互是什么关系，认识多久了？之前大家有一起合作过项目吗？
 	- 目前我独自开发,也有几个朋友有加入意向;(我会从中选择两个左右加入进来一起创业)

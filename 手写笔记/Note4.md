@@ -67,7 +67,7 @@
 >     4. 使用数据分析出曾经调用的abcdefg方法过程;
 >     5. 抽象类比出当前新问题的解决方式;
 >     6. 执行曾经的abcdefg;
->   - 参考:[LOP](../框架/Understand.md)
+>   - 参考:[LOP](../其它/框架/Understand.md)
 
 <br><br>
 
@@ -136,7 +136,7 @@
 
 ## (N4P3)意识->需求
 
-> [Awareness->Demand->ThinkTask](../框架/Understand.md)  & [或旧资料Demand](../框架/Understand.md)
+> [Awareness->Demand->ThinkTask](../其它/框架/Understand.md)  & [或旧资料Demand](../其它/框架/Understand.md)
 > > ![](img/N3P11.png)
 
 ***
@@ -147,8 +147,8 @@
 - 代码
   - [链接](https://github.com/jiaxiaogang/he4o/blob/master/SMG_NothingIsAll/Class/AIFoundation/AIThread/AIMainThread.h)
 - 笔记
-  - [Understand/MainThread链接](../框架/Understand.md)
-  - [MainThread](../框架/Understand.md)
+  - [Understand/MainThread链接](../其它/框架/Understand.md)
+  - [MainThread](../其它/框架/Understand.md)
 
 ***
 
@@ -182,7 +182,7 @@
 
 ## (N4P6)Demand的解
 
-- [链接~>Understand/ThinkDemand的解](../框架/Understand.md)
+- [链接~>Understand/ThinkDemand的解](../其它/框架/Understand.md)
 - //ThinkDemand的解;
     1. 依赖于经验等数据;
     2. 依赖与常识的简单解决方案;(类比)
@@ -245,7 +245,7 @@
 
 
 ## (N4P8)意识(17.08.01)
-> 参考:[自我->意识](../框架/自我.md## 意识)
+> 参考:[自我->意识](../其它/框架/自我.md## 意识)
 
 1. 意识的养料
   - 意识流
@@ -438,7 +438,7 @@
 ```
 
 ### <font color=#ff0000>LOP图示2017.09.03</font>
-![](../Resource/img/1.png)
+![](../其它/Resource/img/1.png)
 
 ```
 图示说明
@@ -478,7 +478,7 @@
   - 使"1"的强化升华;
 
 3. 生物脑:
-  - [神经可塑性&LTP长期增益效应](../框架/神经网络.md#神经可塑性/LTP长期增益效应)
+  - [神经可塑性&LTP长期增益效应](../其它/框架/神经网络.md#神经可塑性/LTP长期增益效应)
 
 <br>
 ***

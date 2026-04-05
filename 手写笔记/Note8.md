@@ -592,7 +592,7 @@ n. output
 
 
 ## n8p9 后天MindValue
-`CreateTime 17.10.26` `对脑: 理性杏仁核/非理性垂体` `参考:` [框架/Mind#MoodDuration心情持续](../框架/Mind.md#moodduration心情持续) [Book心情持续](../Book/Chapters/Chapter8.md)
+`CreateTime 17.10.26` `对脑: 理性杏仁核/非理性垂体` `参考:` [其它/框架/Mind#MoodDuration心情持续](../其它/框架/Mind.md#moodduration心情持续) [Book心情持续](../其它/Book/SMGBook/Chapters/Chapter8.md)
 
 
 | 概念 >> |
@@ -882,7 +882,7 @@ n. output
 <br><br><br><br><br>
 
 ## n8p15 想像力
-`CreateTime 17.11.07` `脑: 前额叶+海马回` `参考:` [当下不开发的/想像力](../当下不开发的/想像力.md) & [n5p5意识真实的感受_二阶-想像力](Note5.md#n5p5意识真实的感受) & [n6p2 感受](Note5.md#n6p2-感受) & [n8p2 意识真实的感受2-(想像力/逆向演绎)](#n8p2-意识真实的感受2-想像力逆向演绎) & [he4o/类人的学习项目](,,.he4o/类人的学习项目.md) `想像力，把图像属性，甚至文本描述GAN成图像演绎;`
+`CreateTime 17.11.07` `脑: 前额叶+海马回` `参考:` [其它/当下不开发的/想像力](../其它/当下不开发的/想像力.md) & [n5p5意识真实的感受_二阶-想像力](Note5.md#n5p5意识真实的感受) & [n6p2 感受](Note5.md#n6p2-感受) & [n8p2 意识真实的感受2-(想像力/逆向演绎)](#n8p2-意识真实的感受2-想像力逆向演绎) & [he4o/类人的学习项目](,,.he4o/类人的学习项目.md) `想像力，把图像属性，甚至文本描述GAN成图像演绎;`
 
 
 `引言`

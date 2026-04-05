@@ -113,7 +113,7 @@
 
 1. 人类数据处理能力比当前计算机强大太多，运算力依赖却很小(封装到神经元)，而计算机也可以封装到算法中。
 2. 人类意识不断感知其任务及数据的，而计算机只有简单的main方法并且不知道自身在运行什么。
-	![](https://github.com/jiaxiaogang/HELIX_THEORY/raw/master/Resource/img/1.png)
+	![](https://github.com/jiaxiaogang/HELIX_THEORY/raw/master/其它/Resource/img/1.png)
 
 ##### LOP与OOP对比:
 
@@ -190,6 +190,6 @@
 
 #### 如果乐意，请扫屏幕上的二维码，我们加个QQ群，一起探讨继续学习。
 
-![](https://github.com/jiaxiaogang/Resource/blob/master/Img/SMG/QQGroupQRCode.png?raw=true)
+![](https://github.com/jiaxiaogang/其它/Resource/blob/master/Img/SMG/QQGroupQRCode.png?raw=true)
 
 另:我的个人主页:<http://jiaxiaogang.github.io/>

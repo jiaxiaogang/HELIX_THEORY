@@ -681,7 +681,7 @@ y(Value)
 	5. 有结果时,中止;
 	6. 无结果时,建立后台长时搜索任务;
 
-![](../Resource/img/2.png)
+![](../其它/Resource/img/2.png)
 
 
 
