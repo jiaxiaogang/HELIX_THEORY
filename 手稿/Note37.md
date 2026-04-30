@@ -551,3 +551,4 @@ for (AIFeatureJvBuModel *stModel in itemResults) {
 
 | 37102 | 视觉专注循环：实践规划 |
 | --- | --- |
+| 说明 | 目前只做简单的：先识别粗粒度，粗粒度有大致结果的Rect范围，再切出来做二次嵌套识别。 |
