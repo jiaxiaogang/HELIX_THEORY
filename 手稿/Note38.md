@@ -45,5 +45,12 @@
   - 回顾：一共就五个竞争因子:outerShapeMatchValue、innerEigenMatchValue、modelMatchRatio、bestsCountScoreByRank、averageContentStrongScore;
   - 经测：把内征外形设为最重要，另外三个削弱至20%后，跑0-9x9轮后，发现识别结果普遍是很小的匹配数。
   - TODO4：所以，把匹配数的权重由0.2改回1再测下 `T`。
+  - 结果：问题2的很具象杂乱问题，还是没修好 `转38013继续 T`。
 
 **小结：38012是在强训的基础上调整参数，边调边重训练跑效果总结，并且明确加了每个竞争因子的权重。**
+
+**38013-AssGT和AbsGT依然很具象杂乱问题。**
+* 说明：表现为：可视化时，总是有重影，其实就是各种AbsSTs拼凑出来很难免的问题。
+* 疑点：问题的根在ProtoGT上，因为ProtoGT本来就是由各个AbsST拼起来的，它的一致性就很差，像一个四不像，各块拼起来的杂乱。
+* 然后：要从这样的ProtoGT中找出规律的AbsGT来，还得很特征清晰，当然就很难。
+* 方案：ProtoGT不能由AbsSTs来构建，改为在protoImgDic的基础上构建出来。
