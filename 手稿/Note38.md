@@ -115,8 +115,11 @@
   - 2、中：匹配数总数进行自由竞争（原因：匹配范围越大肯定越好，不然只是局部匹配）。
   - 3、低：稳定性进行末尾淘汰（原因：太新的不稳定的，不能抢占资源，有了基础成长之后才有资格激活）。
 * *实践规划：现在ST一共有五个竞争因子，以下分别按高中低排其重要性，并根据重要性制定竞争淘汰机制。*
-  - TODO1、cOuterShapeWeight // 高：头部保留（大于80%匹配保留）。
-  - TODO2、cInnerEigenWeight // 高：头部保留（大于80%匹配保留）。
-  - TODO3、cTotalCountWeight // 中：越高越好（中间部分自由竞争）。
-  - TODO4、cBestsCountWeight // 中：越高越好（中间部分自由竞争）。
-  - TODO5、cAverStrongWeight // 低：末尾淘汰（小于20%强度淘汰）。
+  - TODO1、cOuterShapeWeight // 强：头部保留（大于80%匹配保留）`T`。
+    - 代码：按冷却曲线，略小时就能很小竞争力，只有很大时才能保证竞争力 `T`。
+  - TODO2、cInnerEigenWeight // 强：头部保留（大于80%匹配保留）`T 代码同上`。
+  - TODO3、cTotalCountWeight // 中：自由竞争（中间部分越高越好）`T`。
+    - 代码：用现有的竞争权重线性算法即可 `T 代码不变`。
+  - TODO4、cBestsCountWeight // 中：自由竞争（中间部分越高越好）`T 代码同上`。
+  - TODO5、cAverStrongWeight // 弱：末尾淘汰（小于20%强度淘汰）`T`。
+    - 代码：用现有的广入时的末尾淘汰即可 `T 代码不变`。
