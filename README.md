@@ -1,3 +1,5 @@
+[English](README_EN.md) | 中文
+
 # 螺旋熵减理论
 
 ***
