@@ -611,7 +611,11 @@
   1. valids未必真是有targetHavMv的。
   2. decoratorJvBuModel.stModels.psArr却是都有targetHavMv指向的。      
 * 问题：只针对mostClear的valids肯定是不够的，即使它从stModels.psArr中找也不行。
-* 方案：这里把mostClear改为用protoST，然后把psArr转为matchAlgs_PS用做Fo识别的索引切入（这也是即有最常见的做法）。
+* 方案：这里把mostClear改为用protoST，然后把psArr转为matchAlgs_PS用做Fo识别的索引切入（这也是即有最常见的做法）`T`。
+  * 疑问：如果不取mostClear了，那反射反应到哪个rect？
+  * 所以：MostClear肯定还是需要的，只是到瞬时序列成了protoST，时序识别的索引源也变成用psArr而已 `T`。
+* TODO1. 改为由psArr构建matchAlgs_PS来索引识别时序肯定需要 `T`。
+* TODO2. 反射反应的rect继续延用mostClear的也一样需要，保持现状即可 `T`。
 
 **3810x：习得没问题了，继续测后面流程的事。**
 * 再后：再测试求解，主动聚焦行为等这些流程。
