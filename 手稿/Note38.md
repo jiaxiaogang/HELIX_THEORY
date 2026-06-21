@@ -597,9 +597,21 @@
   * PInput:F458[T1140{Mnist6 = 4.00;Mnist2 = 1.69;},A455(3,28.5,20,-2.5,0.6949),M15{↑无-9}]
   * 结果：如上，能顺利构建到scene时序，但量不大，明天继续测下，能不能提升习得量。
 * STEP2：然后识别到pFo结果。
+  * 问题：主要是没识别到几个stModels是有targetHavMv的，导致fo识别结果总是0条 `转38102 T`。
 * STEP3：再根据pFo结果，预测到R任务（未知恐惧），构建成R任务。
 * STEP4：判断新的pMv能反馈。
 * STEP5：cansetFo习得：又能表征上，因为反射反应，带来的mv+反馈和习得canset。
+
+**38102：改能多识别到targetHavMv的结果**
+* 方案：在GV和ST识别中，也拆分成R结果和P结果两种 `T`。
+* 结果：改后有效了，P结果有了。
+
+**38103：上表改后，时序识别结果还是0条。**
+* 调试：经查，stModels结果：用mostClear结果的，assT.valids来构建matchAlgs_PS，但是：
+  1. valids未必真是有targetHavMv的。
+  2. decoratorJvBuModel.stModels.psArr却是都有targetHavMv指向的。      
+* 问题：只针对mostClear的valids肯定是不够的，即使它从stModels.psArr中找也不行。
+* 方案：这里把mostClear改为用protoST，然后把psArr转为matchAlgs_PS用做Fo识别的索引切入（这也是即有最常见的做法）。
 
 **3810x：习得没问题了，继续测后面流程的事。**
 * 再后：再测试求解，主动聚焦行为等这些流程。
